@@ -5,79 +5,7 @@
 # I also mention a bunch of database TABLES. These don't actually exist yet, but are
 # useful for understanding the structure of the data
 # eData DRF Version - Not Tracked
-# Last Updated 2025.11.17
-
-# -----------------------
-# ---- userData ----
-# -----------------------
-
-# making this
-initialise_userData <- function() {
-  list(
-    ENTERED_BY = character(0),
-    autosave_enabled = FALSE,
-
-    # Standard validated data ----
-    # All userData and module_state$data data is stored in a tabular (tibble) format centrally, even for campaign and reference (which currently only have one row)
-    # This means we can use a consistent set of functions to check for presence (nrow(tibble) > 0), and not have any nasty surprises when we expect one and get the other
-    # Data entry modules
-    sitesData = initialise_sites_tibble(),
-    sitesDataValid = FALSE,
-    parametersData = initialise_parameters_tibble(),
-    parametersDataValid = FALSE,
-    compartmentsData = initialise_compartments_tibble(),
-    compartmentsDataValid = FALSE,
-    referenceData = initialise_references_tibble(),
-    referenceDataValid = FALSE,
-    campaignData = initialise_campaign_tibble(),
-    campaignDataValid = FALSE,
-    methodsData = initialise_methods_tibble(),
-    methodsDataValid = FALSE,
-    samplesData = initialise_samples_tibble(),
-    samplesDataValid = FALSE,
-    biotaData = initialise_biota_tibble(),
-    biotaDataValid = FALSE,
-    samplesDataWithBiota = tibble(NULL),
-    measurementsData = initialise_measurements_tibble(),
-    measurementsDataValid = FALSE,
-
-    # CREED Data
-    datasetDetails = tibble(NULL),
-    creedRelevance = initialise_CREED_data_tibble(),
-    creedReliability = initialise_CREED_data_tibble(),
-    creedScores = initialise_CREED_scores_tibble(),
-    creedReport = "",
-
-    # CREED reactive objects that just exist to trigger reactivity. Probably bad coding!
-    creedGetData = 0, # watched by multiple observers in nested CREED modules. +1 every time we input$get_data in mod_CREED
-    creedCalculateScores = 0, # same
-
-    # LLM extracted data and metadata ----
-    schemaLLM = "",
-    promptLLM = "",
-    rawLLM = "",
-    pdfPath = NULL,
-    campaignDataLLM = tibble(NULL),
-    referenceDataLLM = tibble(NULL),
-    sitesDataLLM = tibble(NULL),
-    parametersDataLLM = tibble(NULL),
-    compartmentsDataLLM = tibble(NULL),
-    methodsDataLLM = tibble(NULL),
-    samplesDataLLM = tibble(NULL),
-    biotaDataLLM = tibble(NULL),
-    samplesDataLLM = tibble(NULL),
-
-    # LLM extraction status flags ----
-    llmExtractionComplete = FALSE,
-    llmExtractionSuccessful = FALSE,
-    llmExtractionComments = tibble(NULL),
-
-    # Import data from save status flags ----
-    saveExtractionComplete = FALSE,
-    saveExtractionSuccessful = FALSE
-  )
-}
-
+# Last Updated 2025.02.05
 
 # -----------------------
 # ---- TABLE FORMATS ----
@@ -625,7 +553,8 @@ environ_compartments_sub_vocabulary <- function() {
       "Leachate" = "Leachate",
       "Aquatic Sediment" = "Aquatic Sediment",
       "Porewater" = "Porewater",
-      "Sludge" = "Sludge"
+      "Sludge" = "Sludge",
+      "Snow/Ice" = "Snow/Ice"
     ),
     "Atmospheric" = c(
       "Indoor Air" = "Indoor Air",
@@ -743,6 +672,8 @@ tissue_types_vocabulary <- function() {
     "Gonad",
     "Shell",
     "Carapace",
+    "Digestive Gland", # TODO: New
+    "Mantle", # TODO: New
     "Blood",
     "Egg",
     "Larva",
