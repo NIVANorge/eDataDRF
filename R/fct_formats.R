@@ -11,7 +11,7 @@
 # ---- TABLE FORMATS ----
 # -----------------------
 
-#' Initialise Campaign Data Tibble
+#' Initialise a table to store formatted campaign data
 #'
 #' Creates an empty tibble with the standardised column structure for campaign data.
 #' Campaigns represent sampling projects or studies with metadata about timing,
@@ -37,7 +37,7 @@ initialise_campaign_tibble <- function() {
   )
 }
 
-#' Initialise Biota Data Tibble
+#' Initialise a table to store formatted biota data
 #'
 #' Creates an empty tibble with the standardised column structure for biota data.
 #' Biota data extends sample information with species-specific details including
@@ -67,7 +67,7 @@ initialise_biota_tibble <- function() {
 }
 
 
-#' Initialise Compartments Data Tibble
+#' Initialise a table to store formatted environmental compartment data
 #'
 #' Creates an empty tibble with the standardised column structure for environmental
 #' compartment data. Compartments define the environmental matrix and measurement
@@ -86,7 +86,7 @@ initialise_compartments_tibble <- function() {
   )
 }
 
-#' Initialise Methods Data Tibble
+#' Initialise a table to store formatted methodological data
 #'
 #' Creates an empty tibble with the standardised column structure for analytical
 #' methods data. Methods describe the protocols used for sampling, extraction,
@@ -106,12 +106,11 @@ initialise_methods_tibble <- function() {
   )
 }
 
-#' Initialise Parameters Data Tibble
+#' Initialise a table to store formatted stressor/parameter data
 #'
 #' Creates an empty tibble with the standardised column structure for parameter data.
 #' Parameters define chemical substances, physical properties, or biological markers
 #' being measured, including classification and chemical identifiers.
-#' Two immediate children: create_new_parameter() and create_existing_parameter() in mod_parameters_fct.R
 #'
 #' @return A tibble with 0 rows and standardised parameter columns
 #' @importFrom tibble tibble
@@ -132,7 +131,7 @@ initialise_parameters_tibble <- function() {
   )
 }
 
-#' Initialise References Data Tibble
+#' Initialise a table to store formatted academic citation data
 #'
 #' Creates an empty tibble with the standardised column structure for reference data.
 #' References provide bibliographic information for data sources including journals,
@@ -165,7 +164,7 @@ initialise_references_tibble <- function() {
   )
 }
 
-#' Initialise Samples Data Tibble
+#' Initialise a table to store formatted sampling combinations
 #'
 #' Creates an empty tibble with the standardised column structure for sample data.
 #' Samples represent individual collections from sites with temporal, spatial,
@@ -191,7 +190,7 @@ initialise_samples_tibble <- function() {
   )
 }
 
-#' Initialise Sites Data Tibble
+#' Initialise a table to store formatted geographical data
 #'
 #' Creates an empty tibble with the standardised column structure for site data.
 #' Sites represent sampling locations with geographic coordinates, administrative
@@ -220,7 +219,7 @@ initialise_sites_tibble <- function() {
   )
 }
 
-#' Initialise Measurements Data Tibble
+#' Initialise a table to store formatted measurement data
 #'
 #' Creates an empty tibble with the standardised column structure for measurements data.
 #'
@@ -263,7 +262,7 @@ initialise_measurements_tibble <- function() {
   )
 }
 
-#' Initialise CREED Scores Tibble
+#' Initialise a table to store CREED final score data
 #'
 #' Creates an empty tibble with the standardised column structure for CREED scores.
 #'
@@ -281,7 +280,7 @@ initialise_CREED_scores_tibble <- function() {
   )
 }
 
-#' Initialise CREED Scores Tibble
+#' Initialise a table to CREED critieria, relevant data, and scores
 #'
 #' Creates an empty tibble with the standardised column structure for CREED
 #' criterion scores. Used by both reliability and relevance modules to ensure
@@ -306,7 +305,7 @@ initialise_CREED_data_tibble <- function() {
 # ------ VOCABULARY ------
 # ------------------------
 
-#' Geographic Features Controlled Vocabulary
+#' Controlled vocabulary for SITE_GEOGRAPHIC_FEATURE
 #'
 #' Returns controlled vocabulary options for geographic features.
 #'
@@ -337,7 +336,7 @@ geographic_features_vocabulary <- function() {
   )
 }
 
-#' Geographic Features Sub Controlled Vocabulary
+#' Controlled vocabulary for SITE_GEOGRAPHIC_FEATURE_SUB
 #'
 #' Returns controlled vocabulary options for geographic feature subcategories.
 #'
@@ -354,7 +353,7 @@ geographic_features_sub_vocabulary <- function() {
   )
 }
 
-#' Coordinate Systems Controlled Vocabulary
+#' Controlled vocabulary for COORDINATE_SYSTEM
 #'
 #' Returns controlled vocabulary options for coordinate systems.
 #'
@@ -374,7 +373,7 @@ coordinate_systems_vocabulary <- function() {
   )
 }
 
-#' Countries Controlled Vocabulary
+#' Controlled vocabulary for COUNTRY_ISO
 #'
 #' Returns controlled vocabulary options for countries.
 #'
@@ -389,7 +388,7 @@ countries_vocabulary <- function() {
   )
 }
 
-#' Areas Controlled Vocabulary
+#' Controlled vocabulary for OCEAN_IHO
 #'
 #' Returns controlled vocabulary options for areas (IHO ocean regions).
 #'
@@ -415,7 +414,7 @@ areas_vocabulary <- function() {
   )
 }
 
-#' Altitude Units Controlled Vocabulary
+#' Controlled vocabulary for ALTITUDE_UNIT
 #'
 #' Returns controlled vocabulary options for altitude units.
 #'
@@ -473,7 +472,7 @@ dummy_parameters_vocabulary <- function() {
   bind_rows(dummy_quality_params, chemical_parameters)
 }
 
-#' Parameter Types Controlled Vocabulary
+#' Controlled vocabulary for PARAMETER_TYPE
 #'
 #' Returns controlled vocabulary options for parameter types.
 #'
@@ -491,7 +490,7 @@ parameter_types_vocabulary <- function() {
   )
 }
 
-#' Parameter Types Sub Controlled Vocabulary
+#' Controlled vocabulary for PARAMETER_TYPE_SUB
 #'
 #' Returns controlled vocabulary options for parameter type subcategories.
 #'
@@ -533,7 +532,7 @@ measured_types_vocabulary <- function() {
   )
 }
 
-#' Sub-compartment Options Mapping
+#' Controlled vocabulary for ENVIRON_COMPARTMENT_SUB
 #'
 #' Returns controlled vocabulary mapping for environmental sub-compartments organized by main compartment.
 #'
@@ -579,7 +578,7 @@ environ_compartments_sub_vocabulary <- function() {
   )
 }
 
-#' Environmental Compartments Controlled Vocabulary
+#' Controlled vocabulary for ENVIRON_COMPARTMENT
 #'
 #' Returns controlled vocabulary options for environmental compartments.
 #'
@@ -597,7 +596,7 @@ environ_compartments_vocabulary <- function() {
   )
 }
 
-#' Measured Categories Controlled Vocabulary
+#' Controlled vocabulary for MEASURED_CATEGORY
 #'
 #' Returns controlled vocabulary options for measured categories.
 #'
@@ -611,7 +610,7 @@ measured_categories_vocabulary <- function() {
   )
 }
 
-#' Species Controlled Vocabulary
+#' Controlled vocabulary for SAMPLE_SPECIES
 #'
 #' Returns species name options from ECOTOX data
 #'
@@ -645,7 +644,7 @@ species_names_vocabulary <- function() {
 }
 
 
-#' Initialise Tissue Types Controlled Vocabulary
+#' Controlled vocabulary for SAMPLE_TISSUE
 #'
 #' Returns controlled vocabulary options for sample tissue types.
 #'
@@ -686,7 +685,7 @@ tissue_types_vocabulary <- function() {
   )
 }
 
-#' Initialise Life Stages Controlled Vocabulary
+#' Controlled vocabulary for SAMPLE_SPECIES_LIFESTAGE
 #'
 #' Returns controlled vocabulary options for sample species life stages.
 #'
@@ -709,7 +708,7 @@ lifestage_vocabulary <- function() {
   )
 }
 
-#' Initialise Gender Controlled Vocabulary
+#' Controlled vocabulary for SAMPLE_SPECIES_GENDER
 #'
 #' Returns controlled vocabulary options for sample species gender.
 #'
@@ -727,7 +726,7 @@ gender_vocabulary <- function() {
   )
 }
 
-#' Species Groups Controlled Vocabulary
+#' Controlled vocabulary for SPECIES_GROUP
 #'
 #' Returns controlled vocabulary options for species groups. Taken from EPA ECOTOX db.
 #'
@@ -756,7 +755,7 @@ species_groups_vocabulary <- function() {
   )
 }
 
-#' Uncertainty Types Controlled Vocabulary
+#' Controlled vocabulary for UNCERTAINTY_TYPE
 #'
 #' Returns controlled vocabulary options for uncertainty types commonly found
 #' in scientific literature and databases.
@@ -797,8 +796,7 @@ uncertainty_types_vocabulary <- function() {
 # --- CHARACTER LIMITS ---
 # ------------------------
 
-### Character limit validations for optional fields ----
-#' reference_character_limits
+#' Character limits for fields in References
 #'
 #' @returns a list of character limits for fields in mod_references
 #'
@@ -830,7 +828,7 @@ reference_character_limits <- function() {
 # Protocol Vocabulary Functions ----
 # Each protocol type creates its own tribble, then combined with bind_rows
 
-#' Sampling Protocol Options Vocabulary
+#' Controlled vocabulary for PROTOCOL_NAME and PROTOCOL_TYPE (sampling protocols)
 #'
 #' Returns sampling protocol options as a tibble with Protocol_Type, Short_Name, and Long_Name columns.
 #'
@@ -865,7 +863,7 @@ sampling_protocols_vocabulary <- function() {
   )
 }
 
-#' Fractionation Protocol Options Vocabulary
+#' Controlled vocabulary for PROTOCOL_NAME and PROTOCOL_TYPE (fractionation protocols)
 #'
 #' Returns fractionation protocol options as a tibble with Protocol_Type, Short_Name, and Long_Name columns.
 #'
@@ -897,7 +895,7 @@ fractionation_protocols_vocabulary <- function() {
   )
 }
 
-#' Extraction Protocol Options Vocabulary
+#' Controlled vocabulary for PROTOCOL_NAME and PROTOCOL_TYPE (extraction protocols)
 #'
 #' Returns extraction protocol options as a tibble with Protocol_Type, Short_Name, and Long_Name columns.
 #'
@@ -929,7 +927,7 @@ extraction_protocols_vocabulary <- function() {
   )
 }
 
-#' Analytical Protocol Options Vocabulary
+#' Controlled vocabulary for PROTOCOL_NAME and PROTOCOL_TYPE (analytical protocols)
 #'
 #' Returns analytical protocol options as a tibble with Protocol_Type, Short_Name, and Long_Name columns.
 #'
@@ -957,7 +955,7 @@ analytical_protocols_vocabulary <- function() {
   )
 }
 
-#' Protocol Options Data
+#' Controlled vocabulary for PROTOCOL_NAME and PROTOCOL_TYPE (all protocols)
 #'
 #' Returns all protocol options data by combining all individual protocol vocabularies.
 #'
@@ -973,7 +971,7 @@ protocol_options_vocabulary <- function() {
   )
 }
 
-#' Protocol Categories Controlled Vocabulary
+#' Controlled vocabulary for PROTOCOL_TYPE
 #'
 #' Returns controlled vocabulary options for protocol categories.
 #'
@@ -1016,7 +1014,7 @@ parameter_unit_vocabulary <- function(select_column = NULL) {
 }
 
 
-#' Measurement Flags Controlled Vocabulary
+#' Controlled vocabulary for MEASUREMENT_FLAG
 #'
 #' Returns measurement flag options.
 #'
@@ -1027,7 +1025,7 @@ measured_flags_vocabulary <- function() {
 }
 
 
-#' CREED Assessment Scoring Choices
+#' Controlled vocabulary for CREED Scores
 #'
 #' @description Returns the standardised CREED assessment scoring options
 #' @return Named character vector with CREED scoring choices

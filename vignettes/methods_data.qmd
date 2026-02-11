@@ -1,5 +1,5 @@
 ---
-title: "methods_data"
+title: "Methods table"
 vignette: >
   %\VignetteIndexEntry{methods_data}
   %\VignetteEngine{quarto::html}
@@ -13,4 +13,10 @@ knitr:
 ```{r}
 #| label: setup
 library(eDataDRF)
+
+initialise_methods_tibble()
 ```
+
+Really we should be using the Chemical Methods ontology here, but implementing it now will require a fair amount of structural redesign, so for now it's firmly in the todo category.
+
+The Methods table is a metadata table that is transformed before being linked to the \[Measurements table\] {Measurements table}.

@@ -74,7 +74,8 @@ abbreviate_string <- function(
   return(result)
 }
 
-#' Generate Protocol ID ----
+#' Generate a semi-unique string ID for a protocol based on its type,
+#' name, the campaign name, and a sequence number
 #'
 #' @description
 #' Generates a standardised protocol identifier based on protocol type, name,

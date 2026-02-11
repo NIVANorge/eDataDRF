@@ -1,5 +1,5 @@
 ---
-title: "measurements_data"
+title: "Measurements Table"
 vignette: >
   %\VignetteIndexEntry{measurements_data}
   %\VignetteEngine{quarto::html}
