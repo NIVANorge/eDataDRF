@@ -1,8 +1,19 @@
 pandoc: 3.1.11
 pkgdown: 2.2.0
 pkgdown_sha: ~
-articles: {}
-last_built: 2026-02-11T08:54Z
+articles:
+  biota_data: biota_data.html
+  campaign_data: campaign_data.html
+  compartments_data: compartments_data.html
+  CREED_data: CREED_data.html
+  CREED_scores_data: CREED_scores_data.html
+  measurements_data: measurements_data.html
+  methods_data: methods_data.html
+  parameters_data: parameters_data.html
+  references_data: references_data.html
+  samples_data: samples_data.html
+  sites_data: sites_data.html
+last_built: 2026-02-11T10:01Z
 urls:
   reference: https://NIVANorge.github.io/eDataDRF/reference
   article: https://NIVANorge.github.io/eDataDRF/articles

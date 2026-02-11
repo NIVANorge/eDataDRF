@@ -1,45 +1,9 @@
 # Package index
 
-## All functions
+## Initialise tibbles
 
-- [`CREED_choices_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/CREED_choices_vocabulary.md)
-  : CREED Assessment Scoring Choices
-- [`abbreviate_string()`](https://NIVANorge.github.io/eDataDRF/reference/abbreviate_string.md)
-  : Abbreviate string to first n words with case formatting
-- [`altitude_units_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/altitude_units_vocabulary.md)
-  : Altitude Units Controlled Vocabulary
-- [`analytical_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/analytical_protocols_vocabulary.md)
-  : Analytical Protocol Options Vocabulary
-- [`areas_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/areas_vocabulary.md)
-  : Areas Controlled Vocabulary
-- [`coordinate_systems_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/coordinate_systems_vocabulary.md)
-  : Coordinate Systems Controlled Vocabulary
-- [`countries_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/countries_vocabulary.md)
-  : Countries Controlled Vocabulary
-- [`dummy_parameters_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/dummy_parameters_vocabulary.md)
-  : Dummy Parameters Data
-- [`environ_compartments_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/environ_compartments_sub_vocabulary.md)
-  : Sub-compartment Options Mapping
-- [`environ_compartments_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/environ_compartments_vocabulary.md)
-  : Environmental Compartments Controlled Vocabulary
-- [`export_campaign_zip()`](https://NIVANorge.github.io/eDataDRF/reference/export_campaign_zip.md)
-  : Export Multiple Datasets as ZIP of CSV Files
-- [`extraction_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/extraction_protocols_vocabulary.md)
-  : Extraction Protocol Options Vocabulary
-- [`fractionation_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/fractionation_protocols_vocabulary.md)
-  : Fractionation Protocol Options Vocabulary
-- [`gender_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/gender_vocabulary.md)
-  : Initialise Gender Controlled Vocabulary
-- [`generate_protocol_id()`](https://NIVANorge.github.io/eDataDRF/reference/generate_protocol_id.md)
-  : Generate Protocol ID —-
-- [`generate_reference_id()`](https://NIVANorge.github.io/eDataDRF/reference/generate_reference_id.md)
-  : Generate Reference ID
-- [`geographic_features_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/geographic_features_sub_vocabulary.md)
-  : Geographic Features Sub Controlled Vocabulary
-- [`geographic_features_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/geographic_features_vocabulary.md)
-  : Geographic Features Controlled Vocabulary
-- [`get_dataset_display_name()`](https://NIVANorge.github.io/eDataDRF/reference/get_dataset_display_name.md)
-  : Get Dataset Display Name
+Create empty versions of the format’s tables as R tibble objects
+
 - [`initialise_CREED_data_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_CREED_data_tibble.md)
   : Initialise CREED Scores Tibble
 - [`initialise_CREED_scores_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_CREED_scores_tibble.md)
@@ -62,6 +26,39 @@
   : Initialise Samples Data Tibble
 - [`initialise_sites_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_sites_tibble.md)
   : Initialise Sites Data Tibble
+
+## Controlled vocabulary
+
+Vectors (and sometimes tibbles) of controlled vocabulary
+
+- [`CREED_choices_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/CREED_choices_vocabulary.md)
+  : CREED Assessment Scoring Choices
+- [`altitude_units_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/altitude_units_vocabulary.md)
+  : Altitude Units Controlled Vocabulary
+- [`analytical_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/analytical_protocols_vocabulary.md)
+  : Analytical Protocol Options Vocabulary
+- [`areas_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/areas_vocabulary.md)
+  : Areas Controlled Vocabulary
+- [`coordinate_systems_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/coordinate_systems_vocabulary.md)
+  : Coordinate Systems Controlled Vocabulary
+- [`countries_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/countries_vocabulary.md)
+  : Countries Controlled Vocabulary
+- [`dummy_parameters_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/dummy_parameters_vocabulary.md)
+  : Dummy Parameters Data
+- [`environ_compartments_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/environ_compartments_sub_vocabulary.md)
+  : Sub-compartment Options Mapping
+- [`environ_compartments_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/environ_compartments_vocabulary.md)
+  : Environmental Compartments Controlled Vocabulary
+- [`extraction_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/extraction_protocols_vocabulary.md)
+  : Extraction Protocol Options Vocabulary
+- [`fractionation_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/fractionation_protocols_vocabulary.md)
+  : Fractionation Protocol Options Vocabulary
+- [`gender_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/gender_vocabulary.md)
+  : Initialise Gender Controlled Vocabulary
+- [`geographic_features_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/geographic_features_sub_vocabulary.md)
+  : Geographic Features Sub Controlled Vocabulary
+- [`geographic_features_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/geographic_features_vocabulary.md)
+  : Geographic Features Controlled Vocabulary
 - [`lifestage_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/lifestage_vocabulary.md)
   : Initialise Life Stages Controlled Vocabulary
 - [`measured_categories_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/measured_categories_vocabulary.md)
@@ -80,8 +77,6 @@
   : Protocol Categories Controlled Vocabulary
 - [`protocol_options_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_options_vocabulary.md)
   : Protocol Options Data
-- [`reference_character_limits()`](https://NIVANorge.github.io/eDataDRF/reference/reference_character_limits.md)
-  : reference_character_limits
 - [`sampling_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/sampling_protocols_vocabulary.md)
   : Sampling Protocol Options Vocabulary
 - [`species_groups_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/species_groups_vocabulary.md)
@@ -92,3 +87,30 @@
   : Initialise Tissue Types Controlled Vocabulary
 - [`uncertainty_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/uncertainty_types_vocabulary.md)
   : Uncertainty Types Controlled Vocabulary
+
+## Character limits
+
+We should perhaps have more than one of these, eh?
+
+- [`reference_character_limits()`](https://NIVANorge.github.io/eDataDRF/reference/reference_character_limits.md)
+  : reference_character_limits
+
+## Generate IDs
+
+Generate ID strings based on abbreviated titles
+
+- [`abbreviate_string()`](https://NIVANorge.github.io/eDataDRF/reference/abbreviate_string.md)
+  : Abbreviate string to first n words with case formatting
+- [`generate_reference_id()`](https://NIVANorge.github.io/eDataDRF/reference/generate_reference_id.md)
+  : Generate Reference ID
+- [`generate_protocol_id()`](https://NIVANorge.github.io/eDataDRF/reference/generate_protocol_id.md)
+  : Generate Protocol ID —-
+
+## Export
+
+Export tables as zipped CSV files
+
+- [`get_dataset_display_name()`](https://NIVANorge.github.io/eDataDRF/reference/get_dataset_display_name.md)
+  : Get Dataset Display Name
+- [`export_campaign_zip()`](https://NIVANorge.github.io/eDataDRF/reference/export_campaign_zip.md)
+  : Export Multiple Datasets as ZIP of CSV Files

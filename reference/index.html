@@ -16,6 +16,20 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/biota_data.html">biota_data</a></li>
+    <li><a class="dropdown-item" href="../articles/campaign_data.html">campaign_data</a></li>
+    <li><a class="dropdown-item" href="../articles/compartments_data.html">compartments_data</a></li>
+    <li><a class="dropdown-item" href="../articles/CREED_data.html">CREED_data</a></li>
+    <li><a class="dropdown-item" href="../articles/CREED_scores_data.html">CREED_scores_data</a></li>
+    <li><a class="dropdown-item" href="../articles/measurements_data.html">measurements_data</a></li>
+    <li><a class="dropdown-item" href="../articles/methods_data.html">methods_data</a></li>
+    <li><a class="dropdown-item" href="../articles/parameters_data.html">parameters_data</a></li>
+    <li><a class="dropdown-item" href="../articles/references_data.html">references_data</a></li>
+    <li><a class="dropdown-item" href="../articles/samples_data.html">samples_data</a></li>
+    <li><a class="dropdown-item" href="../articles/sites_data.html">sites_data</a></li>
+  </ul></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
@@ -31,9 +45,9 @@
     </div>
 
     <div class="section level2">
-      <h2 id="all-functions">All functions<a class="anchor" aria-label="anchor" href="#all-functions"></a></h2>
+      <h2 id="initialise-tibbles">Initialise tibbles<a class="anchor" aria-label="anchor" href="#initialise-tibbles"></a></h2>
 
-
+      <div class="section-desc"><p>Create empty versions of the format’s tables as R tibble objects</p></div>
 
       <dl></dl></div><div class="section level2">
 
@@ -41,139 +55,6 @@
 
 
       <dl><dt>
-
-          <code><a href="CREED_choices_vocabulary.html">CREED_choices_vocabulary()</a></code>
-
-        </dt>
-        <dd>CREED Assessment Scoring Choices</dd>
-
-        <dt>
-
-          <code><a href="abbreviate_string.html">abbreviate_string()</a></code>
-
-        </dt>
-        <dd>Abbreviate string to first n words with case formatting</dd>
-
-        <dt>
-
-          <code><a href="altitude_units_vocabulary.html">altitude_units_vocabulary()</a></code>
-
-        </dt>
-        <dd>Altitude Units Controlled Vocabulary</dd>
-
-        <dt>
-
-          <code><a href="analytical_protocols_vocabulary.html">analytical_protocols_vocabulary()</a></code>
-
-        </dt>
-        <dd>Analytical Protocol Options Vocabulary</dd>
-
-        <dt>
-
-          <code><a href="areas_vocabulary.html">areas_vocabulary()</a></code>
-
-        </dt>
-        <dd>Areas Controlled Vocabulary</dd>
-
-        <dt>
-
-          <code><a href="coordinate_systems_vocabulary.html">coordinate_systems_vocabulary()</a></code>
-
-        </dt>
-        <dd>Coordinate Systems Controlled Vocabulary</dd>
-
-        <dt>
-
-          <code><a href="countries_vocabulary.html">countries_vocabulary()</a></code>
-
-        </dt>
-        <dd>Countries Controlled Vocabulary</dd>
-
-        <dt>
-
-          <code><a href="dummy_parameters_vocabulary.html">dummy_parameters_vocabulary()</a></code>
-
-        </dt>
-        <dd>Dummy Parameters Data</dd>
-
-        <dt>
-
-          <code><a href="environ_compartments_sub_vocabulary.html">environ_compartments_sub_vocabulary()</a></code>
-
-        </dt>
-        <dd>Sub-compartment Options Mapping</dd>
-
-        <dt>
-
-          <code><a href="environ_compartments_vocabulary.html">environ_compartments_vocabulary()</a></code>
-
-        </dt>
-        <dd>Environmental Compartments Controlled Vocabulary</dd>
-
-        <dt>
-
-          <code><a href="export_campaign_zip.html">export_campaign_zip()</a></code>
-
-        </dt>
-        <dd>Export Multiple Datasets as ZIP of CSV Files</dd>
-
-        <dt>
-
-          <code><a href="extraction_protocols_vocabulary.html">extraction_protocols_vocabulary()</a></code>
-
-        </dt>
-        <dd>Extraction Protocol Options Vocabulary</dd>
-
-        <dt>
-
-          <code><a href="fractionation_protocols_vocabulary.html">fractionation_protocols_vocabulary()</a></code>
-
-        </dt>
-        <dd>Fractionation Protocol Options Vocabulary</dd>
-
-        <dt>
-
-          <code><a href="gender_vocabulary.html">gender_vocabulary()</a></code>
-
-        </dt>
-        <dd>Initialise Gender Controlled Vocabulary</dd>
-
-        <dt>
-
-          <code><a href="generate_protocol_id.html">generate_protocol_id()</a></code>
-
-        </dt>
-        <dd>Generate Protocol ID —-</dd>
-
-        <dt>
-
-          <code><a href="generate_reference_id.html">generate_reference_id()</a></code>
-
-        </dt>
-        <dd>Generate Reference ID</dd>
-
-        <dt>
-
-          <code><a href="geographic_features_sub_vocabulary.html">geographic_features_sub_vocabulary()</a></code>
-
-        </dt>
-        <dd>Geographic Features Sub Controlled Vocabulary</dd>
-
-        <dt>
-
-          <code><a href="geographic_features_vocabulary.html">geographic_features_vocabulary()</a></code>
-
-        </dt>
-        <dd>Geographic Features Controlled Vocabulary</dd>
-
-        <dt>
-
-          <code><a href="get_dataset_display_name.html">get_dataset_display_name()</a></code>
-
-        </dt>
-        <dd>Get Dataset Display Name</dd>
-
-        <dt>
 
           <code><a href="initialise_CREED_data_tibble.html">initialise_CREED_data_tibble()</a></code>
 
@@ -249,6 +130,113 @@
 
         </dt>
         <dd>Initialise Sites Data Tibble</dd>
+      </dl></div><div class="section level2">
+      <h2 id="controlled-vocabulary">Controlled vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a></h2>
+
+      <div class="section-desc"><p>Vectors (and sometimes tibbles) of controlled vocabulary</p></div>
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="CREED_choices_vocabulary.html">CREED_choices_vocabulary()</a></code>
+
+        </dt>
+        <dd>CREED Assessment Scoring Choices</dd>
+
+        <dt>
+
+          <code><a href="altitude_units_vocabulary.html">altitude_units_vocabulary()</a></code>
+
+        </dt>
+        <dd>Altitude Units Controlled Vocabulary</dd>
+
+        <dt>
+
+          <code><a href="analytical_protocols_vocabulary.html">analytical_protocols_vocabulary()</a></code>
+
+        </dt>
+        <dd>Analytical Protocol Options Vocabulary</dd>
+
+        <dt>
+
+          <code><a href="areas_vocabulary.html">areas_vocabulary()</a></code>
+
+        </dt>
+        <dd>Areas Controlled Vocabulary</dd>
+
+        <dt>
+
+          <code><a href="coordinate_systems_vocabulary.html">coordinate_systems_vocabulary()</a></code>
+
+        </dt>
+        <dd>Coordinate Systems Controlled Vocabulary</dd>
+
+        <dt>
+
+          <code><a href="countries_vocabulary.html">countries_vocabulary()</a></code>
+
+        </dt>
+        <dd>Countries Controlled Vocabulary</dd>
+
+        <dt>
+
+          <code><a href="dummy_parameters_vocabulary.html">dummy_parameters_vocabulary()</a></code>
+
+        </dt>
+        <dd>Dummy Parameters Data</dd>
+
+        <dt>
+
+          <code><a href="environ_compartments_sub_vocabulary.html">environ_compartments_sub_vocabulary()</a></code>
+
+        </dt>
+        <dd>Sub-compartment Options Mapping</dd>
+
+        <dt>
+
+          <code><a href="environ_compartments_vocabulary.html">environ_compartments_vocabulary()</a></code>
+
+        </dt>
+        <dd>Environmental Compartments Controlled Vocabulary</dd>
+
+        <dt>
+
+          <code><a href="extraction_protocols_vocabulary.html">extraction_protocols_vocabulary()</a></code>
+
+        </dt>
+        <dd>Extraction Protocol Options Vocabulary</dd>
+
+        <dt>
+
+          <code><a href="fractionation_protocols_vocabulary.html">fractionation_protocols_vocabulary()</a></code>
+
+        </dt>
+        <dd>Fractionation Protocol Options Vocabulary</dd>
+
+        <dt>
+
+          <code><a href="gender_vocabulary.html">gender_vocabulary()</a></code>
+
+        </dt>
+        <dd>Initialise Gender Controlled Vocabulary</dd>
+
+        <dt>
+
+          <code><a href="geographic_features_sub_vocabulary.html">geographic_features_sub_vocabulary()</a></code>
+
+        </dt>
+        <dd>Geographic Features Sub Controlled Vocabulary</dd>
+
+        <dt>
+
+          <code><a href="geographic_features_vocabulary.html">geographic_features_vocabulary()</a></code>
+
+        </dt>
+        <dd>Geographic Features Controlled Vocabulary</dd>
 
         <dt>
 
@@ -315,13 +303,6 @@
 
         <dt>
 
-          <code><a href="reference_character_limits.html">reference_character_limits()</a></code>
-
-        </dt>
-        <dd>reference_character_limits</dd>
-
-        <dt>
-
           <code><a href="sampling_protocols_vocabulary.html">sampling_protocols_vocabulary()</a></code>
 
         </dt>
@@ -354,8 +335,78 @@
 
         </dt>
         <dd>Uncertainty Types Controlled Vocabulary</dd>
+      </dl></div><div class="section level2">
+      <h2 id="character-limits">Character limits<a class="anchor" aria-label="anchor" href="#character-limits"></a></h2>
+
+      <div class="section-desc"><p>We should perhaps have more than one of these, eh?</p></div>
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="reference_character_limits.html">reference_character_limits()</a></code>
+
+        </dt>
+        <dd>reference_character_limits</dd>
+      </dl></div><div class="section level2">
+      <h2 id="generate-ids">Generate IDs<a class="anchor" aria-label="anchor" href="#generate-ids"></a></h2>
+
+      <div class="section-desc"><p>Generate ID strings based on abbreviated titles</p></div>
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="abbreviate_string.html">abbreviate_string()</a></code>
+
+        </dt>
+        <dd>Abbreviate string to first n words with case formatting</dd>
+
+        <dt>
+
+          <code><a href="generate_reference_id.html">generate_reference_id()</a></code>
+
+        </dt>
+        <dd>Generate Reference ID</dd>
+
+        <dt>
+
+          <code><a href="generate_protocol_id.html">generate_protocol_id()</a></code>
+
+        </dt>
+        <dd>Generate Protocol ID —-</dd>
+      </dl></div><div class="section level2">
+      <h2 id="export">Export<a class="anchor" aria-label="anchor" href="#export"></a></h2>
+
+      <div class="section-desc"><p>Export tables as zipped CSV files</p></div>
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="get_dataset_display_name.html">get_dataset_display_name()</a></code>
+
+        </dt>
+        <dd>Get Dataset Display Name</dd>
+
+        <dt>
+
+          <code><a href="export_campaign_zip.html">export_campaign_zip()</a></code>
+
+        </dt>
+        <dd>Export Multiple Datasets as ZIP of CSV Files</dd>
       </dl></div>
-  </main></div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside></div>
 
 
     <footer><div class="pkgdown-footer-left">

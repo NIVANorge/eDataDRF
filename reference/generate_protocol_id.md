@@ -41,7 +41,7 @@ generate_protocol_id(
 ## Value
 
 Character vector of protocol IDs with format:
-`{TypeCode}{SequenceNumber}_{AbbreviatedName}_{CampaignAbbrev}`
+`TypeCodeSequenceNumber_AbbreviatedName_CampaignAbbrev`
 
 Where:
 
