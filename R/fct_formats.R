@@ -379,7 +379,7 @@ coordinate_systems_vocabulary <- function() {
 #' Returns controlled vocabulary options for countries.
 #'
 #' @return A character vector of country options
-#' @importFrom ISOcodes ISO_3166_1
+#' @import ISOcodes
 #' @export
 countries_vocabulary <- function() {
   c(

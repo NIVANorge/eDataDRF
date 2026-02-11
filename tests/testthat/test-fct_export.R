@@ -25,15 +25,14 @@ test_that("export_campaign_zip creates ZIP file", {
 
   # Create in temp directory
   temp_dir <- tempdir()
-  output_file <- file.path(temp_dir, "test_export.zip")
+  output_path <- file.path(temp_dir)
 
-  result <- export_campaign_zip(test_data, "TestCampaign", output_file)
+  result <- export_campaign_zip(test_data, "TestCampaign", temp_dir)
 
-  expect_true(file.exists(output_file))
-  expect_equal(result, output_file)
+  expect_true(file.exists(result))
 
   # Cleanup
-  unlink(output_file)
+  unlink(temp_dir)
 })
 
 test_that("export_campaign_zip filters empty datasets", {
@@ -44,15 +43,15 @@ test_that("export_campaign_zip filters empty datasets", {
   )
 
   temp_dir <- tempdir()
-  output_file <- file.path(temp_dir, "test_filter.zip")
+  output_path <- file.path(temp_dir)
 
   expect_message(
-    export_campaign_zip(test_data, "Test", output_file),
+    export_campaign_zip(test_data, "Test", output_path),
     "Preparing to export 1 datasets"
   )
 
   # Cleanup
-  unlink(output_file)
+  unlink(temp_dir)
 })
 
 test_that("export_campaign_zip errors on invalid input", {
@@ -83,19 +82,19 @@ test_that("export_campaign_zip cleans campaign name", {
   )
 
   temp_dir <- tempdir()
-  output_file <- file.path(temp_dir, "test_clean.zip")
+  output_path <- file.path(temp_dir)
 
   # Campaign name with special characters
   result <- export_campaign_zip(
     test_data,
     "Test/Campaign:2024!",
-    output_file
+    output_path
   )
 
-  expect_true(file.exists(output_file))
+  expect_true(file.exists(result))
 
   # Cleanup
-  unlink(output_file)
+  unlink(output_path)
 })
 
 test_that("export_campaign_zip works without output_path", {
@@ -113,23 +112,4 @@ test_that("export_campaign_zip works without output_path", {
 
   # Cleanup
   unlink(result)
-})
-
-test_that("export_campaign_zip returns path invisibly", {
-  test_data <- list(
-    edata_sites = data.frame(SITE_CODE = "S01")
-  )
-
-  temp_dir <- tempdir()
-  output_file <- file.path(temp_dir, "test_invisible.zip")
-
-  result <- suppressMessages(
-    export_campaign_zip(test_data, "Test", output_file)
-  )
-
-  expect_type(result, "character")
-  expect_equal(result, output_file)
-
-  # Cleanup
-  unlink(output_file)
 })

@@ -112,7 +112,11 @@ export_campaign_zip <- function(
   campaign <- gsub("[^A-Za-z0-9_]", "_", campaign_name)
   zip_filename <- glue("{campaign}_{timestamp}.zip")
 
-  output_path <- file.path(getwd(), zip_filename)
+  if (is.null(output_path)) {
+    output_path <- file.path(getwd(), zip_filename)
+  } else {
+    output_path <- file.path(output_path, zip_filename)
+  }
 
   # Create temporary directory for CSV files ----
   temp_dir <- tempfile("campaign_export_")

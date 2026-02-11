@@ -27,7 +27,7 @@ Will be abbreviated to first 10 alphanumeric characters. Defaults to "".}
 }
 \value{
 Character vector of protocol IDs with format:
-\verb{\{TypeCode\}\{SequenceNumber\}_\{AbbreviatedName\}_\{CampaignAbbrev\}}
+\code{TypeCodeSequenceNumber_AbbreviatedName_CampaignAbbrev}
 
 Where:
 \itemize{
