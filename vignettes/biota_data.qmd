@@ -10,6 +10,8 @@ knitr:
     comment: '#>'
 ---
 
+Data on sampled biota, if relevant.
+
 ```{r}
 #| label: setup
 library(eDataDRF)

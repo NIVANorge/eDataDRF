@@ -53,3 +53,5 @@ inst/doc
 
 # R code not intended for inclusion
 scratchpad/
+/doc/
+/Meta/

@@ -9,9 +9,11 @@ navbar:
   components:
     articles:
     text: Articles
-      menu: 
+    menu: 
       - text: Campaign data
-        href: vignettes/camapaign_data.html
+        href: vignettes/campaign_data.html
+      - text: Reference data
+        href: vignettes/references_data.html
 
 
 
