@@ -2,13 +2,64 @@
 % Please edit documentation in R/fct_formats.R
 \name{extraction_protocols_vocabulary}
 \alias{extraction_protocols_vocabulary}
-\title{Controlled vocabulary for PROTOCOL_NAME and PROTOCOL_TYPE (extraction protocols)}
+\title{Extraction protocols controlled vocabulary}
 \usage{
 extraction_protocols_vocabulary()
 }
 \value{
-A tibble with extraction protocol options
+A tibble with Protocol_Type, Short_Name, and Long_Name columns
 }
 \description{
-Returns extraction protocol options as a tibble with Protocol_Type, Short_Name, and Long_Name columns.
+Returns extraction protocol options with short and long names.
 }
+\details{
+Provides standardised extraction method classifications as a tibble with three columns:
+
+Protocol_Type: Always "Extraction Protocol"
+
+Short_Name: Abbreviated protocol name (e.g., "Methanol", "SPE Isolute Env+", "QuEChERS")
+
+Long_Name: Full descriptive name (e.g., "Methanol extraction", "Solid phase extraction with Isolute Env+ cartridge", "Quick easy cheap effective rugged safe extraction")
+
+Available protocols include: Not relevant, Not reported, None, Methanol, Dichloromethane, SPE Isolute Env+, Membrane filtration 0.45um, Membrane filtration 0.2um, Membrane filtration, Filtration, Microwave-assisted acid digestion, Acid digestion, Pressurised liquid, Ultrasonic, Soxhlet, QuEChERS, Accelerated solvent, Sequential extraction, Other
+}
+\seealso{
+Other vocabulary: 
+\code{\link{CREED_choices_vocabulary}()},
+\code{\link{altitude_units_vocabulary}()},
+\code{\link{analytical_protocols_vocabulary}()},
+\code{\link{areas_vocabulary}()},
+\code{\link{coordinate_systems_vocabulary}()},
+\code{\link{countries_vocabulary}()},
+\code{\link{dummy_parameters_vocabulary}()},
+\code{\link{environ_compartments_sub_vocabulary}()},
+\code{\link{environ_compartments_vocabulary}()},
+\code{\link{fractionation_protocols_vocabulary}()},
+\code{\link{gender_vocabulary}()},
+\code{\link{geographic_features_sub_vocabulary}()},
+\code{\link{geographic_features_vocabulary}()},
+\code{\link{lifestage_vocabulary}()},
+\code{\link{measured_categories_vocabulary}()},
+\code{\link{measured_flags_vocabulary}()},
+\code{\link{measured_types_vocabulary}()},
+\code{\link{parameter_types_sub_vocabulary}()},
+\code{\link{parameter_types_vocabulary}()},
+\code{\link{parameter_unit_vocabulary}()},
+\code{\link{protocol_categories_vocabulary}()},
+\code{\link{protocol_options_vocabulary}()},
+\code{\link{sampling_protocols_vocabulary}()},
+\code{\link{species_groups_vocabulary}()},
+\code{\link{species_names_vocabulary}()},
+\code{\link{tissue_types_vocabulary}()},
+\code{\link{uncertainty_types_vocabulary}()}
+
+Other method: 
+\code{\link{analytical_protocols_vocabulary}()},
+\code{\link{fractionation_protocols_vocabulary}()},
+\code{\link{initialise_methods_tibble}()},
+\code{\link{protocol_categories_vocabulary}()},
+\code{\link{protocol_options_vocabulary}()},
+\code{\link{sampling_protocols_vocabulary}()}
+}
+\concept{method}
+\concept{vocabulary}

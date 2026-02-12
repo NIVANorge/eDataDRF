@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{protocol_options_vocabulary}
 \alias{protocol_options_vocabulary}
-\title{Controlled vocabulary for PROTOCOL_NAME and PROTOCOL_TYPE (all protocols)}
+\title{All protocols controlled vocabulary}
 \usage{
 protocol_options_vocabulary()
 }
@@ -10,5 +10,59 @@ protocol_options_vocabulary()
 A tibble with Protocol_Type, Short_Name, and Long_Name columns for all protocols
 }
 \description{
-Returns all protocol options data by combining all individual protocol vocabularies.
+Returns combined protocol options from all protocol categories.
 }
+\details{
+Combines all protocol vocabularies (sampling, fractionation, extraction, and analytical)
+into a single comprehensive tibble. Contains columns:
+
+Protocol_Type: Category of protocol (Sampling, Fractionation, Extraction, or Analytical Protocol)
+
+Short_Name: Abbreviated protocol name
+
+Long_Name: Full descriptive protocol name
+
+This function aggregates results from sampling_protocols_vocabulary(),
+fractionation_protocols_vocabulary(), extraction_protocols_vocabulary(), and
+analytical_protocols_vocabulary().
+}
+\seealso{
+Other vocabulary: 
+\code{\link{CREED_choices_vocabulary}()},
+\code{\link{altitude_units_vocabulary}()},
+\code{\link{analytical_protocols_vocabulary}()},
+\code{\link{areas_vocabulary}()},
+\code{\link{coordinate_systems_vocabulary}()},
+\code{\link{countries_vocabulary}()},
+\code{\link{dummy_parameters_vocabulary}()},
+\code{\link{environ_compartments_sub_vocabulary}()},
+\code{\link{environ_compartments_vocabulary}()},
+\code{\link{extraction_protocols_vocabulary}()},
+\code{\link{fractionation_protocols_vocabulary}()},
+\code{\link{gender_vocabulary}()},
+\code{\link{geographic_features_sub_vocabulary}()},
+\code{\link{geographic_features_vocabulary}()},
+\code{\link{lifestage_vocabulary}()},
+\code{\link{measured_categories_vocabulary}()},
+\code{\link{measured_flags_vocabulary}()},
+\code{\link{measured_types_vocabulary}()},
+\code{\link{parameter_types_sub_vocabulary}()},
+\code{\link{parameter_types_vocabulary}()},
+\code{\link{parameter_unit_vocabulary}()},
+\code{\link{protocol_categories_vocabulary}()},
+\code{\link{sampling_protocols_vocabulary}()},
+\code{\link{species_groups_vocabulary}()},
+\code{\link{species_names_vocabulary}()},
+\code{\link{tissue_types_vocabulary}()},
+\code{\link{uncertainty_types_vocabulary}()}
+
+Other method: 
+\code{\link{analytical_protocols_vocabulary}()},
+\code{\link{extraction_protocols_vocabulary}()},
+\code{\link{fractionation_protocols_vocabulary}()},
+\code{\link{initialise_methods_tibble}()},
+\code{\link{protocol_categories_vocabulary}()},
+\code{\link{sampling_protocols_vocabulary}()}
+}
+\concept{method}
+\concept{vocabulary}

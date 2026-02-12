@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_sites_tibble}
 \alias{initialise_sites_tibble}
-\title{Initialise a table to store formatted geographical data}
+\title{Initialise sites tibble}
 \usage{
 initialise_sites_tibble()
 }
@@ -11,6 +11,60 @@ A tibble with 0 rows and standardised site columns
 }
 \description{
 Creates an empty tibble with the standardised column structure for site data.
-Sites represent sampling locations with geographic coordinates, administrative
-boundaries, and descriptive metadata about the sampling location.
 }
+\details{
+Sites represent sampling locations with geographic coordinates, administrative
+boundaries, and descriptive metadata about the sampling location. The tibble
+includes the following columns:
+
+SITE_CODE: Unique code identifying the site (Primary Key)
+
+SITE_NAME: Descriptive name of the sampling site
+
+SITE_GEOGRAPHIC_FEATURE: Broad geographic feature type
+
+SITE_GEOGRAPHIC_FEATURE_SUB: Specific sub-category of the geographic feature
+
+COUNTRY_ISO: ISO country code where the site is located
+
+OCEAN_IHO: International Hydrographic Organisation ocean region
+
+LATITUDE: Latitude coordinate in decimal degrees
+
+LONGITUDE: Longitude coordinate in decimal degrees
+
+SITE_COORDINATE_SYSTEM: Coordinate reference system used
+
+ALTITUDE_VALUE: Elevation or depth value
+
+ALTITUDE_UNIT: Unit of measurement for altitude
+
+ENTERED_BY: Person or entity who entered the site data
+
+ENTERED_DATE: Date when the site data was entered
+
+SITE_COMMENT: Additional notes about the site
+}
+\seealso{
+Other initialise_tibble: 
+\code{\link{initialise_CREED_data_tibble}()},
+\code{\link{initialise_CREED_scores_tibble}()},
+\code{\link{initialise_biota_tibble}()},
+\code{\link{initialise_campaign_tibble}()},
+\code{\link{initialise_compartments_tibble}()},
+\code{\link{initialise_measurements_tibble}()},
+\code{\link{initialise_methods_tibble}()},
+\code{\link{initialise_parameters_tibble}()},
+\code{\link{initialise_references_tibble}()},
+\code{\link{initialise_samples_tibble}()}
+
+Other site: 
+\code{\link{altitude_units_vocabulary}()},
+\code{\link{areas_vocabulary}()},
+\code{\link{coordinate_systems_vocabulary}()},
+\code{\link{countries_vocabulary}()},
+\code{\link{geographic_features_sub_vocabulary}()},
+\code{\link{geographic_features_vocabulary}()}
+}
+\concept{initialise_tibble}
+\concept{site}

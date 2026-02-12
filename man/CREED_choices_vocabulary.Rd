@@ -2,13 +2,63 @@
 % Please edit documentation in R/fct_formats.R
 \name{CREED_choices_vocabulary}
 \alias{CREED_choices_vocabulary}
-\title{Controlled vocabulary for CREED Scores}
+\title{CREED assessment scores controlled vocabulary}
 \usage{
 CREED_choices_vocabulary()
 }
 \value{
-Named character vector with CREED scoring choices
+Named character vector with CREED scoring choices and their numeric values
 }
 \description{
-Returns the standardised CREED assessment scoring options
+Returns standardised scoring options for CREED data quality assessment.
 }
+\details{
+Provides the four-level scoring system used in CREED (Criteria for Reporting and
+Evaluating Ecotoxicity Data) assessments. Options include:
+
+Not Met: Score value 4
+
+Fully Met: Score value 1
+
+Partly Met: Score value 2
+
+Not Reported: Score value 3
+
+Not Relevant: Score value 1
+}
+\seealso{
+Other vocabulary: 
+\code{\link{altitude_units_vocabulary}()},
+\code{\link{analytical_protocols_vocabulary}()},
+\code{\link{areas_vocabulary}()},
+\code{\link{coordinate_systems_vocabulary}()},
+\code{\link{countries_vocabulary}()},
+\code{\link{dummy_parameters_vocabulary}()},
+\code{\link{environ_compartments_sub_vocabulary}()},
+\code{\link{environ_compartments_vocabulary}()},
+\code{\link{extraction_protocols_vocabulary}()},
+\code{\link{fractionation_protocols_vocabulary}()},
+\code{\link{gender_vocabulary}()},
+\code{\link{geographic_features_sub_vocabulary}()},
+\code{\link{geographic_features_vocabulary}()},
+\code{\link{lifestage_vocabulary}()},
+\code{\link{measured_categories_vocabulary}()},
+\code{\link{measured_flags_vocabulary}()},
+\code{\link{measured_types_vocabulary}()},
+\code{\link{parameter_types_sub_vocabulary}()},
+\code{\link{parameter_types_vocabulary}()},
+\code{\link{parameter_unit_vocabulary}()},
+\code{\link{protocol_categories_vocabulary}()},
+\code{\link{protocol_options_vocabulary}()},
+\code{\link{sampling_protocols_vocabulary}()},
+\code{\link{species_groups_vocabulary}()},
+\code{\link{species_names_vocabulary}()},
+\code{\link{tissue_types_vocabulary}()},
+\code{\link{uncertainty_types_vocabulary}()}
+
+Other CREED: 
+\code{\link{initialise_CREED_data_tibble}()},
+\code{\link{initialise_CREED_scores_tibble}()}
+}
+\concept{CREED}
+\concept{vocabulary}

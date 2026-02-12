@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_samples_tibble}
 \alias{initialise_samples_tibble}
-\title{Initialise a table to store formatted sampling combinations}
+\title{Initialise samples tibble}
 \usage{
 initialise_samples_tibble()
 }
@@ -11,6 +11,46 @@ A tibble with 0 rows and standardised sample columns
 }
 \description{
 Creates an empty tibble with the standardised column structure for sample data.
-Samples represent individual collections from sites with temporal, spatial,
-and methodological information linking sites, parameters, and compartments.
 }
+\details{
+Samples represent individual collections from sites with temporal, spatial, and
+methodological information linking sites, parameters, and compartments. The tibble
+includes the following columns:
+
+SITE_CODE: Code identifying the sampling location
+
+SITE_NAME: Descriptive name of the sampling site
+
+PARAMETER_NAME: Name of the measured parameter
+
+PARAMETER_TYPE: Classification of the parameter
+
+ENVIRON_COMPARTMENT: Environmental compartment sampled
+
+ENVIRON_COMPARTMENT_SUB: Specific sub-compartment
+
+MEASURED_CATEGORY: Measurement context category
+
+SAMPLING_DATE: Date of sample collection
+
+SUBSAMPLE: Subsample or replicate identifier
+
+SUBSAMPLE_ID: Unique identifier for the subsample
+
+SAMPLE_ID: Unique identifier for the sample (Key)
+}
+\seealso{
+Other initialise_tibble: 
+\code{\link{initialise_CREED_data_tibble}()},
+\code{\link{initialise_CREED_scores_tibble}()},
+\code{\link{initialise_biota_tibble}()},
+\code{\link{initialise_campaign_tibble}()},
+\code{\link{initialise_compartments_tibble}()},
+\code{\link{initialise_measurements_tibble}()},
+\code{\link{initialise_methods_tibble}()},
+\code{\link{initialise_parameters_tibble}()},
+\code{\link{initialise_references_tibble}()},
+\code{\link{initialise_sites_tibble}()}
+}
+\concept{initialise_tibble}
+\concept{sample}

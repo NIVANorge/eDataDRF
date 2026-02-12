@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_references_tibble}
 \alias{initialise_references_tibble}
-\title{Initialise a table to store formatted academic citation data}
+\title{Initialise references tibble}
 \usage{
 initialise_references_tibble()
 }
@@ -11,6 +11,63 @@ A tibble with 0 rows and standardised reference columns
 }
 \description{
 Creates an empty tibble with the standardised column structure for reference data.
-References provide bibliographic information for data sources including journals,
-reports, datasets, and other published materials.
 }
+\details{
+References provide bibliographic information for data sources including journals,
+reports, datasets, and other published materials. The tibble includes the following
+columns:
+
+REFERENCE_ID: Unique identifier for the reference (Primary Key)
+
+REFERENCE_TYPE: Type of publication (Journal Article, Report, Dataset, etc.)
+
+DATA_SOURCE: Source or database where the reference was obtained
+
+AUTHOR: Author(s) of the reference
+
+TITLE: Title of the publication or document
+
+YEAR: Publication year
+
+ACCESS_DATE: Date when the reference was accessed or retrieved
+
+PERIODICAL_JOURNAL: Name of the journal or periodical
+
+VOLUME: Volume number of the journal
+
+ISSUE: Issue number of the journal
+
+PUBLISHER: Publisher of the document
+
+INSTITUTION: Institution associated with the publication
+
+DOI: Digital Object Identifier
+
+URL: Web address for online access
+
+ISBN_ISSN: ISBN or ISSN identifier
+
+EDITION: Edition of the publication
+
+DOCUMENT_NUMBER: Document or report number
+
+REF_COMMENT: Additional notes about the reference
+}
+\seealso{
+Other initialise_tibble: 
+\code{\link{initialise_CREED_data_tibble}()},
+\code{\link{initialise_CREED_scores_tibble}()},
+\code{\link{initialise_biota_tibble}()},
+\code{\link{initialise_campaign_tibble}()},
+\code{\link{initialise_compartments_tibble}()},
+\code{\link{initialise_measurements_tibble}()},
+\code{\link{initialise_methods_tibble}()},
+\code{\link{initialise_parameters_tibble}()},
+\code{\link{initialise_samples_tibble}()},
+\code{\link{initialise_sites_tibble}()}
+
+Other reference: 
+\code{\link{reference_character_limits}()}
+}
+\concept{initialise_tibble}
+\concept{reference}

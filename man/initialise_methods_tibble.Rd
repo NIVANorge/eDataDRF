@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_methods_tibble}
 \alias{initialise_methods_tibble}
-\title{Initialise a table to store formatted methodological data}
+\title{Initialise methods tibble}
 \usage{
 initialise_methods_tibble()
 }
@@ -10,7 +10,42 @@ initialise_methods_tibble()
 A tibble with 0 rows and standardised methods columns
 }
 \description{
-Creates an empty tibble with the standardised column structure for analytical
-methods data. Methods describe the protocols used for sampling, extraction,
-fractionation, and analysis procedures.
+Creates an empty tibble with the standardised column structure for analytical methods data.
 }
+\details{
+Methods describe the protocols used for sampling, extraction, fractionation, and
+analysis procedures. The tibble includes the following columns:
+
+PROTOCOL_ID: Unique identifier for the protocol (Primary Key)
+
+CAMPAIGN_NAME: Name of the campaign this protocol was used in
+
+PROTOCOL_CATEGORY: Type of protocol (Sampling, Extraction, Fractionation, Analytical)
+
+PROTOCOL_NAME: Standardised name of the protocol
+
+PROTOCOL_COMMENT: Additional notes or details about the protocol
+}
+\seealso{
+Other initialise_tibble: 
+\code{\link{initialise_CREED_data_tibble}()},
+\code{\link{initialise_CREED_scores_tibble}()},
+\code{\link{initialise_biota_tibble}()},
+\code{\link{initialise_campaign_tibble}()},
+\code{\link{initialise_compartments_tibble}()},
+\code{\link{initialise_measurements_tibble}()},
+\code{\link{initialise_parameters_tibble}()},
+\code{\link{initialise_references_tibble}()},
+\code{\link{initialise_samples_tibble}()},
+\code{\link{initialise_sites_tibble}()}
+
+Other method: 
+\code{\link{analytical_protocols_vocabulary}()},
+\code{\link{extraction_protocols_vocabulary}()},
+\code{\link{fractionation_protocols_vocabulary}()},
+\code{\link{protocol_categories_vocabulary}()},
+\code{\link{protocol_options_vocabulary}()},
+\code{\link{sampling_protocols_vocabulary}()}
+}
+\concept{initialise_tibble}
+\concept{method}

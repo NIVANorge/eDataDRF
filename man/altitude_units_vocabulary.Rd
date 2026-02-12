@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{altitude_units_vocabulary}
 \alias{altitude_units_vocabulary}
-\title{Controlled vocabulary for ALTITUDE_UNIT}
+\title{Altitude units controlled vocabulary}
 \usage{
 altitude_units_vocabulary()
 }
@@ -10,5 +10,56 @@ altitude_units_vocabulary()
 A character vector of altitude unit options
 }
 \description{
-Returns controlled vocabulary options for altitude units.
+Returns controlled vocabulary options for altitude measurement units.
 }
+\details{
+Provides standardised units for expressing elevation or depth values. Options include:
+
+km
+
+m
+
+cm
+
+mm
+}
+\seealso{
+Other vocabulary: 
+\code{\link{CREED_choices_vocabulary}()},
+\code{\link{analytical_protocols_vocabulary}()},
+\code{\link{areas_vocabulary}()},
+\code{\link{coordinate_systems_vocabulary}()},
+\code{\link{countries_vocabulary}()},
+\code{\link{dummy_parameters_vocabulary}()},
+\code{\link{environ_compartments_sub_vocabulary}()},
+\code{\link{environ_compartments_vocabulary}()},
+\code{\link{extraction_protocols_vocabulary}()},
+\code{\link{fractionation_protocols_vocabulary}()},
+\code{\link{gender_vocabulary}()},
+\code{\link{geographic_features_sub_vocabulary}()},
+\code{\link{geographic_features_vocabulary}()},
+\code{\link{lifestage_vocabulary}()},
+\code{\link{measured_categories_vocabulary}()},
+\code{\link{measured_flags_vocabulary}()},
+\code{\link{measured_types_vocabulary}()},
+\code{\link{parameter_types_sub_vocabulary}()},
+\code{\link{parameter_types_vocabulary}()},
+\code{\link{parameter_unit_vocabulary}()},
+\code{\link{protocol_categories_vocabulary}()},
+\code{\link{protocol_options_vocabulary}()},
+\code{\link{sampling_protocols_vocabulary}()},
+\code{\link{species_groups_vocabulary}()},
+\code{\link{species_names_vocabulary}()},
+\code{\link{tissue_types_vocabulary}()},
+\code{\link{uncertainty_types_vocabulary}()}
+
+Other site: 
+\code{\link{areas_vocabulary}()},
+\code{\link{coordinate_systems_vocabulary}()},
+\code{\link{countries_vocabulary}()},
+\code{\link{geographic_features_sub_vocabulary}()},
+\code{\link{geographic_features_vocabulary}()},
+\code{\link{initialise_sites_tibble}()}
+}
+\concept{site}
+\concept{vocabulary}

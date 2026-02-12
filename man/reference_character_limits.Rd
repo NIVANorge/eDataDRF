@@ -2,13 +2,41 @@
 % Please edit documentation in R/fct_formats.R
 \name{reference_character_limits}
 \alias{reference_character_limits}
-\title{Character limits for fields in References}
+\title{Reference field character limits}
 \usage{
 reference_character_limits()
 }
 \value{
-a list of character limits for fields in mod_references
+A named list of character limits for reference fields
 }
 \description{
-Character limits for fields in References
+Returns maximum character lengths for text fields in the references table.
 }
+\details{
+Provides a named list of character limits for reference metadata fields to ensure
+data quality and database compatibility. Limits include:
+
+DOCUMENT_NUMBER: 200 characters
+
+DOI: 200 characters
+
+EDITION: 200 characters
+
+INSTITUTION: 200 characters
+
+ISBN_ISSN: 200 characters
+
+PERIODICAL_JOURNAL: 200 characters
+
+PUBLISHER: 200 characters
+
+REF_COMMENT: 1000 characters
+
+URL: 200 characters
+}
+\seealso{
+Other reference: 
+\code{\link{initialise_references_tibble}()}
+}
+\concept{limits}
+\concept{reference}

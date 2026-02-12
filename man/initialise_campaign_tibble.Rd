@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_campaign_tibble}
 \alias{initialise_campaign_tibble}
-\title{Initialise a table to store formatted campaign data}
+\title{Initialise campaign tibble}
 \usage{
 initialise_campaign_tibble()
 }
@@ -11,9 +11,48 @@ A tibble with 0 rows and standardised campaign columns
 }
 \description{
 Creates an empty tibble with the standardised column structure for campaign data.
-Campaigns represent sampling projects or studies with metadata about timing,
-organization, data quality evaluation, and confidentiality.
 }
 \details{
+Campaigns represent sampling projects or studies with metadata about timing,
+organisation, data quality evaluation, and confidentiality. The tibble includes
+the following columns:
+
+CAMPAIGN_NAME_SHORT: Short identifier for the campaign
+
+CAMPAIGN_NAME: Full descriptive name of the campaign
+
+CAMPAIGN_START_DATE: Date when campaign sampling began
+
+CAMPAIGN_END_DATE: Date when campaign sampling ended
+
+RELIABILITY_SCORE: Quality assessment score for the campaign data
+
+RELIABILITY_EVAL_SYS: System or framework used for reliability evaluation
+
+CONFIDENTIALITY_EXPIRY_DATE: Date when data confidentiality restrictions expire
+
+ORGANISATION: Organisation responsible for the campaign
+
+ENTERED_BY: Person or entity who entered the data
+
+ENTERED_DATE: Date when the data was entered into the system
+
+CAMPAIGN_COMMENT: Additional notes or comments about the campaign
+
 See vignette("campaign-data") for more information.
 }
+\seealso{
+Other initialise_tibble: 
+\code{\link{initialise_CREED_data_tibble}()},
+\code{\link{initialise_CREED_scores_tibble}()},
+\code{\link{initialise_biota_tibble}()},
+\code{\link{initialise_compartments_tibble}()},
+\code{\link{initialise_measurements_tibble}()},
+\code{\link{initialise_methods_tibble}()},
+\code{\link{initialise_parameters_tibble}()},
+\code{\link{initialise_references_tibble}()},
+\code{\link{initialise_samples_tibble}()},
+\code{\link{initialise_sites_tibble}()}
+}
+\concept{campaign}
+\concept{initialise_tibble}

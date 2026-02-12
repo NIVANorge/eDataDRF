@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_CREED_scores_tibble}
 \alias{initialise_CREED_scores_tibble}
-\title{Initialise a table to store CREED final score data}
+\title{Initialise CREED scores tibble}
 \usage{
 initialise_CREED_scores_tibble()
 }
@@ -10,5 +10,39 @@ initialise_CREED_scores_tibble()
 A tibble with 0 rows and standardised CREED columns
 }
 \description{
-Creates an empty tibble with the standardised column structure for CREED scores.
+Creates an empty tibble with the standardised column structure for CREED final scores.
 }
+\details{
+CREED scores provide data quality assessment results for references, evaluating both
+reliability and relevance at silver and gold standard levels. The tibble includes
+the following columns:
+
+REFERENCE_ID: Unique identifier linking to the references table
+
+SILVER_RELIABILITY: Reliability score at silver standard level
+
+SILVER_RELEVANCE: Relevance score at silver standard level
+
+GOLD_RELIABILITY: Reliability score at gold standard level
+
+GOLD_RELEVANCE: Relevance score at gold standard level
+}
+\seealso{
+Other initialise_tibble: 
+\code{\link{initialise_CREED_data_tibble}()},
+\code{\link{initialise_biota_tibble}()},
+\code{\link{initialise_campaign_tibble}()},
+\code{\link{initialise_compartments_tibble}()},
+\code{\link{initialise_measurements_tibble}()},
+\code{\link{initialise_methods_tibble}()},
+\code{\link{initialise_parameters_tibble}()},
+\code{\link{initialise_references_tibble}()},
+\code{\link{initialise_samples_tibble}()},
+\code{\link{initialise_sites_tibble}()}
+
+Other CREED: 
+\code{\link{CREED_choices_vocabulary}()},
+\code{\link{initialise_CREED_data_tibble}()}
+}
+\concept{CREED}
+\concept{initialise_tibble}

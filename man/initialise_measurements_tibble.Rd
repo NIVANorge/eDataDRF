@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_measurements_tibble}
 \alias{initialise_measurements_tibble}
-\title{Initialise a table to store formatted measurement data}
+\title{Initialise measurements tibble}
 \usage{
 initialise_measurements_tibble()
 }
@@ -12,3 +12,84 @@ A tibble with 0 rows and standardised measurement columns
 \description{
 Creates an empty tibble with the standardised column structure for measurements data.
 }
+\details{
+Measurements represent quantitative observations combining sample, compartment, and
+biota information with analytical results and quality metrics. The tibble includes
+the following columns:
+
+SITE_CODE: Code identifying the sampling location
+
+PARAMETER_NAME: Name of the measured parameter (Foreign key)
+
+SAMPLING_DATE: Date of sample collection
+
+ENVIRON_COMPARTMENT_SUB: Specific environmental sub-compartment
+
+SUBSAMPLE: Subsample identifier
+
+MEASURED_FLAG: Quality flag for the measurement (e.g., < LOQ, < LOD)
+
+MEASURED_VALUE: Numeric value of the measurement
+
+UNCERTAINTY_TYPE: Type of uncertainty or variability metric
+
+UNCERTAINTY_UPPER: Upper bound of uncertainty
+
+UNCERTAINTY_LOWER: Lower bound of uncertainty
+
+MEASURED_UNIT: Unit of measurement
+
+MEASURED_N: Number of replicates or observations
+
+LOQ_VALUE: Limit of quantification value
+
+LOQ_UNIT: Unit for limit of quantification
+
+LOD_VALUE: Limit of detection value
+
+LOD_UNIT: Unit for limit of detection
+
+SAMPLING_PROTOCOL: Protocol used for sample collection (Foreign key)
+
+EXTRACTION_PROTOCOL: Protocol used for sample extraction (Foreign key)
+
+FRACTIONATION_PROTOCOL: Protocol used for sample fractionation (Foreign key)
+
+ANALYTICAL_PROTOCOL: Protocol used for analysis (Foreign key)
+
+REFERENCE_ID: Reference identifier for data source (Foreign key)
+
+SAMPLE_ID: Unique sample identifier
+
+CAMPAIGN_NAME_SHORT: Short name of the associated campaign
+
+ENVIRON_COMPARTMENT: Broad environmental compartment
+
+PARAMETER_TYPE: Classification of the parameter
+
+MEASURED_TYPE: Type of measurement
+
+MEASUREMENT_COMMENT: Additional notes about the measurement
+}
+\seealso{
+Other initialise_tibble: 
+\code{\link{initialise_CREED_data_tibble}()},
+\code{\link{initialise_CREED_scores_tibble}()},
+\code{\link{initialise_biota_tibble}()},
+\code{\link{initialise_campaign_tibble}()},
+\code{\link{initialise_compartments_tibble}()},
+\code{\link{initialise_methods_tibble}()},
+\code{\link{initialise_parameters_tibble}()},
+\code{\link{initialise_references_tibble}()},
+\code{\link{initialise_samples_tibble}()},
+\code{\link{initialise_sites_tibble}()}
+
+Other measurement: 
+\code{\link{measured_categories_vocabulary}()},
+\code{\link{measured_flags_vocabulary}()},
+\code{\link{measured_types_vocabulary}()},
+\code{\link{parameter_unit_vocabulary}()},
+\code{\link{uncertainty_types_vocabulary}()}
+}
+\concept{initialise_tibble}
+\concept{measurement}

@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_biota_tibble}
 \alias{initialise_biota_tibble}
-\title{Initialise a table to store formatted biota data}
+\title{Initialise biota tibble}
 \usage{
 initialise_biota_tibble()
 }
@@ -11,6 +11,59 @@ A tibble with 0 rows and standardised biota columns
 }
 \description{
 Creates an empty tibble with the standardised column structure for biota data.
-Biota data extends sample information with species-specific details including
-taxonomic classification, tissue type, life stage, and gender information.
 }
+\details{
+Biota data extends sample information with species-specific details including
+taxonomic classification, tissue type, life stage, and gender information. The
+tibble includes the following columns:
+
+SAMPLE_ID: Unique identifier linking to the samples table
+
+SITE_CODE: Code identifying the sampling location
+
+PARAMETER_NAME: Name of the measured parameter or stressor
+
+ENVIRON_COMPARTMENT: Broad environmental compartment category
+
+ENVIRON_COMPARTMENT_SUB: Specific sub-category of the environmental compartment
+
+MEASURED_CATEGORY: Category indicating measurement context (External, Internal, Surface)
+
+SAMPLING_DATE: Date when the biological sample was collected
+
+SUBSAMPLE: Identifier for subsample or replicate
+
+SPECIES_GROUP: Taxonomic group classification (e.g., Fish, Molluscs, Plants)
+
+SAMPLE_SPECIES: Scientific or common name of the sampled species
+
+SAMPLE_TISSUE: Type of biological tissue sampled
+
+SAMPLE_SPECIES_LIFESTAGE: Life stage of the organism at sampling
+
+SAMPLE_SPECIES_GENDER: Gender or sex of the sampled organism
+
+BIOTA_COMMENT: Additional notes or comments about the biological sample
+}
+\seealso{
+Other initialise_tibble: 
+\code{\link{initialise_CREED_data_tibble}()},
+\code{\link{initialise_CREED_scores_tibble}()},
+\code{\link{initialise_campaign_tibble}()},
+\code{\link{initialise_compartments_tibble}()},
+\code{\link{initialise_measurements_tibble}()},
+\code{\link{initialise_methods_tibble}()},
+\code{\link{initialise_parameters_tibble}()},
+\code{\link{initialise_references_tibble}()},
+\code{\link{initialise_samples_tibble}()},
+\code{\link{initialise_sites_tibble}()}
+
+Other biota: 
+\code{\link{gender_vocabulary}()},
+\code{\link{lifestage_vocabulary}()},
+\code{\link{species_groups_vocabulary}()},
+\code{\link{species_names_vocabulary}()},
+\code{\link{tissue_types_vocabulary}()}
+}
+\concept{biota}
+\concept{initialise_tibble}

@@ -2,13 +2,68 @@
 % Please edit documentation in R/fct_formats.R
 \name{areas_vocabulary}
 \alias{areas_vocabulary}
-\title{Controlled vocabulary for OCEAN_IHO}
+\title{Ocean areas controlled vocabulary}
 \usage{
 areas_vocabulary()
 }
 \value{
-A character vector of area options
+A character vector of ocean area options
 }
 \description{
-Returns controlled vocabulary options for areas (IHO ocean regions).
+Returns controlled vocabulary options for IHO ocean regions.
 }
+\details{
+Provides ocean and sea names from the International Hydrographic Organisation (IHO)
+regions dataset. The complete list is read from an internal data file (IHO_oceans.rds)
+and includes options such as:
+
+Not relevant
+
+Not reported
+
+Other
+
+All IHO ocean region names (e.g., Arctic Ocean, Atlantic Ocean, Baltic Sea, Mediterranean Sea, ...)
+
+Data source: extdata/IHO_oceans.rds
+}
+\seealso{
+Other vocabulary: 
+\code{\link{CREED_choices_vocabulary}()},
+\code{\link{altitude_units_vocabulary}()},
+\code{\link{analytical_protocols_vocabulary}()},
+\code{\link{coordinate_systems_vocabulary}()},
+\code{\link{countries_vocabulary}()},
+\code{\link{dummy_parameters_vocabulary}()},
+\code{\link{environ_compartments_sub_vocabulary}()},
+\code{\link{environ_compartments_vocabulary}()},
+\code{\link{extraction_protocols_vocabulary}()},
+\code{\link{fractionation_protocols_vocabulary}()},
+\code{\link{gender_vocabulary}()},
+\code{\link{geographic_features_sub_vocabulary}()},
+\code{\link{geographic_features_vocabulary}()},
+\code{\link{lifestage_vocabulary}()},
+\code{\link{measured_categories_vocabulary}()},
+\code{\link{measured_flags_vocabulary}()},
+\code{\link{measured_types_vocabulary}()},
+\code{\link{parameter_types_sub_vocabulary}()},
+\code{\link{parameter_types_vocabulary}()},
+\code{\link{parameter_unit_vocabulary}()},
+\code{\link{protocol_categories_vocabulary}()},
+\code{\link{protocol_options_vocabulary}()},
+\code{\link{sampling_protocols_vocabulary}()},
+\code{\link{species_groups_vocabulary}()},
+\code{\link{species_names_vocabulary}()},
+\code{\link{tissue_types_vocabulary}()},
+\code{\link{uncertainty_types_vocabulary}()}
+
+Other site: 
+\code{\link{altitude_units_vocabulary}()},
+\code{\link{coordinate_systems_vocabulary}()},
+\code{\link{countries_vocabulary}()},
+\code{\link{geographic_features_sub_vocabulary}()},
+\code{\link{geographic_features_vocabulary}()},
+\code{\link{initialise_sites_tibble}()}
+}
+\concept{site}
+\concept{vocabulary}

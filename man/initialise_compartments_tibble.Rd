@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_compartments_tibble}
 \alias{initialise_compartments_tibble}
-\title{Initialise a table to store formatted environmental compartment data}
+\title{Initialise compartments tibble}
 \usage{
 initialise_compartments_tibble()
 }
@@ -10,8 +10,37 @@ initialise_compartments_tibble()
 A tibble with 0 rows and standardised compartment columns
 }
 \description{
-Creates an empty tibble with the standardised column structure for environmental
-compartment data. Compartments define the environmental matrix and measurement
-context for sampling activities.
-One immediate child: create_compartment_combination() in mod_compartments_fct.R
+Creates an empty tibble with the standardised column structure for environmental compartment data.
 }
+\details{
+Compartments define the environmental matrix and measurement context for sampling
+activities. The tibble includes the following columns:
+
+ENVIRON_COMPARTMENT: Broad environmental compartment (Aquatic, Atmospheric, Terrestrial, Biota)
+
+ENVIRON_COMPARTMENT_SUB: Specific sub-category within the compartment
+
+MEASURED_CATEGORY: Measurement context (External Media, Internal to Organism, Surface of Organism)
+
+One immediate child function: create_compartment_combination() in mod_compartments_fct.R
+}
+\seealso{
+Other initialise_tibble: 
+\code{\link{initialise_CREED_data_tibble}()},
+\code{\link{initialise_CREED_scores_tibble}()},
+\code{\link{initialise_biota_tibble}()},
+\code{\link{initialise_campaign_tibble}()},
+\code{\link{initialise_measurements_tibble}()},
+\code{\link{initialise_methods_tibble}()},
+\code{\link{initialise_parameters_tibble}()},
+\code{\link{initialise_references_tibble}()},
+\code{\link{initialise_samples_tibble}()},
+\code{\link{initialise_sites_tibble}()}
+
+Other compartment: 
+\code{\link{environ_compartments_sub_vocabulary}()},
+\code{\link{environ_compartments_vocabulary}()},
+\code{\link{measured_categories_vocabulary}()}
+}
+\concept{compartment}
+\concept{initialise_tibble}

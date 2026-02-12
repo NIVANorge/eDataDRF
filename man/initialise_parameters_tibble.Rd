@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_parameters_tibble}
 \alias{initialise_parameters_tibble}
-\title{Initialise a table to store formatted stressor/parameter data}
+\title{Initialise parameters tibble}
 \usage{
 initialise_parameters_tibble()
 }
@@ -11,6 +11,50 @@ A tibble with 0 rows and standardised parameter columns
 }
 \description{
 Creates an empty tibble with the standardised column structure for parameter data.
-Parameters define chemical substances, physical properties, or biological markers
-being measured, including classification and chemical identifiers.
 }
+\details{
+Parameters define chemical substances, physical properties, or biological markers
+being measured, including classification and chemical identifiers. The tibble
+includes the following columns:
+
+PARAMETER_TYPE: Broad classification (Stressor, Quality parameter, Normalisation, etc.)
+
+PARAMETER_TYPE_SUB: Sub-classification providing more specific categorisation
+
+MEASURED_TYPE: Type of measurement (Concentration, Dose, Physical parameter, etc.)
+
+PARAMETER_NAME: Standardised name of the parameter (Primary Key)
+
+PARAMETER_NAME_SUB: Additional specification or variant of the parameter name
+
+INCHIKEY_SD: InChIKey identifier for chemical substances
+
+PUBCHEM_CID: PubChem Compound Identifier
+
+CAS_RN: Chemical Abstracts Service Registry Number
+
+ENTERED_BY: Person or entity who entered the parameter
+
+PARAMETER_COMMENT: Additional notes about the parameter
+}
+\seealso{
+Other initialise_tibble: 
+\code{\link{initialise_CREED_data_tibble}()},
+\code{\link{initialise_CREED_scores_tibble}()},
+\code{\link{initialise_biota_tibble}()},
+\code{\link{initialise_campaign_tibble}()},
+\code{\link{initialise_compartments_tibble}()},
+\code{\link{initialise_measurements_tibble}()},
+\code{\link{initialise_methods_tibble}()},
+\code{\link{initialise_references_tibble}()},
+\code{\link{initialise_samples_tibble}()},
+\code{\link{initialise_sites_tibble}()}
+
+Other parameter: 
+\code{\link{dummy_parameters_vocabulary}()},
+\code{\link{measured_types_vocabulary}()},
+\code{\link{parameter_types_sub_vocabulary}()},
+\code{\link{parameter_types_vocabulary}()}
+}
+\concept{initialise_tibble}
+\concept{parameter}

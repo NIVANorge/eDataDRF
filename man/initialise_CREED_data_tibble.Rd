@@ -2,16 +2,51 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_CREED_data_tibble}
 \alias{initialise_CREED_data_tibble}
-\title{Initialise a table to CREED critieria, relevant data, and scores}
+\title{Initialise CREED criteria data tibble}
 \usage{
 initialise_CREED_data_tibble()
 }
 \value{
-A tibble with 0 rows and standardised CREED score columns
+A tibble with 0 rows and standardised CREED criterion columns
 }
 \description{
-Creates an empty tibble with the standardised column structure for CREED
-criterion scores. Used by both reliability and relevance modules to ensure
-consistent data structure. This isn't a part of the externally-available
-table structure, but we want to make sure it's harmonised locally anyway
+Creates an empty tibble with the standardised column structure for detailed CREED
+criterion assessment data.
 }
+\details{
+CREED criteria data stores individual criterion scores, relevant data, and limitations
+for both reliability and relevance assessments. This structure is used internally
+by assessment modules and is not part of the externally-available table structure.
+The tibble includes the following columns:
+
+criterion_id: Unique identifier for the CREED criterion
+
+criterion_title: Descriptive title of the criterion
+
+required_recommended: Whether the criterion is required or recommended
+
+relevant_data: Data or information relevant to assessing the criterion
+
+score: Assessment score for the criterion
+
+limitations: Identified limitations or concerns for the criterion
+}
+\seealso{
+Other initialise_tibble: 
+\code{\link{initialise_CREED_scores_tibble}()},
+\code{\link{initialise_biota_tibble}()},
+\code{\link{initialise_campaign_tibble}()},
+\code{\link{initialise_compartments_tibble}()},
+\code{\link{initialise_measurements_tibble}()},
+\code{\link{initialise_methods_tibble}()},
+\code{\link{initialise_parameters_tibble}()},
+\code{\link{initialise_references_tibble}()},
+\code{\link{initialise_samples_tibble}()},
+\code{\link{initialise_sites_tibble}()}
+
+Other CREED: 
+\code{\link{CREED_choices_vocabulary}()},
+\code{\link{initialise_CREED_scores_tibble}()}
+}
+\concept{CREED}
+\concept{initialise_tibble}
