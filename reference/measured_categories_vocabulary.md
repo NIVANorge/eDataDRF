@@ -1,4 +1,4 @@
-# Measured Categories Controlled Vocabulary
+# Controlled vocabulary for MEASURED_CATEGORY
 
 Returns controlled vocabulary options for measured categories.
 

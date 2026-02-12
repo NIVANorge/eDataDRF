@@ -1,4 +1,4 @@
-# Species Groups Controlled Vocabulary
+# Controlled vocabulary for SPECIES_GROUP
 
 Returns controlled vocabulary options for species groups. Taken from EPA
 ECOTOX db.

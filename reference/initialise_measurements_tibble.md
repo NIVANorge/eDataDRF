@@ -1,4 +1,4 @@
-# Initialise Measurements Data Tibble
+# Initialise a table to store formatted measurement data
 
 Creates an empty tibble with the standardised column structure for
 measurements data.

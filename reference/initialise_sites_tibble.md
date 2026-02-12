@@ -1,4 +1,4 @@
-# Initialise Sites Data Tibble
+# Initialise a table to store formatted geographical data
 
 Creates an empty tibble with the standardised column structure for site
 data. Sites represent sampling locations with geographic coordinates,

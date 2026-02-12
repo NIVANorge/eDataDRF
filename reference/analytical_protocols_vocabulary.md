@@ -1,4 +1,4 @@
-# Analytical Protocol Options Vocabulary
+# Controlled vocabulary for PROTOCOL_NAME and PROTOCOL_TYPE (analytical protocols)
 
 Returns analytical protocol options as a tibble with Protocol_Type,
 Short_Name, and Long_Name columns.

@@ -1,4 +1,4 @@
-# Measurement Flags Controlled Vocabulary
+# Controlled vocabulary for MEASUREMENT_FLAG
 
 Returns measurement flag options.
 

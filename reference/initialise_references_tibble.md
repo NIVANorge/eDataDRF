@@ -1,4 +1,4 @@
-# Initialise References Data Tibble
+# Initialise a table to store formatted academic citation data
 
 Creates an empty tibble with the standardised column structure for
 reference data. References provide bibliographic information for data

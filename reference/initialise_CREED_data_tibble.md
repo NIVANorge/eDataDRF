@@ -1,4 +1,4 @@
-# Initialise CREED Scores Tibble
+# Initialise a table to CREED critieria, relevant data, and scores
 
 Creates an empty tibble with the standardised column structure for CREED
 criterion scores. Used by both reliability and relevance modules to

@@ -1,4 +1,4 @@
-# Countries Controlled Vocabulary
+# Controlled vocabulary for COUNTRY_ISO
 
 Returns controlled vocabulary options for countries.
 

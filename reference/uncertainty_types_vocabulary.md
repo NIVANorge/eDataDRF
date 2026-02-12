@@ -1,4 +1,4 @@
-# Uncertainty Types Controlled Vocabulary
+# Controlled vocabulary for UNCERTAINTY_TYPE
 
 Returns controlled vocabulary options for uncertainty types commonly
 found in scientific literature and databases.

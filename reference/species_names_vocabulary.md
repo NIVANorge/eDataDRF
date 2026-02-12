@@ -1,4 +1,4 @@
-# Species Controlled Vocabulary
+# Controlled vocabulary for SAMPLE_SPECIES
 
 Returns species name options from ECOTOX data
 

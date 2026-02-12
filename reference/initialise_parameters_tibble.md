@@ -1,11 +1,9 @@
-# Initialise Parameters Data Tibble
+# Initialise a table to store formatted stressor/parameter data
 
 Creates an empty tibble with the standardised column structure for
 parameter data. Parameters define chemical substances, physical
 properties, or biological markers being measured, including
-classification and chemical identifiers. Two immediate children:
-create_new_parameter() and create_existing_parameter() in
-mod_parameters_fct.R
+classification and chemical identifiers.
 
 ## Usage
 

@@ -1,4 +1,4 @@
-# Initialise Samples Data Tibble
+# Initialise a table to store formatted sampling combinations
 
 Creates an empty tibble with the standardised column structure for
 sample data. Samples represent individual collections from sites with

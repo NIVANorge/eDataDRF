@@ -1,4 +1,4 @@
-# Generate Protocol ID —-
+# Generate a semi-unique string ID for a protocol based on its type, name, the campaign name, and a sequence number
 
 Generates a standardised protocol identifier based on protocol type,
 name, sequence number, and campaign. The function is fully vectorised

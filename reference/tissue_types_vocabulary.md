@@ -1,4 +1,4 @@
-# Initialise Tissue Types Controlled Vocabulary
+# Controlled vocabulary for SAMPLE_TISSUE
 
 Returns controlled vocabulary options for sample tissue types.
 

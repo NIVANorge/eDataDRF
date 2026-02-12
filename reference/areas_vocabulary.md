@@ -1,4 +1,4 @@
-# Areas Controlled Vocabulary
+# Controlled vocabulary for OCEAN_IHO
 
 Returns controlled vocabulary options for areas (IHO ocean regions).
 

@@ -1,4 +1,4 @@
-# Parameter Types Controlled Vocabulary
+# Controlled vocabulary for PARAMETER_TYPE
 
 Returns controlled vocabulary options for parameter types.
 

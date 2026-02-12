@@ -1,4 +1,4 @@
-# Geographic Features Controlled Vocabulary
+# Controlled vocabulary for SITE_GEOGRAPHIC_FEATURE
 
 Returns controlled vocabulary options for geographic features.
 

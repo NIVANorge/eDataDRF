@@ -1,4 +1,4 @@
-# Initialise Biota Data Tibble
+# Initialise a table to store formatted biota data
 
 Creates an empty tibble with the standardised column structure for biota
 data. Biota data extends sample information with species-specific

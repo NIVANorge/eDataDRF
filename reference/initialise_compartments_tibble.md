@@ -1,4 +1,4 @@
-# Initialise Compartments Data Tibble
+# Initialise a table to store formatted environmental compartment data
 
 Creates an empty tibble with the standardised column structure for
 environmental compartment data. Compartments define the environmental

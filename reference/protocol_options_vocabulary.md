@@ -1,4 +1,4 @@
-# Protocol Options Data
+# Controlled vocabulary for PROTOCOL_NAME and PROTOCOL_TYPE (all protocols)
 
 Returns all protocol options data by combining all individual protocol
 vocabularies.

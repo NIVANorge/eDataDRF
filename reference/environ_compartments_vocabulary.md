@@ -1,4 +1,4 @@
-# Environmental Compartments Controlled Vocabulary
+# Controlled vocabulary for ENVIRON_COMPARTMENT
 
 Returns controlled vocabulary options for environmental compartments.
 

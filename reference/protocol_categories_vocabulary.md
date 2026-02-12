@@ -1,4 +1,4 @@
-# Protocol Categories Controlled Vocabulary
+# Controlled vocabulary for PROTOCOL_TYPE
 
 Returns controlled vocabulary options for protocol categories.
 

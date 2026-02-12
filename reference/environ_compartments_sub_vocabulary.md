@@ -1,4 +1,4 @@
-# Sub-compartment Options Mapping
+# Controlled vocabulary for ENVIRON_COMPARTMENT_SUB
 
 Returns controlled vocabulary mapping for environmental sub-compartments
 organized by main compartment.

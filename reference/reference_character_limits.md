@@ -1,6 +1,6 @@
-# reference_character_limits
+# Character limits for fields in References
 
-reference_character_limits
+Character limits for fields in References
 
 ## Usage
 

@@ -1,4 +1,4 @@
-# Coordinate Systems Controlled Vocabulary
+# Controlled vocabulary for COORDINATE_SYSTEM
 
 Returns controlled vocabulary options for coordinate systems.
 

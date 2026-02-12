@@ -1,4 +1,4 @@
-# CREED Assessment Scoring Choices
+# Controlled vocabulary for CREED Scores
 
 Returns the standardised CREED assessment scoring options
 

@@ -1,4 +1,4 @@
-# Geographic Features Sub Controlled Vocabulary
+# Controlled vocabulary for SITE_GEOGRAPHIC_FEATURE_SUB
 
 Returns controlled vocabulary options for geographic feature
 subcategories.

@@ -1,4 +1,4 @@
-# Initialise Methods Data Tibble
+# Initialise a table to store formatted methodological data
 
 Creates an empty tibble with the standardised column structure for
 analytical methods data. Methods describe the protocols used for

@@ -1,4 +1,4 @@
-# Initialise Life Stages Controlled Vocabulary
+# Controlled vocabulary for SAMPLE_SPECIES_LIFESTAGE
 
 Returns controlled vocabulary options for sample species life stages.
 
