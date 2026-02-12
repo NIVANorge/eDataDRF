@@ -6,15 +6,6 @@ navbar:
   structure:
     left: [intro, reference, articles, news]
     right: [search, github, lightswitch]
-  components:
-    articles:
-    text: Articles
-    menu: 
-      - text: Campaign data
-        href: vignettes/campaign_data.html
-      - text: Reference data
-        href: vignettes/references_data.html
-
 
 
 reference:
