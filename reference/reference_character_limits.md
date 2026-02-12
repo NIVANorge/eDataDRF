@@ -1,6 +1,7 @@
-# Character limits for fields in References
+# Reference field character limits
 
-Character limits for fields in References
+Returns maximum character lengths for text fields in the references
+table.
 
 ## Usage
 
@@ -10,4 +11,32 @@ reference_character_limits()
 
 ## Value
 
-a list of character limits for fields in mod_references
+A named list of character limits for reference fields
+
+## Details
+
+Provides a named list of character limits for reference metadata fields
+to ensure data quality and database compatibility. Limits include:
+
+DOCUMENT_NUMBER: 200 characters
+
+DOI: 200 characters
+
+EDITION: 200 characters
+
+INSTITUTION: 200 characters
+
+ISBN_ISSN: 200 characters
+
+PERIODICAL_JOURNAL: 200 characters
+
+PUBLISHER: 200 characters
+
+REF_COMMENT: 1000 characters
+
+URL: 200 characters
+
+## See also
+
+Other reference:
+[`initialise_references_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_references_tibble.md)
