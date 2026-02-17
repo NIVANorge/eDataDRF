@@ -10,10 +10,8 @@ library(eDataDRF)
 
 ``` r
 initialise_campaign_tibble()
-#> # A tibble: 0 × 11
-#> # ℹ 11 variables: CAMPAIGN_NAME_SHORT <chr>, CAMPAIGN_NAME <chr>,
-#> #   CAMPAIGN_START_DATE <date>, CAMPAIGN_END_DATE <date>,
-#> #   RELIABILITY_SCORE <chr>, RELIABILITY_EVAL_SYS <chr>,
-#> #   CONFIDENTIALITY_EXPIRY_DATE <date>, ORGANISATION <chr>, ENTERED_BY <chr>,
-#> #   ENTERED_DATE <date>, CAMPAIGN_COMMENT <chr>
+#> # A tibble: 0 × 8
+#> # ℹ 8 variables: CAMPAIGN_NAME_SHORT <chr>, CAMPAIGN_NAME <chr>,
+#> #   CAMPAIGN_START_DATE <date>, CAMPAIGN_END_DATE <date>, ORGANISATION <chr>,
+#> #   ENTERED_BY <chr>, ENTERED_DATE <date>, CAMPAIGN_COMMENT <chr>
 ```
