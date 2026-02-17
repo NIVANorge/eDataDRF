@@ -27,9 +27,11 @@ PARAMETER_NAME: Name of the measured parameter
 
 PARAMETER_TYPE: Classification of the parameter
 
-ENVIRON_COMPARTMENT: Environmental compartment sampled
+ENVIRON_COMPARTMENT: Environmental compartment defined as one of the
+earth's spheres (aquatic, atmospheric, etc.)
 
-ENVIRON_COMPARTMENT_SUB: Specific sub-compartment
+ENVIRON_COMPARTMENT_SUB: Sub-divisions of environmental compartments
+into water body types, soil profile, etc.
 
 MEASURED_CATEGORY: Measurement context category
 

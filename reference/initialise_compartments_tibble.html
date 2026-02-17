@@ -63,11 +63,12 @@
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Compartments define the environmental matrix and measurement context for sampling
-activities. The tibble includes the following columns:</p>
+activities. The compartments table is not a direct output of the eData format but is used to
+construct the samples table.
+The tibble includes the following columns:</p>
 <p>ENVIRON_COMPARTMENT: Broad environmental compartment (Aquatic, Atmospheric, Terrestrial, Biota)</p>
 <p>ENVIRON_COMPARTMENT_SUB: Specific sub-category within the compartment</p>
 <p>MEASURED_CATEGORY: Measurement context (External Media, Internal to Organism, Surface of Organism)</p>
-<p>One immediate child function: create_compartment_combination() in mod_compartments_fct.R</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

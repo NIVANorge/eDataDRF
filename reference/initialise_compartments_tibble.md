@@ -16,7 +16,9 @@ A tibble with 0 rows and standardised compartment columns
 ## Details
 
 Compartments define the environmental matrix and measurement context for
-sampling activities. The tibble includes the following columns:
+sampling activities. The compartments table is not a direct output of
+the eData format but is used to construct the samples table. The tibble
+includes the following columns:
 
 ENVIRON_COMPARTMENT: Broad environmental compartment (Aquatic,
 Atmospheric, Terrestrial, Biota)
@@ -25,9 +27,6 @@ ENVIRON_COMPARTMENT_SUB: Specific sub-category within the compartment
 
 MEASURED_CATEGORY: Measurement context (External Media, Internal to
 Organism, Surface of Organism)
-
-One immediate child function: create_compartment_combination() in
-mod_compartments_fct.R
 
 ## See also
 
