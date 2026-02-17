@@ -29,35 +29,6 @@ extdata/dummy_quality_parameters.parquet
 extdata/ClassyFire_Taxonomy_2025_02.parquet
 }
 \seealso{
-Other vocabulary: 
-\code{\link{CREED_choices_vocabulary}()},
-\code{\link{altitude_units_vocabulary}()},
-\code{\link{analytical_protocols_vocabulary}()},
-\code{\link{areas_vocabulary}()},
-\code{\link{coordinate_systems_vocabulary}()},
-\code{\link{countries_vocabulary}()},
-\code{\link{environ_compartments_sub_vocabulary}()},
-\code{\link{environ_compartments_vocabulary}()},
-\code{\link{extraction_protocols_vocabulary}()},
-\code{\link{fractionation_protocols_vocabulary}()},
-\code{\link{gender_vocabulary}()},
-\code{\link{geographic_features_sub_vocabulary}()},
-\code{\link{geographic_features_vocabulary}()},
-\code{\link{lifestage_vocabulary}()},
-\code{\link{measured_categories_vocabulary}()},
-\code{\link{measured_flags_vocabulary}()},
-\code{\link{measured_types_vocabulary}()},
-\code{\link{parameter_types_sub_vocabulary}()},
-\code{\link{parameter_types_vocabulary}()},
-\code{\link{parameter_unit_vocabulary}()},
-\code{\link{protocol_categories_vocabulary}()},
-\code{\link{protocol_options_vocabulary}()},
-\code{\link{sampling_protocols_vocabulary}()},
-\code{\link{species_groups_vocabulary}()},
-\code{\link{species_names_vocabulary}()},
-\code{\link{tissue_types_vocabulary}()},
-\code{\link{uncertainty_types_vocabulary}()}
-
 Other parameter: 
 \code{\link{initialise_parameters_tibble}()},
 \code{\link{measured_types_vocabulary}()},
@@ -65,4 +36,3 @@ Other parameter:
 \code{\link{parameter_types_vocabulary}()}
 }
 \concept{parameter}
-\concept{vocabulary}

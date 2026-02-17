@@ -17,33 +17,33 @@ Biota data extends sample information with species-specific details including
 taxonomic classification, tissue type, life stage, and gender information. The
 tibble includes the following columns:
 
-SAMPLE_ID: Unique identifier linking to the samples table
+SAMPLE_ID: Unique identifier linking to the samples table (mandatory, foreign key for measurements)
 
-SITE_CODE: Code identifying the sampling location
+SITE_CODE: Code identifying the sampling location (mandatory, foreign key for sites)
 
-PARAMETER_NAME: Name of the measured parameter or stressor
+PARAMETER_NAME: Name of the measured parameter or stressor (mandatory, foreign key for parameters)
 
-ENVIRON_COMPARTMENT: Broad environmental compartment category
+ENVIRON_COMPARTMENT: Broad environmental compartment category (mandatory, inherited from samples)
 
-ENVIRON_COMPARTMENT_SUB: Specific sub-category of the environmental compartment
+ENVIRON_COMPARTMENT_SUB: Specific sub-category of the environmental compartment (mandatory, inherited from samples)
 
-MEASURED_CATEGORY: Category indicating measurement context (External, Internal, Surface)
+MEASURED_CATEGORY: Category indicating measurement context (mandatory, inherited from samples)
 
-SAMPLING_DATE: Date when the biological sample was collected
+SAMPLING_DATE: Date when the biological sample was collected (mandatory, inherited from samples)
 
-SUBSAMPLE: Identifier for subsample or replicate
+SUBSAMPLE: Identifier for subsample or replicate (mandatory, inherited from samples)
 
-SPECIES_GROUP: Taxonomic group classification (e.g., Fish, Molluscs, Plants)
+SPECIES_GROUP: Taxonomic group classification, e.g., Fish, Molluscs, Plants (mandatory)
 
-SAMPLE_SPECIES: Scientific or common name of the sampled species
+SAMPLE_SPECIES: Scientific binomial name of the sampled species (mandatory)
 
-SAMPLE_TISSUE: Type of biological tissue sampled
+SAMPLE_TISSUE: Type of biological tissue sampled (mandatory)
 
-SAMPLE_SPECIES_LIFESTAGE: Life stage of the organism at sampling
+SAMPLE_SPECIES_LIFESTAGE: Life stage of the organism at sampling (mandatory)
 
-SAMPLE_SPECIES_GENDER: Gender or sex of the sampled organism
+SAMPLE_SPECIES_GENDER: Gender or sex of the sampled organism (mandatory)
 
-BIOTA_COMMENT: Additional notes or comments about the biological sample
+BIOTA_COMMENT: Additional notes or comments about the biological sample (optional)
 }
 \seealso{
 Other initialise_tibble: 

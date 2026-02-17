@@ -1,5 +1,5 @@
 Package: eDataDRF
-Title: Data reporting format for STOP's exposure data format.
+Title: Data reporting format for STOP's exposure data format
 Version: 0.0.0.9000
 Authors@R: 
     person("Sam A.", "Welch", , "sam.welch@niva.no", role = c("aut", "cre"))

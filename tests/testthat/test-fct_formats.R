@@ -7,7 +7,7 @@ test_that("initialise_campaign_tibble creates correct structure", {
 
   expect_s3_class(result, "tbl_df")
   expect_equal(nrow(result), 0)
-  expect_equal(ncol(result), 11)
+  expect_equal(ncol(result), 8)
   expect_named(
     result,
     c(
@@ -15,9 +15,6 @@ test_that("initialise_campaign_tibble creates correct structure", {
       "CAMPAIGN_NAME",
       "CAMPAIGN_START_DATE",
       "CAMPAIGN_END_DATE",
-      "RELIABILITY_SCORE",
-      "RELIABILITY_EVAL_SYS",
-      "CONFIDENTIALITY_EXPIRY_DATE",
       "ORGANISATION",
       "ENTERED_BY",
       "ENTERED_DATE",

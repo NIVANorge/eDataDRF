@@ -17,29 +17,23 @@ Campaigns represent sampling projects or studies with metadata about timing,
 organisation, data quality evaluation, and confidentiality. The tibble includes
 the following columns:
 
-CAMPAIGN_NAME_SHORT: Short identifier for the campaign
+CAMPAIGN_NAME_SHORT: Short identifier for the campaign (mandatory)
 
-CAMPAIGN_NAME: Full descriptive name of the campaign
+CAMPAIGN_NAME: Full descriptive name of the campaign (mandatory)
 
-CAMPAIGN_START_DATE: Date when campaign sampling began
+CAMPAIGN_START_DATE: Date when campaign sampling began (mandatory)
 
-CAMPAIGN_END_DATE: Date when campaign sampling ended
+CAMPAIGN_END_DATE: Date when campaign sampling ended (optional)
 
-RELIABILITY_SCORE: Quality assessment score for the campaign data
+ORGANISATION: Organisation responsible for the campaign (mandatory)
 
-RELIABILITY_EVAL_SYS: System or framework used for reliability evaluation
+ENTERED_BY: Person or entity who entered the data (mandatory)
 
-CONFIDENTIALITY_EXPIRY_DATE: Date when data confidentiality restrictions expire
+ENTERED_DATE: Date when the data was entered into the system (mandatory)
 
-ORGANISATION: Organisation responsible for the campaign
+CAMPAIGN_COMMENT: Additional notes or comments about the campaign (optional)
 
-ENTERED_BY: Person or entity who entered the data
-
-ENTERED_DATE: Date when the data was entered into the system
-
-CAMPAIGN_COMMENT: Additional notes or comments about the campaign
-
-See vignette("campaign-data") for more information.
+See \code{vignette("campaign-data")} for more information.
 }
 \seealso{
 Other initialise_tibble: 
