@@ -63,10 +63,17 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="edatadrf">eDataDRF<a class="anchor" aria-label="anchor" href="#edatadrf"></a>
+<div class="page-header"><h1 id="edata-data-reporting-format">eData Data Reporting Format<a class="anchor" aria-label="anchor" href="#edata-data-reporting-format"></a>
 </h1></div>
-<p>Basic version of data format, (controlled) vocabulary, and standardised export functions for STOP’s eData format. Used in the Shiny app and Copper AEP. Not versioned very well, or particularly consistent, because I’m in a hurry, but at least it passes check()?</p>
-<p><!-- badges: start --> <a href="https://github.com/sawelch-NIVA/eDataDRF/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/sawelch-NIVA/eDataDRF/actions/workflows/R-CMD-check.yaml/badge.svghttps://github.com/sawelch-NIVA/eDataDRF/actions/workflows/R-CMD-check.yaml/badge.svghttps://github.com/sawelch-NIVA/eDataDRF/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a> <!-- badges: end --></p>
+<p>The eData Data Reporting Format is a format for the standardisation of data on pollutant occurence in the environment. By converting this data to a single, consistent format, it makes it easier to validate, compare, analyse, and reuse, in line with the <a href="https://www.go-fair.org/fair-principles/" class="external-link">FAIR principles</a></p>
+<p>These data are typically published as concentrations (in water) or mass ratios (in soil, sludge and biota). Fully interpreting these measurements requires considerable metadata, relating to the time, place, conditions, methodology, and context of sampling. However, no single standard exists for these metadata, and study authors and sampling teams tend to use a variety of inconsistent definitions, units, and schema depending on their scientific domain and the study’s individual needs.</p>
+<p>This is not, in itself a problem. However, as environmental risk assessment becomes more data-based and larger scale, the need to use and re-use large quantities of data increases. When these datasets are consistent, validated, and interoperable, much time can be saved. When they are not, researchers much go through the tedious process of understanding, validating and remapping by hand; an often non-reproducible process. Thus a harmonised format - and associated validation and formatting functions - can represent a significant timesaver for anyone in such as position.</p>
+<p>This format is a (first) attempt to address this issue. Rather than attempt a perfect format that covers all relevant domains, we have elected to focus on pollutants in water, aquatic biota, and similar compartments (sludge, aquatic sediment, etc.).</p>
+<ul>
+<li>Caveats</li>
+<li>Links</li>
+<li>Vignettes</li>
+</ul>
 </div>
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
