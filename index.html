@@ -46,6 +46,7 @@
     <li><a class="dropdown-item" href="articles/references_data.html">references_data</a></li>
     <li><a class="dropdown-item" href="articles/samples_data.html">samples_data</a></li>
     <li><a class="dropdown-item" href="articles/sites_data.html">sites_data</a></li>
+    <li><a class="dropdown-item" href="articles/validation.html">validation</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
@@ -68,13 +69,65 @@
 <p>The eData Data Reporting Format is a format for the standardisation of data on pollutant occurence in the environment. By converting this data to a single, consistent format, it makes it easier to validate, compare, analyse, and reuse, in line with the <a href="https://www.go-fair.org/fair-principles/" class="external-link">FAIR principles</a></p>
 <p>These data are typically published as concentrations (in water) or mass ratios (in soil, sludge and biota). Fully interpreting these measurements requires considerable metadata, relating to the time, place, conditions, methodology, and context of sampling. However, no single standard exists for these metadata, and study authors and sampling teams tend to use a variety of inconsistent definitions, units, and schema depending on their scientific domain and the study’s individual needs.</p>
 <p>This is not, in itself a problem. However, as environmental risk assessment becomes more data-based and larger scale, the need to use and re-use large quantities of data increases. When these datasets are consistent, validated, and interoperable, much time can be saved. When they are not, researchers much go through the tedious process of understanding, validating and remapping by hand; an often non-reproducible process. Thus a harmonised format - and associated validation and formatting functions - can represent a significant timesaver for anyone in such as position.</p>
-<p>This format is a (first) attempt to address this issue. Rather than attempt a perfect format that covers all relevant domains, we have elected to focus on pollutants in water, aquatic biota, and similar compartments (sludge, aquatic sediment, etc.).</p>
+<p>This format is a (first) attempt to address this issue. Rather than attempt a perfect format that covers all relevant domains, we have elected to focus on pollutants in water, aquatic biota, and similar compartments (sludge, aquatic sediment, etc.). This has been designed to follow a database-like structure, with the expectation that the format will be developed into a full database schema in the future.</p>
+<div class="section level2">
+<h2 id="tables">Tables<a class="anchor" aria-label="anchor" href="#tables"></a>
+</h2>
+<p>Tables are created as <code><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble::tibble()</a></code> calls with empty variables of specific types (e.g. <code>character(0)</code> for strings). These support easier validation (see <a href="validation.html">Validation</a>) and the extensive Tidyverse family of functions.</p>
+<p>Tables are listed below:</p>
+<p>``<code>{r} # Create the data frame ---- schema_data &lt;- tribble(   ~</code>Table Name`, ~Purpose, ~Comments, “Campaign”, “Records data about sampling campaign and organisation collecting data.”, ““,”Reference”, “Records conventional publication metadata, where available”, ““,”Sites”, “Records site coordinates, land use, country/ocean”, ““,”Parameters”, “Records data on stressors (chemical, radiation, etc.), quality measurements”, ““,”Compartments”, “Records information on the compartment/matrix sampled”, ““,”Samples”, “Recorded which combinations of dates, sites, parameters and compartments were sampled”, “Not used in final analysis, but exists as an intermediate table used to create measurements”, “Biota”, “Where relevant, records biota species, tissue, life stage, and gender”, “Optional”, “Methods”, “Records type and descriptions of methods used for sampling, extraction, fractionation and analysis”, ““,”Measurements”, “Records measured values, units, uncertainty, sample size, and methods associated with a given sample”, ““,”CREED (quality)“,”Records assessment purpose statement, relevant data summarised from above tables, relevance/reliability scores, and final assessment of data quality.”, “” )</p>
+</div>
+</div>
+<div class="section level1">
+<h1 id="create-gt-table--">Create gt table —-<a class="anchor" aria-label="anchor" href="#create-gt-table--"></a>
+</h1>
+<p>schema_table &lt;- schema_data |&gt; gt() |&gt; # Left-align all columns cols_align( align = “left”, columns = everything() )</p>
+<p>schema_table</p>
+<pre><code>
+: Table of tables in the eData format, their purpose, and comments.
+
+```{mermaid}
+erDiagram
+    Campaign ||--o{ Measurements : "Belongs"
+    Campaign ||--o{ References : "Belongs"
+    Campaign ||--o{ Sites : "Belongs"
+    Campaign ||--o{ Methods : "Belongs"
+    Campaign ||--o{ CREED : "Assesses"
+
+    References ||--o{ Measurements : "Cites"
+    Sites ||--o{ Measurements : "Locates"
+    Parameters ||--o{ Measurements : "Quantifies"
+    Methods ||--o{ Measurements : "Means"
+
+    Measurements {
+    }
+
+    Campaign {
+    }
+
+    References {
+    }
+
+    Sites {
+    }
+
+    Parameters {
+    }
+
+    Methods {
+    }
+
+    CREED {
+    }
+</code></pre>
+<p>: A basic diagram of the relationships between different tables. Rendering may be broken…?</p>
 <ul>
 <li>Caveats</li>
 <li>Links</li>
 <li>Vignettes</li>
 </ul>
 </div>
+
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">

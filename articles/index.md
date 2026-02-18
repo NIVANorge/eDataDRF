@@ -15,3 +15,4 @@
 - [references_data](https://NIVANorge.github.io/eDataDRF/articles/references_data.md):
 - [samples_data](https://NIVANorge.github.io/eDataDRF/articles/samples_data.md):
 - [sites_data](https://NIVANorge.github.io/eDataDRF/articles/sites_data.md):
+- [validation](https://NIVANorge.github.io/eDataDRF/articles/validation.md):
