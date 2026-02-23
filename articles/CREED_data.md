@@ -1,4 +1,4 @@
-# CREED_data
+# CREED data
 
 ## Introduction
 

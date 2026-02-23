@@ -1,10 +1,12 @@
-# campaign_data
+# Campaign data
 
 ## Introduction
 
 **Campaign data** is intended to track social and institutional factors
 behind a sample that are not otherwise captured by citations/references.
-It’s a mess, and includes a bunch of fields that it probably shouldn’t.
+Routine environmental monitoring is frequently conducted by private and
+public sector authorities, but may not have any formal academic
+literature metadata (see )
 
 ``` r
 library(eDataDRF)

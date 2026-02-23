@@ -1,4 +1,4 @@
-# samples_data
+# Samples data
 
 ## Introduction
 

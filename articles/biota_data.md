@@ -1,4 +1,4 @@
-# biota_data
+# Biota data
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# Methods table
+# Methods data
 
 ## Introduction
 

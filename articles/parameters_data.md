@@ -1,4 +1,4 @@
-# parameters_data
+# Parameters data
 
 ## Introduction
 

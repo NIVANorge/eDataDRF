@@ -1,4 +1,4 @@
-# compartments_data
+# Compartments data
 
 ## Introduction
 
