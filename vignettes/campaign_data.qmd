@@ -28,42 +28,44 @@ initialise_campaign_tibble()
 
 ## Variables
 
-# Campaign Name Short - String, free, mandatory
+# Campaign Name Short - String, free (>= 40 characters), mandatory
 `CAMPAIGN_NAME_SHORT`
 
-<!-- Short identifier for the campaign. -->
+A short, terse identifier for the campaign. This is used as a primary key for Campaign data and a foreign key in [Measurements data](measurements_data.html). No format is enforced beyond the character limit, but it is rcommended to use PascalCase to maximise character efficiency and readability.
 
 # Campaign Name - String, free, mandatory
 `CAMPAIGN_NAME`
 
+Hey, this actually has a character limit. Who knew!
+
 <!-- Full descriptive name of the campaign. -->
 
-# Campaign Start Date - Date, free, mandatory
+# Campaign Start Date - Date (ISO), free, mandatory
 `CAMPAIGN_START_DATE`
 
-<!-- Date when campaign sampling began. -->
+The date when a sampling campaign began; the first reported sampling date. In rare cases reference objects may not report this. In such cases, record an approximate date and note the issue in [Campaign Comments](#campaign-comment---string-free-optional).
 
-# Campaign End Date - Date, free, optional
+# Campaign End Date - Date (ISO), free, optional
 `CAMPAIGN_END_DATE`
 
-<!-- Date when campaign sampling ended. May be left blank if the campaign is ongoing or the end date is unknown. -->
+If avaiable, the last sampling date of the campaign.
 
 # Organisation - String, free, mandatory
 `ORGANISATION`
 
-<!-- Organisation responsible for the campaign. -->
+The primary organisation responsible for conducting the campaign. In the case of academic publications, this is typically the lead author's primary employer.
 
 # Entered By - String, free, mandatory
 `ENTERED_BY`
 
-<!-- Person or entity who entered the data. -->
+The name or email address of the user entering data.
 
-# Entered Date - Date, free, mandatory
+# Entered Date - Date (ISO), free, mandatory
 `ENTERED_DATE`
 
-<!-- Date when the data was entered into the system. -->
+The date that campaign data were entered.
 
 # Campaign Comment - String, free, optional
 `CAMPAIGN_COMMENT`
 
-<!-- Additional notes or comments about the campaign. -->
+Space for the recording of any additional notes or comments about the campaign deemed relevant. 
