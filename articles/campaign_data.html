@@ -96,38 +96,39 @@
 </div>
 <section class="level2"><h3 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
 </h3>
-</section></section><section class="section level2"><h2 id="campaign-name-short---string-free-mandatory">Campaign Name Short - String, free, mandatory<a class="anchor" aria-label="anchor" href="#campaign-name-short---string-free-mandatory"></a>
+</section></section><section class="section level2"><h2 id="campaign-name-short---string-free-40-characters-mandatory">Campaign Name Short - String, free (&gt;= 40 characters), mandatory<a class="anchor" aria-label="anchor" href="#campaign-name-short---string-free-40-characters-mandatory"></a>
 </h2>
 <p><code>CAMPAIGN_NAME_SHORT</code></p>
-<!-- Short identifier for the campaign. -->
+<p>A short, terse identifier for the campaign. This is used as a primary key for Campaign data and a foreign key in <a href="measurements_data.html">Measurements data</a>. No format is enforced beyond the character limit, but it is rcommended to use PascalCase to maximise character efficiency and readability.</p>
 </section><section class="section level2"><h2 id="campaign-name---string-free-mandatory">Campaign Name - String, free, mandatory<a class="anchor" aria-label="anchor" href="#campaign-name---string-free-mandatory"></a>
 </h2>
 <p><code>CAMPAIGN_NAME</code></p>
+<p>Hey, this actually has a character limit. Who knew!</p>
 <!-- Full descriptive name of the campaign. -->
-</section><section class="section level2"><h2 id="campaign-start-date---date-free-mandatory">Campaign Start Date - Date, free, mandatory<a class="anchor" aria-label="anchor" href="#campaign-start-date---date-free-mandatory"></a>
+</section><section class="section level2"><h2 id="campaign-start-date---date-iso-free-mandatory">Campaign Start Date - Date (ISO), free, mandatory<a class="anchor" aria-label="anchor" href="#campaign-start-date---date-iso-free-mandatory"></a>
 </h2>
 <p><code>CAMPAIGN_START_DATE</code></p>
-<!-- Date when campaign sampling began. -->
-</section><section class="section level2"><h2 id="campaign-end-date---date-free-optional">Campaign End Date - Date, free, optional<a class="anchor" aria-label="anchor" href="#campaign-end-date---date-free-optional"></a>
+<p>The date when a sampling campaign began; the first reported sampling date. In rare cases reference objects may not report this. In such cases, record an approximate date and note the issue in <a href="#campaign-comment---string-free-optional">Campaign Comments</a>.</p>
+</section><section class="section level2"><h2 id="campaign-end-date---date-iso-free-optional">Campaign End Date - Date (ISO), free, optional<a class="anchor" aria-label="anchor" href="#campaign-end-date---date-iso-free-optional"></a>
 </h2>
 <p><code>CAMPAIGN_END_DATE</code></p>
-<!-- Date when campaign sampling ended. May be left blank if the campaign is ongoing or the end date is unknown. -->
+<p>If avaiable, the last sampling date of the campaign.</p>
 </section><section class="section level2"><h2 id="organisation---string-free-mandatory">Organisation - String, free, mandatory<a class="anchor" aria-label="anchor" href="#organisation---string-free-mandatory"></a>
 </h2>
 <p><code>ORGANISATION</code></p>
-<!-- Organisation responsible for the campaign. -->
+<p>The primary organisation responsible for conducting the campaign. In the case of academic publications, this is typically the lead author’s primary employer.</p>
 </section><section class="section level2"><h2 id="entered-by---string-free-mandatory">Entered By - String, free, mandatory<a class="anchor" aria-label="anchor" href="#entered-by---string-free-mandatory"></a>
 </h2>
 <p><code>ENTERED_BY</code></p>
-<!-- Person or entity who entered the data. -->
-</section><section class="section level2"><h2 id="entered-date---date-free-mandatory">Entered Date - Date, free, mandatory<a class="anchor" aria-label="anchor" href="#entered-date---date-free-mandatory"></a>
+<p>The name or email address of the user entering data.</p>
+</section><section class="section level2"><h2 id="entered-date---date-iso-free-mandatory">Entered Date - Date (ISO), free, mandatory<a class="anchor" aria-label="anchor" href="#entered-date---date-iso-free-mandatory"></a>
 </h2>
 <p><code>ENTERED_DATE</code></p>
-<!-- Date when the data was entered into the system. -->
+<p>The date that campaign data were entered.</p>
 </section><section class="section level2"><h2 id="campaign-comment---string-free-optional">Campaign Comment - String, free, optional<a class="anchor" aria-label="anchor" href="#campaign-comment---string-free-optional"></a>
 </h2>
 <p><code>CAMPAIGN_COMMENT</code></p>
-<!-- Additional notes or comments about the campaign. -->
+<p>Space for the recording of any additional notes or comments about the campaign deemed relevant.</p>
 </section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);

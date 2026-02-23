@@ -2,6 +2,13 @@
 
 ## Introduction
 
+Sites data captures information about the coordinates, land use, and
+administrative/geographical boundaries of sampling sites. In this
+format, we make the distinction between the sampled site - a fixed,
+physical point in space - and the
+[compartment](https://NIVANorge.github.io/eDataDRF/articles/compartments_data.md) -
+the type of medium sampled.
+
 ``` r
 library(eDataDRF)
 ```
@@ -22,13 +29,68 @@ initialise_sites_tibble()
 
 `SITE_CODE`
 
+A short, unique code identifying the sampled site. Although formatting
+is not enforced on this field, we recommend using an abbreviated
+combination of the campaign, long form site name and any details
+relevant to the site. For example:
+
+“Arctic Monitoring Program; Pelagic Sampling Point 37” -\>
+`AMP-Pelagic-37`. The site code is the primary key for sites data and is
+used as a foreign key in
+[samples](https://NIVANorge.github.io/eDataDRF/articles/samples_data.md)
+and
+[measurements](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.md).
+
 ## Site Name - String, free, mandatory
 
 `SITE_NAME`
 
+A longer form name of the site, potentially including details such as
+address, region, site type, etc. May be fully copied from source to
+enable easy tracing back of the relevant details.
+
 ## Site Geographic Feature - String, controlled, mandatory
 
 `SITE_GEOGRAPHIC_FEATURE`
+
+Categorisation of site type allows for broad comparisons to be made.
+Site Geographic feature is based on a variety of existing land-use
+taxonomy to facilitate conversion and comparison:
+
+- [LUCAS Land Use Cover
+  Hierachy](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=LUCAS_-_Land_use_and_land_cover_survey)
+  (EU)
+- [CORINE Land Cover
+  inventory](https://land.copernicus.eu/en/products/corine-land-cover)
+  (EU)
+- Water Framework Directive water body types
+- Marine Something Framework Directive water types
+
+These are summarised in the table below
+
+| Value                             | Description                                                                | LUCAS | CORINE | WFD | MSFD |
+|-----------------------------------|----------------------------------------------------------------------------|-------|--------|-----|------|
+| Not relevant                      | Use when geographic feature is not applicable                              |       |        |     |      |
+| Not reported                      | Use when information exists but was not reported                           |       |        |     |      |
+| River, stream, canal              | Flowing water bodies                                                       | G20   | 5.1.1  |     |      |
+| Lake, pond, pool, reservoir       | Standing water bodies                                                      | G10   | 5.1.2  |     |      |
+| Ocean, sea, territorial waters    | Marine waters                                                              | G40   | 5.2.3  |     |      |
+| Coastal, fjord                    | Coastal waters out to territorial water boundaries                         | G30   | 5.2.1  |     |      |
+| Estuary                           | Estuaries                                                                  |       | 5.2.2  |     |      |
+| Drainage, sewer, artificial water | Human-made water channels                                                  |       |        |     |      |
+| Swamp, wetland                    | Water-saturated land                                                       | H00   | 4      |     |      |
+| Groundwater, aquifer              | Subsurface water bodies                                                    |       |        |     |      |
+| WWTP                              | Wastewater treatment plant                                                 | U321  | 1.2.1  |     |      |
+| Artificial Land/Urban Areas       | Built environment                                                          | A00   | 1      |     |      |
+| Landfills                         | Sites officially designated or functionally used for the disposal of waste | A00   | 1      |     |      |
+| Cropland                          | Agricultural land                                                          | B00   | 2      |     |      |
+| Woodland, forest                  | Tree-covered areas                                                         | C00   | 3.1    |     |      |
+| Shrubland                         | Areas dominated by shrubs                                                  | D00   | 3.2    |     |      |
+| Grassland                         | Areas dominated by grasses                                                 | E00   |        |     |      |
+| Bare land and lichen/moss         | Sparsely vegetated areas                                                   | F00   | 3.3    |     |      |
+| Other                             | Specify details in SITE_COMMENT                                            |       |        |     |      |
+
+### Controlled Vocabulary
 
 ``` r
 geographic_features_vocabulary()
@@ -44,11 +106,17 @@ geographic_features_vocabulary()
 #> [19] "Glacier"                           "Other"
 ```
 
-### Controlled Vocabulary
-
 ## Site Geographic Feature Sub - String, controlled, mandatory
 
 `SITE_GEOGRAPHIC_FEATURE_SUB`
+
+In some cases geographic feature vocabulary may not have enough
+resolution to capture sampling sites. For example, in bodies of water,
+it may be important to distinguish between samples from the benthos,
+water column, water surface, etc. In this case, sub-features can be used
+to add additional precision.
+
+### Controlled Vocabulary
 
 ``` r
 geographic_features_sub_vocabulary()
@@ -57,11 +125,19 @@ geographic_features_sub_vocabulary()
 #> [5] "Water benthos"              "Other"
 ```
 
-### Controlled Vocabulary
-
 ## Country ISO - String, controlled, mandatory
 
 `COUNTRY_ISO`
+
+Although the sheer size of countries makes them at times poor
+identifiers of geographical location, they remain useful data. Although
+this variable is marked as mandatory, it is possible to enter “Not
+relevant” when sites are out of the territory of any nation (e.g. in
+international waters). The [ISO 3166 set of country
+codes](https://www.iso.org/iso-3166-country-codes.html) is used, via the
+R package `{iso}`.
+
+### Controlled Vocabulary
 
 ``` r
 countries_vocabulary()
@@ -317,8 +393,6 @@ countries_vocabulary()
 #> [250] "Zambia"                                      
 #> [251] "Zimbabwe"
 ```
-
-### Controlled Vocabulary
 
 ## Ocean IHO - String, controlled, mandatory
 

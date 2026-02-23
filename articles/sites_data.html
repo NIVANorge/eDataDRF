@@ -81,6 +81,7 @@
 
     <section class="section level2"><h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
+<p>Sites data captures information about the coordinates, land use, and administrative/geographical boundaries of sampling sites. In this format, we make the distinction between the sampled site - a fixed, physical point in space - and the <a href="compartments_data.html">compartment</a> - the type of medium sampled.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://NIVANorge.github.io/eDataDRF/">eDataDRF</a></span><span class="op">)</span></span></code></pre></div>
@@ -100,15 +101,199 @@
 </section></section><section class="section level2"><h2 id="site-code---string-free-mandatory">Site Code - String, free, mandatory<a class="anchor" aria-label="anchor" href="#site-code---string-free-mandatory"></a>
 </h2>
 <p><code>SITE_CODE</code></p>
-<!-- Unique code identifying the site. Primary key. -->
+<p>A short, unique code identifying the sampled site. Although formatting is not enforced on this field, we recommend using an abbreviated combination of the campaign, long form site name and any details relevant to the site. For example:</p>
+<p>“Arctic Monitoring Program; Pelagic Sampling Point 37” -&gt; <code>AMP-Pelagic-37</code>. The site code is the primary key for sites data and is used as a foreign key in <a href="samples_data.html">samples</a> and <a href="measurements_data.html">measurements</a>.</p>
 </section><section class="section level2"><h2 id="site-name---string-free-mandatory">Site Name - String, free, mandatory<a class="anchor" aria-label="anchor" href="#site-name---string-free-mandatory"></a>
 </h2>
 <p><code>SITE_NAME</code></p>
-<!-- Descriptive name of the sampling site. -->
+<p>A longer form name of the site, potentially including details such as address, region, site type, etc. May be fully copied from source to enable easy tracing back of the relevant details.</p>
 </section><section class="section level2"><h2 id="site-geographic-feature---string-controlled-mandatory">Site Geographic Feature - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#site-geographic-feature---string-controlled-mandatory"></a>
 </h2>
 <p><code>SITE_GEOGRAPHIC_FEATURE</code></p>
-<!-- Broad geographic feature type of the sampling location. -->
+<p>Categorisation of site type allows for broad comparisons to be made. Site Geographic feature is based on a variety of existing land-use taxonomy to facilitate conversion and comparison:</p>
+<ul>
+<li>
+<a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=LUCAS_-_Land_use_and_land_cover_survey" class="external-link">LUCAS Land Use Cover Hierachy</a> (EU)</li>
+<li>
+<a href="https://land.copernicus.eu/en/products/corine-land-cover" class="external-link">CORINE Land Cover inventory</a> (EU)</li>
+<li>Water Framework Directive water body types</li>
+<li>Marine Something Framework Directive water types</li>
+</ul>
+<p>These are summarised in the table below</p>
+<table class="table caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead><tr class="header">
+<th>Value</th>
+<th>Description</th>
+<th>LUCAS</th>
+<th>CORINE</th>
+<th>WFD</th>
+<th>MSFD</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Not relevant</td>
+<td>Use when geographic feature is not applicable</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Not reported</td>
+<td>Use when information exists but was not reported</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>River, stream, canal</td>
+<td>Flowing water bodies</td>
+<td>G20</td>
+<td>5.1.1</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Lake, pond, pool, reservoir</td>
+<td>Standing water bodies</td>
+<td>G10</td>
+<td>5.1.2</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Ocean, sea, territorial waters</td>
+<td>Marine waters</td>
+<td>G40</td>
+<td>5.2.3</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Coastal, fjord</td>
+<td>Coastal waters out to territorial water boundaries</td>
+<td>G30</td>
+<td>5.2.1</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Estuary</td>
+<td>Estuaries</td>
+<td></td>
+<td>5.2.2</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Drainage, sewer, artificial water</td>
+<td>Human-made water channels</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Swamp, wetland</td>
+<td>Water-saturated land</td>
+<td>H00</td>
+<td>4</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Groundwater, aquifer</td>
+<td>Subsurface water bodies</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>WWTP</td>
+<td>Wastewater treatment plant</td>
+<td>U321</td>
+<td>1.2.1</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Artificial Land/Urban Areas</td>
+<td>Built environment</td>
+<td>A00</td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Landfills</td>
+<td>Sites officially designated or functionally used for the disposal of waste</td>
+<td>A00</td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Cropland</td>
+<td>Agricultural land</td>
+<td>B00</td>
+<td>2</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Woodland, forest</td>
+<td>Tree-covered areas</td>
+<td>C00</td>
+<td>3.1</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Shrubland</td>
+<td>Areas dominated by shrubs</td>
+<td>D00</td>
+<td>3.2</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Grassland</td>
+<td>Areas dominated by grasses</td>
+<td>E00</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Bare land and lichen/moss</td>
+<td>Sparsely vegetated areas</td>
+<td>F00</td>
+<td>3.3</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Other</td>
+<td>Specify details in SITE_COMMENT</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<section class="level2"><h3 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
+</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/geographic_features_vocabulary.html">geographic_features_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -123,13 +308,12 @@
 <span><span class="co">#&gt; [17] "Grassland"                         "Bare land and lichen/moss"        </span></span>
 <span><span class="co">#&gt; [19] "Glacier"                           "Other"</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
-</h3>
-<!-- Fill in from geographic_features_vocabulary() output. -->
 </section></section><section class="section level2"><h2 id="site-geographic-feature-sub---string-controlled-mandatory">Site Geographic Feature Sub - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#site-geographic-feature-sub---string-controlled-mandatory"></a>
 </h2>
 <p><code>SITE_GEOGRAPHIC_FEATURE_SUB</code></p>
-<!-- Specific sub-category of the geographic feature. -->
+<p>In some cases geographic feature vocabulary may not have enough resolution to capture sampling sites. For example, in bodies of water, it may be important to distinguish between samples from the benthos, water column, water surface, etc. In this case, sub-features can be used to add additional precision.</p>
+<section class="level2"><h3 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
+</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/geographic_features_sub_vocabulary.html">geographic_features_sub_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -137,13 +321,12 @@
 <span><span class="co">#&gt; [3] "Water surface"              "Water column, pelagic zone"</span></span>
 <span><span class="co">#&gt; [5] "Water benthos"              "Other"</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
-</h3>
-<!-- Fill in from geographic_features_sub_vocabulary() output. -->
 </section></section><section class="section level2"><h2 id="country-iso---string-controlled-mandatory">Country ISO - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#country-iso---string-controlled-mandatory"></a>
 </h2>
 <p><code>COUNTRY_ISO</code></p>
-<!-- ISO country code where the site is located. -->
+<p>Although the sheer size of countries makes them at times poor identifiers of geographical location, they remain useful data. Although this variable is marked as mandatory, it is possible to enter “Not relevant” when sites are out of the territory of any nation (e.g. in international waters). The <a href="https://www.iso.org/iso-3166-country-codes.html" class="external-link">ISO 3166 set of country codes</a> is used, via the R package <code>{iso}</code>.</p>
+<section class="level2"><h3 id="controlled-vocabulary-2">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-2"></a>
+</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/countries_vocabulary.html">countries_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -399,9 +582,6 @@
 <span><span class="co">#&gt; [250] "Zambia"                                      </span></span>
 <span><span class="co">#&gt; [251] "Zimbabwe"</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-2">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-2"></a>
-</h3>
-<!-- Fill in from countries_vocabulary() output (ISO 3166-1 country names). -->
 </section></section><section class="section level2"><h2 id="ocean-iho---string-controlled-mandatory">Ocean IHO - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#ocean-iho---string-controlled-mandatory"></a>
 </h2>
 <p><code>OCEAN_IHO</code></p>
