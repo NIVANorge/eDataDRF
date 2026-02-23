@@ -1,5 +1,6 @@
 ---
-title: "Methods table"
+title: "Methods data"
+subtitle: "Records type and descriptions of methods used for sampling, extraction, fractionation and analysis"
 vignette: >
   %\VignetteIndexEntry{methods_data}
   %\VignetteEngine{quarto::html}

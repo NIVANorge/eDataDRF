@@ -1,5 +1,6 @@
 ---
-title: "campaign_data"
+title: "Campaign data"
+subtitle: "Records data about sampling campaign and organisation collecting data"
 vignette: >
   %\VignetteIndexEntry{campaign_data}
   %\VignetteEngine{quarto::html}
@@ -12,7 +13,7 @@ knitr:
 
 # Introduction
 
-**Campaign data** is intended to track social and institutional factors behind a sample that are not otherwise captured by citations/references. It's a mess, and includes a bunch of fields that it probably shouldn't.
+**Campaign data** is intended to track social and institutional factors behind a sample that are not otherwise captured by citations/references. Routine environmental monitoring is frequently conducted by private and public sector authorities, but may not have any formal academic literature metadata (see )
 
 ```{r}
 #| label: setup

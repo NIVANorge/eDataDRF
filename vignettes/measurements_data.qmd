@@ -1,5 +1,6 @@
 ---
 title: "Measurements Table"
+subtitle: "Records measured values, units, uncertainty, sample size, and methods associated with a given sample"
 vignette: >
   %\VignetteIndexEntry{measurements_data}
   %\VignetteEngine{quarto::html}

@@ -14,7 +14,6 @@ Tables are created as `tibble::tibble()` calls with empty variables of specific 
 
 Tables are listed below:
 
-
 ```{r}
 # Create the data frame ----
 schema_data <- tribble(
@@ -41,6 +40,7 @@ schema_table <- schema_data |>
   ) 
 
 schema_table
+
 ```
 
 : Table of tables in the eData format, their purpose, and comments.

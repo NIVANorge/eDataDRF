@@ -1,5 +1,6 @@
 ---
-title: "biota_data"
+title: "Biota data"
+subtitle: "Where relevant, records biota species, tissue, life stage, and gender"
 vignette: >
   %\VignetteIndexEntry{biota_data}
   %\VignetteEngine{quarto::html}

@@ -1,5 +1,6 @@
 ---
-title: "references_data"
+title: "Reference data"
+subtitle: "Records conventional publication metadata, where available"
 vignette: >
   %\VignetteIndexEntry{references_data}
   %\VignetteEngine{quarto::html}

@@ -1,5 +1,6 @@
 ---
-title: "compartments_data"
+title: "Compartments data"
+subtitle: "Records information on the compartment/matrix sampled"
 vignette: >
   %\VignetteIndexEntry{compartments_data}
   %\VignetteEngine{quarto::html}

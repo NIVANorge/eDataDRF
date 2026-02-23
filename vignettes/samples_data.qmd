@@ -1,5 +1,6 @@
 ---
-title: "samples_data"
+title: "Samples data"
+subtitle: "Recorded which combinations of dates, sites, parameters and compartments were sampled"
 vignette: >
   %\VignetteIndexEntry{samples_data}
   %\VignetteEngine{quarto::html}

@@ -53,7 +53,7 @@ inst/doc
 
 # R code not intended for inclusion
 scratchpad/
-/doc/
+doc/
 /Meta/
 
 # Large ontology files

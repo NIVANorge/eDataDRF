@@ -1,5 +1,6 @@
 ---
-title: "parameters_data"
+title: "Parameters data"
+subtitle: "Records data on stressors (chemical, radiation, etc.), quality measurements"
 vignette: >
   %\VignetteIndexEntry{parameters_data}
   %\VignetteEngine{quarto::html}

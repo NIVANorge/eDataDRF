@@ -1,5 +1,6 @@
 ---
-title: "CREED_data"
+title: "CREED data"
+subtitle: "Records assessment purpose statement, relevant data summarised from above tables, relevance/reliability scores, and final assessment of data quality."
 vignette: >
   %\VignetteIndexEntry{CREED_data}
   %\VignetteEngine{quarto::html}

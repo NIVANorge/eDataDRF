@@ -1,5 +1,6 @@
 ---
-title: "sites_data"
+title: "Sites data"
+subtitle: "Records site coordinates, land use, country/ocean"
 vignette: >
   %\VignetteIndexEntry{sites_data}
   %\VignetteEngine{quarto::html}
