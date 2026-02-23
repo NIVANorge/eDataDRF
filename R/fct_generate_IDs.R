@@ -206,6 +206,7 @@ generate_protocol_id <- function(
 #' @param title Title string
 #' @return Character string with format DateAuthorFirstThreeWords
 #' @importFrom stringr str_to_title
+#' @export
 generate_reference_id <- function(date, author, title) {
   # Format date as YYYYMMDD
   date_part <- date

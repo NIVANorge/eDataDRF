@@ -37,11 +37,11 @@ The reference's primary key, automatically generated from YEAR, AUTHOR, and TITL
 
 ```{r}
 #| label: reference_id
-generate_reference_id(
-  year = 2018, # i.e. publication date
-  author = "Last1, First1; Last2, First2" # Take last name of first author
-  title = "A study of recent developments in the field" # Extract first three words, convert to PascalCase
-)
+# eDataDRF::generate_reference_id(
+#   date = 2018, # i.e. publication date
+#   author = "Last1, First1; Last2, First2", # Take last name of first author
+#   title = "A study of recent developments in the field" # Extract first three words, convert to PascalCase
+# )
 ```
 
 Reference ID is also a foreign key in [Measurement data](measurements_data.html). 
