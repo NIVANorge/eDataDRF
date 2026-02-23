@@ -79,7 +79,9 @@
 
 
 
-    <p><strong>Campaign data</strong> is intended to track social and institutional factors behind a sample that are not otherwise captured by citations/references. It’s a mess, and includes a bunch of fields that it probably shouldn’t.</p>
+    <section class="section level2"><h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<p><strong>Campaign data</strong> is intended to track social and institutional factors behind a sample that are not otherwise captured by citations/references. It’s a mess, and includes a bunch of fields that it probably shouldn’t.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://NIVANorge.github.io/eDataDRF/">eDataDRF</a></span><span class="op">)</span></span></code></pre></div>
@@ -92,10 +94,41 @@
 <span><span class="co">#&gt; #   CAMPAIGN_START_DATE &lt;date&gt;, CAMPAIGN_END_DATE &lt;date&gt;, ORGANISATION &lt;chr&gt;,</span></span>
 <span><span class="co">#&gt; #   ENTERED_BY &lt;chr&gt;, ENTERED_DATE &lt;date&gt;, CAMPAIGN_COMMENT &lt;chr&gt;</span></span></code></pre></div>
 </div>
-
-
-
-<script id="quarto-html-after-body" type="application/javascript">
+<section class="level2"><h3 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
+</h3>
+</section></section><section class="section level2"><h2 id="campaign-name-short---string-free-mandatory">Campaign Name Short - String, free, mandatory<a class="anchor" aria-label="anchor" href="#campaign-name-short---string-free-mandatory"></a>
+</h2>
+<p><code>CAMPAIGN_NAME_SHORT</code></p>
+<!-- Short identifier for the campaign. -->
+</section><section class="section level2"><h2 id="campaign-name---string-free-mandatory">Campaign Name - String, free, mandatory<a class="anchor" aria-label="anchor" href="#campaign-name---string-free-mandatory"></a>
+</h2>
+<p><code>CAMPAIGN_NAME</code></p>
+<!-- Full descriptive name of the campaign. -->
+</section><section class="section level2"><h2 id="campaign-start-date---date-free-mandatory">Campaign Start Date - Date, free, mandatory<a class="anchor" aria-label="anchor" href="#campaign-start-date---date-free-mandatory"></a>
+</h2>
+<p><code>CAMPAIGN_START_DATE</code></p>
+<!-- Date when campaign sampling began. -->
+</section><section class="section level2"><h2 id="campaign-end-date---date-free-optional">Campaign End Date - Date, free, optional<a class="anchor" aria-label="anchor" href="#campaign-end-date---date-free-optional"></a>
+</h2>
+<p><code>CAMPAIGN_END_DATE</code></p>
+<!-- Date when campaign sampling ended. May be left blank if the campaign is ongoing or the end date is unknown. -->
+</section><section class="section level2"><h2 id="organisation---string-free-mandatory">Organisation - String, free, mandatory<a class="anchor" aria-label="anchor" href="#organisation---string-free-mandatory"></a>
+</h2>
+<p><code>ORGANISATION</code></p>
+<!-- Organisation responsible for the campaign. -->
+</section><section class="section level2"><h2 id="entered-by---string-free-mandatory">Entered By - String, free, mandatory<a class="anchor" aria-label="anchor" href="#entered-by---string-free-mandatory"></a>
+</h2>
+<p><code>ENTERED_BY</code></p>
+<!-- Person or entity who entered the data. -->
+</section><section class="section level2"><h2 id="entered-date---date-free-mandatory">Entered Date - Date, free, mandatory<a class="anchor" aria-label="anchor" href="#entered-date---date-free-mandatory"></a>
+</h2>
+<p><code>ENTERED_DATE</code></p>
+<!-- Date when the data was entered into the system. -->
+</section><section class="section level2"><h2 id="campaign-comment---string-free-optional">Campaign Comment - String, free, optional<a class="anchor" aria-label="anchor" href="#campaign-comment---string-free-optional"></a>
+</h2>
+<p><code>CAMPAIGN_COMMENT</code></p>
+<!-- Additional notes or comments about the campaign. -->
+</section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);

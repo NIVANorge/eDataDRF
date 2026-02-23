@@ -79,14 +79,42 @@
 
 
 
-    <div class="cell">
+    <section class="section level2"><h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://NIVANorge.github.io/eDataDRF/">eDataDRF</a></span><span class="op">)</span></span></code></pre></div>
 </div>
-
-
-
-<script id="quarto-html-after-body" type="application/javascript">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/initialise_CREED_scores_tibble.html">initialise_CREED_scores_tibble</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 0 × 5</span></span>
+<span><span class="co">#&gt; # ℹ 5 variables: REFERENCE_ID &lt;chr&gt;, SILVER_RELIABILITY &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; #   SILVER_RELEVANCE &lt;chr&gt;, GOLD_RELIABILITY &lt;chr&gt;, GOLD_RELEVANCE &lt;chr&gt;</span></span></code></pre></div>
+</div>
+<section class="level2"><h3 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
+</h3>
+</section></section><section class="section level2"><h2 id="reference-id---string-free-mandatory">Reference ID - String, free, mandatory<a class="anchor" aria-label="anchor" href="#reference-id---string-free-mandatory"></a>
+</h2>
+<p><code>REFERENCE_ID</code></p>
+<!-- Unique identifier linking to the references table. Foreign key. -->
+</section><section class="section level2"><h2 id="silver-reliability---string-free-mandatory">Silver Reliability - String, free, mandatory<a class="anchor" aria-label="anchor" href="#silver-reliability---string-free-mandatory"></a>
+</h2>
+<p><code>SILVER_RELIABILITY</code></p>
+<!-- Reliability score at silver standard level. -->
+</section><section class="section level2"><h2 id="silver-relevance---string-free-mandatory">Silver Relevance - String, free, mandatory<a class="anchor" aria-label="anchor" href="#silver-relevance---string-free-mandatory"></a>
+</h2>
+<p><code>SILVER_RELEVANCE</code></p>
+<!-- Relevance score at silver standard level. -->
+</section><section class="section level2"><h2 id="gold-reliability---string-free-mandatory">Gold Reliability - String, free, mandatory<a class="anchor" aria-label="anchor" href="#gold-reliability---string-free-mandatory"></a>
+</h2>
+<p><code>GOLD_RELIABILITY</code></p>
+<!-- Reliability score at gold standard level. -->
+</section><section class="section level2"><h2 id="gold-relevance---string-free-mandatory">Gold Relevance - String, free, mandatory<a class="anchor" aria-label="anchor" href="#gold-relevance---string-free-mandatory"></a>
+</h2>
+<p><code>GOLD_RELEVANCE</code></p>
+<!-- Relevance score at gold standard level. -->
+</section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);

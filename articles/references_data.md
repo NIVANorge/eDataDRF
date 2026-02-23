@@ -1,5 +1,7 @@
 # references_data
 
+## Introduction
+
 ``` r
 library(eDataDRF)
 ```
@@ -41,3 +43,77 @@ reference_character_limits()
 #> $URL
 #> [1] 200
 ```
+
+### Variables
+
+## Reference ID - String, free, mandatory
+
+`REFERENCE_ID`
+
+## Reference Type - String, free, mandatory
+
+`REFERENCE_TYPE`
+
+## Data Source - String, free, mandatory
+
+`DATA_SOURCE`
+
+## Author - String, free, mandatory
+
+`AUTHOR`
+
+## Title - String, free, mandatory
+
+`TITLE`
+
+## Year - Numeric, free, mandatory
+
+`YEAR`
+
+## Access Date - Date, free, mandatory
+
+`ACCESS_DATE`
+
+## Periodical Journal - String, free, mandatory
+
+`PERIODICAL_JOURNAL`
+
+## Volume - Numeric, free, mandatory
+
+`VOLUME`
+
+## Issue - Numeric, free, mandatory
+
+`ISSUE`
+
+## Publisher - String, free, mandatory
+
+`PUBLISHER`
+
+## Institution - String, free, mandatory
+
+`INSTITUTION`
+
+## DOI - String, free, mandatory
+
+`DOI`
+
+## URL - String, free, mandatory
+
+`URL`
+
+## ISBN ISSN - String, free, mandatory
+
+`ISBN_ISSN`
+
+## Edition - String, free, mandatory
+
+`EDITION`
+
+## Document Number - String, free, mandatory
+
+`DOCUMENT_NUMBER`
+
+## Ref Comment - String, free, optional
+
+`REF_COMMENT`

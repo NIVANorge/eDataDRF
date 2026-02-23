@@ -79,17 +79,217 @@
 
 
 
-    <p>Data on sampled biota, if relevant.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://NIVANorge.github.io/eDataDRF/">eDataDRF</a></span><span class="op">)</span></span></code></pre></div>
-</div>
+    <section class="section level2"><h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<p>Data on sampled biota, if relevant.</p>
 <ul>
 <li>Link to ecotox db</li>
 <li>Plan to use EoL or wikispecies in future</li>
 <li><a href="samples_data.html">Test link to samples data</a></li>
 </ul>
-<script id="quarto-html-after-body" type="application/javascript">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://NIVANorge.github.io/eDataDRF/">eDataDRF</a></span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/initialise_biota_tibble.html">initialise_biota_tibble</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 0 × 14</span></span>
+<span><span class="co">#&gt; # ℹ 14 variables: SAMPLE_ID &lt;chr&gt;, SITE_CODE &lt;chr&gt;, PARAMETER_NAME &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; #   ENVIRON_COMPARTMENT &lt;chr&gt;, ENVIRON_COMPARTMENT_SUB &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; #   MEASURED_CATEGORY &lt;chr&gt;, SAMPLING_DATE &lt;chr&gt;, SUBSAMPLE &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; #   SPECIES_GROUP &lt;chr&gt;, SAMPLE_SPECIES &lt;chr&gt;, SAMPLE_TISSUE &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; #   SAMPLE_SPECIES_LIFESTAGE &lt;chr&gt;, SAMPLE_SPECIES_GENDER &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; #   BIOTA_COMMENT &lt;chr&gt;</span></span></code></pre></div>
+</div>
+<section class="level2"><h3 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
+</h3>
+</section></section><section class="section level2"><h2 id="sample-id---string-free-mandatory">Sample ID - String, free, mandatory<a class="anchor" aria-label="anchor" href="#sample-id---string-free-mandatory"></a>
+</h2>
+<p><code>SAMPLE_ID</code></p>
+<!-- Unique identifier linking to the samples table. Foreign key for measurements. -->
+</section><section class="section level2"><h2 id="site-code---string-free-mandatory">Site Code - String, free, mandatory<a class="anchor" aria-label="anchor" href="#site-code---string-free-mandatory"></a>
+</h2>
+<p><code>SITE_CODE</code></p>
+<!-- Code identifying the sampling location. Foreign key for sites. -->
+</section><section class="section level2"><h2 id="parameter-name---string-free-mandatory">Parameter Name - String, free, mandatory<a class="anchor" aria-label="anchor" href="#parameter-name---string-free-mandatory"></a>
+</h2>
+<p><code>PARAMETER_NAME</code></p>
+<!-- Name of the measured parameter or stressor. Foreign key for parameters. -->
+</section><section class="section level2"><h2 id="environ-compartment---string-controlled-mandatory">Environ Compartment - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#environ-compartment---string-controlled-mandatory"></a>
+</h2>
+<p><code>ENVIRON_COMPARTMENT</code></p>
+<!-- Broad environmental compartment category. Inherited from the samples table. -->
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/environ_compartments_vocabulary.html">environ_compartments_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "Aquatic"      "Atmospheric"  "Terrestrial"  "Biota"        "Not relevant"</span></span>
+<span><span class="co">#&gt; [6] "Not reported" "Other"</span></span></code></pre></div>
+</div>
+<section class="level2"><h3 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
+</h3>
+<!-- Fill in from environ_compartments_vocabulary() output. -->
+</section></section><section class="section level2"><h2 id="environ-compartment-sub---string-controlled-mandatory">Environ Compartment Sub - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#environ-compartment-sub---string-controlled-mandatory"></a>
+</h2>
+<p><code>ENVIRON_COMPARTMENT_SUB</code></p>
+<!-- Specific sub-category of the environmental compartment. Inherited from the samples table. -->
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/environ_compartments_sub_vocabulary.html">environ_compartments_sub_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; $Aquatic</span></span>
+<span><span class="co">#&gt;                    Freshwater             Marine/Salt Water </span></span>
+<span><span class="co">#&gt;                  "Freshwater"           "Marine/Salt Water" </span></span>
+<span><span class="co">#&gt;   Brackish/Transitional Water                   Groundwater </span></span>
+<span><span class="co">#&gt; "Brackish/Transitional Water"                 "Groundwater" </span></span>
+<span><span class="co">#&gt;                    Wastewater          Liquid Growth Medium </span></span>
+<span><span class="co">#&gt;                  "Wastewater"        "Liquid Growth Medium" </span></span>
+<span><span class="co">#&gt;                     Rainwater                    Stormwater </span></span>
+<span><span class="co">#&gt;                   "Rainwater"                  "Stormwater" </span></span>
+<span><span class="co">#&gt;                      Leachate              Aquatic Sediment </span></span>
+<span><span class="co">#&gt;                    "Leachate"            "Aquatic Sediment" </span></span>
+<span><span class="co">#&gt;                     Porewater                        Sludge </span></span>
+<span><span class="co">#&gt;                   "Porewater"                      "Sludge" </span></span>
+<span><span class="co">#&gt;                      Snow/Ice </span></span>
+<span><span class="co">#&gt;                    "Snow/Ice" </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $Atmospheric</span></span>
+<span><span class="co">#&gt;    Indoor Air   Outdoor Air </span></span>
+<span><span class="co">#&gt;  "Indoor Air" "Outdoor Air" </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $Terrestrial</span></span>
+<span><span class="co">#&gt;     Terrestrial Biological Residue              Soil H Horizon (Peat) </span></span>
+<span><span class="co">#&gt;   "Terrestrial Biological Residue"            "Soil H Horizon (Peat)" </span></span>
+<span><span class="co">#&gt;           Soil O Horizon (Organic)           Soil A Horizon (Topsoil) </span></span>
+<span><span class="co">#&gt;         "Soil O Horizon (Organic)"         "Soil A Horizon (Topsoil)" </span></span>
+<span><span class="co">#&gt;           Soil E Horizon (Mineral)           Soil S Horizon (Mineral) </span></span>
+<span><span class="co">#&gt;         "Soil E Horizon (Mineral)"         "Soil S Horizon (Mineral)" </span></span>
+<span><span class="co">#&gt;   Soil C Horizon (Parent Material)           Soil R Horizon (Bedrock) </span></span>
+<span><span class="co">#&gt; "Soil C Horizon (Parent Material)"         "Soil R Horizon (Bedrock)" </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $Biota</span></span>
+<span><span class="co">#&gt;   Biota, Terrestrial       Biota, Aquatic   Biota, Atmospheric </span></span>
+<span><span class="co">#&gt; "Biota, Terrestrial"     "Biota, Aquatic" "Biota, Atmospheric" </span></span>
+<span><span class="co">#&gt;         Biota, Other </span></span>
+<span><span class="co">#&gt;       "Biota, Other"</span></span></code></pre></div>
+</div>
+<section class="level2"><h3 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
+</h3>
+<!-- Fill in from environ_compartments_sub_vocabulary() output. -->
+</section></section><section class="section level2"><h2 id="measured-category---string-controlled-mandatory">Measured Category - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#measured-category---string-controlled-mandatory"></a>
+</h2>
+<p><code>MEASURED_CATEGORY</code></p>
+<!-- Category indicating measurement context. Inherited from the samples table. -->
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/measured_categories_vocabulary.html">measured_categories_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;               External               Internal                Surface </span></span>
+<span><span class="co">#&gt;       "External Media" "Internal to Organism"  "Surface of Organism"</span></span></code></pre></div>
+</div>
+<section class="level2"><h3 id="controlled-vocabulary-2">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-2"></a>
+</h3>
+<!-- Fill in from measured_categories_vocabulary() output. -->
+</section></section><section class="section level2"><h2 id="sampling-date---string-free-mandatory">Sampling Date - String, free, mandatory<a class="anchor" aria-label="anchor" href="#sampling-date---string-free-mandatory"></a>
+</h2>
+<p><code>SAMPLING_DATE</code></p>
+<!-- Date when the biological sample was collected. Inherited from the samples table. -->
+</section><section class="section level2"><h2 id="subsample---string-free-mandatory">Subsample - String, free, mandatory<a class="anchor" aria-label="anchor" href="#subsample---string-free-mandatory"></a>
+</h2>
+<p><code>SUBSAMPLE</code></p>
+<!-- Identifier for subsample or replicate. Inherited from the samples table. -->
+</section><section class="section level2"><h2 id="species-group---string-controlled-mandatory">Species Group - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#species-group---string-controlled-mandatory"></a>
+</h2>
+<p><code>SPECIES_GROUP</code></p>
+<!-- Taxonomic group classification, e.g., Fish, Molluscs, Plants. -->
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/species_groups_vocabulary.html">species_groups_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "All"             "Algae"           "Amphibians"      "Bacteria"       </span></span>
+<span><span class="co">#&gt;  [5] "Birds"           "Crustaceans"     "Ecosystem"       "Fish"           </span></span>
+<span><span class="co">#&gt;  [9] "Fungi"           "Insects/Spiders" "Invertebrates"   "Mammals"        </span></span>
+<span><span class="co">#&gt; [13] "Molluscs"        "Moss/Hornworts"  "Plants"          "Reptiles"       </span></span>
+<span><span class="co">#&gt; [17] "Worms"           "Other"</span></span></code></pre></div>
+</div>
+<section class="level2"><h3 id="controlled-vocabulary-3">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-3"></a>
+</h3>
+<!-- Fill in from species_groups_vocabulary() output. -->
+</section></section><section class="section level2"><h2 id="sample-species---string-controlled-mandatory">Sample Species - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#sample-species---string-controlled-mandatory"></a>
+</h2>
+<p><code>SAMPLE_SPECIES</code></p>
+<!-- Scientific binomial name of the sampled species. -->
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/species_names_vocabulary.html">species_names_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 29,562 × 4</span></span>
+<span><span class="co">#&gt;    SPECIES_COMMON_NAME SPECIES_NAME          SPECIES_KINGDOM SPECIES_GROUP</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;               &lt;chr&gt;                 &lt;chr&gt;           &lt;chr&gt;        </span></span>
+<span><span class="co">#&gt;  1 Fathead Minnow      Pimephales promelas   Animalia        Fish         </span></span>
+<span><span class="co">#&gt;  2 Bluegill            Lepomis macrochirus   Animalia        Fish         </span></span>
+<span><span class="co">#&gt;  3 Brook Trout         Salvelinus fontinalis Animalia        Fish         </span></span>
+<span><span class="co">#&gt;  4 Rainbow Trout       Oncorhynchus mykiss   Animalia        Fish         </span></span>
+<span><span class="co">#&gt;  5 Water Flea          Daphnia magna         Animalia        Crustaceans  </span></span>
+<span><span class="co">#&gt;  6 Scud                Gammarus lacustris    Animalia        Crustaceans  </span></span>
+<span><span class="co">#&gt;  7 Scud                Gammarus fasciatus    Animalia        Crustaceans  </span></span>
+<span><span class="co">#&gt;  8 Water Flea          Daphnia pulex         Animalia        Crustaceans  </span></span>
+<span><span class="co">#&gt;  9 Diatom              Nitzschia linearis    Chromista       Algae        </span></span>
+<span><span class="co">#&gt; 10 Green Crab          Carcinus maenas       Animalia        Crustaceans  </span></span>
+<span><span class="co">#&gt; # ℹ 29,552 more rows</span></span></code></pre></div>
+</div>
+<section class="level2"><h3 id="controlled-vocabulary-4">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-4"></a>
+</h3>
+<!-- Fill in from species_names_vocabulary() output. -->
+</section></section><section class="section level2"><h2 id="sample-tissue---string-controlled-mandatory">Sample Tissue - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#sample-tissue---string-controlled-mandatory"></a>
+</h2>
+<p><code>SAMPLE_TISSUE</code></p>
+<!-- Type of biological tissue sampled. -->
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/tissue_types_vocabulary.html">tissue_types_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "Not reported"       "Not relevant"       "Whole body"        </span></span>
+<span><span class="co">#&gt;  [4] "Total soft tissues" "Muscle"             "Liver"             </span></span>
+<span><span class="co">#&gt;  [7] "Kidney"             "Fat/Adipose"        "Skin"              </span></span>
+<span><span class="co">#&gt; [10] "Bone"               "Pyloric caeca"      "Body wall"         </span></span>
+<span><span class="co">#&gt; [13] "Brain"              "Heart"              "Lung"              </span></span>
+<span><span class="co">#&gt; [16] "Gill"               "Gonad"              "Shell"             </span></span>
+<span><span class="co">#&gt; [19] "Carapace"           "Digestive Gland"    "Mantle"            </span></span>
+<span><span class="co">#&gt; [22] "Blood"              "Egg"                "Larva"             </span></span>
+<span><span class="co">#&gt; [25] "Leaf"               "Root"               "Stem"              </span></span>
+<span><span class="co">#&gt; [28] "Fruit"              "Seed"               "Other"</span></span></code></pre></div>
+</div>
+<section class="level2"><h3 id="controlled-vocabulary-5">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-5"></a>
+</h3>
+<!-- Fill in from tissue_types_vocabulary() output. -->
+</section></section><section class="section level2"><h2 id="sample-species-lifestage---string-controlled-mandatory">Sample Species Lifestage - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#sample-species-lifestage---string-controlled-mandatory"></a>
+</h2>
+<p><code>SAMPLE_SPECIES_LIFESTAGE</code></p>
+<!-- Life stage of the organism at sampling. -->
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/lifestage_vocabulary.html">lifestage_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "Not reported" "Not relevant" "Adult"        "Juvenile"     "Larva"       </span></span>
+<span><span class="co">#&gt;  [6] "Embryo"       "Egg"          "Seedling"     "Mature"       "Young"       </span></span>
+<span><span class="co">#&gt; [11] "Mixed"        "Other"</span></span></code></pre></div>
+</div>
+<section class="level2"><h3 id="controlled-vocabulary-6">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-6"></a>
+</h3>
+<!-- Fill in from lifestage_vocabulary() output. -->
+</section></section><section class="section level2"><h2 id="sample-species-gender---string-controlled-mandatory">Sample Species Gender - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#sample-species-gender---string-controlled-mandatory"></a>
+</h2>
+<p><code>SAMPLE_SPECIES_GENDER</code></p>
+<!-- Gender or sex of the sampled organism. -->
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/gender_vocabulary.html">gender_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "Not reported"  "Not relevant"  "Male"          "Female"       </span></span>
+<span><span class="co">#&gt; [5] "Mixed"         "Hermaphrodite" "Other"</span></span></code></pre></div>
+</div>
+<section class="level2"><h3 id="controlled-vocabulary-7">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-7"></a>
+</h3>
+<!-- Fill in from gender_vocabulary() output. -->
+</section></section><section class="section level2"><h2 id="biota-comment---string-free-optional">Biota Comment - String, free, optional<a class="anchor" aria-label="anchor" href="#biota-comment---string-free-optional"></a>
+</h2>
+<p><code>BIOTA_COMMENT</code></p>
+<!-- Additional notes or comments about the biological sample. -->
+</section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -172,7 +372,8 @@
       }
     }
   });
-  </script></main>
+  </script></main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
