@@ -10,7 +10,147 @@ knitr:
     comment: '#>'
 ---
 
+# Introduction
+
 ```{r}
 #| label: setup
 library(eDataDRF)
 ```
+
+```{r}
+#| label: initialise
+
+initialise_sites_tibble()
+```
+
+## Variables
+
+# Site Code - String, free, mandatory
+`SITE_CODE`
+
+<!-- Unique code identifying the site. Primary key. -->
+
+# Site Name - String, free, mandatory
+`SITE_NAME`
+
+<!-- Descriptive name of the sampling site. -->
+
+# Site Geographic Feature - String, controlled, mandatory
+`SITE_GEOGRAPHIC_FEATURE`
+
+<!-- Broad geographic feature type of the sampling location. -->
+
+```{r}
+#| label: site_geographic_feature
+
+geographic_features_vocabulary()
+```
+
+## Controlled Vocabulary
+
+<!-- Fill in from geographic_features_vocabulary() output. -->
+
+# Site Geographic Feature Sub - String, controlled, mandatory
+`SITE_GEOGRAPHIC_FEATURE_SUB`
+
+<!-- Specific sub-category of the geographic feature. -->
+
+```{r}
+#| label: site_geographic_feature_sub
+
+geographic_features_sub_vocabulary()
+```
+
+## Controlled Vocabulary
+
+<!-- Fill in from geographic_features_sub_vocabulary() output. -->
+
+# Country ISO - String, controlled, mandatory
+`COUNTRY_ISO`
+
+<!-- ISO country code where the site is located. -->
+
+```{r}
+#| label: country_iso
+
+countries_vocabulary()
+```
+
+## Controlled Vocabulary
+
+<!-- Fill in from countries_vocabulary() output (ISO 3166-1 country names). -->
+
+# Ocean IHO - String, controlled, mandatory
+`OCEAN_IHO`
+
+<!-- International Hydrographic Organisation ocean region. -->
+
+```{r}
+#| label: ocean_iho
+
+areas_vocabulary()
+```
+
+## Controlled Vocabulary
+
+<!-- Fill in from areas_vocabulary() output. -->
+
+# Latitude - Numeric, free, mandatory
+`LATITUDE`
+
+<!-- Latitude coordinate in decimal degrees. -->
+
+# Longitude - Numeric, free, mandatory
+`LONGITUDE`
+
+<!-- Longitude coordinate in decimal degrees. -->
+
+# Site Coordinate System - String, controlled, mandatory
+`SITE_COORDINATE_SYSTEM`
+
+<!-- Coordinate reference system used for the site coordinates. -->
+
+```{r}
+#| label: site_coordinate_system
+
+coordinate_systems_vocabulary()
+```
+
+## Controlled Vocabulary
+
+<!-- Fill in from coordinate_systems_vocabulary() output. -->
+
+# Altitude Value - Numeric, free, mandatory
+`ALTITUDE_VALUE`
+
+<!-- Elevation or depth value. -->
+
+# Altitude Unit - String, controlled, mandatory
+`ALTITUDE_UNIT`
+
+<!-- Unit of measurement for the altitude value. -->
+
+```{r}
+#| label: altitude_unit
+
+altitude_units_vocabulary()
+```
+
+## Controlled Vocabulary
+
+<!-- Fill in from altitude_units_vocabulary() output. -->
+
+# Entered By - String, free, mandatory
+`ENTERED_BY`
+
+<!-- Person or entity who entered the site data. -->
+
+# Entered Date - String, free, mandatory
+`ENTERED_DATE`
+
+<!-- Date when the site data was entered. -->
+
+# Site Comment - String, free, optional
+`SITE_COMMENT`
+
+<!-- Additional notes about the site. -->

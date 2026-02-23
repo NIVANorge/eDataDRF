@@ -10,7 +10,42 @@ knitr:
     comment: '#>'
 ---
 
+# Introduction
+
 ```{r}
 #| label: setup
 library(eDataDRF)
 ```
+
+```{r}
+#| label: initialise
+
+initialise_CREED_scores_tibble()
+```
+
+## Variables
+
+# Reference ID - String, free, mandatory
+`REFERENCE_ID`
+
+<!-- Unique identifier linking to the references table. Foreign key. -->
+
+# Silver Reliability - String, free, mandatory
+`SILVER_RELIABILITY`
+
+<!-- Reliability score at silver standard level. -->
+
+# Silver Relevance - String, free, mandatory
+`SILVER_RELEVANCE`
+
+<!-- Relevance score at silver standard level. -->
+
+# Gold Reliability - String, free, mandatory
+`GOLD_RELIABILITY`
+
+<!-- Reliability score at gold standard level. -->
+
+# Gold Relevance - String, free, mandatory
+`GOLD_RELEVANCE`
+
+<!-- Relevance score at gold standard level. -->

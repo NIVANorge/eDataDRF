@@ -10,13 +10,46 @@ knitr:
     comment: '#>'
 ---
 
-```{r}
-#| label: setup
-library(eDataDRF)
-
-initialise_methods_tibble()
-```
+# Introduction
 
 Really we should be using the Chemical Methods ontology here, but implementing it now will require a fair amount of structural redesign, so for now it's firmly in the todo category.
 
 The Methods table is a metadata table that is transformed before being linked to the \[Measurements table\] {Measurements table}.
+
+```{r}
+#| label: setup
+library(eDataDRF)
+```
+
+```{r}
+#| label: initialise
+
+initialise_methods_tibble()
+```
+
+## Variables
+
+# Protocol ID - String, free, mandatory
+`PROTOCOL_ID`
+
+<!-- Unique identifier for the protocol. Primary key. -->
+
+# Campaign Name - String, free, mandatory
+`CAMPAIGN_NAME`
+
+<!-- Name of the campaign this protocol was used in. -->
+
+# Protocol Category - String, free, mandatory
+`PROTOCOL_CATEGORY`
+
+<!-- Type of protocol (Sampling, Extraction, Fractionation, Analytical). -->
+
+# Protocol Name - String, free, mandatory
+`PROTOCOL_NAME`
+
+<!-- Standardised name of the protocol. -->
+
+# Protocol Comment - String, free, optional
+`PROTOCOL_COMMENT`
+
+<!-- Additional notes or details about the protocol. -->

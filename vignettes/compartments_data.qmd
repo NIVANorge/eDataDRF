@@ -10,7 +10,62 @@ knitr:
     comment: '#>'
 ---
 
+# Introduction
+
 ```{r}
 #| label: setup
 library(eDataDRF)
 ```
+
+```{r}
+#| label: initialise
+
+initialise_compartments_tibble()
+```
+
+## Variables
+
+# Environ Compartment - String, controlled, mandatory
+`ENVIRON_COMPARTMENT`
+
+<!-- Broad environmental compartment (Aquatic, Atmospheric, Terrestrial, Biota). -->
+
+```{r}
+#| label: environ_compartment
+
+environ_compartments_vocabulary()
+```
+
+## Controlled Vocabulary
+
+<!-- Fill in from environ_compartments_vocabulary() output. -->
+
+# Environ Compartment Sub - String, controlled, mandatory
+`ENVIRON_COMPARTMENT_SUB`
+
+<!-- Specific sub-category within the compartment. -->
+
+```{r}
+#| label: environ_compartment_sub
+
+environ_compartments_sub_vocabulary()
+```
+
+## Controlled Vocabulary
+
+<!-- Fill in from environ_compartments_sub_vocabulary() output. -->
+
+# Measured Category - String, controlled, mandatory
+`MEASURED_CATEGORY`
+
+<!-- Measurement context (External Media, Internal to Organism, Surface of Organism). -->
+
+```{r}
+#| label: measured_category
+
+measured_categories_vocabulary()
+```
+
+## Controlled Vocabulary
+
+<!-- Fill in from measured_categories_vocabulary() output. -->

@@ -10,14 +10,109 @@ knitr:
     comment: '#>'
 ---
 
+# Introduction
+
 ```{r}
 #| label: setup
 library(eDataDRF)
 ```
 
-
 ```{r}
+#| label: initialise
+
 initialise_references_tibble()
 
 reference_character_limits()
 ```
+
+## Variables
+
+# Reference ID - String, free, mandatory
+`REFERENCE_ID`
+
+<!-- Unique identifier for the reference. Primary key. -->
+
+# Reference Type - String, free, mandatory
+`REFERENCE_TYPE`
+
+<!-- Type of publication (Journal Article, Report, Dataset, etc.). -->
+
+# Data Source - String, free, mandatory
+`DATA_SOURCE`
+
+<!-- Source or database where the reference was obtained. -->
+
+# Author - String, free, mandatory
+`AUTHOR`
+
+<!-- Author(s) of the reference. -->
+
+# Title - String, free, mandatory
+`TITLE`
+
+<!-- Title of the publication or document. -->
+
+# Year - Numeric, free, mandatory
+`YEAR`
+
+<!-- Publication year. -->
+
+# Access Date - Date, free, mandatory
+`ACCESS_DATE`
+
+<!-- Date when the reference was accessed or retrieved. -->
+
+# Periodical Journal - String, free, mandatory
+`PERIODICAL_JOURNAL`
+
+<!-- Name of the journal or periodical. -->
+
+# Volume - Numeric, free, mandatory
+`VOLUME`
+
+<!-- Volume number of the journal. -->
+
+# Issue - Numeric, free, mandatory
+`ISSUE`
+
+<!-- Issue number of the journal. -->
+
+# Publisher - String, free, mandatory
+`PUBLISHER`
+
+<!-- Publisher of the document. -->
+
+# Institution - String, free, mandatory
+`INSTITUTION`
+
+<!-- Institution associated with the publication. -->
+
+# DOI - String, free, mandatory
+`DOI`
+
+<!-- Digital Object Identifier. -->
+
+# URL - String, free, mandatory
+`URL`
+
+<!-- Web address for online access. -->
+
+# ISBN ISSN - String, free, mandatory
+`ISBN_ISSN`
+
+<!-- ISBN or ISSN identifier. -->
+
+# Edition - String, free, mandatory
+`EDITION`
+
+<!-- Edition of the publication. -->
+
+# Document Number - String, free, mandatory
+`DOCUMENT_NUMBER`
+
+<!-- Document or report number. -->
+
+# Ref Comment - String, free, optional
+`REF_COMMENT`
+
+<!-- Additional notes about the reference. -->

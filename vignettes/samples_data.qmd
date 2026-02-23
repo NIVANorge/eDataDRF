@@ -10,7 +10,112 @@ knitr:
     comment: '#>'
 ---
 
+# Introduction
+
 ```{r}
 #| label: setup
 library(eDataDRF)
 ```
+
+```{r}
+#| label: initialise
+
+initialise_samples_tibble()
+```
+
+## Variables
+
+# Site Code - String, free, mandatory
+`SITE_CODE`
+
+<!-- Code identifying the sampling location. -->
+
+# Site Name - String, free, mandatory
+`SITE_NAME`
+
+<!-- Descriptive name of the sampling site. -->
+
+# Parameter Name - String, free, mandatory
+`PARAMETER_NAME`
+
+<!-- Name of the measured parameter. -->
+
+# Parameter Type - String, controlled, mandatory
+`PARAMETER_TYPE`
+
+<!-- Classification of the parameter. -->
+
+```{r}
+#| label: parameter_type
+
+parameter_types_vocabulary()
+```
+
+## Controlled Vocabulary
+
+<!-- Fill in from parameter_types_vocabulary() output. -->
+
+# Environ Compartment - String, controlled, mandatory
+`ENVIRON_COMPARTMENT`
+
+<!-- Environmental compartment defined as one of the earth's spheres (aquatic, atmospheric, etc.). -->
+
+```{r}
+#| label: environ_compartment
+
+environ_compartments_vocabulary()
+```
+
+## Controlled Vocabulary
+
+<!-- Fill in from environ_compartments_vocabulary() output. -->
+
+# Environ Compartment Sub - String, controlled, mandatory
+`ENVIRON_COMPARTMENT_SUB`
+
+<!-- Sub-divisions of environmental compartments into water body types, soil profile, etc. -->
+
+```{r}
+#| label: environ_compartment_sub
+
+environ_compartments_sub_vocabulary()
+```
+
+## Controlled Vocabulary
+
+<!-- Fill in from environ_compartments_sub_vocabulary() output. -->
+
+# Measured Category - String, controlled, mandatory
+`MEASURED_CATEGORY`
+
+<!-- Measurement context category. -->
+
+```{r}
+#| label: measured_category
+
+measured_categories_vocabulary()
+```
+
+## Controlled Vocabulary
+
+<!-- Fill in from measured_categories_vocabulary() output. -->
+
+# Sampling Date - String, free, mandatory
+`SAMPLING_DATE`
+
+<!-- Date of sample collection. -->
+
+# Subsample - String, free, mandatory
+`SUBSAMPLE`
+
+<!-- Subsample or replicate identifier. -->
+
+# Subsample ID - String, free, mandatory
+`SUBSAMPLE_ID`
+
+<!-- Unique identifier for the subsample. -->
+
+# Sample ID - String, free, mandatory
+`SAMPLE_ID`
+
+<!-- Unique identifier for the sample. Key field. -->

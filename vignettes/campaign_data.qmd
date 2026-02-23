@@ -10,6 +10,8 @@ knitr:
     comment: '#>'
 ---
 
+# Introduction
+
 **Campaign data** is intended to track social and institutional factors behind a sample that are not otherwise captured by citations/references. It's a mess, and includes a bunch of fields that it probably shouldn't.
 
 ```{r}
@@ -17,9 +19,50 @@ knitr:
 library(eDataDRF)
 ```
 
-
 ```{r}
-#| label: the function
+#| label: initialise
 
 initialise_campaign_tibble()
 ```
+
+## Variables
+
+# Campaign Name Short - String, free, mandatory
+`CAMPAIGN_NAME_SHORT`
+
+<!-- Short identifier for the campaign. -->
+
+# Campaign Name - String, free, mandatory
+`CAMPAIGN_NAME`
+
+<!-- Full descriptive name of the campaign. -->
+
+# Campaign Start Date - Date, free, mandatory
+`CAMPAIGN_START_DATE`
+
+<!-- Date when campaign sampling began. -->
+
+# Campaign End Date - Date, free, optional
+`CAMPAIGN_END_DATE`
+
+<!-- Date when campaign sampling ended. May be left blank if the campaign is ongoing or the end date is unknown. -->
+
+# Organisation - String, free, mandatory
+`ORGANISATION`
+
+<!-- Organisation responsible for the campaign. -->
+
+# Entered By - String, free, mandatory
+`ENTERED_BY`
+
+<!-- Person or entity who entered the data. -->
+
+# Entered Date - Date, free, mandatory
+`ENTERED_DATE`
+
+<!-- Date when the data was entered into the system. -->
+
+# Campaign Comment - String, free, optional
+`CAMPAIGN_COMMENT`
+
+<!-- Additional notes or comments about the campaign. -->
