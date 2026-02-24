@@ -556,9 +556,9 @@ scope.
 
 ``` r
 coordinate_systems_vocabulary(common_only = TRUE)
-#> [1] "Not relevant"          "Not reported"          "ETRS89"               
-#> [4] "WGS 84 / UTM zone 32N" "WGS 84 / UTM zone 33N" "WGS 84 / UTM zone 34N"
-#> [7] "WGS 84 / UTM zone 35N" "Other"
+#> [1] "Not relevant"          "Not reported"          "WGS 84"               
+#> [4] "ETRS89"                "WGS 84 / UTM zone 32N" "WGS 84 / UTM zone 33N"
+#> [7] "WGS 84 / UTM zone 34N" "WGS 84 / UTM zone 35N" "Other"
 ```
 
 ## Altitude Value - Numeric, free, mandatory
