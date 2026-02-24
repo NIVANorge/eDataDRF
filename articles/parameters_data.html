@@ -101,7 +101,9 @@
 </section></section><section class="section level2"><h2 id="parameter-type---string-controlled-mandatory">Parameter Type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#parameter-type---string-controlled-mandatory"></a>
 </h2>
 <p><code>PARAMETER_TYPE</code></p>
-<p>Parameter type is divided into five classifications and two “wastebasket” categories. This classification requires a degree of subjective judgement. What makes a chemical a stressor versus a quality parameter is not always clear. However, we anticipate that in most cases this will be uncontroversial. Where this is not the case stressors can still be identified by name/id.</p>
+<p>Parameter type is divided into five classifications and two missing data values. This classification requires a degree of subjective judgement. What makes a chemical a stressor versus a quality parameter is not always clear. However, we anticipate that in most cases this will be uncontroversial. Where this is not the case stressors can still be identified by name/id.</p>
+<section class="level2"><h3 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
+</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/parameter_types_vocabulary.html">parameter_types_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -109,18 +111,13 @@
 <span><span class="co">#&gt; [4] "Normalisation"        "Background"           "Ecological Indicator"</span></span>
 <span><span class="co">#&gt; [7] "Other"</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
-</h3>
-<p><code>"Not relevant"</code> - Use when a type is not applicable to the measured scalar. <code>"Stressor"</code> - hemical, physical or biological agent causing stress. <code>"Quality parameter"</code> - Standard water/environmental quality parameter <code>"Normalisation"</code> - Parameter used for normalising other measurements<br><code>"Background"</code> - “Natural background level of a parameter”<br><code>"Ecological Indicator"</code> - Parameter is an indicator or metric of ecological concern. <code>"Other"</code> - Parameter belongs to another category</p>
+<p><code>"Not relevant"</code> - Use when a type is not applicable to the measured scalar. <code>"Stressor"</code> - hemical, physical or biological agent causing stress. <code>"Quality parameter"</code> - Standard water/environmental quality parameter <code>"Normalisation"</code> - Parameter used for normalising other measurements<br><code>"Background"</code> - “Natural background level of a parameter”<br><code>"Ecological Indicator"</code> - Parameter is an indicator or metric of ecological concern. <code>"Other"</code> - Parameter belongs to another category. Please note in comments field.</p>
 </section></section><section class="section level2"><h2 id="parameter-sub-type---string-controlled-mandatory">Parameter Sub-type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#parameter-sub-type---string-controlled-mandatory"></a>
 </h2>
 <p><code>PARAMETER_TYPE_SUB</code></p>
-<p>Subdivision of Parameter Type, largely chemical classifications, based on ClassyFire plus some quality stuff</p>
-<ul>
-<li>Add “not relevant”</li>
-<li>Reorg so that it’s alphabetical but other/not rel are in sensible places</li>
-<li>Add a sub-level for the above?</li>
-</ul>
+<p>Parameter Sub-type is a further subdivision of [Parameter Type]. The majority of subtypes are chemical classifications from the <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5096306/" class="external-link">ChemOnt/ClassyFire</a> chemical taxonomy; other subtypes are intended for use with quality parameters, stressors measured as mixtures, or other cases where additional details are needed.</p>
+<section class="level2"><h3 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
+</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/parameter_types_sub_vocabulary.html">parameter_types_sub_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -163,18 +160,37 @@
 <span><span class="co">#&gt; [37] "Mixture"                                  </span></span>
 <span><span class="co">#&gt; [38] "Not reported"</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
-</h3>
-<ul>
-<li>Will do with code, I guess.</li>
-</ul></section></section><section class="section level2"><h2 id="parameter-name">Parameter Name<a class="anchor" aria-label="anchor" href="#parameter-name"></a>
+</section></section><section class="section level2"><h2 id="parameter-name-controlled-mandatory">Parameter Name, controlled, mandatory<a class="anchor" aria-label="anchor" href="#parameter-name-controlled-mandatory"></a>
 </h2>
 <p><code>PARAMETER_NAME</code></p>
+<p>Parameter name records the reported name of a measured parameter. In the majority of cases</p>
+<section class="level2"><h3 id="controlled-vocabulary-2">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-2"></a>
+</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># TODO: Fix me, pleassse</span></span>
+<span><span class="fu"><a href="../reference/dummy_parameters_vocabulary.html">dummy_parameters_vocabulary</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html" class="external-link">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 10 × 9</span></span>
+<span><span class="co">#&gt;    PARAMETER_TYPE    PARAMETER_NAME      PARAMETER_TYPE_SUB MEASURED_TYPE CAS_RN</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;             &lt;chr&gt;               &lt;chr&gt;              &lt;chr&gt;         &lt;chr&gt; </span></span>
+<span><span class="co">#&gt;  1 Quality parameter pH                  pH                 Physical par… &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  2 Quality parameter Dissolved oxygen    Dissolved oxygen   Concentration 7782-…</span></span>
+<span><span class="co">#&gt;  3 Quality parameter Temperature         Temperature        Physical par… &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  4 Quality parameter Conductivity        Conductivity       Physical par… &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  5 Quality parameter Salinity            Salinity           Physical par… &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  6 Quality parameter Turbidity           Turbidity          Physical par… &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  7 Quality parameter Total organic carb… Total organic car… Concentration &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  8 Quality parameter Alkalinity          Other              Concentration &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  9 Quality parameter Hardness            Other              Concentration &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt; 10 Quality parameter Chlorophyll a       Other              Concentration 479-6…</span></span>
+<span><span class="co">#&gt; # ℹ 4 more variables: PUBCHEM_CID &lt;int&gt;, INCHIKEY_SD &lt;chr&gt;, ENTERED_BY &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; #   PARAMETER_NAME_SUB &lt;chr&gt;</span></span></code></pre></div>
+</div>
 <ul>
 <li>Typically the common short form name of a parameter, but…</li>
 <li>We use whatever ClassyFire gives us, I think</li>
 <li>Currently used as a primary key - this will be replaced with a better system once we get it working</li>
-</ul></section><section class="section level2"><h2 id="parameter-sub-name">Parameter Sub-Name<a class="anchor" aria-label="anchor" href="#parameter-sub-name"></a>
+</ul></section></section><section class="section level2"><h2 id="parameter-sub-name">Parameter Sub-Name<a class="anchor" aria-label="anchor" href="#parameter-sub-name"></a>
 </h2>
 <p><code>PARAMETER_NAME_SUB</code></p>
 </section><script id="quarto-html-after-body" type="application/javascript">

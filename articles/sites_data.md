@@ -9,6 +9,18 @@ physical point in space - and the
 [compartment](https://NIVANorge.github.io/eDataDRF/articles/compartments_data.md) -
 the type of medium sampled.
 
+Sampling sites are often reported in a variety of more-or-less FAIR
+formats, despite the availability of free, mature, well-characterised
+systems for defining position in space. Extraction of such data from
+reference objects may require conversion from minute-degrees to decimal
+degrees, reprojection in a different Coordinate Reference System,
+merging of multiple sampling sites, reporting a large, vague sampling
+region as a single point, and estimating coordinates off maps. However,
+for the time being, the format is kept intentionally simple. All sites
+are reported as discrete points; and cases where any of the above
+operations are performed should be reported in the [comments
+field](#site-comment---string-free-optional).
+
 ``` r
 library(eDataDRF)
 ```
@@ -88,7 +100,7 @@ These are summarised in the table below
 | Shrubland                         | Areas dominated by shrubs                                                  | D00   | 3.2    |     |      |
 | Grassland                         | Areas dominated by grasses                                                 | E00   |        |     |      |
 | Bare land and lichen/moss         | Sparsely vegetated areas                                                   | F00   | 3.3    |     |      |
-| Other                             | Specify details in SITE_COMMENT                                            |       |        |     |      |
+| Other                             | Specify details in [SITE_COMMENT](#site-comment---string-free-optional)    |       |        |     |      |
 
 ### Controlled Vocabulary
 
@@ -125,7 +137,7 @@ geographic_features_sub_vocabulary()
 #> [5] "Water benthos"              "Other"
 ```
 
-## Country ISO - String, controlled, mandatory
+## ISO Country - String, controlled, mandatory
 
 `COUNTRY_ISO`
 
@@ -394,9 +406,25 @@ countries_vocabulary()
 #> [251] "Zimbabwe"
 ```
 
-## Ocean IHO - String, controlled, mandatory
+## IHO Ocean/Sea - String, controlled, mandatory
 
 `OCEAN_IHO`
+
+As with countries, oceans are not necessarily the best geographical
+identifiers, but they provide useful, human-readable data for
+understanding sampling sites. The [International Hydrographic
+Organisation’s version 3 Sea Areas](https://doi.org/10.14284/323)
+dataset is used to provide a reasonably-standardised set of names for
+seas and oceans. As with
+[Country](#iso-country---string-controlled-mandatory), Ocean is
+mandatory but should be marked as “Not relevant” when the site is on
+land.
+
+Where sampling sites are located in national territory but also in or
+near (intentionally vague) an ocean or sea, we recommend recording both
+variables.
+
+### Controlled Vocabulary
 
 ``` r
 areas_vocabulary()
@@ -473,51 +501,107 @@ areas_vocabulary()
 #> [141] "Baffin Bay"                  "Arctic Ocean"
 ```
 
-### Controlled Vocabulary
-
 ## Latitude - Numeric, free, mandatory
 
 `LATITUDE`
+
+Site latitude (north-south position, also known as northing, between
+-90.0° and +90.0°) is recorded in decimal decimal degrees. Arbitrary
+precision (within the bounds of R’s numeric data type) is possible, but
+the degree of precision reported (i.e. decimal places) should be
+appropriate to the actual sampling. 3 decimal places corresponds to
+approximately 111 m accuracy, and 4 to within 11 m. Under some
+circumstances this can cause somewhat confusing combinations of
+coordinates and site types; for example, a site may be reported as being
+on land but with coordinates that are clearly in the ocean. In future,
+we plan to include an explicit metric of spatial uncertainty. A latitude
+is always associated with a [Coordinate Reference
+System](#coordinate-reference-system---string-controlled-mandatory).
 
 ## Longitude - Numeric, free, mandatory
 
 `LONGITUDE`
 
-## Site Coordinate System - String, controlled, mandatory
+Site longitude (east-west position, also known as easting, between
+-180.0° and +180.0°) is recorded in decimal decimal degrees. See
+[Latitude](#latitude---numeric-free-mandatory) for further details. A
+longitude is always associated with a [Coordinate Reference
+System](#coordinate-reference-system---string-controlled-mandatory).
+
+## Coordinate Reference System - String, controlled, mandatory
 
 `SITE_COORDINATE_SYSTEM`
 
-``` r
-coordinate_systems_vocabulary()
-#> [1] "Not relevant" "Not reported" "WGS 84"       "UTM 32"       "UTM 33"      
-#> [6] "UTM 34"       "UTM 35"       "ETRS89"       "Other"
-```
+A site’s latitude and longitude are calculated using a reference system
+“placed” at a given point on the globe and parameterised within a given
+region. This Coordinate Reference System is a necessary component of any
+geographical coordinate data. In most global datasets, the World
+Geodetic System, 1984 version (WGS 84) is used. However, national or
+other local datasets may use a variety of CRS, such as the Universal
+Transverse Mercator (UTM), which projects the Earth into a series of
+square or rectangular zones; in this case, it is necessary to know the
+CRS and the grid number.
+
+This controlled vocabulary uses the package `{crsuggest}`, which in turn
+uses the EPSG Dataset v10.019, (product of the International Association
+of Oil & Gas Producers, [terms of
+use](https://epsg.org/terms-of-use.html)). However, because the full
+6000+ CRS included would be impractically large for the associated UI,
+we filter this down to a small set of systems relevant to the test cases
+used with the format so far. In future, CRS metadata will be used to
+automatically filter available CRS based on the desired geographical
+scope.
 
 ### Controlled Vocabulary
+
+``` r
+coordinate_systems_vocabulary(common_only = TRUE)
+#> [1] "Not relevant"          "Not reported"          "ETRS89"               
+#> [4] "WGS 84 / UTM zone 32N" "WGS 84 / UTM zone 33N" "WGS 84 / UTM zone 34N"
+#> [7] "WGS 84 / UTM zone 35N" "Other"
+```
 
 ## Altitude Value - Numeric, free, mandatory
 
 `ALTITUDE_VALUE`
 
+Altitude value above or below sea level, including depth of water
+sampling (but *not* depth of ice or sediment cores). This data is
+frequently not available for sampling sites, in which case it can be
+reported as 0. Associated with an [altitude
+unit](#altitude-unit---string-controlled-mandatory).
+
 ## Altitude Unit - String, controlled, mandatory
 
 `ALTITUDE_UNIT`
+
+Unit associated with [altitude
+value](#altitude-value---numeric-free-mandatory).
+
+### Controlled Vocabulary
 
 ``` r
 altitude_units_vocabulary()
 #> [1] "km" "m"  "cm" "mm"
 ```
 
-### Controlled Vocabulary
-
 ## Entered By - String, free, mandatory
 
 `ENTERED_BY`
 
-## Entered Date - String, free, mandatory
+The name or email address of the user entering data.
+
+## Entered Date - Date (ISO), free, mandatory
 
 `ENTERED_DATE`
+
+The date that site data were entered.
 
 ## Site Comment - String, free, optional
 
 `SITE_COMMENT`
+
+Space for the recording of any additional notes or comments about the
+site deemed relevant, particularly any operations performed by the user
+on sites data, such as merging sites, converting a sampling region to a
+discrete point, or estimating point coordinates from a map.

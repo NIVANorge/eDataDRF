@@ -82,6 +82,7 @@
     <section class="section level2"><h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <p>Sites data captures information about the coordinates, land use, and administrative/geographical boundaries of sampling sites. In this format, we make the distinction between the sampled site - a fixed, physical point in space - and the <a href="compartments_data.html">compartment</a> - the type of medium sampled.</p>
+<p>Sampling sites are often reported in a variety of more-or-less FAIR formats, despite the availability of free, mature, well-characterised systems for defining position in space. Extraction of such data from reference objects may require conversion from minute-degrees to decimal degrees, reprojection in a different Coordinate Reference System, merging of multiple sampling sites, reporting a large, vague sampling region as a single point, and estimating coordinates off maps. However, for the time being, the format is kept intentionally simple. All sites are reported as discrete points; and cases where any of the above operations are performed should be reported in the <a href="#site-comment---string-free-optional">comments field</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://NIVANorge.github.io/eDataDRF/">eDataDRF</a></span><span class="op">)</span></span></code></pre></div>
@@ -120,15 +121,7 @@
 <li>Marine Something Framework Directive water types</li>
 </ul>
 <p>These are summarised in the table below</p>
-<table class="table caption-top" style="width:100%;">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-</colgroup>
+<table class="table caption-top">
 <thead><tr class="header">
 <th>Value</th>
 <th>Description</th>
@@ -284,7 +277,8 @@
 </tr>
 <tr class="odd">
 <td>Other</td>
-<td>Specify details in SITE_COMMENT</td>
+<td>Specify details in <a href="#site-comment---string-free-optional">SITE_COMMENT</a>
+</td>
 <td></td>
 <td></td>
 <td></td>
@@ -321,7 +315,7 @@
 <span><span class="co">#&gt; [3] "Water surface"              "Water column, pelagic zone"</span></span>
 <span><span class="co">#&gt; [5] "Water benthos"              "Other"</span></span></code></pre></div>
 </div>
-</section></section><section class="section level2"><h2 id="country-iso---string-controlled-mandatory">Country ISO - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#country-iso---string-controlled-mandatory"></a>
+</section></section><section class="section level2"><h2 id="iso-country---string-controlled-mandatory">ISO Country - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#iso-country---string-controlled-mandatory"></a>
 </h2>
 <p><code>COUNTRY_ISO</code></p>
 <p>Although the sheer size of countries makes them at times poor identifiers of geographical location, they remain useful data. Although this variable is marked as mandatory, it is possible to enter “Not relevant” when sites are out of the territory of any nation (e.g. in international waters). The <a href="https://www.iso.org/iso-3166-country-codes.html" class="external-link">ISO 3166 set of country codes</a> is used, via the R package <code>{iso}</code>.</p>
@@ -582,10 +576,13 @@
 <span><span class="co">#&gt; [250] "Zambia"                                      </span></span>
 <span><span class="co">#&gt; [251] "Zimbabwe"</span></span></code></pre></div>
 </div>
-</section></section><section class="section level2"><h2 id="ocean-iho---string-controlled-mandatory">Ocean IHO - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#ocean-iho---string-controlled-mandatory"></a>
+</section></section><section class="section level2"><h2 id="iho-oceansea---string-controlled-mandatory">IHO Ocean/Sea - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#iho-oceansea---string-controlled-mandatory"></a>
 </h2>
 <p><code>OCEAN_IHO</code></p>
-<!-- International Hydrographic Organisation ocean region. -->
+<p>As with countries, oceans are not necessarily the best geographical identifiers, but they provide useful, human-readable data for understanding sampling sites. The <a href="https://doi.org/10.14284/323" class="external-link">International Hydrographic Organisation’s version 3 Sea Areas</a> dataset is used to provide a reasonably-standardised set of names for seas and oceans. As with <a href="#iso-country---string-controlled-mandatory">Country</a>, Ocean is mandatory but should be marked as “Not relevant” when the site is on land.</p>
+<p>Where sampling sites are located in national territory but also in or near (intentionally vague) an ocean or sea, we recommend recording both variables.</p>
+<section class="level2"><h3 id="controlled-vocabulary-3">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-3"></a>
+</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/areas_vocabulary.html">areas_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -661,58 +658,55 @@
 <span><span class="co">#&gt; [139] "Beaufort Sea"                "Barents Sea"                </span></span>
 <span><span class="co">#&gt; [141] "Baffin Bay"                  "Arctic Ocean"</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-3">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-3"></a>
-</h3>
-<!-- Fill in from areas_vocabulary() output. -->
 </section></section><section class="section level2"><h2 id="latitude---numeric-free-mandatory">Latitude - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#latitude---numeric-free-mandatory"></a>
 </h2>
 <p><code>LATITUDE</code></p>
-<!-- Latitude coordinate in decimal degrees. -->
+<p>Site latitude (north-south position, also known as northing, between -90.0° and +90.0°) is recorded in decimal decimal degrees. Arbitrary precision (within the bounds of R’s numeric data type) is possible, but the degree of precision reported (i.e. decimal places) should be appropriate to the actual sampling. 3 decimal places corresponds to approximately 111 m accuracy, and 4 to within 11 m. Under some circumstances this can cause somewhat confusing combinations of coordinates and site types; for example, a site may be reported as being on land but with coordinates that are clearly in the ocean. In future, we plan to include an explicit metric of spatial uncertainty. A latitude is always associated with a <a href="#coordinate-reference-system---string-controlled-mandatory">Coordinate Reference System</a>.</p>
 </section><section class="section level2"><h2 id="longitude---numeric-free-mandatory">Longitude - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#longitude---numeric-free-mandatory"></a>
 </h2>
 <p><code>LONGITUDE</code></p>
-<!-- Longitude coordinate in decimal degrees. -->
-</section><section class="section level2"><h2 id="site-coordinate-system---string-controlled-mandatory">Site Coordinate System - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#site-coordinate-system---string-controlled-mandatory"></a>
+<p>Site longitude (east-west position, also known as easting, between -180.0° and +180.0°) is recorded in decimal decimal degrees. See <a href="#latitude---numeric-free-mandatory">Latitude</a> for further details. A longitude is always associated with a <a href="#coordinate-reference-system---string-controlled-mandatory">Coordinate Reference System</a>.</p>
+</section><section class="section level2"><h2 id="coordinate-reference-system---string-controlled-mandatory">Coordinate Reference System - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#coordinate-reference-system---string-controlled-mandatory"></a>
 </h2>
 <p><code>SITE_COORDINATE_SYSTEM</code></p>
-<!-- Coordinate reference system used for the site coordinates. -->
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/coordinate_systems_vocabulary.html">coordinate_systems_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Not relevant" "Not reported" "WGS 84"       "UTM 32"       "UTM 33"      </span></span>
-<span><span class="co">#&gt; [6] "UTM 34"       "UTM 35"       "ETRS89"       "Other"</span></span></code></pre></div>
-</div>
+<p>A site’s latitude and longitude are calculated using a reference system “placed” at a given point on the globe and parameterised within a given region. This Coordinate Reference System is a necessary component of any geographical coordinate data. In most global datasets, the World Geodetic System, 1984 version (WGS 84) is used. However, national or other local datasets may use a variety of CRS, such as the Universal Transverse Mercator (UTM), which projects the Earth into a series of square or rectangular zones; in this case, it is necessary to know the CRS and the grid number.</p>
+<p>This controlled vocabulary uses the package <code>{crsuggest}</code>, which in turn uses the EPSG Dataset v10.019, (product of the International Association of Oil &amp; Gas Producers, <a href="https://epsg.org/terms-of-use.html" class="external-link">terms of use</a>). However, because the full 6000+ CRS included would be impractically large for the associated UI, we filter this down to a small set of systems relevant to the test cases used with the format so far. In future, CRS metadata will be used to automatically filter available CRS based on the desired geographical scope.</p>
 <section class="level2"><h3 id="controlled-vocabulary-4">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-4"></a>
 </h3>
-<!-- Fill in from coordinate_systems_vocabulary() output. -->
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/coordinate_systems_vocabulary.html">coordinate_systems_vocabulary</a></span><span class="op">(</span>common_only <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "Not relevant"          "Not reported"          "ETRS89"               </span></span>
+<span><span class="co">#&gt; [4] "WGS 84 / UTM zone 32N" "WGS 84 / UTM zone 33N" "WGS 84 / UTM zone 34N"</span></span>
+<span><span class="co">#&gt; [7] "WGS 84 / UTM zone 35N" "Other"</span></span></code></pre></div>
+</div>
 </section></section><section class="section level2"><h2 id="altitude-value---numeric-free-mandatory">Altitude Value - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#altitude-value---numeric-free-mandatory"></a>
 </h2>
 <p><code>ALTITUDE_VALUE</code></p>
-<!-- Elevation or depth value. -->
+<p>Altitude value above or below sea level, including depth of water sampling (but <em>not</em> depth of ice or sediment cores). This data is frequently not available for sampling sites, in which case it can be reported as 0. Associated with an <a href="#altitude-unit---string-controlled-mandatory">altitude unit</a>.</p>
 </section><section class="section level2"><h2 id="altitude-unit---string-controlled-mandatory">Altitude Unit - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#altitude-unit---string-controlled-mandatory"></a>
 </h2>
 <p><code>ALTITUDE_UNIT</code></p>
-<!-- Unit of measurement for the altitude value. -->
+<p>Unit associated with <a href="#altitude-value---numeric-free-mandatory">altitude value</a>.</p>
+<section class="level2"><h3 id="controlled-vocabulary-5">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-5"></a>
+</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/altitude_units_vocabulary.html">altitude_units_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "km" "m"  "cm" "mm"</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-5">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-5"></a>
-</h3>
-<!-- Fill in from altitude_units_vocabulary() output. -->
 </section></section><section class="section level2"><h2 id="entered-by---string-free-mandatory">Entered By - String, free, mandatory<a class="anchor" aria-label="anchor" href="#entered-by---string-free-mandatory"></a>
 </h2>
 <p><code>ENTERED_BY</code></p>
-<!-- Person or entity who entered the site data. -->
-</section><section class="section level2"><h2 id="entered-date---string-free-mandatory">Entered Date - String, free, mandatory<a class="anchor" aria-label="anchor" href="#entered-date---string-free-mandatory"></a>
+<p>The name or email address of the user entering data.</p>
+</section><section class="section level2"><h2 id="entered-date---date-iso-free-mandatory">Entered Date - Date (ISO), free, mandatory<a class="anchor" aria-label="anchor" href="#entered-date---date-iso-free-mandatory"></a>
 </h2>
 <p><code>ENTERED_DATE</code></p>
-<!-- Date when the site data was entered. -->
+<p>The date that site data were entered.</p>
 </section><section class="section level2"><h2 id="site-comment---string-free-optional">Site Comment - String, free, optional<a class="anchor" aria-label="anchor" href="#site-comment---string-free-optional"></a>
 </h2>
 <p><code>SITE_COMMENT</code></p>
-<!-- Additional notes about the site. -->
+<p>Space for the recording of any additional notes or comments about the site deemed relevant, particularly any operations performed by the user on sites data, such as merging sites, converting a sampling region to a discrete point, or estimating point coordinates from a map.</p>
 </section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);

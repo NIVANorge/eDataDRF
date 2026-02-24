@@ -31,12 +31,14 @@ infrastructure developed by chemists.
 
 `PARAMETER_TYPE`
 
-Parameter type is divided into five classifications and two
-“wastebasket” categories. This classification requires a degree of
-subjective judgement. What makes a chemical a stressor versus a quality
-parameter is not always clear. However, we anticipate that in most cases
-this will be uncontroversial. Where this is not the case stressors can
-still be identified by name/id.
+Parameter type is divided into five classifications and two missing data
+values. This classification requires a degree of subjective judgement.
+What makes a chemical a stressor versus a quality parameter is not
+always clear. However, we anticipate that in most cases this will be
+uncontroversial. Where this is not the case stressors can still be
+identified by name/id.
+
+### Controlled Vocabulary
 
 ``` r
 parameter_types_vocabulary()
@@ -45,8 +47,6 @@ parameter_types_vocabulary()
 #> [7] "Other"
 ```
 
-### Controlled Vocabulary
-
 `"Not relevant"` - Use when a type is not applicable to the measured
 scalar. `"Stressor"` - hemical, physical or biological agent causing
 stress. `"Quality parameter"` - Standard water/environmental quality
@@ -54,19 +54,21 @@ parameter `"Normalisation"` - Parameter used for normalising other
 measurements  
 `"Background"` - “Natural background level of a parameter”  
 `"Ecological Indicator"` - Parameter is an indicator or metric of
-ecological concern. `"Other"` - Parameter belongs to another category
+ecological concern. `"Other"` - Parameter belongs to another category.
+Please note in comments field.
 
 ## Parameter Sub-type - String, controlled, mandatory
 
 `PARAMETER_TYPE_SUB`
 
-Subdivision of Parameter Type, largely chemical classifications, based
-on ClassyFire plus some quality stuff
+Parameter Sub-type is a further subdivision of \[Parameter Type\]. The
+majority of subtypes are chemical classifications from the
+[ChemOnt/ClassyFire](https://pmc.ncbi.nlm.nih.gov/articles/PMC5096306/)
+chemical taxonomy; other subtypes are intended for use with quality
+parameters, stressors measured as mixtures, or other cases where
+additional details are needed.
 
-- Add “not relevant”
-- Reorg so that it’s alphabetical but other/not rel are in sensible
-  places
-- Add a sub-level for the above?
+### Controlled Vocabulary
 
 ``` r
 parameter_types_sub_vocabulary()
@@ -110,13 +112,34 @@ parameter_types_sub_vocabulary()
 #> [38] "Not reported"
 ```
 
-### Controlled Vocabulary
-
-- Will do with code, I guess.
-
-## Parameter Name
+## Parameter Name, controlled, mandatory
 
 `PARAMETER_NAME`
+
+Parameter name records the reported name of a measured parameter. In the
+majority of cases
+
+### Controlled Vocabulary
+
+``` r
+# TODO: Fix me, pleassse
+dummy_parameters_vocabulary() |> dplyr::slice_head(n = 10)
+#> # A tibble: 10 × 9
+#>    PARAMETER_TYPE    PARAMETER_NAME      PARAMETER_TYPE_SUB MEASURED_TYPE CAS_RN
+#>    <chr>             <chr>               <chr>              <chr>         <chr> 
+#>  1 Quality parameter pH                  pH                 Physical par… <NA>  
+#>  2 Quality parameter Dissolved oxygen    Dissolved oxygen   Concentration 7782-…
+#>  3 Quality parameter Temperature         Temperature        Physical par… <NA>  
+#>  4 Quality parameter Conductivity        Conductivity       Physical par… <NA>  
+#>  5 Quality parameter Salinity            Salinity           Physical par… <NA>  
+#>  6 Quality parameter Turbidity           Turbidity          Physical par… <NA>  
+#>  7 Quality parameter Total organic carb… Total organic car… Concentration <NA>  
+#>  8 Quality parameter Alkalinity          Other              Concentration <NA>  
+#>  9 Quality parameter Hardness            Other              Concentration <NA>  
+#> 10 Quality parameter Chlorophyll a       Other              Concentration 479-6…
+#> # ℹ 4 more variables: PUBCHEM_CID <int>, INCHIKEY_SD <chr>, ENTERED_BY <chr>,
+#> #   PARAMETER_NAME_SUB <chr>
+```
 
 - Typically the common short form name of a parameter, but…
 - We use whatever ClassyFire gives us, I think

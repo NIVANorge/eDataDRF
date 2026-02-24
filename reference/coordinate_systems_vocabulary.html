@@ -54,9 +54,17 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">coordinate_systems_vocabulary</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">coordinate_systems_vocabulary</span><span class="op">(</span>common_only <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
+    <div class="section level2">
+    <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
+
+
+<dl><dt id="arg-common-only">common_only<a class="anchor" aria-label="anchor" href="#arg-common-only"></a></dt>
+<dd><p>Return only the most common CRS options (default TRUE)</p></dd>
+
+</dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A character vector of coordinate system options</p>
@@ -64,18 +72,23 @@
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Provides standardised coordinate system identifiers commonly used in environmental
-monitoring. Options include:</p>
+monitoring, sourced from the EPSG Dataset via the <span class="pkg">crsuggest</span> package.
+Options include:</p>
 <p>Not relevant</p>
 <p>Not reported</p>
-<p>WGS 84</p>
-<p>UTM 32</p>
-<p>UTM 33</p>
-<p>UTM 34</p>
-<p>UTM 35</p>
-<p>ETRS89</p>
+<p>WGS 84 (EPSG:4326)</p>
+<p>ETRS89 (EPSG:4258)</p>
+<p>WGS 84 / UTM zone 32N (EPSG:32632)</p>
+<p>WGS 84 / UTM zone 33N (EPSG:32633)</p>
+<p>WGS 84 / UTM zone 34N (EPSG:32634)</p>
+<p>WGS 84 / UTM zone 35N (EPSG:32635)</p>
 <p>Other</p>
-<p>More CRS will be added as needed. In long term, vocabulary may be replaced entirely for better standisation with
-EPSG and/or PROJ4String.</p>
+<p>More CRS will be added as needed. In the long term, vocabulary may be replaced
+entirely for better standardisation with EPSG and/or PROJ4String.</p>
+<p>CRS data sourced from <span class="pkg">crsuggest</span> (Walker 2022).
+Using the EPSG Dataset v10.019, a product of the International Association of
+Oil &amp; Gas Producers. Please view the terms of use at
+<a href="https://epsg.org/terms-of-use.html" class="external-link">https://epsg.org/terms-of-use.html</a>.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
