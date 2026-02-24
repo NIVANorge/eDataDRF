@@ -6,7 +6,8 @@
 behind a sample that are not otherwise captured by citations/references.
 Routine environmental monitoring is frequently conducted by private and
 public sector authorities, but may not have any formal academic
-literature metadata (see )
+literature metadata (see
+[References](https://NIVANorge.github.io/eDataDRF/articles/references_data.md)).
 
 ``` r
 library(eDataDRF)
@@ -20,9 +21,9 @@ initialise_campaign_tibble()
 #> #   ENTERED_BY <chr>, ENTERED_DATE <date>, CAMPAIGN_COMMENT <chr>
 ```
 
-### Variables
+## Variables
 
-## Campaign Name Short - String, free (\>= 40 characters), mandatory
+### Campaign Name Short - String, free (\>= 40 characters), mandatory
 
 `CAMPAIGN_NAME_SHORT`
 
@@ -32,13 +33,13 @@ data](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.md).
 No format is enforced beyond the character limit, but it is rcommended
 to use PascalCase to maximise character efficiency and readability.
 
-## Campaign Name - String, free, mandatory
+### Campaign Name - String, free, mandatory
 
 `CAMPAIGN_NAME`
 
 Hey, this actually has a character limit. Who knew!
 
-## Campaign Start Date - Date (ISO), free, mandatory
+### Campaign Start Date - Date (ISO), free, mandatory
 
 `CAMPAIGN_START_DATE`
 
@@ -47,13 +48,13 @@ date. In rare cases reference objects may not report this. In such
 cases, record an approximate date and note the issue in [Campaign
 Comments](#campaign-comment---string-free-optional).
 
-## Campaign End Date - Date (ISO), free, optional
+### Campaign End Date - Date (ISO), free, optional
 
 `CAMPAIGN_END_DATE`
 
 If avaiable, the last sampling date of the campaign.
 
-## Organisation - String, free, mandatory
+### Organisation - String, free, mandatory
 
 `ORGANISATION`
 
@@ -61,19 +62,19 @@ The primary organisation responsible for conducting the campaign. In the
 case of academic publications, this is typically the lead author’s
 primary employer.
 
-## Entered By - String, free, mandatory
+### Entered By - String, free, mandatory
 
 `ENTERED_BY`
 
 The name or email address of the user entering data.
 
-## Entered Date - Date (ISO), free, mandatory
+### Entered Date - Date (ISO), free, mandatory
 
 `ENTERED_DATE`
 
 The date that campaign data were entered.
 
-## Campaign Comment - String, free, optional
+### Campaign Comment - String, free, optional
 
 `CAMPAIGN_COMMENT`
 

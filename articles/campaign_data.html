@@ -81,7 +81,7 @@
 
     <section class="section level2"><h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
-<p><strong>Campaign data</strong> is intended to track social and institutional factors behind a sample that are not otherwise captured by citations/references. Routine environmental monitoring is frequently conducted by private and public sector authorities, but may not have any formal academic literature metadata (see )</p>
+<p><strong>Campaign data</strong> is intended to track social and institutional factors behind a sample that are not otherwise captured by citations/references. Routine environmental monitoring is frequently conducted by private and public sector authorities, but may not have any formal academic literature metadata (see <a href="references_data.html">References</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://NIVANorge.github.io/eDataDRF/">eDataDRF</a></span><span class="op">)</span></span></code></pre></div>
@@ -94,42 +94,42 @@
 <span><span class="co">#&gt; #   CAMPAIGN_START_DATE &lt;date&gt;, CAMPAIGN_END_DATE &lt;date&gt;, ORGANISATION &lt;chr&gt;,</span></span>
 <span><span class="co">#&gt; #   ENTERED_BY &lt;chr&gt;, ENTERED_DATE &lt;date&gt;, CAMPAIGN_COMMENT &lt;chr&gt;</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
-</h3>
-</section></section><section class="section level2"><h2 id="campaign-name-short---string-free-40-characters-mandatory">Campaign Name Short - String, free (&gt;= 40 characters), mandatory<a class="anchor" aria-label="anchor" href="#campaign-name-short---string-free-40-characters-mandatory"></a>
+</section><section class="section level2"><h2 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
 </h2>
+<section class="level2"><h3 id="campaign-name-short---string-free-40-characters-mandatory">Campaign Name Short - String, free (&gt;= 40 characters), mandatory<a class="anchor" aria-label="anchor" href="#campaign-name-short---string-free-40-characters-mandatory"></a>
+</h3>
 <p><code>CAMPAIGN_NAME_SHORT</code></p>
 <p>A short, terse identifier for the campaign. This is used as a primary key for Campaign data and a foreign key in <a href="measurements_data.html">Measurements data</a>. No format is enforced beyond the character limit, but it is rcommended to use PascalCase to maximise character efficiency and readability.</p>
-</section><section class="section level2"><h2 id="campaign-name---string-free-mandatory">Campaign Name - String, free, mandatory<a class="anchor" aria-label="anchor" href="#campaign-name---string-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="campaign-name---string-free-mandatory">Campaign Name - String, free, mandatory<a class="anchor" aria-label="anchor" href="#campaign-name---string-free-mandatory"></a>
+</h3>
 <p><code>CAMPAIGN_NAME</code></p>
 <p>Hey, this actually has a character limit. Who knew!</p>
 <!-- Full descriptive name of the campaign. -->
-</section><section class="section level2"><h2 id="campaign-start-date---date-iso-free-mandatory">Campaign Start Date - Date (ISO), free, mandatory<a class="anchor" aria-label="anchor" href="#campaign-start-date---date-iso-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="campaign-start-date---date-iso-free-mandatory">Campaign Start Date - Date (ISO), free, mandatory<a class="anchor" aria-label="anchor" href="#campaign-start-date---date-iso-free-mandatory"></a>
+</h3>
 <p><code>CAMPAIGN_START_DATE</code></p>
 <p>The date when a sampling campaign began; the first reported sampling date. In rare cases reference objects may not report this. In such cases, record an approximate date and note the issue in <a href="#campaign-comment---string-free-optional">Campaign Comments</a>.</p>
-</section><section class="section level2"><h2 id="campaign-end-date---date-iso-free-optional">Campaign End Date - Date (ISO), free, optional<a class="anchor" aria-label="anchor" href="#campaign-end-date---date-iso-free-optional"></a>
-</h2>
+</section><section class="level2"><h3 id="campaign-end-date---date-iso-free-optional">Campaign End Date - Date (ISO), free, optional<a class="anchor" aria-label="anchor" href="#campaign-end-date---date-iso-free-optional"></a>
+</h3>
 <p><code>CAMPAIGN_END_DATE</code></p>
 <p>If avaiable, the last sampling date of the campaign.</p>
-</section><section class="section level2"><h2 id="organisation---string-free-mandatory">Organisation - String, free, mandatory<a class="anchor" aria-label="anchor" href="#organisation---string-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="organisation---string-free-mandatory">Organisation - String, free, mandatory<a class="anchor" aria-label="anchor" href="#organisation---string-free-mandatory"></a>
+</h3>
 <p><code>ORGANISATION</code></p>
 <p>The primary organisation responsible for conducting the campaign. In the case of academic publications, this is typically the lead author’s primary employer.</p>
-</section><section class="section level2"><h2 id="entered-by---string-free-mandatory">Entered By - String, free, mandatory<a class="anchor" aria-label="anchor" href="#entered-by---string-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="entered-by---string-free-mandatory">Entered By - String, free, mandatory<a class="anchor" aria-label="anchor" href="#entered-by---string-free-mandatory"></a>
+</h3>
 <p><code>ENTERED_BY</code></p>
 <p>The name or email address of the user entering data.</p>
-</section><section class="section level2"><h2 id="entered-date---date-iso-free-mandatory">Entered Date - Date (ISO), free, mandatory<a class="anchor" aria-label="anchor" href="#entered-date---date-iso-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="entered-date---date-iso-free-mandatory">Entered Date - Date (ISO), free, mandatory<a class="anchor" aria-label="anchor" href="#entered-date---date-iso-free-mandatory"></a>
+</h3>
 <p><code>ENTERED_DATE</code></p>
 <p>The date that campaign data were entered.</p>
-</section><section class="section level2"><h2 id="campaign-comment---string-free-optional">Campaign Comment - String, free, optional<a class="anchor" aria-label="anchor" href="#campaign-comment---string-free-optional"></a>
-</h2>
+</section><section class="level2"><h3 id="campaign-comment---string-free-optional">Campaign Comment - String, free, optional<a class="anchor" aria-label="anchor" href="#campaign-comment---string-free-optional"></a>
+</h3>
 <p><code>CAMPAIGN_COMMENT</code></p>
 <p>Space for the recording of any additional notes or comments about the campaign deemed relevant.</p>
-</section><script id="quarto-html-after-body" type="application/javascript">
+</section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -212,7 +212,8 @@
       }
     }
   });
-  </script></main>
+  </script></main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 

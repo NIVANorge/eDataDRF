@@ -43,70 +43,55 @@ the extensive Tidyverse family of functions.
 
 Tables are listed below:
 
-\`\``{r} # Create the data frame ---- schema_data <- tribble( ~`Table
-Name\`, ~Purpose, ~Comments, “Campaign”, “Records data about sampling
-campaign and organisation collecting data.”, ““,”Reference”, “Records
-conventional publication metadata, where available”, ““,”Sites”,
-“Records site coordinates, land use, country/ocean”, ““,”Parameters”,
-“Records data on stressors (chemical, radiation, etc.), quality
-measurements”, ““,”Compartments”, “Records information on the
-compartment/matrix sampled”, ““,”Samples”, “Recorded which combinations
-of dates, sites, parameters and compartments were sampled”, “Not used in
-final analysis, but exists as an intermediate table used to create
-measurements”, “Biota”, “Where relevant, records biota species, tissue,
-life stage, and gender”, “Optional”, “Methods”, “Records type and
-descriptions of methods used for sampling, extraction, fractionation and
-analysis”, ““,”Measurements”, “Records measured values, units,
-uncertainty, sample size, and methods associated with a given sample”,
-““,”CREED (quality)“,”Records assessment purpose statement, relevant
-data summarised from above tables, relevance/reliability scores, and
-final assessment of data quality.”, “” )
+| Table Name      | Purpose                                                                                                                                               | Comments                                                                                    |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| Campaign        | Records data about sampling campaign and organisation collecting data.                                                                                |                                                                                             |
+| Reference       | Records conventional publication metadata, where available                                                                                            |                                                                                             |
+| Sites           | Records site coordinates, land use, country/ocean                                                                                                     |                                                                                             |
+| Parameters      | Records data on stressors (chemical, radiation, etc.), quality measurements                                                                           |                                                                                             |
+| Compartments    | Records information on the compartment/matrix sampled                                                                                                 |                                                                                             |
+| Samples         | Records which combinations of dates, sites, parameters and compartments were sampled                                                                  | Not used in final analysis, but exists as an intermediate table used to create measurements |
+| Biota           | Where relevant, records biota species, tissue, life stage, and gender                                                                                 | Optional                                                                                    |
+| Methods         | Records type and descriptions of methods used for sampling, extraction, fractionation and analysis                                                    |                                                                                             |
+| Measurements    | Records measured values, units, uncertainty, sample size, and methods associated with a given sample                                                  |                                                                                             |
+| CREED (quality) | Records assessment purpose statement, relevant data summarised from above tables, relevance/reliability scores, and final assessment of data quality. |                                                                                             |
 
-# Create gt table —-
+Table of tables in the eData format, their purpose, and comments.
 
-schema_table \<- schema_data \|\> gt() \|\> \# Left-align all columns
-cols_align( align = “left”, columns = everything() )
+``` mermaid
+erDiagram
+    Campaign ||--o{ Measurements : "Belongs"
+    Campaign ||--o{ References : "Belongs"
+    Campaign ||--o{ Sites : "Belongs"
+    Campaign ||--o{ Methods : "Belongs"
+    Campaign ||--o{ CREED : "Assesses"
 
-schema_table
+    References ||--o{ Measurements : "Cites"
+    Sites ||--o{ Measurements : "Locates"
+    Parameters ||--o{ Measurements : "Quantifies"
+    Methods ||--o{ Measurements : "Means"
 
-    : Table of tables in the eData format, their purpose, and comments.
+    Measurements {
+    }
 
-    ```{mermaid}
-    erDiagram
-        Campaign ||--o{ Measurements : "Belongs"
-        Campaign ||--o{ References : "Belongs"
-        Campaign ||--o{ Sites : "Belongs"
-        Campaign ||--o{ Methods : "Belongs"
-        Campaign ||--o{ CREED : "Assesses"
+    Campaign {
+    }
 
-        References ||--o{ Measurements : "Cites"
-        Sites ||--o{ Measurements : "Locates"
-        Parameters ||--o{ Measurements : "Quantifies"
-        Methods ||--o{ Measurements : "Means"
+    References {
+    }
 
-        Measurements {
-        }
+    Sites {
+    }
 
-        Campaign {
-        }
+    Parameters {
+    }
 
-        References {
-        }
+    Methods {
+    }
 
-        Sites {
-        }
-
-        Parameters {
-        }
-
-        Methods {
-        }
-
-        CREED {
-        }
-
-: A basic diagram of the relationships between different tables.
-Rendering may be broken…?
+    CREED {
+    }
+```
 
 - Caveats
 - Links

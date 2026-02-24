@@ -75,19 +75,72 @@
 </h2>
 <p>Tables are created as <code><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble::tibble()</a></code> calls with empty variables of specific types (e.g. <code>character(0)</code> for strings). These support easier validation (see <a href="validation.html">Validation</a>) and the extensive Tidyverse family of functions.</p>
 <p>Tables are listed below:</p>
-<p>``<code>{r} # Create the data frame ---- schema_data &lt;- tribble(   ~</code>Table Name`, ~Purpose, ~Comments, “Campaign”, “Records data about sampling campaign and organisation collecting data.”, ““,”Reference”, “Records conventional publication metadata, where available”, ““,”Sites”, “Records site coordinates, land use, country/ocean”, ““,”Parameters”, “Records data on stressors (chemical, radiation, etc.), quality measurements”, ““,”Compartments”, “Records information on the compartment/matrix sampled”, ““,”Samples”, “Recorded which combinations of dates, sites, parameters and compartments were sampled”, “Not used in final analysis, but exists as an intermediate table used to create measurements”, “Biota”, “Where relevant, records biota species, tissue, life stage, and gender”, “Optional”, “Methods”, “Records type and descriptions of methods used for sampling, extraction, fractionation and analysis”, ““,”Measurements”, “Records measured values, units, uncertainty, sample size, and methods associated with a given sample”, ““,”CREED (quality)“,”Records assessment purpose statement, relevant data summarised from above tables, relevance/reliability scores, and final assessment of data quality.”, “” )</p>
-</div>
-</div>
-<div class="section level1">
-<h1 id="create-gt-table--">Create gt table —-<a class="anchor" aria-label="anchor" href="#create-gt-table--"></a>
-</h1>
-<p>schema_table &lt;- schema_data |&gt; gt() |&gt; # Left-align all columns cols_align( align = “left”, columns = everything() )</p>
-<p>schema_table</p>
-<pre><code>
-: Table of tables in the eData format, their purpose, and comments.
-
-```{mermaid}
-erDiagram
+<table class="table">
+<caption>Table of tables in the eData format, their purpose, and comments.</caption>
+<colgroup>
+<col width="33%">
+<col width="33%">
+<col width="33%">
+</colgroup>
+<thead><tr class="header">
+<th>Table Name</th>
+<th>Purpose</th>
+<th>Comments</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Campaign</td>
+<td>Records data about sampling campaign and organisation collecting data.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Reference</td>
+<td>Records conventional publication metadata, where available</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Sites</td>
+<td>Records site coordinates, land use, country/ocean</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Parameters</td>
+<td>Records data on stressors (chemical, radiation, etc.), quality measurements</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Compartments</td>
+<td>Records information on the compartment/matrix sampled</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Samples</td>
+<td>Records which combinations of dates, sites, parameters and compartments were sampled</td>
+<td>Not used in final analysis, but exists as an intermediate table used to create measurements</td>
+</tr>
+<tr class="odd">
+<td>Biota</td>
+<td>Where relevant, records biota species, tissue, life stage, and gender</td>
+<td>Optional</td>
+</tr>
+<tr class="even">
+<td>Methods</td>
+<td>Records type and descriptions of methods used for sampling, extraction, fractionation and analysis</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Measurements</td>
+<td>Records measured values, units, uncertainty, sample size, and methods associated with a given sample</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>CREED (quality)</td>
+<td>Records assessment purpose statement, relevant data summarised from above tables, relevance/reliability scores, and final assessment of data quality.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>erDiagram
     Campaign ||--o{ Measurements : "Belongs"
     Campaign ||--o{ References : "Belongs"
     Campaign ||--o{ Sites : "Belongs"
@@ -118,16 +171,14 @@ erDiagram
     }
 
     CREED {
-    }
-</code></pre>
-<p>: A basic diagram of the relationships between different tables. Rendering may be broken…?</p>
+    }</code></pre>
 <ul>
 <li>Caveats</li>
 <li>Links</li>
 <li>Vignettes</li>
 </ul>
 </div>
-
+</div>
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
