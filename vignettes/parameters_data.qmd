@@ -33,7 +33,9 @@ It is expected that most relevant studies will be collecting data on chemical po
 # Parameter Type - String, controlled, mandatory
 `PARAMETER_TYPE`
 
-Parameter type is divided into five classifications and two "wastebasket" categories. This classification requires a degree of subjective judgement. What makes a chemical a stressor versus a quality parameter is not always clear. However, we anticipate that in most cases this will be uncontroversial. Where this is not the case stressors can still be identified by name/id.
+Parameter type is divided into five classifications and two missing data values. This classification requires a degree of subjective judgement. What makes a chemical a stressor versus a quality parameter is not always clear. However, we anticipate that in most cases this will be uncontroversial. Where this is not the case stressors can still be identified by name/id.
+
+## Controlled Vocabulary
 
 ```{r}
 #| label: parameter_type
@@ -41,24 +43,20 @@ Parameter type is divided into five classifications and two "wastebasket" catego
 parameter_types_vocabulary()
 ```
 
-## Controlled Vocabulary
-
 `"Not relevant"` -  Use when a type is not applicable to the measured scalar.
 `"Stressor"` - hemical, physical or biological agent causing stress.
 `"Quality parameter"` - Standard water/environmental quality parameter
 `"Normalisation"` - Parameter used for normalising other measurements        
 `"Background"` - "Natural background level of a parameter"          
 `"Ecological Indicator"` - Parameter is an indicator or metric of ecological concern.
-`"Other"` - Parameter belongs to another category
+`"Other"` - Parameter belongs to another category. Please note in comments field.
 
 # Parameter Sub-type - String, controlled, mandatory
 `PARAMETER_TYPE_SUB`
 
-Subdivision of Parameter Type, largely chemical classifications, based on ClassyFire plus some quality stuff
+Parameter Sub-type is a further subdivision of [Parameter Type]. The majority of subtypes are chemical classifications from the [ChemOnt/ClassyFire](https://pmc.ncbi.nlm.nih.gov/articles/PMC5096306/) chemical taxonomy; other subtypes are intended for use with quality parameters, stressors measured as mixtures, or other cases where additional details are needed.
 
-- Add "not relevant"
-- Reorg so that it's alphabetical but other/not rel are in sensible places
-- Add a sub-level for the above?
+## Controlled Vocabulary
 
 ```{r}
 #| label: parameter_sub_type
@@ -66,12 +64,19 @@ Subdivision of Parameter Type, largely chemical classifications, based on Classy
 parameter_types_sub_vocabulary()
 ```
 
+# Parameter Name, controlled, mandatory
+`PARAMETER_NAME`
+
+Parameter name records the reported name of a measured parameter. In the majority of cases 
+
 ## Controlled Vocabulary
 
-- Will do with code, I guess. 
+```{r}
+#| label: parameter_name
 
-# Parameter Name
-`PARAMETER_NAME`
+# TODO: Fix me, pleassse
+dummy_parameters_vocabulary() |> dplyr::slice_head(n = 10)
+```
 
 - Typically the common short form name of a parameter, but...
 - We use whatever ClassyFire gives us, I think

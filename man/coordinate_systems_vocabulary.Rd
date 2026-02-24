@@ -4,7 +4,10 @@
 \alias{coordinate_systems_vocabulary}
 \title{Coordinate systems controlled vocabulary}
 \usage{
-coordinate_systems_vocabulary()
+coordinate_systems_vocabulary(common_only = TRUE)
+}
+\arguments{
+\item{common_only}{Return only the most common CRS options (default TRUE)}
 }
 \value{
 A character vector of coordinate system options
@@ -14,28 +17,34 @@ Returns controlled vocabulary options for spatial coordinate reference systems.
 }
 \details{
 Provides standardised coordinate system identifiers commonly used in environmental
-monitoring. Options include:
+monitoring, sourced from the EPSG Dataset via the \pkg{crsuggest} package.
+Options include:
 
 Not relevant
 
 Not reported
 
-WGS 84
+WGS 84 (EPSG:4326)
 
-UTM 32
+ETRS89 (EPSG:4258)
 
-UTM 33
+WGS 84 / UTM zone 32N (EPSG:32632)
 
-UTM 34
+WGS 84 / UTM zone 33N (EPSG:32633)
 
-UTM 35
+WGS 84 / UTM zone 34N (EPSG:32634)
 
-ETRS89
+WGS 84 / UTM zone 35N (EPSG:32635)
 
 Other
 
-More CRS will be added as needed. In long term, vocabulary may be replaced entirely for better standisation with
-EPSG and/or PROJ4String.
+More CRS will be added as needed. In the long term, vocabulary may be replaced
+entirely for better standardisation with EPSG and/or PROJ4String.
+
+CRS data sourced from \pkg{crsuggest} (Walker 2022).
+Using the EPSG Dataset v10.019, a product of the International Association of
+Oil & Gas Producers. Please view the terms of use at
+\url{https://epsg.org/terms-of-use.html}.
 }
 \seealso{
 Other site: 

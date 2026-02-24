@@ -716,44 +716,64 @@ geographic_features_sub_vocabulary <- function() {
 #'
 #' @details
 #' Provides standardised coordinate system identifiers commonly used in environmental
-#' monitoring. Options include:
+#' monitoring, sourced from the EPSG Dataset via the \pkg{crsuggest} package.
+#' Options include:
 #'
 #' Not relevant
 #'
 #' Not reported
 #'
-#' WGS 84
+#' WGS 84 (EPSG:4326)
 #'
-#' UTM 32
+#' ETRS89 (EPSG:4258)
 #'
-#' UTM 33
+#' WGS 84 / UTM zone 32N (EPSG:32632)
 #'
-#' UTM 34
+#' WGS 84 / UTM zone 33N (EPSG:32633)
 #'
-#' UTM 35
+#' WGS 84 / UTM zone 34N (EPSG:32634)
 #'
-#' ETRS89
+#' WGS 84 / UTM zone 35N (EPSG:32635)
 #'
 #' Other
 #'
-#' More CRS will be added as needed. In long term, vocabulary may be replaced entirely for better standisation with
-#' EPSG and/or PROJ4String.
+#' More CRS will be added as needed. In the long term, vocabulary may be replaced
+#' entirely for better standardisation with EPSG and/or PROJ4String.
+#'
+#' CRS data sourced from \pkg{crsuggest} (Walker 2022).
+#' Using the EPSG Dataset v10.019, a product of the International Association of
+#' Oil & Gas Producers. Please view the terms of use at
+#' \url{https://epsg.org/terms-of-use.html}.
+#'
+#' @param common_only Return only the most common CRS options (default TRUE)
 #'
 #' @return A character vector of coordinate system options
 #' @family site
+#' @import crsuggest
+#' @importFrom dplyr filter arrange pull
 #' @export
-coordinate_systems_vocabulary <- function() {
-  c(
-    "Not relevant",
-    "Not reported",
-    "WGS 84",
-    "UTM 32",
-    "UTM 33",
-    "UTM 34",
-    "UTM 35",
-    "ETRS89",
-    "Other"
+coordinate_systems_vocabulary <- function(common_only = TRUE) {
+  common_crs <- c(
+    "WGS 84" = 4326,
+    "ETRS89" = 4258,
+    "UTM 32" = 32632,
+    "UTM 33" = 32633,
+    "UTM 34" = 32634,
+    "UTM 35" = 32635
   )
+
+  crs_names <- if (common_only) {
+    crsuggest::crs_sf |>
+      filter(as.integer(crs_code) %in% common_crs) |>
+      arrange(match(as.integer(crs_code), common_crs)) |>
+      pull(crs_name)
+  } else {
+    crsuggest::crs_sf |>
+      arrange(match(as.integer(crs_code), common_crs)) |>
+      pull(crs_name)
+  }
+
+  c("Not relevant", "Not reported", crs_names, "Other")
 }
 
 #' Countries controlled vocabulary
