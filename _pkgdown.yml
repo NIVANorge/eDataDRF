@@ -7,6 +7,27 @@ navbar:
     left: [intro, reference, articles, news]
     right: [search, github, lightswitch]
 
+articles:
+- title: "Data tables"
+  desc: "Format and variables for each table in the eData DRF"
+  contents:
+  - campaign_data
+  - references_data
+  - sites_data
+  - parameters_data
+  - compartments_data
+  - samples_data
+  - biota_data
+  - methods_data
+  - measurements_data
+- title: "CREED quality assessment"
+  desc: "Format and scoring for data quality assessment"
+  contents:
+  - CREED_data
+  - CREED_scores_data
+- title: "Other"
+  contents:
+  - validation
 
 reference:
 - title: Initialise tibbles

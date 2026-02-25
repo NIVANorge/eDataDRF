@@ -30,24 +30,24 @@ library(eDataDRF)
 initialise_biota_tibble()
 ```
 
-## Variables
+# Variables
 
-# Sample ID - String, free, mandatory
+## Sample ID - String, free, mandatory
 `SAMPLE_ID`
 
 <!-- Unique identifier linking to the samples table. Foreign key for measurements. -->
 
-# Site Code - String, free, mandatory
+## Site Code - String, free, mandatory
 `SITE_CODE`
 
 <!-- Code identifying the sampling location. Foreign key for sites. -->
 
-# Parameter Name - String, free, mandatory
+## Parameter Name - String, free, mandatory
 `PARAMETER_NAME`
 
 <!-- Name of the measured parameter or stressor. Foreign key for parameters. -->
 
-# Environ Compartment - String, controlled, mandatory
+## Environ Compartment - String, controlled, mandatory
 `ENVIRON_COMPARTMENT`
 
 <!-- Broad environmental compartment category. Inherited from the samples table. -->
@@ -58,11 +58,11 @@ initialise_biota_tibble()
 environ_compartments_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from environ_compartments_vocabulary() output. -->
 
-# Environ Compartment Sub - String, controlled, mandatory
+## Environ Compartment Sub - String, controlled, mandatory
 `ENVIRON_COMPARTMENT_SUB`
 
 <!-- Specific sub-category of the environmental compartment. Inherited from the samples table. -->
@@ -73,11 +73,11 @@ environ_compartments_vocabulary()
 environ_compartments_sub_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from environ_compartments_sub_vocabulary() output. -->
 
-# Measured Category - String, controlled, mandatory
+## Measured Category - String, controlled, mandatory
 `MEASURED_CATEGORY`
 
 <!-- Category indicating measurement context. Inherited from the samples table. -->
@@ -88,21 +88,21 @@ environ_compartments_sub_vocabulary()
 measured_categories_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from measured_categories_vocabulary() output. -->
 
-# Sampling Date - String, free, mandatory
+## Sampling Date - String, free, mandatory
 `SAMPLING_DATE`
 
 <!-- Date when the biological sample was collected. Inherited from the samples table. -->
 
-# Subsample - String, free, mandatory
+## Subsample - String, free, mandatory
 `SUBSAMPLE`
 
 <!-- Identifier for subsample or replicate. Inherited from the samples table. -->
 
-# Species Group - String, controlled, mandatory
+## Species Group - String, controlled, mandatory
 `SPECIES_GROUP`
 
 <!-- Taxonomic group classification, e.g., Fish, Molluscs, Plants. -->
@@ -113,11 +113,11 @@ measured_categories_vocabulary()
 species_groups_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from species_groups_vocabulary() output. -->
 
-# Sample Species - String, controlled, mandatory
+## Sample Species - String, controlled, mandatory
 `SAMPLE_SPECIES`
 
 <!-- Scientific binomial name of the sampled species. -->
@@ -128,11 +128,11 @@ species_groups_vocabulary()
 species_names_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from species_names_vocabulary() output. -->
 
-# Sample Tissue - String, controlled, mandatory
+## Sample Tissue - String, controlled, mandatory
 `SAMPLE_TISSUE`
 
 <!-- Type of biological tissue sampled. -->
@@ -143,11 +143,11 @@ species_names_vocabulary()
 tissue_types_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from tissue_types_vocabulary() output. -->
 
-# Sample Species Lifestage - String, controlled, mandatory
+## Sample Species Lifestage - String, controlled, mandatory
 `SAMPLE_SPECIES_LIFESTAGE`
 
 <!-- Life stage of the organism at sampling. -->
@@ -158,11 +158,11 @@ tissue_types_vocabulary()
 lifestage_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from lifestage_vocabulary() output. -->
 
-# Sample Species Gender - String, controlled, mandatory
+## Sample Species Gender - String, controlled, mandatory
 `SAMPLE_SPECIES_GENDER`
 
 <!-- Gender or sex of the sampled organism. -->
@@ -173,11 +173,11 @@ lifestage_vocabulary()
 gender_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from gender_vocabulary() output. -->
 
-# Biota Comment - String, free, optional
+## Biota Comment - String, free, optional
 `BIOTA_COMMENT`
 
 <!-- Additional notes or comments about the biological sample. -->

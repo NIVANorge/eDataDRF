@@ -36,7 +36,7 @@
 #'
 #' CAMPAIGN_COMMENT: Additional notes or comments about the campaign (optional)
 #'
-#' See `vignette("campaign-data")` for more information.
+#' See `vignette("campaign_data")` for more information.
 #'
 #' @return A tibble with 0 rows and standardised campaign columns
 #' @family initialise_tibble
@@ -93,6 +93,8 @@ initialise_campaign_tibble <- function() {
 #'
 #' BIOTA_COMMENT: Additional notes or comments about the biological sample (optional)
 #'
+#' See `vignette("biota_data")` for more information.
+#'
 #' @return A tibble with 0 rows and standardised biota columns
 #' @family initialise_tibble
 #' @family biota
@@ -134,6 +136,8 @@ initialise_biota_tibble <- function() {
 #'
 #' MEASURED_CATEGORY: Measurement context (External Media, Internal to Organism, Surface of Organism)
 #'
+#' See `vignette("compartments_data")` for more information.
+#'
 #' @return A tibble with 0 rows and standardised compartment columns
 #' @family initialise_tibble
 #' @family compartment
@@ -164,6 +168,8 @@ initialise_compartments_tibble <- function() {
 #' PROTOCOL_NAME: Standardised name of the protocol
 #'
 #' PROTOCOL_COMMENT: Additional notes or details about the protocol
+#'
+#' See `vignette("methods_data")` for more information.
 #'
 #' @return A tibble with 0 rows and standardised methods columns
 #' @family initialise_tibble
@@ -208,6 +214,8 @@ initialise_methods_tibble <- function() {
 #' ENTERED_BY: Person or entity who entered the parameter
 #'
 #' PARAMETER_COMMENT: Additional notes about the parameter
+#'
+#' See `vignette("parameters_data")` for more information.
 #'
 #' @return A tibble with 0 rows and standardised parameter columns
 #' @family initialise_tibble
@@ -274,6 +282,8 @@ initialise_parameters_tibble <- function() {
 #'
 #' REF_COMMENT: Additional notes about the reference
 #'
+#' See `vignette("references_data")` for more information.
+#'
 #' @return A tibble with 0 rows and standardised reference columns
 #' @family initialise_tibble
 #' @family reference
@@ -333,6 +343,8 @@ initialise_references_tibble <- function() {
 #'
 #' SAMPLE_ID: Unique identifier for the sample (Key)
 #'
+#' See `vignette("samples_data")` for more information.
+#'
 #' @return A tibble with 0 rows and standardised sample columns
 #' @family initialise_tibble
 #' @family sample
@@ -390,6 +402,8 @@ initialise_samples_tibble <- function() {
 #' ENTERED_DATE: Date when the site data was entered
 #'
 #' SITE_COMMENT: Additional notes about the site
+#'
+#' See `vignette("sites_data")` for more information.
 #'
 #' @return A tibble with 0 rows and standardised site columns
 #' @family initialise_tibble
@@ -479,6 +493,8 @@ initialise_sites_tibble <- function() {
 #'
 #' MEASUREMENT_COMMENT: Additional notes about the measurement
 #'
+#' See `vignette("measurements_data")` for more information.
+#'
 #' @return A tibble with 0 rows and standardised measurement columns
 #' @family initialise_tibble
 #' @family measurement
@@ -539,6 +555,8 @@ initialise_measurements_tibble <- function() {
 #'
 #' GOLD_RELEVANCE: Relevance score at gold standard level
 #'
+#' See `vignette("CREED_scores_data")` for more information.
+#'
 #' @return A tibble with 0 rows and standardised CREED columns
 #' @family initialise_tibble
 #' @family CREED
@@ -577,6 +595,8 @@ initialise_CREED_scores_tibble <- function() {
 #' score: Assessment score for the criterion
 #'
 #' limitations: Identified limitations or concerns for the criterion
+#'
+#' See `vignette("CREED_data")` for more information.
 #'
 #' @return A tibble with 0 rows and standardised CREED criterion columns
 #' @family initialise_tibble

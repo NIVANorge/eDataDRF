@@ -24,24 +24,24 @@ library(eDataDRF)
 initialise_measurements_tibble()
 ```
 
-## Variables
+# Variables
 
-# Site Code - String, free, mandatory
+## Site Code - String, free, mandatory
 `SITE_CODE`
 
 <!-- Code identifying the sampling location. -->
 
-# Parameter Name - String, free, mandatory
+## Parameter Name - String, free, mandatory
 `PARAMETER_NAME`
 
 <!-- Name of the measured parameter. Foreign key for parameters. -->
 
-# Sampling Date - String, free, mandatory
+## Sampling Date - String, free, mandatory
 `SAMPLING_DATE`
 
 <!-- Date of sample collection. -->
 
-# Environ Compartment Sub - String, controlled, mandatory
+## Environ Compartment Sub - String, controlled, mandatory
 `ENVIRON_COMPARTMENT_SUB`
 
 <!-- Specific environmental sub-compartment. -->
@@ -52,16 +52,16 @@ initialise_measurements_tibble()
 environ_compartments_sub_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from environ_compartments_sub_vocabulary() output. -->
 
-# Subsample - String, free, mandatory
+## Subsample - String, free, mandatory
 `SUBSAMPLE`
 
 <!-- Subsample identifier. -->
 
-# Measured Flag - String, controlled, mandatory
+## Measured Flag - String, controlled, mandatory
 `MEASURED_FLAG`
 
 <!-- Quality flag for the measurement (e.g., < LOQ, < LOD). -->
@@ -72,16 +72,16 @@ environ_compartments_sub_vocabulary()
 measured_flags_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from measured_flags_vocabulary() output. -->
 
-# Measured Value - Numeric, free, mandatory
+## Measured Value - Numeric, free, mandatory
 `MEASURED_VALUE`
 
 <!-- Numeric value of the measurement. -->
 
-# Uncertainty Type - String, controlled, mandatory
+## Uncertainty Type - String, controlled, mandatory
 `UNCERTAINTY_TYPE`
 
 <!-- Type of uncertainty or variability metric. -->
@@ -92,21 +92,21 @@ measured_flags_vocabulary()
 uncertainty_types_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from uncertainty_types_vocabulary() output. -->
 
-# Uncertainty Upper - Numeric, free, mandatory
+## Uncertainty Upper - Numeric, free, mandatory
 `UNCERTAINTY_UPPER`
 
 <!-- Upper bound of uncertainty. -->
 
-# Uncertainty Lower - Numeric, free, mandatory
+## Uncertainty Lower - Numeric, free, mandatory
 `UNCERTAINTY_LOWER`
 
 <!-- Lower bound of uncertainty. -->
 
-# Measured Unit - String, controlled, mandatory
+## Measured Unit - String, controlled, mandatory
 `MEASURED_UNIT`
 
 <!-- Unit of measurement. -->
@@ -117,21 +117,21 @@ uncertainty_types_vocabulary()
 parameter_unit_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from parameter_unit_vocabulary() output. -->
 
-# Measured N - Numeric, free, mandatory
+## Measured N - Numeric, free, mandatory
 `MEASURED_N`
 
 <!-- Number of replicates or observations. -->
 
-# LOQ Value - Numeric, free, mandatory
+## LOQ Value - Numeric, free, mandatory
 `LOQ_VALUE`
 
 <!-- Limit of quantification value. -->
 
-# LOQ Unit - String, controlled, mandatory
+## LOQ Unit - String, controlled, mandatory
 `LOQ_UNIT`
 
 <!-- Unit for the limit of quantification. -->
@@ -142,16 +142,16 @@ parameter_unit_vocabulary()
 parameter_unit_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from parameter_unit_vocabulary() output. -->
 
-# LOD Value - Numeric, free, mandatory
+## LOD Value - Numeric, free, mandatory
 `LOD_VALUE`
 
 <!-- Limit of detection value. -->
 
-# LOD Unit - String, controlled, mandatory
+## LOD Unit - String, controlled, mandatory
 `LOD_UNIT`
 
 <!-- Unit for the limit of detection. -->
@@ -162,11 +162,11 @@ parameter_unit_vocabulary()
 parameter_unit_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from parameter_unit_vocabulary() output. -->
 
-# Sampling Protocol - String, controlled, mandatory
+## Sampling Protocol - String, controlled, mandatory
 `SAMPLING_PROTOCOL`
 
 <!-- Protocol used for sample collection. Foreign key for methods. -->
@@ -177,11 +177,11 @@ parameter_unit_vocabulary()
 sampling_protocols_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from sampling_protocols_vocabulary() output. -->
 
-# Extraction Protocol - String, controlled, mandatory
+## Extraction Protocol - String, controlled, mandatory
 `EXTRACTION_PROTOCOL`
 
 <!-- Protocol used for sample extraction. Foreign key for methods. -->
@@ -192,11 +192,11 @@ sampling_protocols_vocabulary()
 extraction_protocols_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from extraction_protocols_vocabulary() output. -->
 
-# Fractionation Protocol - String, controlled, mandatory
+## Fractionation Protocol - String, controlled, mandatory
 `FRACTIONATION_PROTOCOL`
 
 <!-- Protocol used for sample fractionation. Foreign key for methods. -->
@@ -207,11 +207,11 @@ extraction_protocols_vocabulary()
 fractionation_protocols_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from fractionation_protocols_vocabulary() output. -->
 
-# Analytical Protocol - String, controlled, mandatory
+## Analytical Protocol - String, controlled, mandatory
 `ANALYTICAL_PROTOCOL`
 
 <!-- Protocol used for analysis. Foreign key for methods. -->
@@ -222,26 +222,26 @@ fractionation_protocols_vocabulary()
 analytical_protocols_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from analytical_protocols_vocabulary() output. -->
 
-# Reference ID - String, free, mandatory
+## Reference ID - String, free, mandatory
 `REFERENCE_ID`
 
 <!-- Reference identifier for the data source. Foreign key for references. -->
 
-# Sample ID - String, free, mandatory
+## Sample ID - String, free, mandatory
 `SAMPLE_ID`
 
 <!-- Unique sample identifier. -->
 
-# Campaign Name Short - String, free, mandatory
+## Campaign Name Short - String, free, mandatory
 `CAMPAIGN_NAME_SHORT`
 
 <!-- Short name of the associated campaign. -->
 
-# Environ Compartment - String, controlled, mandatory
+## Environ Compartment - String, controlled, mandatory
 `ENVIRON_COMPARTMENT`
 
 <!-- Broad environmental compartment. -->
@@ -252,11 +252,11 @@ analytical_protocols_vocabulary()
 environ_compartments_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from environ_compartments_vocabulary() output. -->
 
-# Parameter Type - String, controlled, mandatory
+## Parameter Type - String, controlled, mandatory
 `PARAMETER_TYPE`
 
 <!-- Classification of the parameter. -->
@@ -267,11 +267,11 @@ environ_compartments_vocabulary()
 parameter_types_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from parameter_types_vocabulary() output. -->
 
-# Measured Type - String, controlled, mandatory
+## Measured Type - String, controlled, mandatory
 `MEASURED_TYPE`
 
 <!-- Type of measurement. -->
@@ -282,11 +282,11 @@ parameter_types_vocabulary()
 measured_types_vocabulary()
 ```
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 <!-- Fill in from measured_types_vocabulary() output. -->
 
-# Measurement Comment - String, free, optional
+## Measurement Comment - String, free, optional
 `MEASUREMENT_COMMENT`
 
 <!-- Additional notes about the measurement. -->
