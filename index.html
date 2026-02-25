@@ -70,6 +70,33 @@
 <p>These data are typically published as concentrations (in water) or mass ratios (in soil, sludge and biota). Fully interpreting these measurements requires considerable metadata, relating to the time, place, conditions, methodology, and context of sampling. However, no single standard exists for these metadata, and study authors and sampling teams tend to use a variety of inconsistent definitions, units, and schema depending on their scientific domain and the study’s individual needs.</p>
 <p>This is not, in itself a problem. However, as environmental risk assessment becomes more data-based and larger scale, the need to use and re-use large quantities of data increases. When these datasets are consistent, validated, and interoperable, much time can be saved. When they are not, researchers much go through the tedious process of understanding, validating and remapping by hand; an often non-reproducible process. Thus a harmonised format - and associated validation and formatting functions - can represent a significant timesaver for anyone in such as position.</p>
 <p>This format is a (first) attempt to address this issue. Rather than attempt a perfect format that covers all relevant domains, we have elected to focus on pollutants in water, aquatic biota, and similar compartments (sludge, aquatic sediment, etc.). This has been designed to follow a database-like structure, with the expectation that the format will be developed into a full database schema in the future.</p>
+</div>
+<div class="section level1">
+<h1 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h1>
+<p>To install the format, you will need the <a href="https://devtools.r-lib.org/" class="external-link">devtools</a> package:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"NIVANorge/eDataDRF"</span><span class="op">)</span></span></code></pre></div>
+<p>Once installed, tables can be created using the relevant functions:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">campaign_table</span> <span class="op">&lt;-</span> <span class="fu">initialise_campaign_table</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">biota_table</span> <span class="op">&lt;-</span> <span class="fu">initialise_biota_table</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>Likewise, controlled vocabulary is available as functions that return vectors, lists, or tables. In some cases, helper functions are available that wrap multiple invididual functions.</p>
+<p>Where external data sources are used to generate a vocabulary, functions may wrap (processed) data from other R packages or load raw data from external sources.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/measured_categories_vocabulary.html">measured_categories_vocabulary</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># returns a named vector</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/environ_compartments_sub_vocabulary.html">environ_compartments_sub_vocabulary</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># returns a nested list</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/extraction_protocols_vocabulary.html">extraction_protocols_vocabulary</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># returns a tibble</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/protocol_options_vocabulary.html">protocol_options_vocabulary</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># calls bind_rows() on four *_protocol_vocabulary() functions to return a tibble</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/coordinate_systems_vocabulary.html">coordinate_systems_vocabulary</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># calls crsuggest::crs_sf, returns 4 rows </span></span>
+<span></span>
+<span><span class="co"># TODO: Make name less stupid.</span></span>
+<span><span class="fu"><a href="reference/areas_vocabulary.html">areas_vocabulary</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># loads an RDS of IHO ocean definitions from /extdata/</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="tables">Tables<a class="anchor" aria-label="anchor" href="#tables"></a>
 </h2>
@@ -179,6 +206,7 @@
 </ul>
 </div>
 </div>
+
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">

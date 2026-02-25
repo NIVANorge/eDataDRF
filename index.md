@@ -32,6 +32,46 @@ compartments (sludge, aquatic sediment, etc.). This has been designed to
 follow a database-like structure, with the expectation that the format
 will be developed into a full database schema in the future.
 
+# Usage
+
+To install the format, you will need the
+[devtools](https://devtools.r-lib.org/) package:
+
+``` r
+install.packages("devtools")
+devtools::install_github("NIVANorge/eDataDRF")
+```
+
+Once installed, tables can be created using the relevant functions:
+
+``` r
+campaign_table <- initialise_campaign_table()
+biota_table <- initialise_biota_table()
+```
+
+Likewise, controlled vocabulary is available as functions that return
+vectors, lists, or tables. In some cases, helper functions are available
+that wrap multiple invididual functions.
+
+Where external data sources are used to generate a vocabulary, functions
+may wrap (processed) data from other R packages or load raw data from
+external sources.
+
+``` r
+measured_categories_vocabulary() # returns a named vector
+
+environ_compartments_sub_vocabulary() # returns a nested list
+
+extraction_protocols_vocabulary() # returns a tibble
+
+protocol_options_vocabulary() # calls bind_rows() on four *_protocol_vocabulary() functions to return a tibble
+
+coordinate_systems_vocabulary() # calls crsuggest::crs_sf, returns 4 rows 
+
+# TODO: Make name less stupid.
+areas_vocabulary() # loads an RDS of IHO ocean definitions from /extdata/
+```
+
 ## Tables
 
 Tables are created as
