@@ -151,20 +151,25 @@ generate_protocol_id <- function(
     is_empty,
     "",
     {
-      # Split by whitespace, capitalize first letter of each word, rejoin
+      # Split by whitespace, capitalise first letter of each word, rejoin
       words <- str_split(protocol_name, "\\s+")
 
       # Process each set of words
       processed <- vapply(
         words,
         FUN = function(word_vec) {
-          # Capitalize and combine words
-          capitalized <- str_c(
-            str_to_upper(str_sub(word_vec, 1, 1)),
-            str_to_lower(str_sub(word_vec, 2, -1))
+          # Capitalise first letter of each word, but preserve fully-uppercase
+          # words (e.g. acronyms like "ICP", "MS")
+          capitalised <- ifelse(
+            word_vec == str_to_upper(word_vec) & nchar(word_vec) > 0,
+            word_vec, # preserve all-caps words as-is
+            str_c(
+              str_to_upper(str_sub(word_vec, 1, 1)),
+              str_to_lower(str_sub(word_vec, 2, -1))
+            )
           )
           # Join words, remove non-alphanumeric, truncate
-          str_c(capitalized, collapse = "") |>
+          str_c(capitalised, collapse = "") |>
             str_remove_all("[^A-Za-z0-9]") |>
             str_sub(1, 15)
         },
