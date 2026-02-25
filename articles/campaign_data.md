@@ -29,9 +29,11 @@ initialise_campaign_tibble()
 
 A short, terse identifier for the campaign. This is used as a primary
 key for Campaign data and a foreign key in [Measurements
-data](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.md).
-No format is enforced beyond the character limit, but it is rcommended
-to use PascalCase to maximise character efficiency and readability.
+data](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.md)
+and [Methods
+data](https://NIVANorge.github.io/eDataDRF/articles/methods_data.md). No
+format is enforced beyond the character limit, but it is rcommended to
+use PascalCase to maximise character efficiency and readability.
 
 ### Campaign Name - String, free, mandatory
 

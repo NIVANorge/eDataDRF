@@ -81,6 +81,8 @@
 
     <section class="section level2"><h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
+<p><strong>Compartments data</strong> is intended to collect data on the environmental compartment or matrix sampled. The precise differences between site type, environmental compartment, sampling matrix/medium and biota tissue is a matter of professional judgement and domain background, but in this format, we elect to classify sampled compartment separately. This represents firstly the broad sphere sampled (biosphere, atmosphere, hydrosphere, geosphere), and then subcategories. By their nature these subcategories are extremely diverse, as the factors of heterogenisation of the different spheres are themselves diverse. However, the broad categories are intuitive and immediately recognisable. Additionally, we capture information relevant to biota samples on whether the inside, outside or surface of a biota was sampled. In future, this information may be moved to the <a href="biota_data.html">Biota data table</a>.</p>
+<p>The compartments data table is used to generate relevant combinations of samples in the <a href="samples_data.html">Samples data table</a>. It is thus not part of the final data product, but should be included in exports in order to maximise reproducibility.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://NIVANorge.github.io/eDataDRF/">eDataDRF</a></span><span class="op">)</span></span></code></pre></div>
@@ -94,23 +96,24 @@
 </div>
 <section class="level2"><h3 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
 </h3>
-</section></section><section class="section level2"><h2 id="environ-compartment---string-controlled-mandatory">Environ Compartment - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#environ-compartment---string-controlled-mandatory"></a>
+</section></section><section class="section level2"><h2 id="environmental-compartment---string-controlled-mandatory">Environmental Compartment - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#environmental-compartment---string-controlled-mandatory"></a>
 </h2>
 <p><code>ENVIRON_COMPARTMENT</code></p>
-<!-- Broad environmental compartment (Aquatic, Atmospheric, Terrestrial, Biota). -->
+<p>Identifies which of the earth’s spheres the sample originated from: aquatic (hydrosphere), air (atmospheric), terrestrial (geosphere), or biota (biosphere). Although largely comprehensive, it’s possible that some samples may not fit well into this category.</p>
+<section class="level2"><h3 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
+</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/environ_compartments_vocabulary.html">environ_compartments_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "Aquatic"      "Atmospheric"  "Terrestrial"  "Biota"        "Not relevant"</span></span>
 <span><span class="co">#&gt; [6] "Not reported" "Other"</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
-</h3>
-<!-- Fill in from environ_compartments_vocabulary() output. -->
-</section></section><section class="section level2"><h2 id="environ-compartment-sub---string-controlled-mandatory">Environ Compartment Sub - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#environ-compartment-sub---string-controlled-mandatory"></a>
+</section></section><section class="section level2"><h2 id="environmental-sub-compartment---string-controlled-mandatory">Environmental Sub-Compartment - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#environmental-sub-compartment---string-controlled-mandatory"></a>
 </h2>
 <p><code>ENVIRON_COMPARTMENT_SUB</code></p>
-<!-- Specific sub-category within the compartment. -->
+<p>Environmental compartments have been sub-divided into a series of subcompartments. No taxonomy or ontology was consulted in creation of this controlled vocabulary, although soil subcompartments were based on the <a href="https://isric.org/explore/wrb" class="external-link">World Reference Base for Soil Resources</a>.</p>
+<section class="level2"><h3 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
+</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/environ_compartments_sub_vocabulary.html">environ_compartments_sub_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -150,22 +153,18 @@
 <span><span class="co">#&gt;         Biota, Other </span></span>
 <span><span class="co">#&gt;       "Biota, Other"</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
-</h3>
-<!-- Fill in from environ_compartments_sub_vocabulary() output. -->
 </section></section><section class="section level2"><h2 id="measured-category---string-controlled-mandatory">Measured Category - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#measured-category---string-controlled-mandatory"></a>
 </h2>
 <p><code>MEASURED_CATEGORY</code></p>
 <!-- Measurement context (External Media, Internal to Organism, Surface of Organism). -->
+<section class="level2"><h3 id="controlled-vocabulary-2">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-2"></a>
+</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/measured_categories_vocabulary.html">measured_categories_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt;               External               Internal                Surface </span></span>
 <span><span class="co">#&gt;       "External Media" "Internal to Organism"  "Surface of Organism"</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-2">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-2"></a>
-</h3>
-<!-- Fill in from measured_categories_vocabulary() output. -->
 </section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);

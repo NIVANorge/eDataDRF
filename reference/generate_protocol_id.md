@@ -79,6 +79,6 @@ types <- c("Sampling Protocol", "Analytical Protocol")
 names <- c("Water Sample", "LC-MS Analysis")
 sequences <- c(1, 2)
 generate_protocol_id(types, names, sequences, "Study2024")
-#> [1] "S01_WaterSample_Study2024"  "A02_LcmsAnalysis_Study2024"
+#> [1] "S01_WaterSample_Study2024"  "A02_LCMSAnalysis_Study2024"
 # Returns: c("S01_WaterSample_Study2024", "A02_LCMSAnalysis_Study2024")
 ```

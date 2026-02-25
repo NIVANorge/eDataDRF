@@ -81,8 +81,16 @@
 
     <section class="section level2"><h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
-<p>Really we should be using the Chemical Methods ontology here, but implementing it now will require a fair amount of structural redesign, so for now it’s firmly in the todo category.</p>
-<p>The Methods table is a metadata table that is transformed before being linked to the [Measurements table] {Measurements table}.</p>
+<p>Methodology can significantly affect measured values, and this information is vital to understanding the overall environmental context. In the <strong>Methods data</strong> table, we classify methodology into four categories:</p>
+<ol type="1">
+<li>Sampling protocol: how were physical samples or information collected from the environment?</li>
+<li>Extraction protocol: how was a substance of interest (analyte) extracted from its matrix?</li>
+<li>Fractionation protocol: what fraction of the analyte was analysed? how was this fraction obtained?</li>
+<li>Analytical protocol: what analytical techniques were used to determine the quantity of analyte in the sample?</li>
+</ol>
+<p>These methodologies are structured for the collection of data on chemicals stressors, which reflects the dominant use case of the format so far. Extension to cover a greater range of non-chemical stressors is planned for future versions.</p>
+<p>Currently no external ontology or taxonomy is used for methodology. The <a href="https://github.com/rsc-ontology/rsc-cmo" class="external-link">Chemical Methods Ontology</a> (CMO) may be appropriate, and we will continue to review its progress to determine the appropriate form of any harmonisation.</p>
+<p>The Methods table is a metadata table that is transformed before being linked to the <a href="measurements_data.html">Measurements table</a>. Because it is assumed that each measurement will typically have a sampling, extraction, fractionation, and analytical protocol associated with it, the measurements table has a foreign key for each type of methdology that references the relevant <a href="#protocol-id---string-free-mandatory">Protocol ID</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://NIVANorge.github.io/eDataDRF/">eDataDRF</a></span><span class="op">)</span></span></code></pre></div>
@@ -99,23 +107,58 @@
 </section></section><section class="section level2"><h2 id="protocol-id---string-free-mandatory">Protocol ID - String, free, mandatory<a class="anchor" aria-label="anchor" href="#protocol-id---string-free-mandatory"></a>
 </h2>
 <p><code>PROTOCOL_ID</code></p>
-<!-- Unique identifier for the protocol. Primary key. -->
+<p>A short, terse identifier for the protocol. This is used as a primary key for Methods data and a foreign key in the Sampling Protocol, Extraction Protocol, Fractionation Protocol, and Analytical Protocol columns. <a href="measurements_data.html">Measurements data</a>.</p>
+<p>Protocol IDs are automatically generated based on the protocol type, short name, campaign name, and, in cases where more than one of a type of technique is used per campaign, sequence number. This is theoretically vulnerable to colisions, and a hashed or serial key would be safer, but this is not anticipated to be a problem at the current scale of use at the format. Additionally, it is far easier to read and intepret for humans.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/generate_protocol_id.html">generate_protocol_id</a></span><span class="op">(</span></span>
+<span>  protocol_type <span class="op">=</span> <span class="st">"Analytical Protocol"</span>,</span>
+<span>  protocol_name <span class="op">=</span> <span class="st">"ICP-MS"</span>,</span>
+<span>  sequence_number <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>  campaign_name <span class="op">=</span> <span class="st">"Test_Campaign"</span></span>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "A01_ICPMS_TestCampai"</span></span></code></pre></div>
+</div>
 </section><section class="section level2"><h2 id="campaign-name---string-free-mandatory">Campaign Name - String, free, mandatory<a class="anchor" aria-label="anchor" href="#campaign-name---string-free-mandatory"></a>
 </h2>
 <p><code>CAMPAIGN_NAME</code></p>
-<!-- Name of the campaign this protocol was used in. -->
-</section><section class="section level2"><h2 id="protocol-category---string-free-mandatory">Protocol Category - String, free, mandatory<a class="anchor" aria-label="anchor" href="#protocol-category---string-free-mandatory"></a>
+<p>A short, terse identifier for the campaign. Foreign key referenced from <a href="campaign_data.html">Campaign data</a>, used to generate <a href="#protocol-id---string-free-mandatory">Protocol ID</a>.</p>
+</section><section class="section level2"><h2 id="protocol-category---string-controlled-vocabulary-mandatory">Protocol Category - String, controlled vocabulary, mandatory<a class="anchor" aria-label="anchor" href="#protocol-category---string-controlled-vocabulary-mandatory"></a>
 </h2>
 <p><code>PROTOCOL_CATEGORY</code></p>
-<!-- Type of protocol (Sampling, Extraction, Fractionation, Analytical). -->
-</section><section class="section level2"><h2 id="protocol-name---string-free-mandatory">Protocol Name - String, free, mandatory<a class="anchor" aria-label="anchor" href="#protocol-name---string-free-mandatory"></a>
+<p>The category of protocol/method (Sampling, Extraction, Fractionation, Analytical).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/protocol_categories_vocabulary.html">protocol_categories_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "Sampling Protocol"      "Fractionation Protocol" "Extraction Protocol"   </span></span>
+<span><span class="co">#&gt; [4] "Analytical Protocol"</span></span></code></pre></div>
+</div>
+</section><section class="section level2"><h2 id="protocol-name---string-controlled-vocabulary-mandatory">Protocol Name - String, controlled vocabulary, mandatory<a class="anchor" aria-label="anchor" href="#protocol-name---string-controlled-vocabulary-mandatory"></a>
 </h2>
 <p><code>PROTOCOL_NAME</code></p>
-<!-- Standardised name of the protocol. -->
+<p>The consensus name (short and long) of a protocol or method used in sampling. Options are currently based on the aquatic ecotoxicology domain, but will be extended and harmonised with relevant ontologies and taxonomies as practical.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/protocol_options_vocabulary.html">protocol_options_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 75 × 3</span></span>
+<span><span class="co">#&gt;    Protocol_Type     Short_Name     Long_Name            </span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;             &lt;chr&gt;          &lt;chr&gt;                </span></span>
+<span><span class="co">#&gt;  1 Sampling Protocol Not relevant   Not relevant         </span></span>
+<span><span class="co">#&gt;  2 Sampling Protocol Not reported   Not reported         </span></span>
+<span><span class="co">#&gt;  3 Sampling Protocol Point          Point sampling       </span></span>
+<span><span class="co">#&gt;  4 Sampling Protocol Composite      Composite sampling   </span></span>
+<span><span class="co">#&gt;  5 Sampling Protocol Trawl          Trawl sampling       </span></span>
+<span><span class="co">#&gt;  6 Sampling Protocol Grab           Grab sampling        </span></span>
+<span><span class="co">#&gt;  7 Sampling Protocol Core           Core sampling        </span></span>
+<span><span class="co">#&gt;  8 Sampling Protocol Seine net      Seine net sampling   </span></span>
+<span><span class="co">#&gt;  9 Sampling Protocol Electrofishing Electrofishing       </span></span>
+<span><span class="co">#&gt; 10 Sampling Protocol Plankton net   Plankton net sampling</span></span>
+<span><span class="co">#&gt; # ℹ 65 more rows</span></span></code></pre></div>
+</div>
 </section><section class="section level2"><h2 id="protocol-comment---string-free-optional">Protocol Comment - String, free, optional<a class="anchor" aria-label="anchor" href="#protocol-comment---string-free-optional"></a>
 </h2>
 <p><code>PROTOCOL_COMMENT</code></p>
-<!-- Additional notes or details about the protocol. -->
+<p>Space for the recording of any additional notes or comments about the method deemed relevant. As information on the specific equipment or more detailed protocols may also be useful, users are encouraged to copy relevant text verbatim from the source.</p>
 </section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);

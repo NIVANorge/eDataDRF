@@ -2,6 +2,27 @@
 
 ## Introduction
 
+**Compartments data** is intended to collect data on the environmental
+compartment or matrix sampled. The precise differences between site
+type, environmental compartment, sampling matrix/medium and biota tissue
+is a matter of professional judgement and domain background, but in this
+format, we elect to classify sampled compartment separately. This
+represents firstly the broad sphere sampled (biosphere, atmosphere,
+hydrosphere, geosphere), and then subcategories. By their nature these
+subcategories are extremely diverse, as the factors of heterogenisation
+of the different spheres are themselves diverse. However, the broad
+categories are intuitive and immediately recognisable. Additionally, we
+capture information relevant to biota samples on whether the inside,
+outside or surface of a biota was sampled. In future, this information
+may be moved to the [Biota data
+table](https://NIVANorge.github.io/eDataDRF/articles/biota_data.md).
+
+The compartments data table is used to generate relevant combinations of
+samples in the [Samples data
+table](https://NIVANorge.github.io/eDataDRF/articles/samples_data.md).
+It is thus not part of the final data product, but should be included in
+exports in order to maximise reproducibility.
+
 ``` r
 library(eDataDRF)
 ```
@@ -15,9 +36,16 @@ initialise_compartments_tibble()
 
 ### Variables
 
-## Environ Compartment - String, controlled, mandatory
+## Environmental Compartment - String, controlled, mandatory
 
 `ENVIRON_COMPARTMENT`
+
+Identifies which of the earth’s spheres the sample originated from:
+aquatic (hydrosphere), air (atmospheric), terrestrial (geosphere), or
+biota (biosphere). Although largely comprehensive, it’s possible that
+some samples may not fit well into this category.
+
+### Controlled Vocabulary
 
 ``` r
 environ_compartments_vocabulary()
@@ -25,11 +53,17 @@ environ_compartments_vocabulary()
 #> [6] "Not reported" "Other"
 ```
 
-### Controlled Vocabulary
-
-## Environ Compartment Sub - String, controlled, mandatory
+## Environmental Sub-Compartment - String, controlled, mandatory
 
 `ENVIRON_COMPARTMENT_SUB`
+
+Environmental compartments have been sub-divided into a series of
+subcompartments. No taxonomy or ontology was consulted in creation of
+this controlled vocabulary, although soil subcompartments were based on
+the [World Reference Base for Soil
+Resources](https://isric.org/explore/wrb).
+
+### Controlled Vocabulary
 
 ``` r
 environ_compartments_sub_vocabulary()
@@ -70,16 +104,14 @@ environ_compartments_sub_vocabulary()
 #>       "Biota, Other"
 ```
 
-### Controlled Vocabulary
-
 ## Measured Category - String, controlled, mandatory
 
 `MEASURED_CATEGORY`
+
+### Controlled Vocabulary
 
 ``` r
 measured_categories_vocabulary()
 #>               External               Internal                Surface 
 #>       "External Media" "Internal to Organism"  "Surface of Organism"
 ```
-
-### Controlled Vocabulary

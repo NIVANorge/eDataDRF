@@ -2,12 +2,38 @@
 
 ## Introduction
 
-Really we should be using the Chemical Methods ontology here, but
-implementing it now will require a fair amount of structural redesign,
-so for now it’s firmly in the todo category.
+Methodology can significantly affect measured values, and this
+information is vital to understanding the overall environmental context.
+In the **Methods data** table, we classify methodology into four
+categories:
+
+1.  Sampling protocol: how were physical samples or information
+    collected from the environment?
+2.  Extraction protocol: how was a substance of interest (analyte)
+    extracted from its matrix?
+3.  Fractionation protocol: what fraction of the analyte was analysed?
+    how was this fraction obtained?
+4.  Analytical protocol: what analytical techniques were used to
+    determine the quantity of analyte in the sample?
+
+These methodologies are structured for the collection of data on
+chemicals stressors, which reflects the dominant use case of the format
+so far. Extension to cover a greater range of non-chemical stressors is
+planned for future versions.
+
+Currently no external ontology or taxonomy is used for methodology. The
+[Chemical Methods Ontology](https://github.com/rsc-ontology/rsc-cmo)
+(CMO) may be appropriate, and we will continue to review its progress to
+determine the appropriate form of any harmonisation.
 
 The Methods table is a metadata table that is transformed before being
-linked to the \[Measurements table\] {Measurements table}.
+linked to the [Measurements
+table](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.md).
+Because it is assumed that each measurement will typically have a
+sampling, extraction, fractionation, and analytical protocol associated
+with it, the measurements table has a foreign key for each type of
+methdology that references the relevant [Protocol
+ID](#protocol-id---string-free-mandatory).
 
 ``` r
 library(eDataDRF)
@@ -26,18 +52,84 @@ initialise_methods_tibble()
 
 `PROTOCOL_ID`
 
+A short, terse identifier for the protocol. This is used as a primary
+key for Methods data and a foreign key in the Sampling Protocol,
+Extraction Protocol, Fractionation Protocol, and Analytical Protocol
+columns. [Measurements
+data](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.md).
+
+Protocol IDs are automatically generated based on the protocol type,
+short name, campaign name, and, in cases where more than one of a type
+of technique is used per campaign, sequence number. This is
+theoretically vulnerable to colisions, and a hashed or serial key would
+be safer, but this is not anticipated to be a problem at the current
+scale of use at the format. Additionally, it is far easier to read and
+intepret for humans.
+
+``` r
+generate_protocol_id(
+  protocol_type = "Analytical Protocol",
+  protocol_name = "ICP-MS",
+  sequence_number = 1,
+  campaign_name = "Test_Campaign"
+)
+#> [1] "A01_ICPMS_TestCampai"
+```
+
 ## Campaign Name - String, free, mandatory
 
 `CAMPAIGN_NAME`
 
-## Protocol Category - String, free, mandatory
+A short, terse identifier for the campaign. Foreign key referenced from
+[Campaign
+data](https://NIVANorge.github.io/eDataDRF/articles/campaign_data.md),
+used to generate [Protocol ID](#protocol-id---string-free-mandatory).
+
+## Protocol Category - String, controlled vocabulary, mandatory
 
 `PROTOCOL_CATEGORY`
 
-## Protocol Name - String, free, mandatory
+The category of protocol/method (Sampling, Extraction, Fractionation,
+Analytical).
+
+``` r
+protocol_categories_vocabulary()
+#> [1] "Sampling Protocol"      "Fractionation Protocol" "Extraction Protocol"   
+#> [4] "Analytical Protocol"
+```
+
+## Protocol Name - String, controlled vocabulary, mandatory
 
 `PROTOCOL_NAME`
+
+The consensus name (short and long) of a protocol or method used in
+sampling. Options are currently based on the aquatic ecotoxicology
+domain, but will be extended and harmonised with relevant ontologies and
+taxonomies as practical.
+
+``` r
+protocol_options_vocabulary()
+#> # A tibble: 75 × 3
+#>    Protocol_Type     Short_Name     Long_Name            
+#>    <chr>             <chr>          <chr>                
+#>  1 Sampling Protocol Not relevant   Not relevant         
+#>  2 Sampling Protocol Not reported   Not reported         
+#>  3 Sampling Protocol Point          Point sampling       
+#>  4 Sampling Protocol Composite      Composite sampling   
+#>  5 Sampling Protocol Trawl          Trawl sampling       
+#>  6 Sampling Protocol Grab           Grab sampling        
+#>  7 Sampling Protocol Core           Core sampling        
+#>  8 Sampling Protocol Seine net      Seine net sampling   
+#>  9 Sampling Protocol Electrofishing Electrofishing       
+#> 10 Sampling Protocol Plankton net   Plankton net sampling
+#> # ℹ 65 more rows
+```
 
 ## Protocol Comment - String, free, optional
 
 `PROTOCOL_COMMENT`
+
+Space for the recording of any additional notes or comments about the
+method deemed relevant. As information on the specific equipment or more
+detailed protocols may also be useful, users are encouraged to copy
+relevant text verbatim from the source.
