@@ -34,9 +34,9 @@ initialise_compartments_tibble()
 #> #   MEASURED_CATEGORY <chr>
 ```
 
-### Variables
+## Variables
 
-## Environmental Compartment - String, controlled, mandatory
+### Environmental Compartment - String, controlled, mandatory
 
 `ENVIRON_COMPARTMENT`
 
@@ -45,7 +45,7 @@ aquatic (hydrosphere), air (atmospheric), terrestrial (geosphere), or
 biota (biosphere). Although largely comprehensive, it’s possible that
 some samples may not fit well into this category.
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
 ``` r
 environ_compartments_vocabulary()
@@ -53,7 +53,7 @@ environ_compartments_vocabulary()
 #> [6] "Not reported" "Other"
 ```
 
-## Environmental Sub-Compartment - String, controlled, mandatory
+### Environmental Sub-Compartment - String, controlled, mandatory
 
 `ENVIRON_COMPARTMENT_SUB`
 
@@ -63,7 +63,7 @@ this controlled vocabulary, although soil subcompartments were based on
 the [World Reference Base for Soil
 Resources](https://isric.org/explore/wrb).
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
 ``` r
 environ_compartments_sub_vocabulary()
@@ -104,11 +104,11 @@ environ_compartments_sub_vocabulary()
 #>       "Biota, Other"
 ```
 
-## Measured Category - String, controlled, mandatory
+### Measured Category - String, controlled, mandatory
 
 `MEASURED_CATEGORY`
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
 ``` r
 measured_categories_vocabulary()

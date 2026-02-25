@@ -46,9 +46,9 @@ initialise_methods_tibble()
 #> #   PROTOCOL_CATEGORY <chr>, PROTOCOL_NAME <chr>, PROTOCOL_COMMENT <chr>
 ```
 
-### Variables
+## Variables
 
-## Protocol ID - String, free, mandatory
+### Protocol ID - String, free, mandatory
 
 `PROTOCOL_ID`
 
@@ -76,7 +76,7 @@ generate_protocol_id(
 #> [1] "A01_ICPMS_TestCampai"
 ```
 
-## Campaign Name - String, free, mandatory
+### Campaign Name - String, free, mandatory
 
 `CAMPAIGN_NAME`
 
@@ -85,7 +85,7 @@ A short, terse identifier for the campaign. Foreign key referenced from
 data](https://NIVANorge.github.io/eDataDRF/articles/campaign_data.md),
 used to generate [Protocol ID](#protocol-id---string-free-mandatory).
 
-## Protocol Category - String, controlled vocabulary, mandatory
+### Protocol Category - String, controlled vocabulary, mandatory
 
 `PROTOCOL_CATEGORY`
 
@@ -98,7 +98,7 @@ protocol_categories_vocabulary()
 #> [4] "Analytical Protocol"
 ```
 
-## Protocol Name - String, controlled vocabulary, mandatory
+### Protocol Name - String, controlled vocabulary, mandatory
 
 `PROTOCOL_NAME`
 
@@ -125,7 +125,7 @@ protocol_options_vocabulary()
 #> # ℹ 65 more rows
 ```
 
-## Protocol Comment - String, free, optional
+### Protocol Comment - String, free, optional
 
 `PROTOCOL_COMMENT`
 

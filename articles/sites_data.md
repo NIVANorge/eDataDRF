@@ -35,9 +35,9 @@ initialise_sites_tibble()
 #> #   ENTERED_BY <chr>, ENTERED_DATE <chr>, SITE_COMMENT <chr>
 ```
 
-### Variables
+## Variables
 
-## Site Code - String, free, mandatory
+### Site Code - String, free, mandatory
 
 `SITE_CODE`
 
@@ -53,7 +53,7 @@ used as a foreign key in
 and
 [measurements](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.md).
 
-## Site Name - String, free, mandatory
+### Site Name - String, free, mandatory
 
 `SITE_NAME`
 
@@ -61,7 +61,7 @@ A longer form name of the site, potentially including details such as
 address, region, site type, etc. May be fully copied from source to
 enable easy tracing back of the relevant details.
 
-## Site Geographic Feature - String, controlled, mandatory
+### Site Geographic Feature - String, controlled, mandatory
 
 `SITE_GEOGRAPHIC_FEATURE`
 
@@ -102,7 +102,7 @@ These are summarised in the table below
 | Bare land and lichen/moss         | Sparsely vegetated areas                                                   | F00   | 3.3    |     |      |
 | Other                             | Specify details in [SITE_COMMENT](#site-comment---string-free-optional)    |       |        |     |      |
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
 ``` r
 geographic_features_vocabulary()
@@ -118,7 +118,7 @@ geographic_features_vocabulary()
 #> [19] "Glacier"                           "Other"
 ```
 
-## Site Geographic Feature Sub - String, controlled, mandatory
+### Site Geographic Feature Sub - String, controlled, mandatory
 
 `SITE_GEOGRAPHIC_FEATURE_SUB`
 
@@ -128,7 +128,7 @@ it may be important to distinguish between samples from the benthos,
 water column, water surface, etc. In this case, sub-features can be used
 to add additional precision.
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
 ``` r
 geographic_features_sub_vocabulary()
@@ -137,7 +137,7 @@ geographic_features_sub_vocabulary()
 #> [5] "Water benthos"              "Other"
 ```
 
-## ISO Country - String, controlled, mandatory
+### ISO Country - String, controlled, mandatory
 
 `COUNTRY_ISO`
 
@@ -149,7 +149,7 @@ international waters). The [ISO 3166 set of country
 codes](https://www.iso.org/iso-3166-country-codes.html) is used, via the
 R package `{iso}`.
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
 ``` r
 countries_vocabulary()
@@ -406,7 +406,7 @@ countries_vocabulary()
 #> [251] "Zimbabwe"
 ```
 
-## IHO Ocean/Sea - String, controlled, mandatory
+### IHO Ocean/Sea - String, controlled, mandatory
 
 `OCEAN_IHO`
 
@@ -424,7 +424,7 @@ Where sampling sites are located in national territory but also in or
 near (intentionally vague) an ocean or sea, we recommend recording both
 variables.
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
 ``` r
 areas_vocabulary()
@@ -501,7 +501,7 @@ areas_vocabulary()
 #> [141] "Baffin Bay"                  "Arctic Ocean"
 ```
 
-## Latitude - Numeric, free, mandatory
+### Latitude - Numeric, free, mandatory
 
 `LATITUDE`
 
@@ -518,7 +518,7 @@ we plan to include an explicit metric of spatial uncertainty. A latitude
 is always associated with a [Coordinate Reference
 System](#coordinate-reference-system---string-controlled-mandatory).
 
-## Longitude - Numeric, free, mandatory
+### Longitude - Numeric, free, mandatory
 
 `LONGITUDE`
 
@@ -528,7 +528,7 @@ Site longitude (east-west position, also known as easting, between
 longitude is always associated with a [Coordinate Reference
 System](#coordinate-reference-system---string-controlled-mandatory).
 
-## Coordinate Reference System - String, controlled, mandatory
+### Coordinate Reference System - String, controlled, mandatory
 
 `SITE_COORDINATE_SYSTEM`
 
@@ -552,7 +552,7 @@ used with the format so far. In future, CRS metadata will be used to
 automatically filter available CRS based on the desired geographical
 scope.
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
 ``` r
 coordinate_systems_vocabulary(common_only = TRUE)
@@ -561,7 +561,7 @@ coordinate_systems_vocabulary(common_only = TRUE)
 #> [7] "WGS 84 / UTM zone 34N" "WGS 84 / UTM zone 35N" "Other"
 ```
 
-## Altitude Value - Numeric, free, mandatory
+### Altitude Value - Numeric, free, mandatory
 
 `ALTITUDE_VALUE`
 
@@ -571,33 +571,33 @@ frequently not available for sampling sites, in which case it can be
 reported as 0. Associated with an [altitude
 unit](#altitude-unit---string-controlled-mandatory).
 
-## Altitude Unit - String, controlled, mandatory
+### Altitude Unit - String, controlled, mandatory
 
 `ALTITUDE_UNIT`
 
 Unit associated with [altitude
 value](#altitude-value---numeric-free-mandatory).
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
 ``` r
 altitude_units_vocabulary()
 #> [1] "km" "m"  "cm" "mm"
 ```
 
-## Entered By - String, free, mandatory
+### Entered By - String, free, mandatory
 
 `ENTERED_BY`
 
 The name or email address of the user entering data.
 
-## Entered Date - Date (ISO), free, mandatory
+### Entered Date - Date (ISO), free, mandatory
 
 `ENTERED_DATE`
 
 The date that site data were entered.
 
-## Site Comment - String, free, optional
+### Site Comment - String, free, optional
 
 `SITE_COMMENT`
 

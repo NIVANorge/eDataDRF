@@ -25,9 +25,9 @@ the format, but they cannot necessarily be as well-characterised as
 chemicals, where we are able to take advantage of the high-quality
 infrastructure developed by chemists.
 
-### Variables
+## Variables
 
-## Parameter Type - String, controlled, mandatory
+### Parameter Type - String, controlled, mandatory
 
 `PARAMETER_TYPE`
 
@@ -38,7 +38,7 @@ always clear. However, we anticipate that in most cases this will be
 uncontroversial. Where this is not the case stressors can still be
 identified by name/id.
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
 ``` r
 parameter_types_vocabulary()
@@ -57,7 +57,7 @@ measurements
 ecological concern. `"Other"` - Parameter belongs to another category.
 Please note in comments field.
 
-## Parameter Sub-type - String, controlled, mandatory
+### Parameter Sub-type - String, controlled, mandatory
 
 `PARAMETER_TYPE_SUB`
 
@@ -68,7 +68,7 @@ chemical taxonomy; other subtypes are intended for use with quality
 parameters, stressors measured as mixtures, or other cases where
 additional details are needed.
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
 ``` r
 parameter_types_sub_vocabulary()
@@ -112,14 +112,14 @@ parameter_types_sub_vocabulary()
 #> [38] "Not reported"
 ```
 
-## Parameter Name, controlled, mandatory
+### Parameter Name, controlled, mandatory
 
 `PARAMETER_NAME`
 
 Parameter name records the reported name of a measured parameter. In the
 majority of cases
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
 ``` r
 # TODO: Fix me, pleassse
@@ -146,6 +146,6 @@ dummy_parameters_vocabulary() |> dplyr::slice_head(n = 10)
 - Currently used as a primary key - this will be replaced with a better
   system once we get it working
 
-## Parameter Sub-Name
+### Parameter Sub-Name
 
 `PARAMETER_NAME_SUB`

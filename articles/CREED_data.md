@@ -14,28 +14,28 @@ initialise_CREED_data_tibble()
 #> #   limitations <chr>
 ```
 
-### Variables
+## Variables
 
-## Criterion ID - String, free, mandatory
+### Criterion ID - String, free, mandatory
 
 `criterion_id`
 
-## Criterion Title - String, free, mandatory
+### Criterion Title - String, free, mandatory
 
 `criterion_title`
 
-## Required Recommended - String, free, mandatory
+### Required Recommended - String, free, mandatory
 
 `required_recommended`
 
-## Relevant Data - String, free, mandatory
+### Relevant Data - String, free, mandatory
 
 `relevant_data`
 
-## Score - String, free, mandatory
+### Score - String, free, mandatory
 
 `score`
 
-## Limitations - String, free, mandatory
+### Limitations - String, free, mandatory
 
 `limitations`

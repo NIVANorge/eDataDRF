@@ -12,7 +12,8 @@
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><script src="methods_data_files/libs/quarto-html/popper.min.js"></script><script src="methods_data_files/libs/quarto-html/tippy.umd.min.js"></script><link href="methods_data_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="methods_data_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Methods data">
+<!-- pkgdown --><script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
+<meta property="og:title" content="Methods data">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -32,23 +33,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
-<li class="active nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/biota_data.html">Biota data</a></li>
-    <li><a class="dropdown-item" href="../articles/campaign_data.html">Campaign data</a></li>
-    <li><a class="dropdown-item" href="../articles/compartments_data.html">Compartments data</a></li>
-    <li><a class="dropdown-item" href="../articles/CREED_data.html">CREED data</a></li>
-    <li><a class="dropdown-item" href="../articles/CREED_scores_data.html">CREED_scores_data</a></li>
-    <li><a class="dropdown-item" href="../articles/measurements_data.html">Measurements Table</a></li>
-    <li><a class="dropdown-item" href="../articles/methods_data.html">Methods data</a></li>
-    <li><a class="dropdown-item" href="../articles/parameters_data.html">Parameters data</a></li>
-    <li><a class="dropdown-item" href="../articles/references_data.html">Reference data</a></li>
-    <li><a class="dropdown-item" href="../articles/samples_data.html">Samples data</a></li>
-    <li><a class="dropdown-item" href="../articles/sites_data.html">Sites data</a></li>
-    <li><a class="dropdown-item" href="../articles/validation.html">validation</a></li>
-  </ul>
-</li>
+<li class="active nav-item"><a class="nav-link" href="../articles/index.html">Articles</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
@@ -102,10 +87,10 @@
 <span><span class="co">#&gt; # ℹ 5 variables: PROTOCOL_ID &lt;chr&gt;, CAMPAIGN_NAME &lt;chr&gt;,</span></span>
 <span><span class="co">#&gt; #   PROTOCOL_CATEGORY &lt;chr&gt;, PROTOCOL_NAME &lt;chr&gt;, PROTOCOL_COMMENT &lt;chr&gt;</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
-</h3>
-</section></section><section class="section level2"><h2 id="protocol-id---string-free-mandatory">Protocol ID - String, free, mandatory<a class="anchor" aria-label="anchor" href="#protocol-id---string-free-mandatory"></a>
+</section><section class="section level2"><h2 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
 </h2>
+<section class="level2"><h3 id="protocol-id---string-free-mandatory">Protocol ID - String, free, mandatory<a class="anchor" aria-label="anchor" href="#protocol-id---string-free-mandatory"></a>
+</h3>
 <p><code>PROTOCOL_ID</code></p>
 <p>A short, terse identifier for the protocol. This is used as a primary key for Methods data and a foreign key in the Sampling Protocol, Extraction Protocol, Fractionation Protocol, and Analytical Protocol columns. <a href="measurements_data.html">Measurements data</a>.</p>
 <p>Protocol IDs are automatically generated based on the protocol type, short name, campaign name, and, in cases where more than one of a type of technique is used per campaign, sequence number. This is theoretically vulnerable to colisions, and a hashed or serial key would be safer, but this is not anticipated to be a problem at the current scale of use at the format. Additionally, it is far easier to read and intepret for humans.</p>
@@ -119,12 +104,12 @@
 <span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "A01_ICPMS_TestCampai"</span></span></code></pre></div>
 </div>
-</section><section class="section level2"><h2 id="campaign-name---string-free-mandatory">Campaign Name - String, free, mandatory<a class="anchor" aria-label="anchor" href="#campaign-name---string-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="campaign-name---string-free-mandatory">Campaign Name - String, free, mandatory<a class="anchor" aria-label="anchor" href="#campaign-name---string-free-mandatory"></a>
+</h3>
 <p><code>CAMPAIGN_NAME</code></p>
 <p>A short, terse identifier for the campaign. Foreign key referenced from <a href="campaign_data.html">Campaign data</a>, used to generate <a href="#protocol-id---string-free-mandatory">Protocol ID</a>.</p>
-</section><section class="section level2"><h2 id="protocol-category---string-controlled-vocabulary-mandatory">Protocol Category - String, controlled vocabulary, mandatory<a class="anchor" aria-label="anchor" href="#protocol-category---string-controlled-vocabulary-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="protocol-category---string-controlled-vocabulary-mandatory">Protocol Category - String, controlled vocabulary, mandatory<a class="anchor" aria-label="anchor" href="#protocol-category---string-controlled-vocabulary-mandatory"></a>
+</h3>
 <p><code>PROTOCOL_CATEGORY</code></p>
 <p>The category of protocol/method (Sampling, Extraction, Fractionation, Analytical).</p>
 <div class="cell">
@@ -133,8 +118,8 @@
 <span><span class="co">#&gt; [1] "Sampling Protocol"      "Fractionation Protocol" "Extraction Protocol"   </span></span>
 <span><span class="co">#&gt; [4] "Analytical Protocol"</span></span></code></pre></div>
 </div>
-</section><section class="section level2"><h2 id="protocol-name---string-controlled-vocabulary-mandatory">Protocol Name - String, controlled vocabulary, mandatory<a class="anchor" aria-label="anchor" href="#protocol-name---string-controlled-vocabulary-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="protocol-name---string-controlled-vocabulary-mandatory">Protocol Name - String, controlled vocabulary, mandatory<a class="anchor" aria-label="anchor" href="#protocol-name---string-controlled-vocabulary-mandatory"></a>
+</h3>
 <p><code>PROTOCOL_NAME</code></p>
 <p>The consensus name (short and long) of a protocol or method used in sampling. Options are currently based on the aquatic ecotoxicology domain, but will be extended and harmonised with relevant ontologies and taxonomies as practical.</p>
 <div class="cell">
@@ -155,11 +140,11 @@
 <span><span class="co">#&gt; 10 Sampling Protocol Plankton net   Plankton net sampling</span></span>
 <span><span class="co">#&gt; # ℹ 65 more rows</span></span></code></pre></div>
 </div>
-</section><section class="section level2"><h2 id="protocol-comment---string-free-optional">Protocol Comment - String, free, optional<a class="anchor" aria-label="anchor" href="#protocol-comment---string-free-optional"></a>
-</h2>
+</section><section class="level2"><h3 id="protocol-comment---string-free-optional">Protocol Comment - String, free, optional<a class="anchor" aria-label="anchor" href="#protocol-comment---string-free-optional"></a>
+</h3>
 <p><code>PROTOCOL_COMMENT</code></p>
 <p>Space for the recording of any additional notes or comments about the method deemed relevant. As information on the specific equipment or more detailed protocols may also be useful, users are encouraged to copy relevant text verbatim from the source.</p>
-</section><script id="quarto-html-after-body" type="application/javascript">
+</section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -242,7 +227,8 @@
       }
     }
   });
-  </script></main>
+  </script></main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 

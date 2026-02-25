@@ -12,7 +12,8 @@
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><script src="measurements_data_files/libs/quarto-html/popper.min.js"></script><script src="measurements_data_files/libs/quarto-html/tippy.umd.min.js"></script><link href="measurements_data_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="measurements_data_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Measurements Table">
+<!-- pkgdown --><script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
+<meta property="og:title" content="Measurements Table">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -32,23 +33,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
-<li class="active nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/biota_data.html">Biota data</a></li>
-    <li><a class="dropdown-item" href="../articles/campaign_data.html">Campaign data</a></li>
-    <li><a class="dropdown-item" href="../articles/compartments_data.html">Compartments data</a></li>
-    <li><a class="dropdown-item" href="../articles/CREED_data.html">CREED data</a></li>
-    <li><a class="dropdown-item" href="../articles/CREED_scores_data.html">CREED_scores_data</a></li>
-    <li><a class="dropdown-item" href="../articles/measurements_data.html">Measurements Table</a></li>
-    <li><a class="dropdown-item" href="../articles/methods_data.html">Methods data</a></li>
-    <li><a class="dropdown-item" href="../articles/parameters_data.html">Parameters data</a></li>
-    <li><a class="dropdown-item" href="../articles/references_data.html">Reference data</a></li>
-    <li><a class="dropdown-item" href="../articles/samples_data.html">Samples data</a></li>
-    <li><a class="dropdown-item" href="../articles/sites_data.html">Sites data</a></li>
-    <li><a class="dropdown-item" href="../articles/validation.html">validation</a></li>
-  </ul>
-</li>
+<li class="active nav-item"><a class="nav-link" href="../articles/index.html">Articles</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
@@ -97,22 +82,22 @@
 <span><span class="co">#&gt; #   SAMPLING_PROTOCOL &lt;chr&gt;, EXTRACTION_PROTOCOL &lt;chr&gt;,</span></span>
 <span><span class="co">#&gt; #   FRACTIONATION_PROTOCOL &lt;chr&gt;, ANALYTICAL_PROTOCOL &lt;chr&gt;, …</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
-</h3>
-</section></section><section class="section level2"><h2 id="site-code---string-free-mandatory">Site Code - String, free, mandatory<a class="anchor" aria-label="anchor" href="#site-code---string-free-mandatory"></a>
+</section><section class="section level2"><h2 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
 </h2>
+<section class="level2"><h3 id="site-code---string-free-mandatory">Site Code - String, free, mandatory<a class="anchor" aria-label="anchor" href="#site-code---string-free-mandatory"></a>
+</h3>
 <p><code>SITE_CODE</code></p>
 <!-- Code identifying the sampling location. -->
-</section><section class="section level2"><h2 id="parameter-name---string-free-mandatory">Parameter Name - String, free, mandatory<a class="anchor" aria-label="anchor" href="#parameter-name---string-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="parameter-name---string-free-mandatory">Parameter Name - String, free, mandatory<a class="anchor" aria-label="anchor" href="#parameter-name---string-free-mandatory"></a>
+</h3>
 <p><code>PARAMETER_NAME</code></p>
 <!-- Name of the measured parameter. Foreign key for parameters. -->
-</section><section class="section level2"><h2 id="sampling-date---string-free-mandatory">Sampling Date - String, free, mandatory<a class="anchor" aria-label="anchor" href="#sampling-date---string-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="sampling-date---string-free-mandatory">Sampling Date - String, free, mandatory<a class="anchor" aria-label="anchor" href="#sampling-date---string-free-mandatory"></a>
+</h3>
 <p><code>SAMPLING_DATE</code></p>
 <!-- Date of sample collection. -->
-</section><section class="section level2"><h2 id="environ-compartment-sub---string-controlled-mandatory">Environ Compartment Sub - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#environ-compartment-sub---string-controlled-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="environ-compartment-sub---string-controlled-mandatory">Environ Compartment Sub - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#environ-compartment-sub---string-controlled-mandatory"></a>
+</h3>
 <p><code>ENVIRON_COMPARTMENT_SUB</code></p>
 <!-- Specific environmental sub-compartment. -->
 <div class="cell">
@@ -154,15 +139,15 @@
 <span><span class="co">#&gt;         Biota, Other </span></span>
 <span><span class="co">#&gt;       "Biota, Other"</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
+</h4>
 <!-- Fill in from environ_compartments_sub_vocabulary() output. -->
-</section></section><section class="section level2"><h2 id="subsample---string-free-mandatory">Subsample - String, free, mandatory<a class="anchor" aria-label="anchor" href="#subsample---string-free-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="subsample---string-free-mandatory">Subsample - String, free, mandatory<a class="anchor" aria-label="anchor" href="#subsample---string-free-mandatory"></a>
+</h3>
 <p><code>SUBSAMPLE</code></p>
 <!-- Subsample identifier. -->
-</section><section class="section level2"><h2 id="measured-flag---string-controlled-mandatory">Measured Flag - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#measured-flag---string-controlled-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="measured-flag---string-controlled-mandatory">Measured Flag - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#measured-flag---string-controlled-mandatory"></a>
+</h3>
 <p><code>MEASURED_FLAG</code></p>
 <!-- Quality flag for the measurement (e.g., < LOQ, < LOD). -->
 <div class="cell">
@@ -170,15 +155,15 @@
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/measured_flags_vocabulary.html">measured_flags_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] ""      "&lt; LOQ" "&lt; LOD"</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
+</h4>
 <!-- Fill in from measured_flags_vocabulary() output. -->
-</section></section><section class="section level2"><h2 id="measured-value---numeric-free-mandatory">Measured Value - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#measured-value---numeric-free-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="measured-value---numeric-free-mandatory">Measured Value - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#measured-value---numeric-free-mandatory"></a>
+</h3>
 <p><code>MEASURED_VALUE</code></p>
 <!-- Numeric value of the measurement. -->
-</section><section class="section level2"><h2 id="uncertainty-type---string-controlled-mandatory">Uncertainty Type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#uncertainty-type---string-controlled-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="uncertainty-type---string-controlled-mandatory">Uncertainty Type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#uncertainty-type---string-controlled-mandatory"></a>
+</h3>
 <p><code>UNCERTAINTY_TYPE</code></p>
 <!-- Type of uncertainty or variability metric. -->
 <div class="cell">
@@ -198,19 +183,19 @@
 <span><span class="co">#&gt; [23] "95% Tolerance Interval"          "95% Bootstrap CI"               </span></span>
 <span><span class="co">#&gt; [25] "Other"</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-2">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-2"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-2">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-2"></a>
+</h4>
 <!-- Fill in from uncertainty_types_vocabulary() output. -->
-</section></section><section class="section level2"><h2 id="uncertainty-upper---numeric-free-mandatory">Uncertainty Upper - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#uncertainty-upper---numeric-free-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="uncertainty-upper---numeric-free-mandatory">Uncertainty Upper - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#uncertainty-upper---numeric-free-mandatory"></a>
+</h3>
 <p><code>UNCERTAINTY_UPPER</code></p>
 <!-- Upper bound of uncertainty. -->
-</section><section class="section level2"><h2 id="uncertainty-lower---numeric-free-mandatory">Uncertainty Lower - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#uncertainty-lower---numeric-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="uncertainty-lower---numeric-free-mandatory">Uncertainty Lower - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#uncertainty-lower---numeric-free-mandatory"></a>
+</h3>
 <p><code>UNCERTAINTY_LOWER</code></p>
 <!-- Lower bound of uncertainty. -->
-</section><section class="section level2"><h2 id="measured-unit---string-controlled-mandatory">Measured Unit - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#measured-unit---string-controlled-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="measured-unit---string-controlled-mandatory">Measured Unit - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#measured-unit---string-controlled-mandatory"></a>
+</h3>
 <p><code>MEASURED_UNIT</code></p>
 <!-- Unit of measurement. -->
 <div class="cell">
@@ -231,19 +216,19 @@
 <span><span class="co">#&gt; 10 M             mol/m³       1000              molar concentration</span></span>
 <span><span class="co">#&gt; # ℹ 54 more rows</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-3">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-3"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-3">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-3"></a>
+</h4>
 <!-- Fill in from parameter_unit_vocabulary() output. -->
-</section></section><section class="section level2"><h2 id="measured-n---numeric-free-mandatory">Measured N - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#measured-n---numeric-free-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="measured-n---numeric-free-mandatory">Measured N - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#measured-n---numeric-free-mandatory"></a>
+</h3>
 <p><code>MEASURED_N</code></p>
 <!-- Number of replicates or observations. -->
-</section><section class="section level2"><h2 id="loq-value---numeric-free-mandatory">LOQ Value - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#loq-value---numeric-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="loq-value---numeric-free-mandatory">LOQ Value - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#loq-value---numeric-free-mandatory"></a>
+</h3>
 <p><code>LOQ_VALUE</code></p>
 <!-- Limit of quantification value. -->
-</section><section class="section level2"><h2 id="loq-unit---string-controlled-mandatory">LOQ Unit - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#loq-unit---string-controlled-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="loq-unit---string-controlled-mandatory">LOQ Unit - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#loq-unit---string-controlled-mandatory"></a>
+</h3>
 <p><code>LOQ_UNIT</code></p>
 <!-- Unit for the limit of quantification. -->
 <div class="cell">
@@ -264,15 +249,15 @@
 <span><span class="co">#&gt; 10 M             mol/m³       1000              molar concentration</span></span>
 <span><span class="co">#&gt; # ℹ 54 more rows</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-4">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-4"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-4">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-4"></a>
+</h4>
 <!-- Fill in from parameter_unit_vocabulary() output. -->
-</section></section><section class="section level2"><h2 id="lod-value---numeric-free-mandatory">LOD Value - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#lod-value---numeric-free-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="lod-value---numeric-free-mandatory">LOD Value - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#lod-value---numeric-free-mandatory"></a>
+</h3>
 <p><code>LOD_VALUE</code></p>
 <!-- Limit of detection value. -->
-</section><section class="section level2"><h2 id="lod-unit---string-controlled-mandatory">LOD Unit - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#lod-unit---string-controlled-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="lod-unit---string-controlled-mandatory">LOD Unit - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#lod-unit---string-controlled-mandatory"></a>
+</h3>
 <p><code>LOD_UNIT</code></p>
 <!-- Unit for the limit of detection. -->
 <div class="cell">
@@ -293,11 +278,11 @@
 <span><span class="co">#&gt; 10 M             mol/m³       1000              molar concentration</span></span>
 <span><span class="co">#&gt; # ℹ 54 more rows</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-5">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-5"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-5">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-5"></a>
+</h4>
 <!-- Fill in from parameter_unit_vocabulary() output. -->
-</section></section><section class="section level2"><h2 id="sampling-protocol---string-controlled-mandatory">Sampling Protocol - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#sampling-protocol---string-controlled-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="sampling-protocol---string-controlled-mandatory">Sampling Protocol - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#sampling-protocol---string-controlled-mandatory"></a>
+</h3>
 <p><code>SAMPLING_PROTOCOL</code></p>
 <!-- Protocol used for sample collection. Foreign key for methods. -->
 <div class="cell">
@@ -318,11 +303,11 @@
 <span><span class="co">#&gt; 10 Sampling Protocol Plankton net   Plankton net sampling</span></span>
 <span><span class="co">#&gt; # ℹ 12 more rows</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-6">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-6"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-6">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-6"></a>
+</h4>
 <!-- Fill in from sampling_protocols_vocabulary() output. -->
-</section></section><section class="section level2"><h2 id="extraction-protocol---string-controlled-mandatory">Extraction Protocol - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#extraction-protocol---string-controlled-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="extraction-protocol---string-controlled-mandatory">Extraction Protocol - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#extraction-protocol---string-controlled-mandatory"></a>
+</h3>
 <p><code>EXTRACTION_PROTOCOL</code></p>
 <!-- Protocol used for sample extraction. Foreign key for methods. -->
 <div class="cell">
@@ -351,11 +336,11 @@
 <span><span class="co">#&gt; 18 Extraction Protocol Sequential extraction             Sequential extraction …</span></span>
 <span><span class="co">#&gt; 19 Extraction Protocol Other                             Other</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-7">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-7"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-7">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-7"></a>
+</h4>
 <!-- Fill in from extraction_protocols_vocabulary() output. -->
-</section></section><section class="section level2"><h2 id="fractionation-protocol---string-controlled-mandatory">Fractionation Protocol - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#fractionation-protocol---string-controlled-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="fractionation-protocol---string-controlled-mandatory">Fractionation Protocol - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#fractionation-protocol---string-controlled-mandatory"></a>
+</h3>
 <p><code>FRACTIONATION_PROTOCOL</code></p>
 <!-- Protocol used for sample fractionation. Foreign key for methods. -->
 <div class="cell">
@@ -384,11 +369,11 @@
 <span><span class="co">#&gt; 18 Fractionation Protocol Size fractionated Size fractionated                   </span></span>
 <span><span class="co">#&gt; 19 Fractionation Protocol Other             Other</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-8">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-8"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-8">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-8"></a>
+</h4>
 <!-- Fill in from fractionation_protocols_vocabulary() output. -->
-</section></section><section class="section level2"><h2 id="analytical-protocol---string-controlled-mandatory">Analytical Protocol - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#analytical-protocol---string-controlled-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="analytical-protocol---string-controlled-mandatory">Analytical Protocol - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#analytical-protocol---string-controlled-mandatory"></a>
+</h3>
 <p><code>ANALYTICAL_PROTOCOL</code></p>
 <!-- Protocol used for analysis. Foreign key for methods. -->
 <div class="cell">
@@ -413,23 +398,23 @@
 <span><span class="co">#&gt; 14 Analytical Protocol Fluorescence       Fluorescence spectroscopy             </span></span>
 <span><span class="co">#&gt; 15 Analytical Protocol Other              Other</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-9">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-9"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-9">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-9"></a>
+</h4>
 <!-- Fill in from analytical_protocols_vocabulary() output. -->
-</section></section><section class="section level2"><h2 id="reference-id---string-free-mandatory">Reference ID - String, free, mandatory<a class="anchor" aria-label="anchor" href="#reference-id---string-free-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="reference-id---string-free-mandatory">Reference ID - String, free, mandatory<a class="anchor" aria-label="anchor" href="#reference-id---string-free-mandatory"></a>
+</h3>
 <p><code>REFERENCE_ID</code></p>
 <!-- Reference identifier for the data source. Foreign key for references. -->
-</section><section class="section level2"><h2 id="sample-id---string-free-mandatory">Sample ID - String, free, mandatory<a class="anchor" aria-label="anchor" href="#sample-id---string-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="sample-id---string-free-mandatory">Sample ID - String, free, mandatory<a class="anchor" aria-label="anchor" href="#sample-id---string-free-mandatory"></a>
+</h3>
 <p><code>SAMPLE_ID</code></p>
 <!-- Unique sample identifier. -->
-</section><section class="section level2"><h2 id="campaign-name-short---string-free-mandatory">Campaign Name Short - String, free, mandatory<a class="anchor" aria-label="anchor" href="#campaign-name-short---string-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="campaign-name-short---string-free-mandatory">Campaign Name Short - String, free, mandatory<a class="anchor" aria-label="anchor" href="#campaign-name-short---string-free-mandatory"></a>
+</h3>
 <p><code>CAMPAIGN_NAME_SHORT</code></p>
 <!-- Short name of the associated campaign. -->
-</section><section class="section level2"><h2 id="environ-compartment---string-controlled-mandatory">Environ Compartment - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#environ-compartment---string-controlled-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="environ-compartment---string-controlled-mandatory">Environ Compartment - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#environ-compartment---string-controlled-mandatory"></a>
+</h3>
 <p><code>ENVIRON_COMPARTMENT</code></p>
 <!-- Broad environmental compartment. -->
 <div class="cell">
@@ -438,11 +423,11 @@
 <span><span class="co">#&gt; [1] "Aquatic"      "Atmospheric"  "Terrestrial"  "Biota"        "Not relevant"</span></span>
 <span><span class="co">#&gt; [6] "Not reported" "Other"</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-10">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-10"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-10">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-10"></a>
+</h4>
 <!-- Fill in from environ_compartments_vocabulary() output. -->
-</section></section><section class="section level2"><h2 id="parameter-type---string-controlled-mandatory">Parameter Type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#parameter-type---string-controlled-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="parameter-type---string-controlled-mandatory">Parameter Type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#parameter-type---string-controlled-mandatory"></a>
+</h3>
 <p><code>PARAMETER_TYPE</code></p>
 <!-- Classification of the parameter. -->
 <div class="cell">
@@ -452,11 +437,11 @@
 <span><span class="co">#&gt; [4] "Normalisation"        "Background"           "Ecological Indicator"</span></span>
 <span><span class="co">#&gt; [7] "Other"</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-11">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-11"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-11">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-11"></a>
+</h4>
 <!-- Fill in from parameter_types_vocabulary() output. -->
-</section></section><section class="section level2"><h2 id="measured-type---string-controlled-mandatory">Measured Type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#measured-type---string-controlled-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="measured-type---string-controlled-mandatory">Measured Type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#measured-type---string-controlled-mandatory"></a>
+</h3>
 <p><code>MEASURED_TYPE</code></p>
 <!-- Type of measurement. -->
 <div class="cell">
@@ -468,14 +453,14 @@
 <span><span class="co">#&gt; [10] "Response"             "Ecological Indicator" "Not relevant"        </span></span>
 <span><span class="co">#&gt; [13] "Other"</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="controlled-vocabulary-12">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-12"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-12">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-12"></a>
+</h4>
 <!-- Fill in from measured_types_vocabulary() output. -->
-</section></section><section class="section level2"><h2 id="measurement-comment---string-free-optional">Measurement Comment - String, free, optional<a class="anchor" aria-label="anchor" href="#measurement-comment---string-free-optional"></a>
-</h2>
+</section></section><section class="level2"><h3 id="measurement-comment---string-free-optional">Measurement Comment - String, free, optional<a class="anchor" aria-label="anchor" href="#measurement-comment---string-free-optional"></a>
+</h3>
 <p><code>MEASUREMENT_COMMENT</code></p>
 <!-- Additional notes about the measurement. -->
-</section><script id="quarto-html-after-body" type="application/javascript">
+</section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);

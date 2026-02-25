@@ -12,7 +12,8 @@
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><script src="references_data_files/libs/quarto-html/popper.min.js"></script><script src="references_data_files/libs/quarto-html/tippy.umd.min.js"></script><link href="references_data_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="references_data_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Reference data">
+<!-- pkgdown --><script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
+<meta property="og:title" content="Reference data">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -32,23 +33,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
-<li class="active nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/biota_data.html">Biota data</a></li>
-    <li><a class="dropdown-item" href="../articles/campaign_data.html">Campaign data</a></li>
-    <li><a class="dropdown-item" href="../articles/compartments_data.html">Compartments data</a></li>
-    <li><a class="dropdown-item" href="../articles/CREED_data.html">CREED data</a></li>
-    <li><a class="dropdown-item" href="../articles/CREED_scores_data.html">CREED_scores_data</a></li>
-    <li><a class="dropdown-item" href="../articles/measurements_data.html">Measurements Table</a></li>
-    <li><a class="dropdown-item" href="../articles/methods_data.html">Methods data</a></li>
-    <li><a class="dropdown-item" href="../articles/parameters_data.html">Parameters data</a></li>
-    <li><a class="dropdown-item" href="../articles/references_data.html">Reference data</a></li>
-    <li><a class="dropdown-item" href="../articles/samples_data.html">Samples data</a></li>
-    <li><a class="dropdown-item" href="../articles/sites_data.html">Sites data</a></li>
-    <li><a class="dropdown-item" href="../articles/validation.html">validation</a></li>
-  </ul>
-</li>
+<li class="active nav-item"><a class="nav-link" href="../articles/index.html">Articles</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
@@ -124,10 +109,10 @@
 <span><span class="co">#&gt; $URL</span></span>
 <span><span class="co">#&gt; [1] 200</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
-</h3>
-</section></section><section class="section level2"><h2 id="reference-id---string-auto-generated-mandatory">Reference ID - String, auto-generated, mandatory<a class="anchor" aria-label="anchor" href="#reference-id---string-auto-generated-mandatory"></a>
+</section><section class="section level2"><h2 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
 </h2>
+<section class="level2"><h3 id="reference-id---string-auto-generated-mandatory">Reference ID - String, auto-generated, mandatory<a class="anchor" aria-label="anchor" href="#reference-id---string-auto-generated-mandatory"></a>
+</h3>
 <p><code>REFERENCE_ID</code></p>
 <p>The reference’s primary key, automatically generated from YEAR, AUTHOR, and TITLE using <code><a href="../reference/generate_reference_id.html">generate_reference_id()</a></code>, as follows:</p>
 <div class="cell">
@@ -139,72 +124,72 @@
 <span><span class="co"># )</span></span></code></pre></div>
 </div>
 <p>Reference ID is also a foreign key in <a href="measurements_data.html">Measurement data</a>.</p>
-</section><section class="section level2"><h2 id="reference-type---string-controlled-mandatory">Reference Type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#reference-type---string-controlled-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="reference-type---string-controlled-mandatory">Reference Type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#reference-type---string-controlled-mandatory"></a>
+</h3>
 <p><code>REFERENCE_TYPE</code></p>
 <!-- Type of publication (Journal Article, Report, Dataset, etc.). -->
-</section><section class="section level2"><h2 id="author---string-free-mandatory">Author - String, free, mandatory<a class="anchor" aria-label="anchor" href="#author---string-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="author---string-free-mandatory">Author - String, free, mandatory<a class="anchor" aria-label="anchor" href="#author---string-free-mandatory"></a>
+</h3>
 <p><code>AUTHOR</code></p>
 <p>The full authors list from the referenced object, formatted as <code>Lastname1, Firstname1; Lastname2, Firstname2; etc.</code>.</p>
-</section><section class="section level2"><h2 id="title---string-free-mandatory">Title - String, free, mandatory<a class="anchor" aria-label="anchor" href="#title---string-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="title---string-free-mandatory">Title - String, free, mandatory<a class="anchor" aria-label="anchor" href="#title---string-free-mandatory"></a>
+</h3>
 <p><code>TITLE</code></p>
 <p>The title of the publication or document.</p>
-</section><section class="section level2"><h2 id="year---integer-free-mandatory">Year - Integer, free, mandatory<a class="anchor" aria-label="anchor" href="#year---integer-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="year---integer-free-mandatory">Year - Integer, free, mandatory<a class="anchor" aria-label="anchor" href="#year---integer-free-mandatory"></a>
+</h3>
 <p><code>YEAR</code></p>
 <p>The year of publication or the most recent update to the referenced object.</p>
-</section><section class="section level2"><h2 id="access-date---date-iso-free-mandatory">Access Date - Date (ISO), free, mandatory<a class="anchor" aria-label="anchor" href="#access-date---date-iso-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="access-date---date-iso-free-mandatory">Access Date - Date (ISO), free, mandatory<a class="anchor" aria-label="anchor" href="#access-date---date-iso-free-mandatory"></a>
+</h3>
 <p><code>ACCESS_DATE</code></p>
 <p>The ISO date when the referenced object was accessed.</p>
-</section><section class="section level2"><h2 id="journal-name---string-free-conditional-on-reference-type">Journal Name - String, free, conditional on reference type<a class="anchor" aria-label="anchor" href="#journal-name---string-free-conditional-on-reference-type"></a>
-</h2>
+</section><section class="level2"><h3 id="journal-name---string-free-conditional-on-reference-type">Journal Name - String, free, conditional on reference type<a class="anchor" aria-label="anchor" href="#journal-name---string-free-conditional-on-reference-type"></a>
+</h3>
 <p><code>PERIODICAL_JOURNAL</code></p>
 <p>The name of the journal or periodical a journal article was published in. Conditionally mandatory if <a href="#reference-type---string-controlled-mandatory">Reference Type</a> is <code>Journal Article</code>.</p>
-</section><section class="section level2"><h2 id="volume---numeric-free-optional">Volume - Numeric, free, optional<a class="anchor" aria-label="anchor" href="#volume---numeric-free-optional"></a>
-</h2>
+</section><section class="level2"><h3 id="volume---numeric-free-optional">Volume - Numeric, free, optional<a class="anchor" aria-label="anchor" href="#volume---numeric-free-optional"></a>
+</h3>
 <p><code>VOLUME</code></p>
 <p>The volume of a named journal an article was published in. Optional.</p>
-</section><section class="section level2"><h2 id="issue---numeric-free-optional">Issue - Numeric, free, optional<a class="anchor" aria-label="anchor" href="#issue---numeric-free-optional"></a>
-</h2>
+</section><section class="level2"><h3 id="issue---numeric-free-optional">Issue - Numeric, free, optional<a class="anchor" aria-label="anchor" href="#issue---numeric-free-optional"></a>
+</h3>
 <p><code>ISSUE</code></p>
 <p>The issue of a named journal an article was published in. Optional.</p>
-</section><section class="section level2"><h2 id="publisher---string-free-conditional-on-reference-type">Publisher - String, free, conditional on reference type<a class="anchor" aria-label="anchor" href="#publisher---string-free-conditional-on-reference-type"></a>
-</h2>
+</section><section class="level2"><h3 id="publisher---string-free-conditional-on-reference-type">Publisher - String, free, conditional on reference type<a class="anchor" aria-label="anchor" href="#publisher---string-free-conditional-on-reference-type"></a>
+</h3>
 <p><code>PUBLISHER</code></p>
 <p>The publisher of a reference object. Conditionally mandatory if <a href="#reference-type---string-controlled-mandatory">Reference Type</a> is <code>Book</code> or <code>Report</code>.</p>
-</section><section class="section level2"><h2 id="institution---string-free-conditional-on-reference-type">Institution - String, free, conditional on reference type<a class="anchor" aria-label="anchor" href="#institution---string-free-conditional-on-reference-type"></a>
-</h2>
+</section><section class="level2"><h3 id="institution---string-free-conditional-on-reference-type">Institution - String, free, conditional on reference type<a class="anchor" aria-label="anchor" href="#institution---string-free-conditional-on-reference-type"></a>
+</h3>
 <p><code>INSTITUTION</code></p>
 <p>The primary instition responsible for a referenced object. Conditionally mandatory if <a href="#reference-type---string-controlled-mandatory">Reference Type</a> is <code>Report</code>.</p>
-</section><section class="section level2"><h2 id="doi---string-free-optional">DOI - String, free, optional<a class="anchor" aria-label="anchor" href="#doi---string-free-optional"></a>
-</h2>
+</section><section class="level2"><h3 id="doi---string-free-optional">DOI - String, free, optional<a class="anchor" aria-label="anchor" href="#doi---string-free-optional"></a>
+</h3>
 <p><code>DOI</code></p>
 <p>If available, the Digital Object Identifier associated with a reference object. Optional, but the preferred identifier when avaiable.</p>
 <p>See the website of the <a href="https://www.doi.org/" class="external-link">doi Foundation</a> for more information.</p>
-</section><section class="section level2"><h2 id="url---string-free-optional">URL - String, free, optional<a class="anchor" aria-label="anchor" href="#url---string-free-optional"></a>
-</h2>
+</section><section class="level2"><h3 id="url---string-free-optional">URL - String, free, optional<a class="anchor" aria-label="anchor" href="#url---string-free-optional"></a>
+</h3>
 <p><code>URL</code></p>
 <p>A Uniform Resource Locator (URL, i.e. web address) linking to the referenced object, if available. Optional.</p>
-</section><section class="section level2"><h2 id="isbn-issn---string-free-optional">ISBN ISSN - String, free, optional<a class="anchor" aria-label="anchor" href="#isbn-issn---string-free-optional"></a>
-</h2>
+</section><section class="level2"><h3 id="isbn-issn---string-free-optional">ISBN ISSN - String, free, optional<a class="anchor" aria-label="anchor" href="#isbn-issn---string-free-optional"></a>
+</h3>
 <p><code>ISBN_ISSN</code></p>
 <p>An International Standard Book Number (ISBN, 10 or 13 digits) or International Standard Serial Number (ISSN, 8 digits) associated with a book or periodical. Optional.</p>
-</section><section class="section level2"><h2 id="edition---string-free-optional">Edition - String, free, optional<a class="anchor" aria-label="anchor" href="#edition---string-free-optional"></a>
-</h2>
+</section><section class="level2"><h3 id="edition---string-free-optional">Edition - String, free, optional<a class="anchor" aria-label="anchor" href="#edition---string-free-optional"></a>
+</h3>
 <p><code>EDITION</code></p>
 <p>The edition of a referenced object, if relevant. Optional.</p>
-</section><section class="section level2"><h2 id="document-number---string-free-optional">Document Number - String, free, optional<a class="anchor" aria-label="anchor" href="#document-number---string-free-optional"></a>
-</h2>
+</section><section class="level2"><h3 id="document-number---string-free-optional">Document Number - String, free, optional<a class="anchor" aria-label="anchor" href="#document-number---string-free-optional"></a>
+</h3>
 <p><code>DOCUMENT_NUMBER</code></p>
 <p>A document or report number, typically available for reports and other official documents. Optional.</p>
-</section><section class="section level2"><h2 id="reference-comment---string-free-optional">Reference Comment - String, free, optional<a class="anchor" aria-label="anchor" href="#reference-comment---string-free-optional"></a>
-</h2>
+</section><section class="level2"><h3 id="reference-comment---string-free-optional">Reference Comment - String, free, optional<a class="anchor" aria-label="anchor" href="#reference-comment---string-free-optional"></a>
+</h3>
 <p><code>REF_COMMENT</code></p>
 <p>Space for the recording of any additional notes or comments about the reference deemed relevant.</p>
-</section><script id="quarto-html-after-body" type="application/javascript">
+</section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -287,7 +272,8 @@
       }
     }
   });
-  </script></main>
+  </script></main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 

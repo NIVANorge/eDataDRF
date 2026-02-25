@@ -15,21 +15,21 @@ initialise_samples_tibble()
 #> #   SAMPLING_DATE <chr>, SUBSAMPLE <chr>, SUBSAMPLE_ID <chr>, SAMPLE_ID <chr>
 ```
 
-### Variables
+## Variables
 
-## Site Code - String, free, mandatory
+### Site Code - String, free, mandatory
 
 `SITE_CODE`
 
-## Site Name - String, free, mandatory
+### Site Name - String, free, mandatory
 
 `SITE_NAME`
 
-## Parameter Name - String, free, mandatory
+### Parameter Name - String, free, mandatory
 
 `PARAMETER_NAME`
 
-## Parameter Type - String, controlled, mandatory
+### Parameter Type - String, controlled, mandatory
 
 `PARAMETER_TYPE`
 
@@ -40,9 +40,9 @@ parameter_types_vocabulary()
 #> [7] "Other"
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Environ Compartment - String, controlled, mandatory
+### Environ Compartment - String, controlled, mandatory
 
 `ENVIRON_COMPARTMENT`
 
@@ -52,9 +52,9 @@ environ_compartments_vocabulary()
 #> [6] "Not reported" "Other"
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Environ Compartment Sub - String, controlled, mandatory
+### Environ Compartment Sub - String, controlled, mandatory
 
 `ENVIRON_COMPARTMENT_SUB`
 
@@ -97,9 +97,9 @@ environ_compartments_sub_vocabulary()
 #>       "Biota, Other"
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Measured Category - String, controlled, mandatory
+### Measured Category - String, controlled, mandatory
 
 `MEASURED_CATEGORY`
 
@@ -109,20 +109,20 @@ measured_categories_vocabulary()
 #>       "External Media" "Internal to Organism"  "Surface of Organism"
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Sampling Date - String, free, mandatory
+### Sampling Date - String, free, mandatory
 
 `SAMPLING_DATE`
 
-## Subsample - String, free, mandatory
+### Subsample - String, free, mandatory
 
 `SUBSAMPLE`
 
-## Subsample ID - String, free, mandatory
+### Subsample ID - String, free, mandatory
 
 `SUBSAMPLE_ID`
 
-## Sample ID - String, free, mandatory
+### Sample ID - String, free, mandatory
 
 `SAMPLE_ID`

@@ -13,24 +13,24 @@ initialise_CREED_scores_tibble()
 #> #   SILVER_RELEVANCE <chr>, GOLD_RELIABILITY <chr>, GOLD_RELEVANCE <chr>
 ```
 
-### Variables
+## Variables
 
-## Reference ID - String, free, mandatory
+### Reference ID - String, free, mandatory
 
 `REFERENCE_ID`
 
-## Silver Reliability - String, free, mandatory
+### Silver Reliability - String, free, mandatory
 
 `SILVER_RELIABILITY`
 
-## Silver Relevance - String, free, mandatory
+### Silver Relevance - String, free, mandatory
 
 `SILVER_RELEVANCE`
 
-## Gold Reliability - String, free, mandatory
+### Gold Reliability - String, free, mandatory
 
 `GOLD_RELIABILITY`
 
-## Gold Relevance - String, free, mandatory
+### Gold Relevance - String, free, mandatory
 
 `GOLD_RELEVANCE`

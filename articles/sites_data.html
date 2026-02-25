@@ -12,7 +12,8 @@
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><script src="sites_data_files/libs/quarto-html/popper.min.js"></script><script src="sites_data_files/libs/quarto-html/tippy.umd.min.js"></script><link href="sites_data_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="sites_data_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Sites data">
+<!-- pkgdown --><script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
+<meta property="og:title" content="Sites data">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -32,23 +33,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
-<li class="active nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/biota_data.html">Biota data</a></li>
-    <li><a class="dropdown-item" href="../articles/campaign_data.html">Campaign data</a></li>
-    <li><a class="dropdown-item" href="../articles/compartments_data.html">Compartments data</a></li>
-    <li><a class="dropdown-item" href="../articles/CREED_data.html">CREED data</a></li>
-    <li><a class="dropdown-item" href="../articles/CREED_scores_data.html">CREED_scores_data</a></li>
-    <li><a class="dropdown-item" href="../articles/measurements_data.html">Measurements Table</a></li>
-    <li><a class="dropdown-item" href="../articles/methods_data.html">Methods data</a></li>
-    <li><a class="dropdown-item" href="../articles/parameters_data.html">Parameters data</a></li>
-    <li><a class="dropdown-item" href="../articles/references_data.html">Reference data</a></li>
-    <li><a class="dropdown-item" href="../articles/samples_data.html">Samples data</a></li>
-    <li><a class="dropdown-item" href="../articles/sites_data.html">Sites data</a></li>
-    <li><a class="dropdown-item" href="../articles/validation.html">validation</a></li>
-  </ul>
-</li>
+<li class="active nav-item"><a class="nav-link" href="../articles/index.html">Articles</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
@@ -97,19 +82,19 @@
 <span><span class="co">#&gt; #   SITE_COORDINATE_SYSTEM &lt;chr&gt;, ALTITUDE_VALUE &lt;dbl&gt;, ALTITUDE_UNIT &lt;chr&gt;,</span></span>
 <span><span class="co">#&gt; #   ENTERED_BY &lt;chr&gt;, ENTERED_DATE &lt;chr&gt;, SITE_COMMENT &lt;chr&gt;</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
-</h3>
-</section></section><section class="section level2"><h2 id="site-code---string-free-mandatory">Site Code - String, free, mandatory<a class="anchor" aria-label="anchor" href="#site-code---string-free-mandatory"></a>
+</section><section class="section level2"><h2 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
 </h2>
+<section class="level2"><h3 id="site-code---string-free-mandatory">Site Code - String, free, mandatory<a class="anchor" aria-label="anchor" href="#site-code---string-free-mandatory"></a>
+</h3>
 <p><code>SITE_CODE</code></p>
 <p>A short, unique code identifying the sampled site. Although formatting is not enforced on this field, we recommend using an abbreviated combination of the campaign, long form site name and any details relevant to the site. For example:</p>
 <p>“Arctic Monitoring Program; Pelagic Sampling Point 37” -&gt; <code>AMP-Pelagic-37</code>. The site code is the primary key for sites data and is used as a foreign key in <a href="samples_data.html">samples</a> and <a href="measurements_data.html">measurements</a>.</p>
-</section><section class="section level2"><h2 id="site-name---string-free-mandatory">Site Name - String, free, mandatory<a class="anchor" aria-label="anchor" href="#site-name---string-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="site-name---string-free-mandatory">Site Name - String, free, mandatory<a class="anchor" aria-label="anchor" href="#site-name---string-free-mandatory"></a>
+</h3>
 <p><code>SITE_NAME</code></p>
 <p>A longer form name of the site, potentially including details such as address, region, site type, etc. May be fully copied from source to enable easy tracing back of the relevant details.</p>
-</section><section class="section level2"><h2 id="site-geographic-feature---string-controlled-mandatory">Site Geographic Feature - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#site-geographic-feature---string-controlled-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="site-geographic-feature---string-controlled-mandatory">Site Geographic Feature - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#site-geographic-feature---string-controlled-mandatory"></a>
+</h3>
 <p><code>SITE_GEOGRAPHIC_FEATURE</code></p>
 <p>Categorisation of site type allows for broad comparisons to be made. Site Geographic feature is based on a variety of existing land-use taxonomy to facilitate conversion and comparison:</p>
 <ul>
@@ -286,8 +271,8 @@
 </tr>
 </tbody>
 </table>
-<section class="level2"><h3 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
+</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/geographic_features_vocabulary.html">geographic_features_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -302,12 +287,12 @@
 <span><span class="co">#&gt; [17] "Grassland"                         "Bare land and lichen/moss"        </span></span>
 <span><span class="co">#&gt; [19] "Glacier"                           "Other"</span></span></code></pre></div>
 </div>
-</section></section><section class="section level2"><h2 id="site-geographic-feature-sub---string-controlled-mandatory">Site Geographic Feature Sub - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#site-geographic-feature-sub---string-controlled-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="site-geographic-feature-sub---string-controlled-mandatory">Site Geographic Feature Sub - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#site-geographic-feature-sub---string-controlled-mandatory"></a>
+</h3>
 <p><code>SITE_GEOGRAPHIC_FEATURE_SUB</code></p>
 <p>In some cases geographic feature vocabulary may not have enough resolution to capture sampling sites. For example, in bodies of water, it may be important to distinguish between samples from the benthos, water column, water surface, etc. In this case, sub-features can be used to add additional precision.</p>
-<section class="level2"><h3 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
+</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/geographic_features_sub_vocabulary.html">geographic_features_sub_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -315,12 +300,12 @@
 <span><span class="co">#&gt; [3] "Water surface"              "Water column, pelagic zone"</span></span>
 <span><span class="co">#&gt; [5] "Water benthos"              "Other"</span></span></code></pre></div>
 </div>
-</section></section><section class="section level2"><h2 id="iso-country---string-controlled-mandatory">ISO Country - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#iso-country---string-controlled-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="iso-country---string-controlled-mandatory">ISO Country - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#iso-country---string-controlled-mandatory"></a>
+</h3>
 <p><code>COUNTRY_ISO</code></p>
 <p>Although the sheer size of countries makes them at times poor identifiers of geographical location, they remain useful data. Although this variable is marked as mandatory, it is possible to enter “Not relevant” when sites are out of the territory of any nation (e.g. in international waters). The <a href="https://www.iso.org/iso-3166-country-codes.html" class="external-link">ISO 3166 set of country codes</a> is used, via the R package <code>{iso}</code>.</p>
-<section class="level2"><h3 id="controlled-vocabulary-2">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-2"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-2">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-2"></a>
+</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/countries_vocabulary.html">countries_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -576,13 +561,13 @@
 <span><span class="co">#&gt; [250] "Zambia"                                      </span></span>
 <span><span class="co">#&gt; [251] "Zimbabwe"</span></span></code></pre></div>
 </div>
-</section></section><section class="section level2"><h2 id="iho-oceansea---string-controlled-mandatory">IHO Ocean/Sea - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#iho-oceansea---string-controlled-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="iho-oceansea---string-controlled-mandatory">IHO Ocean/Sea - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#iho-oceansea---string-controlled-mandatory"></a>
+</h3>
 <p><code>OCEAN_IHO</code></p>
 <p>As with countries, oceans are not necessarily the best geographical identifiers, but they provide useful, human-readable data for understanding sampling sites. The <a href="https://doi.org/10.14284/323" class="external-link">International Hydrographic Organisation’s version 3 Sea Areas</a> dataset is used to provide a reasonably-standardised set of names for seas and oceans. As with <a href="#iso-country---string-controlled-mandatory">Country</a>, Ocean is mandatory but should be marked as “Not relevant” when the site is on land.</p>
 <p>Where sampling sites are located in national territory but also in or near (intentionally vague) an ocean or sea, we recommend recording both variables.</p>
-<section class="level2"><h3 id="controlled-vocabulary-3">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-3"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-3">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-3"></a>
+</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/areas_vocabulary.html">areas_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -658,21 +643,21 @@
 <span><span class="co">#&gt; [139] "Beaufort Sea"                "Barents Sea"                </span></span>
 <span><span class="co">#&gt; [141] "Baffin Bay"                  "Arctic Ocean"</span></span></code></pre></div>
 </div>
-</section></section><section class="section level2"><h2 id="latitude---numeric-free-mandatory">Latitude - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#latitude---numeric-free-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="latitude---numeric-free-mandatory">Latitude - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#latitude---numeric-free-mandatory"></a>
+</h3>
 <p><code>LATITUDE</code></p>
 <p>Site latitude (north-south position, also known as northing, between -90.0° and +90.0°) is recorded in decimal decimal degrees. Arbitrary precision (within the bounds of R’s numeric data type) is possible, but the degree of precision reported (i.e. decimal places) should be appropriate to the actual sampling. 3 decimal places corresponds to approximately 111 m accuracy, and 4 to within 11 m. Under some circumstances this can cause somewhat confusing combinations of coordinates and site types; for example, a site may be reported as being on land but with coordinates that are clearly in the ocean. In future, we plan to include an explicit metric of spatial uncertainty. A latitude is always associated with a <a href="#coordinate-reference-system---string-controlled-mandatory">Coordinate Reference System</a>.</p>
-</section><section class="section level2"><h2 id="longitude---numeric-free-mandatory">Longitude - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#longitude---numeric-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="longitude---numeric-free-mandatory">Longitude - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#longitude---numeric-free-mandatory"></a>
+</h3>
 <p><code>LONGITUDE</code></p>
 <p>Site longitude (east-west position, also known as easting, between -180.0° and +180.0°) is recorded in decimal decimal degrees. See <a href="#latitude---numeric-free-mandatory">Latitude</a> for further details. A longitude is always associated with a <a href="#coordinate-reference-system---string-controlled-mandatory">Coordinate Reference System</a>.</p>
-</section><section class="section level2"><h2 id="coordinate-reference-system---string-controlled-mandatory">Coordinate Reference System - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#coordinate-reference-system---string-controlled-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="coordinate-reference-system---string-controlled-mandatory">Coordinate Reference System - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#coordinate-reference-system---string-controlled-mandatory"></a>
+</h3>
 <p><code>SITE_COORDINATE_SYSTEM</code></p>
 <p>A site’s latitude and longitude are calculated using a reference system “placed” at a given point on the globe and parameterised within a given region. This Coordinate Reference System is a necessary component of any geographical coordinate data. In most global datasets, the World Geodetic System, 1984 version (WGS 84) is used. However, national or other local datasets may use a variety of CRS, such as the Universal Transverse Mercator (UTM), which projects the Earth into a series of square or rectangular zones; in this case, it is necessary to know the CRS and the grid number.</p>
 <p>This controlled vocabulary uses the package <code>{crsuggest}</code>, which in turn uses the EPSG Dataset v10.019, (product of the International Association of Oil &amp; Gas Producers, <a href="https://epsg.org/terms-of-use.html" class="external-link">terms of use</a>). However, because the full 6000+ CRS included would be impractically large for the associated UI, we filter this down to a small set of systems relevant to the test cases used with the format so far. In future, CRS metadata will be used to automatically filter available CRS based on the desired geographical scope.</p>
-<section class="level2"><h3 id="controlled-vocabulary-4">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-4"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-4">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-4"></a>
+</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/coordinate_systems_vocabulary.html">coordinate_systems_vocabulary</a></span><span class="op">(</span>common_only <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
@@ -680,34 +665,34 @@
 <span><span class="co">#&gt; [4] "ETRS89"                "WGS 84 / UTM zone 32N" "WGS 84 / UTM zone 33N"</span></span>
 <span><span class="co">#&gt; [7] "WGS 84 / UTM zone 34N" "WGS 84 / UTM zone 35N" "Other"</span></span></code></pre></div>
 </div>
-</section></section><section class="section level2"><h2 id="altitude-value---numeric-free-mandatory">Altitude Value - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#altitude-value---numeric-free-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="altitude-value---numeric-free-mandatory">Altitude Value - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#altitude-value---numeric-free-mandatory"></a>
+</h3>
 <p><code>ALTITUDE_VALUE</code></p>
 <p>Altitude value above or below sea level, including depth of water sampling (but <em>not</em> depth of ice or sediment cores). This data is frequently not available for sampling sites, in which case it can be reported as 0. Associated with an <a href="#altitude-unit---string-controlled-mandatory">altitude unit</a>.</p>
-</section><section class="section level2"><h2 id="altitude-unit---string-controlled-mandatory">Altitude Unit - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#altitude-unit---string-controlled-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="altitude-unit---string-controlled-mandatory">Altitude Unit - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#altitude-unit---string-controlled-mandatory"></a>
+</h3>
 <p><code>ALTITUDE_UNIT</code></p>
 <p>Unit associated with <a href="#altitude-value---numeric-free-mandatory">altitude value</a>.</p>
-<section class="level2"><h3 id="controlled-vocabulary-5">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-5"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-5">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-5"></a>
+</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/altitude_units_vocabulary.html">altitude_units_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "km" "m"  "cm" "mm"</span></span></code></pre></div>
 </div>
-</section></section><section class="section level2"><h2 id="entered-by---string-free-mandatory">Entered By - String, free, mandatory<a class="anchor" aria-label="anchor" href="#entered-by---string-free-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="entered-by---string-free-mandatory">Entered By - String, free, mandatory<a class="anchor" aria-label="anchor" href="#entered-by---string-free-mandatory"></a>
+</h3>
 <p><code>ENTERED_BY</code></p>
 <p>The name or email address of the user entering data.</p>
-</section><section class="section level2"><h2 id="entered-date---date-iso-free-mandatory">Entered Date - Date (ISO), free, mandatory<a class="anchor" aria-label="anchor" href="#entered-date---date-iso-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="entered-date---date-iso-free-mandatory">Entered Date - Date (ISO), free, mandatory<a class="anchor" aria-label="anchor" href="#entered-date---date-iso-free-mandatory"></a>
+</h3>
 <p><code>ENTERED_DATE</code></p>
 <p>The date that site data were entered.</p>
-</section><section class="section level2"><h2 id="site-comment---string-free-optional">Site Comment - String, free, optional<a class="anchor" aria-label="anchor" href="#site-comment---string-free-optional"></a>
-</h2>
+</section><section class="level2"><h3 id="site-comment---string-free-optional">Site Comment - String, free, optional<a class="anchor" aria-label="anchor" href="#site-comment---string-free-optional"></a>
+</h3>
 <p><code>SITE_COMMENT</code></p>
 <p>Space for the recording of any additional notes or comments about the site deemed relevant, particularly any operations performed by the user on sites data, such as merging sites, converting a sampling region to a discrete point, or estimating point coordinates from a map.</p>
-</section><script id="quarto-html-after-body" type="application/javascript">
+</section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);

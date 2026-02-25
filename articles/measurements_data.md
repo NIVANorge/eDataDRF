@@ -18,21 +18,21 @@ initialise_measurements_tibble()
 #> #   FRACTIONATION_PROTOCOL <chr>, ANALYTICAL_PROTOCOL <chr>, …
 ```
 
-### Variables
+## Variables
 
-## Site Code - String, free, mandatory
+### Site Code - String, free, mandatory
 
 `SITE_CODE`
 
-## Parameter Name - String, free, mandatory
+### Parameter Name - String, free, mandatory
 
 `PARAMETER_NAME`
 
-## Sampling Date - String, free, mandatory
+### Sampling Date - String, free, mandatory
 
 `SAMPLING_DATE`
 
-## Environ Compartment Sub - String, controlled, mandatory
+### Environ Compartment Sub - String, controlled, mandatory
 
 `ENVIRON_COMPARTMENT_SUB`
 
@@ -75,13 +75,13 @@ environ_compartments_sub_vocabulary()
 #>       "Biota, Other"
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Subsample - String, free, mandatory
+### Subsample - String, free, mandatory
 
 `SUBSAMPLE`
 
-## Measured Flag - String, controlled, mandatory
+### Measured Flag - String, controlled, mandatory
 
 `MEASURED_FLAG`
 
@@ -90,13 +90,13 @@ measured_flags_vocabulary()
 #> [1] ""      "< LOQ" "< LOD"
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Measured Value - Numeric, free, mandatory
+### Measured Value - Numeric, free, mandatory
 
 `MEASURED_VALUE`
 
-## Uncertainty Type - String, controlled, mandatory
+### Uncertainty Type - String, controlled, mandatory
 
 `UNCERTAINTY_TYPE`
 
@@ -117,17 +117,17 @@ uncertainty_types_vocabulary()
 #> [25] "Other"
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Uncertainty Upper - Numeric, free, mandatory
+### Uncertainty Upper - Numeric, free, mandatory
 
 `UNCERTAINTY_UPPER`
 
-## Uncertainty Lower - Numeric, free, mandatory
+### Uncertainty Lower - Numeric, free, mandatory
 
 `UNCERTAINTY_LOWER`
 
-## Measured Unit - String, controlled, mandatory
+### Measured Unit - String, controlled, mandatory
 
 `MEASURED_UNIT`
 
@@ -149,17 +149,17 @@ parameter_unit_vocabulary()
 #> # ℹ 54 more rows
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Measured N - Numeric, free, mandatory
+### Measured N - Numeric, free, mandatory
 
 `MEASURED_N`
 
-## LOQ Value - Numeric, free, mandatory
+### LOQ Value - Numeric, free, mandatory
 
 `LOQ_VALUE`
 
-## LOQ Unit - String, controlled, mandatory
+### LOQ Unit - String, controlled, mandatory
 
 `LOQ_UNIT`
 
@@ -181,13 +181,13 @@ parameter_unit_vocabulary()
 #> # ℹ 54 more rows
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## LOD Value - Numeric, free, mandatory
+### LOD Value - Numeric, free, mandatory
 
 `LOD_VALUE`
 
-## LOD Unit - String, controlled, mandatory
+### LOD Unit - String, controlled, mandatory
 
 `LOD_UNIT`
 
@@ -209,9 +209,9 @@ parameter_unit_vocabulary()
 #> # ℹ 54 more rows
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Sampling Protocol - String, controlled, mandatory
+### Sampling Protocol - String, controlled, mandatory
 
 `SAMPLING_PROTOCOL`
 
@@ -233,9 +233,9 @@ sampling_protocols_vocabulary()
 #> # ℹ 12 more rows
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Extraction Protocol - String, controlled, mandatory
+### Extraction Protocol - String, controlled, mandatory
 
 `EXTRACTION_PROTOCOL`
 
@@ -265,9 +265,9 @@ extraction_protocols_vocabulary()
 #> 19 Extraction Protocol Other                             Other
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Fractionation Protocol - String, controlled, mandatory
+### Fractionation Protocol - String, controlled, mandatory
 
 `FRACTIONATION_PROTOCOL`
 
@@ -297,9 +297,9 @@ fractionation_protocols_vocabulary()
 #> 19 Fractionation Protocol Other             Other
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Analytical Protocol - String, controlled, mandatory
+### Analytical Protocol - String, controlled, mandatory
 
 `ANALYTICAL_PROTOCOL`
 
@@ -325,21 +325,21 @@ analytical_protocols_vocabulary()
 #> 15 Analytical Protocol Other              Other
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Reference ID - String, free, mandatory
+### Reference ID - String, free, mandatory
 
 `REFERENCE_ID`
 
-## Sample ID - String, free, mandatory
+### Sample ID - String, free, mandatory
 
 `SAMPLE_ID`
 
-## Campaign Name Short - String, free, mandatory
+### Campaign Name Short - String, free, mandatory
 
 `CAMPAIGN_NAME_SHORT`
 
-## Environ Compartment - String, controlled, mandatory
+### Environ Compartment - String, controlled, mandatory
 
 `ENVIRON_COMPARTMENT`
 
@@ -349,9 +349,9 @@ environ_compartments_vocabulary()
 #> [6] "Not reported" "Other"
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Parameter Type - String, controlled, mandatory
+### Parameter Type - String, controlled, mandatory
 
 `PARAMETER_TYPE`
 
@@ -362,9 +362,9 @@ parameter_types_vocabulary()
 #> [7] "Other"
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Measured Type - String, controlled, mandatory
+### Measured Type - String, controlled, mandatory
 
 `MEASURED_TYPE`
 
@@ -377,8 +377,8 @@ measured_types_vocabulary()
 #> [13] "Other"
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Measurement Comment - String, free, optional
+### Measurement Comment - String, free, optional
 
 `MEASUREMENT_COMMENT`

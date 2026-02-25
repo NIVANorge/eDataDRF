@@ -1,0 +1,4 @@
+/* Widen the Articles dropdown to prevent long article names from being truncated */
+.navbar .dropdown-menu {
+  min-width: 220px;
+}

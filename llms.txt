@@ -78,23 +78,24 @@ Tables are created as
 [`tibble::tibble()`](https://tibble.tidyverse.org/reference/tibble.html)
 calls with empty variables of specific types (e.g. `character(0)` for
 strings). These support easier validation (see
-[Validation](https://NIVANorge.github.io/eDataDRF/validation.md)) and
-the extensive Tidyverse family of functions.
+[Validation](https://NIVANorge.github.io/eDataDRF/articles/validation.html))
+and the extensive Tidyverse family of functions.
 
 Tables are listed below:
 
-| Table Name      | Purpose                                                                                                                                               | Comments                                                                                    |
-|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| Campaign        | Records data about sampling campaign and organisation collecting data.                                                                                |                                                                                             |
-| Reference       | Records conventional publication metadata, where available                                                                                            |                                                                                             |
-| Sites           | Records site coordinates, land use, country/ocean                                                                                                     |                                                                                             |
-| Parameters      | Records data on stressors (chemical, radiation, etc.), quality measurements                                                                           |                                                                                             |
-| Compartments    | Records information on the compartment/matrix sampled                                                                                                 |                                                                                             |
-| Samples         | Records which combinations of dates, sites, parameters and compartments were sampled                                                                  | Not used in final analysis, but exists as an intermediate table used to create measurements |
-| Biota           | Where relevant, records biota species, tissue, life stage, and gender                                                                                 | Optional                                                                                    |
-| Methods         | Records type and descriptions of methods used for sampling, extraction, fractionation and analysis                                                    |                                                                                             |
-| Measurements    | Records measured values, units, uncertainty, sample size, and methods associated with a given sample                                                  |                                                                                             |
-| CREED (quality) | Records assessment purpose statement, relevant data summarised from above tables, relevance/reliability scores, and final assessment of data quality. |                                                                                             |
+| Table Name                                                                           | Purpose                                                                                                                                               | Comments                                                                                    |
+|--------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| [Campaign](https://NIVANorge.github.io/eDataDRF/articles/campaign_data.html)         | Records data about sampling campaign and organisation collecting data.                                                                                |                                                                                             |
+| [Reference](https://NIVANorge.github.io/eDataDRF/articles/references_data.html)      | Records conventional publication metadata, where available                                                                                            |                                                                                             |
+| [Sites](https://NIVANorge.github.io/eDataDRF/articles/sites_data.html)               | Records site coordinates, land use, country/ocean                                                                                                     |                                                                                             |
+| [Parameters](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.html)     | Records data on stressors (chemical, radiation, etc.), quality measurements                                                                           |                                                                                             |
+| [Compartments](https://NIVANorge.github.io/eDataDRF/articles/compartments_data.html) | Records information on the compartment/matrix sampled                                                                                                 |                                                                                             |
+| [Samples](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html)           | Records which combinations of dates, sites, parameters and compartments were sampled                                                                  | Not used in final analysis, but exists as an intermediate table used to create measurements |
+| [Biota](https://NIVANorge.github.io/eDataDRF/articles/biota_data.html)               | Where relevant, records biota species, tissue, life stage, and gender                                                                                 | Optional                                                                                    |
+| [Methods](https://NIVANorge.github.io/eDataDRF/articles/methods_data.html)           | Records type and descriptions of methods used for sampling, extraction, fractionation and analysis                                                    |                                                                                             |
+| [Measurements](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.html) | Records measured values, units, uncertainty, sample size, and methods associated with a given sample                                                  |                                                                                             |
+| [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html)     | Records assessment purpose statement, relevant data summarised from above tables, relevance/reliability scores, and final assessment of data quality. |                                                                                             |
+| [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | \[description needed\]                                                                                                                                |                                                                                             |
 
 Table of tables in the eData format, their purpose, and comments.
 
@@ -257,27 +258,37 @@ Export tables as zipped CSV files
 
 # Articles
 
-### All vignettes
+### Data tables
 
-- [Biota
-  data](https://NIVANorge.github.io/eDataDRF/articles/biota_data.md):
+Format and variables for each table in the eData DRF
+
 - [Campaign
   data](https://NIVANorge.github.io/eDataDRF/articles/campaign_data.md):
+- [Reference
+  data](https://NIVANorge.github.io/eDataDRF/articles/references_data.md):
+- [Sites
+  data](https://NIVANorge.github.io/eDataDRF/articles/sites_data.md):
+- [Parameters
+  data](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.md):
 - [Compartments
   data](https://NIVANorge.github.io/eDataDRF/articles/compartments_data.md):
+- [Samples
+  data](https://NIVANorge.github.io/eDataDRF/articles/samples_data.md):
+- [Biota
+  data](https://NIVANorge.github.io/eDataDRF/articles/biota_data.md):
+- [Methods
+  data](https://NIVANorge.github.io/eDataDRF/articles/methods_data.md):
+- [Measurements
+  Table](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.md):
+
+### CREED quality assessment
+
+Format and scoring for data quality assessment
+
 - [CREED
   data](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.md):
 - [CREED_scores_data](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.md):
-- [Measurements
-  Table](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.md):
-- [Methods
-  data](https://NIVANorge.github.io/eDataDRF/articles/methods_data.md):
-- [Parameters
-  data](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.md):
-- [Reference
-  data](https://NIVANorge.github.io/eDataDRF/articles/references_data.md):
-- [Samples
-  data](https://NIVANorge.github.io/eDataDRF/articles/samples_data.md):
-- [Sites
-  data](https://NIVANorge.github.io/eDataDRF/articles/sites_data.md):
+
+### Other
+
 - [validation](https://NIVANorge.github.io/eDataDRF/articles/validation.md):

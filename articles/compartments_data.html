@@ -12,7 +12,8 @@
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><script src="compartments_data_files/libs/quarto-html/popper.min.js"></script><script src="compartments_data_files/libs/quarto-html/tippy.umd.min.js"></script><link href="compartments_data_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="compartments_data_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Compartments data">
+<!-- pkgdown --><script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
+<meta property="og:title" content="Compartments data">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -32,23 +33,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
-<li class="active nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/biota_data.html">Biota data</a></li>
-    <li><a class="dropdown-item" href="../articles/campaign_data.html">Campaign data</a></li>
-    <li><a class="dropdown-item" href="../articles/compartments_data.html">Compartments data</a></li>
-    <li><a class="dropdown-item" href="../articles/CREED_data.html">CREED data</a></li>
-    <li><a class="dropdown-item" href="../articles/CREED_scores_data.html">CREED_scores_data</a></li>
-    <li><a class="dropdown-item" href="../articles/measurements_data.html">Measurements Table</a></li>
-    <li><a class="dropdown-item" href="../articles/methods_data.html">Methods data</a></li>
-    <li><a class="dropdown-item" href="../articles/parameters_data.html">Parameters data</a></li>
-    <li><a class="dropdown-item" href="../articles/references_data.html">Reference data</a></li>
-    <li><a class="dropdown-item" href="../articles/samples_data.html">Samples data</a></li>
-    <li><a class="dropdown-item" href="../articles/sites_data.html">Sites data</a></li>
-    <li><a class="dropdown-item" href="../articles/validation.html">validation</a></li>
-  </ul>
-</li>
+<li class="active nav-item"><a class="nav-link" href="../articles/index.html">Articles</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
@@ -94,26 +79,26 @@
 <span><span class="co">#&gt; # ℹ 3 variables: ENVIRON_COMPARTMENT &lt;chr&gt;, ENVIRON_COMPARTMENT_SUB &lt;chr&gt;,</span></span>
 <span><span class="co">#&gt; #   MEASURED_CATEGORY &lt;chr&gt;</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
-</h3>
-</section></section><section class="section level2"><h2 id="environmental-compartment---string-controlled-mandatory">Environmental Compartment - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#environmental-compartment---string-controlled-mandatory"></a>
+</section><section class="section level2"><h2 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
 </h2>
+<section class="level2"><h3 id="environmental-compartment---string-controlled-mandatory">Environmental Compartment - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#environmental-compartment---string-controlled-mandatory"></a>
+</h3>
 <p><code>ENVIRON_COMPARTMENT</code></p>
 <p>Identifies which of the earth’s spheres the sample originated from: aquatic (hydrosphere), air (atmospheric), terrestrial (geosphere), or biota (biosphere). Although largely comprehensive, it’s possible that some samples may not fit well into this category.</p>
-<section class="level2"><h3 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
+</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/environ_compartments_vocabulary.html">environ_compartments_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "Aquatic"      "Atmospheric"  "Terrestrial"  "Biota"        "Not relevant"</span></span>
 <span><span class="co">#&gt; [6] "Not reported" "Other"</span></span></code></pre></div>
 </div>
-</section></section><section class="section level2"><h2 id="environmental-sub-compartment---string-controlled-mandatory">Environmental Sub-Compartment - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#environmental-sub-compartment---string-controlled-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="environmental-sub-compartment---string-controlled-mandatory">Environmental Sub-Compartment - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#environmental-sub-compartment---string-controlled-mandatory"></a>
+</h3>
 <p><code>ENVIRON_COMPARTMENT_SUB</code></p>
 <p>Environmental compartments have been sub-divided into a series of subcompartments. No taxonomy or ontology was consulted in creation of this controlled vocabulary, although soil subcompartments were based on the <a href="https://isric.org/explore/wrb" class="external-link">World Reference Base for Soil Resources</a>.</p>
-<section class="level2"><h3 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
+</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/environ_compartments_sub_vocabulary.html">environ_compartments_sub_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -153,19 +138,19 @@
 <span><span class="co">#&gt;         Biota, Other </span></span>
 <span><span class="co">#&gt;       "Biota, Other"</span></span></code></pre></div>
 </div>
-</section></section><section class="section level2"><h2 id="measured-category---string-controlled-mandatory">Measured Category - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#measured-category---string-controlled-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="measured-category---string-controlled-mandatory">Measured Category - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#measured-category---string-controlled-mandatory"></a>
+</h3>
 <p><code>MEASURED_CATEGORY</code></p>
 <!-- Measurement context (External Media, Internal to Organism, Surface of Organism). -->
-<section class="level2"><h3 id="controlled-vocabulary-2">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-2"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-2">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-2"></a>
+</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/measured_categories_vocabulary.html">measured_categories_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt;               External               Internal                Surface </span></span>
 <span><span class="co">#&gt;       "External Media" "Internal to Organism"  "Surface of Organism"</span></span></code></pre></div>
 </div>
-</section></section><script id="quarto-html-after-body" type="application/javascript">
+</section></section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);

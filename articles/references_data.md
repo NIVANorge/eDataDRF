@@ -53,9 +53,9 @@ reference_character_limits()
 #> [1] 200
 ```
 
-### Variables
+## Variables
 
-## Reference ID - String, auto-generated, mandatory
+### Reference ID - String, auto-generated, mandatory
 
 `REFERENCE_ID`
 
@@ -75,37 +75,37 @@ as follows:
 Reference ID is also a foreign key in [Measurement
 data](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.md).
 
-## Reference Type - String, controlled, mandatory
+### Reference Type - String, controlled, mandatory
 
 `REFERENCE_TYPE`
 
-## Author - String, free, mandatory
+### Author - String, free, mandatory
 
 `AUTHOR`
 
 The full authors list from the referenced object, formatted as
 `Lastname1, Firstname1; Lastname2, Firstname2; etc.`.
 
-## Title - String, free, mandatory
+### Title - String, free, mandatory
 
 `TITLE`
 
 The title of the publication or document.
 
-## Year - Integer, free, mandatory
+### Year - Integer, free, mandatory
 
 `YEAR`
 
 The year of publication or the most recent update to the referenced
 object.
 
-## Access Date - Date (ISO), free, mandatory
+### Access Date - Date (ISO), free, mandatory
 
 `ACCESS_DATE`
 
 The ISO date when the referenced object was accessed.
 
-## Journal Name - String, free, conditional on reference type
+### Journal Name - String, free, conditional on reference type
 
 `PERIODICAL_JOURNAL`
 
@@ -114,19 +114,19 @@ in. Conditionally mandatory if [Reference
 Type](#reference-type---string-controlled-mandatory) is
 `Journal Article`.
 
-## Volume - Numeric, free, optional
+### Volume - Numeric, free, optional
 
 `VOLUME`
 
 The volume of a named journal an article was published in. Optional.
 
-## Issue - Numeric, free, optional
+### Issue - Numeric, free, optional
 
 `ISSUE`
 
 The issue of a named journal an article was published in. Optional.
 
-## Publisher - String, free, conditional on reference type
+### Publisher - String, free, conditional on reference type
 
 `PUBLISHER`
 
@@ -134,7 +134,7 @@ The publisher of a reference object. Conditionally mandatory if
 [Reference Type](#reference-type---string-controlled-mandatory) is
 `Book` or `Report`.
 
-## Institution - String, free, conditional on reference type
+### Institution - String, free, conditional on reference type
 
 `INSTITUTION`
 
@@ -142,7 +142,7 @@ The primary instition responsible for a referenced object. Conditionally
 mandatory if [Reference
 Type](#reference-type---string-controlled-mandatory) is `Report`.
 
-## DOI - String, free, optional
+### DOI - String, free, optional
 
 `DOI`
 
@@ -152,14 +152,14 @@ object. Optional, but the preferred identifier when avaiable.
 See the website of the [doi Foundation](https://www.doi.org/) for more
 information.
 
-## URL - String, free, optional
+### URL - String, free, optional
 
 `URL`
 
 A Uniform Resource Locator (URL, i.e. web address) linking to the
 referenced object, if available. Optional.
 
-## ISBN ISSN - String, free, optional
+### ISBN ISSN - String, free, optional
 
 `ISBN_ISSN`
 
@@ -167,20 +167,20 @@ An International Standard Book Number (ISBN, 10 or 13 digits) or
 International Standard Serial Number (ISSN, 8 digits) associated with a
 book or periodical. Optional.
 
-## Edition - String, free, optional
+### Edition - String, free, optional
 
 `EDITION`
 
 The edition of a referenced object, if relevant. Optional.
 
-## Document Number - String, free, optional
+### Document Number - String, free, optional
 
 `DOCUMENT_NUMBER`
 
 A document or report number, typically available for reports and other
 official documents. Optional.
 
-## Reference Comment - String, free, optional
+### Reference Comment - String, free, optional
 
 `REF_COMMENT`
 

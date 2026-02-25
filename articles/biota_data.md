@@ -24,21 +24,21 @@ initialise_biota_tibble()
 #> #   BIOTA_COMMENT <chr>
 ```
 
-### Variables
+## Variables
 
-## Sample ID - String, free, mandatory
+### Sample ID - String, free, mandatory
 
 `SAMPLE_ID`
 
-## Site Code - String, free, mandatory
+### Site Code - String, free, mandatory
 
 `SITE_CODE`
 
-## Parameter Name - String, free, mandatory
+### Parameter Name - String, free, mandatory
 
 `PARAMETER_NAME`
 
-## Environ Compartment - String, controlled, mandatory
+### Environ Compartment - String, controlled, mandatory
 
 `ENVIRON_COMPARTMENT`
 
@@ -48,9 +48,9 @@ environ_compartments_vocabulary()
 #> [6] "Not reported" "Other"
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Environ Compartment Sub - String, controlled, mandatory
+### Environ Compartment Sub - String, controlled, mandatory
 
 `ENVIRON_COMPARTMENT_SUB`
 
@@ -93,9 +93,9 @@ environ_compartments_sub_vocabulary()
 #>       "Biota, Other"
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Measured Category - String, controlled, mandatory
+### Measured Category - String, controlled, mandatory
 
 `MEASURED_CATEGORY`
 
@@ -105,17 +105,17 @@ measured_categories_vocabulary()
 #>       "External Media" "Internal to Organism"  "Surface of Organism"
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Sampling Date - String, free, mandatory
+### Sampling Date - String, free, mandatory
 
 `SAMPLING_DATE`
 
-## Subsample - String, free, mandatory
+### Subsample - String, free, mandatory
 
 `SUBSAMPLE`
 
-## Species Group - String, controlled, mandatory
+### Species Group - String, controlled, mandatory
 
 `SPECIES_GROUP`
 
@@ -128,9 +128,9 @@ species_groups_vocabulary()
 #> [17] "Worms"           "Other"
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Sample Species - String, controlled, mandatory
+### Sample Species - String, controlled, mandatory
 
 `SAMPLE_SPECIES`
 
@@ -152,9 +152,9 @@ species_names_vocabulary()
 #> # ℹ 29,552 more rows
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Sample Tissue - String, controlled, mandatory
+### Sample Tissue - String, controlled, mandatory
 
 `SAMPLE_TISSUE`
 
@@ -172,9 +172,9 @@ tissue_types_vocabulary()
 #> [28] "Fruit"              "Seed"               "Other"
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Sample Species Lifestage - String, controlled, mandatory
+### Sample Species Lifestage - String, controlled, mandatory
 
 `SAMPLE_SPECIES_LIFESTAGE`
 
@@ -185,9 +185,9 @@ lifestage_vocabulary()
 #> [11] "Mixed"        "Other"
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Sample Species Gender - String, controlled, mandatory
+### Sample Species Gender - String, controlled, mandatory
 
 `SAMPLE_SPECIES_GENDER`
 
@@ -197,8 +197,8 @@ gender_vocabulary()
 #> [5] "Mixed"         "Hermaphrodite" "Other"
 ```
 
-### Controlled Vocabulary
+#### Controlled Vocabulary
 
-## Biota Comment - String, free, optional
+### Biota Comment - String, free, optional
 
 `BIOTA_COMMENT`

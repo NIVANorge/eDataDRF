@@ -12,7 +12,8 @@
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><script src="CREED_data_files/libs/quarto-html/popper.min.js"></script><script src="CREED_data_files/libs/quarto-html/tippy.umd.min.js"></script><link href="CREED_data_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="CREED_data_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="CREED data">
+<!-- pkgdown --><script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
+<meta property="og:title" content="CREED data">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -32,23 +33,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
-<li class="active nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/biota_data.html">Biota data</a></li>
-    <li><a class="dropdown-item" href="../articles/campaign_data.html">Campaign data</a></li>
-    <li><a class="dropdown-item" href="../articles/compartments_data.html">Compartments data</a></li>
-    <li><a class="dropdown-item" href="../articles/CREED_data.html">CREED data</a></li>
-    <li><a class="dropdown-item" href="../articles/CREED_scores_data.html">CREED_scores_data</a></li>
-    <li><a class="dropdown-item" href="../articles/measurements_data.html">Measurements Table</a></li>
-    <li><a class="dropdown-item" href="../articles/methods_data.html">Methods data</a></li>
-    <li><a class="dropdown-item" href="../articles/parameters_data.html">Parameters data</a></li>
-    <li><a class="dropdown-item" href="../articles/references_data.html">Reference data</a></li>
-    <li><a class="dropdown-item" href="../articles/samples_data.html">Samples data</a></li>
-    <li><a class="dropdown-item" href="../articles/sites_data.html">Sites data</a></li>
-    <li><a class="dropdown-item" href="../articles/validation.html">validation</a></li>
-  </ul>
-</li>
+<li class="active nav-item"><a class="nav-link" href="../articles/index.html">Articles</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
@@ -93,33 +78,33 @@
 <span><span class="co">#&gt; #   required_recommended &lt;chr&gt;, relevant_data &lt;chr&gt;, score &lt;chr&gt;,</span></span>
 <span><span class="co">#&gt; #   limitations &lt;chr&gt;</span></span></code></pre></div>
 </div>
-<section class="level2"><h3 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
-</h3>
-</section></section><section class="section level2"><h2 id="criterion-id---string-free-mandatory">Criterion ID - String, free, mandatory<a class="anchor" aria-label="anchor" href="#criterion-id---string-free-mandatory"></a>
+</section><section class="section level2"><h2 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
 </h2>
+<section class="level2"><h3 id="criterion-id---string-free-mandatory">Criterion ID - String, free, mandatory<a class="anchor" aria-label="anchor" href="#criterion-id---string-free-mandatory"></a>
+</h3>
 <p><code>criterion_id</code></p>
 <!-- Unique identifier for the CREED criterion. -->
-</section><section class="section level2"><h2 id="criterion-title---string-free-mandatory">Criterion Title - String, free, mandatory<a class="anchor" aria-label="anchor" href="#criterion-title---string-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="criterion-title---string-free-mandatory">Criterion Title - String, free, mandatory<a class="anchor" aria-label="anchor" href="#criterion-title---string-free-mandatory"></a>
+</h3>
 <p><code>criterion_title</code></p>
 <!-- Descriptive title of the criterion. -->
-</section><section class="section level2"><h2 id="required-recommended---string-free-mandatory">Required Recommended - String, free, mandatory<a class="anchor" aria-label="anchor" href="#required-recommended---string-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="required-recommended---string-free-mandatory">Required Recommended - String, free, mandatory<a class="anchor" aria-label="anchor" href="#required-recommended---string-free-mandatory"></a>
+</h3>
 <p><code>required_recommended</code></p>
 <!-- Whether the criterion is required or recommended. -->
-</section><section class="section level2"><h2 id="relevant-data---string-free-mandatory">Relevant Data - String, free, mandatory<a class="anchor" aria-label="anchor" href="#relevant-data---string-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="relevant-data---string-free-mandatory">Relevant Data - String, free, mandatory<a class="anchor" aria-label="anchor" href="#relevant-data---string-free-mandatory"></a>
+</h3>
 <p><code>relevant_data</code></p>
 <!-- Data or information relevant to assessing the criterion. -->
-</section><section class="section level2"><h2 id="score---string-free-mandatory">Score - String, free, mandatory<a class="anchor" aria-label="anchor" href="#score---string-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="score---string-free-mandatory">Score - String, free, mandatory<a class="anchor" aria-label="anchor" href="#score---string-free-mandatory"></a>
+</h3>
 <p><code>score</code></p>
 <!-- Assessment score for the criterion. -->
-</section><section class="section level2"><h2 id="limitations---string-free-mandatory">Limitations - String, free, mandatory<a class="anchor" aria-label="anchor" href="#limitations---string-free-mandatory"></a>
-</h2>
+</section><section class="level2"><h3 id="limitations---string-free-mandatory">Limitations - String, free, mandatory<a class="anchor" aria-label="anchor" href="#limitations---string-free-mandatory"></a>
+</h3>
 <p><code>limitations</code></p>
 <!-- Identified limitations or concerns for the criterion. -->
-</section><script id="quarto-html-after-body" type="application/javascript">
+</section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -202,7 +187,8 @@
       }
     }
   });
-  </script></main>
+  </script></main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 

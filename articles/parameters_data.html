@@ -12,7 +12,8 @@
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><script src="parameters_data_files/libs/quarto-html/popper.min.js"></script><script src="parameters_data_files/libs/quarto-html/tippy.umd.min.js"></script><link href="parameters_data_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="parameters_data_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Parameters data">
+<!-- pkgdown --><script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
+<meta property="og:title" content="Parameters data">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -32,23 +33,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
-<li class="active nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/biota_data.html">Biota data</a></li>
-    <li><a class="dropdown-item" href="../articles/campaign_data.html">Campaign data</a></li>
-    <li><a class="dropdown-item" href="../articles/compartments_data.html">Compartments data</a></li>
-    <li><a class="dropdown-item" href="../articles/CREED_data.html">CREED data</a></li>
-    <li><a class="dropdown-item" href="../articles/CREED_scores_data.html">CREED_scores_data</a></li>
-    <li><a class="dropdown-item" href="../articles/measurements_data.html">Measurements Table</a></li>
-    <li><a class="dropdown-item" href="../articles/methods_data.html">Methods data</a></li>
-    <li><a class="dropdown-item" href="../articles/parameters_data.html">Parameters data</a></li>
-    <li><a class="dropdown-item" href="../articles/references_data.html">Reference data</a></li>
-    <li><a class="dropdown-item" href="../articles/samples_data.html">Samples data</a></li>
-    <li><a class="dropdown-item" href="../articles/sites_data.html">Sites data</a></li>
-    <li><a class="dropdown-item" href="../articles/validation.html">validation</a></li>
-  </ul>
-</li>
+<li class="active nav-item"><a class="nav-link" href="../articles/index.html">Articles</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
@@ -96,14 +81,14 @@
 <span><span class="co">#&gt; #   PARAMETER_COMMENT &lt;chr&gt;</span></span></code></pre></div>
 </div>
 <p>It is expected that most relevant studies will be collecting data on chemical pollutants in the environment. Non-chemicals are accomodated by the format, but they cannot necessarily be as well-characterised as chemicals, where we are able to take advantage of the high-quality infrastructure developed by chemists.</p>
-<section class="level2"><h3 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
-</h3>
-</section></section><section class="section level2"><h2 id="parameter-type---string-controlled-mandatory">Parameter Type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#parameter-type---string-controlled-mandatory"></a>
+</section><section class="section level2"><h2 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
 </h2>
+<section class="level2"><h3 id="parameter-type---string-controlled-mandatory">Parameter Type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#parameter-type---string-controlled-mandatory"></a>
+</h3>
 <p><code>PARAMETER_TYPE</code></p>
 <p>Parameter type is divided into five classifications and two missing data values. This classification requires a degree of subjective judgement. What makes a chemical a stressor versus a quality parameter is not always clear. However, we anticipate that in most cases this will be uncontroversial. Where this is not the case stressors can still be identified by name/id.</p>
-<section class="level2"><h3 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
+</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/parameter_types_vocabulary.html">parameter_types_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -112,12 +97,12 @@
 <span><span class="co">#&gt; [7] "Other"</span></span></code></pre></div>
 </div>
 <p><code>"Not relevant"</code> - Use when a type is not applicable to the measured scalar. <code>"Stressor"</code> - hemical, physical or biological agent causing stress. <code>"Quality parameter"</code> - Standard water/environmental quality parameter <code>"Normalisation"</code> - Parameter used for normalising other measurements<br><code>"Background"</code> - “Natural background level of a parameter”<br><code>"Ecological Indicator"</code> - Parameter is an indicator or metric of ecological concern. <code>"Other"</code> - Parameter belongs to another category. Please note in comments field.</p>
-</section></section><section class="section level2"><h2 id="parameter-sub-type---string-controlled-mandatory">Parameter Sub-type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#parameter-sub-type---string-controlled-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="parameter-sub-type---string-controlled-mandatory">Parameter Sub-type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#parameter-sub-type---string-controlled-mandatory"></a>
+</h3>
 <p><code>PARAMETER_TYPE_SUB</code></p>
 <p>Parameter Sub-type is a further subdivision of [Parameter Type]. The majority of subtypes are chemical classifications from the <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5096306/" class="external-link">ChemOnt/ClassyFire</a> chemical taxonomy; other subtypes are intended for use with quality parameters, stressors measured as mixtures, or other cases where additional details are needed.</p>
-<section class="level2"><h3 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
+</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/parameter_types_sub_vocabulary.html">parameter_types_sub_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -160,12 +145,12 @@
 <span><span class="co">#&gt; [37] "Mixture"                                  </span></span>
 <span><span class="co">#&gt; [38] "Not reported"</span></span></code></pre></div>
 </div>
-</section></section><section class="section level2"><h2 id="parameter-name-controlled-mandatory">Parameter Name, controlled, mandatory<a class="anchor" aria-label="anchor" href="#parameter-name-controlled-mandatory"></a>
-</h2>
+</section></section><section class="level2"><h3 id="parameter-name-controlled-mandatory">Parameter Name, controlled, mandatory<a class="anchor" aria-label="anchor" href="#parameter-name-controlled-mandatory"></a>
+</h3>
 <p><code>PARAMETER_NAME</code></p>
 <p>Parameter name records the reported name of a measured parameter. In the majority of cases</p>
-<section class="level2"><h3 id="controlled-vocabulary-2">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-2"></a>
-</h3>
+<section class="level3"><h4 id="controlled-vocabulary-2">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-2"></a>
+</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># TODO: Fix me, pleassse</span></span>
@@ -190,10 +175,10 @@
 <li>Typically the common short form name of a parameter, but…</li>
 <li>We use whatever ClassyFire gives us, I think</li>
 <li>Currently used as a primary key - this will be replaced with a better system once we get it working</li>
-</ul></section></section><section class="section level2"><h2 id="parameter-sub-name">Parameter Sub-Name<a class="anchor" aria-label="anchor" href="#parameter-sub-name"></a>
-</h2>
+</ul></section></section><section class="level2"><h3 id="parameter-sub-name">Parameter Sub-Name<a class="anchor" aria-label="anchor" href="#parameter-sub-name"></a>
+</h3>
 <p><code>PARAMETER_NAME_SUB</code></p>
-</section><script id="quarto-html-after-body" type="application/javascript">
+</section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
