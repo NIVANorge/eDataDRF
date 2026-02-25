@@ -28,14 +28,14 @@ library(eDataDRF)
 initialise_compartments_tibble()
 ```
 
-## Variables
+# Variables
 
-# Environmental Compartment - String, controlled, mandatory
+## Environmental Compartment - String, controlled, mandatory
 `ENVIRON_COMPARTMENT`
 
 Identifies which of the earth's spheres the sample originated from: aquatic (hydrosphere), air (atmospheric), terrestrial (geosphere), or biota (biosphere). Although largely comprehensive, it's possible that some samples may not fit well into this category. 
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 ```{r}
 #| label: environ_compartment
@@ -43,12 +43,12 @@ Identifies which of the earth's spheres the sample originated from: aquatic (hyd
 environ_compartments_vocabulary()
 ```
 
-# Environmental Sub-Compartment - String, controlled, mandatory
+## Environmental Sub-Compartment - String, controlled, mandatory
 `ENVIRON_COMPARTMENT_SUB`
 
 Environmental compartments have been sub-divided into a series of subcompartments. No taxonomy or ontology was consulted in creation of this controlled vocabulary, although soil subcompartments were based on the [World Reference Base for Soil Resources](https://isric.org/explore/wrb).   
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 ```{r}
 #| label: environ_compartment_sub
@@ -56,12 +56,12 @@ Environmental compartments have been sub-divided into a series of subcompartment
 environ_compartments_sub_vocabulary()
 ```
 
-# Measured Category - String, controlled, mandatory
+## Measured Category - String, controlled, mandatory
 `MEASURED_CATEGORY`
 
 <!-- Measurement context (External Media, Internal to Organism, Surface of Organism). -->
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 ```{r}
 #| label: measured_category

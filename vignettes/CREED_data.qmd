@@ -24,34 +24,34 @@ library(eDataDRF)
 initialise_CREED_data_tibble()
 ```
 
-## Variables
+# Variables
 
-# Criterion ID - String, free, mandatory
+## Criterion ID - String, free, mandatory
 `criterion_id`
 
 <!-- Unique identifier for the CREED criterion. -->
 
-# Criterion Title - String, free, mandatory
+## Criterion Title - String, free, mandatory
 `criterion_title`
 
 <!-- Descriptive title of the criterion. -->
 
-# Required Recommended - String, free, mandatory
+## Required Recommended - String, free, mandatory
 `required_recommended`
 
 <!-- Whether the criterion is required or recommended. -->
 
-# Relevant Data - String, free, mandatory
+## Relevant Data - String, free, mandatory
 `relevant_data`
 
 <!-- Data or information relevant to assessing the criterion. -->
 
-# Score - String, free, mandatory
+## Score - String, free, mandatory
 `score`
 
 <!-- Assessment score for the criterion. -->
 
-# Limitations - String, free, mandatory
+## Limitations - String, free, mandatory
 `limitations`
 
 <!-- Identified limitations or concerns for the criterion. -->

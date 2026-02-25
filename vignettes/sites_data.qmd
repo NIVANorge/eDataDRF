@@ -28,21 +28,21 @@ library(eDataDRF)
 initialise_sites_tibble()
 ```
 
-## Variables
+# Variables
 
-# Site Code - String, free, mandatory
+## Site Code - String, free, mandatory
 `SITE_CODE`
 
 A short, unique code identifying the sampled site. Although formatting is not enforced on this field, we recommend using an abbreviated combination of the campaign, long form site name and any details relevant to the site. For example:
 
 "Arctic Monitoring Program; Pelagic Sampling Point 37" -> `AMP-Pelagic-37`. The site code is the primary key for sites data and is used as a foreign key in [samples](samples_data.html) and [measurements](measurements_data.html).
 
-# Site Name - String, free, mandatory
+## Site Name - String, free, mandatory
 `SITE_NAME`
 
 A longer form name of the site, potentially including details such as address, region, site type, etc. May be fully copied from source to enable easy tracing back of the relevant details. 
 
-# Site Geographic Feature - String, controlled, mandatory
+## Site Geographic Feature - String, controlled, mandatory
 `SITE_GEOGRAPHIC_FEATURE`
 
 Categorisation of site type allows for broad comparisons to be made. Site Geographic feature is based on a variety of existing land-use taxonomy to facilitate conversion and comparison:
@@ -77,7 +77,7 @@ These are summarised in the table below
 | Other | Specify details in [SITE_COMMENT](#site-comment---string-free-optional) | | | | |
 
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 ```{r}
 #| label: site_geographic_feature
@@ -85,12 +85,12 @@ These are summarised in the table below
 geographic_features_vocabulary()
 ```
 
-# Site Geographic Feature Sub - String, controlled, mandatory
+## Site Geographic Feature Sub - String, controlled, mandatory
 `SITE_GEOGRAPHIC_FEATURE_SUB`
 
 In some cases geographic feature vocabulary may not have enough resolution to capture sampling sites. For example, in bodies of water, it may be important to distinguish between samples from the benthos, water column, water surface, etc. In this case, sub-features can be used to add additional precision. 
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 ```{r}
 #| label: site_geographic_feature_sub
@@ -98,12 +98,12 @@ In some cases geographic feature vocabulary may not have enough resolution to ca
 geographic_features_sub_vocabulary()
 ```
 
-# ISO Country  - String, controlled, mandatory
+## ISO Country  - String, controlled, mandatory
 `COUNTRY_ISO`
 
 Although the sheer size of countries makes them at times poor identifiers of geographical location, they remain useful data. Although this variable is marked as mandatory, it is possible to enter "Not relevant" when sites are out of the territory of any nation (e.g. in international waters). The [ISO 3166 set of country codes](https://www.iso.org/iso-3166-country-codes.html) is used, via the R package `{iso}`.
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 ```{r}
 #| label: country_iso
@@ -111,14 +111,14 @@ Although the sheer size of countries makes them at times poor identifiers of geo
 countries_vocabulary()
 ```
 
-# IHO Ocean/Sea - String, controlled, mandatory
+## IHO Ocean/Sea - String, controlled, mandatory
 `OCEAN_IHO`
 
 As with countries, oceans are not necessarily the best geographical identifiers, but they provide useful, human-readable data for understanding sampling sites. The [International Hydrographic Organisation's version 3 Sea Areas](https://doi.org/10.14284/323) dataset is used to provide a reasonably-standardised set of names for seas and oceans. As with [Country](#iso-country---string-controlled-mandatory), Ocean is mandatory but should be marked as "Not relevant" when the site is on land.
 
 Where sampling sites are located in national territory but also in or near (intentionally vague) an ocean or sea, we recommend recording both variables.
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 ```{r}
 #| label: ocean_iho
@@ -126,24 +126,24 @@ Where sampling sites are located in national territory but also in or near (inte
 areas_vocabulary()
 ```
 
-# Latitude - Numeric, free, mandatory
+## Latitude - Numeric, free, mandatory
 `LATITUDE`
 
 Site latitude (north-south position, also known as northing, between -90.0° and +90.0°) is recorded in decimal decimal degrees. Arbitrary precision (within the bounds of R's numeric data type) is possible, but the degree of precision reported (i.e. decimal places) should be appropriate to the actual sampling. 3 decimal places corresponds to approximately 111 m accuracy, and 4 to within 11 m. Under some circumstances this can cause somewhat confusing combinations of coordinates and site types; for example, a site may be reported as being on land but with coordinates that are clearly in the ocean. In future, we plan to include an explicit metric of spatial uncertainty. A latitude is always associated with a [Coordinate Reference System](#coordinate-reference-system---string-controlled-mandatory).
 
-# Longitude - Numeric, free, mandatory
+## Longitude - Numeric, free, mandatory
 `LONGITUDE`
 
 Site longitude (east-west position, also known as easting, between -180.0° and +180.0°) is recorded in decimal decimal degrees. See [Latitude](#latitude---numeric-free-mandatory) for further details. A longitude is always associated with a [Coordinate Reference System](#coordinate-reference-system---string-controlled-mandatory).
 
-# Coordinate Reference System - String, controlled, mandatory
+## Coordinate Reference System - String, controlled, mandatory
 `SITE_COORDINATE_SYSTEM`
 
 A site's latitude and longitude are calculated using a reference system "placed" at a given point on the globe and parameterised within a given region. This Coordinate Reference System is a necessary component of any geographical coordinate data. In most global datasets, the World Geodetic System, 1984 version (WGS 84) is used. However, national or other local datasets may use a variety of CRS, such as the Universal Transverse Mercator (UTM), which projects the Earth into a series of square or rectangular zones; in this case, it is necessary to know the CRS and the grid number. 
 
 This controlled vocabulary uses the package `{crsuggest}`, which in turn uses the EPSG Dataset v10.019, (product of the International Association of Oil & Gas Producers, [terms of use](https://epsg.org/terms-of-use.html)). However, because the full 6000+ CRS included would be impractically large for the associated UI, we filter this down to a small set of systems relevant to the test cases used with the format so far. In future, CRS metadata will be used to automatically filter available CRS based on the desired geographical scope.
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 ```{r}
 #| label: site_coordinate_system
@@ -151,17 +151,17 @@ This controlled vocabulary uses the package `{crsuggest}`, which in turn uses th
 coordinate_systems_vocabulary(common_only = TRUE)
 ```
 
-# Altitude Value - Numeric, free, mandatory
+## Altitude Value - Numeric, free, mandatory
 `ALTITUDE_VALUE`
 
 Altitude value above or below sea level, including depth of water sampling (but *not* depth of ice or sediment cores). This data is frequently not available for sampling sites, in which case it can be reported as 0. Associated with an [altitude unit](#altitude-unit---string-controlled-mandatory).
 
-# Altitude Unit - String, controlled, mandatory
+## Altitude Unit - String, controlled, mandatory
 `ALTITUDE_UNIT`
 
 Unit associated with [altitude value](#altitude-value---numeric-free-mandatory).
 
-## Controlled Vocabulary
+### Controlled Vocabulary
 
 ```{r}
 #| label: altitude_unit
@@ -169,17 +169,17 @@ Unit associated with [altitude value](#altitude-value---numeric-free-mandatory).
 altitude_units_vocabulary()
 ```
 
-# Entered By - String, free, mandatory
+## Entered By - String, free, mandatory
 `ENTERED_BY`
 
 The name or email address of the user entering data.
 
-# Entered Date - Date (ISO), free, mandatory
+## Entered Date - Date (ISO), free, mandatory
 `ENTERED_DATE`
 
 The date that site data were entered.
 
-# Site Comment - String, free, optional
+## Site Comment - String, free, optional
 `SITE_COMMENT`
 
 Space for the recording of any additional notes or comments about the site deemed relevant, particularly any operations performed by the user on sites data, such as merging sites, converting a sampling region to a discrete point, or estimating point coordinates from a map.
