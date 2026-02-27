@@ -1,0 +1,385 @@
+{
+  "version": 1,
+  "locale": "en_GB",
+  "platform": "4.5.2",
+  "metadata": {
+    "appmode": "static",
+    "primary_rmd": null,
+    "primary_html": "doc/campaign_data.html",
+    "content_category": null,
+    "has_parameters": false
+  },
+  "packages": null,
+  "files": {
+    ".github/workflows/pkgdown.yaml": {
+      "checksum": "126c9ebef76ffb54156d760faa99a500"
+    },
+    ".github/workflows/R-CMD-check.yaml": {
+      "checksum": "47280fb0adfe292bf4e47346014bd194"
+    },
+    ".Rbuildignore": {
+      "checksum": "da009608b6b5f1eb7471a7a754b78abf"
+    },
+    "_pkgdown.yml": {
+      "checksum": "9497131b4f7b7848c15e49e4d0cc74dd"
+    },
+    "DESCRIPTION": {
+      "checksum": "51725e2838ac619a3669cb63cf0e746b"
+    },
+    "doc/campaign_data.html": {
+      "checksum": "a0f82cd83d76705a936b91897284aff9"
+    },
+    "doc/campaign_data.qmd": {
+      "checksum": "7d482d377eae76b871a7c935a5229b77"
+    },
+    "doc/campaign_data.R": {
+      "checksum": "d1d8ff788e78d10e17908132f85b2eb2"
+    },
+    "doc/compartments_data.html": {
+      "checksum": "53b51d4a7ae6aa19e88995a53ff595a5"
+    },
+    "doc/compartments_data.qmd": {
+      "checksum": "125d8f4823031853a799ed48737c334c"
+    },
+    "doc/compartments_data.R": {
+      "checksum": "d8cb6e7b5233aecb7ba0e9be06986449"
+    },
+    "doc/CREED_data.html": {
+      "checksum": "5d08789899df506d79969977bc565aae"
+    },
+    "doc/CREED_data.qmd": {
+      "checksum": "2bc99c000d7ee313ce14634be9f4a26a"
+    },
+    "doc/CREED_data.R": {
+      "checksum": "2fd33b67056aaf280ca9337c3febea2a"
+    },
+    "doc/CREED_scores_data.html": {
+      "checksum": "d0fb83cca6ee505a4a684cd7785e68f4"
+    },
+    "doc/CREED_scores_data.qmd": {
+      "checksum": "3b39deee3113aaf5bf7c733c3cc6860a"
+    },
+    "doc/CREED_scores_data.R": {
+      "checksum": "f78bb0991f3de9f9a0f8dfc402dc2ab4"
+    },
+    "doc/measurements_data.html": {
+      "checksum": "4223b94e3805a5cecb49277bb0aa78ae"
+    },
+    "doc/measurements_data.qmd": {
+      "checksum": "374e74fed2843346529beae0761daed0"
+    },
+    "doc/measurements_data.R": {
+      "checksum": "53f3771b0530810131db676b0082681d"
+    },
+    "doc/methods_data.html": {
+      "checksum": "f9e485a45fed18e9cdbb88cf638b6e12"
+    },
+    "doc/methods_data.qmd": {
+      "checksum": "d547d2e7157512cf8ddde8b39439321c"
+    },
+    "doc/methods_data.R": {
+      "checksum": "b7dc9c73493098c3406cf1f3b1f8d4dc"
+    },
+    "doc/references_data.html": {
+      "checksum": "77279041f9cc6f1ff5da9573007c7576"
+    },
+    "doc/references_data.qmd": {
+      "checksum": "1759b5fe6accd0a90a366c47ca0e0601"
+    },
+    "doc/references_data.R": {
+      "checksum": "d843f722069c3ea5aed0d44095586e98"
+    },
+    "doc/samples_data.html": {
+      "checksum": "faa377c786d804271cf53f0aff3dc469"
+    },
+    "doc/samples_data.qmd": {
+      "checksum": "70e9fbc105c87babcdb657a13b93350d"
+    },
+    "doc/samples_data.R": {
+      "checksum": "bdc470f3edf7667de9c7ad006c2f47d1"
+    },
+    "doc/sites_data.html": {
+      "checksum": "d80c992b260ab68fc618bb962748b530"
+    },
+    "doc/sites_data.qmd": {
+      "checksum": "3487e23a8a2b2a78ea850c3f3754ce37"
+    },
+    "doc/sites_data.R": {
+      "checksum": "7ac76f2188cbb44be563096356b48570"
+    },
+    "doc/validation.html": {
+      "checksum": "6d7159c61cff6a223f339a4a0d455b69"
+    },
+    "doc/validation.R": {
+      "checksum": "7a46404372b5b0e52fb0ed1a1d404c1c"
+    },
+    "doc/validation.Rmd": {
+      "checksum": "3e974768c77910ad4e03f0401df7867a"
+    },
+    "inst/extdata/ClassyFire_Taxonomy_2025_02.parquet": {
+      "checksum": "6aae6509f872bf40ce7709809003a3a2"
+    },
+    "inst/extdata/dummy_species.csv": {
+      "checksum": "bd880bcf8936e36b31efb29c0ecb7f54"
+    },
+    "inst/extdata/ecotox_2025_06_12_chemicals.parquet": {
+      "checksum": "7f2f12ba66fbf8907dcf378169d6d653"
+    },
+    "inst/extdata/ecotox_2025_06_12_species.parquet": {
+      "checksum": "c5ac17765d177667ebaa43a4d23f1ee1"
+    },
+    "inst/extdata/IHO_oceans.rds": {
+      "checksum": "18a54e629737be0644ecce5757867348"
+    },
+    "inst/extdata/inst-claude-2025-08-05-methods.parquet": {
+      "checksum": "9351719bae5ef70289eccba9df12a859"
+    },
+    "inst/extdata/quality_parameters.csv": {
+      "checksum": "3968f3508ccf345697b118ca573d299e"
+    },
+    "inst/extdata/quality_parameters.parquet": {
+      "checksum": "0de702169bf8d6fb42e1b065cb35cf14"
+    },
+    "inst/extdata/uberon-full-2026-02-12.obo": {
+      "checksum": "2e0972e7746423495d04aaae12daa519"
+    },
+    "inst/extdata/unit_conversion_factors.csv": {
+      "checksum": "75fde2db2c843c97fa84461eb94229ce"
+    },
+    "LICENSE": {
+      "checksum": "72344df5c0ab3fc65c6230e499b08b33"
+    },
+    "LICENSE.md": {
+      "checksum": "6768ffad99cab6e9c46c9cafaaa006c6"
+    },
+    "man/abbreviate_string.Rd": {
+      "checksum": "1cefb5b7d4415d2237b2e28418f5202f"
+    },
+    "man/altitude_units_vocabulary.Rd": {
+      "checksum": "1795b6a8d7bf0ee71b9ddf0d5e33d5ce"
+    },
+    "man/analytical_protocols_vocabulary.Rd": {
+      "checksum": "b75ec0d27890692ee5be921047b07bf5"
+    },
+    "man/areas_vocabulary.Rd": {
+      "checksum": "7adbc40ddffb0b5a9536b54674243fff"
+    },
+    "man/coordinate_systems_vocabulary.Rd": {
+      "checksum": "80a9f83c83d571a8e857b3c3556e6522"
+    },
+    "man/countries_vocabulary.Rd": {
+      "checksum": "abf3348ae753bd2b8f7f910814ba1fbf"
+    },
+    "man/CREED_choices_vocabulary.Rd": {
+      "checksum": "780cb5bb528e2b222cacd4116d2baf2f"
+    },
+    "man/environ_compartments_sub_vocabulary.Rd": {
+      "checksum": "b56f11d76453acb21d090fbf9ae074d8"
+    },
+    "man/environ_compartments_vocabulary.Rd": {
+      "checksum": "9fc6febfc1425b6da74be37f8fc98076"
+    },
+    "man/export_campaign_zip.Rd": {
+      "checksum": "d0522a38d86d01dd750f083438fec0f6"
+    },
+    "man/extraction_protocols_vocabulary.Rd": {
+      "checksum": "05a513c599ae293f652f10917681c0ac"
+    },
+    "man/fractionation_protocols_vocabulary.Rd": {
+      "checksum": "729f643132ec9a7874729cc4e843c0c0"
+    },
+    "man/gender_vocabulary.Rd": {
+      "checksum": "d40e334afbad1b390c56dd5a12db0a8f"
+    },
+    "man/generate_protocol_id.Rd": {
+      "checksum": "a607bd843af8d9757385383701cd8a2d"
+    },
+    "man/generate_reference_id.Rd": {
+      "checksum": "dfbe21bb1bd94ccd4a3e24b8b48d1b2c"
+    },
+    "man/geographic_features_sub_vocabulary.Rd": {
+      "checksum": "036c12936e689c8cfde69aed0041704a"
+    },
+    "man/geographic_features_vocabulary.Rd": {
+      "checksum": "47b55a2516cf2ccb86df1997be7ff143"
+    },
+    "man/get_dataset_display_name.Rd": {
+      "checksum": "eb1367e66340c4dd208d5a9b1ca81dcf"
+    },
+    "man/initialise_biota_tibble.Rd": {
+      "checksum": "ca714d533ba67c2a9a38db48de2cb55e"
+    },
+    "man/initialise_campaign_tibble.Rd": {
+      "checksum": "87a11f3fe1ebd85ec24e8eac2b9ba7c6"
+    },
+    "man/initialise_compartments_tibble.Rd": {
+      "checksum": "666b89a9b1e59ffc01256e2557388897"
+    },
+    "man/initialise_CREED_data_tibble.Rd": {
+      "checksum": "9bd9341acee0d8e12aad5bbb18dc7c79"
+    },
+    "man/initialise_CREED_scores_tibble.Rd": {
+      "checksum": "578696246509872cd519721ed4586dee"
+    },
+    "man/initialise_measurements_tibble.Rd": {
+      "checksum": "f8087727e842e726501f631b27f2a162"
+    },
+    "man/initialise_methods_tibble.Rd": {
+      "checksum": "7156a190a28ed4c99a934a1c6d770521"
+    },
+    "man/initialise_parameters_tibble.Rd": {
+      "checksum": "2e770dd78adb34118aff6a4678561c78"
+    },
+    "man/initialise_references_tibble.Rd": {
+      "checksum": "8e94668af0544e3d1dc2db10833d054c"
+    },
+    "man/initialise_samples_tibble.Rd": {
+      "checksum": "2575b727e91c27076594becd19b4e5f6"
+    },
+    "man/initialise_sites_tibble.Rd": {
+      "checksum": "95861c5583c204977cb4a38d6098c36f"
+    },
+    "man/lifestage_vocabulary.Rd": {
+      "checksum": "73b643473ac0bda1f3bd8ccb6d989385"
+    },
+    "man/measured_categories_vocabulary.Rd": {
+      "checksum": "c3aa5c6818bbafd8b1e6eb869416b989"
+    },
+    "man/measured_flags_vocabulary.Rd": {
+      "checksum": "52d5a3255c2f882c0c8e44e646e8f0dd"
+    },
+    "man/measured_types_vocabulary.Rd": {
+      "checksum": "48195d49f56bfb78b8aafed34278b0d2"
+    },
+    "man/parameter_types_sub_vocabulary.Rd": {
+      "checksum": "ba8f331cecc3c7f137b8eb0919ae4542"
+    },
+    "man/parameter_types_vocabulary.Rd": {
+      "checksum": "7c1ad6803293eef9e629a8ed7fc5838e"
+    },
+    "man/parameter_unit_vocabulary.Rd": {
+      "checksum": "0b20598f2fcbd5263f66761679900829"
+    },
+    "man/parameters_vocabulary.Rd": {
+      "checksum": "b58b7cc676434b372b1f57cf8c16c882"
+    },
+    "man/protocol_categories_vocabulary.Rd": {
+      "checksum": "9d269399819b633a78ca0f1cdca50bf8"
+    },
+    "man/protocol_options_vocabulary.Rd": {
+      "checksum": "6bec8b985f728af50e53c2ffc88e60d4"
+    },
+    "man/reference_character_limits.Rd": {
+      "checksum": "73a142ecc9aba930f434c85e17d99be8"
+    },
+    "man/sampling_protocols_vocabulary.Rd": {
+      "checksum": "f72e8c02b9fc75f26cfcad533d06858e"
+    },
+    "man/species_groups_vocabulary.Rd": {
+      "checksum": "44d58bbf1914fedbf95ad528fb550f84"
+    },
+    "man/species_names_vocabulary.Rd": {
+      "checksum": "2d48515d37adab7788b31ec614cf0394"
+    },
+    "man/tissue_types_vocabulary.Rd": {
+      "checksum": "0af142520362a809c77413125faeedbf"
+    },
+    "man/uncertainty_types_vocabulary.Rd": {
+      "checksum": "15f79a5aeb3dcf79369bc319e4ad371f"
+    },
+    "Meta/vignette.rds": {
+      "checksum": "b0ee22d89404dd632cbae5bd8d9797db"
+    },
+    "NAMESPACE": {
+      "checksum": "efb8debd3042c63e014184b6c8487a1d"
+    },
+    "NEWS.md": {
+      "checksum": "976ca4e1d78e2ca0a88511e89c20256a"
+    },
+    "pkgdown/extra.css": {
+      "checksum": "f2f38aa6d9130fb6a115c27610b3b6e7"
+    },
+    "R/fct_export.R": {
+      "checksum": "52f824419a3c542a69208a7f0d3127a7"
+    },
+    "R/fct_formats.R": {
+      "checksum": "d61c4d77b48243e43e935a1e55a03ba8"
+    },
+    "R/fct_generate_IDs.R": {
+      "checksum": "36814c81618b4ed2deb087d5807ec8ae"
+    },
+    "README.md": {
+      "checksum": "d0f509afc0f9f716adff40624a9f1e30"
+    },
+    "scratchpad/fct_dm.R": {
+      "checksum": "5d41ace17a3aa1e7d10a78a206d708b7"
+    },
+    "scratchpad/graph.txt": {
+      "checksum": "3d7d453ead4fbdf9112b398c32762757"
+    },
+    "scratchpad/ontologies.R": {
+      "checksum": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "scratchpad/scratchpad.R": {
+      "checksum": "6cd784beafd4b0ac50108c0f6b674563"
+    },
+    "tests/testthat.R": {
+      "checksum": "d3f6cd7073232ddac664f4ad9f97f630"
+    },
+    "tests/testthat/test-fct_export.R": {
+      "checksum": "461bd5fcfbca42908cfe3d4e1adcdb8a"
+    },
+    "tests/testthat/test-fct_formats.R": {
+      "checksum": "349d9dbc5f9e4b5c758cc2728202d2f1"
+    },
+    "tests/testthat/test-fct_generate_IDs.R": {
+      "checksum": "d24451bebf2813da001e4d269227e8ff"
+    },
+    "vignettes/biota_data.html": {
+      "checksum": "9665ae9af9bea5ba9947c8dcca35f7f0"
+    },
+    "vignettes/biota_data.qmd": {
+      "checksum": "0c3d42d20fc8a9fe834695ecd230bcac"
+    },
+    "vignettes/biota_data.R": {
+      "checksum": "fc657ed069150eff6dc8f151fd209134"
+    },
+    "vignettes/campaign_data.qmd": {
+      "checksum": "664a7a208443bdfec8ae57a2e04978eb"
+    },
+    "vignettes/compartments_data.qmd": {
+      "checksum": "5ae53a5bdadc82408f988144d0e19c2d"
+    },
+    "vignettes/CREED_data.qmd": {
+      "checksum": "b6a06181556e06cedf79c69b9f019fb4"
+    },
+    "vignettes/CREED_scores_data.qmd": {
+      "checksum": "15657728bd913b07a4abc47ac88161bc"
+    },
+    "vignettes/measurements_data.qmd": {
+      "checksum": "85cc5ccc13704ea9decbf4e455fd01ec"
+    },
+    "vignettes/methods_data.qmd": {
+      "checksum": "267ed579898980078a8a588dc0cbef4a"
+    },
+    "vignettes/parameters_data.qmd": {
+      "checksum": "d85212d783ccad87a1112feadcee3d37"
+    },
+    "vignettes/parameters_data.R": {
+      "checksum": "de3d026c72fb301602cead2ca4ced88c"
+    },
+    "vignettes/references_data.qmd": {
+      "checksum": "ce1a52381aadef25f441d8ee83ea2c3c"
+    },
+    "vignettes/samples_data.qmd": {
+      "checksum": "930ab8038036952f0134d4b14896a4ba"
+    },
+    "vignettes/sites_data.qmd": {
+      "checksum": "1be7e3bb8f1fd02898c0650243a4ceba"
+    },
+    "vignettes/validation.Rmd": {
+      "checksum": "3e974768c77910ad4e03f0401df7867a"
+    }
+  },
+  "users": null
+}

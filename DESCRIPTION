@@ -14,6 +14,7 @@ Imports:
     dplyr,
     glue,
     ISOcodes,
+    purrr,
     readr,
     stringr,
     tibble,
