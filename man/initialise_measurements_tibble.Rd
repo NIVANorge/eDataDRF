@@ -70,6 +70,8 @@ PARAMETER_TYPE: Classification of the parameter
 MEASURED_TYPE: Type of measurement
 
 MEASUREMENT_COMMENT: Additional notes about the measurement
+
+See \code{vignette("measurements_data")} for more information.
 }
 \seealso{
 Other initialise_tibble: 

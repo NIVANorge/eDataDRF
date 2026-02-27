@@ -889,45 +889,44 @@ altitude_units_vocabulary <- function() {
   c("km", "m", "cm", "mm")
 }
 
-#' Dummy parameters controlled vocabulary
+#' Sampled parameters controlled vocabulary
 #'
-#' Returns comprehensive parameter data combining quality parameters and chemical parameters.
+#' Returns comprehensive parameter data combining quality and chemical parameters.
 #'
 #' @details
 #' Combines quality parameters with chemical parameters from the ClassyFire taxonomy.
-#' Quality parameters are read from dummy_quality_parameters.parquet and chemical
+#' Quality parameters are read from quality_parameters.parquet and chemical
 #' parameters from ClassyFire_Taxonomy_2025_02.parquet. The resulting dataset includes
 #' columns for parameter classification, chemical identifiers (InChIKey, PubChem CID,
 #' CAS RN), and measurement types.
 #'
-#' Note: Quality parameters are currently "dummy" data as a comprehensive validated
-#' list has not yet been compiled.
+#' Note: Quality parameters have not yet been comprehensively validated as we are not
+#' aware of any taxonomy to validate them against.
 #'
 #' Data sources:
 #'
-#' extdata/dummy_quality_parameters.parquet
+#' extdata/quality_parameters.parquet
 #'
 #' extdata/ClassyFire_Taxonomy_2025_02.parquet
 #'
-#' @return A data frame combining quality and chemical parameter data
+#' @return A data frame combining quality and chemical parameter options
 #' @family parameter
 #' @importFrom dplyr mutate arrange bind_rows case_when
 #' @importFrom arrow read_parquet
 #' @export
-# TODO: We call this "dummy" data for the simple reason that I've never looked for or made my own comprehensive list of quality parameters.
-dummy_parameters_vocabulary <- function() {
-  # Read dummy_parameters ----
-  dummy_quality_params <- read_parquet(
+parameters_vocabulary <- function() {
+  # Read quality_parameters.parquet
+  quality_params <- read_parquet(
     file = system.file(
       "extdata",
-      "dummy_quality_parameters.parquet",
+      "quality_parameters.parquet",
       package = "eDataDRF",
       mustWork = TRUE
     )
   ) |>
     mutate(ENTERED_BY = "saw@niva.no")
 
-  # Read and prepare chemical_parameters ----
+  # Read and prepare chemical_parameters
   chemical_parameters <- read_parquet(
     file = system.file(
       "extdata",
@@ -951,7 +950,7 @@ dummy_parameters_vocabulary <- function() {
     )
 
   # Merge datasets ----
-  bind_rows(dummy_quality_params, chemical_parameters)
+  bind_rows(quality_params, chemical_parameters)
 }
 
 #' Parameter types controlled vocabulary
@@ -995,7 +994,7 @@ parameter_types_vocabulary <- function() {
 #' Returns controlled vocabulary options for parameter type subcategories.
 #'
 #' @details
-#' Provides more specific classifications derived from the dummy parameters dataset.
+#' Provides more specific classifications derived from the parameters dataset.
 #' The list is dynamically generated from unique PARAMETER_TYPE_SUB values and includes
 #' options such as:
 #'
@@ -1003,21 +1002,25 @@ parameter_types_vocabulary <- function() {
 #'
 #' Not reported
 #'
-#' All unique sub-types from dummy_parameters_vocabulary() (e.g., Carbon, Inorganic compounds, Organic compounds, etc.)
+#' All unique sub-types from parameters_vocabulary() (e.g., Carbon, Inorganic compounds, Organic compounds, etc.)
 #'
 #' @return A character vector of parameter type subcategory options
 #' @family parameter
 #' @importFrom dplyr select distinct arrange pull
+#' @importFrom purrr prepend
 #' @export
 parameter_types_sub_vocabulary <- function() {
-  dummy_parameters <- dummy_parameters_vocabulary()
+  parameters <- parameters_vocabulary()
 
-  dummy_parameters |>
+  # Rather messy way to include non-data values at the start of the vector
+  parameters |>
     select(PARAMETER_TYPE_SUB) |>
     distinct() |>
-    arrange(PARAMETER_TYPE_SUB) |>
     pull(PARAMETER_TYPE_SUB) |>
-    append(c("Mixture", "Not reported"))
+    setdiff("Other") |>
+    append(c("Mixture")) |>
+    sort() |>
+    prepend(c("Not relevant", "Not reported", "Other"))
 }
 
 #' Measured types controlled vocabulary

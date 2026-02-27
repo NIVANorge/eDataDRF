@@ -26,6 +26,8 @@ SILVER_RELEVANCE: Relevance score at silver standard level
 GOLD_RELIABILITY: Reliability score at gold standard level
 
 GOLD_RELEVANCE: Relevance score at gold standard level
+
+See \code{vignette("CREED_scores_data")} for more information.
 }
 \seealso{
 Other initialise_tibble: 

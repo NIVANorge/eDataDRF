@@ -23,11 +23,13 @@ Not relevant
 Not reported
 
 Other
-
+}
+\section{TODO: Make name less stupid}{
 All IHO ocean region names (e.g., Arctic Ocean, Atlantic Ocean, Baltic Sea, Mediterranean Sea, ...)
 
 Data source: extdata/IHO_oceans.rds
 }
+
 \seealso{
 Other site: 
 \code{\link{altitude_units_vocabulary}()},

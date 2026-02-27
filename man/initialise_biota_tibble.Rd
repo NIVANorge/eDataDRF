@@ -44,6 +44,8 @@ SAMPLE_SPECIES_LIFESTAGE: Life stage of the organism at sampling (mandatory)
 SAMPLE_SPECIES_GENDER: Gender or sex of the sampled organism (mandatory)
 
 BIOTA_COMMENT: Additional notes or comments about the biological sample (optional)
+
+See \code{vignette("biota_data")} for more information.
 }
 \seealso{
 Other initialise_tibble: 

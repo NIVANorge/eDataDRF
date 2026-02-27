@@ -30,8 +30,8 @@ It is expected that most relevant studies will be collecting data on chemical po
 
 # Variables
 
-## Parameter Type - String, controlled, mandatory
-`PARAMETER_TYPE`
+## Parameter Type
+`PARAMETER_TYPE` - String, controlled, mandatory
 
 Parameter type is divided into five classifications and two missing data values. This classification requires a degree of subjective judgement. What makes a chemical a stressor versus a quality parameter is not always clear. However, we anticipate that in most cases this will be uncontroversial. Where this is not the case stressors can still be identified by name/id.
 
@@ -44,17 +44,17 @@ parameter_types_vocabulary()
 ```
 
 `"Not relevant"` -  Use when a type is not applicable to the measured scalar.
-`"Stressor"` - hemical, physical or biological agent causing stress.
+`"Stressor"` - Chemical, physical or biological agent causing stress.
 `"Quality parameter"` - Standard water/environmental quality parameter
 `"Normalisation"` - Parameter used for normalising other measurements        
 `"Background"` - "Natural background level of a parameter"          
 `"Ecological Indicator"` - Parameter is an indicator or metric of ecological concern.
 `"Other"` - Parameter belongs to another category. Please note in comments field.
 
-## Parameter Sub-type - String, controlled, mandatory
-`PARAMETER_TYPE_SUB`
+## Parameter Sub-type
+`PARAMETER_TYPE_SUB` - String, controlled, mandatory
 
-Parameter Sub-type is a further subdivision of [Parameter Type]. The majority of subtypes are chemical classifications from the [ChemOnt/ClassyFire](https://pmc.ncbi.nlm.nih.gov/articles/PMC5096306/) chemical taxonomy; other subtypes are intended for use with quality parameters, stressors measured as mixtures, or other cases where additional details are needed.
+Parameter Sub-type is a further subdivision of [Parameter Type]. The majority of subtypes are chemical classifications from the [ChemOnt/ClassyFire](https://pmc.ncbi.nlm.nih.gov/articles/PMC5096306/) chemical taxonomy; other subtypes are intended for use with quality parameters, stressors measured as mixtures, or other cases where additional details are needed. Existing parameters in the format are already assigned a subtype, new parameters should be assigned to a relevant subtype. 
 
 ### Controlled Vocabulary
 
@@ -64,23 +64,48 @@ Parameter Sub-type is a further subdivision of [Parameter Type]. The majority of
 parameter_types_sub_vocabulary()
 ```
 
-## Parameter Name, controlled, mandatory
-`PARAMETER_NAME`
+## Parameter Name
+`PARAMETER_NAME` - *string, controlled, mandatory*
 
-Parameter name records the reported name of a measured parameter. In the majority of cases 
+Parameter name records the reported name of a measured parameter. In the majority of cases this will be a short-form conventional chemical name; these are, as above taken from [ChemOnt/ClassyFire](https://pmc.ncbi.nlm.nih.gov/articles/PMC5096306/). To maximise standardisation we recommend use of the existing available names rather than entering new ones; this may require some manual validation of CAS codes, InChIKeys, etc. 
+
+Parameter name is currently used as the primary key for the Parameters data table and a foreign key in the Samples and Measurements tables. 
 
 ### Controlled Vocabulary
 
 ```{r}
 #| label: parameter_name
 
-# TODO: Fix me, pleassse
-dummy_parameters_vocabulary() |> dplyr::slice_head(n = 10)
+parameters_vocabulary() |> dplyr::slice_head(n = 20)
 ```
 
-- Typically the common short form name of a parameter, but...
-- We use whatever ClassyFire gives us, I think
-- Currently used as a primary key - this will be replaced with a better system once we get it working
-
 ## Parameter Sub-Name
-`PARAMETER_NAME_SUB`
+`PARAMETER_NAME_SUB` - *string, controlled, optional*
+
+In some cases it may be necessarily to identify parameters at a finer level of detail than is permitted by the above fields - for example, individual wavelengths of ionising radiation. In this case the Parameter Sub-Name field should be used; otherwise it can be left blank.
+
+## InChIKey
+`INCHIKEY_SD` - *String, free, optional*
+
+The [IUPAC International Chemical Identifier (InChI)](https://inchi-trust.info/wp/) is a widely used chemical identifier based on the molecular structure of a chemical. The InChIKey is a 27-character string of letters and seperator characters (e.g., for ethanol: `LFQSCWFLJHTTHZ-UHFFFAOYSA-N`) and has become the a gold-standard chemical identifier. As not all parameters are chemicals, this field has been left as optional, but where chemicals are quantified, it is strongly preferred that an InChIKey be made available. 
+
+
+## PubChem CID
+`PUBCHEM_CID` - *Integer, free, optional*
+
+The PubChem database uses an internal identifier known as the [PubChem Compound Identifier](https://pubchem.ncbi.nlm.nih.gov/search/help_search.html). This is an integer accession number. InChIKeys are strongly preferred for identification, but a PubChem CID can be included if desired for cross-referencing. 
+
+## CAS Registry Number
+`CAS_RN`- *String, free, optional*
+
+The Americal Chemical Society maintains an extensive registry of chemicals. [CAS Registry Numbers](https://www.cas.org/cas-data/cas-registry) are widely used to identify individual chemicals. In some cases, a single substance may have more than one CAS, and not all substances will have a CAS assigned. InChIKeys are strongly preferred for identification, but a CAS RN can be included if desired for cross-referencing. 
+
+## Entered By
+`ENTERED_BY` - *String, free, mandatory*
+
+The name or email address of the user entering data. As many parameters are included as part of the format, this will only be needed if a new parameter is added.
+
+## Parameter Comment
+`PARAMETER_COMMENT` - *String, free, optional*
+
+Space for the recording of any additional notes or comments about the parameter deemed relevant. 

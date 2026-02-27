@@ -38,6 +38,8 @@ SUBSAMPLE: Subsample or replicate identifier
 SUBSAMPLE_ID: Unique identifier for the subsample
 
 SAMPLE_ID: Unique identifier for the sample (Key)
+
+See \code{vignette("samples_data")} for more information.
 }
 \seealso{
 Other initialise_tibble: 

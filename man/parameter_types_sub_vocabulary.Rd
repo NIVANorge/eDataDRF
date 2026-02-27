@@ -13,7 +13,7 @@ A character vector of parameter type subcategory options
 Returns controlled vocabulary options for parameter type subcategories.
 }
 \details{
-Provides more specific classifications derived from the dummy parameters dataset.
+Provides more specific classifications derived from the parameters dataset.
 The list is dynamically generated from unique PARAMETER_TYPE_SUB values and includes
 options such as:
 
@@ -21,13 +21,13 @@ Mixture
 
 Not reported
 
-All unique sub-types from dummy_parameters_vocabulary() (e.g., Carbon, Inorganic compounds, Organic compounds, etc.)
+All unique sub-types from parameters_vocabulary() (e.g., Carbon, Inorganic compounds, Organic compounds, etc.)
 }
 \seealso{
 Other parameter: 
-\code{\link{dummy_parameters_vocabulary}()},
 \code{\link{initialise_parameters_tibble}()},
 \code{\link{measured_types_vocabulary}()},
-\code{\link{parameter_types_vocabulary}()}
+\code{\link{parameter_types_vocabulary}()},
+\code{\link{parameters_vocabulary}()}
 }
 \concept{parameter}

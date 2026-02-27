@@ -52,6 +52,8 @@ EDITION: Edition of the publication
 DOCUMENT_NUMBER: Document or report number
 
 REF_COMMENT: Additional notes about the reference
+
+See \code{vignette("references_data")} for more information.
 }
 \seealso{
 Other initialise_tibble: 

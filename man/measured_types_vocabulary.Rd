@@ -44,10 +44,10 @@ Other
 }
 \seealso{
 Other parameter: 
-\code{\link{dummy_parameters_vocabulary}()},
 \code{\link{initialise_parameters_tibble}()},
 \code{\link{parameter_types_sub_vocabulary}()},
-\code{\link{parameter_types_vocabulary}()}
+\code{\link{parameter_types_vocabulary}()},
+\code{\link{parameters_vocabulary}()}
 
 Other measurement: 
 \code{\link{initialise_measurements_tibble}()},

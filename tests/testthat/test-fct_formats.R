@@ -365,7 +365,7 @@ test_that("reference_character_limits returns named list", {
 
 test_that("dummy_parameters_vocabulary returns data frame", {
   skip_if_not(
-    file.exists("data/dummy_quality_parameters.parquet"),
+    file.exists("data/quality_parameters.parquet"),
     "Data files not available"
   )
 
@@ -378,7 +378,7 @@ test_that("dummy_parameters_vocabulary returns data frame", {
 
 test_that("parameter_types_sub_vocabulary returns character vector", {
   skip_if_not(
-    file.exists("data/dummy_quality_parameters.parquet"),
+    file.exists("data/quality_parameters.parquet"),
     "Data files not available"
   )
 

@@ -25,6 +25,8 @@ PROTOCOL_CATEGORY: Type of protocol (Sampling, Extraction, Fractionation, Analyt
 PROTOCOL_NAME: Standardised name of the protocol
 
 PROTOCOL_COMMENT: Additional notes or details about the protocol
+
+See \code{vignette("methods_data")} for more information.
 }
 \seealso{
 Other initialise_tibble: 

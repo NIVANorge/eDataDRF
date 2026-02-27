@@ -81,7 +81,16 @@ The consensus name (short and long) of a protocol or method used in sampling. Op
 ```{r}
 #| label: protocol-name
 
-protocol_options_vocabulary()
+sampling_protocols_vocabulary()
+
+extraction_protocols_vocabulary()
+
+fractionation_protocols_vocabulary()
+
+analytical_protocols_vocabulary()
+
+# call all of the above functions bound into a single table
+# protocol_options_vocabulary()
 ```
 
 ## Protocol Comment - String, free, optional

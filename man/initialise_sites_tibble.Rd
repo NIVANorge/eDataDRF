@@ -44,6 +44,8 @@ ENTERED_BY: Person or entity who entered the site data
 ENTERED_DATE: Date when the site data was entered
 
 SITE_COMMENT: Additional notes about the site
+
+See \code{vignette("sites_data")} for more information.
 }
 \seealso{
 Other initialise_tibble: 

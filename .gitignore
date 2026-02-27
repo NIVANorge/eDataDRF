@@ -58,3 +58,6 @@ doc/
 
 # Large ontology files
 *.obo
+
+# Claude code
+.claude/

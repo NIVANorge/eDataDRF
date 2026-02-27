@@ -30,6 +30,8 @@ relevant_data: Data or information relevant to assessing the criterion
 score: Assessment score for the criterion
 
 limitations: Identified limitations or concerns for the criterion
+
+See \code{vignette("CREED_data")} for more information.
 }
 \seealso{
 Other initialise_tibble: 

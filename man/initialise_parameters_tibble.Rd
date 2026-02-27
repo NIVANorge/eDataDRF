@@ -36,6 +36,8 @@ CAS_RN: Chemical Abstracts Service Registry Number
 ENTERED_BY: Person or entity who entered the parameter
 
 PARAMETER_COMMENT: Additional notes about the parameter
+
+See \code{vignette("parameters_data")} for more information.
 }
 \seealso{
 Other initialise_tibble: 
@@ -51,10 +53,10 @@ Other initialise_tibble:
 \code{\link{initialise_sites_tibble}()}
 
 Other parameter: 
-\code{\link{dummy_parameters_vocabulary}()},
 \code{\link{measured_types_vocabulary}()},
 \code{\link{parameter_types_sub_vocabulary}()},
-\code{\link{parameter_types_vocabulary}()}
+\code{\link{parameter_types_vocabulary}()},
+\code{\link{parameters_vocabulary}()}
 }
 \concept{initialise_tibble}
 \concept{parameter}
