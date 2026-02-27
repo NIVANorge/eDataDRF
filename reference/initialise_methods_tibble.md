@@ -30,6 +30,10 @@ PROTOCOL_NAME: Standardised name of the protocol
 
 PROTOCOL_COMMENT: Additional notes or details about the protocol
 
+See
+[`vignette("methods_data")`](https://NIVANorge.github.io/eDataDRF/articles/methods_data.md)
+for more information.
+
 ## See also
 
 Other initialise_tibble:

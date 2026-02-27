@@ -43,8 +43,6 @@ Vectors (and sometimes tibbles) of controlled vocabulary
   : Coordinate systems controlled vocabulary
 - [`countries_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/countries_vocabulary.md)
   : Countries controlled vocabulary
-- [`dummy_parameters_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/dummy_parameters_vocabulary.md)
-  : Dummy parameters controlled vocabulary
 - [`environ_compartments_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/environ_compartments_sub_vocabulary.md)
   : Environmental compartment sub-categories controlled vocabulary
 - [`environ_compartments_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/environ_compartments_vocabulary.md)
@@ -73,6 +71,8 @@ Vectors (and sometimes tibbles) of controlled vocabulary
   : Parameter types controlled vocabulary
 - [`parameter_unit_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_unit_vocabulary.md)
   : Parameter units and conversion factors vocabulary
+- [`parameters_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameters_vocabulary.md)
+  : Sampled parameters controlled vocabulary
 - [`protocol_categories_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_categories_vocabulary.md)
   : Protocol categories controlled vocabulary
 - [`protocol_options_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_options_vocabulary.md)

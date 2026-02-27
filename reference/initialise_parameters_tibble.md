@@ -43,6 +43,10 @@ ENTERED_BY: Person or entity who entered the parameter
 
 PARAMETER_COMMENT: Additional notes about the parameter
 
+See
+[`vignette("parameters_data")`](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.md)
+for more information.
+
 ## See also
 
 Other initialise_tibble:
@@ -58,7 +62,7 @@ Other initialise_tibble:
 [`initialise_sites_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_sites_tibble.md)
 
 Other parameter:
-[`dummy_parameters_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/dummy_parameters_vocabulary.md),
 [`measured_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/measured_types_vocabulary.md),
 [`parameter_types_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_types_sub_vocabulary.md),
-[`parameter_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_types_vocabulary.md)
+[`parameter_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_types_vocabulary.md),
+[`parameters_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameters_vocabulary.md)

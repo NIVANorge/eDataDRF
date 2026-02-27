@@ -33,6 +33,10 @@ score: Assessment score for the criterion
 
 limitations: Identified limitations or concerns for the criterion
 
+See
+[`vignette("CREED_data")`](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.md)
+for more information.
+
 ## See also
 
 Other initialise_tibble:

@@ -25,7 +25,6 @@
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/areas_vocabulary.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/coordinate_systems_vocabulary.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/countries_vocabulary.html</loc></url>
-<url><loc>https://NIVANorge.github.io/eDataDRF/reference/dummy_parameters_vocabulary.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/environ_compartments_sub_vocabulary.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/environ_compartments_vocabulary.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/export_campaign_zip.html</loc></url>
@@ -56,6 +55,7 @@
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/parameter_types_sub_vocabulary.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/parameter_types_vocabulary.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/parameter_unit_vocabulary.html</loc></url>
+<url><loc>https://NIVANorge.github.io/eDataDRF/reference/parameters_vocabulary.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/protocol_categories_vocabulary.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/protocol_options_vocabulary.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/reference_character_limits.html</loc></url>

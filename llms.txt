@@ -4,7 +4,7 @@ The eData Data Reporting Format is a format for the standardisation of
 data on pollutant occurence in the environment. By converting this data
 to a single, consistent format, it makes it easier to validate, compare,
 analyse, and reuse, in line with the [FAIR
-principles](https://www.go-fair.org/fair-principles/)
+principles](https://www.go-fair.org/fair-principles/).
 
 These data are typically published as concentrations (in water) or mass
 ratios (in soil, sludge and biota). Fully interpreting these
@@ -97,8 +97,6 @@ Tables are listed below:
 | [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html)     | Records assessment purpose statement, relevant data summarised from above tables, relevance/reliability scores, and final assessment of data quality. |                                                                                             |
 | [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | \[description needed\]                                                                                                                                |                                                                                             |
 
-Table of tables in the eData format, their purpose, and comments.
-
 ``` mermaid
 erDiagram
     Campaign ||--o{ Measurements : "Belongs"
@@ -183,8 +181,6 @@ Vectors (and sometimes tibbles) of controlled vocabulary
   : Coordinate systems controlled vocabulary
 - [`countries_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/countries_vocabulary.md)
   : Countries controlled vocabulary
-- [`dummy_parameters_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/dummy_parameters_vocabulary.md)
-  : Dummy parameters controlled vocabulary
 - [`environ_compartments_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/environ_compartments_sub_vocabulary.md)
   : Environmental compartment sub-categories controlled vocabulary
 - [`environ_compartments_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/environ_compartments_vocabulary.md)
@@ -213,6 +209,8 @@ Vectors (and sometimes tibbles) of controlled vocabulary
   : Parameter types controlled vocabulary
 - [`parameter_unit_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_unit_vocabulary.md)
   : Parameter units and conversion factors vocabulary
+- [`parameters_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameters_vocabulary.md)
+  : Sampled parameters controlled vocabulary
 - [`protocol_categories_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_categories_vocabulary.md)
   : Protocol categories controlled vocabulary
 - [`protocol_options_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_options_vocabulary.md)

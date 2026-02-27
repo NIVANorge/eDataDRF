@@ -26,6 +26,8 @@ Not reported
 
 Other
 
+## TODO: Make name less stupid
+
 All IHO ocean region names (e.g., Arctic Ocean, Atlantic Ocean, Baltic
 Sea, Mediterranean Sea, ...)
 

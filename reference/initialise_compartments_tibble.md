@@ -28,6 +28,10 @@ ENVIRON_COMPARTMENT_SUB: Specific sub-category within the compartment
 MEASURED_CATEGORY: Measurement context (External Media, Internal to
 Organism, Surface of Organism)
 
+See
+[`vignette("compartments_data")`](https://NIVANorge.github.io/eDataDRF/articles/compartments_data.md)
+for more information.
+
 ## See also
 
 Other initialise_tibble:

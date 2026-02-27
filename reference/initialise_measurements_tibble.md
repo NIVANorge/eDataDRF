@@ -74,6 +74,10 @@ MEASURED_TYPE: Type of measurement
 
 MEASUREMENT_COMMENT: Additional notes about the measurement
 
+See
+[`vignette("measurements_data")`](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.md)
+for more information.
+
 ## See also
 
 Other initialise_tibble:

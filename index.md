@@ -4,7 +4,7 @@ The eData Data Reporting Format is a format for the standardisation of
 data on pollutant occurence in the environment. By converting this data
 to a single, consistent format, it makes it easier to validate, compare,
 analyse, and reuse, in line with the [FAIR
-principles](https://www.go-fair.org/fair-principles/)
+principles](https://www.go-fair.org/fair-principles/).
 
 These data are typically published as concentrations (in water) or mass
 ratios (in soil, sludge and biota). Fully interpreting these
@@ -96,8 +96,6 @@ Tables are listed below:
 | [Measurements](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.html) | Records measured values, units, uncertainty, sample size, and methods associated with a given sample                                                  |                                                                                             |
 | [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html)     | Records assessment purpose statement, relevant data summarised from above tables, relevance/reliability scores, and final assessment of data quality. |                                                                                             |
 | [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | \[description needed\]                                                                                                                                |                                                                                             |
-
-Table of tables in the eData format, their purpose, and comments.
 
 ``` mermaid
 erDiagram

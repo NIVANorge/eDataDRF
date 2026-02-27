@@ -36,7 +36,9 @@ ENTERED_DATE: Date when the data was entered into the system (mandatory)
 CAMPAIGN_COMMENT: Additional notes or comments about the campaign
 (optional)
 
-See `vignette("campaign-data")` for more information.
+See
+[`vignette("campaign_data")`](https://NIVANorge.github.io/eDataDRF/articles/campaign_data.md)
+for more information.
 
 ## See also
 

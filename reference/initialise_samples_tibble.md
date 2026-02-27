@@ -43,6 +43,10 @@ SUBSAMPLE_ID: Unique identifier for the subsample
 
 SAMPLE_ID: Unique identifier for the sample (Key)
 
+See
+[`vignette("samples_data")`](https://NIVANorge.github.io/eDataDRF/articles/samples_data.md)
+for more information.
+
 ## See also
 
 Other initialise_tibble:

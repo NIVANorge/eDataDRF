@@ -27,9 +27,9 @@ infrastructure developed by chemists.
 
 ## Variables
 
-### Parameter Type - String, controlled, mandatory
+### Parameter Type
 
-`PARAMETER_TYPE`
+`PARAMETER_TYPE` - String, controlled, mandatory
 
 Parameter type is divided into five classifications and two missing data
 values. This classification requires a degree of subjective judgement.
@@ -48,7 +48,7 @@ parameter_types_vocabulary()
 ```
 
 `"Not relevant"` - Use when a type is not applicable to the measured
-scalar. `"Stressor"` - hemical, physical or biological agent causing
+scalar. `"Stressor"` - Chemical, physical or biological agent causing
 stress. `"Quality parameter"` - Standard water/environmental quality
 parameter `"Normalisation"` - Parameter used for normalising other
 measurements  
@@ -57,74 +57,89 @@ measurements
 ecological concern. `"Other"` - Parameter belongs to another category.
 Please note in comments field.
 
-### Parameter Sub-type - String, controlled, mandatory
+### Parameter Sub-type
 
-`PARAMETER_TYPE_SUB`
+`PARAMETER_TYPE_SUB` - String, controlled, mandatory
 
-Parameter Sub-type is a further subdivision of \[Parameter Type\]. The
-majority of subtypes are chemical classifications from the
+Parameter Sub-type is a further subdivision of [Parameter
+Type](#parameter-type). The majority of subtypes are chemical
+classifications from the
 [ChemOnt/ClassyFire](https://pmc.ncbi.nlm.nih.gov/articles/PMC5096306/)
 chemical taxonomy; other subtypes are intended for use with quality
 parameters, stressors measured as mixtures, or other cases where
-additional details are needed.
+additional details are needed. Existing parameters in the format are
+already assigned a subtype, new parameters should be assigned to a
+relevant subtype.
 
 #### Controlled Vocabulary
 
 ``` r
 parameter_types_sub_vocabulary()
-#>  [1] "Acetylides"                               
-#>  [2] "Alkaloids and derivatives"                
-#>  [3] "Allenes"                                  
-#>  [4] "Benzenoids"                               
-#>  [5] "Carbon"                                   
-#>  [6] "Conductivity"                             
-#>  [7] "Dissolved oxygen"                         
-#>  [8] "Homogeneous metal compounds"              
-#>  [9] "Homogeneous non-metal compounds"          
-#> [10] "Hydrocarbon derivatives"                  
-#> [11] "Hydrocarbons"                             
-#> [12] "Inorganic salts"                          
-#> [13] "Lignans, neolignans and related compounds"
-#> [14] "Lipids and lipid-like molecules"          
-#> [15] "Miscellaneous inorganic compounds"        
-#> [16] "Mixed metal/non-metal compounds"          
-#> [17] "Nucleosides, nucleotides, and analogues"  
-#> [18] "Nutrient"                                 
-#> [19] "Organic 1,3-dipolar compounds"            
-#> [20] "Organic Polymers"                         
-#> [21] "Organic acids and derivatives"            
-#> [22] "Organic nitrogen compounds"               
-#> [23] "Organic oxygen compounds"                 
-#> [24] "Organic salts"                            
-#> [25] "Organohalogen compounds"                  
-#> [26] "Organoheterocyclic compounds"             
-#> [27] "Organometallic compounds"                 
-#> [28] "Organophosphorus compounds"               
-#> [29] "Organosulfur compounds"                   
-#> [30] "Other"                                    
-#> [31] "Phenylpropanoids and polyketides"         
-#> [32] "Salinity"                                 
-#> [33] "Temperature"                              
-#> [34] "Total organic carbon"                     
-#> [35] "Turbidity"                                
-#> [36] "pH"                                       
-#> [37] "Mixture"                                  
-#> [38] "Not reported"
+#> Warning: `prepend()` was deprecated in purrr 1.0.0.
+#> ℹ Please use append(after = 0) instead.
+#> ℹ The deprecated feature was likely used in the eDataDRF package.
+#>   Please report the issue to the authors.
+#>  [1] "Not relevant"                             
+#>  [2] "Not reported"                             
+#>  [3] "Other"                                    
+#>  [4] "Acetylides"                               
+#>  [5] "Alkaloids and derivatives"                
+#>  [6] "Allenes"                                  
+#>  [7] "Benzenoids"                               
+#>  [8] "Carbon"                                   
+#>  [9] "Conductivity"                             
+#> [10] "Dissolved oxygen"                         
+#> [11] "Homogeneous metal compounds"              
+#> [12] "Homogeneous non-metal compounds"          
+#> [13] "Hydrocarbon derivatives"                  
+#> [14] "Hydrocarbons"                             
+#> [15] "Inorganic salts"                          
+#> [16] "Lignans, neolignans and related compounds"
+#> [17] "Lipids and lipid-like molecules"          
+#> [18] "Miscellaneous inorganic compounds"        
+#> [19] "Mixed metal/non-metal compounds"          
+#> [20] "Mixture"                                  
+#> [21] "Nucleosides, nucleotides, and analogues"  
+#> [22] "Nutrient"                                 
+#> [23] "Organic 1,3-dipolar compounds"            
+#> [24] "Organic acids and derivatives"            
+#> [25] "Organic nitrogen compounds"               
+#> [26] "Organic oxygen compounds"                 
+#> [27] "Organic Polymers"                         
+#> [28] "Organic salts"                            
+#> [29] "Organohalogen compounds"                  
+#> [30] "Organoheterocyclic compounds"             
+#> [31] "Organometallic compounds"                 
+#> [32] "Organophosphorus compounds"               
+#> [33] "Organosulfur compounds"                   
+#> [34] "pH"                                       
+#> [35] "Phenylpropanoids and polyketides"         
+#> [36] "Salinity"                                 
+#> [37] "Temperature"                              
+#> [38] "Total organic carbon"                     
+#> [39] "Turbidity"
 ```
 
-### Parameter Name, controlled, mandatory
+### Parameter Name
 
-`PARAMETER_NAME`
+`PARAMETER_NAME` - *string, controlled, mandatory*
 
 Parameter name records the reported name of a measured parameter. In the
-majority of cases
+majority of cases this will be a short-form conventional chemical name;
+these are, as above taken from
+[ChemOnt/ClassyFire](https://pmc.ncbi.nlm.nih.gov/articles/PMC5096306/).
+To maximise standardisation we recommend use of the existing available
+names rather than entering new ones; this may require some manual
+validation of CAS codes, InChIKeys, etc.
+
+Parameter name is currently used as the primary key for the Parameters
+data table and a foreign key in the Samples and Measurements tables.
 
 #### Controlled Vocabulary
 
 ``` r
-# TODO: Fix me, pleassse
-dummy_parameters_vocabulary() |> dplyr::slice_head(n = 10)
-#> # A tibble: 10 × 9
+parameters_vocabulary() |> dplyr::slice_head(n = 20)
+#> # A tibble: 20 × 9
 #>    PARAMETER_TYPE    PARAMETER_NAME      PARAMETER_TYPE_SUB MEASURED_TYPE CAS_RN
 #>    <chr>             <chr>               <chr>              <chr>         <chr> 
 #>  1 Quality parameter pH                  pH                 Physical par… <NA>  
@@ -137,15 +152,76 @@ dummy_parameters_vocabulary() |> dplyr::slice_head(n = 10)
 #>  8 Quality parameter Alkalinity          Other              Concentration <NA>  
 #>  9 Quality parameter Hardness            Other              Concentration <NA>  
 #> 10 Quality parameter Chlorophyll a       Other              Concentration 479-6…
+#> 11 Quality parameter Total suspended so… Other              Concentration <NA>  
+#> 12 Quality parameter Biochemical oxygen… Other              Concentration <NA>  
+#> 13 Quality parameter Chemical oxygen de… Other              Concentration <NA>  
+#> 14 Quality parameter Nitrate             Nutrient           Concentration 14797…
+#> 15 Quality parameter Nitrite             Nutrient           Concentration 14797…
+#> 16 Quality parameter Ammonia             Nutrient           Concentration 7664-…
+#> 17 Quality parameter Total nitrogen      Nutrient           Concentration <NA>  
+#> 18 Quality parameter Phosphate           Nutrient           Concentration 14265…
+#> 19 Quality parameter Total phosphorus    Nutrient           Concentration <NA>  
+#> 20 Quality parameter Redox potential     Other              Physical par… <NA>  
 #> # ℹ 4 more variables: PUBCHEM_CID <int>, INCHIKEY_SD <chr>, ENTERED_BY <chr>,
 #> #   PARAMETER_NAME_SUB <chr>
 ```
 
-- Typically the common short form name of a parameter, but…
-- We use whatever ClassyFire gives us, I think
-- Currently used as a primary key - this will be replaced with a better
-  system once we get it working
-
 ### Parameter Sub-Name
 
-`PARAMETER_NAME_SUB`
+`PARAMETER_NAME_SUB` - *string, controlled, optional*
+
+In some cases it may be necessarily to identify parameters at a finer
+level of detail than is permitted by the above fields - for example,
+individual wavelengths of ionising radiation. In this case the Parameter
+Sub-Name field should be used; otherwise it can be left blank.
+
+### InChIKey
+
+`INCHIKEY_SD` - *String, free, optional*
+
+The [IUPAC International Chemical Identifier
+(InChI)](https://inchi-trust.info/wp/) is a widely used chemical
+identifier based on the molecular structure of a chemical. The InChIKey
+is a 27-character string of letters and seperator characters (e.g., for
+ethanol: `LFQSCWFLJHTTHZ-UHFFFAOYSA-N`) and has become the a
+gold-standard chemical identifier. As not all parameters are chemicals,
+this field has been left as optional, but where chemicals are
+quantified, it is strongly preferred that an InChIKey be made available.
+
+### PubChem CID
+
+`PUBCHEM_CID` - *Integer, free, optional*
+
+The PubChem database uses an internal identifier known as the [PubChem
+Compound
+Identifier](https://pubchem.ncbi.nlm.nih.gov/search/help_search.html).
+This is an integer accession number. InChIKeys are strongly preferred
+for identification, but a PubChem CID can be included if desired for
+cross-referencing.
+
+### CAS Registry Number
+
+`CAS_RN`- *String, free, optional*
+
+The Americal Chemical Society maintains an extensive registry of
+chemicals. [CAS Registry
+Numbers](https://www.cas.org/cas-data/cas-registry) are widely used to
+identify individual chemicals. In some cases, a single substance may
+have more than one CAS, and not all substances will have a CAS assigned.
+InChIKeys are strongly preferred for identification, but a CAS RN can be
+included if desired for cross-referencing.
+
+### Entered By
+
+`ENTERED_BY` - *String, free, mandatory*
+
+The name or email address of the user entering data. As many parameters
+are included as part of the format, this will only be needed if a new
+parameter is added.
+
+### Parameter Comment
+
+`PARAMETER_COMMENT` - *String, free, optional*
+
+Space for the recording of any additional notes or comments about the
+parameter deemed relevant.

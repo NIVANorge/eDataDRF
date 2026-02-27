@@ -48,6 +48,10 @@ ENTERED_DATE: Date when the site data was entered
 
 SITE_COMMENT: Additional notes about the site
 
+See
+[`vignette("sites_data")`](https://NIVANorge.github.io/eDataDRF/articles/sites_data.md)
+for more information.
+
 ## See also
 
 Other initialise_tibble:

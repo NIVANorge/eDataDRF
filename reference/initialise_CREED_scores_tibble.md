@@ -29,6 +29,10 @@ GOLD_RELIABILITY: Reliability score at gold standard level
 
 GOLD_RELEVANCE: Relevance score at gold standard level
 
+See
+[`vignette("CREED_scores_data")`](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.md)
+for more information.
+
 ## See also
 
 Other initialise_tibble:

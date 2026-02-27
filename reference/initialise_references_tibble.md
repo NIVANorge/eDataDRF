@@ -56,6 +56,10 @@ DOCUMENT_NUMBER: Document or report number
 
 REF_COMMENT: Additional notes about the reference
 
+See
+[`vignette("references_data")`](https://NIVANorge.github.io/eDataDRF/articles/references_data.md)
+for more information.
+
 ## See also
 
 Other initialise_tibble:

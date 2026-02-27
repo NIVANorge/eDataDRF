@@ -83,9 +83,9 @@
 <p>It is expected that most relevant studies will be collecting data on chemical pollutants in the environment. Non-chemicals are accomodated by the format, but they cannot necessarily be as well-characterised as chemicals, where we are able to take advantage of the high-quality infrastructure developed by chemists.</p>
 </section><section class="section level2"><h2 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
 </h2>
-<section class="level2"><h3 id="parameter-type---string-controlled-mandatory">Parameter Type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#parameter-type---string-controlled-mandatory"></a>
+<section class="level2"><h3 id="parameter-type">Parameter Type<a class="anchor" aria-label="anchor" href="#parameter-type"></a>
 </h3>
-<p><code>PARAMETER_TYPE</code></p>
+<p><code>PARAMETER_TYPE</code> - String, controlled, mandatory</p>
 <p>Parameter type is divided into five classifications and two missing data values. This classification requires a degree of subjective judgement. What makes a chemical a stressor versus a quality parameter is not always clear. However, we anticipate that in most cases this will be uncontroversial. Where this is not the case stressors can still be identified by name/id.</p>
 <section class="level3"><h4 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
 </h4>
@@ -96,66 +96,71 @@
 <span><span class="co">#&gt; [4] "Normalisation"        "Background"           "Ecological Indicator"</span></span>
 <span><span class="co">#&gt; [7] "Other"</span></span></code></pre></div>
 </div>
-<p><code>"Not relevant"</code> - Use when a type is not applicable to the measured scalar. <code>"Stressor"</code> - hemical, physical or biological agent causing stress. <code>"Quality parameter"</code> - Standard water/environmental quality parameter <code>"Normalisation"</code> - Parameter used for normalising other measurements<br><code>"Background"</code> - “Natural background level of a parameter”<br><code>"Ecological Indicator"</code> - Parameter is an indicator or metric of ecological concern. <code>"Other"</code> - Parameter belongs to another category. Please note in comments field.</p>
-</section></section><section class="level2"><h3 id="parameter-sub-type---string-controlled-mandatory">Parameter Sub-type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#parameter-sub-type---string-controlled-mandatory"></a>
+<p><code>"Not relevant"</code> - Use when a type is not applicable to the measured scalar. <code>"Stressor"</code> - Chemical, physical or biological agent causing stress. <code>"Quality parameter"</code> - Standard water/environmental quality parameter <code>"Normalisation"</code> - Parameter used for normalising other measurements<br><code>"Background"</code> - “Natural background level of a parameter”<br><code>"Ecological Indicator"</code> - Parameter is an indicator or metric of ecological concern. <code>"Other"</code> - Parameter belongs to another category. Please note in comments field.</p>
+</section></section><section class="level2"><h3 id="parameter-sub-type">Parameter Sub-type<a class="anchor" aria-label="anchor" href="#parameter-sub-type"></a>
 </h3>
-<p><code>PARAMETER_TYPE_SUB</code></p>
-<p>Parameter Sub-type is a further subdivision of [Parameter Type]. The majority of subtypes are chemical classifications from the <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5096306/" class="external-link">ChemOnt/ClassyFire</a> chemical taxonomy; other subtypes are intended for use with quality parameters, stressors measured as mixtures, or other cases where additional details are needed.</p>
+<p><code>PARAMETER_TYPE_SUB</code> - String, controlled, mandatory</p>
+<p>Parameter Sub-type is a further subdivision of <a href="#parameter-type">Parameter Type</a>. The majority of subtypes are chemical classifications from the <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5096306/" class="external-link">ChemOnt/ClassyFire</a> chemical taxonomy; other subtypes are intended for use with quality parameters, stressors measured as mixtures, or other cases where additional details are needed. Existing parameters in the format are already assigned a subtype, new parameters should be assigned to a relevant subtype.</p>
 <section class="level3"><h4 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
 </h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/parameter_types_sub_vocabulary.html">parameter_types_sub_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt;  [1] "Acetylides"                               </span></span>
-<span><span class="co">#&gt;  [2] "Alkaloids and derivatives"                </span></span>
-<span><span class="co">#&gt;  [3] "Allenes"                                  </span></span>
-<span><span class="co">#&gt;  [4] "Benzenoids"                               </span></span>
-<span><span class="co">#&gt;  [5] "Carbon"                                   </span></span>
-<span><span class="co">#&gt;  [6] "Conductivity"                             </span></span>
-<span><span class="co">#&gt;  [7] "Dissolved oxygen"                         </span></span>
-<span><span class="co">#&gt;  [8] "Homogeneous metal compounds"              </span></span>
-<span><span class="co">#&gt;  [9] "Homogeneous non-metal compounds"          </span></span>
-<span><span class="co">#&gt; [10] "Hydrocarbon derivatives"                  </span></span>
-<span><span class="co">#&gt; [11] "Hydrocarbons"                             </span></span>
-<span><span class="co">#&gt; [12] "Inorganic salts"                          </span></span>
-<span><span class="co">#&gt; [13] "Lignans, neolignans and related compounds"</span></span>
-<span><span class="co">#&gt; [14] "Lipids and lipid-like molecules"          </span></span>
-<span><span class="co">#&gt; [15] "Miscellaneous inorganic compounds"        </span></span>
-<span><span class="co">#&gt; [16] "Mixed metal/non-metal compounds"          </span></span>
-<span><span class="co">#&gt; [17] "Nucleosides, nucleotides, and analogues"  </span></span>
-<span><span class="co">#&gt; [18] "Nutrient"                                 </span></span>
-<span><span class="co">#&gt; [19] "Organic 1,3-dipolar compounds"            </span></span>
-<span><span class="co">#&gt; [20] "Organic Polymers"                         </span></span>
-<span><span class="co">#&gt; [21] "Organic acids and derivatives"            </span></span>
-<span><span class="co">#&gt; [22] "Organic nitrogen compounds"               </span></span>
-<span><span class="co">#&gt; [23] "Organic oxygen compounds"                 </span></span>
-<span><span class="co">#&gt; [24] "Organic salts"                            </span></span>
-<span><span class="co">#&gt; [25] "Organohalogen compounds"                  </span></span>
-<span><span class="co">#&gt; [26] "Organoheterocyclic compounds"             </span></span>
-<span><span class="co">#&gt; [27] "Organometallic compounds"                 </span></span>
-<span><span class="co">#&gt; [28] "Organophosphorus compounds"               </span></span>
-<span><span class="co">#&gt; [29] "Organosulfur compounds"                   </span></span>
-<span><span class="co">#&gt; [30] "Other"                                    </span></span>
-<span><span class="co">#&gt; [31] "Phenylpropanoids and polyketides"         </span></span>
-<span><span class="co">#&gt; [32] "Salinity"                                 </span></span>
-<span><span class="co">#&gt; [33] "Temperature"                              </span></span>
-<span><span class="co">#&gt; [34] "Total organic carbon"                     </span></span>
-<span><span class="co">#&gt; [35] "Turbidity"                                </span></span>
-<span><span class="co">#&gt; [36] "pH"                                       </span></span>
-<span><span class="co">#&gt; [37] "Mixture"                                  </span></span>
-<span><span class="co">#&gt; [38] "Not reported"</span></span></code></pre></div>
+<span><span class="co">#&gt; Warning: `prepend()` was deprecated in purrr 1.0.0.</span></span>
+<span><span class="co">#&gt; ℹ Please use append(after = 0) instead.</span></span>
+<span><span class="co">#&gt; ℹ The deprecated feature was likely used in the eDataDRF package.</span></span>
+<span><span class="co">#&gt;   Please report the issue to the authors.</span></span>
+<span><span class="co">#&gt;  [1] "Not relevant"                             </span></span>
+<span><span class="co">#&gt;  [2] "Not reported"                             </span></span>
+<span><span class="co">#&gt;  [3] "Other"                                    </span></span>
+<span><span class="co">#&gt;  [4] "Acetylides"                               </span></span>
+<span><span class="co">#&gt;  [5] "Alkaloids and derivatives"                </span></span>
+<span><span class="co">#&gt;  [6] "Allenes"                                  </span></span>
+<span><span class="co">#&gt;  [7] "Benzenoids"                               </span></span>
+<span><span class="co">#&gt;  [8] "Carbon"                                   </span></span>
+<span><span class="co">#&gt;  [9] "Conductivity"                             </span></span>
+<span><span class="co">#&gt; [10] "Dissolved oxygen"                         </span></span>
+<span><span class="co">#&gt; [11] "Homogeneous metal compounds"              </span></span>
+<span><span class="co">#&gt; [12] "Homogeneous non-metal compounds"          </span></span>
+<span><span class="co">#&gt; [13] "Hydrocarbon derivatives"                  </span></span>
+<span><span class="co">#&gt; [14] "Hydrocarbons"                             </span></span>
+<span><span class="co">#&gt; [15] "Inorganic salts"                          </span></span>
+<span><span class="co">#&gt; [16] "Lignans, neolignans and related compounds"</span></span>
+<span><span class="co">#&gt; [17] "Lipids and lipid-like molecules"          </span></span>
+<span><span class="co">#&gt; [18] "Miscellaneous inorganic compounds"        </span></span>
+<span><span class="co">#&gt; [19] "Mixed metal/non-metal compounds"          </span></span>
+<span><span class="co">#&gt; [20] "Mixture"                                  </span></span>
+<span><span class="co">#&gt; [21] "Nucleosides, nucleotides, and analogues"  </span></span>
+<span><span class="co">#&gt; [22] "Nutrient"                                 </span></span>
+<span><span class="co">#&gt; [23] "Organic 1,3-dipolar compounds"            </span></span>
+<span><span class="co">#&gt; [24] "Organic acids and derivatives"            </span></span>
+<span><span class="co">#&gt; [25] "Organic nitrogen compounds"               </span></span>
+<span><span class="co">#&gt; [26] "Organic oxygen compounds"                 </span></span>
+<span><span class="co">#&gt; [27] "Organic Polymers"                         </span></span>
+<span><span class="co">#&gt; [28] "Organic salts"                            </span></span>
+<span><span class="co">#&gt; [29] "Organohalogen compounds"                  </span></span>
+<span><span class="co">#&gt; [30] "Organoheterocyclic compounds"             </span></span>
+<span><span class="co">#&gt; [31] "Organometallic compounds"                 </span></span>
+<span><span class="co">#&gt; [32] "Organophosphorus compounds"               </span></span>
+<span><span class="co">#&gt; [33] "Organosulfur compounds"                   </span></span>
+<span><span class="co">#&gt; [34] "pH"                                       </span></span>
+<span><span class="co">#&gt; [35] "Phenylpropanoids and polyketides"         </span></span>
+<span><span class="co">#&gt; [36] "Salinity"                                 </span></span>
+<span><span class="co">#&gt; [37] "Temperature"                              </span></span>
+<span><span class="co">#&gt; [38] "Total organic carbon"                     </span></span>
+<span><span class="co">#&gt; [39] "Turbidity"</span></span></code></pre></div>
 </div>
-</section></section><section class="level2"><h3 id="parameter-name-controlled-mandatory">Parameter Name, controlled, mandatory<a class="anchor" aria-label="anchor" href="#parameter-name-controlled-mandatory"></a>
+</section></section><section class="level2"><h3 id="parameter-name">Parameter Name<a class="anchor" aria-label="anchor" href="#parameter-name"></a>
 </h3>
-<p><code>PARAMETER_NAME</code></p>
-<p>Parameter name records the reported name of a measured parameter. In the majority of cases</p>
+<p><code>PARAMETER_NAME</code> - <em>string, controlled, mandatory</em></p>
+<p>Parameter name records the reported name of a measured parameter. In the majority of cases this will be a short-form conventional chemical name; these are, as above taken from <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5096306/" class="external-link">ChemOnt/ClassyFire</a>. To maximise standardisation we recommend use of the existing available names rather than entering new ones; this may require some manual validation of CAS codes, InChIKeys, etc.</p>
+<p>Parameter name is currently used as the primary key for the Parameters data table and a foreign key in the Samples and Measurements tables.</p>
 <section class="level3"><h4 id="controlled-vocabulary-2">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-2"></a>
 </h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># TODO: Fix me, pleassse</span></span>
-<span><span class="fu"><a href="../reference/dummy_parameters_vocabulary.html">dummy_parameters_vocabulary</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html" class="external-link">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 10 × 9</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/parameters_vocabulary.html">parameters_vocabulary</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html" class="external-link">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 20 × 9</span></span>
 <span><span class="co">#&gt;    PARAMETER_TYPE    PARAMETER_NAME      PARAMETER_TYPE_SUB MEASURED_TYPE CAS_RN</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;             &lt;chr&gt;               &lt;chr&gt;              &lt;chr&gt;         &lt;chr&gt; </span></span>
 <span><span class="co">#&gt;  1 Quality parameter pH                  pH                 Physical par… &lt;NA&gt;  </span></span>
@@ -168,16 +173,43 @@
 <span><span class="co">#&gt;  8 Quality parameter Alkalinity          Other              Concentration &lt;NA&gt;  </span></span>
 <span><span class="co">#&gt;  9 Quality parameter Hardness            Other              Concentration &lt;NA&gt;  </span></span>
 <span><span class="co">#&gt; 10 Quality parameter Chlorophyll a       Other              Concentration 479-6…</span></span>
+<span><span class="co">#&gt; 11 Quality parameter Total suspended so… Other              Concentration &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt; 12 Quality parameter Biochemical oxygen… Other              Concentration &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt; 13 Quality parameter Chemical oxygen de… Other              Concentration &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt; 14 Quality parameter Nitrate             Nutrient           Concentration 14797…</span></span>
+<span><span class="co">#&gt; 15 Quality parameter Nitrite             Nutrient           Concentration 14797…</span></span>
+<span><span class="co">#&gt; 16 Quality parameter Ammonia             Nutrient           Concentration 7664-…</span></span>
+<span><span class="co">#&gt; 17 Quality parameter Total nitrogen      Nutrient           Concentration &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt; 18 Quality parameter Phosphate           Nutrient           Concentration 14265…</span></span>
+<span><span class="co">#&gt; 19 Quality parameter Total phosphorus    Nutrient           Concentration &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt; 20 Quality parameter Redox potential     Other              Physical par… &lt;NA&gt;  </span></span>
 <span><span class="co">#&gt; # ℹ 4 more variables: PUBCHEM_CID &lt;int&gt;, INCHIKEY_SD &lt;chr&gt;, ENTERED_BY &lt;chr&gt;,</span></span>
 <span><span class="co">#&gt; #   PARAMETER_NAME_SUB &lt;chr&gt;</span></span></code></pre></div>
 </div>
-<ul>
-<li>Typically the common short form name of a parameter, but…</li>
-<li>We use whatever ClassyFire gives us, I think</li>
-<li>Currently used as a primary key - this will be replaced with a better system once we get it working</li>
-</ul></section></section><section class="level2"><h3 id="parameter-sub-name">Parameter Sub-Name<a class="anchor" aria-label="anchor" href="#parameter-sub-name"></a>
+</section></section><section class="level2"><h3 id="parameter-sub-name">Parameter Sub-Name<a class="anchor" aria-label="anchor" href="#parameter-sub-name"></a>
 </h3>
-<p><code>PARAMETER_NAME_SUB</code></p>
+<p><code>PARAMETER_NAME_SUB</code> - <em>string, controlled, optional</em></p>
+<p>In some cases it may be necessarily to identify parameters at a finer level of detail than is permitted by the above fields - for example, individual wavelengths of ionising radiation. In this case the Parameter Sub-Name field should be used; otherwise it can be left blank.</p>
+</section><section class="level2"><h3 id="inchikey">InChIKey<a class="anchor" aria-label="anchor" href="#inchikey"></a>
+</h3>
+<p><code>INCHIKEY_SD</code> - <em>String, free, optional</em></p>
+<p>The <a href="https://inchi-trust.info/wp/" class="external-link">IUPAC International Chemical Identifier (InChI)</a> is a widely used chemical identifier based on the molecular structure of a chemical. The InChIKey is a 27-character string of letters and seperator characters (e.g., for ethanol: <code>LFQSCWFLJHTTHZ-UHFFFAOYSA-N</code>) and has become the a gold-standard chemical identifier. As not all parameters are chemicals, this field has been left as optional, but where chemicals are quantified, it is strongly preferred that an InChIKey be made available.</p>
+</section><section class="level2"><h3 id="pubchem-cid">PubChem CID<a class="anchor" aria-label="anchor" href="#pubchem-cid"></a>
+</h3>
+<p><code>PUBCHEM_CID</code> - <em>Integer, free, optional</em></p>
+<p>The PubChem database uses an internal identifier known as the <a href="https://pubchem.ncbi.nlm.nih.gov/search/help_search.html" class="external-link">PubChem Compound Identifier</a>. This is an integer accession number. InChIKeys are strongly preferred for identification, but a PubChem CID can be included if desired for cross-referencing.</p>
+</section><section class="level2"><h3 id="cas-registry-number">CAS Registry Number<a class="anchor" aria-label="anchor" href="#cas-registry-number"></a>
+</h3>
+<p><code>CAS_RN</code>- <em>String, free, optional</em></p>
+<p>The Americal Chemical Society maintains an extensive registry of chemicals. <a href="https://www.cas.org/cas-data/cas-registry" class="external-link">CAS Registry Numbers</a> are widely used to identify individual chemicals. In some cases, a single substance may have more than one CAS, and not all substances will have a CAS assigned. InChIKeys are strongly preferred for identification, but a CAS RN can be included if desired for cross-referencing.</p>
+</section><section class="level2"><h3 id="entered-by">Entered By<a class="anchor" aria-label="anchor" href="#entered-by"></a>
+</h3>
+<p><code>ENTERED_BY</code> - <em>String, free, mandatory</em></p>
+<p>The name or email address of the user entering data. As many parameters are included as part of the format, this will only be needed if a new parameter is added.</p>
+</section><section class="level2"><h3 id="parameter-comment">Parameter Comment<a class="anchor" aria-label="anchor" href="#parameter-comment"></a>
+</h3>
+<p><code>PARAMETER_COMMENT</code> - <em>String, free, optional</em></p>
+<p>Space for the recording of any additional notes or comments about the parameter deemed relevant.</p>
 </section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);

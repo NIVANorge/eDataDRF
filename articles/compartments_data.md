@@ -108,6 +108,12 @@ environ_compartments_sub_vocabulary()
 
 `MEASURED_CATEGORY`
 
+Where biotic compartments are sampled, it is important to understand
+whether samples are taken internally, externally, or at the interface
+between organisms. In the case of non-biotic compartments, this can be
+marked “External”. This variable is a candidate for being moved to the
+Biota table in future.
+
 #### Controlled Vocabulary
 
 ``` r
