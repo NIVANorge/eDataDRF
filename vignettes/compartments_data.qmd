@@ -30,8 +30,8 @@ initialise_compartments_tibble()
 
 # Variables
 
-## Environmental Compartment - String, controlled, mandatory
-`ENVIRON_COMPARTMENT`
+## Environmental Compartment
+`ENVIRON_COMPARTMENT` - *string, controlled, mandatory*
 
 Identifies which of the earth's spheres the sample originated from: aquatic (hydrosphere), air (atmospheric), terrestrial (geosphere), or biota (biosphere). Although largely comprehensive, it's possible that some samples may not fit well into this category. 
 
@@ -43,8 +43,8 @@ Identifies which of the earth's spheres the sample originated from: aquatic (hyd
 environ_compartments_vocabulary()
 ```
 
-## Environmental Sub-Compartment - String, controlled, mandatory
-`ENVIRON_COMPARTMENT_SUB`
+## Environmental Sub-Compartment
+`ENVIRON_COMPARTMENT_SUB` - *string, controlled, mandatory*
 
 Environmental compartments have been sub-divided into a series of subcompartments. No taxonomy or ontology was consulted in creation of this controlled vocabulary, although soil subcompartments were based on the [World Reference Base for Soil Resources](https://isric.org/explore/wrb).   
 
@@ -56,8 +56,8 @@ Environmental compartments have been sub-divided into a series of subcompartment
 environ_compartments_sub_vocabulary()
 ```
 
-## Measured Category - String, controlled, mandatory
-`MEASURED_CATEGORY`
+## Measured Category
+`MEASURED_CATEGORY` - *string, controlled, mandatory*
 
 Where biotic compartments are sampled, it is important to understand whether samples are taken internally, externally, or at the interface between organisms. In the case of non-biotic compartments, this can be marked "External". This variable is a candidate for being moved to the Biota table in future.
 

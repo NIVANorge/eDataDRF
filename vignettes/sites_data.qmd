@@ -1,8 +1,7 @@
----
-title: "Sites data"
-subtitle: "Records site coordinates, land use, country/ocean"
-vignette: >
-  %\VignetteIndexEntry{sites_data}
+## Site Comment
+`SITE_COMMENT` - *string, free, optional*andatory*, mandatory*
+
+Unit associated with [altitude value](#altitude-value).VignetteIndexEntry{sites_data}
   %\VignetteEngine{quarto::html}
   %\VignetteEncoding{UTF-8}
 knitr:
@@ -74,7 +73,7 @@ These are summarised in the table below
 | Shrubland | Areas dominated by shrubs | D00 | 3.2 | | |
 | Grassland | Areas dominated by grasses | E00 | | | |
 | Bare land and lichen/moss | Sparsely vegetated areas | F00 | 3.3 | | |
-| Other | Specify details in [SITE_COMMENT](#site-comment---string-free-optional) | | | | |
+| Other | Specify details in [SITE_COMMENT](#site-comment) | | | | |
 
 
 ### Controlled Vocabulary
@@ -114,7 +113,7 @@ countries_vocabulary()
 ## IHO Ocean/Sea - String, controlled, mandatory
 `OCEAN_IHO`
 
-As with countries, oceans are not necessarily the best geographical identifiers, but they provide useful, human-readable data for understanding sampling sites. The [International Hydrographic Organisation's version 3 Sea Areas](https://doi.org/10.14284/323) dataset is used to provide a reasonably-standardised set of names for seas and oceans. As with [Country](#iso-country---string-controlled-mandatory), Ocean is mandatory but should be marked as "Not relevant" when the site is on land.
+As with countries, oceans are not necessarily the best geographical identifiers, but they provide useful, human-readable data for understanding sampling sites. The [International Hydrographic Organisation's version 3 Sea Areas](https://doi.org/10.14284/323) dataset is used to provide a reasonably-standardised set of names for seas and oceans. As with [ISO Country](#iso-country), Ocean is mandatory but should be marked as "Not relevant" when the site is on land.
 
 Where sampling sites are located in national territory but also in or near (intentionally vague) an ocean or sea, we recommend recording both variables.
 
@@ -129,12 +128,12 @@ areas_vocabulary()
 ## Latitude - Numeric, free, mandatory
 `LATITUDE`
 
-Site latitude (north-south position, also known as northing, between -90.0° and +90.0°) is recorded in decimal decimal degrees. Arbitrary precision (within the bounds of R's numeric data type) is possible, but the degree of precision reported (i.e. decimal places) should be appropriate to the actual sampling. 3 decimal places corresponds to approximately 111 m accuracy, and 4 to within 11 m. Under some circumstances this can cause somewhat confusing combinations of coordinates and site types; for example, a site may be reported as being on land but with coordinates that are clearly in the ocean. In future, we plan to include an explicit metric of spatial uncertainty. A latitude is always associated with a [Coordinate Reference System](#coordinate-reference-system---string-controlled-mandatory).
+Site latitude (north-south position, also known as northing, between -90.0° and +90.0°) is recorded in decimal decimal degrees. Arbitrary precision (within the bounds of R's numeric data type) is possible, but the degree of precision reported (i.e. decimal places) should be appropriate to the actual sampling. 3 decimal places corresponds to approximately 111 m accuracy, and 4 to within 11 m. Under some circumstances this can cause somewhat confusing combinations of coordinates and site types; for example, a site may be reported as being on land but with coordinates that are clearly in the ocean. In future, we plan to include an explicit metric of spatial uncertainty. A latitude is always associated with a [Coordinate Reference System](#coordinate-reference-system).
 
 ## Longitude - Numeric, free, mandatory
 `LONGITUDE`
 
-Site longitude (east-west position, also known as easting, between -180.0° and +180.0°) is recorded in decimal decimal degrees. See [Latitude](#latitude---numeric-free-mandatory) for further details. A longitude is always associated with a [Coordinate Reference System](#coordinate-reference-system---string-controlled-mandatory).
+Site longitude (east-west position, also known as easting, between -180.0° and +180.0°) is recorded in decimal decimal degrees. See [Latitude](#latitude) for further details. A longitude is always associated with a [Coordinate Reference System](#coordinate-reference-system).
 
 ## Coordinate Reference System - String, controlled, mandatory
 `SITE_COORDINATE_SYSTEM`
@@ -154,7 +153,7 @@ coordinate_systems_vocabulary(common_only = TRUE)
 ## Altitude Value - Numeric, free, mandatory
 `ALTITUDE_VALUE`
 
-Altitude value above or below sea level, including depth of water sampling (but *not* depth of ice or sediment cores). This data is frequently not available for sampling sites, in which case it can be reported as 0. Associated with an [altitude unit](#altitude-unit---string-controlled-mandatory).
+Altitude value above or below sea level, including depth of water sampling (but *not* depth of ice or sediment cores). This data is frequently not available for sampling sites, in which case it can be reported as 0. Associated with an [altitude unit](#altitude-unit).
 
 ## Altitude Unit - String, controlled, mandatory
 `ALTITUDE_UNIT`
