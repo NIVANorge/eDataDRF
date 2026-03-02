@@ -8,8 +8,8 @@ Format and variables for each table in the eData DRF
   data](https://NIVANorge.github.io/eDataDRF/articles/campaign_data.md):
 - [Reference
   data](https://NIVANorge.github.io/eDataDRF/articles/references_data.md):
-- [UNKNOWN
-  TITLE](https://NIVANorge.github.io/eDataDRF/articles/sites_data.md):
+- [Sites
+  data](https://NIVANorge.github.io/eDataDRF/articles/sites_data.md):
 - [Parameters
   data](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.md):
 - [Compartments

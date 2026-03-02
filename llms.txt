@@ -176,7 +176,7 @@ Vectors (and sometimes tibbles) of controlled vocabulary
 - [`analytical_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/analytical_protocols_vocabulary.md)
   : Analytical protocols controlled vocabulary
 - [`areas_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/areas_vocabulary.md)
-  : Ocean areas controlled vocabulary
+  : Ocean controlled vocabulary (wrapper for ocean_vocabulary())
 - [`coordinate_systems_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/coordinate_systems_vocabulary.md)
   : Coordinate systems controlled vocabulary
 - [`countries_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/countries_vocabulary.md)
@@ -203,6 +203,8 @@ Vectors (and sometimes tibbles) of controlled vocabulary
   : Measurement flags controlled vocabulary
 - [`measured_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/measured_types_vocabulary.md)
   : Measured types controlled vocabulary
+- [`ocean_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/ocean_vocabulary.md)
+  : Ocean controlled vocabulary
 - [`parameter_types_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_types_sub_vocabulary.md)
   : Parameter type sub-categories controlled vocabulary
 - [`parameter_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_types_vocabulary.md)
@@ -264,8 +266,8 @@ Format and variables for each table in the eData DRF
   data](https://NIVANorge.github.io/eDataDRF/articles/campaign_data.md):
 - [Reference
   data](https://NIVANorge.github.io/eDataDRF/articles/references_data.md):
-- [UNKNOWN
-  TITLE](https://NIVANorge.github.io/eDataDRF/articles/sites_data.md):
+- [Sites
+  data](https://NIVANorge.github.io/eDataDRF/articles/sites_data.md):
 - [Parameters
   data](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.md):
 - [Compartments
