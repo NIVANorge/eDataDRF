@@ -36,9 +36,9 @@ initialise_compartments_tibble()
 
 ## Variables
 
-### Environmental Compartment - String, controlled, mandatory
+### Environmental Compartment
 
-`ENVIRON_COMPARTMENT`
+`ENVIRON_COMPARTMENT` - *string, controlled, mandatory*
 
 Identifies which of the earth’s spheres the sample originated from:
 aquatic (hydrosphere), air (atmospheric), terrestrial (geosphere), or
@@ -53,9 +53,9 @@ environ_compartments_vocabulary()
 #> [6] "Not reported" "Other"
 ```
 
-### Environmental Sub-Compartment - String, controlled, mandatory
+### Environmental Sub-Compartment
 
-`ENVIRON_COMPARTMENT_SUB`
+`ENVIRON_COMPARTMENT_SUB` - *string, controlled, mandatory*
 
 Environmental compartments have been sub-divided into a series of
 subcompartments. No taxonomy or ontology was consulted in creation of
@@ -104,9 +104,9 @@ environ_compartments_sub_vocabulary()
 #>       "Biota, Other"
 ```
 
-### Measured Category - String, controlled, mandatory
+### Measured Category
 
-`MEASURED_CATEGORY`
+`MEASURED_CATEGORY` - *string, controlled, mandatory*
 
 Where biotic compartments are sampled, it is important to understand
 whether samples are taken internally, externally, or at the interface

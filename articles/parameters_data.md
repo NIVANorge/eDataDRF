@@ -29,7 +29,7 @@ infrastructure developed by chemists.
 
 ### Parameter Type
 
-`PARAMETER_TYPE` - String, controlled, mandatory
+`PARAMETER_TYPE` - *string, controlled, mandatory*
 
 Parameter type is divided into five classifications and two missing data
 values. This classification requires a degree of subjective judgement.
@@ -59,7 +59,7 @@ Please note in comments field.
 
 ### Parameter Sub-type
 
-`PARAMETER_TYPE_SUB` - String, controlled, mandatory
+`PARAMETER_TYPE_SUB` - *string, controlled, mandatory*
 
 Parameter Sub-type is a further subdivision of [Parameter
 Type](#parameter-type). The majority of subtypes are chemical
@@ -177,7 +177,7 @@ Sub-Name field should be used; otherwise it can be left blank.
 
 ### InChIKey
 
-`INCHIKEY_SD` - *String, free, optional*
+`INCHIKEY_SD` - *string, free, optional*
 
 The [IUPAC International Chemical Identifier
 (InChI)](https://inchi-trust.info/wp/) is a widely used chemical
@@ -201,7 +201,7 @@ cross-referencing.
 
 ### CAS Registry Number
 
-`CAS_RN`- *String, free, optional*
+`CAS_RN`- *string, free, optional*
 
 The Americal Chemical Society maintains an extensive registry of
 chemicals. [CAS Registry
@@ -213,7 +213,7 @@ included if desired for cross-referencing.
 
 ### Entered By
 
-`ENTERED_BY` - *String, free, mandatory*
+`ENTERED_BY` - *string, free, mandatory*
 
 The name or email address of the user entering data. As many parameters
 are included as part of the format, this will only be needed if a new
@@ -221,7 +221,7 @@ parameter is added.
 
 ### Parameter Comment
 
-`PARAMETER_COMMENT` - *String, free, optional*
+`PARAMETER_COMMENT` - *string, free, optional*
 
 Space for the recording of any additional notes or comments about the
 parameter deemed relevant.

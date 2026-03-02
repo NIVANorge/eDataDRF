@@ -85,7 +85,7 @@
 </h2>
 <section class="level2"><h3 id="parameter-type">Parameter Type<a class="anchor" aria-label="anchor" href="#parameter-type"></a>
 </h3>
-<p><code>PARAMETER_TYPE</code> - String, controlled, mandatory</p>
+<p><code>PARAMETER_TYPE</code> - <em>string, controlled, mandatory</em></p>
 <p>Parameter type is divided into five classifications and two missing data values. This classification requires a degree of subjective judgement. What makes a chemical a stressor versus a quality parameter is not always clear. However, we anticipate that in most cases this will be uncontroversial. Where this is not the case stressors can still be identified by name/id.</p>
 <section class="level3"><h4 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
 </h4>
@@ -99,7 +99,7 @@
 <p><code>"Not relevant"</code> - Use when a type is not applicable to the measured scalar. <code>"Stressor"</code> - Chemical, physical or biological agent causing stress. <code>"Quality parameter"</code> - Standard water/environmental quality parameter <code>"Normalisation"</code> - Parameter used for normalising other measurements<br><code>"Background"</code> - “Natural background level of a parameter”<br><code>"Ecological Indicator"</code> - Parameter is an indicator or metric of ecological concern. <code>"Other"</code> - Parameter belongs to another category. Please note in comments field.</p>
 </section></section><section class="level2"><h3 id="parameter-sub-type">Parameter Sub-type<a class="anchor" aria-label="anchor" href="#parameter-sub-type"></a>
 </h3>
-<p><code>PARAMETER_TYPE_SUB</code> - String, controlled, mandatory</p>
+<p><code>PARAMETER_TYPE_SUB</code> - <em>string, controlled, mandatory</em></p>
 <p>Parameter Sub-type is a further subdivision of <a href="#parameter-type">Parameter Type</a>. The majority of subtypes are chemical classifications from the <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5096306/" class="external-link">ChemOnt/ClassyFire</a> chemical taxonomy; other subtypes are intended for use with quality parameters, stressors measured as mixtures, or other cases where additional details are needed. Existing parameters in the format are already assigned a subtype, new parameters should be assigned to a relevant subtype.</p>
 <section class="level3"><h4 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
 </h4>
@@ -192,7 +192,7 @@
 <p>In some cases it may be necessarily to identify parameters at a finer level of detail than is permitted by the above fields - for example, individual wavelengths of ionising radiation. In this case the Parameter Sub-Name field should be used; otherwise it can be left blank.</p>
 </section><section class="level2"><h3 id="inchikey">InChIKey<a class="anchor" aria-label="anchor" href="#inchikey"></a>
 </h3>
-<p><code>INCHIKEY_SD</code> - <em>String, free, optional</em></p>
+<p><code>INCHIKEY_SD</code> - <em>string, free, optional</em></p>
 <p>The <a href="https://inchi-trust.info/wp/" class="external-link">IUPAC International Chemical Identifier (InChI)</a> is a widely used chemical identifier based on the molecular structure of a chemical. The InChIKey is a 27-character string of letters and seperator characters (e.g., for ethanol: <code>LFQSCWFLJHTTHZ-UHFFFAOYSA-N</code>) and has become the a gold-standard chemical identifier. As not all parameters are chemicals, this field has been left as optional, but where chemicals are quantified, it is strongly preferred that an InChIKey be made available.</p>
 </section><section class="level2"><h3 id="pubchem-cid">PubChem CID<a class="anchor" aria-label="anchor" href="#pubchem-cid"></a>
 </h3>
@@ -200,15 +200,15 @@
 <p>The PubChem database uses an internal identifier known as the <a href="https://pubchem.ncbi.nlm.nih.gov/search/help_search.html" class="external-link">PubChem Compound Identifier</a>. This is an integer accession number. InChIKeys are strongly preferred for identification, but a PubChem CID can be included if desired for cross-referencing.</p>
 </section><section class="level2"><h3 id="cas-registry-number">CAS Registry Number<a class="anchor" aria-label="anchor" href="#cas-registry-number"></a>
 </h3>
-<p><code>CAS_RN</code>- <em>String, free, optional</em></p>
+<p><code>CAS_RN</code>- <em>string, free, optional</em></p>
 <p>The Americal Chemical Society maintains an extensive registry of chemicals. <a href="https://www.cas.org/cas-data/cas-registry" class="external-link">CAS Registry Numbers</a> are widely used to identify individual chemicals. In some cases, a single substance may have more than one CAS, and not all substances will have a CAS assigned. InChIKeys are strongly preferred for identification, but a CAS RN can be included if desired for cross-referencing.</p>
 </section><section class="level2"><h3 id="entered-by">Entered By<a class="anchor" aria-label="anchor" href="#entered-by"></a>
 </h3>
-<p><code>ENTERED_BY</code> - <em>String, free, mandatory</em></p>
+<p><code>ENTERED_BY</code> - <em>string, free, mandatory</em></p>
 <p>The name or email address of the user entering data. As many parameters are included as part of the format, this will only be needed if a new parameter is added.</p>
 </section><section class="level2"><h3 id="parameter-comment">Parameter Comment<a class="anchor" aria-label="anchor" href="#parameter-comment"></a>
 </h3>
-<p><code>PARAMETER_COMMENT</code> - <em>String, free, optional</em></p>
+<p><code>PARAMETER_COMMENT</code> - <em>string, free, optional</em></p>
 <p>Space for the recording of any additional notes or comments about the parameter deemed relevant.</p>
 </section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

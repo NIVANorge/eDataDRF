@@ -55,9 +55,9 @@ reference_character_limits()
 
 ## Variables
 
-### Reference ID - String, auto-generated, mandatory
+### Reference ID
 
-`REFERENCE_ID`
+`REFERENCE_ID` - *string, auto-generated, mandatory*
 
 The reference’s primary key, automatically generated from YEAR, AUTHOR,
 and TITLE using
@@ -75,114 +75,111 @@ as follows:
 Reference ID is also a foreign key in [Measurement
 data](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.md).
 
-### Reference Type - String, controlled, mandatory
+### Reference Type
 
-`REFERENCE_TYPE`
+`REFERENCE_TYPE` - *string, controlled, mandatory*
 
-### Author - String, free, mandatory
+### Author
 
-`AUTHOR`
+`AUTHOR` - *string, free, mandatory*
 
 The full authors list from the referenced object, formatted as
 `Lastname1, Firstname1; Lastname2, Firstname2; etc.`.
 
-### Title - String, free, mandatory
+### Title
 
-`TITLE`
+`TITLE` - *string, free, mandatory*
 
 The title of the publication or document.
 
-### Year - Integer, free, mandatory
+### Year
 
-`YEAR`
+`YEAR` - *integer, free, mandatory*
 
 The year of publication or the most recent update to the referenced
 object.
 
-### Access Date - Date (ISO), free, mandatory
+### Access Date
 
-`ACCESS_DATE`
+`ACCESS_DATE` - *date (ISO), free, mandatory*
 
 The ISO date when the referenced object was accessed.
 
-### Journal Name - String, free, conditional on reference type
+### Journal Name
 
-`PERIODICAL_JOURNAL`
-
-The name of the journal or periodical a journal article was published
-in. Conditionally mandatory if [Reference
-Type](#reference-type---string-controlled-mandatory) is
+`PERIODICAL_JOURNAL` - *string, free, conditional on reference type* The
+name of the journal or periodical a journal article was published in.
+Conditionally mandatory if [Reference Type](#reference-type) is
 `Journal Article`.
 
-### Volume - Numeric, free, optional
+### Volume
 
-`VOLUME`
+`VOLUME` - *numeric, free, optional*
 
 The volume of a named journal an article was published in. Optional.
 
-### Issue - Numeric, free, optional
+### Issue
 
-`ISSUE`
+`ISSUE` - *numeric, free, optional*
 
 The issue of a named journal an article was published in. Optional.
 
-### Publisher - String, free, conditional on reference type
+### Publisher
 
-`PUBLISHER`
+`PUBLISHER` - *string, free, conditional on reference type*
 
 The publisher of a reference object. Conditionally mandatory if
 [Reference Type](#reference-type---string-controlled-mandatory) is
 `Book` or `Report`.
 
-### Institution - String, free, conditional on reference type
+### Institution
 
-`INSTITUTION`
+`INSTITUTION` - *string, free, conditional on reference type*
 
 The primary instition responsible for a referenced object. Conditionally
 mandatory if [Reference
 Type](#reference-type---string-controlled-mandatory) is `Report`.
 
-### DOI - String, free, optional
+### DOI
 
-`DOI`
-
-If available, the Digital Object Identifier associated with a reference
-object. Optional, but the preferred identifier when avaiable.
+`DOI` - *String, free, optional* If available, the Digital Object
+Identifier associated with a reference object. Optional, but the
+preferred identifier when avaiable.
 
 See the website of the [doi Foundation](https://www.doi.org/) for more
 information.
 
-### URL - String, free, optional
+### URL
 
-`URL`
+`URL` - *String, free, optional*
 
 A Uniform Resource Locator (URL, i.e. web address) linking to the
 referenced object, if available. Optional.
 
-### ISBN ISSN - String, free, optional
+### ISBN ISSN
 
-`ISBN_ISSN`
+`ISBN_ISSN` - *String, free, optional*
 
 An International Standard Book Number (ISBN, 10 or 13 digits) or
 International Standard Serial Number (ISSN, 8 digits) associated with a
 book or periodical. Optional.
 
-### Edition - String, free, optional
+### Edition
 
-`EDITION`
+`EDITION` - *String, free, optional*
 
 The edition of a referenced object, if relevant. Optional.
 
-### Document Number - String, free, optional
+### Document Number
 
-`DOCUMENT_NUMBER`
+`DOCUMENT_NUMBER` - *String, free, optional*
 
 A document or report number, typically available for reports and other
 official documents. Optional.
 
-### Reference Comment - String, free, optional
+### Reference Comment
 
-`REF_COMMENT`
+`REF_COMMENT` - *String, free, optional*
 
 Space for the recording of any additional notes or comments about the
 reference deemed relevant.

@@ -111,9 +111,9 @@
 </div>
 </section><section class="section level2"><h2 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
 </h2>
-<section class="level2"><h3 id="reference-id---string-auto-generated-mandatory">Reference ID - String, auto-generated, mandatory<a class="anchor" aria-label="anchor" href="#reference-id---string-auto-generated-mandatory"></a>
+<section class="level2"><h3 id="reference-id">Reference ID<a class="anchor" aria-label="anchor" href="#reference-id"></a>
 </h3>
-<p><code>REFERENCE_ID</code></p>
+<p><code>REFERENCE_ID</code> - <em>string, auto-generated, mandatory</em></p>
 <p>The reference’s primary key, automatically generated from YEAR, AUTHOR, and TITLE using <code><a href="../reference/generate_reference_id.html">generate_reference_id()</a></code>, as follows:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="downlit sourceCode r">
@@ -124,70 +124,68 @@
 <span><span class="co"># )</span></span></code></pre></div>
 </div>
 <p>Reference ID is also a foreign key in <a href="measurements_data.html">Measurement data</a>.</p>
-</section><section class="level2"><h3 id="reference-type---string-controlled-mandatory">Reference Type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#reference-type---string-controlled-mandatory"></a>
+</section><section class="level2"><h3 id="reference-type">Reference Type<a class="anchor" aria-label="anchor" href="#reference-type"></a>
 </h3>
-<p><code>REFERENCE_TYPE</code></p>
+<p><code>REFERENCE_TYPE</code> - <em>string, controlled, mandatory</em></p>
 <!-- Type of publication (Journal Article, Report, Dataset, etc.). -->
-</section><section class="level2"><h3 id="author---string-free-mandatory">Author - String, free, mandatory<a class="anchor" aria-label="anchor" href="#author---string-free-mandatory"></a>
+</section><section class="level2"><h3 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a>
 </h3>
-<p><code>AUTHOR</code></p>
+<p><code>AUTHOR</code> - <em>string, free, mandatory</em></p>
 <p>The full authors list from the referenced object, formatted as <code>Lastname1, Firstname1; Lastname2, Firstname2; etc.</code>.</p>
-</section><section class="level2"><h3 id="title---string-free-mandatory">Title - String, free, mandatory<a class="anchor" aria-label="anchor" href="#title---string-free-mandatory"></a>
+</section><section class="level2"><h3 id="title">Title<a class="anchor" aria-label="anchor" href="#title"></a>
 </h3>
-<p><code>TITLE</code></p>
+<p><code>TITLE</code> - <em>string, free, mandatory</em></p>
 <p>The title of the publication or document.</p>
-</section><section class="level2"><h3 id="year---integer-free-mandatory">Year - Integer, free, mandatory<a class="anchor" aria-label="anchor" href="#year---integer-free-mandatory"></a>
+</section><section class="level2"><h3 id="year">Year<a class="anchor" aria-label="anchor" href="#year"></a>
 </h3>
-<p><code>YEAR</code></p>
+<p><code>YEAR</code> - <em>integer, free, mandatory</em></p>
 <p>The year of publication or the most recent update to the referenced object.</p>
-</section><section class="level2"><h3 id="access-date---date-iso-free-mandatory">Access Date - Date (ISO), free, mandatory<a class="anchor" aria-label="anchor" href="#access-date---date-iso-free-mandatory"></a>
+</section><section class="level2"><h3 id="access-date">Access Date<a class="anchor" aria-label="anchor" href="#access-date"></a>
 </h3>
-<p><code>ACCESS_DATE</code></p>
+<p><code>ACCESS_DATE</code> - <em>date (ISO), free, mandatory</em></p>
 <p>The ISO date when the referenced object was accessed.</p>
-</section><section class="level2"><h3 id="journal-name---string-free-conditional-on-reference-type">Journal Name - String, free, conditional on reference type<a class="anchor" aria-label="anchor" href="#journal-name---string-free-conditional-on-reference-type"></a>
+</section><section class="level2"><h3 id="journal-name">Journal Name<a class="anchor" aria-label="anchor" href="#journal-name"></a>
 </h3>
-<p><code>PERIODICAL_JOURNAL</code></p>
-<p>The name of the journal or periodical a journal article was published in. Conditionally mandatory if <a href="#reference-type---string-controlled-mandatory">Reference Type</a> is <code>Journal Article</code>.</p>
-</section><section class="level2"><h3 id="volume---numeric-free-optional">Volume - Numeric, free, optional<a class="anchor" aria-label="anchor" href="#volume---numeric-free-optional"></a>
+<p><code>PERIODICAL_JOURNAL</code> - <em>string, free, conditional on reference type</em> The name of the journal or periodical a journal article was published in. Conditionally mandatory if <a href="#reference-type">Reference Type</a> is <code>Journal Article</code>.</p>
+</section><section class="level2"><h3 id="volume">Volume<a class="anchor" aria-label="anchor" href="#volume"></a>
 </h3>
-<p><code>VOLUME</code></p>
+<p><code>VOLUME</code> - <em>numeric, free, optional</em></p>
 <p>The volume of a named journal an article was published in. Optional.</p>
-</section><section class="level2"><h3 id="issue---numeric-free-optional">Issue - Numeric, free, optional<a class="anchor" aria-label="anchor" href="#issue---numeric-free-optional"></a>
+</section><section class="level2"><h3 id="issue">Issue<a class="anchor" aria-label="anchor" href="#issue"></a>
 </h3>
-<p><code>ISSUE</code></p>
+<p><code>ISSUE</code> - <em>numeric, free, optional</em></p>
 <p>The issue of a named journal an article was published in. Optional.</p>
-</section><section class="level2"><h3 id="publisher---string-free-conditional-on-reference-type">Publisher - String, free, conditional on reference type<a class="anchor" aria-label="anchor" href="#publisher---string-free-conditional-on-reference-type"></a>
+</section><section class="level2"><h3 id="publisher">Publisher<a class="anchor" aria-label="anchor" href="#publisher"></a>
 </h3>
-<p><code>PUBLISHER</code></p>
+<p><code>PUBLISHER</code> - <em>string, free, conditional on reference type</em></p>
 <p>The publisher of a reference object. Conditionally mandatory if <a href="#reference-type---string-controlled-mandatory">Reference Type</a> is <code>Book</code> or <code>Report</code>.</p>
-</section><section class="level2"><h3 id="institution---string-free-conditional-on-reference-type">Institution - String, free, conditional on reference type<a class="anchor" aria-label="anchor" href="#institution---string-free-conditional-on-reference-type"></a>
+</section><section class="level2"><h3 id="institution">Institution<a class="anchor" aria-label="anchor" href="#institution"></a>
 </h3>
-<p><code>INSTITUTION</code></p>
+<p><code>INSTITUTION</code> - <em>string, free, conditional on reference type</em></p>
 <p>The primary instition responsible for a referenced object. Conditionally mandatory if <a href="#reference-type---string-controlled-mandatory">Reference Type</a> is <code>Report</code>.</p>
-</section><section class="level2"><h3 id="doi---string-free-optional">DOI - String, free, optional<a class="anchor" aria-label="anchor" href="#doi---string-free-optional"></a>
+</section><section class="level2"><h3 id="doi">DOI<a class="anchor" aria-label="anchor" href="#doi"></a>
 </h3>
-<p><code>DOI</code></p>
-<p>If available, the Digital Object Identifier associated with a reference object. Optional, but the preferred identifier when avaiable.</p>
+<p><code>DOI</code> - <em>String, free, optional</em> If available, the Digital Object Identifier associated with a reference object. Optional, but the preferred identifier when avaiable.</p>
 <p>See the website of the <a href="https://www.doi.org/" class="external-link">doi Foundation</a> for more information.</p>
-</section><section class="level2"><h3 id="url---string-free-optional">URL - String, free, optional<a class="anchor" aria-label="anchor" href="#url---string-free-optional"></a>
+</section><section class="level2"><h3 id="url">URL<a class="anchor" aria-label="anchor" href="#url"></a>
 </h3>
-<p><code>URL</code></p>
+<p><code>URL</code> - <em>String, free, optional</em></p>
 <p>A Uniform Resource Locator (URL, i.e. web address) linking to the referenced object, if available. Optional.</p>
-</section><section class="level2"><h3 id="isbn-issn---string-free-optional">ISBN ISSN - String, free, optional<a class="anchor" aria-label="anchor" href="#isbn-issn---string-free-optional"></a>
+</section><section class="level2"><h3 id="isbn-issn">ISBN ISSN<a class="anchor" aria-label="anchor" href="#isbn-issn"></a>
 </h3>
-<p><code>ISBN_ISSN</code></p>
+<p><code>ISBN_ISSN</code> - <em>String, free, optional</em></p>
 <p>An International Standard Book Number (ISBN, 10 or 13 digits) or International Standard Serial Number (ISSN, 8 digits) associated with a book or periodical. Optional.</p>
-</section><section class="level2"><h3 id="edition---string-free-optional">Edition - String, free, optional<a class="anchor" aria-label="anchor" href="#edition---string-free-optional"></a>
+</section><section class="level2"><h3 id="edition">Edition<a class="anchor" aria-label="anchor" href="#edition"></a>
 </h3>
-<p><code>EDITION</code></p>
+<p><code>EDITION</code> - <em>String, free, optional</em></p>
 <p>The edition of a referenced object, if relevant. Optional.</p>
-</section><section class="level2"><h3 id="document-number---string-free-optional">Document Number - String, free, optional<a class="anchor" aria-label="anchor" href="#document-number---string-free-optional"></a>
+</section><section class="level2"><h3 id="document-number">Document Number<a class="anchor" aria-label="anchor" href="#document-number"></a>
 </h3>
-<p><code>DOCUMENT_NUMBER</code></p>
+<p><code>DOCUMENT_NUMBER</code> - <em>String, free, optional</em></p>
 <p>A document or report number, typically available for reports and other official documents. Optional.</p>
-</section><section class="level2"><h3 id="reference-comment---string-free-optional">Reference Comment - String, free, optional<a class="anchor" aria-label="anchor" href="#reference-comment---string-free-optional"></a>
+</section><section class="level2"><h3 id="reference-comment">Reference Comment<a class="anchor" aria-label="anchor" href="#reference-comment"></a>
 </h3>
-<p><code>REF_COMMENT</code></p>
+<p><code>REF_COMMENT</code> - <em>String, free, optional</em></p>
 <p>Space for the recording of any additional notes or comments about the reference deemed relevant.</p>
 </section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

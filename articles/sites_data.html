@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Sites data • eDataDRF</title>
+<title>sites_data • eDataDRF</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
@@ -13,7 +13,7 @@
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><script src="sites_data_files/libs/quarto-html/popper.min.js"></script><script src="sites_data_files/libs/quarto-html/tippy.umd.min.js"></script><link href="sites_data_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="sites_data_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <!-- pkgdown --><script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
-<meta property="og:title" content="Sites data">
+<meta property="og:title" content="sites_data">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -50,8 +50,8 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
-      <h1>Sites data</h1>
-      <p class="subtitle">Records site coordinates, land use, country/ocean</p>
+      <h1></h1>
+
 
 
 
@@ -64,7 +64,11 @@
 
 
 
-    <section class="section level2"><h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+    <section class="section level3"><h3 id="site-comment">Site Comment<a class="anchor" aria-label="anchor" href="#site-comment"></a>
+</h3>
+<p><code>SITE_COMMENT</code> - <em>string, free, optional</em>andatory<em>, mandatory</em></p>
+<p>Unit associated with <a href="#altitude-value">altitude value</a>.VignetteIndexEntry{sites_data} % % knitr: opts_chunk: collapse: true comment: ‘#&gt;’ —</p>
+</section><section class="section level2"><h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <p>Sites data captures information about the coordinates, land use, and administrative/geographical boundaries of sampling sites. In this format, we make the distinction between the sampled site - a fixed, physical point in space - and the <a href="compartments_data.html">compartment</a> - the type of medium sampled.</p>
 <p>Sampling sites are often reported in a variety of more-or-less FAIR formats, despite the availability of free, mature, well-characterised systems for defining position in space. Extraction of such data from reference objects may require conversion from minute-degrees to decimal degrees, reprojection in a different Coordinate Reference System, merging of multiple sampling sites, reporting a large, vague sampling region as a single point, and estimating coordinates off maps. However, for the time being, the format is kept intentionally simple. All sites are reported as discrete points; and cases where any of the above operations are performed should be reported in the <a href="#site-comment---string-free-optional">comments field</a>.</p>
@@ -74,13 +78,15 @@
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/initialise_sites_tibble.html">initialise_sites_tibble</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 0 × 14</span></span>
-<span><span class="co">#&gt; # ℹ 14 variables: SITE_CODE &lt;chr&gt;, SITE_NAME &lt;chr&gt;,</span></span>
-<span><span class="co">#&gt; #   SITE_GEOGRAPHIC_FEATURE &lt;chr&gt;, SITE_GEOGRAPHIC_FEATURE_SUB &lt;chr&gt;,</span></span>
-<span><span class="co">#&gt; #   COUNTRY_ISO &lt;chr&gt;, OCEAN_IHO &lt;chr&gt;, LATITUDE &lt;dbl&gt;, LONGITUDE &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   SITE_COORDINATE_SYSTEM &lt;chr&gt;, ALTITUDE_VALUE &lt;dbl&gt;, ALTITUDE_UNIT &lt;chr&gt;,</span></span>
-<span><span class="co">#&gt; #   ENTERED_BY &lt;chr&gt;, ENTERED_DATE &lt;chr&gt;, SITE_COMMENT &lt;chr&gt;</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/initialise_sites_tibble.html">initialise_sites_tibble</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code><span><span class="co"># A tibble: 0 × 14</span></span>
+<span><span class="co"># ℹ 14 variables: SITE_CODE &lt;chr&gt;, SITE_NAME &lt;chr&gt;,</span></span>
+<span><span class="co">#   SITE_GEOGRAPHIC_FEATURE &lt;chr&gt;, SITE_GEOGRAPHIC_FEATURE_SUB &lt;chr&gt;,</span></span>
+<span><span class="co">#   COUNTRY_ISO &lt;chr&gt;, OCEAN_IHO &lt;chr&gt;, LATITUDE &lt;dbl&gt;, LONGITUDE &lt;dbl&gt;,</span></span>
+<span><span class="co">#   SITE_COORDINATE_SYSTEM &lt;chr&gt;, ALTITUDE_VALUE &lt;dbl&gt;, ALTITUDE_UNIT &lt;chr&gt;,</span></span>
+<span><span class="co">#   ENTERED_BY &lt;chr&gt;, ENTERED_DATE &lt;chr&gt;, SITE_COMMENT &lt;chr&gt;</span></span></code></pre>
+</div>
 </div>
 </section><section class="section level2"><h2 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
 </h2>
@@ -262,7 +268,7 @@
 </tr>
 <tr class="odd">
 <td>Other</td>
-<td>Specify details in <a href="#site-comment---string-free-optional">SITE_COMMENT</a>
+<td>Specify details in <a href="#site-comment">SITE_COMMENT</a>
 </td>
 <td></td>
 <td></td>
@@ -274,18 +280,20 @@
 <section class="level3"><h4 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
 </h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/geographic_features_vocabulary.html">geographic_features_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt;  [1] "Not relevant"                      "Not reported"                     </span></span>
-<span><span class="co">#&gt;  [3] "River, stream, canal"              "Lake, pond, pool, reservoir"      </span></span>
-<span><span class="co">#&gt;  [5] "Ocean, sea, territorial waters"    "Coastal, fjord"                   </span></span>
-<span><span class="co">#&gt;  [7] "Estuary"                           "Drainage, sewer, artificial water"</span></span>
-<span><span class="co">#&gt;  [9] "Swamp, wetland"                    "Groundwater, aquifer"             </span></span>
-<span><span class="co">#&gt; [11] "WWTP"                              "Artificial Land/Urban Areas"      </span></span>
-<span><span class="co">#&gt; [13] "Landfills"                         "Cropland"                         </span></span>
-<span><span class="co">#&gt; [15] "Woodland, forest"                  "Shrubland"                        </span></span>
-<span><span class="co">#&gt; [17] "Grassland"                         "Bare land and lichen/moss"        </span></span>
-<span><span class="co">#&gt; [19] "Glacier"                           "Other"</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/geographic_features_vocabulary.html">geographic_features_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Not relevant"                      "Not reported"
+ [3] "River, stream, canal"              "Lake, pond, pool, reservoir"
+ [5] "Ocean, sea, territorial waters"    "Coastal, fjord"
+ [7] "Estuary"                           "Drainage, sewer, artificial water"
+ [9] "Swamp, wetland"                    "Groundwater, aquifer"
+[11] "WWTP"                              "Artificial Land/Urban Areas"
+[13] "Landfills"                         "Cropland"
+[15] "Woodland, forest"                  "Shrubland"
+[17] "Grassland"                         "Bare land and lichen/moss"
+[19] "Glacier"                           "Other"                            </code></pre>
+</div>
 </div>
 </section></section><section class="level2"><h3 id="site-geographic-feature-sub---string-controlled-mandatory">Site Geographic Feature Sub - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#site-geographic-feature-sub---string-controlled-mandatory"></a>
 </h3>
@@ -294,11 +302,13 @@
 <section class="level3"><h4 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
 </h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/geographic_features_sub_vocabulary.html">geographic_features_sub_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Not relevant"               "Not reported"              </span></span>
-<span><span class="co">#&gt; [3] "Water surface"              "Water column, pelagic zone"</span></span>
-<span><span class="co">#&gt; [5] "Water benthos"              "Other"</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/geographic_features_sub_vocabulary.html">geographic_features_sub_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Not relevant"               "Not reported"
+[3] "Water surface"              "Water column, pelagic zone"
+[5] "Water benthos"              "Other"                     </code></pre>
+</div>
 </div>
 </section></section><section class="level2"><h3 id="iso-country---string-controlled-mandatory">ISO Country - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#iso-country---string-controlled-mandatory"></a>
 </h3>
@@ -307,350 +317,354 @@
 <section class="level3"><h4 id="controlled-vocabulary-2">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-2"></a>
 </h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/countries_vocabulary.html">countries_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt;   [1] "Not relevant"                                </span></span>
-<span><span class="co">#&gt;   [2] "Not reported"                                </span></span>
-<span><span class="co">#&gt;   [3] "Aruba"                                       </span></span>
-<span><span class="co">#&gt;   [4] "Afghanistan"                                 </span></span>
-<span><span class="co">#&gt;   [5] "Angola"                                      </span></span>
-<span><span class="co">#&gt;   [6] "Anguilla"                                    </span></span>
-<span><span class="co">#&gt;   [7] "Åland Islands"                               </span></span>
-<span><span class="co">#&gt;   [8] "Albania"                                     </span></span>
-<span><span class="co">#&gt;   [9] "Andorra"                                     </span></span>
-<span><span class="co">#&gt;  [10] "United Arab Emirates"                        </span></span>
-<span><span class="co">#&gt;  [11] "Argentina"                                   </span></span>
-<span><span class="co">#&gt;  [12] "Armenia"                                     </span></span>
-<span><span class="co">#&gt;  [13] "American Samoa"                              </span></span>
-<span><span class="co">#&gt;  [14] "Antarctica"                                  </span></span>
-<span><span class="co">#&gt;  [15] "French Southern Territories"                 </span></span>
-<span><span class="co">#&gt;  [16] "Antigua and Barbuda"                         </span></span>
-<span><span class="co">#&gt;  [17] "Australia"                                   </span></span>
-<span><span class="co">#&gt;  [18] "Austria"                                     </span></span>
-<span><span class="co">#&gt;  [19] "Azerbaijan"                                  </span></span>
-<span><span class="co">#&gt;  [20] "Burundi"                                     </span></span>
-<span><span class="co">#&gt;  [21] "Belgium"                                     </span></span>
-<span><span class="co">#&gt;  [22] "Benin"                                       </span></span>
-<span><span class="co">#&gt;  [23] "Bonaire, Sint Eustatius and Saba"            </span></span>
-<span><span class="co">#&gt;  [24] "Burkina Faso"                                </span></span>
-<span><span class="co">#&gt;  [25] "Bangladesh"                                  </span></span>
-<span><span class="co">#&gt;  [26] "Bulgaria"                                    </span></span>
-<span><span class="co">#&gt;  [27] "Bahrain"                                     </span></span>
-<span><span class="co">#&gt;  [28] "Bahamas"                                     </span></span>
-<span><span class="co">#&gt;  [29] "Bosnia and Herzegovina"                      </span></span>
-<span><span class="co">#&gt;  [30] "Saint Barthélemy"                            </span></span>
-<span><span class="co">#&gt;  [31] "Belarus"                                     </span></span>
-<span><span class="co">#&gt;  [32] "Belize"                                      </span></span>
-<span><span class="co">#&gt;  [33] "Bermuda"                                     </span></span>
-<span><span class="co">#&gt;  [34] "Bolivia, Plurinational State of"             </span></span>
-<span><span class="co">#&gt;  [35] "Brazil"                                      </span></span>
-<span><span class="co">#&gt;  [36] "Barbados"                                    </span></span>
-<span><span class="co">#&gt;  [37] "Brunei Darussalam"                           </span></span>
-<span><span class="co">#&gt;  [38] "Bhutan"                                      </span></span>
-<span><span class="co">#&gt;  [39] "Bouvet Island"                               </span></span>
-<span><span class="co">#&gt;  [40] "Botswana"                                    </span></span>
-<span><span class="co">#&gt;  [41] "Central African Republic"                    </span></span>
-<span><span class="co">#&gt;  [42] "Canada"                                      </span></span>
-<span><span class="co">#&gt;  [43] "Cocos (Keeling) Islands"                     </span></span>
-<span><span class="co">#&gt;  [44] "Switzerland"                                 </span></span>
-<span><span class="co">#&gt;  [45] "Chile"                                       </span></span>
-<span><span class="co">#&gt;  [46] "China"                                       </span></span>
-<span><span class="co">#&gt;  [47] "Côte d'Ivoire"                               </span></span>
-<span><span class="co">#&gt;  [48] "Cameroon"                                    </span></span>
-<span><span class="co">#&gt;  [49] "Congo, The Democratic Republic of the"       </span></span>
-<span><span class="co">#&gt;  [50] "Congo"                                       </span></span>
-<span><span class="co">#&gt;  [51] "Cook Islands"                                </span></span>
-<span><span class="co">#&gt;  [52] "Colombia"                                    </span></span>
-<span><span class="co">#&gt;  [53] "Comoros"                                     </span></span>
-<span><span class="co">#&gt;  [54] "Cabo Verde"                                  </span></span>
-<span><span class="co">#&gt;  [55] "Costa Rica"                                  </span></span>
-<span><span class="co">#&gt;  [56] "Cuba"                                        </span></span>
-<span><span class="co">#&gt;  [57] "Curaçao"                                     </span></span>
-<span><span class="co">#&gt;  [58] "Christmas Island"                            </span></span>
-<span><span class="co">#&gt;  [59] "Cayman Islands"                              </span></span>
-<span><span class="co">#&gt;  [60] "Cyprus"                                      </span></span>
-<span><span class="co">#&gt;  [61] "Czechia"                                     </span></span>
-<span><span class="co">#&gt;  [62] "Germany"                                     </span></span>
-<span><span class="co">#&gt;  [63] "Djibouti"                                    </span></span>
-<span><span class="co">#&gt;  [64] "Dominica"                                    </span></span>
-<span><span class="co">#&gt;  [65] "Denmark"                                     </span></span>
-<span><span class="co">#&gt;  [66] "Dominican Republic"                          </span></span>
-<span><span class="co">#&gt;  [67] "Algeria"                                     </span></span>
-<span><span class="co">#&gt;  [68] "Ecuador"                                     </span></span>
-<span><span class="co">#&gt;  [69] "Egypt"                                       </span></span>
-<span><span class="co">#&gt;  [70] "Eritrea"                                     </span></span>
-<span><span class="co">#&gt;  [71] "Western Sahara"                              </span></span>
-<span><span class="co">#&gt;  [72] "Spain"                                       </span></span>
-<span><span class="co">#&gt;  [73] "Estonia"                                     </span></span>
-<span><span class="co">#&gt;  [74] "Ethiopia"                                    </span></span>
-<span><span class="co">#&gt;  [75] "Finland"                                     </span></span>
-<span><span class="co">#&gt;  [76] "Fiji"                                        </span></span>
-<span><span class="co">#&gt;  [77] "Falkland Islands (Malvinas)"                 </span></span>
-<span><span class="co">#&gt;  [78] "France"                                      </span></span>
-<span><span class="co">#&gt;  [79] "Faroe Islands"                               </span></span>
-<span><span class="co">#&gt;  [80] "Micronesia, Federated States of"             </span></span>
-<span><span class="co">#&gt;  [81] "Gabon"                                       </span></span>
-<span><span class="co">#&gt;  [82] "United Kingdom"                              </span></span>
-<span><span class="co">#&gt;  [83] "Georgia"                                     </span></span>
-<span><span class="co">#&gt;  [84] "Guernsey"                                    </span></span>
-<span><span class="co">#&gt;  [85] "Ghana"                                       </span></span>
-<span><span class="co">#&gt;  [86] "Gibraltar"                                   </span></span>
-<span><span class="co">#&gt;  [87] "Guinea"                                      </span></span>
-<span><span class="co">#&gt;  [88] "Guadeloupe"                                  </span></span>
-<span><span class="co">#&gt;  [89] "Gambia"                                      </span></span>
-<span><span class="co">#&gt;  [90] "Guinea-Bissau"                               </span></span>
-<span><span class="co">#&gt;  [91] "Equatorial Guinea"                           </span></span>
-<span><span class="co">#&gt;  [92] "Greece"                                      </span></span>
-<span><span class="co">#&gt;  [93] "Grenada"                                     </span></span>
-<span><span class="co">#&gt;  [94] "Greenland"                                   </span></span>
-<span><span class="co">#&gt;  [95] "Guatemala"                                   </span></span>
-<span><span class="co">#&gt;  [96] "French Guiana"                               </span></span>
-<span><span class="co">#&gt;  [97] "Guam"                                        </span></span>
-<span><span class="co">#&gt;  [98] "Guyana"                                      </span></span>
-<span><span class="co">#&gt;  [99] "Hong Kong"                                   </span></span>
-<span><span class="co">#&gt; [100] "Heard Island and McDonald Islands"           </span></span>
-<span><span class="co">#&gt; [101] "Honduras"                                    </span></span>
-<span><span class="co">#&gt; [102] "Croatia"                                     </span></span>
-<span><span class="co">#&gt; [103] "Haiti"                                       </span></span>
-<span><span class="co">#&gt; [104] "Hungary"                                     </span></span>
-<span><span class="co">#&gt; [105] "Indonesia"                                   </span></span>
-<span><span class="co">#&gt; [106] "Isle of Man"                                 </span></span>
-<span><span class="co">#&gt; [107] "India"                                       </span></span>
-<span><span class="co">#&gt; [108] "British Indian Ocean Territory"              </span></span>
-<span><span class="co">#&gt; [109] "Ireland"                                     </span></span>
-<span><span class="co">#&gt; [110] "Iran, Islamic Republic of"                   </span></span>
-<span><span class="co">#&gt; [111] "Iraq"                                        </span></span>
-<span><span class="co">#&gt; [112] "Iceland"                                     </span></span>
-<span><span class="co">#&gt; [113] "Israel"                                      </span></span>
-<span><span class="co">#&gt; [114] "Italy"                                       </span></span>
-<span><span class="co">#&gt; [115] "Jamaica"                                     </span></span>
-<span><span class="co">#&gt; [116] "Jersey"                                      </span></span>
-<span><span class="co">#&gt; [117] "Jordan"                                      </span></span>
-<span><span class="co">#&gt; [118] "Japan"                                       </span></span>
-<span><span class="co">#&gt; [119] "Kazakhstan"                                  </span></span>
-<span><span class="co">#&gt; [120] "Kenya"                                       </span></span>
-<span><span class="co">#&gt; [121] "Kyrgyzstan"                                  </span></span>
-<span><span class="co">#&gt; [122] "Cambodia"                                    </span></span>
-<span><span class="co">#&gt; [123] "Kiribati"                                    </span></span>
-<span><span class="co">#&gt; [124] "Saint Kitts and Nevis"                       </span></span>
-<span><span class="co">#&gt; [125] "Korea, Republic of"                          </span></span>
-<span><span class="co">#&gt; [126] "Kuwait"                                      </span></span>
-<span><span class="co">#&gt; [127] "Lao People's Democratic Republic"            </span></span>
-<span><span class="co">#&gt; [128] "Lebanon"                                     </span></span>
-<span><span class="co">#&gt; [129] "Liberia"                                     </span></span>
-<span><span class="co">#&gt; [130] "Libya"                                       </span></span>
-<span><span class="co">#&gt; [131] "Saint Lucia"                                 </span></span>
-<span><span class="co">#&gt; [132] "Liechtenstein"                               </span></span>
-<span><span class="co">#&gt; [133] "Sri Lanka"                                   </span></span>
-<span><span class="co">#&gt; [134] "Lesotho"                                     </span></span>
-<span><span class="co">#&gt; [135] "Lithuania"                                   </span></span>
-<span><span class="co">#&gt; [136] "Luxembourg"                                  </span></span>
-<span><span class="co">#&gt; [137] "Latvia"                                      </span></span>
-<span><span class="co">#&gt; [138] "Macao"                                       </span></span>
-<span><span class="co">#&gt; [139] "Saint Martin (French part)"                  </span></span>
-<span><span class="co">#&gt; [140] "Morocco"                                     </span></span>
-<span><span class="co">#&gt; [141] "Monaco"                                      </span></span>
-<span><span class="co">#&gt; [142] "Moldova, Republic of"                        </span></span>
-<span><span class="co">#&gt; [143] "Madagascar"                                  </span></span>
-<span><span class="co">#&gt; [144] "Maldives"                                    </span></span>
-<span><span class="co">#&gt; [145] "Mexico"                                      </span></span>
-<span><span class="co">#&gt; [146] "Marshall Islands"                            </span></span>
-<span><span class="co">#&gt; [147] "North Macedonia"                             </span></span>
-<span><span class="co">#&gt; [148] "Mali"                                        </span></span>
-<span><span class="co">#&gt; [149] "Malta"                                       </span></span>
-<span><span class="co">#&gt; [150] "Myanmar"                                     </span></span>
-<span><span class="co">#&gt; [151] "Montenegro"                                  </span></span>
-<span><span class="co">#&gt; [152] "Mongolia"                                    </span></span>
-<span><span class="co">#&gt; [153] "Northern Mariana Islands"                    </span></span>
-<span><span class="co">#&gt; [154] "Mozambique"                                  </span></span>
-<span><span class="co">#&gt; [155] "Mauritania"                                  </span></span>
-<span><span class="co">#&gt; [156] "Montserrat"                                  </span></span>
-<span><span class="co">#&gt; [157] "Martinique"                                  </span></span>
-<span><span class="co">#&gt; [158] "Mauritius"                                   </span></span>
-<span><span class="co">#&gt; [159] "Malawi"                                      </span></span>
-<span><span class="co">#&gt; [160] "Malaysia"                                    </span></span>
-<span><span class="co">#&gt; [161] "Mayotte"                                     </span></span>
-<span><span class="co">#&gt; [162] "Namibia"                                     </span></span>
-<span><span class="co">#&gt; [163] "New Caledonia"                               </span></span>
-<span><span class="co">#&gt; [164] "Niger"                                       </span></span>
-<span><span class="co">#&gt; [165] "Norfolk Island"                              </span></span>
-<span><span class="co">#&gt; [166] "Nigeria"                                     </span></span>
-<span><span class="co">#&gt; [167] "Nicaragua"                                   </span></span>
-<span><span class="co">#&gt; [168] "Niue"                                        </span></span>
-<span><span class="co">#&gt; [169] "Netherlands"                                 </span></span>
-<span><span class="co">#&gt; [170] "Norway"                                      </span></span>
-<span><span class="co">#&gt; [171] "Nepal"                                       </span></span>
-<span><span class="co">#&gt; [172] "Nauru"                                       </span></span>
-<span><span class="co">#&gt; [173] "New Zealand"                                 </span></span>
-<span><span class="co">#&gt; [174] "Oman"                                        </span></span>
-<span><span class="co">#&gt; [175] "Pakistan"                                    </span></span>
-<span><span class="co">#&gt; [176] "Panama"                                      </span></span>
-<span><span class="co">#&gt; [177] "Pitcairn"                                    </span></span>
-<span><span class="co">#&gt; [178] "Peru"                                        </span></span>
-<span><span class="co">#&gt; [179] "Philippines"                                 </span></span>
-<span><span class="co">#&gt; [180] "Palau"                                       </span></span>
-<span><span class="co">#&gt; [181] "Papua New Guinea"                            </span></span>
-<span><span class="co">#&gt; [182] "Poland"                                      </span></span>
-<span><span class="co">#&gt; [183] "Puerto Rico"                                 </span></span>
-<span><span class="co">#&gt; [184] "Korea, Democratic People's Republic of"      </span></span>
-<span><span class="co">#&gt; [185] "Portugal"                                    </span></span>
-<span><span class="co">#&gt; [186] "Paraguay"                                    </span></span>
-<span><span class="co">#&gt; [187] "Palestine, State of"                         </span></span>
-<span><span class="co">#&gt; [188] "French Polynesia"                            </span></span>
-<span><span class="co">#&gt; [189] "Qatar"                                       </span></span>
-<span><span class="co">#&gt; [190] "Réunion"                                     </span></span>
-<span><span class="co">#&gt; [191] "Romania"                                     </span></span>
-<span><span class="co">#&gt; [192] "Russian Federation"                          </span></span>
-<span><span class="co">#&gt; [193] "Rwanda"                                      </span></span>
-<span><span class="co">#&gt; [194] "Saudi Arabia"                                </span></span>
-<span><span class="co">#&gt; [195] "Sudan"                                       </span></span>
-<span><span class="co">#&gt; [196] "Senegal"                                     </span></span>
-<span><span class="co">#&gt; [197] "Singapore"                                   </span></span>
-<span><span class="co">#&gt; [198] "South Georgia and the South Sandwich Islands"</span></span>
-<span><span class="co">#&gt; [199] "Saint Helena, Ascension and Tristan da Cunha"</span></span>
-<span><span class="co">#&gt; [200] "Svalbard and Jan Mayen"                      </span></span>
-<span><span class="co">#&gt; [201] "Solomon Islands"                             </span></span>
-<span><span class="co">#&gt; [202] "Sierra Leone"                                </span></span>
-<span><span class="co">#&gt; [203] "El Salvador"                                 </span></span>
-<span><span class="co">#&gt; [204] "San Marino"                                  </span></span>
-<span><span class="co">#&gt; [205] "Somalia"                                     </span></span>
-<span><span class="co">#&gt; [206] "Saint Pierre and Miquelon"                   </span></span>
-<span><span class="co">#&gt; [207] "Serbia"                                      </span></span>
-<span><span class="co">#&gt; [208] "South Sudan"                                 </span></span>
-<span><span class="co">#&gt; [209] "Sao Tome and Principe"                       </span></span>
-<span><span class="co">#&gt; [210] "Suriname"                                    </span></span>
-<span><span class="co">#&gt; [211] "Slovakia"                                    </span></span>
-<span><span class="co">#&gt; [212] "Slovenia"                                    </span></span>
-<span><span class="co">#&gt; [213] "Sweden"                                      </span></span>
-<span><span class="co">#&gt; [214] "Eswatini"                                    </span></span>
-<span><span class="co">#&gt; [215] "Sint Maarten (Dutch part)"                   </span></span>
-<span><span class="co">#&gt; [216] "Seychelles"                                  </span></span>
-<span><span class="co">#&gt; [217] "Syrian Arab Republic"                        </span></span>
-<span><span class="co">#&gt; [218] "Turks and Caicos Islands"                    </span></span>
-<span><span class="co">#&gt; [219] "Chad"                                        </span></span>
-<span><span class="co">#&gt; [220] "Togo"                                        </span></span>
-<span><span class="co">#&gt; [221] "Thailand"                                    </span></span>
-<span><span class="co">#&gt; [222] "Tajikistan"                                  </span></span>
-<span><span class="co">#&gt; [223] "Tokelau"                                     </span></span>
-<span><span class="co">#&gt; [224] "Turkmenistan"                                </span></span>
-<span><span class="co">#&gt; [225] "Timor-Leste"                                 </span></span>
-<span><span class="co">#&gt; [226] "Tonga"                                       </span></span>
-<span><span class="co">#&gt; [227] "Trinidad and Tobago"                         </span></span>
-<span><span class="co">#&gt; [228] "Tunisia"                                     </span></span>
-<span><span class="co">#&gt; [229] "Türkiye"                                     </span></span>
-<span><span class="co">#&gt; [230] "Tuvalu"                                      </span></span>
-<span><span class="co">#&gt; [231] "Taiwan, Province of China"                   </span></span>
-<span><span class="co">#&gt; [232] "Tanzania, United Republic of"                </span></span>
-<span><span class="co">#&gt; [233] "Uganda"                                      </span></span>
-<span><span class="co">#&gt; [234] "Ukraine"                                     </span></span>
-<span><span class="co">#&gt; [235] "United States Minor Outlying Islands"        </span></span>
-<span><span class="co">#&gt; [236] "Uruguay"                                     </span></span>
-<span><span class="co">#&gt; [237] "United States"                               </span></span>
-<span><span class="co">#&gt; [238] "Uzbekistan"                                  </span></span>
-<span><span class="co">#&gt; [239] "Holy See (Vatican City State)"               </span></span>
-<span><span class="co">#&gt; [240] "Saint Vincent and the Grenadines"            </span></span>
-<span><span class="co">#&gt; [241] "Venezuela, Bolivarian Republic of"           </span></span>
-<span><span class="co">#&gt; [242] "Virgin Islands, British"                     </span></span>
-<span><span class="co">#&gt; [243] "Virgin Islands, U.S."                        </span></span>
-<span><span class="co">#&gt; [244] "Viet Nam"                                    </span></span>
-<span><span class="co">#&gt; [245] "Vanuatu"                                     </span></span>
-<span><span class="co">#&gt; [246] "Wallis and Futuna"                           </span></span>
-<span><span class="co">#&gt; [247] "Samoa"                                       </span></span>
-<span><span class="co">#&gt; [248] "Yemen"                                       </span></span>
-<span><span class="co">#&gt; [249] "South Africa"                                </span></span>
-<span><span class="co">#&gt; [250] "Zambia"                                      </span></span>
-<span><span class="co">#&gt; [251] "Zimbabwe"</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/countries_vocabulary.html">countries_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] "Not relevant"
+  [2] "Not reported"
+  [3] "Aruba"
+  [4] "Afghanistan"
+  [5] "Angola"
+  [6] "Anguilla"
+  [7] "Åland Islands"
+  [8] "Albania"
+  [9] "Andorra"
+ [10] "United Arab Emirates"
+ [11] "Argentina"
+ [12] "Armenia"
+ [13] "American Samoa"
+ [14] "Antarctica"
+ [15] "French Southern Territories"
+ [16] "Antigua and Barbuda"
+ [17] "Australia"
+ [18] "Austria"
+ [19] "Azerbaijan"
+ [20] "Burundi"
+ [21] "Belgium"
+ [22] "Benin"
+ [23] "Bonaire, Sint Eustatius and Saba"
+ [24] "Burkina Faso"
+ [25] "Bangladesh"
+ [26] "Bulgaria"
+ [27] "Bahrain"
+ [28] "Bahamas"
+ [29] "Bosnia and Herzegovina"
+ [30] "Saint Barthélemy"
+ [31] "Belarus"
+ [32] "Belize"
+ [33] "Bermuda"
+ [34] "Bolivia, Plurinational State of"
+ [35] "Brazil"
+ [36] "Barbados"
+ [37] "Brunei Darussalam"
+ [38] "Bhutan"
+ [39] "Bouvet Island"
+ [40] "Botswana"
+ [41] "Central African Republic"
+ [42] "Canada"
+ [43] "Cocos (Keeling) Islands"
+ [44] "Switzerland"
+ [45] "Chile"
+ [46] "China"
+ [47] "Côte d'Ivoire"
+ [48] "Cameroon"
+ [49] "Congo, The Democratic Republic of the"
+ [50] "Congo"
+ [51] "Cook Islands"
+ [52] "Colombia"
+ [53] "Comoros"
+ [54] "Cabo Verde"
+ [55] "Costa Rica"
+ [56] "Cuba"
+ [57] "Curaçao"
+ [58] "Christmas Island"
+ [59] "Cayman Islands"
+ [60] "Cyprus"
+ [61] "Czechia"
+ [62] "Germany"
+ [63] "Djibouti"
+ [64] "Dominica"
+ [65] "Denmark"
+ [66] "Dominican Republic"
+ [67] "Algeria"
+ [68] "Ecuador"
+ [69] "Egypt"
+ [70] "Eritrea"
+ [71] "Western Sahara"
+ [72] "Spain"
+ [73] "Estonia"
+ [74] "Ethiopia"
+ [75] "Finland"
+ [76] "Fiji"
+ [77] "Falkland Islands (Malvinas)"
+ [78] "France"
+ [79] "Faroe Islands"
+ [80] "Micronesia, Federated States of"
+ [81] "Gabon"
+ [82] "United Kingdom"
+ [83] "Georgia"
+ [84] "Guernsey"
+ [85] "Ghana"
+ [86] "Gibraltar"
+ [87] "Guinea"
+ [88] "Guadeloupe"
+ [89] "Gambia"
+ [90] "Guinea-Bissau"
+ [91] "Equatorial Guinea"
+ [92] "Greece"
+ [93] "Grenada"
+ [94] "Greenland"
+ [95] "Guatemala"
+ [96] "French Guiana"
+ [97] "Guam"
+ [98] "Guyana"
+ [99] "Hong Kong"
+[100] "Heard Island and McDonald Islands"
+[101] "Honduras"
+[102] "Croatia"
+[103] "Haiti"
+[104] "Hungary"
+[105] "Indonesia"
+[106] "Isle of Man"
+[107] "India"
+[108] "British Indian Ocean Territory"
+[109] "Ireland"
+[110] "Iran, Islamic Republic of"
+[111] "Iraq"
+[112] "Iceland"
+[113] "Israel"
+[114] "Italy"
+[115] "Jamaica"
+[116] "Jersey"
+[117] "Jordan"
+[118] "Japan"
+[119] "Kazakhstan"
+[120] "Kenya"
+[121] "Kyrgyzstan"
+[122] "Cambodia"
+[123] "Kiribati"
+[124] "Saint Kitts and Nevis"
+[125] "Korea, Republic of"
+[126] "Kuwait"
+[127] "Lao People's Democratic Republic"
+[128] "Lebanon"
+[129] "Liberia"
+[130] "Libya"
+[131] "Saint Lucia"
+[132] "Liechtenstein"
+[133] "Sri Lanka"
+[134] "Lesotho"
+[135] "Lithuania"
+[136] "Luxembourg"
+[137] "Latvia"
+[138] "Macao"
+[139] "Saint Martin (French part)"
+[140] "Morocco"
+[141] "Monaco"
+[142] "Moldova, Republic of"
+[143] "Madagascar"
+[144] "Maldives"
+[145] "Mexico"
+[146] "Marshall Islands"
+[147] "North Macedonia"
+[148] "Mali"
+[149] "Malta"
+[150] "Myanmar"
+[151] "Montenegro"
+[152] "Mongolia"
+[153] "Northern Mariana Islands"
+[154] "Mozambique"
+[155] "Mauritania"
+[156] "Montserrat"
+[157] "Martinique"
+[158] "Mauritius"
+[159] "Malawi"
+[160] "Malaysia"
+[161] "Mayotte"
+[162] "Namibia"
+[163] "New Caledonia"
+[164] "Niger"
+[165] "Norfolk Island"
+[166] "Nigeria"
+[167] "Nicaragua"
+[168] "Niue"
+[169] "Netherlands"
+[170] "Norway"
+[171] "Nepal"
+[172] "Nauru"
+[173] "New Zealand"
+[174] "Oman"
+[175] "Pakistan"
+[176] "Panama"
+[177] "Pitcairn"
+[178] "Peru"
+[179] "Philippines"
+[180] "Palau"
+[181] "Papua New Guinea"
+[182] "Poland"
+[183] "Puerto Rico"
+[184] "Korea, Democratic People's Republic of"
+[185] "Portugal"
+[186] "Paraguay"
+[187] "Palestine, State of"
+[188] "French Polynesia"
+[189] "Qatar"
+[190] "Réunion"
+[191] "Romania"
+[192] "Russian Federation"
+[193] "Rwanda"
+[194] "Saudi Arabia"
+[195] "Sudan"
+[196] "Senegal"
+[197] "Singapore"
+[198] "South Georgia and the South Sandwich Islands"
+[199] "Saint Helena, Ascension and Tristan da Cunha"
+[200] "Svalbard and Jan Mayen"
+[201] "Solomon Islands"
+[202] "Sierra Leone"
+[203] "El Salvador"
+[204] "San Marino"
+[205] "Somalia"
+[206] "Saint Pierre and Miquelon"
+[207] "Serbia"
+[208] "South Sudan"
+[209] "Sao Tome and Principe"
+[210] "Suriname"
+[211] "Slovakia"
+[212] "Slovenia"
+[213] "Sweden"
+[214] "Eswatini"
+[215] "Sint Maarten (Dutch part)"
+[216] "Seychelles"
+[217] "Syrian Arab Republic"
+[218] "Turks and Caicos Islands"
+[219] "Chad"
+[220] "Togo"
+[221] "Thailand"
+[222] "Tajikistan"
+[223] "Tokelau"
+[224] "Turkmenistan"
+[225] "Timor-Leste"
+[226] "Tonga"
+[227] "Trinidad and Tobago"
+[228] "Tunisia"
+[229] "Türkiye"
+[230] "Tuvalu"
+[231] "Taiwan, Province of China"
+[232] "Tanzania, United Republic of"
+[233] "Uganda"
+[234] "Ukraine"
+[235] "United States Minor Outlying Islands"
+[236] "Uruguay"
+[237] "United States"
+[238] "Uzbekistan"
+[239] "Holy See (Vatican City State)"
+[240] "Saint Vincent and the Grenadines"
+[241] "Venezuela, Bolivarian Republic of"
+[242] "Virgin Islands, British"
+[243] "Virgin Islands, U.S."
+[244] "Viet Nam"
+[245] "Vanuatu"
+[246] "Wallis and Futuna"
+[247] "Samoa"
+[248] "Yemen"
+[249] "South Africa"
+[250] "Zambia"
+[251] "Zimbabwe"                                    </code></pre>
+</div>
 </div>
 </section></section><section class="level2"><h3 id="iho-oceansea---string-controlled-mandatory">IHO Ocean/Sea - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#iho-oceansea---string-controlled-mandatory"></a>
 </h3>
 <p><code>OCEAN_IHO</code></p>
-<p>As with countries, oceans are not necessarily the best geographical identifiers, but they provide useful, human-readable data for understanding sampling sites. The <a href="https://doi.org/10.14284/323" class="external-link">International Hydrographic Organisation’s version 3 Sea Areas</a> dataset is used to provide a reasonably-standardised set of names for seas and oceans. As with <a href="#iso-country---string-controlled-mandatory">Country</a>, Ocean is mandatory but should be marked as “Not relevant” when the site is on land.</p>
+<p>As with countries, oceans are not necessarily the best geographical identifiers, but they provide useful, human-readable data for understanding sampling sites. The <a href="https://doi.org/10.14284/323" class="external-link">International Hydrographic Organisation’s version 3 Sea Areas</a> dataset is used to provide a reasonably-standardised set of names for seas and oceans. As with <a href="#iso-country">ISO Country</a>, Ocean is mandatory but should be marked as “Not relevant” when the site is on land.</p>
 <p>Where sampling sites are located in national territory but also in or near (intentionally vague) an ocean or sea, we recommend recording both variables.</p>
 <section class="level3"><h4 id="controlled-vocabulary-3">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-3"></a>
 </h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/areas_vocabulary.html">areas_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt;   [1] "Not relevant"                "Not reported"               </span></span>
-<span><span class="co">#&gt;   [3] "Other"                       "Torres Strait"              </span></span>
-<span><span class="co">#&gt;   [5] "Tasman Sea"                  "Solomon Sea"                </span></span>
-<span><span class="co">#&gt;   [7] "Ross Sea"                    "Coral Sea"                  </span></span>
-<span><span class="co">#&gt;   [9] "Bismarck Sea"                "Bellingshausen Sea"         </span></span>
-<span><span class="co">#&gt;  [11] "Bass Strait"                 "Amundsen Sea"               </span></span>
-<span><span class="co">#&gt;  [13] "Timor Sea"                   "Sunda Strait"               </span></span>
-<span><span class="co">#&gt;  [15] "Sumba Strait"                "Sulu Sea"                   </span></span>
-<span><span class="co">#&gt;  [17] "Sulawesi Sea"                "South China Sea"            </span></span>
-<span><span class="co">#&gt;  [19] "Singapore Strait"            "Seram Sea"                  </span></span>
-<span><span class="co">#&gt;  [21] "Sawu Sea"                    "Natuna Sea"                 </span></span>
-<span><span class="co">#&gt;  [23] "Mindanao Sea"                "Maluku Sea"                 </span></span>
-<span><span class="co">#&gt;  [25] "Makasar Strait"              "Joseph Bonaparte Gulf"      </span></span>
-<span><span class="co">#&gt;  [27] "Jawa Sea"                    "Halmahera Sea"              </span></span>
-<span><span class="co">#&gt;  [29] "Gulf of Tonkin"              "Gulf of Tomini"             </span></span>
-<span><span class="co">#&gt;  [31] "Gulf of Thailand"            "Gulf of Carpentaria"        </span></span>
-<span><span class="co">#&gt;  [33] "Gulf of Bone"                "Gulf of Berau"              </span></span>
-<span><span class="co">#&gt;  [35] "Flores Sea"                  "Banda Sea"                  </span></span>
-<span><span class="co">#&gt;  [37] "Bali Sea"                    "Aru Sea"                    </span></span>
-<span><span class="co">#&gt;  [39] "Arafura Sea"                 "South Pacific Ocean"        </span></span>
-<span><span class="co">#&gt;  [41] "Yellow Sea"                  "Taiwan Strait"              </span></span>
-<span><span class="co">#&gt;  [43] "Seto Naikai"                 "Sea of Okhotsk"             </span></span>
-<span><span class="co">#&gt;  [45] "Philippine Sea"              "Liaodong Gulf"              </span></span>
-<span><span class="co">#&gt;  [47] "Japan Sea"                   "Gulf of Tartary"            </span></span>
-<span><span class="co">#&gt;  [49] "Gulf of Panama"              "Gulf of California"         </span></span>
-<span><span class="co">#&gt;  [51] "Gulf of Alaska"              "East China Sea"             </span></span>
-<span><span class="co">#&gt;  [53] "Coastal waters of SE Alaska" "Bo Sea"                     </span></span>
-<span><span class="co">#&gt;  [55] "Bering Sea"                  "Anadyrskiy Gulf"            </span></span>
-<span><span class="co">#&gt;  [57] "North Pacific Ocean"         "Pacific Ocean"              </span></span>
-<span><span class="co">#&gt;  [59] "Weddell Sea"                 "Scotia Sea"                 </span></span>
-<span><span class="co">#&gt;  [61] "Rio de la Plata"             "Lazarev Sea"                </span></span>
-<span><span class="co">#&gt;  [63] "Drake Passage"               "South Atlantic Ocean"       </span></span>
-<span><span class="co">#&gt;  [65] "Skagerrak"                   "Scotland Sea"               </span></span>
-<span><span class="co">#&gt;  [67] "North Sea"                   "Labrador Sea"               </span></span>
-<span><span class="co">#&gt;  [69] "Irish Sea"                   "Gulf of St. Lawrence"       </span></span>
-<span><span class="co">#&gt;  [71] "Gulf of Mexico"              "Gulf of Guinea"             </span></span>
-<span><span class="co">#&gt;  [73] "Greenland Sea"               "English Channel"            </span></span>
-<span><span class="co">#&gt;  [75] "Celtic Sea"                  "Caribbean Sea"              </span></span>
-<span><span class="co">#&gt;  [77] "Canarias Sea"                "Bristol Channel"            </span></span>
-<span><span class="co">#&gt;  [79] "Bay of Fundy"                "Bay of Biscay"              </span></span>
-<span><span class="co">#&gt;  [81] "North Atlantic Ocean"        "Atlantic Ocean"             </span></span>
-<span><span class="co">#&gt;  [83] "Tirreno Sea"                 "Strait of Sicilia"          </span></span>
-<span><span class="co">#&gt;  [85] "Strait of Gibraltar"         "Sea of Marmara"             </span></span>
-<span><span class="co">#&gt;  [87] "Sea of Azov"                 "Ligure Sea"                 </span></span>
-<span><span class="co">#&gt;  [89] "Ionian Sea"                  "Black Sea"                  </span></span>
-<span><span class="co">#&gt;  [91] "Balear Sea"                  "Alboran Sea"                </span></span>
-<span><span class="co">#&gt;  [93] "Aegean Sea"                  "Adriatic Sea"               </span></span>
-<span><span class="co">#&gt;  [95] "Western Basin"               "Eastern Basin"              </span></span>
-<span><span class="co">#&gt;  [97] "Mediterranean Sea"           "Mediterranean Region"       </span></span>
-<span><span class="co">#&gt;  [99] "Riiser-Larsen Sea"           "Red Sea"                    </span></span>
-<span><span class="co">#&gt; [101] "Prydz Bay"                   "Persian Gulf"               </span></span>
-<span><span class="co">#&gt; [103] "Palk Bay, Palk Strait"       "Mozambique Channel"         </span></span>
-<span><span class="co">#&gt; [105] "Malacca Strait"              "Lakshadweep Sea"            </span></span>
-<span><span class="co">#&gt; [107] "Gulf of Suez"                "Gulf of Oman"               </span></span>
-<span><span class="co">#&gt; [109] "Gulf of Mannar"              "Gulf of Aqaba"              </span></span>
-<span><span class="co">#&gt; [111] "Gulf of Aden"                "Great Australian Bight"     </span></span>
-<span><span class="co">#&gt; [113] "Cosmonaut Sea"               "Burma Sea, Andaman Sea"     </span></span>
-<span><span class="co">#&gt; [115] "Bay of Bengal"               "Arabian Sea"                </span></span>
-<span><span class="co">#&gt; [117] "Indian Ocean"                "The Sound"                  </span></span>
-<span><span class="co">#&gt; [119] "The Little Belt"             "The Great Belt"             </span></span>
-<span><span class="co">#&gt; [121] "Kattegat"                    "Gulf of Riga"               </span></span>
-<span><span class="co">#&gt; [123] "Gulf of Finland"             "Gulf of Bothnia"            </span></span>
-<span><span class="co">#&gt; [125] "Baltic Sea"                  "White Sea"                  </span></span>
-<span><span class="co">#&gt; [127] "Norwegian Sea"               "Northwestern Passages"      </span></span>
-<span><span class="co">#&gt; [129] "North Greenland Sea"         "Lincoln Sea"                </span></span>
-<span><span class="co">#&gt; [131] "Laptev Sea"                  "Kara Sea"                   </span></span>
-<span><span class="co">#&gt; [133] "Iceland Sea"                 "Hudson Strait"              </span></span>
-<span><span class="co">#&gt; [135] "Hudson Bay"                  "East Siberian Sea"          </span></span>
-<span><span class="co">#&gt; [137] "Davis Strait"                "Chukchi Sea"                </span></span>
-<span><span class="co">#&gt; [139] "Beaufort Sea"                "Barents Sea"                </span></span>
-<span><span class="co">#&gt; [141] "Baffin Bay"                  "Arctic Ocean"</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/areas_vocabulary.html">areas_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] "Not relevant"                "Not reported"
+  [3] "Other"                       "Torres Strait"
+  [5] "Tasman Sea"                  "Solomon Sea"
+  [7] "Ross Sea"                    "Coral Sea"
+  [9] "Bismarck Sea"                "Bellingshausen Sea"
+ [11] "Bass Strait"                 "Amundsen Sea"
+ [13] "Timor Sea"                   "Sunda Strait"
+ [15] "Sumba Strait"                "Sulu Sea"
+ [17] "Sulawesi Sea"                "South China Sea"
+ [19] "Singapore Strait"            "Seram Sea"
+ [21] "Sawu Sea"                    "Natuna Sea"
+ [23] "Mindanao Sea"                "Maluku Sea"
+ [25] "Makasar Strait"              "Joseph Bonaparte Gulf"
+ [27] "Jawa Sea"                    "Halmahera Sea"
+ [29] "Gulf of Tonkin"              "Gulf of Tomini"
+ [31] "Gulf of Thailand"            "Gulf of Carpentaria"
+ [33] "Gulf of Bone"                "Gulf of Berau"
+ [35] "Flores Sea"                  "Banda Sea"
+ [37] "Bali Sea"                    "Aru Sea"
+ [39] "Arafura Sea"                 "South Pacific Ocean"
+ [41] "Yellow Sea"                  "Taiwan Strait"
+ [43] "Seto Naikai"                 "Sea of Okhotsk"
+ [45] "Philippine Sea"              "Liaodong Gulf"
+ [47] "Japan Sea"                   "Gulf of Tartary"
+ [49] "Gulf of Panama"              "Gulf of California"
+ [51] "Gulf of Alaska"              "East China Sea"
+ [53] "Coastal waters of SE Alaska" "Bo Sea"
+ [55] "Bering Sea"                  "Anadyrskiy Gulf"
+ [57] "North Pacific Ocean"         "Pacific Ocean"
+ [59] "Weddell Sea"                 "Scotia Sea"
+ [61] "Rio de la Plata"             "Lazarev Sea"
+ [63] "Drake Passage"               "South Atlantic Ocean"
+ [65] "Skagerrak"                   "Scotland Sea"
+ [67] "North Sea"                   "Labrador Sea"
+ [69] "Irish Sea"                   "Gulf of St. Lawrence"
+ [71] "Gulf of Mexico"              "Gulf of Guinea"
+ [73] "Greenland Sea"               "English Channel"
+ [75] "Celtic Sea"                  "Caribbean Sea"
+ [77] "Canarias Sea"                "Bristol Channel"
+ [79] "Bay of Fundy"                "Bay of Biscay"
+ [81] "North Atlantic Ocean"        "Atlantic Ocean"
+ [83] "Tirreno Sea"                 "Strait of Sicilia"
+ [85] "Strait of Gibraltar"         "Sea of Marmara"
+ [87] "Sea of Azov"                 "Ligure Sea"
+ [89] "Ionian Sea"                  "Black Sea"
+ [91] "Balear Sea"                  "Alboran Sea"
+ [93] "Aegean Sea"                  "Adriatic Sea"
+ [95] "Western Basin"               "Eastern Basin"
+ [97] "Mediterranean Sea"           "Mediterranean Region"
+ [99] "Riiser-Larsen Sea"           "Red Sea"
+[101] "Prydz Bay"                   "Persian Gulf"
+[103] "Palk Bay, Palk Strait"       "Mozambique Channel"
+[105] "Malacca Strait"              "Lakshadweep Sea"
+[107] "Gulf of Suez"                "Gulf of Oman"
+[109] "Gulf of Mannar"              "Gulf of Aqaba"
+[111] "Gulf of Aden"                "Great Australian Bight"
+[113] "Cosmonaut Sea"               "Burma Sea, Andaman Sea"
+[115] "Bay of Bengal"               "Arabian Sea"
+[117] "Indian Ocean"                "The Sound"
+[119] "The Little Belt"             "The Great Belt"
+[121] "Kattegat"                    "Gulf of Riga"
+[123] "Gulf of Finland"             "Gulf of Bothnia"
+[125] "Baltic Sea"                  "White Sea"
+[127] "Norwegian Sea"               "Northwestern Passages"
+[129] "North Greenland Sea"         "Lincoln Sea"
+[131] "Laptev Sea"                  "Kara Sea"
+[133] "Iceland Sea"                 "Hudson Strait"
+[135] "Hudson Bay"                  "East Siberian Sea"
+[137] "Davis Strait"                "Chukchi Sea"
+[139] "Beaufort Sea"                "Barents Sea"
+[141] "Baffin Bay"                  "Arctic Ocean"               </code></pre>
+</div>
 </div>
 </section></section><section class="level2"><h3 id="latitude---numeric-free-mandatory">Latitude - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#latitude---numeric-free-mandatory"></a>
 </h3>
 <p><code>LATITUDE</code></p>
-<p>Site latitude (north-south position, also known as northing, between -90.0° and +90.0°) is recorded in decimal decimal degrees. Arbitrary precision (within the bounds of R’s numeric data type) is possible, but the degree of precision reported (i.e. decimal places) should be appropriate to the actual sampling. 3 decimal places corresponds to approximately 111 m accuracy, and 4 to within 11 m. Under some circumstances this can cause somewhat confusing combinations of coordinates and site types; for example, a site may be reported as being on land but with coordinates that are clearly in the ocean. In future, we plan to include an explicit metric of spatial uncertainty. A latitude is always associated with a <a href="#coordinate-reference-system---string-controlled-mandatory">Coordinate Reference System</a>.</p>
+<p>Site latitude (north-south position, also known as northing, between -90.0° and +90.0°) is recorded in decimal decimal degrees. Arbitrary precision (within the bounds of R’s numeric data type) is possible, but the degree of precision reported (i.e. decimal places) should be appropriate to the actual sampling. 3 decimal places corresponds to approximately 111 m accuracy, and 4 to within 11 m. Under some circumstances this can cause somewhat confusing combinations of coordinates and site types; for example, a site may be reported as being on land but with coordinates that are clearly in the ocean. In future, we plan to include an explicit metric of spatial uncertainty. A latitude is always associated with a <a href="#coordinate-reference-system">Coordinate Reference System</a>.</p>
 </section><section class="level2"><h3 id="longitude---numeric-free-mandatory">Longitude - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#longitude---numeric-free-mandatory"></a>
 </h3>
 <p><code>LONGITUDE</code></p>
-<p>Site longitude (east-west position, also known as easting, between -180.0° and +180.0°) is recorded in decimal decimal degrees. See <a href="#latitude---numeric-free-mandatory">Latitude</a> for further details. A longitude is always associated with a <a href="#coordinate-reference-system---string-controlled-mandatory">Coordinate Reference System</a>.</p>
+<p>Site longitude (east-west position, also known as easting, between -180.0° and +180.0°) is recorded in decimal decimal degrees. See <a href="#latitude">Latitude</a> for further details. A longitude is always associated with a <a href="#coordinate-reference-system">Coordinate Reference System</a>.</p>
 </section><section class="level2"><h3 id="coordinate-reference-system---string-controlled-mandatory">Coordinate Reference System - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#coordinate-reference-system---string-controlled-mandatory"></a>
 </h3>
 <p><code>SITE_COORDINATE_SYSTEM</code></p>
@@ -659,16 +673,18 @@
 <section class="level3"><h4 id="controlled-vocabulary-4">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-4"></a>
 </h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/coordinate_systems_vocabulary.html">coordinate_systems_vocabulary</a></span><span class="op">(</span>common_only <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Not relevant"          "Not reported"          "WGS 84"               </span></span>
-<span><span class="co">#&gt; [4] "ETRS89"                "WGS 84 / UTM zone 32N" "WGS 84 / UTM zone 33N"</span></span>
-<span><span class="co">#&gt; [7] "WGS 84 / UTM zone 34N" "WGS 84 / UTM zone 35N" "Other"</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/coordinate_systems_vocabulary.html">coordinate_systems_vocabulary</a></span><span class="op">(</span>common_only <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Not relevant"          "Not reported"          "WGS 84"
+[4] "ETRS89"                "WGS 84 / UTM zone 32N" "WGS 84 / UTM zone 33N"
+[7] "WGS 84 / UTM zone 34N" "WGS 84 / UTM zone 35N" "Other"                </code></pre>
+</div>
 </div>
 </section></section><section class="level2"><h3 id="altitude-value---numeric-free-mandatory">Altitude Value - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#altitude-value---numeric-free-mandatory"></a>
 </h3>
 <p><code>ALTITUDE_VALUE</code></p>
-<p>Altitude value above or below sea level, including depth of water sampling (but <em>not</em> depth of ice or sediment cores). This data is frequently not available for sampling sites, in which case it can be reported as 0. Associated with an <a href="#altitude-unit---string-controlled-mandatory">altitude unit</a>.</p>
+<p>Altitude value above or below sea level, including depth of water sampling (but <em>not</em> depth of ice or sediment cores). This data is frequently not available for sampling sites, in which case it can be reported as 0. Associated with an <a href="#altitude-unit">altitude unit</a>.</p>
 </section><section class="level2"><h3 id="altitude-unit---string-controlled-mandatory">Altitude Unit - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#altitude-unit---string-controlled-mandatory"></a>
 </h3>
 <p><code>ALTITUDE_UNIT</code></p>
@@ -676,9 +692,11 @@
 <section class="level3"><h4 id="controlled-vocabulary-5">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-5"></a>
 </h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/altitude_units_vocabulary.html">altitude_units_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "km" "m"  "cm" "mm"</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/altitude_units_vocabulary.html">altitude_units_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "km" "m"  "cm" "mm"</code></pre>
+</div>
 </div>
 </section></section><section class="level2"><h3 id="entered-by---string-free-mandatory">Entered By - String, free, mandatory<a class="anchor" aria-label="anchor" href="#entered-by---string-free-mandatory"></a>
 </h3>

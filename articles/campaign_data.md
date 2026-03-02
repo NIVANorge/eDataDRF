@@ -23,9 +23,9 @@ initialise_campaign_tibble()
 
 ## Variables
 
-### Campaign Name Short - String, free (\>= 40 characters), mandatory
+### Campaign Name Short
 
-`CAMPAIGN_NAME_SHORT`
+`CAMPAIGN_NAME_SHORT` - *string, free (\>= 40 characters), mandatory*
 
 A short, terse identifier for the campaign. This is used as a primary
 key for Campaign data and a foreign key in [Measurements
@@ -35,50 +35,50 @@ data](https://NIVANorge.github.io/eDataDRF/articles/methods_data.md). No
 format is enforced beyond the character limit, but it is rcommended to
 use PascalCase to maximise character efficiency and readability.
 
-### Campaign Name - String, free, mandatory
+### Campaign Name
 
-`CAMPAIGN_NAME`
+`CAMPAIGN_NAME` - *string, free, mandatory*
 
 Hey, this actually has a character limit. Who knew!
 
-### Campaign Start Date - Date (ISO), free, mandatory
+### Campaign Start Date
 
-`CAMPAIGN_START_DATE`
+`CAMPAIGN_START_DATE` - *date (ISO), free, mandatory*
 
 The date when a sampling campaign began; the first reported sampling
 date. In rare cases reference objects may not report this. In such
 cases, record an approximate date and note the issue in [Campaign
-Comments](#campaign-comment---string-free-optional).
+Comments](#campaign-comment).
 
-### Campaign End Date - Date (ISO), free, optional
+### Campaign End Date
 
-`CAMPAIGN_END_DATE`
+`CAMPAIGN_END_DATE` - *date (ISO), free, optional*
 
 If avaiable, the last sampling date of the campaign.
 
-### Organisation - String, free, mandatory
+### Organisation
 
-`ORGANISATION`
+`ORGANISATION` - *string, free, mandatory*
 
 The primary organisation responsible for conducting the campaign. In the
 case of academic publications, this is typically the lead author’s
 primary employer.
 
-### Entered By - String, free, mandatory
+### Entered By
 
-`ENTERED_BY`
+`ENTERED_BY` - *string, free, mandatory*
 
 The name or email address of the user entering data.
 
-### Entered Date - Date (ISO), free, mandatory
+### Entered Date
 
-`ENTERED_DATE`
+`ENTERED_DATE` - *date (ISO), free, mandatory*
 
 The date that campaign data were entered.
 
-### Campaign Comment - String, free, optional
+### Campaign Comment
 
-`CAMPAIGN_COMMENT`
+`CAMPAIGN_COMMENT` - *string, free, optional*
 
 Space for the recording of any additional notes or comments about the
 campaign deemed relevant.
