@@ -1,7 +1,8 @@
-## Site Comment
-`SITE_COMMENT` - *string, free, optional*andatory*, mandatory*
-
-Unit associated with [altitude value](#altitude-value).VignetteIndexEntry{sites_data}
+---
+title: "Sites data"
+subtitle: "Records site coordinates, land use, country/ocean"
+vignette: >
+  %\VignetteIndexEntry{sites_data}
   %\VignetteEngine{quarto::html}
   %\VignetteEncoding{UTF-8}
 knitr:
@@ -34,7 +35,7 @@ initialise_sites_tibble()
 
 A short, unique code identifying the sampled site. Although formatting is not enforced on this field, we recommend using an abbreviated combination of the campaign, long form site name and any details relevant to the site. For example:
 
-"Arctic Monitoring Program; Pelagic Sampling Point 37" -> `AMP-Pelagic-37`. The site code is the primary key for sites data and is used as a foreign key in [samples](samples_data.html) and [measurements](measurements_data.html).
+"Arctic Monitoring Program; Pelagic Sampling Point 37" -> `AMP-Pelagic-37`. The site code is the primary key for sites data and is used as a foreign key in the [Samples](samples_data.html) and [Measurements](measurements_data.html) data tables.
 
 ## Site Name - String, free, mandatory
 `SITE_NAME`

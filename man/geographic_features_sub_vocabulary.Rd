@@ -35,6 +35,7 @@ Other site:
 \code{\link{coordinate_systems_vocabulary}()},
 \code{\link{countries_vocabulary}()},
 \code{\link{geographic_features_vocabulary}()},
-\code{\link{initialise_sites_tibble}()}
+\code{\link{initialise_sites_tibble}()},
+\code{\link{ocean_vocabulary}()}
 }
 \concept{site}

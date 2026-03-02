@@ -822,7 +822,7 @@ countries_vocabulary <- function() {
   )
 }
 
-#' Ocean areas controlled vocabulary
+#' Ocean controlled vocabulary
 #'
 #' Returns controlled vocabulary options for IHO ocean regions.
 #'
@@ -838,17 +838,15 @@ countries_vocabulary <- function() {
 #'
 #' Other
 #'
-#' # TODO: Make name less stupid
-#'
 #' All IHO ocean region names (e.g., Arctic Ocean, Atlantic Ocean, Baltic Sea, Mediterranean Sea, ...)
 #'
 #' Data source: extdata/IHO_oceans.rds
 #'
-#' @return A character vector of ocean area options
+#' @return A character vector of ocean name options
 #' @family site
 #' @importFrom dplyr pull
 #' @export
-areas_vocabulary <- function() {
+ocean_vocabulary <- function() {
   IHO_oceans <- readRDS(
     system.file(
       "extdata",
@@ -865,6 +863,35 @@ areas_vocabulary <- function() {
     "Other",
     IHO_oceans
   )
+}
+
+#' Ocean controlled vocabulary (wrapper for ocean_vocabulary())
+#'
+#' Returns controlled vocabulary options for IHO ocean regions.
+#'
+#' @details
+#' Provides ocean and sea names from the International Hydrographic Organisation (IHO)
+#' regions dataset, downloaded from https://www.marineregions.org/download_file.php?name=World_Seas_IHO_v3.zip.
+#' Wrapper for ocean_vocabulary() used to maintain compatibility.
+#' The complete list is read from an internal data file (IHO_oceans.rds)
+#' and includes options such as:
+#'
+#' Not relevant
+#'
+#' Not reported
+#'
+#' Other
+#'
+#' All IHO ocean region names (e.g., Arctic Ocean, Atlantic Ocean, Baltic Sea, Mediterranean Sea, ...)
+#'
+#' Data source: extdata/IHO_oceans.rds
+#'
+#' @return A character vector of ocean name options
+#' @family site
+#' @importFrom dplyr pull
+#' @export
+areas_vocabulary <- function() {
+  ocean_vocabulary()
 }
 
 #' Altitude units controlled vocabulary

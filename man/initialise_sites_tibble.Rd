@@ -66,7 +66,8 @@ Other site:
 \code{\link{coordinate_systems_vocabulary}()},
 \code{\link{countries_vocabulary}()},
 \code{\link{geographic_features_sub_vocabulary}()},
-\code{\link{geographic_features_vocabulary}()}
+\code{\link{geographic_features_vocabulary}()},
+\code{\link{ocean_vocabulary}()}
 }
 \concept{initialise_tibble}
 \concept{site}
