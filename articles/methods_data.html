@@ -75,7 +75,7 @@
 </ol>
 <p>These methodologies are structured for the collection of data on chemicals stressors, which reflects the dominant use case of the format so far. Extension to cover a greater range of non-chemical stressors is planned for future versions.</p>
 <p>Currently no external ontology or taxonomy is used for methodology. The <a href="https://github.com/rsc-ontology/rsc-cmo" class="external-link">Chemical Methods Ontology</a> (CMO) may be appropriate, and we will continue to review its progress to determine the appropriate form of any harmonisation.</p>
-<p>The Methods table is a metadata table that is transformed before being linked to the <a href="measurements_data.html">Measurements table</a>. Because it is assumed that each measurement will typically have a sampling, extraction, fractionation, and analytical protocol associated with it, the measurements table has a foreign key for each type of methdology that references the relevant <a href="#protocol-id---string-free-mandatory">Protocol ID</a>.</p>
+<p>The Methods table is a metadata table that is transformed before being linked to the <a href="measurements_data.html">Measurements table</a>. Because it is assumed that each measurement will typically have a sampling, extraction, fractionation, and analytical protocol associated with it, the measurements table has a foreign key for each type of methdology that references the relevant <a href="#protocol-id">Protocol ID</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://NIVANorge.github.io/eDataDRF/">eDataDRF</a></span><span class="op">)</span></span></code></pre></div>
@@ -89,9 +89,9 @@
 </div>
 </section><section class="section level2"><h2 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
 </h2>
-<section class="level2"><h3 id="protocol-id---string-free-mandatory">Protocol ID - String, free, mandatory<a class="anchor" aria-label="anchor" href="#protocol-id---string-free-mandatory"></a>
+<section class="level2"><h3 id="protocol-id">Protocol ID<a class="anchor" aria-label="anchor" href="#protocol-id"></a>
 </h3>
-<p><code>PROTOCOL_ID</code></p>
+<p><code>PROTOCOL_ID</code> - <em>string, free, mandatory</em></p>
 <p>A short, terse identifier for the protocol. This is used as a primary key for Methods data and a foreign key in the Sampling Protocol, Extraction Protocol, Fractionation Protocol, and Analytical Protocol columns. <a href="measurements_data.html">Measurements data</a>.</p>
 <p>Protocol IDs are automatically generated based on the protocol type, short name, campaign name, and, in cases where more than one of a type of technique is used per campaign, sequence number. This is theoretically vulnerable to colisions, and a hashed or serial key would be safer, but this is not anticipated to be a problem at the current scale of use at the format. Additionally, it is far easier to read and intepret for humans.</p>
 <div class="cell">
@@ -104,13 +104,13 @@
 <span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "A01_ICPMS_TestCampai"</span></span></code></pre></div>
 </div>
-</section><section class="level2"><h3 id="campaign-name---string-free-mandatory">Campaign Name - String, free, mandatory<a class="anchor" aria-label="anchor" href="#campaign-name---string-free-mandatory"></a>
+</section><section class="level2"><h3 id="campaign-name">Campaign Name<a class="anchor" aria-label="anchor" href="#campaign-name"></a>
 </h3>
-<p><code>CAMPAIGN_NAME</code></p>
-<p>A short, terse identifier for the campaign. Foreign key referenced from <a href="campaign_data.html">Campaign data</a>, used to generate <a href="#protocol-id---string-free-mandatory">Protocol ID</a>.</p>
-</section><section class="level2"><h3 id="protocol-category---string-controlled-vocabulary-mandatory">Protocol Category - String, controlled vocabulary, mandatory<a class="anchor" aria-label="anchor" href="#protocol-category---string-controlled-vocabulary-mandatory"></a>
+<p><code>CAMPAIGN_NAME</code> - <em>string, free, mandatory</em></p>
+<p>A short, terse identifier for the campaign. Foreign key referenced from <a href="campaign_data.html">Campaign data</a>, used to generate <a href="#protocol-id">Protocol ID</a>.</p>
+</section><section class="level2"><h3 id="protocol-category">Protocol Category<a class="anchor" aria-label="anchor" href="#protocol-category"></a>
 </h3>
-<p><code>PROTOCOL_CATEGORY</code></p>
+<p><code>PROTOCOL_CATEGORY</code> - <em>string, controlled vocabulary, mandatory</em></p>
 <p>The category of protocol/method (Sampling, Extraction, Fractionation, Analytical).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
@@ -118,9 +118,9 @@
 <span><span class="co">#&gt; [1] "Sampling Protocol"      "Fractionation Protocol" "Extraction Protocol"   </span></span>
 <span><span class="co">#&gt; [4] "Analytical Protocol"</span></span></code></pre></div>
 </div>
-</section><section class="level2"><h3 id="protocol-name---string-controlled-vocabulary-mandatory">Protocol Name - String, controlled vocabulary, mandatory<a class="anchor" aria-label="anchor" href="#protocol-name---string-controlled-vocabulary-mandatory"></a>
+</section><section class="level2"><h3 id="protocol-name">Protocol Name<a class="anchor" aria-label="anchor" href="#protocol-name"></a>
 </h3>
-<p><code>PROTOCOL_NAME</code></p>
+<p><code>PROTOCOL_NAME</code> - <em>string, controlled vocabulary, mandatory</em></p>
 <p>The consensus name (short and long) of a protocol or method used in sampling. Options are currently based on the aquatic ecotoxicology domain, but will be extended and harmonised with relevant ontologies and taxonomies as practical.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
@@ -211,9 +211,9 @@
 <span><span class="co"># call all of the above functions bound into a single table</span></span>
 <span><span class="co"># protocol_options_vocabulary()</span></span></code></pre></div>
 </div>
-</section><section class="level2"><h3 id="protocol-comment---string-free-optional">Protocol Comment - String, free, optional<a class="anchor" aria-label="anchor" href="#protocol-comment---string-free-optional"></a>
+</section><section class="level2"><h3 id="protocol-comment">Protocol Comment<a class="anchor" aria-label="anchor" href="#protocol-comment"></a>
 </h3>
-<p><code>PROTOCOL_COMMENT</code></p>
+<p><code>PROTOCOL_COMMENT</code> - <em>string, free, optional</em></p>
 <p>Space for the recording of any additional notes or comments about the method deemed relevant. As information on the specific equipment or more detailed protocols may also be useful, users are encouraged to copy relevant text verbatim from the source.</p>
 </section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

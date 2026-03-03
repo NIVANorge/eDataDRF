@@ -2,6 +2,32 @@
 
 ## Introduction
 
+[Criteria for Reporting and Evaluating Exposure Datasets
+(CREED)](https://www.setac.org/resource/creed-for-use-in-environmental-assessments-a-timely-development-update.html)
+is a framework for evaluating the relevance and reliability of a
+reference object for a given exposure assessment question across a
+series of questions. Users set criteria for it to be relevant to their
+question, and use a pre-defined set of reliability criteria.
+
+The object is evaluated based on its data availability, precision,
+choice of methods, and a final score is calculated for both its
+relevance and reliability based on its useability at “Gold” and “Silver”
+levels of quality. This table collects the relevant data from non-CREED
+tables selected by the user or an automated data population process, the
+user-appraised scores, and any limitations the user chooses to comments
+on. In the data export process, the below functions are used to create
+two .CSV files: one for reliability and one for relevance. Scores are
+used to calculate a [CREED
+score](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.qmd).
+
+This table is not intended to be used as a final data product, but is
+included in the format because it provides traceability on how the CREED
+score was calculated. Because a large part of the evaluation logic is
+included in the [eData app](https://github.com/NIVANorge/STOPeData),
+this table is currently just a container with little relevant
+information. It is planned to migrate this logic to the eDataDRF in
+future.
+
 ``` r
 library(eDataDRF)
 ```
@@ -16,26 +42,58 @@ initialise_CREED_data_tibble()
 
 ## Variables
 
-### Criterion ID - String, free, mandatory
+### Criterion ID
 
-`criterion_id`
+`criterion_id` - *string, free, mandatory*
 
-### Criterion Title - String, free, mandatory
+A alphanumeric serial identifier for CREED’s relevance (`RV1` - `RV11`)
+and reliability (`RB1` - `RB19`) criteria.
 
-`criterion_title`
+### Criterion Title
 
-### Required Recommended - String, free, mandatory
+`criterion_title` - *string, free, mandatory*
 
-`required_recommended`
+A short, descriptive title for the domain of the criterion, e.g. “Sample
+Medium/Matrix”.
 
-### Relevant Data - String, free, mandatory
+### Required or Recommended
 
-`relevant_data`
+`required_recommended` - *string, free, mandatory*
 
-### Score - String, free, mandatory
+Whether the criterion is required (in which case it will be used to
+calculate a silver score), or recommended (gold score).
 
-`score`
+### Relevant Data
 
-### Limitations - String, free, mandatory
+`relevant_data` - *string, free, mandatory*
 
-`limitations`
+Any relevant data provided by the auto-population process or the user.
+For example:
+
+    1 compartment: Aquatic (Freshwater)
+
+    3 protocols:
+    Sampling Protocol - Point
+    Extraction Protocol - Not reported
+    Fractionation Protocol - Not reported
+
+### Score
+
+`score` - *string, free, mandatory*
+
+An assessment score based on the extent to which the data object
+fulfills each criterion. Criterion scores are stored as a named vector
+of numbers. A lower score (1) is better, a higher score (4) is worse.
+
+``` r
+CREED_choices_vocabulary()
+#>      Not Met    Fully Met   Partly Met Not Reported Not Relevant 
+#>            4            1            2            3            1
+```
+
+### Limitations
+
+`limitations` - *string, free, mandatory*
+
+Any limitations, caveats, or other relevant comments identified by the
+user conducting the assessment.

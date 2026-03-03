@@ -2,12 +2,18 @@
 
 ## Introduction
 
-Data on sampled biota, if relevant.
+Where biota are sampled, it becomes important to capture considerable
+additional information. Species, tissue type, gender, lifestage, and
+other factors can considerably affect exposure to pollutants, and thus
+this information is important to put their occurence in its full
+context.
 
-- Link to ecotox db
-- Plan to use EoL or wikispecies in future
-- [Test link to samples
-  data](https://NIVANorge.github.io/eDataDRF/articles/samples_data.md)
+The Biota table is an intermediate table that extends the [Samples data
+table](https://NIVANorge.github.io/eDataDRF/articles/samples_data.md)
+where biota
+[compartments](https://NIVANorge.github.io/eDataDRF/articles/compartments_data.md)
+are selected. Otherwise, this element of the data entry workflow is
+skipped as irrelevant.
 
 ``` r
 library(eDataDRF)
@@ -26,98 +32,86 @@ initialise_biota_tibble()
 
 ## Variables
 
-### Sample ID - String, free, mandatory
+### Sample ID
 
-`SAMPLE_ID`
+`SAMPLE_ID` - *String, free, mandatory*
 
-### Site Code - String, free, mandatory
+Transcribed from [Sample
+ID](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html#sample-id)
+in the Samples data.
 
-`SITE_CODE`
+### Site Code
 
-### Parameter Name - String, free, mandatory
+`SITE_CODE` - *String, free, mandatory*
 
-`PARAMETER_NAME`
+Transcribed from [Site
+Code](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html#site-code)
+in the Samples data.
 
-### Environ Compartment - String, controlled, mandatory
+### Parameter Name
 
-`ENVIRON_COMPARTMENT`
+`PARAMETER_NAME` - *String, free, mandatory*
 
-``` r
-environ_compartments_vocabulary()
-#> [1] "Aquatic"      "Atmospheric"  "Terrestrial"  "Biota"        "Not relevant"
-#> [6] "Not reported" "Other"
-```
+Transcribed from [Parameter
+Name](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html#parameter-name)
+in the Samples data.
+
+### Environmental Compartment
+
+`ENVIRON_COMPARTMENT` - *String, controlled, mandatory*
+
+Transcribed from [Environmental
+Compartment](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html#environmental-compartment)
+in the Samples data.
+
+### Environmental Sub-Compartment
+
+`ENVIRON_COMPARTMENT_SUB` - *String, controlled, mandatory*
+
+Transcribed from [Environmental
+Sub-Compartment](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html#environmental-sub-compartment)
+in the Samples data.
+
+### Measured Category
+
+`MEASURED_CATEGORY` - *String, controlled, mandatory*
+
+Transcribed from [Measured
+Category](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html#measured-category)
+in the Samples data.
+
+### Sampling Date
+
+`SAMPLING_DATE` - *String, free, mandatory*
+
+Transcribed from [Sampling
+Date](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html#sampling-date)
+in the Samples data.
+
+### Subsample
+
+`SUBSAMPLE` - *String, free, mandatory*
+
+Transcribed from
+[Subsample](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html#subsample)
+in the Samples data.
+
+### Species Group
+
+`SPECIES_GROUP` - *String, controlled, mandatory*
+
+The rough grouping of species the biota belongs to. This classification
+is not strictly taxonomic but rather reflects the categories typically
+used in ecotoxicology. Both species group and name (below) are taken
+from the EPA’s [ECOTOX
+Knowledgebase](https://www.epa.gov/comptox-tools/ecotoxicology-ecotox-knowledgebase-resource-hub)
+and cover approximately 13,000 of the species most used in the field.
+Where this is insufficent, a species name can be added manually.
+
+In future, we hope to incorporate a more exhaustive species taxonomy or
+resource.
 
 #### Controlled Vocabulary
-
-### Environ Compartment Sub - String, controlled, mandatory
-
-`ENVIRON_COMPARTMENT_SUB`
-
-``` r
-environ_compartments_sub_vocabulary()
-#> $Aquatic
-#>                    Freshwater             Marine/Salt Water 
-#>                  "Freshwater"           "Marine/Salt Water" 
-#>   Brackish/Transitional Water                   Groundwater 
-#> "Brackish/Transitional Water"                 "Groundwater" 
-#>                    Wastewater          Liquid Growth Medium 
-#>                  "Wastewater"        "Liquid Growth Medium" 
-#>                     Rainwater                    Stormwater 
-#>                   "Rainwater"                  "Stormwater" 
-#>                      Leachate              Aquatic Sediment 
-#>                    "Leachate"            "Aquatic Sediment" 
-#>                     Porewater                        Sludge 
-#>                   "Porewater"                      "Sludge" 
-#>                      Snow/Ice 
-#>                    "Snow/Ice" 
-#> 
-#> $Atmospheric
-#>    Indoor Air   Outdoor Air 
-#>  "Indoor Air" "Outdoor Air" 
-#> 
-#> $Terrestrial
-#>     Terrestrial Biological Residue              Soil H Horizon (Peat) 
-#>   "Terrestrial Biological Residue"            "Soil H Horizon (Peat)" 
-#>           Soil O Horizon (Organic)           Soil A Horizon (Topsoil) 
-#>         "Soil O Horizon (Organic)"         "Soil A Horizon (Topsoil)" 
-#>           Soil E Horizon (Mineral)           Soil S Horizon (Mineral) 
-#>         "Soil E Horizon (Mineral)"         "Soil S Horizon (Mineral)" 
-#>   Soil C Horizon (Parent Material)           Soil R Horizon (Bedrock) 
-#> "Soil C Horizon (Parent Material)"         "Soil R Horizon (Bedrock)" 
-#> 
-#> $Biota
-#>   Biota, Terrestrial       Biota, Aquatic   Biota, Atmospheric 
-#> "Biota, Terrestrial"     "Biota, Aquatic" "Biota, Atmospheric" 
-#>         Biota, Other 
-#>       "Biota, Other"
-```
-
-#### Controlled Vocabulary
-
-### Measured Category - String, controlled, mandatory
-
-`MEASURED_CATEGORY`
-
-``` r
-measured_categories_vocabulary()
-#>               External               Internal                Surface 
-#>       "External Media" "Internal to Organism"  "Surface of Organism"
-```
-
-#### Controlled Vocabulary
-
-### Sampling Date - String, free, mandatory
-
-`SAMPLING_DATE`
-
-### Subsample - String, free, mandatory
-
-`SUBSAMPLE`
-
-### Species Group - String, controlled, mandatory
-
-`SPECIES_GROUP`
 
 ``` r
 species_groups_vocabulary()
@@ -128,11 +122,17 @@ species_groups_vocabulary()
 #> [17] "Worms"           "Other"
 ```
 
+### Sample Species
+
+`SAMPLE_SPECIES` - *String, controlled, mandatory*
+
+The consensus binomial scientific name of the species sampled. As above,
+both species group and name (below) are taken from the EPA’s [ECOTOX
+Knowledgebase](https://www.epa.gov/comptox-tools/ecotoxicology-ecotox-knowledgebase-resource-hub)
+and cover approximately 13,000 of the species most used in the field.
+Where this is insufficent, a species name can be added manually.
+
 #### Controlled Vocabulary
-
-### Sample Species - String, controlled, mandatory
-
-`SAMPLE_SPECIES`
 
 ``` r
 species_names_vocabulary()
@@ -152,11 +152,15 @@ species_names_vocabulary()
 #> # ℹ 29,552 more rows
 ```
 
+### Sample Tissue
+
+`SAMPLE_TISSUE` - *String, controlled, mandatory*
+
+The tissue type sampled from biota. The controlled vocabulary for this
+variable is currently very much non-exhaustive. This will be replaced by
+harmonisation with an existing tissue ontology as practical.
+
 #### Controlled Vocabulary
-
-### Sample Tissue - String, controlled, mandatory
-
-`SAMPLE_TISSUE`
 
 ``` r
 tissue_types_vocabulary()
@@ -172,11 +176,15 @@ tissue_types_vocabulary()
 #> [28] "Fruit"              "Seed"               "Other"
 ```
 
+### Sample Species Lifestage
+
+`SAMPLE_SPECIES_LIFESTAGE` - *String, controlled, mandatory*
+
+The lifestage of an organism at time of sampling. As above, this is
+currently somewhat restrictive but will be extended and harmonised as
+practical.
+
 #### Controlled Vocabulary
-
-### Sample Species Lifestage - String, controlled, mandatory
-
-`SAMPLE_SPECIES_LIFESTAGE`
 
 ``` r
 lifestage_vocabulary()
@@ -185,11 +193,13 @@ lifestage_vocabulary()
 #> [11] "Mixed"        "Other"
 ```
 
+### Sample Species Gender
+
+`SAMPLE_SPECIES_GENDER` - *String, controlled, mandatory*
+
+The gender or sex of a sampled organism. May be harmonised as needed.
+
 #### Controlled Vocabulary
-
-### Sample Species Gender - String, controlled, mandatory
-
-`SAMPLE_SPECIES_GENDER`
 
 ``` r
 gender_vocabulary()
@@ -197,8 +207,9 @@ gender_vocabulary()
 #> [5] "Mixed"         "Hermaphrodite" "Other"
 ```
 
-#### Controlled Vocabulary
+### Biota Comment
 
-### Biota Comment - String, free, optional
+`BIOTA_COMMENT` - *String, free, optional*
 
-`BIOTA_COMMENT`
+Space for the recording of any additional notes or comments about the
+sampled organism deemed relevant.

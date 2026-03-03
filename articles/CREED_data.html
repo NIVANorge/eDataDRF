@@ -66,6 +66,9 @@
 
     <section class="section level2"><h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
+<p><a href="https://www.setac.org/resource/creed-for-use-in-environmental-assessments-a-timely-development-update.html" class="external-link">Criteria for Reporting and Evaluating Exposure Datasets (CREED)</a> is a framework for evaluating the relevance and reliability of a reference object for a given exposure assessment question across a series of questions. Users set criteria for it to be relevant to their question, and use a pre-defined set of reliability criteria.</p>
+<p>The object is evaluated based on its data availability, precision, choice of methods, and a final score is calculated for both its relevance and reliability based on its useability at “Gold” and “Silver” levels of quality. This table collects the relevant data from non-CREED tables selected by the user or an automated data population process, the user-appraised scores, and any limitations the user chooses to comments on. In the data export process, the below functions are used to create two .CSV files: one for reliability and one for relevance. Scores are used to calculate a <a href="CREED_scores_data.qmd">CREED score</a>.</p>
+<p>This table is not intended to be used as a final data product, but is included in the format because it provides traceability on how the CREED score was calculated. Because a large part of the evaluation logic is included in the <a href="https://github.com/NIVANorge/STOPeData" class="external-link">eData app</a>, this table is currently just a container with little relevant information. It is planned to migrate this logic to the eDataDRF in future.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://NIVANorge.github.io/eDataDRF/">eDataDRF</a></span><span class="op">)</span></span></code></pre></div>
@@ -80,30 +83,42 @@
 </div>
 </section><section class="section level2"><h2 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
 </h2>
-<section class="level2"><h3 id="criterion-id---string-free-mandatory">Criterion ID - String, free, mandatory<a class="anchor" aria-label="anchor" href="#criterion-id---string-free-mandatory"></a>
+<section class="level2"><h3 id="criterion-id">Criterion ID<a class="anchor" aria-label="anchor" href="#criterion-id"></a>
 </h3>
-<p><code>criterion_id</code></p>
-<!-- Unique identifier for the CREED criterion. -->
-</section><section class="level2"><h3 id="criterion-title---string-free-mandatory">Criterion Title - String, free, mandatory<a class="anchor" aria-label="anchor" href="#criterion-title---string-free-mandatory"></a>
+<p><code>criterion_id</code> - <em>string, free, mandatory</em></p>
+<p>A alphanumeric serial identifier for CREED’s relevance (<code>RV1</code> - <code>RV11</code>) and reliability (<code>RB1</code> - <code>RB19</code>) criteria.</p>
+</section><section class="level2"><h3 id="criterion-title">Criterion Title<a class="anchor" aria-label="anchor" href="#criterion-title"></a>
 </h3>
-<p><code>criterion_title</code></p>
-<!-- Descriptive title of the criterion. -->
-</section><section class="level2"><h3 id="required-recommended---string-free-mandatory">Required Recommended - String, free, mandatory<a class="anchor" aria-label="anchor" href="#required-recommended---string-free-mandatory"></a>
+<p><code>criterion_title</code> - <em>string, free, mandatory</em></p>
+<p>A short, descriptive title for the domain of the criterion, e.g. “Sample Medium/Matrix”.</p>
+</section><section class="level2"><h3 id="required-or-recommended">Required or Recommended<a class="anchor" aria-label="anchor" href="#required-or-recommended"></a>
 </h3>
-<p><code>required_recommended</code></p>
-<!-- Whether the criterion is required or recommended. -->
-</section><section class="level2"><h3 id="relevant-data---string-free-mandatory">Relevant Data - String, free, mandatory<a class="anchor" aria-label="anchor" href="#relevant-data---string-free-mandatory"></a>
+<p><code>required_recommended</code> - <em>string, free, mandatory</em></p>
+<p>Whether the criterion is required (in which case it will be used to calculate a silver score), or recommended (gold score).</p>
+</section><section class="level2"><h3 id="relevant-data">Relevant Data<a class="anchor" aria-label="anchor" href="#relevant-data"></a>
 </h3>
-<p><code>relevant_data</code></p>
-<!-- Data or information relevant to assessing the criterion. -->
-</section><section class="level2"><h3 id="score---string-free-mandatory">Score - String, free, mandatory<a class="anchor" aria-label="anchor" href="#score---string-free-mandatory"></a>
+<p><code>relevant_data</code> - <em>string, free, mandatory</em></p>
+<p>Any relevant data provided by the auto-population process or the user. For example:</p>
+<pre><code>1 compartment: Aquatic (Freshwater)
+
+3 protocols:
+Sampling Protocol - Point
+Extraction Protocol - Not reported
+Fractionation Protocol - Not reported</code></pre>
+</section><section class="level2"><h3 id="score">Score<a class="anchor" aria-label="anchor" href="#score"></a>
 </h3>
-<p><code>score</code></p>
-<!-- Assessment score for the criterion. -->
-</section><section class="level2"><h3 id="limitations---string-free-mandatory">Limitations - String, free, mandatory<a class="anchor" aria-label="anchor" href="#limitations---string-free-mandatory"></a>
+<p><code>score</code> - <em>string, free, mandatory</em></p>
+<p>An assessment score based on the extent to which the data object fulfills each criterion. Criterion scores are stored as a named vector of numbers. A lower score (1) is better, a higher score (4) is worse.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/CREED_choices_vocabulary.html">CREED_choices_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;      Not Met    Fully Met   Partly Met Not Reported Not Relevant </span></span>
+<span><span class="co">#&gt;            4            1            2            3            1</span></span></code></pre></div>
+</div>
+</section><section class="level2"><h3 id="limitations">Limitations<a class="anchor" aria-label="anchor" href="#limitations"></a>
 </h3>
-<p><code>limitations</code></p>
-<!-- Identified limitations or concerns for the criterion. -->
+<p><code>limitations</code> - <em>string, free, mandatory</em></p>
+<p>Any limitations, caveats, or other relevant comments identified by the user conducting the assessment.</p>
 </section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);

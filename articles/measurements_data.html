@@ -66,6 +66,8 @@
 
     <section class="section level2"><h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
+<p>The <strong>Measurements data table</strong> represents the core data table of the eData format. This table records actual measured parameter values (including uncertainty), and references most other tables using foreign keys.</p>
+<p>This table is built from the <a href="samples_data.html">Samples data table</a> and optionally the <a href="biota_data.html">Biota data table</a> if present. Both tables are bound together (that is, the rows of one are added below the other) and then extended with additional columns. The inclusion of columns in this table and their order is somewhat a</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://NIVANorge.github.io/eDataDRF/">eDataDRF</a></span><span class="op">)</span></span></code></pre></div>
@@ -84,90 +86,50 @@
 </div>
 </section><section class="section level2"><h2 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
 </h2>
-<section class="level2"><h3 id="site-code---string-free-mandatory">Site Code - String, free, mandatory<a class="anchor" aria-label="anchor" href="#site-code---string-free-mandatory"></a>
+<section class="level2"><h3 id="site-code">Site Code<a class="anchor" aria-label="anchor" href="#site-code"></a>
 </h3>
-<p><code>SITE_CODE</code></p>
-<!-- Code identifying the sampling location. -->
-</section><section class="level2"><h3 id="parameter-name---string-free-mandatory">Parameter Name - String, free, mandatory<a class="anchor" aria-label="anchor" href="#parameter-name---string-free-mandatory"></a>
+<p><code>SITE_CODE</code> - <em>string, free, mandatory</em></p>
+<p><a href="sites_data.html#site-code">Site Code</a> is a foreign key that references the <a href="sites_data.html">Sites data table</a>. During Samples table creation the user selects relevant sites using their code and name.</p>
+</section><section class="level2"><h3 id="parameter-name">Parameter Name<a class="anchor" aria-label="anchor" href="#parameter-name"></a>
 </h3>
-<p><code>PARAMETER_NAME</code></p>
-<!-- Name of the measured parameter. Foreign key for parameters. -->
-</section><section class="level2"><h3 id="sampling-date---string-free-mandatory">Sampling Date - String, free, mandatory<a class="anchor" aria-label="anchor" href="#sampling-date---string-free-mandatory"></a>
+<p><code>PARAMETER_NAME</code> - <em>string, free, mandatory</em></p>
+<p><a href="parameters_data.html#parameter-name">Parameter name</a> is a foreign key that references the <a href="parameter_data.html">Parameter data table</a>. During Samples table creation the user selects relevant parameters using their name and type.</p>
+</section><section class="level2"><h3 id="sampling-date">Sampling Date<a class="anchor" aria-label="anchor" href="#sampling-date"></a>
 </h3>
-<p><code>SAMPLING_DATE</code></p>
-<!-- Date of sample collection. -->
-</section><section class="level2"><h3 id="environ-compartment-sub---string-controlled-mandatory">Environ Compartment Sub - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#environ-compartment-sub---string-controlled-mandatory"></a>
+<p><code>SAMPLING_DATE</code> - <em>string, free, mandatory</em></p>
+<p>Transcribed from <a href="samples_data.html#sampling-date">Sampling Date</a> in the Samples data.</p>
+</section><section class="level2"><h3 id="environmental-sub-compartment">Environmental Sub-Compartment<a class="anchor" aria-label="anchor" href="#environmental-sub-compartment"></a>
 </h3>
-<p><code>ENVIRON_COMPARTMENT_SUB</code></p>
-<!-- Specific environmental sub-compartment. -->
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/environ_compartments_sub_vocabulary.html">environ_compartments_sub_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; $Aquatic</span></span>
-<span><span class="co">#&gt;                    Freshwater             Marine/Salt Water </span></span>
-<span><span class="co">#&gt;                  "Freshwater"           "Marine/Salt Water" </span></span>
-<span><span class="co">#&gt;   Brackish/Transitional Water                   Groundwater </span></span>
-<span><span class="co">#&gt; "Brackish/Transitional Water"                 "Groundwater" </span></span>
-<span><span class="co">#&gt;                    Wastewater          Liquid Growth Medium </span></span>
-<span><span class="co">#&gt;                  "Wastewater"        "Liquid Growth Medium" </span></span>
-<span><span class="co">#&gt;                     Rainwater                    Stormwater </span></span>
-<span><span class="co">#&gt;                   "Rainwater"                  "Stormwater" </span></span>
-<span><span class="co">#&gt;                      Leachate              Aquatic Sediment </span></span>
-<span><span class="co">#&gt;                    "Leachate"            "Aquatic Sediment" </span></span>
-<span><span class="co">#&gt;                     Porewater                        Sludge </span></span>
-<span><span class="co">#&gt;                   "Porewater"                      "Sludge" </span></span>
-<span><span class="co">#&gt;                      Snow/Ice </span></span>
-<span><span class="co">#&gt;                    "Snow/Ice" </span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; $Atmospheric</span></span>
-<span><span class="co">#&gt;    Indoor Air   Outdoor Air </span></span>
-<span><span class="co">#&gt;  "Indoor Air" "Outdoor Air" </span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; $Terrestrial</span></span>
-<span><span class="co">#&gt;     Terrestrial Biological Residue              Soil H Horizon (Peat) </span></span>
-<span><span class="co">#&gt;   "Terrestrial Biological Residue"            "Soil H Horizon (Peat)" </span></span>
-<span><span class="co">#&gt;           Soil O Horizon (Organic)           Soil A Horizon (Topsoil) </span></span>
-<span><span class="co">#&gt;         "Soil O Horizon (Organic)"         "Soil A Horizon (Topsoil)" </span></span>
-<span><span class="co">#&gt;           Soil E Horizon (Mineral)           Soil S Horizon (Mineral) </span></span>
-<span><span class="co">#&gt;         "Soil E Horizon (Mineral)"         "Soil S Horizon (Mineral)" </span></span>
-<span><span class="co">#&gt;   Soil C Horizon (Parent Material)           Soil R Horizon (Bedrock) </span></span>
-<span><span class="co">#&gt; "Soil C Horizon (Parent Material)"         "Soil R Horizon (Bedrock)" </span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; $Biota</span></span>
-<span><span class="co">#&gt;   Biota, Terrestrial       Biota, Aquatic   Biota, Atmospheric </span></span>
-<span><span class="co">#&gt; "Biota, Terrestrial"     "Biota, Aquatic" "Biota, Atmospheric" </span></span>
-<span><span class="co">#&gt;         Biota, Other </span></span>
-<span><span class="co">#&gt;       "Biota, Other"</span></span></code></pre></div>
-</div>
+<p><code>ENVIRON_COMPARTMENT_SUB</code> - <em>string, controlled, mandatory</em></p>
+<p>Transcribed from <a href="samples_data.html#environmental-sub-compartment">Environmental Sub-Compartment</a> in the Samples data table.</p>
+</section><section class="level2"><h3 id="subsample">Subsample<a class="anchor" aria-label="anchor" href="#subsample"></a>
+</h3>
+<p><code>SUBSAMPLE</code> - <em>string, free, mandatory</em></p>
+<p>Transcribed from <a href="samples_data.html#subsample">Subsample</a> in the Samples data table.</p>
+</section><section class="level2"><h3 id="measured-flag">Measured Flag<a class="anchor" aria-label="anchor" href="#measured-flag"></a>
+</h3>
+<p><code>MEASURED_FLAG</code> - <em>string, controlled, mandatory</em></p>
+<p>A flag to indicate if the data source reported a measured value (blank) or that it was below the <a href="#lod-value">limit of detection</a> or <a href="#loq-value">limit of quantification</a>. In the latter cases, <a href="#measured-value">Measured value</a> becomes optional, but it is mandatory to complete at least one of LOQ/LOD.</p>
 <section class="level3"><h4 id="controlled-vocabulary">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary"></a>
 </h4>
-<!-- Fill in from environ_compartments_sub_vocabulary() output. -->
-</section></section><section class="level2"><h3 id="subsample---string-free-mandatory">Subsample - String, free, mandatory<a class="anchor" aria-label="anchor" href="#subsample---string-free-mandatory"></a>
-</h3>
-<p><code>SUBSAMPLE</code></p>
-<!-- Subsample identifier. -->
-</section><section class="level2"><h3 id="measured-flag---string-controlled-mandatory">Measured Flag - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#measured-flag---string-controlled-mandatory"></a>
-</h3>
-<p><code>MEASURED_FLAG</code></p>
-<!-- Quality flag for the measurement (e.g., < LOQ, < LOD). -->
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/measured_flags_vocabulary.html">measured_flags_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] ""      "&lt; LOQ" "&lt; LOD"</span></span></code></pre></div>
 </div>
+</section></section><section class="level2"><h3 id="measured-value">Measured Value<a class="anchor" aria-label="anchor" href="#measured-value"></a>
+</h3>
+<p><code>MEASURED_VALUE</code> - <em>numeric, free, conditionally mandatory</em></p>
+<p>The numeric measured value of the parameter, if available.</p>
+</section><section class="level2"><h3 id="uncertainty-type">Uncertainty Type<a class="anchor" aria-label="anchor" href="#uncertainty-type"></a>
+</h3>
+<p><code>UNCERTAINTY_TYPE</code> - <em>string, controlled, mandatory</em></p>
+<p>Many <a href="#measured-value">Measured values</a> are reported as aggregated statistics with uncertainty bounds (mean, mode, etc; 95% CI, SD, SE, range, etc.). Uncertainty Type provides a non-exhaustive classification system for these.</p>
+<p>Where the data source reports uncertaintly, the <a href="#uncertainty-upper-bound">Upper</a> and <a href="#uncertainty-lower-bound">Lower</a> should also be reported.</p>
 <section class="level3"><h4 id="controlled-vocabulary-1">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-1"></a>
 </h4>
-<!-- Fill in from measured_flags_vocabulary() output. -->
-</section></section><section class="level2"><h3 id="measured-value---numeric-free-mandatory">Measured Value - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#measured-value---numeric-free-mandatory"></a>
-</h3>
-<p><code>MEASURED_VALUE</code></p>
-<!-- Numeric value of the measurement. -->
-</section><section class="level2"><h3 id="uncertainty-type---string-controlled-mandatory">Uncertainty Type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#uncertainty-type---string-controlled-mandatory"></a>
-</h3>
-<p><code>UNCERTAINTY_TYPE</code></p>
-<!-- Type of uncertainty or variability metric. -->
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/uncertainty_types_vocabulary.html">uncertainty_types_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt;  [1] "Not Reported"                    "Not Relevant"                   </span></span>
 <span><span class="co">#&gt;  [3] "Arithmetic Mean"                 "Geometric Mean"                 </span></span>
@@ -183,23 +145,22 @@
 <span><span class="co">#&gt; [23] "95% Tolerance Interval"          "95% Bootstrap CI"               </span></span>
 <span><span class="co">#&gt; [25] "Other"</span></span></code></pre></div>
 </div>
+</section></section><section class="level2"><h3 id="uncertainty-upper-bound">Uncertainty Upper Bound<a class="anchor" aria-label="anchor" href="#uncertainty-upper-bound"></a>
+</h3>
+<p><code>UNCERTAINTY_UPPER</code> - <em>numeric, free, conditionally mandatory</em></p>
+<p>The upper bound of any <a href="#uncertainty-type">reported uncertainty</a>.</p>
+</section><section class="level2"><h3 id="uncertainty-lower-bound">Uncertainty Lower Bound<a class="anchor" aria-label="anchor" href="#uncertainty-lower-bound"></a>
+</h3>
+<p><code>UNCERTAINTY_LOWER</code> - <em>numeric, free, conditionally mandatory</em></p>
+<p>The lower bound of any <a href="#uncertainty-type">reported uncertainty</a>.</p>
+</section><section class="level2"><h3 id="measured-unit">Measured Unit<a class="anchor" aria-label="anchor" href="#measured-unit"></a>
+</h3>
+<p><code>MEASURED_UNIT</code> - <em>string, controlled, conditionally mandatory</em></p>
+<p>The unit of measurement associated with the data. A non-exhaustive list of options with conversion factors is provided as part of the format. Mandatory when a <a href="#measured-value">Measured value</a> is provided.</p>
 <section class="level3"><h4 id="controlled-vocabulary-2">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-2"></a>
 </h4>
-<!-- Fill in from uncertainty_types_vocabulary() output. -->
-</section></section><section class="level2"><h3 id="uncertainty-upper---numeric-free-mandatory">Uncertainty Upper - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#uncertainty-upper---numeric-free-mandatory"></a>
-</h3>
-<p><code>UNCERTAINTY_UPPER</code></p>
-<!-- Upper bound of uncertainty. -->
-</section><section class="level2"><h3 id="uncertainty-lower---numeric-free-mandatory">Uncertainty Lower - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#uncertainty-lower---numeric-free-mandatory"></a>
-</h3>
-<p><code>UNCERTAINTY_LOWER</code></p>
-<!-- Lower bound of uncertainty. -->
-</section><section class="level2"><h3 id="measured-unit---string-controlled-mandatory">Measured Unit - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#measured-unit---string-controlled-mandatory"></a>
-</h3>
-<p><code>MEASURED_UNIT</code></p>
-<!-- Unit of measurement. -->
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/parameter_unit_vocabulary.html">parameter_unit_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 64 × 4</span></span>
 <span><span class="co">#&gt;    MEASURED_UNIT BASE_SI_UNIT CONVERSION_FACTOR UNIT_COMMENTS      </span></span>
@@ -216,236 +177,76 @@
 <span><span class="co">#&gt; 10 M             mol/m³       1000              molar concentration</span></span>
 <span><span class="co">#&gt; # ℹ 54 more rows</span></span></code></pre></div>
 </div>
+</section></section><section class="level2"><h3 id="measured-n">Measured N<a class="anchor" aria-label="anchor" href="#measured-n"></a>
+</h3>
+<p><code>MEASURED_N</code> - <em>numeric, free, mandatory</em></p>
+<p>The sample size of a biota population and/or number of replicates the <a href="#measured-value">Measured value</a> represents.</p>
+</section><section class="level2"><h3 id="loq-value">LOQ Value<a class="anchor" aria-label="anchor" href="#loq-value"></a>
+</h3>
+<p><code>LOQ_VALUE</code> - <em>numeric, free, conditionally mandatory</em></p>
+<p>Limit of Quantification of the method, if reported.</p>
+<p>If no <a href="#measured-value">Measured value</a> is reported, at least one of an LOQ and an LOD should be reported with value and unit; implicitly the stressor occurence was below the method’s ability to quantify. If a Measured value, LOQ and/or LOQ are reported, please include as many as possible in the extracted data.</p>
+</section><section class="level2"><h3 id="loq-unit">LOQ Unit<a class="anchor" aria-label="anchor" href="#loq-unit"></a>
+</h3>
+<p><code>LOQ_UNIT</code> - <em>string, controlled, conditionally mandatory</em></p>
+<p>Unit associated with <a href="#loq-value">LOQ Value</a></p>
+<p>If no <a href="#measured-value">Measured value</a> is reported, at least one of an LOQ and an LOD should be reported with value and unit.</p>
+<p>Uses the <a href="#measured-unit">Measured Unit</a> vocabulary.</p>
+</section><section class="level2"><h3 id="lod-value">LOD Value<a class="anchor" aria-label="anchor" href="#lod-value"></a>
+</h3>
+<p><code>LOD_VALUE</code> - <em>numeric, free, conditionally mandatory</em></p>
+<p>Limit of Detection of the method, if reported.</p>
+<p>If no <a href="#measured-value">Measured value</a> is reported, at least one of an LOQ and an LOD should be reported with value and unit; implicitly the stressor occurence was below the method’s ability to detect. If a Measured value, LOQ and/or LOQ are reported, please include as many as possible in the extracted data.</p>
+</section><section class="level2"><h3 id="lod-unit">LOD Unit<a class="anchor" aria-label="anchor" href="#lod-unit"></a>
+</h3>
+<p><code>LOD_UNIT</code> - <em>string, controlled, conditionally mandatory</em></p>
+<p>Unit associated with <a href="#lod-value">LOD Value</a></p>
+<p>If no <a href="#measured-value">Measured value</a> is reported, at least one of an LOQ and an LOD should be reported with value and unit.</p>
+<p>Uses the <a href="#measured-unit">Measured Unit</a> vocabulary.</p>
+</section><section class="level2"><h3 id="sampling-protocol">Sampling Protocol<a class="anchor" aria-label="anchor" href="#sampling-protocol"></a>
+</h3>
+<p><code>SAMPLING_PROTOCOL</code> - <em>string, controlled, mandatory</em></p>
+<p>The ID of the sampling protocol used to generate the measured sample. Foreign key referencing <a href="methods_data.qmd#protocol-id">protocol ID</a>. Limited to sampling protocols.</p>
+</section><section class="level2"><h3 id="extraction-protocol">Extraction Protocol<a class="anchor" aria-label="anchor" href="#extraction-protocol"></a>
+</h3>
+<p><code>EXTRACTION_PROTOCOL</code> - <em>string, controlled, mandatory</em></p>
+<p>The ID of the extraction protocol used to generate the measured sample. Foreign key referencing <a href="methods_data.qmd#protocol-id">protocol ID</a>. Limited to extraction protocols.</p>
+</section><section class="level2"><h3 id="fractionation-protocol">Fractionation Protocol<a class="anchor" aria-label="anchor" href="#fractionation-protocol"></a>
+</h3>
+<p><code>FRACTIONATION_PROTOCOL</code> - <em>string, controlled, mandatory</em></p>
+<p>The ID of the fractionation protocol used to generate the measured sample. Foreign key referencing <a href="methods_data.qmd#protocol-id">protocol ID</a>. Limited to fractionation protocols.</p>
+</section><section class="level2"><h3 id="analytical-protocol">Analytical Protocol<a class="anchor" aria-label="anchor" href="#analytical-protocol"></a>
+</h3>
+<p><code>ANALYTICAL_PROTOCOL</code> - <em>string, controlled, mandatory</em></p>
+<p>The ID of the analytical protocol used to generate the measured sample. Foreign key referencing <a href="methods_data.qmd#protocol-id">protocol ID</a>. Limited to analytical protocols.</p>
+</section><section class="level2"><h3 id="reference-id">Reference ID<a class="anchor" aria-label="anchor" href="#reference-id"></a>
+</h3>
+<p><code>REFERENCE_ID</code> - <em>string, free, mandatory</em></p>
+<p>Identifier for data source, foreign key referencing <a href="references_data.qmd#reference-id">reference id</a>.</p>
+</section><section class="level2"><h3 id="sample-id">Sample ID<a class="anchor" aria-label="anchor" href="#sample-id"></a>
+</h3>
+<p><code>SAMPLE_ID</code> - <em>string, free, mandatory</em></p>
+<!-- Unique sample identifier. -->
+</section><section class="level2"><h3 id="campaign-name-short">Campaign Name Short<a class="anchor" aria-label="anchor" href="#campaign-name-short"></a>
+</h3>
+<p><code>CAMPAIGN_NAME_SHORT</code> - <em>string, free, mandatory</em></p>
+<p>Identifier for campaign, foreign key referencing <a href="campaign_data.qmd#campaign-name-short">Short campaign name</a>.</p>
+</section><section class="level2"><h3 id="environmental-compartment">Environmental Compartment<a class="anchor" aria-label="anchor" href="#environmental-compartment"></a>
+</h3>
+<p><code>ENVIRON_COMPARTMENT</code> - <em>string, controlled, mandatory</em></p>
+<p>Transcribed from <a href="samples_data.html#environmental-compartment">Environmental Compartment</a> in the Samples data.</p>
+</section><section class="level2"><h3 id="parameter-type">Parameter Type<a class="anchor" aria-label="anchor" href="#parameter-type"></a>
+</h3>
+<p><code>PARAMETER_TYPE</code> - <em>string, controlled, mandatory</em></p>
+<p>Transcribed from <a href="parameters_data.qmd#parameter-type">Parameter Type</a> in the Parameters data table..</p>
+</section><section class="level2"><h3 id="measured-type">Measured Type<a class="anchor" aria-label="anchor" href="#measured-type"></a>
+</h3>
+<p><code>MEASURED_TYPE</code> - <em>string, controlled, mandatory</em></p>
+<p>The type of measurement taken of the sample. Typically concentration, but other options are provided.</p>
 <section class="level3"><h4 id="controlled-vocabulary-3">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-3"></a>
 </h4>
-<!-- Fill in from parameter_unit_vocabulary() output. -->
-</section></section><section class="level2"><h3 id="measured-n---numeric-free-mandatory">Measured N - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#measured-n---numeric-free-mandatory"></a>
-</h3>
-<p><code>MEASURED_N</code></p>
-<!-- Number of replicates or observations. -->
-</section><section class="level2"><h3 id="loq-value---numeric-free-mandatory">LOQ Value - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#loq-value---numeric-free-mandatory"></a>
-</h3>
-<p><code>LOQ_VALUE</code></p>
-<!-- Limit of quantification value. -->
-</section><section class="level2"><h3 id="loq-unit---string-controlled-mandatory">LOQ Unit - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#loq-unit---string-controlled-mandatory"></a>
-</h3>
-<p><code>LOQ_UNIT</code></p>
-<!-- Unit for the limit of quantification. -->
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/parameter_unit_vocabulary.html">parameter_unit_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 64 × 4</span></span>
-<span><span class="co">#&gt;    MEASURED_UNIT BASE_SI_UNIT CONVERSION_FACTOR UNIT_COMMENTS      </span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;         &lt;chr&gt;        &lt;chr&gt;             &lt;chr&gt;              </span></span>
-<span><span class="co">#&gt;  1 mg/L          kg/m³        1e-3              mass concentration </span></span>
-<span><span class="co">#&gt;  2 μg/L          kg/m³        1e-6              mass concentration </span></span>
-<span><span class="co">#&gt;  3 ng/L          kg/m³        1e-9              mass concentration </span></span>
-<span><span class="co">#&gt;  4 pg/L          kg/m³        1e-12             mass concentration </span></span>
-<span><span class="co">#&gt;  5 mol/L         mol/m³       1000              molar concentration</span></span>
-<span><span class="co">#&gt;  6 mmol/L        mol/m³       1                 molar concentration</span></span>
-<span><span class="co">#&gt;  7 μmol/L        mol/m³       1e-3              molar concentration</span></span>
-<span><span class="co">#&gt;  8 nmol/L        mol/m³       1e-6              molar concentration</span></span>
-<span><span class="co">#&gt;  9 pmol/L        mol/m³       1e-9              molar concentration</span></span>
-<span><span class="co">#&gt; 10 M             mol/m³       1000              molar concentration</span></span>
-<span><span class="co">#&gt; # ℹ 54 more rows</span></span></code></pre></div>
-</div>
-<section class="level3"><h4 id="controlled-vocabulary-4">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-4"></a>
-</h4>
-<!-- Fill in from parameter_unit_vocabulary() output. -->
-</section></section><section class="level2"><h3 id="lod-value---numeric-free-mandatory">LOD Value - Numeric, free, mandatory<a class="anchor" aria-label="anchor" href="#lod-value---numeric-free-mandatory"></a>
-</h3>
-<p><code>LOD_VALUE</code></p>
-<!-- Limit of detection value. -->
-</section><section class="level2"><h3 id="lod-unit---string-controlled-mandatory">LOD Unit - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#lod-unit---string-controlled-mandatory"></a>
-</h3>
-<p><code>LOD_UNIT</code></p>
-<!-- Unit for the limit of detection. -->
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/parameter_unit_vocabulary.html">parameter_unit_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 64 × 4</span></span>
-<span><span class="co">#&gt;    MEASURED_UNIT BASE_SI_UNIT CONVERSION_FACTOR UNIT_COMMENTS      </span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;         &lt;chr&gt;        &lt;chr&gt;             &lt;chr&gt;              </span></span>
-<span><span class="co">#&gt;  1 mg/L          kg/m³        1e-3              mass concentration </span></span>
-<span><span class="co">#&gt;  2 μg/L          kg/m³        1e-6              mass concentration </span></span>
-<span><span class="co">#&gt;  3 ng/L          kg/m³        1e-9              mass concentration </span></span>
-<span><span class="co">#&gt;  4 pg/L          kg/m³        1e-12             mass concentration </span></span>
-<span><span class="co">#&gt;  5 mol/L         mol/m³       1000              molar concentration</span></span>
-<span><span class="co">#&gt;  6 mmol/L        mol/m³       1                 molar concentration</span></span>
-<span><span class="co">#&gt;  7 μmol/L        mol/m³       1e-3              molar concentration</span></span>
-<span><span class="co">#&gt;  8 nmol/L        mol/m³       1e-6              molar concentration</span></span>
-<span><span class="co">#&gt;  9 pmol/L        mol/m³       1e-9              molar concentration</span></span>
-<span><span class="co">#&gt; 10 M             mol/m³       1000              molar concentration</span></span>
-<span><span class="co">#&gt; # ℹ 54 more rows</span></span></code></pre></div>
-</div>
-<section class="level3"><h4 id="controlled-vocabulary-5">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-5"></a>
-</h4>
-<!-- Fill in from parameter_unit_vocabulary() output. -->
-</section></section><section class="level2"><h3 id="sampling-protocol---string-controlled-mandatory">Sampling Protocol - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#sampling-protocol---string-controlled-mandatory"></a>
-</h3>
-<p><code>SAMPLING_PROTOCOL</code></p>
-<!-- Protocol used for sample collection. Foreign key for methods. -->
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/sampling_protocols_vocabulary.html">sampling_protocols_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 22 × 3</span></span>
-<span><span class="co">#&gt;    Protocol_Type     Short_Name     Long_Name            </span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;             &lt;chr&gt;          &lt;chr&gt;                </span></span>
-<span><span class="co">#&gt;  1 Sampling Protocol Not relevant   Not relevant         </span></span>
-<span><span class="co">#&gt;  2 Sampling Protocol Not reported   Not reported         </span></span>
-<span><span class="co">#&gt;  3 Sampling Protocol Point          Point sampling       </span></span>
-<span><span class="co">#&gt;  4 Sampling Protocol Composite      Composite sampling   </span></span>
-<span><span class="co">#&gt;  5 Sampling Protocol Trawl          Trawl sampling       </span></span>
-<span><span class="co">#&gt;  6 Sampling Protocol Grab           Grab sampling        </span></span>
-<span><span class="co">#&gt;  7 Sampling Protocol Core           Core sampling        </span></span>
-<span><span class="co">#&gt;  8 Sampling Protocol Seine net      Seine net sampling   </span></span>
-<span><span class="co">#&gt;  9 Sampling Protocol Electrofishing Electrofishing       </span></span>
-<span><span class="co">#&gt; 10 Sampling Protocol Plankton net   Plankton net sampling</span></span>
-<span><span class="co">#&gt; # ℹ 12 more rows</span></span></code></pre></div>
-</div>
-<section class="level3"><h4 id="controlled-vocabulary-6">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-6"></a>
-</h4>
-<!-- Fill in from sampling_protocols_vocabulary() output. -->
-</section></section><section class="level2"><h3 id="extraction-protocol---string-controlled-mandatory">Extraction Protocol - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#extraction-protocol---string-controlled-mandatory"></a>
-</h3>
-<p><code>EXTRACTION_PROTOCOL</code></p>
-<!-- Protocol used for sample extraction. Foreign key for methods. -->
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/extraction_protocols_vocabulary.html">extraction_protocols_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 19 × 3</span></span>
-<span><span class="co">#&gt;    Protocol_Type       Short_Name                        Long_Name              </span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;               &lt;chr&gt;                             &lt;chr&gt;                  </span></span>
-<span><span class="co">#&gt;  1 Extraction Protocol Not relevant                      Not relevant           </span></span>
-<span><span class="co">#&gt;  2 Extraction Protocol Not reported                      Not reported           </span></span>
-<span><span class="co">#&gt;  3 Extraction Protocol None                              No extraction          </span></span>
-<span><span class="co">#&gt;  4 Extraction Protocol Methanol                          Methanol extraction    </span></span>
-<span><span class="co">#&gt;  5 Extraction Protocol Dichloromethane                   Dichloromethane extrac…</span></span>
-<span><span class="co">#&gt;  6 Extraction Protocol SPE Isolute Env+                  Solid phase extraction…</span></span>
-<span><span class="co">#&gt;  7 Extraction Protocol Membrane filtration 0.45um        Membrane filtration th…</span></span>
-<span><span class="co">#&gt;  8 Extraction Protocol Membrane filtration 0.2um         Membrane filtration th…</span></span>
-<span><span class="co">#&gt;  9 Extraction Protocol Membrane filtration               Membrane filtration    </span></span>
-<span><span class="co">#&gt; 10 Extraction Protocol Filtration                        Filtration             </span></span>
-<span><span class="co">#&gt; 11 Extraction Protocol Microwave-assisted acid digestion Microwave-assisted aci…</span></span>
-<span><span class="co">#&gt; 12 Extraction Protocol Acid digestion                    Acid digestion         </span></span>
-<span><span class="co">#&gt; 13 Extraction Protocol Pressurised liquid                Pressurised liquid ext…</span></span>
-<span><span class="co">#&gt; 14 Extraction Protocol Ultrasonic                        Ultrasonic extraction  </span></span>
-<span><span class="co">#&gt; 15 Extraction Protocol Soxhlet                           Soxhlet extraction     </span></span>
-<span><span class="co">#&gt; 16 Extraction Protocol QuEChERS                          Quick easy cheap effec…</span></span>
-<span><span class="co">#&gt; 17 Extraction Protocol Accelerated solvent               Accelerated solvent ex…</span></span>
-<span><span class="co">#&gt; 18 Extraction Protocol Sequential extraction             Sequential extraction …</span></span>
-<span><span class="co">#&gt; 19 Extraction Protocol Other                             Other</span></span></code></pre></div>
-</div>
-<section class="level3"><h4 id="controlled-vocabulary-7">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-7"></a>
-</h4>
-<!-- Fill in from extraction_protocols_vocabulary() output. -->
-</section></section><section class="level2"><h3 id="fractionation-protocol---string-controlled-mandatory">Fractionation Protocol - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#fractionation-protocol---string-controlled-mandatory"></a>
-</h3>
-<p><code>FRACTIONATION_PROTOCOL</code></p>
-<!-- Protocol used for sample fractionation. Foreign key for methods. -->
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/fractionation_protocols_vocabulary.html">fractionation_protocols_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 19 × 3</span></span>
-<span><span class="co">#&gt;    Protocol_Type          Short_Name        Long_Name                           </span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;                  &lt;chr&gt;             &lt;chr&gt;                               </span></span>
-<span><span class="co">#&gt;  1 Fractionation Protocol Not relevant      Not relevant                        </span></span>
-<span><span class="co">#&gt;  2 Fractionation Protocol Not reported      Not reported                        </span></span>
-<span><span class="co">#&gt;  3 Fractionation Protocol Total             Total fraction                      </span></span>
-<span><span class="co">#&gt;  4 Fractionation Protocol Particles         Particulate fraction                </span></span>
-<span><span class="co">#&gt;  5 Fractionation Protocol Colloidal         Colloidal fraction                  </span></span>
-<span><span class="co">#&gt;  6 Fractionation Protocol LMM               Low molecular mass fraction         </span></span>
-<span><span class="co">#&gt;  7 Fractionation Protocol Aqueous           Aqueous fraction                    </span></span>
-<span><span class="co">#&gt;  8 Fractionation Protocol Filtered 0.45um   Filtered through 0.45 micrometer me…</span></span>
-<span><span class="co">#&gt;  9 Fractionation Protocol Filtered 0.2um    Filtered through 0.2 micrometer mem…</span></span>
-<span><span class="co">#&gt; 10 Fractionation Protocol Dissolved         Dissolved fraction                  </span></span>
-<span><span class="co">#&gt; 11 Fractionation Protocol Filtered          Filtered fraction                   </span></span>
-<span><span class="co">#&gt; 12 Fractionation Protocol Acid extractable  Acid extractable fraction           </span></span>
-<span><span class="co">#&gt; 13 Fractionation Protocol Reducible         Reducible fraction                  </span></span>
-<span><span class="co">#&gt; 14 Fractionation Protocol Oxidisable        Oxidisable fraction                 </span></span>
-<span><span class="co">#&gt; 15 Fractionation Protocol Residual          Residual fraction                   </span></span>
-<span><span class="co">#&gt; 16 Fractionation Protocol Bioavailable      Bioavailable fraction               </span></span>
-<span><span class="co">#&gt; 17 Fractionation Protocol Free ion          Free ion activity                   </span></span>
-<span><span class="co">#&gt; 18 Fractionation Protocol Size fractionated Size fractionated                   </span></span>
-<span><span class="co">#&gt; 19 Fractionation Protocol Other             Other</span></span></code></pre></div>
-</div>
-<section class="level3"><h4 id="controlled-vocabulary-8">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-8"></a>
-</h4>
-<!-- Fill in from fractionation_protocols_vocabulary() output. -->
-</section></section><section class="level2"><h3 id="analytical-protocol---string-controlled-mandatory">Analytical Protocol - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#analytical-protocol---string-controlled-mandatory"></a>
-</h3>
-<p><code>ANALYTICAL_PROTOCOL</code></p>
-<!-- Protocol used for analysis. Foreign key for methods. -->
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/analytical_protocols_vocabulary.html">analytical_protocols_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 15 × 3</span></span>
-<span><span class="co">#&gt;    Protocol_Type       Short_Name         Long_Name                             </span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;               &lt;chr&gt;              &lt;chr&gt;                                 </span></span>
-<span><span class="co">#&gt;  1 Analytical Protocol Not relevant       Not relevant                          </span></span>
-<span><span class="co">#&gt;  2 Analytical Protocol Not reported       Not reported                          </span></span>
-<span><span class="co">#&gt;  3 Analytical Protocol GC-MS              Gas chromatography mass spectrometry  </span></span>
-<span><span class="co">#&gt;  4 Analytical Protocol LC-MS              Liquid chromatography mass spectromet…</span></span>
-<span><span class="co">#&gt;  5 Analytical Protocol LC-MS/MS           Liquid chromatography tandem mass spe…</span></span>
-<span><span class="co">#&gt;  6 Analytical Protocol GC-MS/MS           Gas chromatography tandem mass spectr…</span></span>
-<span><span class="co">#&gt;  7 Analytical Protocol UPLC               Ultra performance liquid chromatograp…</span></span>
-<span><span class="co">#&gt;  8 Analytical Protocol ICP-MS             Inductively coupled plasma mass spect…</span></span>
-<span><span class="co">#&gt;  9 Analytical Protocol ICP-OES            Inductively coupled plasma optical em…</span></span>
-<span><span class="co">#&gt; 10 Analytical Protocol AAS                Atomic absorption spectroscopy        </span></span>
-<span><span class="co">#&gt; 11 Analytical Protocol XRF                X-ray fluorescence spectroscopy       </span></span>
-<span><span class="co">#&gt; 12 Analytical Protocol Ion chromatography Ion chromatography                    </span></span>
-<span><span class="co">#&gt; 13 Analytical Protocol Spectrophotometry  Spectrophotometry                     </span></span>
-<span><span class="co">#&gt; 14 Analytical Protocol Fluorescence       Fluorescence spectroscopy             </span></span>
-<span><span class="co">#&gt; 15 Analytical Protocol Other              Other</span></span></code></pre></div>
-</div>
-<section class="level3"><h4 id="controlled-vocabulary-9">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-9"></a>
-</h4>
-<!-- Fill in from analytical_protocols_vocabulary() output. -->
-</section></section><section class="level2"><h3 id="reference-id---string-free-mandatory">Reference ID - String, free, mandatory<a class="anchor" aria-label="anchor" href="#reference-id---string-free-mandatory"></a>
-</h3>
-<p><code>REFERENCE_ID</code></p>
-<!-- Reference identifier for the data source. Foreign key for references. -->
-</section><section class="level2"><h3 id="sample-id---string-free-mandatory">Sample ID - String, free, mandatory<a class="anchor" aria-label="anchor" href="#sample-id---string-free-mandatory"></a>
-</h3>
-<p><code>SAMPLE_ID</code></p>
-<!-- Unique sample identifier. -->
-</section><section class="level2"><h3 id="campaign-name-short---string-free-mandatory">Campaign Name Short - String, free, mandatory<a class="anchor" aria-label="anchor" href="#campaign-name-short---string-free-mandatory"></a>
-</h3>
-<p><code>CAMPAIGN_NAME_SHORT</code></p>
-<!-- Short name of the associated campaign. -->
-</section><section class="level2"><h3 id="environ-compartment---string-controlled-mandatory">Environ Compartment - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#environ-compartment---string-controlled-mandatory"></a>
-</h3>
-<p><code>ENVIRON_COMPARTMENT</code></p>
-<!-- Broad environmental compartment. -->
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/environ_compartments_vocabulary.html">environ_compartments_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Aquatic"      "Atmospheric"  "Terrestrial"  "Biota"        "Not relevant"</span></span>
-<span><span class="co">#&gt; [6] "Not reported" "Other"</span></span></code></pre></div>
-</div>
-<section class="level3"><h4 id="controlled-vocabulary-10">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-10"></a>
-</h4>
-<!-- Fill in from environ_compartments_vocabulary() output. -->
-</section></section><section class="level2"><h3 id="parameter-type---string-controlled-mandatory">Parameter Type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#parameter-type---string-controlled-mandatory"></a>
-</h3>
-<p><code>PARAMETER_TYPE</code></p>
-<!-- Classification of the parameter. -->
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/parameter_types_vocabulary.html">parameter_types_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Not relevant"         "Stressor"             "Quality parameter"   </span></span>
-<span><span class="co">#&gt; [4] "Normalisation"        "Background"           "Ecological Indicator"</span></span>
-<span><span class="co">#&gt; [7] "Other"</span></span></code></pre></div>
-</div>
-<section class="level3"><h4 id="controlled-vocabulary-11">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-11"></a>
-</h4>
-<!-- Fill in from parameter_types_vocabulary() output. -->
-</section></section><section class="level2"><h3 id="measured-type---string-controlled-mandatory">Measured Type - String, controlled, mandatory<a class="anchor" aria-label="anchor" href="#measured-type---string-controlled-mandatory"></a>
-</h3>
-<p><code>MEASURED_TYPE</code></p>
-<!-- Type of measurement. -->
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/measured_types_vocabulary.html">measured_types_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt;  [1] "Concentration"        "Dose rate"            "Dose"                </span></span>
 <span><span class="co">#&gt;  [4] "Physical parameter"   "Amount"               "Volume"              </span></span>
@@ -453,13 +254,10 @@
 <span><span class="co">#&gt; [10] "Response"             "Ecological Indicator" "Not relevant"        </span></span>
 <span><span class="co">#&gt; [13] "Other"</span></span></code></pre></div>
 </div>
-<section class="level3"><h4 id="controlled-vocabulary-12">Controlled Vocabulary<a class="anchor" aria-label="anchor" href="#controlled-vocabulary-12"></a>
-</h4>
-<!-- Fill in from measured_types_vocabulary() output. -->
-</section></section><section class="level2"><h3 id="measurement-comment---string-free-optional">Measurement Comment - String, free, optional<a class="anchor" aria-label="anchor" href="#measurement-comment---string-free-optional"></a>
+</section></section><section class="level2"><h3 id="measurement-comment">Measurement Comment<a class="anchor" aria-label="anchor" href="#measurement-comment"></a>
 </h3>
-<p><code>MEASUREMENT_COMMENT</code></p>
-<!-- Additional notes about the measurement. -->
+<p><code>MEASUREMENT_COMMENT</code> - <em>string, free, optional</em></p>
+<p>Space for the recording of any additional notes or comments about the sample or measurement deemed relevant.</p>
 </section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);

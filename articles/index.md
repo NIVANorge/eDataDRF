@@ -29,8 +29,10 @@ Format and scoring for data quality assessment
 
 - [CREED
   data](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.md):
-- [CREED_scores_data](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.md):
+- [CREED usability
+  scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.md):
 
 ### Other
 
 - [validation](https://NIVANorge.github.io/eDataDRF/articles/validation.md):
+- [Rationale](https://NIVANorge.github.io/eDataDRF/articles/rationale.md):

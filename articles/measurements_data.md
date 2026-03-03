@@ -2,6 +2,19 @@
 
 ## Introduction
 
+The **Measurements data table** represents the core data table of the
+eData format. This table records actual measured parameter values
+(including uncertainty), and references most other tables using foreign
+keys.
+
+This table is built from the [Samples data
+table](https://NIVANorge.github.io/eDataDRF/articles/samples_data.md)
+and optionally the [Biota data
+table](https://NIVANorge.github.io/eDataDRF/articles/biota_data.md) if
+present. Both tables are bound together (that is, the rows of one are
+added below the other) and then extended with additional columns. The
+inclusion of columns in this table and their order is somewhat a
+
 ``` r
 library(eDataDRF)
 ```
@@ -20,85 +33,89 @@ initialise_measurements_tibble()
 
 ## Variables
 
-### Site Code - String, free, mandatory
+### Site Code
 
-`SITE_CODE`
+`SITE_CODE` - *string, free, mandatory*
 
-### Parameter Name - String, free, mandatory
+[Site
+Code](https://NIVANorge.github.io/eDataDRF/articles/sites_data.html#site-code)
+is a foreign key that references the [Sites data
+table](https://NIVANorge.github.io/eDataDRF/articles/sites_data.md).
+During Samples table creation the user selects relevant sites using
+their code and name.
 
-`PARAMETER_NAME`
+### Parameter Name
 
-### Sampling Date - String, free, mandatory
+`PARAMETER_NAME` - *string, free, mandatory*
 
-`SAMPLING_DATE`
+[Parameter
+name](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.html#parameter-name)
+is a foreign key that references the [Parameter data
+table](https://NIVANorge.github.io/eDataDRF/articles/parameter_data.md).
+During Samples table creation the user selects relevant parameters using
+their name and type.
 
-### Environ Compartment Sub - String, controlled, mandatory
+### Sampling Date
 
-`ENVIRON_COMPARTMENT_SUB`
+`SAMPLING_DATE` - *string, free, mandatory*
 
-``` r
-environ_compartments_sub_vocabulary()
-#> $Aquatic
-#>                    Freshwater             Marine/Salt Water 
-#>                  "Freshwater"           "Marine/Salt Water" 
-#>   Brackish/Transitional Water                   Groundwater 
-#> "Brackish/Transitional Water"                 "Groundwater" 
-#>                    Wastewater          Liquid Growth Medium 
-#>                  "Wastewater"        "Liquid Growth Medium" 
-#>                     Rainwater                    Stormwater 
-#>                   "Rainwater"                  "Stormwater" 
-#>                      Leachate              Aquatic Sediment 
-#>                    "Leachate"            "Aquatic Sediment" 
-#>                     Porewater                        Sludge 
-#>                   "Porewater"                      "Sludge" 
-#>                      Snow/Ice 
-#>                    "Snow/Ice" 
-#> 
-#> $Atmospheric
-#>    Indoor Air   Outdoor Air 
-#>  "Indoor Air" "Outdoor Air" 
-#> 
-#> $Terrestrial
-#>     Terrestrial Biological Residue              Soil H Horizon (Peat) 
-#>   "Terrestrial Biological Residue"            "Soil H Horizon (Peat)" 
-#>           Soil O Horizon (Organic)           Soil A Horizon (Topsoil) 
-#>         "Soil O Horizon (Organic)"         "Soil A Horizon (Topsoil)" 
-#>           Soil E Horizon (Mineral)           Soil S Horizon (Mineral) 
-#>         "Soil E Horizon (Mineral)"         "Soil S Horizon (Mineral)" 
-#>   Soil C Horizon (Parent Material)           Soil R Horizon (Bedrock) 
-#> "Soil C Horizon (Parent Material)"         "Soil R Horizon (Bedrock)" 
-#> 
-#> $Biota
-#>   Biota, Terrestrial       Biota, Aquatic   Biota, Atmospheric 
-#> "Biota, Terrestrial"     "Biota, Aquatic" "Biota, Atmospheric" 
-#>         Biota, Other 
-#>       "Biota, Other"
-```
+Transcribed from [Sampling
+Date](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html#sampling-date)
+in the Samples data.
+
+### Environmental Sub-Compartment
+
+`ENVIRON_COMPARTMENT_SUB` - *string, controlled, mandatory*
+
+Transcribed from [Environmental
+Sub-Compartment](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html#environmental-sub-compartment)
+in the Samples data table.
+
+### Subsample
+
+`SUBSAMPLE` - *string, free, mandatory*
+
+Transcribed from
+[Subsample](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html#subsample)
+in the Samples data table.
+
+### Measured Flag
+
+`MEASURED_FLAG` - *string, controlled, mandatory*
+
+A flag to indicate if the data source reported a measured value (blank)
+or that it was below the [limit of detection](#lod-value) or [limit of
+quantification](#loq-value). In the latter cases, [Measured
+value](#measured-value) becomes optional, but it is mandatory to
+complete at least one of LOQ/LOD.
 
 #### Controlled Vocabulary
-
-### Subsample - String, free, mandatory
-
-`SUBSAMPLE`
-
-### Measured Flag - String, controlled, mandatory
-
-`MEASURED_FLAG`
 
 ``` r
 measured_flags_vocabulary()
 #> [1] ""      "< LOQ" "< LOD"
 ```
 
+### Measured Value
+
+`MEASURED_VALUE` - *numeric, free, conditionally mandatory*
+
+The numeric measured value of the parameter, if available.
+
+### Uncertainty Type
+
+`UNCERTAINTY_TYPE` - *string, controlled, mandatory*
+
+Many [Measured values](#measured-value) are reported as aggregated
+statistics with uncertainty bounds (mean, mode, etc; 95% CI, SD, SE,
+range, etc.). Uncertainty Type provides a non-exhaustive classification
+system for these.
+
+Where the data source reports uncertaintly, the
+[Upper](#uncertainty-upper-bound) and [Lower](#uncertainty-lower-bound)
+should also be reported.
+
 #### Controlled Vocabulary
-
-### Measured Value - Numeric, free, mandatory
-
-`MEASURED_VALUE`
-
-### Uncertainty Type - String, controlled, mandatory
-
-`UNCERTAINTY_TYPE`
 
 ``` r
 uncertainty_types_vocabulary()
@@ -117,19 +134,27 @@ uncertainty_types_vocabulary()
 #> [25] "Other"
 ```
 
+### Uncertainty Upper Bound
+
+`UNCERTAINTY_UPPER` - *numeric, free, conditionally mandatory*
+
+The upper bound of any [reported uncertainty](#uncertainty-type).
+
+### Uncertainty Lower Bound
+
+`UNCERTAINTY_LOWER` - *numeric, free, conditionally mandatory*
+
+The lower bound of any [reported uncertainty](#uncertainty-type).
+
+### Measured Unit
+
+`MEASURED_UNIT` - *string, controlled, conditionally mandatory*
+
+The unit of measurement associated with the data. A non-exhaustive list
+of options with conversion factors is provided as part of the format.
+Mandatory when a [Measured value](#measured-value) is provided.
+
 #### Controlled Vocabulary
-
-### Uncertainty Upper - Numeric, free, mandatory
-
-`UNCERTAINTY_UPPER`
-
-### Uncertainty Lower - Numeric, free, mandatory
-
-`UNCERTAINTY_LOWER`
-
-### Measured Unit - String, controlled, mandatory
-
-`MEASURED_UNIT`
 
 ``` r
 parameter_unit_vocabulary()
@@ -149,224 +174,137 @@ parameter_unit_vocabulary()
 #> # ℹ 54 more rows
 ```
 
-#### Controlled Vocabulary
+### Measured N
 
-### Measured N - Numeric, free, mandatory
+`MEASURED_N` - *numeric, free, mandatory*
 
-`MEASURED_N`
+The sample size of a biota population and/or number of replicates the
+[Measured value](#measured-value) represents.
 
-### LOQ Value - Numeric, free, mandatory
+### LOQ Value
 
-`LOQ_VALUE`
+`LOQ_VALUE` - *numeric, free, conditionally mandatory*
 
-### LOQ Unit - String, controlled, mandatory
+Limit of Quantification of the method, if reported.
 
-`LOQ_UNIT`
+If no [Measured value](#measured-value) is reported, at least one of an
+LOQ and an LOD should be reported with value and unit; implicitly the
+stressor occurence was below the method’s ability to quantify. If a
+Measured value, LOQ and/or LOQ are reported, please include as many as
+possible in the extracted data.
 
-``` r
-parameter_unit_vocabulary()
-#> # A tibble: 64 × 4
-#>    MEASURED_UNIT BASE_SI_UNIT CONVERSION_FACTOR UNIT_COMMENTS      
-#>    <chr>         <chr>        <chr>             <chr>              
-#>  1 mg/L          kg/m³        1e-3              mass concentration 
-#>  2 μg/L          kg/m³        1e-6              mass concentration 
-#>  3 ng/L          kg/m³        1e-9              mass concentration 
-#>  4 pg/L          kg/m³        1e-12             mass concentration 
-#>  5 mol/L         mol/m³       1000              molar concentration
-#>  6 mmol/L        mol/m³       1                 molar concentration
-#>  7 μmol/L        mol/m³       1e-3              molar concentration
-#>  8 nmol/L        mol/m³       1e-6              molar concentration
-#>  9 pmol/L        mol/m³       1e-9              molar concentration
-#> 10 M             mol/m³       1000              molar concentration
-#> # ℹ 54 more rows
-```
+### LOQ Unit
 
-#### Controlled Vocabulary
+`LOQ_UNIT` - *string, controlled, conditionally mandatory*
 
-### LOD Value - Numeric, free, mandatory
+Unit associated with [LOQ Value](#loq-value)
 
-`LOD_VALUE`
+If no [Measured value](#measured-value) is reported, at least one of an
+LOQ and an LOD should be reported with value and unit.
 
-### LOD Unit - String, controlled, mandatory
+Uses the [Measured Unit](#measured-unit) vocabulary.
 
-`LOD_UNIT`
+### LOD Value
 
-``` r
-parameter_unit_vocabulary()
-#> # A tibble: 64 × 4
-#>    MEASURED_UNIT BASE_SI_UNIT CONVERSION_FACTOR UNIT_COMMENTS      
-#>    <chr>         <chr>        <chr>             <chr>              
-#>  1 mg/L          kg/m³        1e-3              mass concentration 
-#>  2 μg/L          kg/m³        1e-6              mass concentration 
-#>  3 ng/L          kg/m³        1e-9              mass concentration 
-#>  4 pg/L          kg/m³        1e-12             mass concentration 
-#>  5 mol/L         mol/m³       1000              molar concentration
-#>  6 mmol/L        mol/m³       1                 molar concentration
-#>  7 μmol/L        mol/m³       1e-3              molar concentration
-#>  8 nmol/L        mol/m³       1e-6              molar concentration
-#>  9 pmol/L        mol/m³       1e-9              molar concentration
-#> 10 M             mol/m³       1000              molar concentration
-#> # ℹ 54 more rows
-```
+`LOD_VALUE` - *numeric, free, conditionally mandatory*
 
-#### Controlled Vocabulary
+Limit of Detection of the method, if reported.
 
-### Sampling Protocol - String, controlled, mandatory
+If no [Measured value](#measured-value) is reported, at least one of an
+LOQ and an LOD should be reported with value and unit; implicitly the
+stressor occurence was below the method’s ability to detect. If a
+Measured value, LOQ and/or LOQ are reported, please include as many as
+possible in the extracted data.
 
-`SAMPLING_PROTOCOL`
+### LOD Unit
 
-``` r
-sampling_protocols_vocabulary()
-#> # A tibble: 22 × 3
-#>    Protocol_Type     Short_Name     Long_Name            
-#>    <chr>             <chr>          <chr>                
-#>  1 Sampling Protocol Not relevant   Not relevant         
-#>  2 Sampling Protocol Not reported   Not reported         
-#>  3 Sampling Protocol Point          Point sampling       
-#>  4 Sampling Protocol Composite      Composite sampling   
-#>  5 Sampling Protocol Trawl          Trawl sampling       
-#>  6 Sampling Protocol Grab           Grab sampling        
-#>  7 Sampling Protocol Core           Core sampling        
-#>  8 Sampling Protocol Seine net      Seine net sampling   
-#>  9 Sampling Protocol Electrofishing Electrofishing       
-#> 10 Sampling Protocol Plankton net   Plankton net sampling
-#> # ℹ 12 more rows
-```
+`LOD_UNIT` - *string, controlled, conditionally mandatory*
 
-#### Controlled Vocabulary
+Unit associated with [LOD Value](#lod-value)
 
-### Extraction Protocol - String, controlled, mandatory
+If no [Measured value](#measured-value) is reported, at least one of an
+LOQ and an LOD should be reported with value and unit.
 
-`EXTRACTION_PROTOCOL`
+Uses the [Measured Unit](#measured-unit) vocabulary.
 
-``` r
-extraction_protocols_vocabulary()
-#> # A tibble: 19 × 3
-#>    Protocol_Type       Short_Name                        Long_Name              
-#>    <chr>               <chr>                             <chr>                  
-#>  1 Extraction Protocol Not relevant                      Not relevant           
-#>  2 Extraction Protocol Not reported                      Not reported           
-#>  3 Extraction Protocol None                              No extraction          
-#>  4 Extraction Protocol Methanol                          Methanol extraction    
-#>  5 Extraction Protocol Dichloromethane                   Dichloromethane extrac…
-#>  6 Extraction Protocol SPE Isolute Env+                  Solid phase extraction…
-#>  7 Extraction Protocol Membrane filtration 0.45um        Membrane filtration th…
-#>  8 Extraction Protocol Membrane filtration 0.2um         Membrane filtration th…
-#>  9 Extraction Protocol Membrane filtration               Membrane filtration    
-#> 10 Extraction Protocol Filtration                        Filtration             
-#> 11 Extraction Protocol Microwave-assisted acid digestion Microwave-assisted aci…
-#> 12 Extraction Protocol Acid digestion                    Acid digestion         
-#> 13 Extraction Protocol Pressurised liquid                Pressurised liquid ext…
-#> 14 Extraction Protocol Ultrasonic                        Ultrasonic extraction  
-#> 15 Extraction Protocol Soxhlet                           Soxhlet extraction     
-#> 16 Extraction Protocol QuEChERS                          Quick easy cheap effec…
-#> 17 Extraction Protocol Accelerated solvent               Accelerated solvent ex…
-#> 18 Extraction Protocol Sequential extraction             Sequential extraction …
-#> 19 Extraction Protocol Other                             Other
-```
+### Sampling Protocol
 
-#### Controlled Vocabulary
+`SAMPLING_PROTOCOL` - *string, controlled, mandatory*
 
-### Fractionation Protocol - String, controlled, mandatory
+The ID of the sampling protocol used to generate the measured sample.
+Foreign key referencing [protocol
+ID](https://NIVANorge.github.io/eDataDRF/articles/methods_data.qmd#protocol-id).
+Limited to sampling protocols.
 
-`FRACTIONATION_PROTOCOL`
+### Extraction Protocol
 
-``` r
-fractionation_protocols_vocabulary()
-#> # A tibble: 19 × 3
-#>    Protocol_Type          Short_Name        Long_Name                           
-#>    <chr>                  <chr>             <chr>                               
-#>  1 Fractionation Protocol Not relevant      Not relevant                        
-#>  2 Fractionation Protocol Not reported      Not reported                        
-#>  3 Fractionation Protocol Total             Total fraction                      
-#>  4 Fractionation Protocol Particles         Particulate fraction                
-#>  5 Fractionation Protocol Colloidal         Colloidal fraction                  
-#>  6 Fractionation Protocol LMM               Low molecular mass fraction         
-#>  7 Fractionation Protocol Aqueous           Aqueous fraction                    
-#>  8 Fractionation Protocol Filtered 0.45um   Filtered through 0.45 micrometer me…
-#>  9 Fractionation Protocol Filtered 0.2um    Filtered through 0.2 micrometer mem…
-#> 10 Fractionation Protocol Dissolved         Dissolved fraction                  
-#> 11 Fractionation Protocol Filtered          Filtered fraction                   
-#> 12 Fractionation Protocol Acid extractable  Acid extractable fraction           
-#> 13 Fractionation Protocol Reducible         Reducible fraction                  
-#> 14 Fractionation Protocol Oxidisable        Oxidisable fraction                 
-#> 15 Fractionation Protocol Residual          Residual fraction                   
-#> 16 Fractionation Protocol Bioavailable      Bioavailable fraction               
-#> 17 Fractionation Protocol Free ion          Free ion activity                   
-#> 18 Fractionation Protocol Size fractionated Size fractionated                   
-#> 19 Fractionation Protocol Other             Other
-```
+`EXTRACTION_PROTOCOL` - *string, controlled, mandatory*
+
+The ID of the extraction protocol used to generate the measured sample.
+Foreign key referencing [protocol
+ID](https://NIVANorge.github.io/eDataDRF/articles/methods_data.qmd#protocol-id).
+Limited to extraction protocols.
+
+### Fractionation Protocol
+
+`FRACTIONATION_PROTOCOL` - *string, controlled, mandatory*
+
+The ID of the fractionation protocol used to generate the measured
+sample. Foreign key referencing [protocol
+ID](https://NIVANorge.github.io/eDataDRF/articles/methods_data.qmd#protocol-id).
+Limited to fractionation protocols.
+
+### Analytical Protocol
+
+`ANALYTICAL_PROTOCOL` - *string, controlled, mandatory*
+
+The ID of the analytical protocol used to generate the measured sample.
+Foreign key referencing [protocol
+ID](https://NIVANorge.github.io/eDataDRF/articles/methods_data.qmd#protocol-id).
+Limited to analytical protocols.
+
+### Reference ID
+
+`REFERENCE_ID` - *string, free, mandatory*
+
+Identifier for data source, foreign key referencing [reference
+id](https://NIVANorge.github.io/eDataDRF/articles/references_data.qmd#reference-id).
+
+### Sample ID
+
+`SAMPLE_ID` - *string, free, mandatory*
+
+### Campaign Name Short
+
+`CAMPAIGN_NAME_SHORT` - *string, free, mandatory*
+
+Identifier for campaign, foreign key referencing [Short campaign
+name](https://NIVANorge.github.io/eDataDRF/articles/campaign_data.qmd#campaign-name-short).
+
+### Environmental Compartment
+
+`ENVIRON_COMPARTMENT` - *string, controlled, mandatory*
+
+Transcribed from [Environmental
+Compartment](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html#environmental-compartment)
+in the Samples data.
+
+### Parameter Type
+
+`PARAMETER_TYPE` - *string, controlled, mandatory*
+
+Transcribed from [Parameter
+Type](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.qmd#parameter-type)
+in the Parameters data table..
+
+### Measured Type
+
+`MEASURED_TYPE` - *string, controlled, mandatory*
+
+The type of measurement taken of the sample. Typically concentration,
+but other options are provided.
 
 #### Controlled Vocabulary
-
-### Analytical Protocol - String, controlled, mandatory
-
-`ANALYTICAL_PROTOCOL`
-
-``` r
-analytical_protocols_vocabulary()
-#> # A tibble: 15 × 3
-#>    Protocol_Type       Short_Name         Long_Name                             
-#>    <chr>               <chr>              <chr>                                 
-#>  1 Analytical Protocol Not relevant       Not relevant                          
-#>  2 Analytical Protocol Not reported       Not reported                          
-#>  3 Analytical Protocol GC-MS              Gas chromatography mass spectrometry  
-#>  4 Analytical Protocol LC-MS              Liquid chromatography mass spectromet…
-#>  5 Analytical Protocol LC-MS/MS           Liquid chromatography tandem mass spe…
-#>  6 Analytical Protocol GC-MS/MS           Gas chromatography tandem mass spectr…
-#>  7 Analytical Protocol UPLC               Ultra performance liquid chromatograp…
-#>  8 Analytical Protocol ICP-MS             Inductively coupled plasma mass spect…
-#>  9 Analytical Protocol ICP-OES            Inductively coupled plasma optical em…
-#> 10 Analytical Protocol AAS                Atomic absorption spectroscopy        
-#> 11 Analytical Protocol XRF                X-ray fluorescence spectroscopy       
-#> 12 Analytical Protocol Ion chromatography Ion chromatography                    
-#> 13 Analytical Protocol Spectrophotometry  Spectrophotometry                     
-#> 14 Analytical Protocol Fluorescence       Fluorescence spectroscopy             
-#> 15 Analytical Protocol Other              Other
-```
-
-#### Controlled Vocabulary
-
-### Reference ID - String, free, mandatory
-
-`REFERENCE_ID`
-
-### Sample ID - String, free, mandatory
-
-`SAMPLE_ID`
-
-### Campaign Name Short - String, free, mandatory
-
-`CAMPAIGN_NAME_SHORT`
-
-### Environ Compartment - String, controlled, mandatory
-
-`ENVIRON_COMPARTMENT`
-
-``` r
-environ_compartments_vocabulary()
-#> [1] "Aquatic"      "Atmospheric"  "Terrestrial"  "Biota"        "Not relevant"
-#> [6] "Not reported" "Other"
-```
-
-#### Controlled Vocabulary
-
-### Parameter Type - String, controlled, mandatory
-
-`PARAMETER_TYPE`
-
-``` r
-parameter_types_vocabulary()
-#> [1] "Not relevant"         "Stressor"             "Quality parameter"   
-#> [4] "Normalisation"        "Background"           "Ecological Indicator"
-#> [7] "Other"
-```
-
-#### Controlled Vocabulary
-
-### Measured Type - String, controlled, mandatory
-
-`MEASURED_TYPE`
 
 ``` r
 measured_types_vocabulary()
@@ -377,8 +315,9 @@ measured_types_vocabulary()
 #> [13] "Other"
 ```
 
-#### Controlled Vocabulary
+### Measurement Comment
 
-### Measurement Comment - String, free, optional
+`MEASUREMENT_COMMENT` - *string, free, optional*
 
-`MEASUREMENT_COMMENT`
+Space for the recording of any additional notes or comments about the
+sample or measurement deemed relevant.

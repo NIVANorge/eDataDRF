@@ -32,8 +32,7 @@ table](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.md).
 Because it is assumed that each measurement will typically have a
 sampling, extraction, fractionation, and analytical protocol associated
 with it, the measurements table has a foreign key for each type of
-methdology that references the relevant [Protocol
-ID](#protocol-id---string-free-mandatory).
+methdology that references the relevant [Protocol ID](#protocol-id).
 
 ``` r
 library(eDataDRF)
@@ -48,9 +47,9 @@ initialise_methods_tibble()
 
 ## Variables
 
-### Protocol ID - String, free, mandatory
+### Protocol ID
 
-`PROTOCOL_ID`
+`PROTOCOL_ID` - *string, free, mandatory*
 
 A short, terse identifier for the protocol. This is used as a primary
 key for Methods data and a foreign key in the Sampling Protocol,
@@ -76,18 +75,18 @@ generate_protocol_id(
 #> [1] "A01_ICPMS_TestCampai"
 ```
 
-### Campaign Name - String, free, mandatory
+### Campaign Name
 
-`CAMPAIGN_NAME`
+`CAMPAIGN_NAME` - *string, free, mandatory*
 
 A short, terse identifier for the campaign. Foreign key referenced from
 [Campaign
 data](https://NIVANorge.github.io/eDataDRF/articles/campaign_data.md),
-used to generate [Protocol ID](#protocol-id---string-free-mandatory).
+used to generate [Protocol ID](#protocol-id).
 
-### Protocol Category - String, controlled vocabulary, mandatory
+### Protocol Category
 
-`PROTOCOL_CATEGORY`
+`PROTOCOL_CATEGORY` - *string, controlled vocabulary, mandatory*
 
 The category of protocol/method (Sampling, Extraction, Fractionation,
 Analytical).
@@ -98,9 +97,9 @@ protocol_categories_vocabulary()
 #> [4] "Analytical Protocol"
 ```
 
-### Protocol Name - String, controlled vocabulary, mandatory
+### Protocol Name
 
-`PROTOCOL_NAME`
+`PROTOCOL_NAME` - *string, controlled vocabulary, mandatory*
 
 The consensus name (short and long) of a protocol or method used in
 sampling. Options are currently based on the aquatic ecotoxicology
@@ -196,9 +195,9 @@ analytical_protocols_vocabulary()
 # protocol_options_vocabulary()
 ```
 
-### Protocol Comment - String, free, optional
+### Protocol Comment
 
-`PROTOCOL_COMMENT`
+`PROTOCOL_COMMENT` - *string, free, optional*
 
 Space for the recording of any additional notes or comments about the
 method deemed relevant. As information on the specific equipment or more

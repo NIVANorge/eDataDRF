@@ -1,6 +1,25 @@
-# CREED_scores_data
+# CREED usability scores
 
 ## Introduction
+
+The criterion scores assigned for each criterion during the [CREED
+assesment](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.qmd)
+are used to calculate an overall useability score for both relevant and
+reliability at the gold and silver level. Silver scores are calculated
+based on the highest (worst) score for all required questions, and gold
+for all recommended questions. Data source usability scores are, from
+high to low:
+
+### Usability Scores
+
+`Gold` - `Relevant/reliable without restriction` `Gold` -
+`Relevant/reliable with restriction` `Silver` -
+`Relevant/reliable with restriction` `Silver` -
+`Relevant/reliable without restriction` `Gold`/`Silver` - `Not usable`
+
+This table is automatically filled out by the [eData
+app](https://github.com/NIVANorge/STOPeData) during the CREED assessment
+process.
 
 ``` r
 library(eDataDRF)
@@ -15,22 +34,37 @@ initialise_CREED_scores_tibble()
 
 ## Variables
 
-### Reference ID - String, free, mandatory
+### Reference ID
 
-`REFERENCE_ID`
+`REFERENCE_ID` - *string, free, mandatory*
 
-### Silver Reliability - String, free, mandatory
+Identifier for data source, foreign key referencing [reference
+id](https://NIVANorge.github.io/eDataDRF/articles/references_data.qmd#reference-id).
 
-`SILVER_RELIABILITY`
+### Silver Reliability
 
-### Silver Relevance - String, free, mandatory
+`SILVER_RELIABILITY` - *numeric, free, mandatory*
 
-`SILVER_RELEVANCE`
+Silver reliability score. See [Usability Scores](#usability-scores) for
+valid levels.
 
-### Gold Reliability - String, free, mandatory
+### Silver Relevance
 
-`GOLD_RELIABILITY`
+`SILVER_RELEVANCE` - *string, free, mandatory*
 
-### Gold Relevance - String, free, mandatory
+Silver relevance score. See [Usability Scores](#usability-scores) for
+valid levels.
 
-`GOLD_RELEVANCE`
+### Gold Reliability
+
+`GOLD_RELIABILITY` - *string, free, mandatory*
+
+Gold reliability score. See [Usability Scores](#usability-scores) for
+valid levels.
+
+### Gold Relevance
+
+`GOLD_RELEVANCE` - *string, free, mandatory*
+
+Gold relevance score. See [Usability Scores](#usability-scores) for
+valid levels.
