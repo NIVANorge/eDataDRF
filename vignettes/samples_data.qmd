@@ -45,7 +45,6 @@ initialise_samples_tibble()
 
 [Parameter name](parameters_data.html#parameter-name) is a foreign key that references the [Parameter data table](parameter_data.html). During Samples table creation the user selects relevant parameters using their name and type.
 
-
 ## Parameter Type
 `PARAMETER_TYPE` - *string, controlled, mandatory*
 
@@ -92,5 +91,5 @@ Actually, no it isn't. Not used.
 
 Actually this includes subsample;
 
-
+#TODO
 e.g.:`DummyCampaign1997_SITE_001-Tim-Notreported-2023-02-12-R-1`

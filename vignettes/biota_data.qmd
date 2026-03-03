@@ -13,11 +13,9 @@ knitr:
 
 # Introduction
 
-Data on sampled biota, if relevant.
+Where biota are sampled, it becomes important to capture considerable additional information. Species, tissue type, gender, lifestage, and other factors can considerably affect exposure to pollutants, and thus this information is important to put their occurence in its full context. 
 
--   Link to ecotox db
--   Plan to use EoL or wikispecies in future
--   [Test link to samples data](samples_data.html)
+The Biota table is an intermediate table that extends the [Samples data table](samples_data.html) where biota [compartments](compartments_data.html) are selected. Otherwise, this element of the data entry workflow is skipped as irrelevant. 
 
 ```{r}
 #| label: setup
@@ -31,81 +29,54 @@ initialise_biota_tibble()
 ```
 
 # Variables
+## Sample ID
+`SAMPLE_ID` - *String, free, mandatory*
 
-## Sample ID - String, free, mandatory
-`SAMPLE_ID`
+Transcribed from [Sample ID](samples_data.html#sample-id) in the Samples data.
 
-<!-- Unique identifier linking to the samples table. Foreign key for measurements. -->
+## Site Code
+`SITE_CODE` - *String, free, mandatory*
 
-## Site Code - String, free, mandatory
-`SITE_CODE`
+Transcribed from [Site Code](samples_data.html#site-code) in the Samples data.
 
-<!-- Code identifying the sampling location. Foreign key for sites. -->
+## Parameter Name
+`PARAMETER_NAME` - *String, free, mandatory*
 
-## Parameter Name - String, free, mandatory
-`PARAMETER_NAME`
+Transcribed from [Parameter Name](samples_data.html#parameter-name) in the Samples data.
 
-<!-- Name of the measured parameter or stressor. Foreign key for parameters. -->
+## Environmental Compartment
+`ENVIRON_COMPARTMENT` - *String, controlled, mandatory*
 
-## Environ Compartment - String, controlled, mandatory
-`ENVIRON_COMPARTMENT`
+Transcribed from [Environmental Compartment](samples_data.html#environmental-compartment) in the Samples data.
 
-<!-- Broad environmental compartment category. Inherited from the samples table. -->
+## Environmental Sub-Compartment 
+`ENVIRON_COMPARTMENT_SUB` - *String, controlled, mandatory*
 
-```{r}
-#| label: environ_compartment
+Transcribed from [Environmental Sub-Compartment](samples_data.html#environmental-sub-compartment) in the Samples data.
 
-environ_compartments_vocabulary()
-```
+## Measured Category
+`MEASURED_CATEGORY` - *String, controlled, mandatory*
 
-### Controlled Vocabulary
+Transcribed from [Measured Category](samples_data.html#measured-category) in the Samples data.
 
-<!-- Fill in from environ_compartments_vocabulary() output. -->
+## Sampling Date
+`SAMPLING_DATE` - *String, free, mandatory*
 
-## Environ Compartment Sub - String, controlled, mandatory
-`ENVIRON_COMPARTMENT_SUB`
+Transcribed from [Sampling Date](samples_data.html#sampling-date) in the Samples data.
 
-<!-- Specific sub-category of the environmental compartment. Inherited from the samples table. -->
+## Subsample
+`SUBSAMPLE` - *String, free, mandatory*
 
-```{r}
-#| label: environ_compartment_sub
+Transcribed from [Subsample](samples_data.html#subsample) in the Samples data.
 
-environ_compartments_sub_vocabulary()
-```
+## Species Group
+`SPECIES_GROUP` - *String, controlled, mandatory*
 
-### Controlled Vocabulary
+The rough grouping of species the biota belongs to. This classification is not strictly taxonomic but rather reflects the categories typically used in ecotoxicology. Both species group and name (below) are taken from the EPA's [ECOTOX Knowledgebase](https://www.epa.gov/comptox-tools/ecotoxicology-ecotox-knowledgebase-resource-hub) and cover approximately 13,000 of the species most used in the field. Where this is insufficent, a species name can be added manually. 
 
-<!-- Fill in from environ_compartments_sub_vocabulary() output. -->
-
-## Measured Category - String, controlled, mandatory
-`MEASURED_CATEGORY`
-
-<!-- Category indicating measurement context. Inherited from the samples table. -->
-
-```{r}
-#| label: measured_category
-
-measured_categories_vocabulary()
-```
+In future, we hope to incorporate a more exhaustive species taxonomy or resource. 
 
 ### Controlled Vocabulary
-
-<!-- Fill in from measured_categories_vocabulary() output. -->
-
-## Sampling Date - String, free, mandatory
-`SAMPLING_DATE`
-
-<!-- Date when the biological sample was collected. Inherited from the samples table. -->
-
-## Subsample - String, free, mandatory
-`SUBSAMPLE`
-
-<!-- Identifier for subsample or replicate. Inherited from the samples table. -->
-
-## Species Group - String, controlled, mandatory
-`SPECIES_GROUP`
-
-<!-- Taxonomic group classification, e.g., Fish, Molluscs, Plants. -->
 
 ```{r}
 #| label: species_group
@@ -113,14 +84,12 @@ measured_categories_vocabulary()
 species_groups_vocabulary()
 ```
 
+## Sample Species
+`SAMPLE_SPECIES` - *String, controlled, mandatory*
+
+The consensus binomial scientific name of the species sampled. As above, both species group and name (below) are taken from the EPA's [ECOTOX Knowledgebase](https://www.epa.gov/comptox-tools/ecotoxicology-ecotox-knowledgebase-resource-hub) and cover approximately 13,000 of the species most used in the field. Where this is insufficent, a species name can be added manually. 
+
 ### Controlled Vocabulary
-
-<!-- Fill in from species_groups_vocabulary() output. -->
-
-## Sample Species - String, controlled, mandatory
-`SAMPLE_SPECIES`
-
-<!-- Scientific binomial name of the sampled species. -->
 
 ```{r}
 #| label: sample_species
@@ -128,14 +97,12 @@ species_groups_vocabulary()
 species_names_vocabulary()
 ```
 
+## Sample Tissue
+`SAMPLE_TISSUE` - *String, controlled, mandatory*
+
+The tissue type sampled from biota. The controlled vocabulary for this variable is currently very much non-exhaustive. This will be replaced by harmonisation with an existing tissue ontology as practical. 
+
 ### Controlled Vocabulary
-
-<!-- Fill in from species_names_vocabulary() output. -->
-
-## Sample Tissue - String, controlled, mandatory
-`SAMPLE_TISSUE`
-
-<!-- Type of biological tissue sampled. -->
 
 ```{r}
 #| label: sample_tissue
@@ -143,14 +110,12 @@ species_names_vocabulary()
 tissue_types_vocabulary()
 ```
 
+## Sample Species Lifestage
+`SAMPLE_SPECIES_LIFESTAGE` - *String, controlled, mandatory*
+
+The lifestage of an organism at time of sampling. As above, this is currently somewhat restrictive but will be extended and harmonised as practical.
+
 ### Controlled Vocabulary
-
-<!-- Fill in from tissue_types_vocabulary() output. -->
-
-## Sample Species Lifestage - String, controlled, mandatory
-`SAMPLE_SPECIES_LIFESTAGE`
-
-<!-- Life stage of the organism at sampling. -->
 
 ```{r}
 #| label: sample_species_lifestage
@@ -158,14 +123,12 @@ tissue_types_vocabulary()
 lifestage_vocabulary()
 ```
 
+## Sample Species Gender
+`SAMPLE_SPECIES_GENDER` - *String, controlled, mandatory*
+
+The gender or sex of a sampled organism. May be harmonised as needed.
+
 ### Controlled Vocabulary
-
-<!-- Fill in from lifestage_vocabulary() output. -->
-
-## Sample Species Gender - String, controlled, mandatory
-`SAMPLE_SPECIES_GENDER`
-
-<!-- Gender or sex of the sampled organism. -->
 
 ```{r}
 #| label: sample_species_gender
@@ -173,11 +136,8 @@ lifestage_vocabulary()
 gender_vocabulary()
 ```
 
-### Controlled Vocabulary
+## Biota Comment
+`BIOTA_COMMENT` - *String, free, optional*
 
-<!-- Fill in from gender_vocabulary() output. -->
+Space for the recording of any additional notes or comments about the sampled organism deemed relevant. 
 
-## Biota Comment - String, free, optional
-`BIOTA_COMMENT`
-
-<!-- Additional notes or comments about the biological sample. -->

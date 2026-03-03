@@ -24,7 +24,7 @@ These methodologies are structured for the collection of data on chemicals stres
 
 Currently no external ontology or taxonomy is used for methodology. The [Chemical Methods Ontology](https://github.com/rsc-ontology/rsc-cmo) (CMO) may be appropriate, and we will continue to review its progress to determine the appropriate form of any harmonisation. 
 
-The Methods table is a metadata table that is transformed before being linked to the [Measurements table](measurements_data.html). Because it is assumed that each measurement will typically have a sampling, extraction, fractionation, and analytical protocol associated with it, the measurements table has a foreign key for each type of methdology that references the relevant [Protocol ID](#protocol-id---string-free-mandatory).
+The Methods table is a metadata table that is transformed before being linked to the [Measurements table](measurements_data.html). Because it is assumed that each measurement will typically have a sampling, extraction, fractionation, and analytical protocol associated with it, the measurements table has a foreign key for each type of methdology that references the relevant [Protocol ID](#protocol-id).
 
 ```{r}
 #| label: setup
@@ -39,8 +39,8 @@ initialise_methods_tibble()
 
 # Variables
 
-## Protocol ID - String, free, mandatory
-`PROTOCOL_ID`
+## Protocol ID
+`PROTOCOL_ID` - *string, free, mandatory*
 
 A short, terse identifier for the protocol. This is used as a primary key for Methods data and a foreign key in the Sampling Protocol, Extraction Protocol, Fractionation Protocol, and Analytical Protocol columns.  [Measurements data](measurements_data.html). 
 
@@ -57,13 +57,13 @@ generate_protocol_id(
 )
 ```
 
-## Campaign Name - String, free, mandatory
-`CAMPAIGN_NAME`
+## Campaign Name
+`CAMPAIGN_NAME` - *string, free, mandatory*
 
-A short, terse identifier for the campaign. Foreign key referenced from [Campaign data](campaign_data.html), used to generate [Protocol ID](#protocol-id---string-free-mandatory).
+A short, terse identifier for the campaign. Foreign key referenced from [Campaign data](campaign_data.html), used to generate [Protocol ID](#protocol-id).
 
-## Protocol Category - String, controlled vocabulary, mandatory
-`PROTOCOL_CATEGORY`
+## Protocol Category
+`PROTOCOL_CATEGORY` - *string, controlled vocabulary, mandatory*
 
 The category of protocol/method (Sampling, Extraction, Fractionation, Analytical).
 
@@ -73,8 +73,8 @@ The category of protocol/method (Sampling, Extraction, Fractionation, Analytical
 protocol_categories_vocabulary()
 ```
 
-## Protocol Name - String, controlled vocabulary, mandatory
-`PROTOCOL_NAME`
+## Protocol Name
+`PROTOCOL_NAME` - *string, controlled vocabulary, mandatory*
 
 The consensus name (short and long) of a protocol or method used in sampling. Options are currently based on the aquatic ecotoxicology domain, but will be extended and harmonised with relevant ontologies and taxonomies as practical.
 
@@ -93,7 +93,7 @@ analytical_protocols_vocabulary()
 # protocol_options_vocabulary()
 ```
 
-## Protocol Comment - String, free, optional
-`PROTOCOL_COMMENT`
+## Protocol Comment
+`PROTOCOL_COMMENT` - *string, free, optional*
 
 Space for the recording of any additional notes or comments about the method deemed relevant. As information on the specific equipment or more detailed protocols may also be useful, users are encouraged to copy relevant text verbatim from the source.

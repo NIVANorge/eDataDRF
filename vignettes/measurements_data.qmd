@@ -13,6 +13,10 @@ knitr:
 
 # Introduction
 
+The **Measurements data table** represents the core data table of the eData format. This table records actual measured parameter values (including uncertainty), and references most other tables using foreign keys.
+
+This table is built from the [Samples data table](samples_data.html) and optionally the [Biota data table](biota_data.html) if present. Both tables are bound together (that is, the rows of one are added below the other) and then extended with additional columns. The inclusion of columns in this table and their order is somewhat a  
+
 ```{r}
 #| label: setup
 library(eDataDRF)
@@ -26,45 +30,37 @@ initialise_measurements_tibble()
 
 # Variables
 
-## Site Code - String, free, mandatory
-`SITE_CODE`
+## Site Code
+`SITE_CODE` - *string, free, mandatory*
 
-<!-- Code identifying the sampling location. -->
+[Site Code](sites_data.html#site-code) is a foreign key that references the [Sites data table](sites_data.html). During Samples table creation the user selects relevant sites using their code and name.
 
-## Parameter Name - String, free, mandatory
-`PARAMETER_NAME`
+## Parameter Name
+`PARAMETER_NAME` - *string, free, mandatory*
 
-<!-- Name of the measured parameter. Foreign key for parameters. -->
+[Parameter name](parameters_data.html#parameter-name) is a foreign key that references the [Parameter data table](parameter_data.html). During Samples table creation the user selects relevant parameters using their name and type.
 
-## Sampling Date - String, free, mandatory
-`SAMPLING_DATE`
+## Sampling Date
+`SAMPLING_DATE` - *string, free, mandatory*
 
-<!-- Date of sample collection. -->
+Transcribed from [Sampling Date](samples_data.html#sampling-date) in the Samples data.
 
-## Environ Compartment Sub - String, controlled, mandatory
-`ENVIRON_COMPARTMENT_SUB`
+## Environmental Sub-Compartment
+`ENVIRON_COMPARTMENT_SUB` - *string, controlled, mandatory*
 
-<!-- Specific environmental sub-compartment. -->
+Transcribed from [Environmental Sub-Compartment](samples_data.html#environmental-sub-compartment) in the Samples data table. 
 
-```{r}
-#| label: environ_compartment_sub
+## Subsample
+`SUBSAMPLE` - *string, free, mandatory*
 
-environ_compartments_sub_vocabulary()
-```
+Transcribed from [Subsample](samples_data.html#subsample) in the Samples data table. 
+
+## Measured Flag
+`MEASURED_FLAG` - *string, controlled, mandatory*
+
+A flag to indicate if the data source reported a measured value (blank) or that it was below the [limit of detection](#lod-value) or [limit of quantification](#loq-value). In the latter cases, [Measured value](#measured-value) becomes optional, but it is mandatory to complete at least one of LOQ/LOD.
 
 ### Controlled Vocabulary
-
-<!-- Fill in from environ_compartments_sub_vocabulary() output. -->
-
-## Subsample - String, free, mandatory
-`SUBSAMPLE`
-
-<!-- Subsample identifier. -->
-
-## Measured Flag - String, controlled, mandatory
-`MEASURED_FLAG`
-
-<!-- Quality flag for the measurement (e.g., < LOQ, < LOD). -->
 
 ```{r}
 #| label: measured_flag
@@ -72,19 +68,19 @@ environ_compartments_sub_vocabulary()
 measured_flags_vocabulary()
 ```
 
+## Measured Value
+`MEASURED_VALUE` - *numeric, free, conditionally mandatory*
+
+The numeric measured value of the parameter, if available. 
+
+## Uncertainty Type
+`UNCERTAINTY_TYPE` - *string, controlled, mandatory*
+
+Many [Measured values](#measured-value) are reported as aggregated statistics with uncertainty bounds (mean, mode, etc; 95% CI, SD, SE, range, etc.). Uncertainty Type provides a non-exhaustive classification system for these.
+
+Where the data source reports uncertaintly, the [Upper](#uncertainty-upper-bound) and [Lower](#uncertainty-lower-bound) should also be reported.
+
 ### Controlled Vocabulary
-
-<!-- Fill in from measured_flags_vocabulary() output. -->
-
-## Measured Value - Numeric, free, mandatory
-`MEASURED_VALUE`
-
-<!-- Numeric value of the measurement. -->
-
-## Uncertainty Type - String, controlled, mandatory
-`UNCERTAINTY_TYPE`
-
-<!-- Type of uncertainty or variability metric. -->
 
 ```{r}
 #| label: uncertainty_type
@@ -92,24 +88,22 @@ measured_flags_vocabulary()
 uncertainty_types_vocabulary()
 ```
 
+## Uncertainty Upper Bound
+`UNCERTAINTY_UPPER` - *numeric, free, conditionally mandatory*
+
+The upper bound of any [reported uncertainty](#uncertainty-type).
+
+## Uncertainty Lower Bound
+`UNCERTAINTY_LOWER` - *numeric, free, conditionally mandatory*
+
+The lower bound of any [reported uncertainty](#uncertainty-type).
+
+## Measured Unit
+`MEASURED_UNIT` - *string, controlled, conditionally mandatory*
+
+The unit of measurement associated with the data. A non-exhaustive list of options with conversion factors is provided as part of the format. Mandatory when a [Measured value](#measured-value) is provided.
+
 ### Controlled Vocabulary
-
-<!-- Fill in from uncertainty_types_vocabulary() output. -->
-
-## Uncertainty Upper - Numeric, free, mandatory
-`UNCERTAINTY_UPPER`
-
-<!-- Upper bound of uncertainty. -->
-
-## Uncertainty Lower - Numeric, free, mandatory
-`UNCERTAINTY_LOWER`
-
-<!-- Lower bound of uncertainty. -->
-
-## Measured Unit - String, controlled, mandatory
-`MEASURED_UNIT`
-
-<!-- Unit of measurement. -->
 
 ```{r}
 #| label: measured_unit
@@ -117,164 +111,94 @@ uncertainty_types_vocabulary()
 parameter_unit_vocabulary()
 ```
 
-### Controlled Vocabulary
+## Measured N
+`MEASURED_N` - *numeric, free, mandatory*
 
-<!-- Fill in from parameter_unit_vocabulary() output. -->
+The sample size of a biota population and/or number of replicates the [Measured value](#measured-value) represents.
 
-## Measured N - Numeric, free, mandatory
-`MEASURED_N`
+## LOQ Value
+`LOQ_VALUE` - *numeric, free, conditionally mandatory*
 
-<!-- Number of replicates or observations. -->
+Limit of Quantification of the method, if reported. 
 
-## LOQ Value - Numeric, free, mandatory
-`LOQ_VALUE`
+If no [Measured value](#measured-value) is reported, at least one of an LOQ and an LOD should be reported with value and unit; implicitly the stressor occurence was below the method's ability to quantify. If a Measured value, LOQ and/or LOQ are reported, please include as many as possible in the extracted data.
 
-<!-- Limit of quantification value. -->
+## LOQ Unit
+`LOQ_UNIT` - *string, controlled, conditionally mandatory*
 
-## LOQ Unit - String, controlled, mandatory
-`LOQ_UNIT`
+Unit associated with [LOQ Value](#loq-value) 
 
-<!-- Unit for the limit of quantification. -->
+If no [Measured value](#measured-value) is reported, at least one of an LOQ and an LOD should be reported with value and unit.
 
-```{r}
-#| label: loq_unit
+Uses the [Measured Unit](#measured-unit) vocabulary.
 
-parameter_unit_vocabulary()
-```
+## LOD Value
+`LOD_VALUE` - *numeric, free, conditionally mandatory*
 
-### Controlled Vocabulary
+Limit of Detection of the method, if reported. 
 
-<!-- Fill in from parameter_unit_vocabulary() output. -->
+If no [Measured value](#measured-value) is reported, at least one of an LOQ and an LOD should be reported with value and unit; implicitly the stressor occurence was below the method's ability to detect. If a Measured value, LOQ and/or LOQ are reported, please include as many as possible in the extracted data.
 
-## LOD Value - Numeric, free, mandatory
-`LOD_VALUE`
+## LOD Unit
+`LOD_UNIT` - *string, controlled, conditionally mandatory*
 
-<!-- Limit of detection value. -->
+Unit associated with [LOD Value](#lod-value) 
 
-## LOD Unit - String, controlled, mandatory
-`LOD_UNIT`
+If no [Measured value](#measured-value) is reported, at least one of an LOQ and an LOD should be reported with value and unit.
 
-<!-- Unit for the limit of detection. -->
+Uses the [Measured Unit](#measured-unit) vocabulary.
 
-```{r}
-#| label: lod_unit
+## Sampling Protocol
+`SAMPLING_PROTOCOL` - *string, controlled, mandatory*
 
-parameter_unit_vocabulary()
-```
+The ID of the sampling protocol used to generate the measured sample. Foreign key referencing [protocol ID](methods_data.qmd#protocol-id). Limited to sampling protocols.
 
-### Controlled Vocabulary
+## Extraction Protocol
+`EXTRACTION_PROTOCOL` - *string, controlled, mandatory*
 
-<!-- Fill in from parameter_unit_vocabulary() output. -->
+The ID of the extraction protocol used to generate the measured sample. Foreign key referencing [protocol ID](methods_data.qmd#protocol-id). Limited to extraction protocols.
 
-## Sampling Protocol - String, controlled, mandatory
-`SAMPLING_PROTOCOL`
+## Fractionation Protocol
+`FRACTIONATION_PROTOCOL` - *string, controlled, mandatory*
 
-<!-- Protocol used for sample collection. Foreign key for methods. -->
+The ID of the fractionation protocol used to generate the measured sample. Foreign key referencing [protocol ID](methods_data.qmd#protocol-id). Limited to fractionation protocols.
 
-```{r}
-#| label: sampling_protocol
+## Analytical Protocol
+`ANALYTICAL_PROTOCOL` - *string, controlled, mandatory*
 
-sampling_protocols_vocabulary()
-```
+The ID of the analytical protocol used to generate the measured sample. Foreign key referencing [protocol ID](methods_data.qmd#protocol-id). Limited to analytical protocols.
 
-### Controlled Vocabulary
+## Reference ID
+`REFERENCE_ID` - *string, free, mandatory*
 
-<!-- Fill in from sampling_protocols_vocabulary() output. -->
+Identifier for data source, foreign key referencing [reference id](references_data.qmd#reference-id).
 
-## Extraction Protocol - String, controlled, mandatory
-`EXTRACTION_PROTOCOL`
-
-<!-- Protocol used for sample extraction. Foreign key for methods. -->
-
-```{r}
-#| label: extraction_protocol
-
-extraction_protocols_vocabulary()
-```
-
-### Controlled Vocabulary
-
-<!-- Fill in from extraction_protocols_vocabulary() output. -->
-
-## Fractionation Protocol - String, controlled, mandatory
-`FRACTIONATION_PROTOCOL`
-
-<!-- Protocol used for sample fractionation. Foreign key for methods. -->
-
-```{r}
-#| label: fractionation_protocol
-
-fractionation_protocols_vocabulary()
-```
-
-### Controlled Vocabulary
-
-<!-- Fill in from fractionation_protocols_vocabulary() output. -->
-
-## Analytical Protocol - String, controlled, mandatory
-`ANALYTICAL_PROTOCOL`
-
-<!-- Protocol used for analysis. Foreign key for methods. -->
-
-```{r}
-#| label: analytical_protocol
-
-analytical_protocols_vocabulary()
-```
-
-### Controlled Vocabulary
-
-<!-- Fill in from analytical_protocols_vocabulary() output. -->
-
-## Reference ID - String, free, mandatory
-`REFERENCE_ID`
-
-<!-- Reference identifier for the data source. Foreign key for references. -->
-
-## Sample ID - String, free, mandatory
-`SAMPLE_ID`
+## Sample ID
+`SAMPLE_ID` - *string, free, mandatory*
 
 <!-- Unique sample identifier. -->
 
-## Campaign Name Short - String, free, mandatory
-`CAMPAIGN_NAME_SHORT`
+## Campaign Name Short
+`CAMPAIGN_NAME_SHORT` - *string, free, mandatory*
 
-<!-- Short name of the associated campaign. -->
+Identifier for campaign, foreign key referencing [Short campaign name](campaign_data.qmd#campaign-name-short).
 
-## Environ Compartment - String, controlled, mandatory
-`ENVIRON_COMPARTMENT`
+## Environmental Compartment
+`ENVIRON_COMPARTMENT` - *string, controlled, mandatory*
 
-<!-- Broad environmental compartment. -->
+Transcribed from [Environmental Compartment](samples_data.html#environmental-compartment) in the Samples data.
 
-```{r}
-#| label: environ_compartment
+## Parameter Type
+`PARAMETER_TYPE` - *string, controlled, mandatory*
 
-environ_compartments_vocabulary()
-```
+Transcribed from [Parameter Type](parameters_data.qmd#parameter-type) in the Parameters data table.. 
 
-### Controlled Vocabulary
+## Measured Type
+`MEASURED_TYPE` - *string, controlled, mandatory*
 
-<!-- Fill in from environ_compartments_vocabulary() output. -->
-
-## Parameter Type - String, controlled, mandatory
-`PARAMETER_TYPE`
-
-<!-- Classification of the parameter. -->
-
-```{r}
-#| label: parameter_type
-
-parameter_types_vocabulary()
-```
+The type of measurement taken of the sample. Typically concentration, but other options are provided.
 
 ### Controlled Vocabulary
-
-<!-- Fill in from parameter_types_vocabulary() output. -->
-
-## Measured Type - String, controlled, mandatory
-`MEASURED_TYPE`
-
-<!-- Type of measurement. -->
 
 ```{r}
 #| label: measured_type
@@ -282,11 +206,8 @@ parameter_types_vocabulary()
 measured_types_vocabulary()
 ```
 
-### Controlled Vocabulary
+## Measurement Comment
+`MEASUREMENT_COMMENT` - *string, free, optional*
 
-<!-- Fill in from measured_types_vocabulary() output. -->
+Space for the recording of any additional notes or comments about the sample or measurement deemed relevant.  
 
-## Measurement Comment - String, free, optional
-`MEASUREMENT_COMMENT`
-
-<!-- Additional notes about the measurement. -->

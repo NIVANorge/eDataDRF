@@ -13,6 +13,11 @@ knitr:
 
 # Introduction
 
+[Criteria for Reporting and Evaluating Exposure Datasets (CREED)](https://www.setac.org/resource/creed-for-use-in-environmental-assessments-a-timely-development-update.html) is a framework for evaluating the relevance and reliability of a reference object for a given exposure assessment question across a series of questions. Users set criteria for it to be relevant to their question, and use a pre-defined set of reliability criteria. 
+
+The object is evaluated based on its data availability, precision, choice of methods, and a final score is calculated for both its relevance and reliability based on its useability at "Gold" and "Silver" levels of quality.  
+
+
 ```{r}
 #| label: setup
 library(eDataDRF)

@@ -44,11 +44,17 @@ parameter_types_vocabulary()
 ```
 
 `"Not relevant"` -  Use when a type is not applicable to the measured scalar.
+
 `"Stressor"` - Chemical, physical or biological agent causing stress.
-`"Quality parameter"` - Standard water/environmental quality parameter
-`"Normalisation"` - Parameter used for normalising other measurements        
-`"Background"` - "Natural background level of a parameter"          
+
+`"Quality parameter"` - Water/environmental quality parameter.
+
+`"Normalisation"` - Parameter used for normalising other measurements.
+
+`"Background"` - Natural background level of a parameter.   
+
 `"Ecological Indicator"` - Parameter is an indicator or metric of ecological concern.
+
 `"Other"` - Parameter belongs to another category. Please note in comments field.
 
 ## Parameter Sub-type
