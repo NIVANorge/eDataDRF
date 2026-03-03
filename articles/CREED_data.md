@@ -18,7 +18,7 @@ user-appraised scores, and any limitations the user chooses to comments
 on. In the data export process, the below functions are used to create
 two .CSV files: one for reliability and one for relevance. Scores are
 used to calculate a [CREED
-score](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.qmd).
+score](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.htmll).
 
 This table is not intended to be used as a final data product, but is
 included in the format because it provides traceability on how the CREED

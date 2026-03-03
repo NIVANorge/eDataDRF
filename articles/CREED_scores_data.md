@@ -3,7 +3,7 @@
 ## Introduction
 
 The criterion scores assigned for each criterion during the [CREED
-assesment](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.qmd)
+assessment](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.md)
 are used to calculate an overall useability score for both relevant and
 reliability at the gold and silver level. Silver scores are calculated
 based on the highest (worst) score for all required questions, and gold
@@ -12,10 +12,15 @@ high to low:
 
 ### Usability Scores
 
-`Gold` - `Relevant/reliable without restriction` `Gold` -
-`Relevant/reliable with restriction` `Silver` -
-`Relevant/reliable with restriction` `Silver` -
-`Relevant/reliable without restriction` `Gold`/`Silver` - `Not usable`
+`Gold` - `Relevant/reliable without restriction`
+
+`Gold` - `Relevant/reliable with restriction`
+
+`Silver` - `Relevant/reliable with restriction`
+
+`Silver` - `Relevant/reliable without restriction`
+
+`Gold`/`Silver` - `Not usable`
 
 This table is automatically filled out by the [eData
 app](https://github.com/NIVANorge/STOPeData) during the CREED assessment
@@ -39,7 +44,7 @@ initialise_CREED_scores_tibble()
 `REFERENCE_ID` - *string, free, mandatory*
 
 Identifier for data source, foreign key referencing [reference
-id](https://NIVANorge.github.io/eDataDRF/articles/references_data.qmd#reference-id).
+id](https://NIVANorge.github.io/eDataDRF/articles/references_data.html#reference-id).
 
 ### Silver Reliability
 

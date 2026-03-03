@@ -29,15 +29,20 @@ they are not, researchers much go through the tedious process of
 understanding, validating and remapping by hand; an often
 non-reproducible process. Thus a harmonised format - and associated
 validation and formatting functions - can represent a significant
-timesaver for anyone in such as position.
+timesaver for anyone in such a position.
 
 ## Why aquatic toxicology?
 
-This format is a (first) attempt to address this issue. Rather than
-attempt a perfect format that covers all relevant domains, we have
-elected to focus on pollutants in water, aquatic biota, and similar
-compartments (sludge, aquatic sediment, etc.). This has been designed to
-follow a database-like structure, with the expectation that the format
-will be developed into a full database schema in the future.
+Starting with a field we know well allows us to test the effectiveness
+of the underlying philosophy and technology.
 
 ## Why an R package?
+
+Although an R package is not a conventional form for a data structure,
+as our extraction, analysis, workflow is heavily R-based it was a
+pragmatic choice. By using the existing package architecture, it was
+possible to integrate the format closely with downstream tools, and use
+existing package dependencies and versioning to keep them updated as the
+format changes. In future, we plan to extend the format to other forms.
+
+## Who supported this work?

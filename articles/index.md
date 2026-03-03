@@ -34,5 +34,5 @@ Format and scoring for data quality assessment
 
 ### Other
 
-- [validation](https://NIVANorge.github.io/eDataDRF/articles/validation.md):
+- [Validation](https://NIVANorge.github.io/eDataDRF/articles/validation.md):
 - [Rationale](https://NIVANorge.github.io/eDataDRF/articles/rationale.md):

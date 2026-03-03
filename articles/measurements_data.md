@@ -233,7 +233,7 @@ Uses the [Measured Unit](#measured-unit) vocabulary.
 
 The ID of the sampling protocol used to generate the measured sample.
 Foreign key referencing [protocol
-ID](https://NIVANorge.github.io/eDataDRF/articles/methods_data.qmd#protocol-id).
+ID](https://NIVANorge.github.io/eDataDRF/articles/methods_data.html#protocol-id).
 Limited to sampling protocols.
 
 ### Extraction Protocol
@@ -242,7 +242,7 @@ Limited to sampling protocols.
 
 The ID of the extraction protocol used to generate the measured sample.
 Foreign key referencing [protocol
-ID](https://NIVANorge.github.io/eDataDRF/articles/methods_data.qmd#protocol-id).
+ID](https://NIVANorge.github.io/eDataDRF/articles/methods_data.html#protocol-id).
 Limited to extraction protocols.
 
 ### Fractionation Protocol
@@ -251,7 +251,7 @@ Limited to extraction protocols.
 
 The ID of the fractionation protocol used to generate the measured
 sample. Foreign key referencing [protocol
-ID](https://NIVANorge.github.io/eDataDRF/articles/methods_data.qmd#protocol-id).
+ID](https://NIVANorge.github.io/eDataDRF/articles/methods_data.html#protocol-id).
 Limited to fractionation protocols.
 
 ### Analytical Protocol
@@ -260,7 +260,7 @@ Limited to fractionation protocols.
 
 The ID of the analytical protocol used to generate the measured sample.
 Foreign key referencing [protocol
-ID](https://NIVANorge.github.io/eDataDRF/articles/methods_data.qmd#protocol-id).
+ID](https://NIVANorge.github.io/eDataDRF/articles/methods_data.html#protocol-id).
 Limited to analytical protocols.
 
 ### Reference ID
@@ -268,7 +268,7 @@ Limited to analytical protocols.
 `REFERENCE_ID` - *string, free, mandatory*
 
 Identifier for data source, foreign key referencing [reference
-id](https://NIVANorge.github.io/eDataDRF/articles/references_data.qmd#reference-id).
+id](https://NIVANorge.github.io/eDataDRF/articles/references_data.html#reference-id).
 
 ### Sample ID
 
@@ -279,7 +279,7 @@ id](https://NIVANorge.github.io/eDataDRF/articles/references_data.qmd#reference-
 `CAMPAIGN_NAME_SHORT` - *string, free, mandatory*
 
 Identifier for campaign, foreign key referencing [Short campaign
-name](https://NIVANorge.github.io/eDataDRF/articles/campaign_data.qmd#campaign-name-short).
+name](https://NIVANorge.github.io/eDataDRF/articles/campaign_data.html#campaign-name-short).
 
 ### Environmental Compartment
 
@@ -294,7 +294,7 @@ in the Samples data.
 `PARAMETER_TYPE` - *string, controlled, mandatory*
 
 Transcribed from [Parameter
-Type](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.qmd#parameter-type)
+Type](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.html#parameter-type)
 in the Parameters data table..
 
 ### Measured Type

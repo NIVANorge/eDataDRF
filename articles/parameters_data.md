@@ -197,7 +197,7 @@ quantified, it is strongly preferred that an InChIKey be made available.
 
 ### PubChem CID
 
-`PUBCHEM_CID` - *Integer, free, optional*
+`PUBCHEM_CID` - *integer, free, optional*
 
 The PubChem database uses an internal identifier known as the [PubChem
 Compound
