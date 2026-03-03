@@ -1,6 +1,9 @@
 url: https://NIVANorge.github.io/eDataDRF/
 template:
   bootstrap: 5
+  bslib:
+    font-size: "0.75rem"
+  light-switch: true
 
 navbar:
   structure:
