@@ -28,6 +28,7 @@ articles:
 - title: "Other"
   contents:
   - validation
+  - rationale
 
 reference:
 - title: Initialise tibbles

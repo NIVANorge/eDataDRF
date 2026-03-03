@@ -12,7 +12,7 @@ The eData Data Reporting Format is a format for the reporting of chemical occure
 
 # Installation
 
-To install the format, you will need the `{devtools}` package:
+To install this package, you will need the `{devtools}` package:
 
 ```{r}
 if (!requireNamespace("eDataDRF", quietly = TRUE)) {
