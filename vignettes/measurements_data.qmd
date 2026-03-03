@@ -151,27 +151,27 @@ Uses the [Measured Unit](#measured-unit) vocabulary.
 ## Sampling Protocol
 `SAMPLING_PROTOCOL` - *string, controlled, mandatory*
 
-The ID of the sampling protocol used to generate the measured sample. Foreign key referencing [protocol ID](methods_data.qmd#protocol-id). Limited to sampling protocols.
+The ID of the sampling protocol used to generate the measured sample. Foreign key referencing [protocol ID](methods_data.html#protocol-id). Limited to sampling protocols.
 
 ## Extraction Protocol
 `EXTRACTION_PROTOCOL` - *string, controlled, mandatory*
 
-The ID of the extraction protocol used to generate the measured sample. Foreign key referencing [protocol ID](methods_data.qmd#protocol-id). Limited to extraction protocols.
+The ID of the extraction protocol used to generate the measured sample. Foreign key referencing [protocol ID](methods_data.html#protocol-id). Limited to extraction protocols.
 
 ## Fractionation Protocol
 `FRACTIONATION_PROTOCOL` - *string, controlled, mandatory*
 
-The ID of the fractionation protocol used to generate the measured sample. Foreign key referencing [protocol ID](methods_data.qmd#protocol-id). Limited to fractionation protocols.
+The ID of the fractionation protocol used to generate the measured sample. Foreign key referencing [protocol ID](methods_data.html#protocol-id). Limited to fractionation protocols.
 
 ## Analytical Protocol
 `ANALYTICAL_PROTOCOL` - *string, controlled, mandatory*
 
-The ID of the analytical protocol used to generate the measured sample. Foreign key referencing [protocol ID](methods_data.qmd#protocol-id). Limited to analytical protocols.
+The ID of the analytical protocol used to generate the measured sample. Foreign key referencing [protocol ID](methods_data.html#protocol-id). Limited to analytical protocols.
 
 ## Reference ID
 `REFERENCE_ID` - *string, free, mandatory*
 
-Identifier for data source, foreign key referencing [reference id](references_data.qmd#reference-id).
+Identifier for data source, foreign key referencing [reference id](references_data.html#reference-id).
 
 ## Sample ID
 `SAMPLE_ID` - *string, free, mandatory*
@@ -181,7 +181,7 @@ Identifier for data source, foreign key referencing [reference id](references_da
 ## Campaign Name Short
 `CAMPAIGN_NAME_SHORT` - *string, free, mandatory*
 
-Identifier for campaign, foreign key referencing [Short campaign name](campaign_data.qmd#campaign-name-short).
+Identifier for campaign, foreign key referencing [Short campaign name](campaign_data.html#campaign-name-short).
 
 ## Environmental Compartment
 `ENVIRON_COMPARTMENT` - *string, controlled, mandatory*
@@ -191,7 +191,7 @@ Transcribed from [Environmental Compartment](samples_data.html#environmental-com
 ## Parameter Type
 `PARAMETER_TYPE` - *string, controlled, mandatory*
 
-Transcribed from [Parameter Type](parameters_data.qmd#parameter-type) in the Parameters data table.. 
+Transcribed from [Parameter Type](parameters_data.html#parameter-type) in the Parameters data table.. 
 
 ## Measured Type
 `MEASURED_TYPE` - *string, controlled, mandatory*

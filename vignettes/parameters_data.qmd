@@ -97,7 +97,7 @@ The [IUPAC International Chemical Identifier (InChI)](https://inchi-trust.info/w
 
 
 ## PubChem CID
-`PUBCHEM_CID` - *Integer, free, optional*
+`PUBCHEM_CID` - *integer, free, optional*
 
 The PubChem database uses an internal identifier known as the [PubChem Compound Identifier](https://pubchem.ncbi.nlm.nih.gov/search/help_search.html). This is an integer accession number. InChIKeys are strongly preferred for identification, but a PubChem CID can be included if desired for cross-referencing. 
 
