@@ -12,4 +12,5 @@ A tibble with 1 row of dummy reference data
 \description{
 Creates a 1-row references tibble with test data.
 Inherits column structure from initialise_references_tibble().
+REFERENCE_ID automatically generated using generate_reference_id().
 }

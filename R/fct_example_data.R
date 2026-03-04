@@ -43,6 +43,7 @@ example_campaign_tibble <- function() {
 #'
 #' @description Creates a 1-row references tibble with test data.
 #' Inherits column structure from initialise_references_tibble().
+#' REFERENCE_ID automatically generated using generate_reference_id().
 #'
 #' @return A tibble with 1 row of dummy reference data
 #' @importFrom dplyr add_row
@@ -51,13 +52,17 @@ example_campaign_tibble <- function() {
 example_references_tibble <- function() {
   initialise_references_tibble() |>
     add_row(
-      REFERENCE_ID = "REF-001",
+      REFERENCE_ID = generate_reference_id(
+        date = 2023L,
+        author = "Smith, J.; Jones, A.; Williams, B.",
+        title = "Heavy metal contamination in Norwegian coastal sediments"
+      ),
       REFERENCE_TYPE = "Journal Article",
       DATA_SOURCE = "Primary",
       AUTHOR = "Smith, J.; Jones, A.; Williams, B.",
       TITLE = "Heavy metal contamination in Norwegian coastal sediments",
       YEAR = 2023L,
-      ACCESS_DATE = as.Date(NA),
+      ACCESS_DATE = Sys.Date(),
       PERIODICAL_JOURNAL = "Environmental Science & Technology",
       VOLUME = 57L,
       ISSUE = 12L,
@@ -87,7 +92,7 @@ example_sites_tibble <- function() {
       SITE_CODE = "SITE-001",
       SITE_NAME = "Oslofjord Inner",
       SITE_GEOGRAPHIC_FEATURE = "Coastal, fjord",
-      SITE_GEOGRAPHIC_FEATURE_SUB = "Water column",
+      SITE_GEOGRAPHIC_FEATURE_SUB = "Water column, pelagic zone",
       COUNTRY_ISO = "NO",
       OCEAN_IHO = "Skagerrak",
       LATITUDE = 59.9139,
@@ -103,14 +108,14 @@ example_sites_tibble <- function() {
       SITE_CODE = "SITE-002",
       SITE_NAME = "Bergen Harbour",
       SITE_GEOGRAPHIC_FEATURE = "Coastal, fjord",
-      SITE_GEOGRAPHIC_FEATURE_SUB = "Sediment",
+      SITE_GEOGRAPHIC_FEATURE_SUB = "Water benthos",
       COUNTRY_ISO = "NO",
       OCEAN_IHO = "North Sea",
       LATITUDE = 60.3913,
       LONGITUDE = 5.3221,
       SITE_COORDINATE_SYSTEM = "WGS84",
-      ALTITUDE_VALUE = NA_real_,
-      ALTITUDE_UNIT = NA_character_,
+      ALTITUDE_VALUE = 0,
+      ALTITUDE_UNIT = "m",
       ENTERED_BY = "test_user",
       ENTERED_DATE = "2023-07-01",
       SITE_COMMENT = "Secondary test site"
@@ -201,6 +206,7 @@ example_compartments_tibble <- function() {
 example_methods_tibble <- function() {
   initialise_methods_tibble() |>
     add_row(
+      # FIXME: Auto-generate protocol names
       PROTOCOL_ID = "PROT-001",
       CAMPAIGN_NAME = "Test Campaign 2023: Heavy Metals in Coastal Sediments",
       PROTOCOL_CATEGORY = "Sampling Protocol",
@@ -218,15 +224,15 @@ example_methods_tibble <- function() {
       PROTOCOL_ID = "PROT-003",
       CAMPAIGN_NAME = "Test Campaign 2023: Heavy Metals in Coastal Sediments",
       PROTOCOL_CATEGORY = "Fractionation Protocol",
-      PROTOCOL_NAME = "Total",
+      PROTOCOL_NAME = "Total fraction",
       PROTOCOL_COMMENT = NA_character_
     ) |>
     add_row(
       PROTOCOL_ID = "PROT-004",
       CAMPAIGN_NAME = "Test Campaign 2023: Heavy Metals in Coastal Sediments",
       PROTOCOL_CATEGORY = "Analytical Protocol",
-      PROTOCOL_NAME = "ICP-MS",
-      PROTOCOL_COMMENT = "Inductively coupled plasma mass spectrometry"
+      PROTOCOL_NAME = "Inductively coupled plasma mass spectrometry",
+      PROTOCOL_COMMENT = "Inductively coupled plasma mass spectrometry using the ICP-MASTER 9000."
     )
 }
 
@@ -748,91 +754,6 @@ example_CREED_scores_tibble <- function() {
       GOLD_RELEVANCE = "Usable with restrictions"
     )
 }
-
-#' Populate session data directly with dummy data
-#'
-#' @description Stores dummy data directly into session reactiveValues.
-#' This bypasses the LLM extraction process and populates all module
-#' data objects immediately.
-#'
-#' @param session Shiny session object
-#' @param navigate_to Optional tab to navigate to after loading data
-#' @param parent_session Parent session for navigation (if different from session)
-#'
-#' @importFrom shiny showNotification updateNavbarPage
-#' @importFrom golem print_dev
-#' @export
-populate_session_with_example_data <- function(
-  session,
-  navigate_to = NULL,
-  parent_session = NULL
-) {
-  # Create dummy data with uppercase columns for app data structures
-  example_data <- create_example_data(uppercase_columns = TRUE)
-
-  # Store directly in session userData for immediate use
-  # Campaign data
-  if (!is.null(example_data$campaign)) {
-    session$userData$reactiveValues$campaignData <- example_data$campaign
-    print_dev("Populated campaign data with dummy data")
-  }
-
-  # References data
-  if (!is.null(example_data$references)) {
-    session$userData$reactiveValues$referenceData <- example_data$references
-    print_dev("Populated references data with dummy data")
-  }
-
-  # Sites data
-  if (!is.null(example_data$sites)) {
-    session$userData$reactiveValues$sitesData <- example_data$sites
-    print_dev("Populated sites data with dummy data")
-  }
-
-  # Parameters data
-  if (!is.null(example_data$parameters)) {
-    session$userData$reactiveValues$parametersData <- example_data$parameters
-    print_dev("Populated parameters data with dummy data")
-  }
-
-  # Compartments data
-  if (!is.null(example_data$compartments)) {
-    session$userData$reactiveValues$compartmentsData <- example_data$compartments
-    print_dev("Populated compartments data with dummy data")
-  }
-
-  # Biota data
-  if (!is.null(example_data$biota)) {
-    session$userData$reactiveValues$biotaData <- example_data$biota
-    print_dev("Populated biota data with dummy data")
-  }
-
-  # Methods data
-  if (!is.null(example_data$methods)) {
-    session$userData$reactiveValues$methodsData <- example_data$methods
-    print_dev("Populated methods data with dummy data")
-  }
-
-  # Set status flags
-  session$userData$reactiveValues$dummyDataLoaded <- TRUE
-
-  showNotification(
-    "Example data loaded successfully! All modules now contain test data.",
-    type = "default"
-  )
-
-  # Navigate if requested
-  if (!is.null(navigate_to) && !is.null(parent_session)) {
-    updateNavbarPage(
-      session = parent_session,
-      inputId = "main-page",
-      selected = navigate_to
-    )
-  }
-
-  print_dev("Example data population complete")
-}
-
 
 #' Convert CREED Tibble to Mock Input List
 #'

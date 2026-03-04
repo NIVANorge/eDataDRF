@@ -25,7 +25,6 @@ The `{pointblank}` package for R provides robust, efficient validation features 
 Below we demonstrate the use of the validation functions for each table type. 
 
 Todo:
-- Rename "dummy" to example data
 - Add and harmonise example data
 - Test example data runs without error
 - Test validation functions against example data
