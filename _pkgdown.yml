@@ -10,6 +10,11 @@ navbar:
     left: [intro, reference, articles, news]
     right: [search, github, lightswitch]
 
+glossary:
+  path: glossary.yml
+  popup: hover
+  show: true
+
 articles:
 - title: "Data tables"
   desc: "Format and variables for each table in the eData DRF"
