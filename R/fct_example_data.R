@@ -1,7 +1,7 @@
 # TODO: Copied from STOPeData, probably needs to be removed there.
 # * Also probably should go in extdata as a ZIP
 
-# Dummy Data Creation Functions ----
+# Example Data Creation Functions ----
 # Functions for creating test/demonstration data
 # These functions depend on their initialise_* parents in fct_formats.R
 # to ensure column structure consistency
@@ -14,7 +14,7 @@
 # column structure compatibility
 # =========================================================================
 
-#' Create Dummy Campaign Tibble
+#' Create Example Campaign Tibble
 #'
 #' @description Creates a 1-row campaign tibble with test data.
 #' Inherits column structure from initialise_campaign_tibble().
@@ -25,7 +25,7 @@
 #' @importFrom tidyselect where
 #' @import eDataDRF
 #' @export
-dummy_campaign_tibble <- function() {
+example_campaign_tibble <- function() {
   initialise_campaign_tibble() |>
     add_row(
       CAMPAIGN_NAME_SHORT = "TestCamp2023",
@@ -35,11 +35,11 @@ dummy_campaign_tibble <- function() {
       ORGANISATION = "NIVA",
       ENTERED_BY = "test_user",
       ENTERED_DATE = as.Date("2023-07-01"),
-      CAMPAIGN_COMMENT = "Dummy campaign for testing purposes"
+      CAMPAIGN_COMMENT = "Example campaign for testing purposes"
     )
 }
 
-#' Create Dummy References Tibble
+#' Create Example References Tibble
 #'
 #' @description Creates a 1-row references tibble with test data.
 #' Inherits column structure from initialise_references_tibble().
@@ -48,7 +48,7 @@ dummy_campaign_tibble <- function() {
 #' @importFrom dplyr add_row
 #' @import eDataDRF
 #' @export
-dummy_references_tibble <- function() {
+example_references_tibble <- function() {
   initialise_references_tibble() |>
     add_row(
       REFERENCE_ID = "REF-001",
@@ -68,11 +68,11 @@ dummy_references_tibble <- function() {
       ISBN_ISSN = NA_character_,
       EDITION = NA_character_,
       DOCUMENT_NUMBER = NA_character_,
-      REF_COMMENT = "Dummy reference for testing"
+      REF_COMMENT = "Example reference for testing"
     )
 }
 
-#' Create Dummy Sites Tibble
+#' Create Example Sites Tibble
 #'
 #' @description Creates a 2-row sites tibble with test data.
 #' Inherits column structure from initialise_sites_tibble().
@@ -81,7 +81,7 @@ dummy_references_tibble <- function() {
 #' @importFrom dplyr add_row
 #' @import eDataDRF
 #' @export
-dummy_sites_tibble <- function() {
+example_sites_tibble <- function() {
   initialise_sites_tibble() |>
     add_row(
       SITE_CODE = "SITE-001",
@@ -93,8 +93,8 @@ dummy_sites_tibble <- function() {
       LATITUDE = 59.9139,
       LONGITUDE = 10.7522,
       SITE_COORDINATE_SYSTEM = "WGS84",
-      ALTITUDE_VALUE = NA_real_,
-      ALTITUDE_UNIT = NA_character_,
+      ALTITUDE_VALUE = 0,
+      ALTITUDE_UNIT = "m",
       ENTERED_BY = "test_user",
       ENTERED_DATE = "2023-07-01",
       SITE_COMMENT = "Primary test site"
@@ -117,7 +117,7 @@ dummy_sites_tibble <- function() {
     )
 }
 
-#' Create Dummy Parameters Tibble
+#' Create Example Parameters Tibble
 #'
 #' @description Creates a 3-row parameters tibble with test data.
 #' Inherits column structure from initialise_parameters_tibble().
@@ -126,7 +126,7 @@ dummy_sites_tibble <- function() {
 #' @import eDataDRF
 #' @importFrom dplyr add_row
 #' @export
-dummy_parameters_tibble <- function() {
+example_parameters_tibble <- function() {
   initialise_parameters_tibble() |>
     add_row(
       PARAMETER_TYPE = "Stressor",
@@ -166,7 +166,7 @@ dummy_parameters_tibble <- function() {
     )
 }
 
-#' Create Dummy Compartments Tibble
+#' Create Example Compartments Tibble
 #'
 #' @description Creates a 2-row compartments tibble with test data.
 #' Inherits column structure from initialise_compartments_tibble().
@@ -175,7 +175,7 @@ dummy_parameters_tibble <- function() {
 #' @import eDataDRF
 #' @importFrom dplyr add_row
 #' @export
-dummy_compartments_tibble <- function() {
+example_compartments_tibble <- function() {
   initialise_compartments_tibble() |>
     add_row(
       ENVIRON_COMPARTMENT = "Aquatic",
@@ -189,7 +189,7 @@ dummy_compartments_tibble <- function() {
     )
 }
 
-#' Create Dummy Methods Tibble
+#' Create Example Methods Tibble
 #'
 #' @description Creates a 4-row methods tibble with test data (one per protocol category).
 #' Inherits column structure from initialise_methods_tibble().
@@ -198,7 +198,7 @@ dummy_compartments_tibble <- function() {
 #' @importFrom dplyr add_row
 #' @import eDataDRF
 #' @export
-dummy_methods_tibble <- function() {
+example_methods_tibble <- function() {
   initialise_methods_tibble() |>
     add_row(
       PROTOCOL_ID = "PROT-001",
@@ -230,7 +230,7 @@ dummy_methods_tibble <- function() {
     )
 }
 
-#' Create Dummy Samples Tibble
+#' Create Example Samples Tibble
 #'
 #' @description Creates a 2-row samples tibble with test data.
 #' Inherits column structure from initialise_samples_tibble().
@@ -239,7 +239,7 @@ dummy_methods_tibble <- function() {
 #' @importFrom dplyr add_row
 #' @import eDataDRF
 #' @export
-dummy_samples_tibble <- function() {
+example_samples_tibble <- function() {
   initialise_samples_tibble() |>
     add_row(
       SITE_CODE = "SITE-001",
@@ -269,7 +269,7 @@ dummy_samples_tibble <- function() {
     )
 }
 
-#' Create Dummy Biota Tibble
+#' Create Example Biota Tibble
 #'
 #' @description Creates a 1-row biota tibble with test data.
 #' Inherits column structure from initialise_biota_tibble().
@@ -278,7 +278,7 @@ dummy_samples_tibble <- function() {
 #' @importFrom dplyr add_row
 #' @import eDataDRF
 #' @export
-dummy_biota_tibble <- function() {
+example_biota_tibble <- function() {
   initialise_biota_tibble() |>
     add_row(
       SAMPLE_ID = "SAMP-003",
@@ -298,7 +298,7 @@ dummy_biota_tibble <- function() {
     )
 }
 
-#' Create Dummy Measurements Tibble
+#' Create Example Measurements Tibble
 #'
 #' @description Creates a 3-row measurements tibble with test data.
 #' Inherits column structure from initialise_measurements_tibble().
@@ -307,7 +307,7 @@ dummy_biota_tibble <- function() {
 #' @import eDataDRF
 #' @importFrom dplyr add_row
 #' @export
-dummy_measurements_tibble <- function() {
+example_measurements_tibble <- function() {
   initialise_measurements_tibble() |>
     add_row(
       SITE_CODE = "SITE-001",
@@ -398,117 +398,7 @@ dummy_measurements_tibble <- function() {
     )
 }
 
-# =========================================================================
-# LEGACY FUNCTIONS (kept for backwards compatibility)
-# =========================================================================
-
-#' Create dummy data for testing and demonstration
-#'
-#' @description Creates a complete set of dummy environmental exposure data
-#' that can be used for testing the application or demonstration purposes.
-#' This includes campaign info, references, sites, parameters, compartments,
-#' biota, and methods data. This returns a list because that's the format we
-#' expect to get structured data back from the LLM in, even though we prefer
-#' tibbles
-#'
-#' @param uppercase_columns Logical. If TRUE, converts data frame column names
-#'   to uppercase for app data structures. If FALSE, keeps lowercase for LLM extraction.
-#'
-#' @importFrom tibble tibble is_tibble
-#' @return List containing all dummy data structures
-#' @export
-create_dummy_data <- function(uppercase_columns = FALSE) {
-  dummy_data <- list(
-    campaign = tibble(
-      # TODO: Actually, should this be a tibble? Need to coordinate with other stuff.
-      campaign_name = "Dummy campaign, 1997",
-      campaign_name_short = "DummyCampaign1997",
-      campaign_start_date = "1997-01-01",
-      campaign_end_date = "1997-03-31",
-      organisation = "NIVA",
-      campaign_comment = "A madeup NIVA study."
-    ),
-    references = tibble(
-      author = "Welch, S.",
-      title = "Study madeup",
-      year = 1998L,
-      periodical_journal = "Journal of NIVA",
-      volume = 43L,
-      issue = 2L,
-      publisher = "NIVA Library",
-      doi = NA_character_
-    ),
-    sites = tibble(
-      site_code = "NIVA-001",
-      site_name = "NIVA Office",
-      latitude = 59.924634,
-      longitude = 10.792297,
-      country = "Norway",
-      site_geographic_feature = "Coastal, fjord",
-      site_geographic_feature_sub = "Water column"
-    ),
-    parameters = tibble(
-      parameter_name = c("Silver"),
-      parameter_type = rep("Stressor", 1),
-      cas_rn = c(
-        "7440-22-4"
-      )
-    ),
-    compartments = tibble(
-      environ_compartment = c("Aquatic", "Biota"),
-      environ_compartment_sub = c("Marine/Salt Water", "Biota, Aquatic"),
-      measured_category = c("External", "Internal")
-    ),
-    biota = tibble(
-      sample_id = NA_character_,
-      species_group = "Crustaceans",
-      sample_species = "Daphnia magna",
-      sample_tissue = "Whole body",
-      sample_species_lifestage = "Adult",
-      sample_species_gender = "Female"
-    ),
-    methods = tibble(
-      protocol_category = c(
-        "Sampling Protocol",
-        "Analytical Protocol",
-        "Extraction Protocol"
-      ),
-      protocol_name = c(
-        "Grab sampling",
-        "Other",
-        "Not reported"
-      ),
-      protocol_comment = c(
-        "Adult copepods collected between January and March 1997, acclimated to 15 degrees C for 12 days",
-        "Radioactivity measured with NaI(Tl) gamma detectors at specific energy levels for each isotope",
-        "Not sure."
-      )
-    ),
-    samples = tibble(
-      sampling_date = c("2025-09-29", "2023-02-12")
-    )
-  )
-
-  # Convert data frame column names to uppercase if requested
-  if (uppercase_columns) {
-    tibble_elements <- c(
-      "sites",
-      "parameters",
-      "compartments",
-      "biota",
-      "methods"
-    )
-    for (element in tibble_elements) {
-      if (!is.null(dummy_data[[element]]) && is_tibble(dummy_data[[element]])) {
-        names(dummy_data[[element]]) <- toupper(names(dummy_data[[element]]))
-      }
-    }
-  }
-
-  return(dummy_data)
-}
-
-#' Create Dummy CREED Reliability Tibble
+#' Create Example CREED Reliability Tibble
 #'
 #' @description Creates a 19-row CREED reliability tibble (RB1-RB19) with
 #' realistic test data including scores, extracted data, and limitations.
@@ -517,7 +407,7 @@ create_dummy_data <- function(uppercase_columns = FALSE) {
 #' @return A tibble with 19 rows of dummy CREED reliability data
 #' @importFrom dplyr add_row
 #' @export
-dummy_CREED_reliability_tibble <- function() {
+example_CREED_reliability_tibble <- function() {
   initialise_CREED_data_tibble() |>
     # Convert score to integer to match collect_CREED_data behaviour
     mutate(score = integer(0)) |>
@@ -714,7 +604,7 @@ dummy_CREED_reliability_tibble <- function() {
 }
 
 
-#' Create Dummy CREED Relevance Tibble
+#' Create Example CREED Relevance Tibble
 #'
 #' @description Creates an 11-row CREED relevance tibble (RV1-RV11) with
 #' realistic test data including scores, extracted data, and limitations.
@@ -723,7 +613,7 @@ dummy_CREED_reliability_tibble <- function() {
 #' @return A tibble with 11 rows of dummy CREED relevance data
 #' @importFrom dplyr add_row
 #' @export
-dummy_CREED_relevance_tibble <- function() {
+example_CREED_relevance_tibble <- function() {
   initialise_CREED_data_tibble() |>
     # Convert score to integer to match collect_CREED_data behaviour
     mutate(score = integer(0)) |>
@@ -840,7 +730,7 @@ dummy_CREED_relevance_tibble <- function() {
 }
 
 
-#' Create Dummy CREED Scores Tibble
+#' Create Example CREED Scores Tibble
 #'
 #' @description Creates a 1-row CREED scores summary tibble with test data.
 #' Inherits column structure from initialise_CREED_scores_tibble().
@@ -848,7 +738,7 @@ dummy_CREED_relevance_tibble <- function() {
 #' @return A tibble with 1 row of dummy CREED scores data
 #' @importFrom dplyr add_row
 #' @export
-dummy_CREED_scores_tibble <- function() {
+example_CREED_scores_tibble <- function() {
   initialise_CREED_scores_tibble() |>
     add_row(
       REFERENCE_ID = "REF-001",
@@ -872,54 +762,54 @@ dummy_CREED_scores_tibble <- function() {
 #' @importFrom shiny showNotification updateNavbarPage
 #' @importFrom golem print_dev
 #' @export
-populate_session_with_dummy_data <- function(
+populate_session_with_example_data <- function(
   session,
   navigate_to = NULL,
   parent_session = NULL
 ) {
   # Create dummy data with uppercase columns for app data structures
-  dummy_data <- create_dummy_data(uppercase_columns = TRUE)
+  example_data <- create_example_data(uppercase_columns = TRUE)
 
   # Store directly in session userData for immediate use
   # Campaign data
-  if (!is.null(dummy_data$campaign)) {
-    session$userData$reactiveValues$campaignData <- dummy_data$campaign
+  if (!is.null(example_data$campaign)) {
+    session$userData$reactiveValues$campaignData <- example_data$campaign
     print_dev("Populated campaign data with dummy data")
   }
 
   # References data
-  if (!is.null(dummy_data$references)) {
-    session$userData$reactiveValues$referenceData <- dummy_data$references
+  if (!is.null(example_data$references)) {
+    session$userData$reactiveValues$referenceData <- example_data$references
     print_dev("Populated references data with dummy data")
   }
 
   # Sites data
-  if (!is.null(dummy_data$sites)) {
-    session$userData$reactiveValues$sitesData <- dummy_data$sites
+  if (!is.null(example_data$sites)) {
+    session$userData$reactiveValues$sitesData <- example_data$sites
     print_dev("Populated sites data with dummy data")
   }
 
   # Parameters data
-  if (!is.null(dummy_data$parameters)) {
-    session$userData$reactiveValues$parametersData <- dummy_data$parameters
+  if (!is.null(example_data$parameters)) {
+    session$userData$reactiveValues$parametersData <- example_data$parameters
     print_dev("Populated parameters data with dummy data")
   }
 
   # Compartments data
-  if (!is.null(dummy_data$compartments)) {
-    session$userData$reactiveValues$compartmentsData <- dummy_data$compartments
+  if (!is.null(example_data$compartments)) {
+    session$userData$reactiveValues$compartmentsData <- example_data$compartments
     print_dev("Populated compartments data with dummy data")
   }
 
   # Biota data
-  if (!is.null(dummy_data$biota)) {
-    session$userData$reactiveValues$biotaData <- dummy_data$biota
+  if (!is.null(example_data$biota)) {
+    session$userData$reactiveValues$biotaData <- example_data$biota
     print_dev("Populated biota data with dummy data")
   }
 
   # Methods data
-  if (!is.null(dummy_data$methods)) {
-    session$userData$reactiveValues$methodsData <- dummy_data$methods
+  if (!is.null(example_data$methods)) {
+    session$userData$reactiveValues$methodsData <- example_data$methods
     print_dev("Populated methods data with dummy data")
   }
 
@@ -927,7 +817,7 @@ populate_session_with_dummy_data <- function(
   session$userData$reactiveValues$dummyDataLoaded <- TRUE
 
   showNotification(
-    "Dummy data loaded successfully! All modules now contain test data.",
+    "Example data loaded successfully! All modules now contain test data.",
     type = "default"
   )
 
@@ -940,14 +830,14 @@ populate_session_with_dummy_data <- function(
     )
   }
 
-  print_dev("Dummy data population complete")
+  print_dev("Example data population complete")
 }
 
 
 #' Convert CREED Tibble to Mock Input List
 #'
-#' @description Converts a CREED data tibble (from dummy_CREED_reliability_tibble()
-#' or dummy_CREED_relevance_tibble()) into a mock shiny input list object suitable for testing
+#' @description Converts a CREED data tibble (from example_CREED_reliability_tibble()
+#' or example_CREED_relevance_tibble()) into a mock shiny input list object suitable for testing
 #' collect_CREED_data().
 #'
 #' @param creed_tibble A tibble with columns: criterion_id, relevant_data, score, limitations

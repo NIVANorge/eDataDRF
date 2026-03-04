@@ -206,31 +206,48 @@ generate_protocol_id <- function(
 }
 
 #' Generate Reference ID
-#' @param date Date (ACCESS_DATE or current date)
-#' @param author Author string
-#' @param title Title string
-#' @return Character string with format DateAuthorFirstThreeWords
+#'
+#' Creates a compact reference identifier by combining the publication year,
+#' first author's last name, and the first three words of the title in
+#' PascalCase.
+#'
+#' @param date Integer or character. Publication year (e.g. `2018`).
+#' @param author Character. Semicolon-separated author list in
+#'   "Last, First" format. Only the first author's last name is used
+#'   (truncated to 10 alphanumeric characters).
+#' @param title Character. Publication title. The first three words are
+#'   extracted and converted to PascalCase.
+#'
+#' @return Character string with format `YearLastnameTitleWords`,
+#'   e.g. `"2018Last1AStudyOf"`.
+#'
+#' @examples
+#' generate_reference_id(
+#'   date = 2018,
+#'   author = "Last1, First1; Last2, First2",
+#'   title = "A study of recent developments in the field"
+#' )
+#' # Returns: "2018Last1AStudyOf"
+#'
 #' @importFrom stringr str_to_title
 #' @export
 generate_reference_id <- function(date, author, title) {
-  # Format date as YYYYMMDD
-  date_part <- date
+  # Year as-is ----
+  date_part <- as.character(date)
 
-  # Extract first author's last name
+  # First author's last name ----
   author_part <- ""
   if (!is.null(author) && nchar(trimws(author)) > 0) {
-    # Split by semicolon and take first author
     first_author <- trimws(strsplit(author, ";")[[1]][1])
-    # Extract last name (part before first comma)
     author_part <- trimws(strsplit(first_author, ",")[[1]][1])
-    # Remove any non-alphanumeric characters and limit length
     author_part <- gsub("[^A-Za-z0-9]", "", author_part)
-    author_part <- substr(author_part, 1, 10) # Limit author part length
+    author_part <- substr(author_part, 1, 10)
   }
 
-  # Extract first three words from title
+  # First three title words in PascalCase ----
   title_part <- abbreviate_string(title, 3, case = "title")
-  # Combine parts
+
+  # Combine ----
   reference_id <- paste0(date_part, author_part, title_part)
 
   return(reference_id)

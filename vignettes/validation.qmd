@@ -39,7 +39,7 @@ Typically when campaign data are generated/extracted for a data object the resul
 
 ```{r}
 #| label: campaign-validation
-dummy_campaign_tibble() |>
+example_campaign_tibble() |>
 
   pb_validate_campaign()
 ```
@@ -48,7 +48,7 @@ dummy_campaign_tibble() |>
 
 ```{r}
 #| label: references-validation
-dummy_references_tibble() |>
+example_references_tibble() |>
   pb_validate_reference()
 ```
 
@@ -56,7 +56,7 @@ dummy_references_tibble() |>
 
 ```{r}
 #| label: sites-validation
-dummy_sites_tibble() |>
+example_sites_tibble() |>
   pb_validate_sites()
 ```
 
@@ -64,7 +64,7 @@ dummy_sites_tibble() |>
 
 ```{r}
 #| label: parameters-validation
-dummy_parameters_tibble() |>
+example_parameters_tibble() |>
   pb_validate_parameters()
 ```
 
@@ -74,7 +74,7 @@ dummy_parameters_tibble() |>
 
 ```{r}
 #| label: compartments-validation
-# dummy_compartments_tibble() |>
+# example_compartments_tibble() |>
 #   pb_validate_compartments()
 ```
 
@@ -82,7 +82,7 @@ dummy_parameters_tibble() |>
 
 ```{r}
 #| label: samples-validation
-dummy_samples_tibble() |>
+example_samples_tibble() |>
   pb_validate_samples()
 ```
 
@@ -90,7 +90,7 @@ dummy_samples_tibble() |>
 
 ```{r}
 #| label: biota-validation
-dummy_biota_tibble() |>
+example_biota_tibble() |>
   pb_validate_biota()
 ```
 
@@ -98,7 +98,7 @@ dummy_biota_tibble() |>
 
 ```{r}
 #| label: methods-validation
-dummy_methods_tibble() |>
+example_methods_tibble() |>
   pb_validate_methods()
 ```
 
@@ -106,7 +106,7 @@ dummy_methods_tibble() |>
 
 ```{r}
 #| label: measurements-validation
-dummy_measurements_tibble() |>
+example_measurements_tibble() |>
   pb_validate_measurements()
 ```
 
@@ -116,7 +116,7 @@ dummy_measurements_tibble() |>
 
 ```{r}
 #| label: creed-validation
-# dummy_CREED_data_tibble() |>
+# example_CREED_data_tibble() |>
 #   pb_validate_CREED_data()
 ```
 
@@ -124,6 +124,6 @@ dummy_measurements_tibble() |>
 
 ```{r}
 #| label: creed-scores-validation
-# dummy_CREED_scores_tibble() |>
+# example_CREED_scores_tibble() |>
 #   pb_validate_CREED_scores()
 ```

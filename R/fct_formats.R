@@ -1383,6 +1383,14 @@ tissue_types_vocabulary <- function() {
     "Stem",
     "Fruit",
     "Seed",
+    "Brown meat",
+    "Shoot tips",
+    "Disc skeleton",
+    "Echinoid corona",
+    "Bile",
+    "Plant tissue",
+    "Shoot tip",
+    "Total soft tissues minus gonads",
     "Other"
   )
 }
