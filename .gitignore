@@ -55,6 +55,7 @@ inst/doc
 scratchpad/
 doc/
 /Meta/
+/vignettes/*.R
 
 # Large ontology files
 *.obo

@@ -13,7 +13,7 @@ knitr:
 
 # Introduction
 
-For academic publications, standard citation formats are generally sufficient. The eData format is based on a subset of the [BibTeX](https://www.bibtex.org/Format/) format, reduced to the most relevant types (hournal article, book, report, dataset) and fields. In other cases, [Campaign data](campaign_data.html) may be more relevant; in this case, much of the references data can be left blank.
+**Reference data** captures the academic literature metadata of a data object. The eData format is based on a subset of the [BibTeX](https://www.bibtex.org/Format/) format, reduced to the most relevant types (journal article, book, report, dataset) and fields. In other cases, [Campaign data](campaign_data.html) may be more relevant; in this case, much of the references data can be left blank.
 
 ```{r}
 #| label: setup
@@ -44,12 +44,12 @@ generate_reference_id(
 )
 ```
 
-Reference ID is also a foreign key in [Measurement data](measurements_data.html). 
+Reference ID is also a foreign key in [Measurement data](measurements_data.html#reference-id) and [CREED scores](CREED_scores_data.html#reference-id).
 
 ## Reference Type
 `REFERENCE_TYPE` - *string, controlled, mandatory*
 
-<!-- Type of publication (Journal Article, Report, Dataset, etc.). -->
+The type of publication. Currently restricted to Journal Article, Book, Report, or Dataset/Database.
 
 ## Author
 `AUTHOR` - *string, free, mandatory*

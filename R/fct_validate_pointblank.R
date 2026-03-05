@@ -235,9 +235,9 @@ pb_validate_parameters <- function(
       col_vals_not_null(columns = MEASURED_TYPE, actions = actions) |>
       col_vals_not_null(columns = PARAMETER_NAME, actions = actions) |>
       # FIXME: This will obviously fail on new parameters. Will need a more intelligent approach in time.
-      col_vals_in_set_verbose(
+      col_vals_in_set(
         columns = PARAMETER_NAME,
-        set = parameters_vocabulary()$PARAMETER_NAME,
+        set = parameters_vocabulary() |> pull(PARAMETER_NAME),
         actions = actions
       ) |>
 
@@ -400,9 +400,9 @@ pb_validate_biota <- function(
       col_vals_not_null(columns = SITE_CODE, actions = actions) |>
       col_vals_not_null(columns = PARAMETER_NAME, actions = actions) |>
       # FIXME: This will obviously fail on new parameters. Will need a more intelligent approach in time.
-      col_vals_in_set_verbose(
+      col_vals_in_set(
         columns = PARAMETER_NAME,
-        set = parameters_vocabulary()$PARAMETER_NAME,
+        set = parameters_vocabulary() |> pull(PARAMETER_NAME),
         actions = actions
       ) |>
 
@@ -471,9 +471,9 @@ pb_validate_measurements <- function(
       col_vals_not_null(columns = SITE_CODE, actions = actions) |>
       col_vals_not_null(columns = PARAMETER_NAME, actions = actions) |>
       # FIXME: This will obviously fail on new parameters. Will need a more intelligent approach in time.
-      col_vals_in_set_verbose(
+      col_vals_in_set(
         columns = PARAMETER_NAME,
-        set = parameters_vocabulary()$PARAMETER_NAME,
+        set = parameters_vocabulary() |> pull(PARAMETER_NAME),
         actions = actions
       ) |>
       col_vals_not_null(columns = SAMPLING_DATE, actions = actions) |>
