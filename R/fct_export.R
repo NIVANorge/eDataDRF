@@ -151,7 +151,7 @@ export_campaign_zip <- function(
   old_wd <- getwd()
   setwd(temp_dir)
 
-  zip::zip(
+  zip(
     zipfile = output_path,
     files = basename(csv_files),
     mode = "cherry-pick"

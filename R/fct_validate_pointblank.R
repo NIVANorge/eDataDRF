@@ -722,6 +722,9 @@ pb_validate_all_edata_tables <- function(
 #' @param value_name Optional name to describe what the values represent (e.g., "Reference IDs")
 #'
 #' @return The validated data table
+#' @importFrom pointblank col_vals_in_set action_levels
+#' @importFrom dplyr filter pull
+#' @importFrom rlang as_name enquo
 #' @export
 col_vals_in_set_verbose <- function(
   x,

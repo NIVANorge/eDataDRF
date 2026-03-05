@@ -39,7 +39,6 @@ Typically when campaign data are generated/extracted for a data object the resul
 ```{r}
 #| label: campaign-validation
 example_campaign_tibble() |>
-
   pb_validate_campaign()
 ```
 

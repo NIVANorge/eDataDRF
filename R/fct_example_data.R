@@ -20,10 +20,8 @@
 #' Inherits column structure from initialise_campaign_tibble().
 #'
 #' @return A tibble with 1 row of dummy campaign data
-#' @importFrom dplyr add_row
-#' @importFrom dplyr mutate across
+#' @importFrom dplyr add_row mutate across
 #' @importFrom tidyselect where
-#' @import eDataDRF
 #' @export
 example_campaign_tibble <- function() {
   initialise_campaign_tibble() |>
@@ -47,7 +45,6 @@ example_campaign_tibble <- function() {
 #'
 #' @return A tibble with 1 row of dummy reference data
 #' @importFrom dplyr add_row
-#' @import eDataDRF
 #' @export
 example_references_tibble <- function() {
   initialise_references_tibble() |>
@@ -84,7 +81,6 @@ example_references_tibble <- function() {
 #'
 #' @return A tibble with 2 rows of dummy site data
 #' @importFrom dplyr add_row
-#' @import eDataDRF
 #' @export
 example_sites_tibble <- function() {
   initialise_sites_tibble() |>
@@ -128,7 +124,6 @@ example_sites_tibble <- function() {
 #' Inherits column structure from initialise_parameters_tibble().
 #'
 #' @return A tibble with 3 rows of dummy parameter data
-#' @import eDataDRF
 #' @importFrom dplyr add_row
 #' @export
 example_parameters_tibble <- function() {
@@ -177,7 +172,6 @@ example_parameters_tibble <- function() {
 #' Inherits column structure from initialise_compartments_tibble().
 #'
 #' @return A tibble with 2 rows of dummy compartment data
-#' @import eDataDRF
 #' @importFrom dplyr add_row
 #' @export
 example_compartments_tibble <- function() {
@@ -201,7 +195,6 @@ example_compartments_tibble <- function() {
 #'
 #' @return A tibble with 4 rows of dummy methods data
 #' @importFrom dplyr add_row
-#' @import eDataDRF
 #' @export
 example_methods_tibble <- function() {
   initialise_methods_tibble() |>
@@ -243,7 +236,6 @@ example_methods_tibble <- function() {
 #'
 #' @return A tibble with 2 rows of dummy sample data
 #' @importFrom dplyr add_row
-#' @import eDataDRF
 #' @export
 example_samples_tibble <- function() {
   initialise_samples_tibble() |>
@@ -282,7 +274,6 @@ example_samples_tibble <- function() {
 #'
 #' @return A tibble with 1 row of dummy biota data
 #' @importFrom dplyr add_row
-#' @import eDataDRF
 #' @export
 example_biota_tibble <- function() {
   initialise_biota_tibble() |>
@@ -310,7 +301,6 @@ example_biota_tibble <- function() {
 #' Inherits column structure from initialise_measurements_tibble().
 #'
 #' @return A tibble with 3 rows of dummy measurement data
-#' @import eDataDRF
 #' @importFrom dplyr add_row
 #' @export
 example_measurements_tibble <- function() {
@@ -411,7 +401,7 @@ example_measurements_tibble <- function() {
 #' Inherits column structure from initialise_CREED_data_tibble().
 #'
 #' @return A tibble with 19 rows of dummy CREED reliability data
-#' @importFrom dplyr add_row
+#' @importFrom dplyr add_row mutate
 #' @export
 example_CREED_reliability_tibble <- function() {
   initialise_CREED_data_tibble() |>
@@ -617,7 +607,7 @@ example_CREED_reliability_tibble <- function() {
 #' Inherits column structure from initialise_CREED_data_tibble().
 #'
 #' @return A tibble with 11 rows of dummy CREED relevance data
-#' @importFrom dplyr add_row
+#' @importFrom dplyr add_row mutate
 #' @export
 example_CREED_relevance_tibble <- function() {
   initialise_CREED_data_tibble() |>
