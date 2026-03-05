@@ -17,8 +17,10 @@ Imports:
     pointblank,
     purrr,
     readr,
+    rlang,
     stringr,
     tibble,
+    tidyselect,
     zip
 Suggests: 
     knitr,
