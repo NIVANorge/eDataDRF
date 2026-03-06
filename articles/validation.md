@@ -4,11 +4,6 @@
 library(eDataDRF)
 library(pointblank)
 library(gt)
-
-# Render pointblank agent reports safely in Quarto
-pb_report <- function(agent) {
-  get_agent_report(agent) |> as_raw_html()
-}
 ```
 
 ## create an object to store data quality thresholds for pointblank
@@ -17,33 +12,40 @@ pb_report <- function(agent) {
 
 ## action_levels \<- action_levels()
 
-    The `{pointblank}` package for R provides robust, efficient validation features for data, allowing us to quickly check that our data conforms to the expected format. Although used of controlled vocabulary and the eData app allow us to constrain user-entered data, it is more practical to add an additional level of validation. This programmatic validation layer can be re-used wherever needed; this is particularly valuable when data may need to be transformed as part of the analysis pathway.
+The [pointblank](https://rstudio.github.io/pointblank/) package for R
+provides robust, efficient validation features for data, allowing us to
+quickly check that our data conforms to the expected format. Although
+used of controlled vocabulary and the eData app allow us to constrain
+user-entered data, it is more practical to add an additional level of
+validation. This programmatic validation layer can be re-used wherever
+needed; this is particularly valuable when data may need to be
+transformed as part of the analysis pathway.
 
-    Below we demonstrate the use of the validation functions for each table type. Note: The Styling of included tables is currently rather broken, making them difficult to interpret. I will fix this when possible, but as it's not a functional issue I haven't prioritised it.
+Below we demonstrate the use of the validation functions for each table
+type. Note: The Styling of included tables is currently rather broken,
+making them difficult to interpret. I will fix this when possible, but
+as it’s not a functional issue I haven’t prioritised it.
 
-    Todo:
+Todo:
 
-    - Add and harmonise example data
-    - Test example data runs without error
-    - Test validation functions against example data
-    - One-line explanation of agent vs pipeline mode
+- Add and harmonise example data
+- Test example data runs without error
+- Test validation functions against example data
+- One-line explanation of agent vs pipeline mode
 
+## Campaign data validation
 
+Typically when campaign data are generated/extracted for a data object
+the resulting table will only have one row. However, in downstream
+operations across multiple data objects, each campaign must have a
+unique identifier; this is checked as part of the validation below.
 
-    # Campaign data validation
-
-    Typically when campaign data are generated/extracted for a data object the resulting table will only have one row. However, in downstream operations across multiple data objects, each campaign must have a unique identifier; this is checked as part of the validation below.
-
-
-    ::: {.cell}
-
-    ```{.r .cell-code}
-    example_campaign_tibble() |>
-      pb_validate_campaign()
+``` r
+example_campaign_tibble() |>
+  pb_validate_campaign()
+```
 
 [TABLE]
-
-:::
 
 ## References data validation
 
