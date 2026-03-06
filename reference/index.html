@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">eDataDRF</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9001</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -178,6 +178,13 @@
 
         <dt>
 
+          <code><a href="data_source_vocabulary.html">data_source_vocabulary()</a></code>
+
+        </dt>
+        <dd>Controlled vocabulary for data sources</dd>
+
+        <dt>
+
           <code><a href="environ_compartments_sub_vocabulary.html">environ_compartments_sub_vocabulary()</a></code>
 
         </dt>
@@ -241,7 +248,7 @@
 
         <dt>
 
-          <code><a href="measured_flags_vocabulary.html">measured_flags_vocabulary()</a></code>
+          <code><a href="measured_flag_vocabulary.html">measured_flag_vocabulary()</a></code>
 
         </dt>
         <dd>Measurement flags controlled vocabulary</dd>
@@ -304,6 +311,13 @@
 
         <dt>
 
+          <code><a href="reference_type_vocabulary.html">reference_type_vocabulary()</a></code>
+
+        </dt>
+        <dd>Controlled vocabulary for reference types</dd>
+
+        <dt>
+
           <code><a href="sampling_protocols_vocabulary.html">sampling_protocols_vocabulary()</a></code>
 
         </dt>
@@ -339,7 +353,7 @@
       </dl></div><div class="section level2">
       <h2 id="character-limits">Character limits<a class="anchor" aria-label="anchor" href="#character-limits"></a></h2>
 
-      <div class="section-desc"><p>We should perhaps have more than one of these, eh?</p></div>
+      <div class="section-desc"><p>Character limits for some inputs</p></div>
 
       <dl></dl></div><div class="section level2">
 
@@ -405,6 +419,136 @@
 
         </dt>
         <dd>Export Multiple Datasets as ZIP of CSV Files</dd>
+      </dl></div><div class="section level2">
+      <h2 id="example-data">Example data<a class="anchor" aria-label="anchor" href="#example-data"></a></h2>
+
+      <div class="section-desc"><p>Functions to generate example data</p></div>
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="example_CREED_relevance_tibble.html">example_CREED_relevance_tibble()</a></code>
+
+        </dt>
+        <dd>Create Example CREED Relevance Tibble</dd>
+
+        <dt>
+
+          <code><a href="example_CREED_reliability_tibble.html">example_CREED_reliability_tibble()</a></code>
+
+        </dt>
+        <dd>Create Example CREED Reliability Tibble</dd>
+
+        <dt>
+
+          <code><a href="example_CREED_scores_tibble.html">example_CREED_scores_tibble()</a></code>
+
+        </dt>
+        <dd>Create Example CREED Scores Tibble</dd>
+
+        <dt>
+
+          <code><a href="example_biota_tibble.html">example_biota_tibble()</a></code>
+
+        </dt>
+        <dd>Create Example Biota Tibble</dd>
+
+        <dt>
+
+          <code><a href="example_campaign_tibble.html">example_campaign_tibble()</a></code>
+
+        </dt>
+        <dd>Create Example Campaign Tibble</dd>
+
+        <dt>
+
+          <code><a href="example_compartments_tibble.html">example_compartments_tibble()</a></code>
+
+        </dt>
+        <dd>Create Example Compartments Tibble</dd>
+
+        <dt>
+
+          <code><a href="example_measurements_tibble.html">example_measurements_tibble()</a></code>
+
+        </dt>
+        <dd>Create Example Measurements Tibble</dd>
+
+        <dt>
+
+          <code><a href="example_methods_tibble.html">example_methods_tibble()</a></code>
+
+        </dt>
+        <dd>Create Example Methods Tibble</dd>
+
+        <dt>
+
+          <code><a href="example_parameters_tibble.html">example_parameters_tibble()</a></code>
+
+        </dt>
+        <dd>Create Example Parameters Tibble</dd>
+
+        <dt>
+
+          <code><a href="example_references_tibble.html">example_references_tibble()</a></code>
+
+        </dt>
+        <dd>Create Example References Tibble</dd>
+
+        <dt>
+
+          <code><a href="example_samples_tibble.html">example_samples_tibble()</a></code>
+
+        </dt>
+        <dd>Create Example Samples Tibble</dd>
+
+        <dt>
+
+          <code><a href="example_sites_tibble.html">example_sites_tibble()</a></code>
+
+        </dt>
+        <dd>Create Example Sites Tibble</dd>
+
+        <dt>
+
+          <code><a href="creed_tibble_to_mock_input.html">creed_tibble_to_mock_input()</a></code>
+
+        </dt>
+        <dd>Convert CREED Tibble to Mock Input List</dd>
+      </dl></div><div class="section level2">
+      <h2 id="validation">Validation<a class="anchor" aria-label="anchor" href="#validation"></a></h2>
+
+      <div class="section-desc"><p>Functions using {pointblank} to validate data</p></div>
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="pb_validate_all_edata_tables.html">pb_validate_all_edata_tables()</a></code>
+
+        </dt>
+        <dd>Validate all eData tables at once</dd>
+
+        <dt>
+
+          <code><a href="pb_validate_edata_table.html">pb_validate_edata_table()</a></code>
+
+        </dt>
+        <dd>Run pointblank validation on an eData table</dd>
+
+        <dt>
+
+          <code><a href="col_vals_in_set_verbose.html">col_vals_in_set_verbose()</a></code>
+
+        </dt>
+        <dd>Wrapper for col_vals_in_set with enhanced error reporting</dd>
       </dl></div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>

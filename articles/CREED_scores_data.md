@@ -20,7 +20,7 @@ high to low:
 
 `Silver` - `Relevant/reliable without restriction`
 
-`Gold`/`Silver` - `Not usable`
+`Gold` or `Silver` - `Not usable`
 
 This table is automatically filled out by the [eData
 app](https://github.com/NIVANorge/STOPeData) during the CREED assessment

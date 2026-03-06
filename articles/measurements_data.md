@@ -92,7 +92,7 @@ complete at least one of LOQ/LOD.
 #### Controlled Vocabulary
 
 ``` r
-measured_flags_vocabulary()
+measured_flag_vocabulary()
 #> [1] ""      "< LOQ" "< LOD"
 ```
 

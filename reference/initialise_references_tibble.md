@@ -24,7 +24,8 @@ REFERENCE_ID: Unique identifier for the reference (Primary Key)
 REFERENCE_TYPE: Type of publication (Journal Article, Report, Dataset,
 etc.)
 
-DATA_SOURCE: Source or database where the reference was obtained
+DATA_SOURCE: Whether reference is source of data (Primary,
+Secondary/Review, Other)
 
 AUTHOR: Author(s) of the reference
 

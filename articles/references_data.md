@@ -2,10 +2,10 @@
 
 ## Introduction
 
-For academic publications, standard citation formats are generally
-sufficient. The eData format is based on a subset of the
+**Reference data** captures the academic literature metadata of a data
+object. The eData format is based on a subset of the
 [BibTeX](https://www.bibtex.org/Format/) format, reduced to the most
-relevant types (hournal article, book, report, dataset) and fields. In
+relevant types (journal article, book, report, dataset) and fields. In
 other cases, [Campaign
 data](https://NIVANorge.github.io/eDataDRF/articles/campaign_data.md)
 may be more relevant; in this case, much of the references data can be
@@ -65,19 +65,25 @@ and TITLE using
 as follows:
 
 ``` r
-# eDataDRF::generate_reference_id(
-#   date = 2018, # i.e. publication date
-#   author = "Last1, First1; Last2, First2", # Take last name of first author
-#   title = "A study of recent developments in the field" # Extract first three words, convert to PascalCase
-# )
+generate_reference_id(
+  date = 2018, # i.e. publication date
+  author = "Last1, First1; Last2, First2", # Take last name of first author
+  title = "A study of recent developments in the field" # Extract first three words, convert to PascalCase
+)
+#> [1] "2018Last1AStudyOf"
 ```
 
 Reference ID is also a foreign key in [Measurement
-data](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.md).
+data](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.html#reference-id)
+and [CREED
+scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html#reference-id).
 
 ### Reference Type
 
 `REFERENCE_TYPE` - *string, controlled, mandatory*
+
+The type of publication. Currently restricted to Journal Article, Book,
+Report, or Dataset/Database.
 
 ### Author
 
