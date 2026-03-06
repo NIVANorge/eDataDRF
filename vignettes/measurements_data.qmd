@@ -65,7 +65,7 @@ A flag to indicate if the data source reported a measured value (blank) or that 
 ```{r}
 #| label: measured_flag
 
-measured_flags_vocabulary()
+measured_flag_vocabulary()
 ```
 
 ## Measured Value

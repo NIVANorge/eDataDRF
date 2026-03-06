@@ -250,7 +250,7 @@ initialise_parameters_tibble <- function() {
 #'
 #' REFERENCE_TYPE: Type of publication (Journal Article, Report, Dataset, etc.)
 #'
-#' DATA_SOURCE: Source or database where the reference was obtained
+#' DATA_SOURCE: Whether reference is source of data (Primary, Secondary/Review, Other)
 #'
 #' AUTHOR: Author(s) of the reference
 #'
@@ -1613,7 +1613,6 @@ species_groups_vocabulary <- function() {
 #' Other
 #'
 #' @return A character vector of uncertainty type options
-
 #' @family measurement
 #' @export
 uncertainty_types_vocabulary <- function() {
@@ -1644,6 +1643,28 @@ uncertainty_types_vocabulary <- function() {
     "95% Bootstrap CI",
     "Other"
   )
+}
+
+#' Controlled vocabulary for reference types
+#'
+#' Returns the set of valid values for the `REFERENCE_TYPE` field in the
+#' Reference table.
+#'
+#' @return A character vector of permitted reference types.
+#' @export
+reference_type_vocabulary <- function() {
+  c("Journal Article", "Book", "Report", "Dataset/Database")
+}
+
+#' Controlled vocabulary for data sources
+#'
+#' Returns the set of valid values for the `DATA_SOURCE` field in the
+#' Reference table.
+#'
+#' @return A character vector of permitted data source types.
+#' @export
+data_source_vocabulary <- function() {
+  c("Primary", "Secondary/Review", "Other")
 }
 
 # ------------------------
@@ -2011,7 +2032,7 @@ parameter_unit_vocabulary <- function(select_column = NULL) {
 
 #' @family measurement
 #' @export
-measured_flags_vocabulary <- function() {
+measured_flag_vocabulary <- function() {
   c("", "< LOQ", "< LOD")
 }
 

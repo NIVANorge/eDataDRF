@@ -63,3 +63,6 @@ doc/
 # Claude code
 .claude/
 /doc/
+
+# Readme stuff
+README_files/*

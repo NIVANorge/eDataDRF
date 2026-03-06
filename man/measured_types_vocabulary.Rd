@@ -52,7 +52,7 @@ Other parameter:
 Other measurement: 
 \code{\link{initialise_measurements_tibble}()},
 \code{\link{measured_categories_vocabulary}()},
-\code{\link{measured_flags_vocabulary}()},
+\code{\link{measured_flag_vocabulary}()},
 \code{\link{parameter_unit_vocabulary}()},
 \code{\link{uncertainty_types_vocabulary}()}
 }

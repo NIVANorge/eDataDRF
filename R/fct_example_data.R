@@ -6,14 +6,6 @@
 # These functions depend on their initialise_* parents in fct_formats.R
 # to ensure column structure consistency
 
-# =========================================================================
-# DUMMY TIBBLE FUNCTIONS
-# =========================================================================
-# Each function creates a small tibble with realistic test data
-# using add_row() on the parent initialise_*_tibble() to ensure
-# column structure compatibility
-# =========================================================================
-
 #' Create Example Campaign Tibble
 #'
 #' @description Creates a 1-row campaign tibble with test data.
@@ -311,7 +303,7 @@ example_measurements_tibble <- function() {
       SAMPLING_DATE = "2023-03-15",
       ENVIRON_COMPARTMENT_SUB = "Aquatic Sediment",
       SUBSAMPLE = "1",
-      MEASURED_FLAG = NA_character_,
+      MEASURED_FLAG = "",
       MEASURED_VALUE = 45.2,
       UNCERTAINTY_TYPE = "SD",
       UNCERTAINTY_UPPER = 3.1,
@@ -340,7 +332,7 @@ example_measurements_tibble <- function() {
       SAMPLING_DATE = "2023-04-20",
       ENVIRON_COMPARTMENT_SUB = "Aquatic Sediment",
       SUBSAMPLE = "1",
-      MEASURED_FLAG = NA_character_,
+      MEASURED_FLAG = "",
       MEASURED_VALUE = 12.8,
       UNCERTAINTY_TYPE = "SD",
       UNCERTAINTY_UPPER = 1.2,

@@ -10,3 +10,4 @@ scratchpad/*
 ^vignettes/*_files$
 ^doc$
 ^Meta$
+^README_files$

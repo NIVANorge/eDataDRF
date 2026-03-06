@@ -58,7 +58,7 @@ reference:
 - contents:
   - ends_with("_vocabulary")
 - title: Character limits
-  desc: We should perhaps have more than one of these, eh?
+  desc: Character limits for some inputs
 - contents:
   - ends_with("_limits")
 - title: Generate IDs
@@ -72,3 +72,13 @@ reference:
 - contents:
   - get_dataset_display_name
   - export_campaign_zip
+- title: Example data
+  desc: Functions to generate example data
+- contents:
+  - contains("example_")
+  - creed_tibble_to_mock_input
+- title: Validation
+  desc: Functions using {pointblank} to validate data
+- contents:
+  - contains("validate")
+  - col_vals_in_set_verbose
