@@ -228,28 +228,48 @@ example_methods_tibble <- function() {
   campaign <- "Test Campaign 2023: Heavy Metals in Coastal Sediments"
   initialise_methods_tibble() |>
     add_row(
-      PROTOCOL_ID = generate_protocol_id("Sampling Protocol", "Grab sampling", 1, campaign),
+      PROTOCOL_ID = generate_protocol_id(
+        "Sampling Protocol",
+        "Grab sampling",
+        1,
+        campaign
+      ),
       CAMPAIGN_NAME = campaign,
       PROTOCOL_CATEGORY = "Sampling Protocol",
       PROTOCOL_NAME = "Grab sampling",
       PROTOCOL_COMMENT = "Surface sediment grab samples collected by Van Veen grab"
     ) |>
     add_row(
-      PROTOCOL_ID = generate_protocol_id("Extraction Protocol", "Acid digestion", 1, campaign),
+      PROTOCOL_ID = generate_protocol_id(
+        "Extraction Protocol",
+        "Acid digestion",
+        1,
+        campaign
+      ),
       CAMPAIGN_NAME = campaign,
       PROTOCOL_CATEGORY = "Extraction Protocol",
       PROTOCOL_NAME = "Acid digestion",
       PROTOCOL_COMMENT = "HNO3/HCl microwave-assisted digestion"
     ) |>
     add_row(
-      PROTOCOL_ID = generate_protocol_id("Fractionation Protocol", "Total fraction", 1, campaign),
+      PROTOCOL_ID = generate_protocol_id(
+        "Fractionation Protocol",
+        "Total fraction",
+        1,
+        campaign
+      ),
       CAMPAIGN_NAME = campaign,
       PROTOCOL_CATEGORY = "Fractionation Protocol",
       PROTOCOL_NAME = "Total fraction",
       PROTOCOL_COMMENT = NA_character_
     ) |>
     add_row(
-      PROTOCOL_ID = generate_protocol_id("Analytical Protocol", "Inductively coupled plasma mass spectrometry", 1, campaign),
+      PROTOCOL_ID = generate_protocol_id(
+        "Analytical Protocol",
+        "Inductively coupled plasma mass spectrometry",
+        1,
+        campaign
+      ),
       CAMPAIGN_NAME = campaign,
       PROTOCOL_CATEGORY = "Analytical Protocol",
       PROTOCOL_NAME = "Inductively coupled plasma mass spectrometry",
@@ -382,6 +402,7 @@ example_measurements_tibble <- function() {
     author = "Smith, J.; Jones, A.; Williams, B.",
     title = "Heavy metal contamination in Norwegian coastal sediments"
   )
+  campaign <- "TestCamp2023"
   initialise_measurements_tibble() |>
     add_row(
       SITE_CODE = "SITE-001",
@@ -391,7 +412,7 @@ example_measurements_tibble <- function() {
       SUBSAMPLE = "1",
       MEASURED_FLAG = "",
       MEASURED_VALUE = 45.2,
-      UNCERTAINTY_TYPE = "SD",
+      UNCERTAINTY_TYPE = "Standard Deviation",
       UNCERTAINTY_UPPER = 3.1,
       UNCERTAINTY_LOWER = 3.1,
       MEASURED_UNIT = "mg/kg (dry)",
@@ -400,10 +421,30 @@ example_measurements_tibble <- function() {
       LOQ_UNIT = "mg/kg",
       LOD_VALUE = 0.1,
       LOD_UNIT = "mg/kg",
-      SAMPLING_PROTOCOL = "Grab sampling",
-      EXTRACTION_PROTOCOL = "Acid digestion",
-      FRACTIONATION_PROTOCOL = "Total fraction",
-      ANALYTICAL_PROTOCOL = "Inductively coupled plasma mass spectrometry",
+      SAMPLING_PROTOCOL = generate_protocol_id(
+        "Sampling Protocol",
+        "Grab sampling",
+        1,
+        campaign
+      ),
+      EXTRACTION_PROTOCOL = generate_protocol_id(
+        "Extraction Protocol",
+        "Acid digestion",
+        1,
+        campaign
+      ),
+      FRACTIONATION_PROTOCOL = generate_protocol_id(
+        "Fractionation Protocol",
+        "Total fraction",
+        1,
+        campaign
+      ),
+      ANALYTICAL_PROTOCOL = generate_protocol_id(
+        "Analytical Protocol",
+        "Inductively coupled plasma mass spectrometry",
+        1,
+        campaign
+      ),
       REFERENCE_ID = ref_id,
       SAMPLE_ID = generate_sample_id_with_components(
         site_code = "SITE-001",
@@ -427,7 +468,7 @@ example_measurements_tibble <- function() {
       SUBSAMPLE = "1",
       MEASURED_FLAG = "",
       MEASURED_VALUE = 12.8,
-      UNCERTAINTY_TYPE = "SD",
+      UNCERTAINTY_TYPE = "Arithmetic Mean",
       UNCERTAINTY_UPPER = 1.2,
       UNCERTAINTY_LOWER = 1.2,
       MEASURED_UNIT = "mg/kg (wet)",
@@ -436,10 +477,30 @@ example_measurements_tibble <- function() {
       LOQ_UNIT = "mg/kg",
       LOD_VALUE = 0.3,
       LOD_UNIT = "mg/kg",
-      SAMPLING_PROTOCOL = "Grab sampling",
-      EXTRACTION_PROTOCOL = "Acid digestion",
-      FRACTIONATION_PROTOCOL = "Total fraction",
-      ANALYTICAL_PROTOCOL = "Inductively coupled plasma mass spectrometry",
+      SAMPLING_PROTOCOL = generate_protocol_id(
+        "Sampling Protocol",
+        "Grab sampling",
+        1,
+        campaign
+      ),
+      EXTRACTION_PROTOCOL = generate_protocol_id(
+        "Extraction Protocol",
+        "Acid digestion",
+        1,
+        campaign
+      ),
+      FRACTIONATION_PROTOCOL = generate_protocol_id(
+        "Fractionation Protocol",
+        "Total fraction",
+        1,
+        campaign
+      ),
+      ANALYTICAL_PROTOCOL = generate_protocol_id(
+        "Analytical Protocol",
+        "Inductively coupled plasma mass spectrometry",
+        1,
+        campaign
+      ),
       REFERENCE_ID = ref_id,
       SAMPLE_ID = generate_sample_id_with_components(
         site_code = "SITE-002",
@@ -472,10 +533,30 @@ example_measurements_tibble <- function() {
       LOQ_UNIT = "mg/kg (wet)",
       LOD_VALUE = 0.01,
       LOD_UNIT = "mg/kg (wet)",
-      SAMPLING_PROTOCOL = "Grab sampling",
-      EXTRACTION_PROTOCOL = "Acid digestion",
-      FRACTIONATION_PROTOCOL = "Total fraction",
-      ANALYTICAL_PROTOCOL = "Inductively coupled plasma mass spectrometry",
+      SAMPLING_PROTOCOL = generate_protocol_id(
+        "Sampling Protocol",
+        "Grab sampling",
+        1,
+        campaign
+      ),
+      EXTRACTION_PROTOCOL = generate_protocol_id(
+        "Extraction Protocol",
+        "Acid digestion",
+        1,
+        campaign
+      ),
+      FRACTIONATION_PROTOCOL = generate_protocol_id(
+        "Fractionation Protocol",
+        "Total fraction",
+        1,
+        campaign
+      ),
+      ANALYTICAL_PROTOCOL = generate_protocol_id(
+        "Analytical Protocol",
+        "Inductively coupled plasma mass spectrometry",
+        1,
+        campaign
+      ),
       REFERENCE_ID = ref_id,
       SAMPLE_ID = generate_sample_id_with_components(
         site_code = "SITE-001",
