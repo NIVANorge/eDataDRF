@@ -6,12 +6,6 @@ library(pointblank)
 library(gt)
 ```
 
-## create an object to store data quality thresholds for pointblank
-
-## i.e. at what % of invalid data will it stop/warn/etc.
-
-## action_levels \<- action_levels()
-
 The [pointblank](https://rstudio.github.io/pointblank/) package for R
 provides robust, efficient validation features for data, allowing us to
 quickly check that our data conforms to the expected format. Although

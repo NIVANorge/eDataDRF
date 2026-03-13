@@ -57,106 +57,101 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="edata-data-reporting-format">eData Data Reporting Format<a class="anchor" aria-label="anchor" href="#edata-data-reporting-format"></a>
+<div class="page-header"><h1 id="readme">Readme<a class="anchor" aria-label="anchor" href="#readme"></a>
 </h1></div>
+</div>
+<div class="section level1">
+<h1 id="edata-data-reporting-format">eData Data Reporting Format<a class="anchor" aria-label="anchor" href="#edata-data-reporting-format"></a>
+</h1>
 <p>The eData Data Reporting Format is a format for the reporting of chemical occurence/exposure data in the natural environment. It provides tables, vocabulary, and validation functions for structuring chemical occurence data, as well as spatial, social, biological, geographical, and other metadata.</p>
 </div>
 <div class="section level1">
 <h1 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h1>
-<p>To install the format, you will need the <a href="https://devtools.r-lib.org/" class="external-link">devtools</a> package:</p>
-<div class="cell">
+<p>To install this package, you will need the <a href="https://devtools.r-lib.org/" class="external-link">devtools</a> package:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"eDataDRF"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"devtools"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span>
-<span>  <span class="op">}</span></span>
-<span>  <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"NIVANorge/eDataDRF"</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre></div>
-</div>
+<code class="sourceCode R"><span>  <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"NIVANorge/eDataDRF"</span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
 <p>The format is structured as a series of tables that collect different types of data. The <a href="https://NIVANorge.github.io/eDataDRF/articles/measurements_data.html">Measurements</a> table is the central data table. It references the other tables via foreign keys, unique identifying columns present in both tables. For more information on each table, please see the section below or the Articles section of the <a href="https://NIVANorge.github.io/eDataDRF/articles">documentation site</a>.</p>
-<div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://NIVANorge.github.io/eDataDRF/">eDataDRF</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">campaign_table</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/initialise_campaign_tibble.html">initialise_campaign_tibble</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">biota_table</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/initialise_biota_tibble.html">initialise_biota_tibble</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
-</div>
 <div class="section level2">
 <h2 id="tables">Tables<a class="anchor" aria-label="anchor" href="#tables"></a>
 </h2>
 <p>Tables are created as <code><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble::tibble()</a></code> calls with empty variables of specific types (e.g. <code>character(0)</code> for strings). These support easier validation (see <a href="https://NIVANorge.github.io/eDataDRF/articles/validation.html">Validation</a>) and the extensive Tidyverse family of functions.</p>
 <p>Tables are listed below:</p>
-<table style="width:99%;" class="table">
+<table class="table">
 <colgroup>
-<col width="63%">
-<col width="17%">
-<col width="17%">
+<col width="33%">
+<col width="33%">
+<col width="33%">
 </colgroup>
 <thead><tr class="header">
-<th align="left">Table Name</th>
-<th align="left">Purpose</th>
-<th align="left">Comments</th>
+<th>Table Name</th>
+<th>Purpose</th>
+<th>Comments</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left"><a href="https://NIVANorge.github.io/eDataDRF/articles/campaign_data.html">Campaign</a></td>
-<td align="left">Records data about sampling campaign and organisation collecting data.</td>
-<td align="left"></td>
+<td><a href="https://NIVANorge.github.io/eDataDRF/articles/campaign_data.html">Campaign</a></td>
+<td>Records data about sampling campaign and organisation collecting data.</td>
+<td></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://NIVANorge.github.io/eDataDRF/articles/references_data.html">Reference</a></td>
-<td align="left">Records conventional publication metadata, where available</td>
-<td align="left"></td>
+<td><a href="https://NIVANorge.github.io/eDataDRF/articles/references_data.html">Reference</a></td>
+<td>Records conventional publication metadata, where available</td>
+<td></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://NIVANorge.github.io/eDataDRF/articles/sites_data.html">Sites</a></td>
-<td align="left">Records site coordinates, land use, country/ocean</td>
-<td align="left"></td>
+<td><a href="https://NIVANorge.github.io/eDataDRF/articles/sites_data.html">Sites</a></td>
+<td>Records site coordinates, land use, country/ocean</td>
+<td></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://NIVANorge.github.io/eDataDRF/articles/parameters_data.html">Parameters</a></td>
-<td align="left">Records data on stressors (chemical, radiation, etc.), quality measurements</td>
-<td align="left"></td>
+<td><a href="https://NIVANorge.github.io/eDataDRF/articles/parameters_data.html">Parameters</a></td>
+<td>Records data on stressors (chemical, radiation, etc.), quality measurements</td>
+<td></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://NIVANorge.github.io/eDataDRF/articles/compartments_data.html">Compartments</a></td>
-<td align="left">Records information on the compartment/matrix sampled</td>
-<td align="left"></td>
+<td><a href="https://NIVANorge.github.io/eDataDRF/articles/compartments_data.html">Compartments</a></td>
+<td>Records information on the compartment/matrix sampled</td>
+<td></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://NIVANorge.github.io/eDataDRF/articles/samples_data.html">Samples</a></td>
-<td align="left">Records which combinations of dates, sites, parameters and compartments were sampled</td>
-<td align="left">Not used in final analysis, but exists as an intermediate table used to create measurements</td>
+<td><a href="https://NIVANorge.github.io/eDataDRF/articles/samples_data.html">Samples</a></td>
+<td>Records which combinations of dates, sites, parameters and compartments were sampled</td>
+<td>Not used in final analysis, but exists as an intermediate table used to create measurements</td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://NIVANorge.github.io/eDataDRF/articles/biota_data.html">Biota</a></td>
-<td align="left">Where relevant, records biota species, tissue, life stage, and gender</td>
-<td align="left">Optional</td>
+<td><a href="https://NIVANorge.github.io/eDataDRF/articles/biota_data.html">Biota</a></td>
+<td>Where relevant, records biota species, tissue, life stage, and gender</td>
+<td>Optional</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://NIVANorge.github.io/eDataDRF/articles/methods_data.html">Methods</a></td>
-<td align="left">Records type and descriptions of methods used for sampling, extraction, fractionation and analysis</td>
-<td align="left"></td>
+<td><a href="https://NIVANorge.github.io/eDataDRF/articles/methods_data.html">Methods</a></td>
+<td>Records type and descriptions of methods used for sampling, extraction, fractionation and analysis</td>
+<td></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://NIVANorge.github.io/eDataDRF/articles/measurements_data.html">Measurements</a></td>
-<td align="left">Records measured values, units, uncertainty, sample size, and methods associated with a given sample</td>
-<td align="left"></td>
+<td><a href="https://NIVANorge.github.io/eDataDRF/articles/measurements_data.html">Measurements</a></td>
+<td>Records measured values, units, uncertainty, sample size, and methods associated with a given sample</td>
+<td></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html">CREED (quality)</a></td>
-<td align="left">Records assessment purpose statement, relevant data summarised from above tables, relevance/reliability scores, and final assessment of data quality.</td>
-<td align="left"></td>
+<td><a href="https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html">CREED (quality)</a></td>
+<td>Records CREED assessment criteria, relevant data, criteria scores, and limitations</td>
+<td></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html">CREED Scores</a></td>
-<td align="left">[description needed]</td>
-<td align="left"></td>
+<td><a href="https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html">CREED Scores</a></td>
+<td>Records CREED usability scores calculated from CREED data above</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -166,7 +161,6 @@
 </h2>
 <p>Likewise, controlled vocabulary is available as functions that return vectors, lists, or tables. In some cases, helper functions are available that wrap multiple invididual functions.</p>
 <p>Where external data sources are used to generate a vocabulary, functions may wrap (processed) data from other R packages or load raw data from external sources.</p>
-<div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/measured_categories_vocabulary.html">measured_categories_vocabulary</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># returns a named vector</span></span>
 <span><span class="co">#&gt;               External               Internal                Surface </span></span>
@@ -249,95 +243,51 @@
 <span><span class="co">#&gt; 10 Sampling Protocol Plankton net   Plankton net sampling</span></span>
 <span><span class="co">#&gt; # ℹ 65 more rows</span></span>
 <span></span>
-<span><span class="fu"><a href="reference/coordinate_systems_vocabulary.html">coordinate_systems_vocabulary</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># calls crsuggest::crs_sf, returns 4 rows</span></span>
+<span><span class="fu"><a href="reference/coordinate_systems_vocabulary.html">coordinate_systems_vocabulary</a></span><span class="op">(</span>common_only <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="co"># calls crsuggest::crs_sf, returns 4 rows (or more when common_only = FALSE)</span></span>
 <span><span class="co">#&gt; [1] "Not relevant"          "Not reported"          "WGS 84"               </span></span>
 <span><span class="co">#&gt; [4] "ETRS89"                "WGS 84 / UTM zone 32N" "WGS 84 / UTM zone 33N"</span></span>
 <span><span class="co">#&gt; [7] "WGS 84 / UTM zone 34N" "WGS 84 / UTM zone 35N" "Other"</span></span>
 <span></span>
-<span><span class="fu"><a href="reference/ocean_vocabulary.html">ocean_vocabulary</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># loads an RDS of IHO ocean definitions from /extdata/</span></span>
-<span><span class="co">#&gt;   [1] "Not relevant"                "Not reported"               </span></span>
-<span><span class="co">#&gt;   [3] "Other"                       "Torres Strait"              </span></span>
-<span><span class="co">#&gt;   [5] "Tasman Sea"                  "Solomon Sea"                </span></span>
-<span><span class="co">#&gt;   [7] "Ross Sea"                    "Coral Sea"                  </span></span>
-<span><span class="co">#&gt;   [9] "Bismarck Sea"                "Bellingshausen Sea"         </span></span>
-<span><span class="co">#&gt;  [11] "Bass Strait"                 "Amundsen Sea"               </span></span>
-<span><span class="co">#&gt;  [13] "Timor Sea"                   "Sunda Strait"               </span></span>
-<span><span class="co">#&gt;  [15] "Sumba Strait"                "Sulu Sea"                   </span></span>
-<span><span class="co">#&gt;  [17] "Sulawesi Sea"                "South China Sea"            </span></span>
-<span><span class="co">#&gt;  [19] "Singapore Strait"            "Seram Sea"                  </span></span>
-<span><span class="co">#&gt;  [21] "Sawu Sea"                    "Natuna Sea"                 </span></span>
-<span><span class="co">#&gt;  [23] "Mindanao Sea"                "Maluku Sea"                 </span></span>
-<span><span class="co">#&gt;  [25] "Makasar Strait"              "Joseph Bonaparte Gulf"      </span></span>
-<span><span class="co">#&gt;  [27] "Jawa Sea"                    "Halmahera Sea"              </span></span>
-<span><span class="co">#&gt;  [29] "Gulf of Tonkin"              "Gulf of Tomini"             </span></span>
-<span><span class="co">#&gt;  [31] "Gulf of Thailand"            "Gulf of Carpentaria"        </span></span>
-<span><span class="co">#&gt;  [33] "Gulf of Bone"                "Gulf of Berau"              </span></span>
-<span><span class="co">#&gt;  [35] "Flores Sea"                  "Banda Sea"                  </span></span>
-<span><span class="co">#&gt;  [37] "Bali Sea"                    "Aru Sea"                    </span></span>
-<span><span class="co">#&gt;  [39] "Arafura Sea"                 "South Pacific Ocean"        </span></span>
-<span><span class="co">#&gt;  [41] "Yellow Sea"                  "Taiwan Strait"              </span></span>
-<span><span class="co">#&gt;  [43] "Seto Naikai"                 "Sea of Okhotsk"             </span></span>
-<span><span class="co">#&gt;  [45] "Philippine Sea"              "Liaodong Gulf"              </span></span>
-<span><span class="co">#&gt;  [47] "Japan Sea"                   "Gulf of Tartary"            </span></span>
-<span><span class="co">#&gt;  [49] "Gulf of Panama"              "Gulf of California"         </span></span>
-<span><span class="co">#&gt;  [51] "Gulf of Alaska"              "East China Sea"             </span></span>
-<span><span class="co">#&gt;  [53] "Coastal waters of SE Alaska" "Bo Sea"                     </span></span>
-<span><span class="co">#&gt;  [55] "Bering Sea"                  "Anadyrskiy Gulf"            </span></span>
-<span><span class="co">#&gt;  [57] "North Pacific Ocean"         "Pacific Ocean"              </span></span>
-<span><span class="co">#&gt;  [59] "Weddell Sea"                 "Scotia Sea"                 </span></span>
-<span><span class="co">#&gt;  [61] "Rio de la Plata"             "Lazarev Sea"                </span></span>
-<span><span class="co">#&gt;  [63] "Drake Passage"               "South Atlantic Ocean"       </span></span>
-<span><span class="co">#&gt;  [65] "Skagerrak"                   "Scotland Sea"               </span></span>
-<span><span class="co">#&gt;  [67] "North Sea"                   "Labrador Sea"               </span></span>
-<span><span class="co">#&gt;  [69] "Irish Sea"                   "Gulf of St. Lawrence"       </span></span>
-<span><span class="co">#&gt;  [71] "Gulf of Mexico"              "Gulf of Guinea"             </span></span>
-<span><span class="co">#&gt;  [73] "Greenland Sea"               "English Channel"            </span></span>
-<span><span class="co">#&gt;  [75] "Celtic Sea"                  "Caribbean Sea"              </span></span>
-<span><span class="co">#&gt;  [77] "Canarias Sea"                "Bristol Channel"            </span></span>
-<span><span class="co">#&gt;  [79] "Bay of Fundy"                "Bay of Biscay"              </span></span>
-<span><span class="co">#&gt;  [81] "North Atlantic Ocean"        "Atlantic Ocean"             </span></span>
-<span><span class="co">#&gt;  [83] "Tirreno Sea"                 "Strait of Sicilia"          </span></span>
-<span><span class="co">#&gt;  [85] "Strait of Gibraltar"         "Sea of Marmara"             </span></span>
-<span><span class="co">#&gt;  [87] "Sea of Azov"                 "Ligure Sea"                 </span></span>
-<span><span class="co">#&gt;  [89] "Ionian Sea"                  "Black Sea"                  </span></span>
-<span><span class="co">#&gt;  [91] "Balear Sea"                  "Alboran Sea"                </span></span>
-<span><span class="co">#&gt;  [93] "Aegean Sea"                  "Adriatic Sea"               </span></span>
-<span><span class="co">#&gt;  [95] "Western Basin"               "Eastern Basin"              </span></span>
-<span><span class="co">#&gt;  [97] "Mediterranean Sea"           "Mediterranean Region"       </span></span>
-<span><span class="co">#&gt;  [99] "Riiser-Larsen Sea"           "Red Sea"                    </span></span>
-<span><span class="co">#&gt; [101] "Prydz Bay"                   "Persian Gulf"               </span></span>
-<span><span class="co">#&gt; [103] "Palk Bay, Palk Strait"       "Mozambique Channel"         </span></span>
-<span><span class="co">#&gt; [105] "Malacca Strait"              "Lakshadweep Sea"            </span></span>
-<span><span class="co">#&gt; [107] "Gulf of Suez"                "Gulf of Oman"               </span></span>
-<span><span class="co">#&gt; [109] "Gulf of Mannar"              "Gulf of Aqaba"              </span></span>
-<span><span class="co">#&gt; [111] "Gulf of Aden"                "Great Australian Bight"     </span></span>
-<span><span class="co">#&gt; [113] "Cosmonaut Sea"               "Burma Sea, Andaman Sea"     </span></span>
-<span><span class="co">#&gt; [115] "Bay of Bengal"               "Arabian Sea"                </span></span>
-<span><span class="co">#&gt; [117] "Indian Ocean"                "The Sound"                  </span></span>
-<span><span class="co">#&gt; [119] "The Little Belt"             "The Great Belt"             </span></span>
-<span><span class="co">#&gt; [121] "Kattegat"                    "Gulf of Riga"               </span></span>
-<span><span class="co">#&gt; [123] "Gulf of Finland"             "Gulf of Bothnia"            </span></span>
-<span><span class="co">#&gt; [125] "Baltic Sea"                  "White Sea"                  </span></span>
-<span><span class="co">#&gt; [127] "Norwegian Sea"               "Northwestern Passages"      </span></span>
-<span><span class="co">#&gt; [129] "North Greenland Sea"         "Lincoln Sea"                </span></span>
-<span><span class="co">#&gt; [131] "Laptev Sea"                  "Kara Sea"                   </span></span>
-<span><span class="co">#&gt; [133] "Iceland Sea"                 "Hudson Strait"              </span></span>
-<span><span class="co">#&gt; [135] "Hudson Bay"                  "East Siberian Sea"          </span></span>
-<span><span class="co">#&gt; [137] "Davis Strait"                "Chukchi Sea"                </span></span>
-<span><span class="co">#&gt; [139] "Beaufort Sea"                "Barents Sea"                </span></span>
-<span><span class="co">#&gt; [141] "Baffin Bay"                  "Arctic Ocean"</span></span></code></pre></div>
-</div>
-<div class="cell" layout-align="default">
-<div class="cell-output-display">
-<div>
-<p><figure class=""></figure></p>
-<div>
-<p><img src="README_files%5Cfigure-markdown%5Cmermaid-figure-1.png" style="width:12.95in;height:4.9in"></p>
-</div>
-<p></p>
-</div>
-</div>
-</div>
+<span><span class="fu"><a href="reference/ocean_vocabulary.html">ocean_vocabulary</a></span><span class="op">(</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">]</span> <span class="co"># loads an RDS of IHO ocean definitions from /extdata/, returns a vector</span></span>
+<span><span class="co">#&gt;  [1] "Not relevant"       "Not reported"       "Other"             </span></span>
+<span><span class="co">#&gt;  [4] "Torres Strait"      "Tasman Sea"         "Solomon Sea"       </span></span>
+<span><span class="co">#&gt;  [7] "Ross Sea"           "Coral Sea"          "Bismarck Sea"      </span></span>
+<span><span class="co">#&gt; [10] "Bellingshausen Sea" "Bass Strait"        "Amundsen Sea"      </span></span>
+<span><span class="co">#&gt; [13] "Timor Sea"          "Sunda Strait"       "Sumba Strait"      </span></span>
+<span><span class="co">#&gt; [16] "Sulu Sea"           "Sulawesi Sea"       "South China Sea"   </span></span>
+<span><span class="co">#&gt; [19] "Singapore Strait"   "Seram Sea"</span></span></code></pre></div>
+<pre class="mermaid"><code>erDiagram
+    Campaign ||--o{ Measurements : "Belongs"
+    Campaign ||--o{ References : "Belongs"
+    Campaign ||--o{ Sites : "Belongs"
+    Campaign ||--o{ Methods : "Belongs"
+    Campaign ||--o{ CREED : "Assesses"
+
+    References ||--o{ Measurements : "Cites"
+    Sites ||--o{ Measurements : "Locates"
+    Parameters ||--o{ Measurements : "Quantifies"
+    Methods ||--o{ Measurements : "Means"
+
+    Measurements {
+    }
+
+    Campaign {
+    }
+
+    References {
+    }
+
+    Sites {
+    }
+
+    Parameters {
+    }
+
+    Methods {
+    }
+
+    CREED {
+    }</code></pre>
 </div>
 </div>
 

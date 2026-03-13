@@ -1,3 +1,5 @@
+# Readme
+
 # eData Data Reporting Format
 
 The eData Data Reporting Format is a format for the reporting of
@@ -8,16 +10,11 @@ and other metadata.
 
 # Installation
 
-To install the format, you will need the
+To install this package, you will need the
 [devtools](https://devtools.r-lib.org/) package:
 
 ``` r
-if (!requireNamespace("eDataDRF", quietly = TRUE)) {
-  if (!requireNamespace("devtools", quietly = TRUE)) {
-    install.packages("devtools")
-  }
   devtools::install_github("NIVANorge/eDataDRF")
-}
 ```
 
 ## Usage
@@ -49,19 +46,19 @@ and the extensive Tidyverse family of functions.
 
 Tables are listed below:
 
-| Table Name                                                                           | Purpose                                                                                                                                               | Comments                                                                                    |
-|:-------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------|
-| [Campaign](https://NIVANorge.github.io/eDataDRF/articles/campaign_data.html)         | Records data about sampling campaign and organisation collecting data.                                                                                |                                                                                             |
-| [Reference](https://NIVANorge.github.io/eDataDRF/articles/references_data.html)      | Records conventional publication metadata, where available                                                                                            |                                                                                             |
-| [Sites](https://NIVANorge.github.io/eDataDRF/articles/sites_data.html)               | Records site coordinates, land use, country/ocean                                                                                                     |                                                                                             |
-| [Parameters](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.html)     | Records data on stressors (chemical, radiation, etc.), quality measurements                                                                           |                                                                                             |
-| [Compartments](https://NIVANorge.github.io/eDataDRF/articles/compartments_data.html) | Records information on the compartment/matrix sampled                                                                                                 |                                                                                             |
-| [Samples](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html)           | Records which combinations of dates, sites, parameters and compartments were sampled                                                                  | Not used in final analysis, but exists as an intermediate table used to create measurements |
-| [Biota](https://NIVANorge.github.io/eDataDRF/articles/biota_data.html)               | Where relevant, records biota species, tissue, life stage, and gender                                                                                 | Optional                                                                                    |
-| [Methods](https://NIVANorge.github.io/eDataDRF/articles/methods_data.html)           | Records type and descriptions of methods used for sampling, extraction, fractionation and analysis                                                    |                                                                                             |
-| [Measurements](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.html) | Records measured values, units, uncertainty, sample size, and methods associated with a given sample                                                  |                                                                                             |
-| [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html)     | Records assessment purpose statement, relevant data summarised from above tables, relevance/reliability scores, and final assessment of data quality. |                                                                                             |
-| [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | \[description needed\]                                                                                                                                |                                                                                             |
+| Table Name                                                                           | Purpose                                                                                              | Comments                                                                                    |
+|--------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| [Campaign](https://NIVANorge.github.io/eDataDRF/articles/campaign_data.html)         | Records data about sampling campaign and organisation collecting data.                               |                                                                                             |
+| [Reference](https://NIVANorge.github.io/eDataDRF/articles/references_data.html)      | Records conventional publication metadata, where available                                           |                                                                                             |
+| [Sites](https://NIVANorge.github.io/eDataDRF/articles/sites_data.html)               | Records site coordinates, land use, country/ocean                                                    |                                                                                             |
+| [Parameters](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.html)     | Records data on stressors (chemical, radiation, etc.), quality measurements                          |                                                                                             |
+| [Compartments](https://NIVANorge.github.io/eDataDRF/articles/compartments_data.html) | Records information on the compartment/matrix sampled                                                |                                                                                             |
+| [Samples](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html)           | Records which combinations of dates, sites, parameters and compartments were sampled                 | Not used in final analysis, but exists as an intermediate table used to create measurements |
+| [Biota](https://NIVANorge.github.io/eDataDRF/articles/biota_data.html)               | Where relevant, records biota species, tissue, life stage, and gender                                | Optional                                                                                    |
+| [Methods](https://NIVANorge.github.io/eDataDRF/articles/methods_data.html)           | Records type and descriptions of methods used for sampling, extraction, fractionation and analysis   |                                                                                             |
+| [Measurements](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.html) | Records measured values, units, uncertainty, sample size, and methods associated with a given sample |                                                                                             |
+| [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html)     | Records CREED assessment criteria, relevant data, criteria scores, and limitations                   |                                                                                             |
+| [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | Records CREED usability scores calculated from CREED data above                                      |                                                                                             |
 
 ## Vocabulary
 
@@ -155,83 +152,52 @@ protocol_options_vocabulary() # calls bind_rows() on four *_protocol_vocabulary(
 #> 10 Sampling Protocol Plankton net   Plankton net sampling
 #> # ℹ 65 more rows
 
-coordinate_systems_vocabulary() # calls crsuggest::crs_sf, returns 4 rows
+coordinate_systems_vocabulary(common_only = TRUE) # calls crsuggest::crs_sf, returns 4 rows (or more when common_only = FALSE)
 #> [1] "Not relevant"          "Not reported"          "WGS 84"               
 #> [4] "ETRS89"                "WGS 84 / UTM zone 32N" "WGS 84 / UTM zone 33N"
 #> [7] "WGS 84 / UTM zone 34N" "WGS 84 / UTM zone 35N" "Other"
 
-ocean_vocabulary() # loads an RDS of IHO ocean definitions from /extdata/
-#>   [1] "Not relevant"                "Not reported"               
-#>   [3] "Other"                       "Torres Strait"              
-#>   [5] "Tasman Sea"                  "Solomon Sea"                
-#>   [7] "Ross Sea"                    "Coral Sea"                  
-#>   [9] "Bismarck Sea"                "Bellingshausen Sea"         
-#>  [11] "Bass Strait"                 "Amundsen Sea"               
-#>  [13] "Timor Sea"                   "Sunda Strait"               
-#>  [15] "Sumba Strait"                "Sulu Sea"                   
-#>  [17] "Sulawesi Sea"                "South China Sea"            
-#>  [19] "Singapore Strait"            "Seram Sea"                  
-#>  [21] "Sawu Sea"                    "Natuna Sea"                 
-#>  [23] "Mindanao Sea"                "Maluku Sea"                 
-#>  [25] "Makasar Strait"              "Joseph Bonaparte Gulf"      
-#>  [27] "Jawa Sea"                    "Halmahera Sea"              
-#>  [29] "Gulf of Tonkin"              "Gulf of Tomini"             
-#>  [31] "Gulf of Thailand"            "Gulf of Carpentaria"        
-#>  [33] "Gulf of Bone"                "Gulf of Berau"              
-#>  [35] "Flores Sea"                  "Banda Sea"                  
-#>  [37] "Bali Sea"                    "Aru Sea"                    
-#>  [39] "Arafura Sea"                 "South Pacific Ocean"        
-#>  [41] "Yellow Sea"                  "Taiwan Strait"              
-#>  [43] "Seto Naikai"                 "Sea of Okhotsk"             
-#>  [45] "Philippine Sea"              "Liaodong Gulf"              
-#>  [47] "Japan Sea"                   "Gulf of Tartary"            
-#>  [49] "Gulf of Panama"              "Gulf of California"         
-#>  [51] "Gulf of Alaska"              "East China Sea"             
-#>  [53] "Coastal waters of SE Alaska" "Bo Sea"                     
-#>  [55] "Bering Sea"                  "Anadyrskiy Gulf"            
-#>  [57] "North Pacific Ocean"         "Pacific Ocean"              
-#>  [59] "Weddell Sea"                 "Scotia Sea"                 
-#>  [61] "Rio de la Plata"             "Lazarev Sea"                
-#>  [63] "Drake Passage"               "South Atlantic Ocean"       
-#>  [65] "Skagerrak"                   "Scotland Sea"               
-#>  [67] "North Sea"                   "Labrador Sea"               
-#>  [69] "Irish Sea"                   "Gulf of St. Lawrence"       
-#>  [71] "Gulf of Mexico"              "Gulf of Guinea"             
-#>  [73] "Greenland Sea"               "English Channel"            
-#>  [75] "Celtic Sea"                  "Caribbean Sea"              
-#>  [77] "Canarias Sea"                "Bristol Channel"            
-#>  [79] "Bay of Fundy"                "Bay of Biscay"              
-#>  [81] "North Atlantic Ocean"        "Atlantic Ocean"             
-#>  [83] "Tirreno Sea"                 "Strait of Sicilia"          
-#>  [85] "Strait of Gibraltar"         "Sea of Marmara"             
-#>  [87] "Sea of Azov"                 "Ligure Sea"                 
-#>  [89] "Ionian Sea"                  "Black Sea"                  
-#>  [91] "Balear Sea"                  "Alboran Sea"                
-#>  [93] "Aegean Sea"                  "Adriatic Sea"               
-#>  [95] "Western Basin"               "Eastern Basin"              
-#>  [97] "Mediterranean Sea"           "Mediterranean Region"       
-#>  [99] "Riiser-Larsen Sea"           "Red Sea"                    
-#> [101] "Prydz Bay"                   "Persian Gulf"               
-#> [103] "Palk Bay, Palk Strait"       "Mozambique Channel"         
-#> [105] "Malacca Strait"              "Lakshadweep Sea"            
-#> [107] "Gulf of Suez"                "Gulf of Oman"               
-#> [109] "Gulf of Mannar"              "Gulf of Aqaba"              
-#> [111] "Gulf of Aden"                "Great Australian Bight"     
-#> [113] "Cosmonaut Sea"               "Burma Sea, Andaman Sea"     
-#> [115] "Bay of Bengal"               "Arabian Sea"                
-#> [117] "Indian Ocean"                "The Sound"                  
-#> [119] "The Little Belt"             "The Great Belt"             
-#> [121] "Kattegat"                    "Gulf of Riga"               
-#> [123] "Gulf of Finland"             "Gulf of Bothnia"            
-#> [125] "Baltic Sea"                  "White Sea"                  
-#> [127] "Norwegian Sea"               "Northwestern Passages"      
-#> [129] "North Greenland Sea"         "Lincoln Sea"                
-#> [131] "Laptev Sea"                  "Kara Sea"                   
-#> [133] "Iceland Sea"                 "Hudson Strait"              
-#> [135] "Hudson Bay"                  "East Siberian Sea"          
-#> [137] "Davis Strait"                "Chukchi Sea"                
-#> [139] "Beaufort Sea"                "Barents Sea"                
-#> [141] "Baffin Bay"                  "Arctic Ocean"
+ocean_vocabulary()[1:20] # loads an RDS of IHO ocean definitions from /extdata/, returns a vector
+#>  [1] "Not relevant"       "Not reported"       "Other"             
+#>  [4] "Torres Strait"      "Tasman Sea"         "Solomon Sea"       
+#>  [7] "Ross Sea"           "Coral Sea"          "Bismarck Sea"      
+#> [10] "Bellingshausen Sea" "Bass Strait"        "Amundsen Sea"      
+#> [13] "Timor Sea"          "Sunda Strait"       "Sumba Strait"      
+#> [16] "Sulu Sea"           "Sulawesi Sea"       "South China Sea"   
+#> [19] "Singapore Strait"   "Seram Sea"
 ```
 
-![](README_files%5Cfigure-markdown%5Cmermaid-figure-1.png)
+``` mermaid
+erDiagram
+    Campaign ||--o{ Measurements : "Belongs"
+    Campaign ||--o{ References : "Belongs"
+    Campaign ||--o{ Sites : "Belongs"
+    Campaign ||--o{ Methods : "Belongs"
+    Campaign ||--o{ CREED : "Assesses"
+
+    References ||--o{ Measurements : "Cites"
+    Sites ||--o{ Measurements : "Locates"
+    Parameters ||--o{ Measurements : "Quantifies"
+    Methods ||--o{ Measurements : "Means"
+
+    Measurements {
+    }
+
+    Campaign {
+    }
+
+    References {
+    }
+
+    Sites {
+    }
+
+    Parameters {
+    }
+
+    Methods {
+    }
+
+    CREED {
+    }
+```
