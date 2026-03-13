@@ -47,6 +47,9 @@ Other initialise_tibble:
 \code{\link{initialise_references_tibble}()},
 \code{\link{initialise_samples_tibble}()},
 \code{\link{initialise_sites_tibble}()}
+
+Other campaign: 
+\code{\link{example_campaign_tibble}()}
 }
 \concept{campaign}
 \concept{initialise_tibble}

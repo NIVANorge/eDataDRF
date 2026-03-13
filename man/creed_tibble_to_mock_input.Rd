@@ -7,12 +7,18 @@
 creed_tibble_to_mock_input(creed_tibble)
 }
 \arguments{
-\item{creed_tibble}{A tibble with columns: criterion_id, relevant_data, score, limitations}
+\item{creed_tibble}{A tibble with columns: \code{criterion_id}, \code{relevant_data},
+\code{score}, \code{limitations}.}
+}
+\value{
+A named list with entries for each criterion's score, relevant data,
+and limitations (or justification for RB8), suitable for use as a mock
+Shiny \code{input} object.
 }
 \description{
-Converts a CREED data tibble (from example_CREED_reliability_tibble()
-or example_CREED_relevance_tibble()) into a mock shiny input list object suitable for testing
-collect_CREED_data().
+Converts a CREED data tibble (from \code{\link[=example_CREED_reliability_tibble]{example_CREED_reliability_tibble()}}
+or \code{\link[=example_CREED_relevance_tibble]{example_CREED_relevance_tibble()}}) into a mock Shiny input list object suitable
+for testing \code{collect_CREED_data()}.
 }
 \details{
 Score values are converted from numeric to text:
@@ -23,3 +29,17 @@ Score values are converted from numeric to text:
 \item 4 = "Not Met"
 }
 }
+\examples{
+creed_tibble_to_mock_input(example_CREED_reliability_tibble())
+
+}
+\seealso{
+Other CREED: 
+\code{\link{CREED_choices_vocabulary}()},
+\code{\link{example_CREED_relevance_tibble}()},
+\code{\link{example_CREED_reliability_tibble}()},
+\code{\link{example_CREED_scores_tibble}()},
+\code{\link{initialise_CREED_data_tibble}()},
+\code{\link{initialise_CREED_scores_tibble}()}
+}
+\concept{CREED}

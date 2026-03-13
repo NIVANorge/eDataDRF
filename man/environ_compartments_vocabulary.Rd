@@ -32,6 +32,7 @@ Other
 \seealso{
 Other compartment: 
 \code{\link{environ_compartments_sub_vocabulary}()},
+\code{\link{example_compartments_tibble}()},
 \code{\link{initialise_compartments_tibble}()},
 \code{\link{measured_categories_vocabulary}()}
 }

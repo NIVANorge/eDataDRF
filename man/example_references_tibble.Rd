@@ -11,6 +11,31 @@ A tibble with 1 row of dummy reference data
 }
 \description{
 Creates a 1-row references tibble with test data.
-Inherits column structure from initialise_references_tibble().
-REFERENCE_ID automatically generated using generate_reference_id().
+Inherits column structure from \code{\link[=initialise_references_tibble]{initialise_references_tibble()}}.
+\code{REFERENCE_ID} is automatically generated using \code{\link[=generate_reference_id]{generate_reference_id()}}.
 }
+\examples{
+example_references_tibble()
+
+}
+\seealso{
+Other example_tibble: 
+\code{\link{example_CREED_relevance_tibble}()},
+\code{\link{example_CREED_reliability_tibble}()},
+\code{\link{example_CREED_scores_tibble}()},
+\code{\link{example_biota_tibble}()},
+\code{\link{example_campaign_tibble}()},
+\code{\link{example_compartments_tibble}()},
+\code{\link{example_measurements_tibble}()},
+\code{\link{example_methods_tibble}()},
+\code{\link{example_parameters_tibble}()},
+\code{\link{example_samples_tibble}()},
+\code{\link{example_sites_tibble}()}
+
+Other reference: 
+\code{\link{generate_reference_id}()},
+\code{\link{initialise_references_tibble}()},
+\code{\link{reference_character_limits}()}
+}
+\concept{example_tibble}
+\concept{reference}

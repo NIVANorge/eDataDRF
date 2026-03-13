@@ -25,6 +25,7 @@ All unique sub-types from parameters_vocabulary() (e.g., Carbon, Inorganic compo
 }
 \seealso{
 Other parameter: 
+\code{\link{example_parameters_tibble}()},
 \code{\link{initialise_parameters_tibble}()},
 \code{\link{measured_types_vocabulary}()},
 \code{\link{parameter_types_vocabulary}()},

@@ -11,5 +11,28 @@ A tibble with 1 row of dummy campaign data
 }
 \description{
 Creates a 1-row campaign tibble with test data.
-Inherits column structure from initialise_campaign_tibble().
+Inherits column structure from \code{\link[=initialise_campaign_tibble]{initialise_campaign_tibble()}}.
 }
+\examples{
+example_campaign_tibble()
+
+}
+\seealso{
+Other example_tibble: 
+\code{\link{example_CREED_relevance_tibble}()},
+\code{\link{example_CREED_reliability_tibble}()},
+\code{\link{example_CREED_scores_tibble}()},
+\code{\link{example_biota_tibble}()},
+\code{\link{example_compartments_tibble}()},
+\code{\link{example_measurements_tibble}()},
+\code{\link{example_methods_tibble}()},
+\code{\link{example_parameters_tibble}()},
+\code{\link{example_references_tibble}()},
+\code{\link{example_samples_tibble}()},
+\code{\link{example_sites_tibble}()}
+
+Other campaign: 
+\code{\link{initialise_campaign_tibble}()}
+}
+\concept{campaign}
+\concept{example_tibble}

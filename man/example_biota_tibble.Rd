@@ -11,5 +11,35 @@ A tibble with 1 row of dummy biota data
 }
 \description{
 Creates a 1-row biota tibble with test data.
-Inherits column structure from initialise_biota_tibble().
+Inherits column structure from \code{\link[=initialise_biota_tibble]{initialise_biota_tibble()}}.
+\code{SAMPLE_ID} is automatically generated using
+\code{\link[=generate_sample_id_with_components]{generate_sample_id_with_components()}}.
 }
+\examples{
+example_biota_tibble()
+
+}
+\seealso{
+Other example_tibble: 
+\code{\link{example_CREED_relevance_tibble}()},
+\code{\link{example_CREED_reliability_tibble}()},
+\code{\link{example_CREED_scores_tibble}()},
+\code{\link{example_campaign_tibble}()},
+\code{\link{example_compartments_tibble}()},
+\code{\link{example_measurements_tibble}()},
+\code{\link{example_methods_tibble}()},
+\code{\link{example_parameters_tibble}()},
+\code{\link{example_references_tibble}()},
+\code{\link{example_samples_tibble}()},
+\code{\link{example_sites_tibble}()}
+
+Other biota: 
+\code{\link{gender_vocabulary}()},
+\code{\link{initialise_biota_tibble}()},
+\code{\link{lifestage_vocabulary}()},
+\code{\link{species_groups_vocabulary}()},
+\code{\link{species_names_vocabulary}()},
+\code{\link{tissue_types_vocabulary}()}
+}
+\concept{biota}
+\concept{example_tibble}

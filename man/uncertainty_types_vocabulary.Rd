@@ -68,6 +68,7 @@ Other
 }
 \seealso{
 Other measurement: 
+\code{\link{example_measurements_tibble}()},
 \code{\link{initialise_measurements_tibble}()},
 \code{\link{measured_categories_vocabulary}()},
 \code{\link{measured_flag_vocabulary}()},

@@ -26,9 +26,11 @@ Surface: Surface of Organism
 Other compartment: 
 \code{\link{environ_compartments_sub_vocabulary}()},
 \code{\link{environ_compartments_vocabulary}()},
+\code{\link{example_compartments_tibble}()},
 \code{\link{initialise_compartments_tibble}()}
 
 Other measurement: 
+\code{\link{example_measurements_tibble}()},
 \code{\link{initialise_measurements_tibble}()},
 \code{\link{measured_flag_vocabulary}()},
 \code{\link{measured_types_vocabulary}()},
