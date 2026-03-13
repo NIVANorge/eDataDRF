@@ -252,3 +252,43 @@ generate_reference_id <- function(date, author, title) {
 
   return(reference_id)
 }
+
+#' Generate Sample ID with Components ----
+#' @param site_code Site code (vectorised)
+#' @param parameter_name Parameter name (vectorised)
+#' @param environ_compartment Environmental compartment (vectorised)
+#' @param environ_compartment_sub Environmental sub-compartment (vectorised)
+#' @param date Sampling date (vectorised)
+#' @param subsample subsample
+#' @importFrom glue glue
+#' @importFrom stringr str_to_title str_remove_all
+#' @import eDataDRF
+#' @export
+generate_sample_id_with_components <- function(
+  site_code,
+  parameter_name,
+  environ_compartment,
+  environ_compartment_sub,
+  date,
+  subsample = 1
+) {
+  # Create abbreviated versions for ID (vectorised)
+  param_abbrev <- substr(gsub("[^A-Za-z0-9]", "", parameter_name), 1, 8)
+  comp_abbrev <- substr(
+    gsub("[^A-Za-z0-9]", "", environ_compartment_sub),
+    1,
+    12
+  )
+  date_abbrev <- gsub("-", "-", date)
+
+  base_id <- glue("{site_code}-{param_abbrev}-{comp_abbrev}-{date_abbrev}")
+
+  # Vectorised replicate
+  # Subsamples will generally be text, so let's abbreviate them a bit
+
+  subsample_suffix <- sapply(
+    subsample,
+    function(x) abbreviate_string(string = x, n_words = 3, case = "title")
+  )
+  glue("{base_id}-R-{subsample_suffix}")
+}

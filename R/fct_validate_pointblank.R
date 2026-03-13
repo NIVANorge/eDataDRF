@@ -185,12 +185,12 @@ pb_validate_reference <- function(
       ) |>
       # # Check fields conditionally mandatory on REFERENCE_TYPE
       col_vals_not_null(
-        label = "Check JOURNAL isn't blank when REFERENCE_TYPE is 'Journal Article'",
+        label = "Check PERIODICAL_JOURNAL isn't blank when REFERENCE_TYPE is 'Journal Article'",
         preconditions = \(x) {
           x |>
             dplyr::filter(REFERENCE_TYPE == "Journal Article")
         },
-        columns = JOURNAL,
+        columns = PERIODICAL_JOURNAL,
         actions = actions
       ) |>
       col_vals_not_null(

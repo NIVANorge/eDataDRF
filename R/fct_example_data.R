@@ -1,5 +1,4 @@
 # TODO: Copied from STOPeData, probably needs to be removed there.
-# * Also probably should go in extdata as a ZIP
 
 # Example Data Creation Functions ----
 # Functions for creating test/demonstration data
@@ -9,9 +8,10 @@
 #' Create Example Campaign Tibble
 #'
 #' @description Creates a 1-row campaign tibble with test data.
-#' Inherits column structure from initialise_campaign_tibble().
+#' Inherits column structure from {initialise_campaign_tibble()}.
+#' @examples example_campaign_tibble()
 #'
-#' @return A tibble with 1 row of dummy campaign data
+#' @returns A tibble with 1 row of dummy campaign data
 #' @importFrom dplyr add_row mutate across
 #' @importFrom tidyselect where
 #' @export
@@ -35,7 +35,7 @@ example_campaign_tibble <- function() {
 #' Inherits column structure from initialise_references_tibble().
 #' REFERENCE_ID automatically generated using generate_reference_id().
 #'
-#' @return A tibble with 1 row of dummy reference data
+#' @returns A tibble with 1 row of dummy reference data
 #' @importFrom dplyr add_row
 #' @export
 example_references_tibble <- function() {
@@ -71,7 +71,7 @@ example_references_tibble <- function() {
 #' @description Creates a 2-row sites tibble with test data.
 #' Inherits column structure from initialise_sites_tibble().
 #'
-#' @return A tibble with 2 rows of dummy site data
+#' @returns A tibble with 2 rows of dummy site data
 #' @importFrom dplyr add_row
 #' @export
 example_sites_tibble <- function() {
@@ -115,15 +115,15 @@ example_sites_tibble <- function() {
 #' @description Creates a 3-row parameters tibble with test data.
 #' Inherits column structure from initialise_parameters_tibble().
 #'
-#' @return A tibble with 3 rows of dummy parameter data
+#' @returns A tibble with 3 rows of dummy parameter data
 #' @importFrom dplyr add_row
 #' @export
 example_parameters_tibble <- function() {
   initialise_parameters_tibble() |>
     add_row(
       PARAMETER_TYPE = "Stressor",
-      PARAMETER_TYPE_SUB = "Inorganic",
-      MEASURED_TYPE = "Total",
+      PARAMETER_TYPE_SUB = "Homogeneous metal compounds",
+      MEASURED_TYPE = "Concentration",
       PARAMETER_NAME = "Copper",
       PARAMETER_NAME_SUB = NA_character_,
       INCHIKEY_SD = NA_character_,
@@ -134,8 +134,8 @@ example_parameters_tibble <- function() {
     ) |>
     add_row(
       PARAMETER_TYPE = "Stressor",
-      PARAMETER_TYPE_SUB = "Inorganic",
-      MEASURED_TYPE = "Total",
+      PARAMETER_TYPE_SUB = "Homogeneous metal compounds",
+      MEASURED_TYPE = "Concentration",
       PARAMETER_NAME = "Lead",
       PARAMETER_NAME_SUB = NA_character_,
       INCHIKEY_SD = NA_character_,
@@ -146,8 +146,8 @@ example_parameters_tibble <- function() {
     ) |>
     add_row(
       PARAMETER_TYPE = "Stressor",
-      PARAMETER_TYPE_SUB = "Inorganic",
-      MEASURED_TYPE = "Total",
+      PARAMETER_TYPE_SUB = "Homogeneous metal compounds",
+      MEASURED_TYPE = "Concentration",
       PARAMETER_NAME = "Zinc",
       PARAMETER_NAME_SUB = NA_character_,
       INCHIKEY_SD = NA_character_,
@@ -163,7 +163,7 @@ example_parameters_tibble <- function() {
 #' @description Creates a 2-row compartments tibble with test data.
 #' Inherits column structure from initialise_compartments_tibble().
 #'
-#' @return A tibble with 2 rows of dummy compartment data
+#' @returns A tibble with 2 rows of dummy compartment data
 #' @importFrom dplyr add_row
 #' @export
 example_compartments_tibble <- function() {
@@ -185,7 +185,7 @@ example_compartments_tibble <- function() {
 #' @description Creates a 4-row methods tibble with test data (one per protocol category).
 #' Inherits column structure from initialise_methods_tibble().
 #'
-#' @return A tibble with 4 rows of dummy methods data
+#' @returns A tibble with 4 rows of dummy methods data
 #' @importFrom dplyr add_row
 #' @export
 example_methods_tibble <- function() {
@@ -226,7 +226,7 @@ example_methods_tibble <- function() {
 #' @description Creates a 2-row samples tibble with test data.
 #' Inherits column structure from initialise_samples_tibble().
 #'
-#' @return A tibble with 2 rows of dummy sample data
+#' @returns A tibble with 2 rows of dummy sample data
 #' @importFrom dplyr add_row
 #' @export
 example_samples_tibble <- function() {
@@ -264,7 +264,7 @@ example_samples_tibble <- function() {
 #' @description Creates a 1-row biota tibble with test data.
 #' Inherits column structure from initialise_biota_tibble().
 #'
-#' @return A tibble with 1 row of dummy biota data
+#' @returns A tibble with 1 row of dummy biota data
 #' @importFrom dplyr add_row
 #' @export
 example_biota_tibble <- function() {
@@ -292,7 +292,7 @@ example_biota_tibble <- function() {
 #' @description Creates a 3-row measurements tibble with test data.
 #' Inherits column structure from initialise_measurements_tibble().
 #'
-#' @return A tibble with 3 rows of dummy measurement data
+#' @returns A tibble with 3 rows of dummy measurement data
 #' @importFrom dplyr add_row
 #' @export
 example_measurements_tibble <- function() {
@@ -308,7 +308,7 @@ example_measurements_tibble <- function() {
       UNCERTAINTY_TYPE = "SD",
       UNCERTAINTY_UPPER = 3.1,
       UNCERTAINTY_LOWER = 3.1,
-      MEASURED_UNIT = "mg/kg",
+      MEASURED_UNIT = "mg/kg (dry)",
       MEASURED_N = 3,
       LOQ_VALUE = 0.5,
       LOQ_UNIT = "mg/kg",
@@ -337,7 +337,7 @@ example_measurements_tibble <- function() {
       UNCERTAINTY_TYPE = "SD",
       UNCERTAINTY_UPPER = 1.2,
       UNCERTAINTY_LOWER = 1.2,
-      MEASURED_UNIT = "mg/kg",
+      MEASURED_UNIT = "mg/kg (wet)",
       MEASURED_N = 3,
       LOQ_VALUE = 1.0,
       LOQ_UNIT = "mg/kg",
@@ -363,15 +363,15 @@ example_measurements_tibble <- function() {
       SUBSAMPLE = "1",
       MEASURED_FLAG = "< LOQ",
       MEASURED_VALUE = NA_real_,
-      UNCERTAINTY_TYPE = NA_character_,
+      UNCERTAINTY_TYPE = "Not Reported",
       UNCERTAINTY_UPPER = NA_real_,
       UNCERTAINTY_LOWER = NA_real_,
-      MEASURED_UNIT = "mg/kg ww",
+      MEASURED_UNIT = "",
       MEASURED_N = 1,
       LOQ_VALUE = 0.05,
-      LOQ_UNIT = "mg/kg ww",
+      LOQ_UNIT = "mg/kg (wet)",
       LOD_VALUE = 0.01,
-      LOD_UNIT = "mg/kg ww",
+      LOD_UNIT = "mg/kg (wet)",
       SAMPLING_PROTOCOL = "Grab sampling",
       EXTRACTION_PROTOCOL = "Acid digestion",
       FRACTIONATION_PROTOCOL = "Total",
@@ -392,7 +392,7 @@ example_measurements_tibble <- function() {
 #' realistic test data including scores, extracted data, and limitations.
 #' Inherits column structure from initialise_CREED_data_tibble().
 #'
-#' @return A tibble with 19 rows of dummy CREED reliability data
+#' @returns A tibble with 19 rows of dummy CREED reliability data
 #' @importFrom dplyr add_row mutate
 #' @export
 example_CREED_reliability_tibble <- function() {
@@ -598,7 +598,7 @@ example_CREED_reliability_tibble <- function() {
 #' realistic test data including scores, extracted data, and limitations.
 #' Inherits column structure from initialise_CREED_data_tibble().
 #'
-#' @return A tibble with 11 rows of dummy CREED relevance data
+#' @returns A tibble with 11 rows of dummy CREED relevance data
 #' @importFrom dplyr add_row mutate
 #' @export
 example_CREED_relevance_tibble <- function() {
@@ -723,7 +723,7 @@ example_CREED_relevance_tibble <- function() {
 #' @description Creates a 1-row CREED scores summary tibble with test data.
 #' Inherits column structure from initialise_CREED_scores_tibble().
 #'
-#' @return A tibble with 1 row of dummy CREED scores data
+#' @returns A tibble with 1 row of dummy CREED scores data
 #' @importFrom dplyr add_row
 #' @export
 example_CREED_scores_tibble <- function() {
