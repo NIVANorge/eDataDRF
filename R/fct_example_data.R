@@ -323,7 +323,7 @@ example_measurements_tibble <- function() {
       CAMPAIGN_NAME_SHORT = "TestCamp2023",
       ENVIRON_COMPARTMENT = "Aquatic",
       PARAMETER_TYPE = "Stressor",
-      MEASURED_TYPE = "Total",
+      MEASURED_TYPE = "Concentration",
       MEASUREMENT_COMMENT = NA_character_
     ) |>
     add_row(
@@ -352,7 +352,7 @@ example_measurements_tibble <- function() {
       CAMPAIGN_NAME_SHORT = "TestCamp2023",
       ENVIRON_COMPARTMENT = "Aquatic",
       PARAMETER_TYPE = "Stressor",
-      MEASURED_TYPE = "Total",
+      MEASURED_TYPE = "Concentration",
       MEASUREMENT_COMMENT = NA_character_
     ) |>
     add_row(
@@ -381,7 +381,7 @@ example_measurements_tibble <- function() {
       CAMPAIGN_NAME_SHORT = "TestCamp2023",
       ENVIRON_COMPARTMENT = "Biota",
       PARAMETER_TYPE = "Stressor",
-      MEASURED_TYPE = "Total",
+      MEASURED_TYPE = "Concentration",
       MEASUREMENT_COMMENT = "Below LOQ - biota sample"
     )
 }

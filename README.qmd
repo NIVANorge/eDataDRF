@@ -16,12 +16,7 @@ The eData Data Reporting Format is a format for the reporting of chemical occure
 To install this package, you will need the `{devtools}` package:
 
 ```{r}
-if (!requireNamespace("eDataDRF", quietly = TRUE)) {
-  if (!requireNamespace("devtools", quietly = TRUE)) {
-    install.packages("devtools")
-  }
   devtools::install_github("NIVANorge/eDataDRF")
-}
 
 ```
 
@@ -56,28 +51,8 @@ Tables are listed below:
 | [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html) | Records CREED assessment criteria, relevant data, criteria scores, and limitations | |
 | [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | Records CREED usability scores calculated from CREED data above | |
 
-## Vocabulary
-
-Likewise, controlled vocabulary is available as functions that return vectors, lists, or tables. In some cases, helper functions are available that wrap multiple invididual functions.
-
-Where external data sources are used to generate a vocabulary, functions may wrap (processed) data from other R packages or load raw data from external sources.
-
-```{r}
-measured_categories_vocabulary() # returns a named vector
-
-environ_compartments_sub_vocabulary() # returns a nested list
-
-extraction_protocols_vocabulary() # returns a tibble
-
-protocol_options_vocabulary() # calls bind_rows() on four *_protocol_vocabulary() functions to return a tibble
-
-coordinate_systems_vocabulary(common_only = TRUE) # calls crsuggest::crs_sf, returns 4 rows (or more when common_only = FALSE)
-
-ocean_vocabulary()[1:20] # loads an RDS of IHO ocean definitions from /extdata/, returns a vector
-
-```
-
-```{mermaid}
+```{r echo = FALSE}
+text <- "
 erDiagram
     Campaign ||--o{ Measurements : "Belongs"
     Campaign ||--o{ References : "Belongs"
@@ -110,5 +85,39 @@ erDiagram
     
     CREED {
     }
+"
+DiagrammeR::mermaid(text)
 ```
+
+## Vocabulary
+
+Likewise, controlled vocabulary is available as functions that return vectors, lists, or tables. In some cases, helper functions are available that wrap multiple invididual functions.
+
+Where external data sources are used to generate a vocabulary, functions may wrap (processed) data from other R packages or load raw data from external sources. Vocabulary functions are documented in the [Reference section](reference/index.html#controlled-vocabulary) and linked to in the relevant table files in 
+
+```{r}
+# returns a named vector
+measured_categories_vocabulary() 
+
+# returns a nested list
+environ_compartments_sub_vocabulary()[1] 
+
+# returns a tibble
+extraction_protocols_vocabulary()[1:5, 3] 
+
+# calls bind_rows() on four *_protocol_vocabulary() functions to return a tibble
+protocol_options_vocabulary()[1:5, 3] 
+
+# calls crsuggest::crs_sf, returns 4 rows (or more when common_only = FALSE)
+coordinate_systems_vocabulary(common_only = TRUE) 
+
+# loads an RDS of IHO ocean definitions from /extdata/, returns a vector
+ocean_vocabulary()[1:20] 
+
+```
+
+# Is something missing?
+
+We intend to update this format regularly as new resources become available and to address emerging needs. If you have a suggestion or comments, please get in touch via the Issues tab or, if you're more technically minding, making a Pull Request with proposed changes for review.
+
 
