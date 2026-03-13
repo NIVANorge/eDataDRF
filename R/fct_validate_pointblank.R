@@ -575,6 +575,10 @@ pb_validate_measurements <- function(
         actions = actions
       ) |>
 
+      # TODO: Validate MEASURED_TYPE
+      # TODO: Validate Extraction, Analytical, Fractionation, Sampling protocol match regex
+      # TODO: Conditionally check LOD units
+
       # # LOQ/LOD values
       col_vals_gte(
         columns = LOQ_VALUE,
@@ -587,13 +591,14 @@ pb_validate_measurements <- function(
         actions = actions
       ) |>
 
-      # Reference integrity
+      # TODO: Check REFERENCE_ID matches regex and isn't Unknown
       col_vals_not_null(columns = REFERENCE_ID, actions = actions) |>
       col_vals_not_equal(
         columns = REFERENCE_ID,
         value = "Unknown Reference",
         actions = actions
       ) |>
+      # TODO: Check SAMPLE_ID matches regex
       col_vals_not_null(columns = SAMPLE_ID, actions = actions)
   }
 
@@ -618,6 +623,7 @@ pb_validate_methods <- function(
 ) {
   apply_validations <- function(x) {
     x |>
+      # TODO: Check protocol ID against regex
       col_vals_not_null(
         columns = c(PROTOCOL_ID, CAMPAIGN_NAME),
         actions = actions
@@ -666,6 +672,8 @@ pb_validate_creed_scores <- function(
   apply_validations <- function(x) {
     x |>
       # Core identifiers
+      # TODO: Check REFERENCE_ID against regex
+
       col_vals_not_null(columns = REFERENCE_ID, actions = actions) |>
       col_vals_not_equal(
         columns = REFERENCE_ID,
