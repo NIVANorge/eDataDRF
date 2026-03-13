@@ -8,10 +8,15 @@
 #' Create Example Campaign Tibble
 #'
 #' @description Creates a 1-row campaign tibble with test data.
-#' Inherits column structure from {initialise_campaign_tibble()}.
-#' @examples example_campaign_tibble()
+#' Inherits column structure from [initialise_campaign_tibble()].
 #'
 #' @returns A tibble with 1 row of dummy campaign data
+#'
+#' @examples
+#' example_campaign_tibble()
+#'
+#' @family example_tibble
+#' @family campaign
 #' @importFrom dplyr add_row mutate across
 #' @importFrom tidyselect where
 #' @export
@@ -32,10 +37,16 @@ example_campaign_tibble <- function() {
 #' Create Example References Tibble
 #'
 #' @description Creates a 1-row references tibble with test data.
-#' Inherits column structure from initialise_references_tibble().
-#' REFERENCE_ID automatically generated using generate_reference_id().
+#' Inherits column structure from [initialise_references_tibble()].
+#' `REFERENCE_ID` is automatically generated using [generate_reference_id()].
 #'
 #' @returns A tibble with 1 row of dummy reference data
+#'
+#' @examples
+#' example_references_tibble()
+#'
+#' @family example_tibble
+#' @family reference
 #' @importFrom dplyr add_row
 #' @export
 example_references_tibble <- function() {
@@ -69,9 +80,15 @@ example_references_tibble <- function() {
 #' Create Example Sites Tibble
 #'
 #' @description Creates a 2-row sites tibble with test data.
-#' Inherits column structure from initialise_sites_tibble().
+#' Inherits column structure from [initialise_sites_tibble()].
 #'
 #' @returns A tibble with 2 rows of dummy site data
+#'
+#' @examples
+#' example_sites_tibble()
+#'
+#' @family example_tibble
+#' @family site
 #' @importFrom dplyr add_row
 #' @export
 example_sites_tibble <- function() {
@@ -113,9 +130,15 @@ example_sites_tibble <- function() {
 #' Create Example Parameters Tibble
 #'
 #' @description Creates a 3-row parameters tibble with test data.
-#' Inherits column structure from initialise_parameters_tibble().
+#' Inherits column structure from [initialise_parameters_tibble()].
 #'
 #' @returns A tibble with 3 rows of dummy parameter data
+#'
+#' @examples
+#' example_parameters_tibble()
+#'
+#' @family example_tibble
+#' @family parameter
 #' @importFrom dplyr add_row
 #' @export
 example_parameters_tibble <- function() {
@@ -161,9 +184,15 @@ example_parameters_tibble <- function() {
 #' Create Example Compartments Tibble
 #'
 #' @description Creates a 2-row compartments tibble with test data.
-#' Inherits column structure from initialise_compartments_tibble().
+#' Inherits column structure from [initialise_compartments_tibble()].
 #'
 #' @returns A tibble with 2 rows of dummy compartment data
+#'
+#' @examples
+#' example_compartments_tibble()
+#'
+#' @family example_tibble
+#' @family compartment
 #' @importFrom dplyr add_row
 #' @export
 example_compartments_tibble <- function() {
@@ -183,38 +212,45 @@ example_compartments_tibble <- function() {
 #' Create Example Methods Tibble
 #'
 #' @description Creates a 4-row methods tibble with test data (one per protocol category).
-#' Inherits column structure from initialise_methods_tibble().
+#' Inherits column structure from [initialise_methods_tibble()].
+#' `PROTOCOL_ID` values are automatically generated using [generate_protocol_id()].
 #'
 #' @returns A tibble with 4 rows of dummy methods data
+#'
+#' @examples
+#' example_methods_tibble()
+#'
+#' @family example_tibble
+#' @family method
 #' @importFrom dplyr add_row
 #' @export
 example_methods_tibble <- function() {
+  campaign <- "Test Campaign 2023: Heavy Metals in Coastal Sediments"
   initialise_methods_tibble() |>
     add_row(
-      # FIXME: Auto-generate protocol names
-      PROTOCOL_ID = "PROT-001",
-      CAMPAIGN_NAME = "Test Campaign 2023: Heavy Metals in Coastal Sediments",
+      PROTOCOL_ID = generate_protocol_id("Sampling Protocol", "Grab sampling", 1, campaign),
+      CAMPAIGN_NAME = campaign,
       PROTOCOL_CATEGORY = "Sampling Protocol",
       PROTOCOL_NAME = "Grab sampling",
       PROTOCOL_COMMENT = "Surface sediment grab samples collected by Van Veen grab"
     ) |>
     add_row(
-      PROTOCOL_ID = "PROT-002",
-      CAMPAIGN_NAME = "Test Campaign 2023: Heavy Metals in Coastal Sediments",
+      PROTOCOL_ID = generate_protocol_id("Extraction Protocol", "Acid digestion", 1, campaign),
+      CAMPAIGN_NAME = campaign,
       PROTOCOL_CATEGORY = "Extraction Protocol",
       PROTOCOL_NAME = "Acid digestion",
       PROTOCOL_COMMENT = "HNO3/HCl microwave-assisted digestion"
     ) |>
     add_row(
-      PROTOCOL_ID = "PROT-003",
-      CAMPAIGN_NAME = "Test Campaign 2023: Heavy Metals in Coastal Sediments",
+      PROTOCOL_ID = generate_protocol_id("Fractionation Protocol", "Total fraction", 1, campaign),
+      CAMPAIGN_NAME = campaign,
       PROTOCOL_CATEGORY = "Fractionation Protocol",
       PROTOCOL_NAME = "Total fraction",
       PROTOCOL_COMMENT = NA_character_
     ) |>
     add_row(
-      PROTOCOL_ID = "PROT-004",
-      CAMPAIGN_NAME = "Test Campaign 2023: Heavy Metals in Coastal Sediments",
+      PROTOCOL_ID = generate_protocol_id("Analytical Protocol", "Inductively coupled plasma mass spectrometry", 1, campaign),
+      CAMPAIGN_NAME = campaign,
       PROTOCOL_CATEGORY = "Analytical Protocol",
       PROTOCOL_NAME = "Inductively coupled plasma mass spectrometry",
       PROTOCOL_COMMENT = "Inductively coupled plasma mass spectrometry using the ICP-MASTER 9000."
@@ -224,9 +260,17 @@ example_methods_tibble <- function() {
 #' Create Example Samples Tibble
 #'
 #' @description Creates a 2-row samples tibble with test data.
-#' Inherits column structure from initialise_samples_tibble().
+#' Inherits column structure from [initialise_samples_tibble()].
+#' `SAMPLE_ID` values are automatically generated using
+#' [generate_sample_id_with_components()].
 #'
 #' @returns A tibble with 2 rows of dummy sample data
+#'
+#' @examples
+#' example_samples_tibble()
+#'
+#' @family example_tibble
+#' @family sample
 #' @importFrom dplyr add_row
 #' @export
 example_samples_tibble <- function() {
@@ -242,7 +286,14 @@ example_samples_tibble <- function() {
       SAMPLING_DATE = "2023-03-15",
       SUBSAMPLE = "1",
       SUBSAMPLE_ID = NA_character_,
-      SAMPLE_ID = "SAMP-001"
+      SAMPLE_ID = generate_sample_id_with_components(
+        site_code = "SITE-001",
+        parameter_name = "Copper",
+        environ_compartment = "Aquatic",
+        environ_compartment_sub = "Aquatic Sediment",
+        date = "2023-03-15",
+        subsample = "1"
+      )
     ) |>
     add_row(
       SITE_CODE = "SITE-002",
@@ -255,22 +306,44 @@ example_samples_tibble <- function() {
       SAMPLING_DATE = "2023-04-20",
       SUBSAMPLE = "1",
       SUBSAMPLE_ID = NA_character_,
-      SAMPLE_ID = "SAMP-002"
+      SAMPLE_ID = generate_sample_id_with_components(
+        site_code = "SITE-002",
+        parameter_name = "Lead",
+        environ_compartment = "Aquatic",
+        environ_compartment_sub = "Aquatic Sediment",
+        date = "2023-04-20",
+        subsample = "1"
+      )
     )
 }
 
 #' Create Example Biota Tibble
 #'
 #' @description Creates a 1-row biota tibble with test data.
-#' Inherits column structure from initialise_biota_tibble().
+#' Inherits column structure from [initialise_biota_tibble()].
+#' `SAMPLE_ID` is automatically generated using
+#' [generate_sample_id_with_components()].
 #'
 #' @returns A tibble with 1 row of dummy biota data
+#'
+#' @examples
+#' example_biota_tibble()
+#'
+#' @family example_tibble
+#' @family biota
 #' @importFrom dplyr add_row
 #' @export
 example_biota_tibble <- function() {
   initialise_biota_tibble() |>
     add_row(
-      SAMPLE_ID = "SAMP-003",
+      SAMPLE_ID = generate_sample_id_with_components(
+        site_code = "SITE-001",
+        parameter_name = "Copper",
+        environ_compartment = "Biota",
+        environ_compartment_sub = "Biota, Aquatic",
+        date = "2023-05-10",
+        subsample = "1"
+      ),
       SITE_CODE = "SITE-001",
       PARAMETER_NAME = "Copper",
       ENVIRON_COMPARTMENT = "Biota",
@@ -290,12 +363,25 @@ example_biota_tibble <- function() {
 #' Create Example Measurements Tibble
 #'
 #' @description Creates a 3-row measurements tibble with test data.
-#' Inherits column structure from initialise_measurements_tibble().
+#' Inherits column structure from [initialise_measurements_tibble()].
+#' `SAMPLE_ID` values match those generated by [example_samples_tibble()] and
+#' [example_biota_tibble()]. `REFERENCE_ID` matches [example_references_tibble()].
 #'
 #' @returns A tibble with 3 rows of dummy measurement data
+#'
+#' @examples
+#' example_measurements_tibble()
+#'
+#' @family example_tibble
+#' @family measurement
 #' @importFrom dplyr add_row
 #' @export
 example_measurements_tibble <- function() {
+  ref_id <- generate_reference_id(
+    date = 2023L,
+    author = "Smith, J.; Jones, A.; Williams, B.",
+    title = "Heavy metal contamination in Norwegian coastal sediments"
+  )
   initialise_measurements_tibble() |>
     add_row(
       SITE_CODE = "SITE-001",
@@ -316,10 +402,17 @@ example_measurements_tibble <- function() {
       LOD_UNIT = "mg/kg",
       SAMPLING_PROTOCOL = "Grab sampling",
       EXTRACTION_PROTOCOL = "Acid digestion",
-      FRACTIONATION_PROTOCOL = "Total",
-      ANALYTICAL_PROTOCOL = "ICP-MS",
-      REFERENCE_ID = "REF-001",
-      SAMPLE_ID = "SAMP-001",
+      FRACTIONATION_PROTOCOL = "Total fraction",
+      ANALYTICAL_PROTOCOL = "Inductively coupled plasma mass spectrometry",
+      REFERENCE_ID = ref_id,
+      SAMPLE_ID = generate_sample_id_with_components(
+        site_code = "SITE-001",
+        parameter_name = "Copper",
+        environ_compartment = "Aquatic",
+        environ_compartment_sub = "Aquatic Sediment",
+        date = "2023-03-15",
+        subsample = "1"
+      ),
       CAMPAIGN_NAME_SHORT = "TestCamp2023",
       ENVIRON_COMPARTMENT = "Aquatic",
       PARAMETER_TYPE = "Stressor",
@@ -345,10 +438,17 @@ example_measurements_tibble <- function() {
       LOD_UNIT = "mg/kg",
       SAMPLING_PROTOCOL = "Grab sampling",
       EXTRACTION_PROTOCOL = "Acid digestion",
-      FRACTIONATION_PROTOCOL = "Total",
-      ANALYTICAL_PROTOCOL = "ICP-MS",
-      REFERENCE_ID = "REF-001",
-      SAMPLE_ID = "SAMP-002",
+      FRACTIONATION_PROTOCOL = "Total fraction",
+      ANALYTICAL_PROTOCOL = "Inductively coupled plasma mass spectrometry",
+      REFERENCE_ID = ref_id,
+      SAMPLE_ID = generate_sample_id_with_components(
+        site_code = "SITE-002",
+        parameter_name = "Lead",
+        environ_compartment = "Aquatic",
+        environ_compartment_sub = "Aquatic Sediment",
+        date = "2023-04-20",
+        subsample = "1"
+      ),
       CAMPAIGN_NAME_SHORT = "TestCamp2023",
       ENVIRON_COMPARTMENT = "Aquatic",
       PARAMETER_TYPE = "Stressor",
@@ -374,10 +474,17 @@ example_measurements_tibble <- function() {
       LOD_UNIT = "mg/kg (wet)",
       SAMPLING_PROTOCOL = "Grab sampling",
       EXTRACTION_PROTOCOL = "Acid digestion",
-      FRACTIONATION_PROTOCOL = "Total",
-      ANALYTICAL_PROTOCOL = "ICP-MS",
-      REFERENCE_ID = "REF-001",
-      SAMPLE_ID = "SAMP-003",
+      FRACTIONATION_PROTOCOL = "Total fraction",
+      ANALYTICAL_PROTOCOL = "Inductively coupled plasma mass spectrometry",
+      REFERENCE_ID = ref_id,
+      SAMPLE_ID = generate_sample_id_with_components(
+        site_code = "SITE-001",
+        parameter_name = "Copper",
+        environ_compartment = "Biota",
+        environ_compartment_sub = "Biota, Aquatic",
+        date = "2023-05-10",
+        subsample = "1"
+      ),
       CAMPAIGN_NAME_SHORT = "TestCamp2023",
       ENVIRON_COMPARTMENT = "Biota",
       PARAMETER_TYPE = "Stressor",
@@ -390,9 +497,15 @@ example_measurements_tibble <- function() {
 #'
 #' @description Creates a 19-row CREED reliability tibble (RB1-RB19) with
 #' realistic test data including scores, extracted data, and limitations.
-#' Inherits column structure from initialise_CREED_data_tibble().
+#' Inherits column structure from [initialise_CREED_data_tibble()].
 #'
 #' @returns A tibble with 19 rows of dummy CREED reliability data
+#'
+#' @examples
+#' example_CREED_reliability_tibble()
+#'
+#' @family example_tibble
+#' @family CREED
 #' @importFrom dplyr add_row mutate
 #' @export
 example_CREED_reliability_tibble <- function() {
@@ -596,9 +709,15 @@ example_CREED_reliability_tibble <- function() {
 #'
 #' @description Creates an 11-row CREED relevance tibble (RV1-RV11) with
 #' realistic test data including scores, extracted data, and limitations.
-#' Inherits column structure from initialise_CREED_data_tibble().
+#' Inherits column structure from [initialise_CREED_data_tibble()].
 #'
 #' @returns A tibble with 11 rows of dummy CREED relevance data
+#'
+#' @examples
+#' example_CREED_relevance_tibble()
+#'
+#' @family example_tibble
+#' @family CREED
 #' @importFrom dplyr add_row mutate
 #' @export
 example_CREED_relevance_tibble <- function() {
@@ -721,9 +840,15 @@ example_CREED_relevance_tibble <- function() {
 #' Create Example CREED Scores Tibble
 #'
 #' @description Creates a 1-row CREED scores summary tibble with test data.
-#' Inherits column structure from initialise_CREED_scores_tibble().
+#' Inherits column structure from [initialise_CREED_scores_tibble()].
 #'
 #' @returns A tibble with 1 row of dummy CREED scores data
+#'
+#' @examples
+#' example_CREED_scores_tibble()
+#'
+#' @family example_tibble
+#' @family CREED
 #' @importFrom dplyr add_row
 #' @export
 example_CREED_scores_tibble <- function() {
@@ -739,11 +864,16 @@ example_CREED_scores_tibble <- function() {
 
 #' Convert CREED Tibble to Mock Input List
 #'
-#' @description Converts a CREED data tibble (from example_CREED_reliability_tibble()
-#' or example_CREED_relevance_tibble()) into a mock shiny input list object suitable for testing
-#' collect_CREED_data().
+#' @description Converts a CREED data tibble (from [example_CREED_reliability_tibble()]
+#' or [example_CREED_relevance_tibble()]) into a mock Shiny input list object suitable
+#' for testing `collect_CREED_data()`.
 #'
-#' @param creed_tibble A tibble with columns: criterion_id, relevant_data, score, limitations
+#' @param creed_tibble A tibble with columns: `criterion_id`, `relevant_data`,
+#'   `score`, `limitations`.
+#'
+#' @returns A named list with entries for each criterion's score, relevant data,
+#'   and limitations (or justification for RB8), suitable for use as a mock
+#'   Shiny `input` object.
 #'
 #' @details
 #' Score values are converted from numeric to text:
@@ -752,6 +882,10 @@ example_CREED_scores_tibble <- function() {
 #' - 3 = "Not Reported"
 #' - 4 = "Not Met"
 #'
+#' @examples
+#' creed_tibble_to_mock_input(example_CREED_reliability_tibble())
+#'
+#' @family CREED
 #' @export
 creed_tibble_to_mock_input <- function(creed_tibble) {
   # Score numeric -> text lookup (inverse of CREED_choices_vocabulary) ----

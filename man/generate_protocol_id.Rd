@@ -66,4 +66,22 @@ generate_protocol_id(types, names, sequences, "Study2024")
 # Returns: c("S01_WaterSample_Study2024", "A02_LCMSAnalysis_Study2024")
 
 }
+\seealso{
+Other generate_id: 
+\code{\link{abbreviate_string}()},
+\code{\link{generate_reference_id}()},
+\code{\link{generate_sample_id_with_components}()}
+
+Other method: 
+\code{\link{analytical_protocols_vocabulary}()},
+\code{\link{example_methods_tibble}()},
+\code{\link{extraction_protocols_vocabulary}()},
+\code{\link{fractionation_protocols_vocabulary}()},
+\code{\link{initialise_methods_tibble}()},
+\code{\link{protocol_categories_vocabulary}()},
+\code{\link{protocol_options_vocabulary}()},
+\code{\link{sampling_protocols_vocabulary}()}
+}
+\concept{generate_id}
+\concept{method}
 \concept{protocol_functions}

@@ -53,6 +53,7 @@ Other initialise_tibble:
 \code{\link{initialise_sites_tibble}()}
 
 Other parameter: 
+\code{\link{example_parameters_tibble}()},
 \code{\link{measured_types_vocabulary}()},
 \code{\link{parameter_types_sub_vocabulary}()},
 \code{\link{parameter_types_vocabulary}()},

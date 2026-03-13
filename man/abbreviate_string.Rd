@@ -17,13 +17,13 @@ abbreviate_string(
 
 \item{case}{Character. Case style for the output. One of:
 \itemize{
-\item "lower" - all lowercase, no separator (e.g., "dogsandcats")
-\item "upper" - all uppercase, no separator (e.g., "DOGSANDCATS")
-\item "sentence" - sentence case, no separator (e.g., "Dogsandcats")
-\item "snake" - lowercase with underscores (e.g., "dogs_and_cats")
-\item "title" - title case, no separator (e.g., "DogsAndCats")
-\item "screamingsnake" - uppercase with underscores (e.g., "DOGS_AND_CATS")
-\item "camel" - camel case (e.g., "dogsAndCats")
+\item \code{"lower"} — all lowercase, no separator (e.g., \code{"dogsandcats"})
+\item \code{"upper"} — all uppercase, no separator (e.g., \code{"DOGSANDCATS"})
+\item \code{"sentence"} — sentence case, no separator (e.g., \code{"Dogsandcats"})
+\item \code{"snake"} — lowercase with underscores (e.g., \code{"dogs_and_cats"})
+\item \code{"title"} — title case, no separator (e.g., \code{"DogsAndCats"})
+\item \code{"screamingsnake"} — uppercase with underscores (e.g., \code{"DOGS_AND_CATS"})
+\item \code{"camel"} — camel case (e.g., \code{"dogsAndCats"})
 }}
 }
 \value{
@@ -39,3 +39,10 @@ abbreviate_string("dogs and cats", n_words = 3L, "title")
 abbreviate_string("Water Quality Index", n_words = 3L, "camel")
 
 }
+\seealso{
+Other generate_id: 
+\code{\link{generate_protocol_id}()},
+\code{\link{generate_reference_id}()},
+\code{\link{generate_sample_id_with_components}()}
+}
+\concept{generate_id}

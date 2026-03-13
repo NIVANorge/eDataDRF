@@ -53,6 +53,7 @@ Other
 }
 \seealso{
 Other biota: 
+\code{\link{example_biota_tibble}()},
 \code{\link{gender_vocabulary}()},
 \code{\link{initialise_biota_tibble}()},
 \code{\link{lifestage_vocabulary}()},

@@ -11,5 +11,31 @@ A tibble with 2 rows of dummy sample data
 }
 \description{
 Creates a 2-row samples tibble with test data.
-Inherits column structure from initialise_samples_tibble().
+Inherits column structure from \code{\link[=initialise_samples_tibble]{initialise_samples_tibble()}}.
+\code{SAMPLE_ID} values are automatically generated using
+\code{\link[=generate_sample_id_with_components]{generate_sample_id_with_components()}}.
 }
+\examples{
+example_samples_tibble()
+
+}
+\seealso{
+Other example_tibble: 
+\code{\link{example_CREED_relevance_tibble}()},
+\code{\link{example_CREED_reliability_tibble}()},
+\code{\link{example_CREED_scores_tibble}()},
+\code{\link{example_biota_tibble}()},
+\code{\link{example_campaign_tibble}()},
+\code{\link{example_compartments_tibble}()},
+\code{\link{example_measurements_tibble}()},
+\code{\link{example_methods_tibble}()},
+\code{\link{example_parameters_tibble}()},
+\code{\link{example_references_tibble}()},
+\code{\link{example_sites_tibble}()}
+
+Other sample: 
+\code{\link{generate_sample_id_with_components}()},
+\code{\link{initialise_samples_tibble}()}
+}
+\concept{example_tibble}
+\concept{sample}

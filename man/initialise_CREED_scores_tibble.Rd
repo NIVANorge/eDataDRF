@@ -44,6 +44,10 @@ Other initialise_tibble:
 
 Other CREED: 
 \code{\link{CREED_choices_vocabulary}()},
+\code{\link{creed_tibble_to_mock_input}()},
+\code{\link{example_CREED_relevance_tibble}()},
+\code{\link{example_CREED_reliability_tibble}()},
+\code{\link{example_CREED_scores_tibble}()},
 \code{\link{initialise_CREED_data_tibble}()}
 }
 \concept{CREED}

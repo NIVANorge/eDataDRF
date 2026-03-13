@@ -34,3 +34,16 @@ generate_reference_id(
 # Returns: "2018Last1AStudyOf"
 
 }
+\seealso{
+Other generate_id: 
+\code{\link{abbreviate_string}()},
+\code{\link{generate_protocol_id}()},
+\code{\link{generate_sample_id_with_components}()}
+
+Other reference: 
+\code{\link{example_references_tibble}()},
+\code{\link{initialise_references_tibble}()},
+\code{\link{reference_character_limits}()}
+}
+\concept{generate_id}
+\concept{reference}

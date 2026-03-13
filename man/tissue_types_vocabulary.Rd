@@ -80,6 +80,7 @@ In future, this will be standardised with the BRENDA and/or Uberon tissue ontolo
 }
 \seealso{
 Other biota: 
+\code{\link{example_biota_tibble}()},
 \code{\link{gender_vocabulary}()},
 \code{\link{initialise_biota_tibble}()},
 \code{\link{lifestage_vocabulary}()},

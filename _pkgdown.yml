@@ -67,6 +67,7 @@ reference:
   - abbreviate_string
   - generate_reference_id
   - generate_protocol_id
+  - generate_sample_id_with_components
 - title: Export
   desc: Export tables as zipped CSV files
 - contents:

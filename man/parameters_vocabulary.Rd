@@ -30,6 +30,7 @@ extdata/ClassyFire_Taxonomy_2025_02.parquet
 }
 \seealso{
 Other parameter: 
+\code{\link{example_parameters_tibble}()},
 \code{\link{initialise_parameters_tibble}()},
 \code{\link{measured_types_vocabulary}()},
 \code{\link{parameter_types_sub_vocabulary}()},

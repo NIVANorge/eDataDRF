@@ -11,5 +11,36 @@ A tibble with 4 rows of dummy methods data
 }
 \description{
 Creates a 4-row methods tibble with test data (one per protocol category).
-Inherits column structure from initialise_methods_tibble().
+Inherits column structure from \code{\link[=initialise_methods_tibble]{initialise_methods_tibble()}}.
+\code{PROTOCOL_ID} values are automatically generated using \code{\link[=generate_protocol_id]{generate_protocol_id()}}.
 }
+\examples{
+example_methods_tibble()
+
+}
+\seealso{
+Other example_tibble: 
+\code{\link{example_CREED_relevance_tibble}()},
+\code{\link{example_CREED_reliability_tibble}()},
+\code{\link{example_CREED_scores_tibble}()},
+\code{\link{example_biota_tibble}()},
+\code{\link{example_campaign_tibble}()},
+\code{\link{example_compartments_tibble}()},
+\code{\link{example_measurements_tibble}()},
+\code{\link{example_parameters_tibble}()},
+\code{\link{example_references_tibble}()},
+\code{\link{example_samples_tibble}()},
+\code{\link{example_sites_tibble}()}
+
+Other method: 
+\code{\link{analytical_protocols_vocabulary}()},
+\code{\link{extraction_protocols_vocabulary}()},
+\code{\link{fractionation_protocols_vocabulary}()},
+\code{\link{generate_protocol_id}()},
+\code{\link{initialise_methods_tibble}()},
+\code{\link{protocol_categories_vocabulary}()},
+\code{\link{protocol_options_vocabulary}()},
+\code{\link{sampling_protocols_vocabulary}()}
+}
+\concept{example_tibble}
+\concept{method}

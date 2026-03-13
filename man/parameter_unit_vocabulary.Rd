@@ -32,6 +32,7 @@ Data source: extdata/unit_conversion_factors.csv
 }
 \seealso{
 Other measurement: 
+\code{\link{example_measurements_tibble}()},
 \code{\link{initialise_measurements_tibble}()},
 \code{\link{measured_categories_vocabulary}()},
 \code{\link{measured_flag_vocabulary}()},

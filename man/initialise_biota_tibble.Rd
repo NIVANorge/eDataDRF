@@ -61,6 +61,7 @@ Other initialise_tibble:
 \code{\link{initialise_sites_tibble}()}
 
 Other biota: 
+\code{\link{example_biota_tibble}()},
 \code{\link{gender_vocabulary}()},
 \code{\link{lifestage_vocabulary}()},
 \code{\link{species_groups_vocabulary}()},
