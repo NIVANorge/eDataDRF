@@ -1,6 +1,8 @@
 # Validate all eData tables at once
 
-Validate all eData tables at once
+Applies pointblank validation rules to all supplied eData tables by
+calling the individual table validation functions. Required tables are
+always validated; optional tables are validated only when provided.
 
 ## Usage
 
@@ -25,39 +27,39 @@ pb_validate_all_edata_tables(
 
 - campaign:
 
-  Campaign table
+  Data frame containing Campaign table data to validate
 
 - reference:
 
-  Reference table
+  Data frame containing Reference table data to validate
 
 - parameters:
 
-  Parameters table
+  Data frame containing Parameters table data to validate
 
 - sites:
 
-  Sites table
+  Data frame containing Sites table data to validate
 
 - samples:
 
-  Samples table (optional)
+  Data frame containing Samples table data to validate (optional)
 
 - biota:
 
-  Biota table (optional)
+  Data frame containing Biota table data to validate (optional)
 
 - measurements:
 
-  Measurements table
+  Data frame containing Measurements table data to validate
 
 - methods:
 
-  Methods table (optional)
+  Data frame containing Methods table data to validate (optional)
 
 - creed_scores:
 
-  CREED Scores table (optional)
+  Data frame containing CREED Scores table data to validate (optional)
 
 - actions:
 
@@ -71,10 +73,27 @@ pb_validate_all_edata_tables(
 
 - northern_hemisphere:
 
-  Logical. If TRUE, check that site coordinates are in northern
-  hemisphere.
+  Logical. If TRUE, check that site coordinates are in the northern
+  hemisphere. Passed to
+  [`pb_validate_sites()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_sites.md).
 
 ## Value
 
-If agent = TRUE, a named list of pointblank agent objects. If agent =
-FALSE, a named list of validated data frames.
+A named list. If agent = TRUE, each element is a pointblank agent
+object. If agent = FALSE, each element is a validated data frame with
+failing rows removed. The list always contains elements named
+`campaign`, `reference`, `parameters`, `sites`, and `measurements`.
+Optional elements (`samples`, `biota`, `methods`, `creed_scores`) are
+included only when the corresponding arguments are not `NULL`.
+
+## See also
+
+[`pb_validate_campaign()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_campaign.md),
+[`pb_validate_reference()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_reference.md),
+[`pb_validate_parameters()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_parameters.md),
+[`pb_validate_sites()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_sites.md),
+[`pb_validate_samples()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_samples.md),
+[`pb_validate_biota()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_biota.md),
+[`pb_validate_measurements()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_measurements.md),
+[`pb_validate_methods()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_methods.md),
+[`pb_validate_creed_scores()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_creed_scores.md)

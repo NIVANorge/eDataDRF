@@ -1,6 +1,8 @@
 # Wrapper for col_vals_in_set with enhanced error reporting
 
-Wrapper for col_vals_in_set with enhanced error reporting
+Validates that column values belong to an allowed set, and additionally
+emits a warning listing any values not found in the set. Useful for
+diagnosing failures during interactive validation workflows.
 
 ## Usage
 
@@ -12,15 +14,15 @@ col_vals_in_set_verbose(x, columns, set, actions, value_name = NULL)
 
 - x:
 
-  A data table
+  A data frame or pointblank agent to validate
 
 - columns:
 
-  Column(s) to validate
+  Column(s) to validate, supplied using tidy-select syntax
 
 - set:
 
-  Valid set of values
+  Character vector of valid values
 
 - actions:
 
@@ -28,9 +30,15 @@ col_vals_in_set_verbose(x, columns, set, actions, value_name = NULL)
 
 - value_name:
 
-  Optional name to describe what the values represent (e.g., "Reference
-  IDs")
+  Optional descriptive name for the values being validated, used in the
+  warning message (e.g., `"Reference IDs"`). Defaults to the column name
+  if not supplied.
 
 ## Value
 
-The validated data table
+The input `x` with the validation step applied. Any values not in `set`
+are reported via a warning before validation runs.
+
+## See also
+
+[`pointblank::col_vals_in_set()`](https://rstudio.github.io/pointblank/reference/col_vals_in_set.html)

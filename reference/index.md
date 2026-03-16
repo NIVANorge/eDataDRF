@@ -161,7 +161,25 @@ Functions using {pointblank} to validate data
 
 - [`pb_validate_all_edata_tables()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_all_edata_tables.md)
   : Validate all eData tables at once
+- [`pb_validate_biota()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_biota.md)
+  : Run pointblank validation on a Biota table
+- [`pb_validate_campaign()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_campaign.md)
+  : Run pointblank validation on a Campaign table
+- [`pb_validate_creed_scores()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_creed_scores.md)
+  : Run pointblank validation on a CREED Scores table
 - [`pb_validate_edata_table()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_edata_table.md)
   : Run pointblank validation on an eData table
+- [`pb_validate_measurements()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_measurements.md)
+  : Run pointblank validation on a Measurements table
+- [`pb_validate_methods()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_methods.md)
+  : Run pointblank validation on a Methods table
+- [`pb_validate_parameters()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_parameters.md)
+  : Run pointblank validation on a Parameters table
+- [`pb_validate_reference()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_reference.md)
+  : Run pointblank validation on a Reference table
+- [`pb_validate_samples()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_samples.md)
+  : Run pointblank validation on a Samples table
+- [`pb_validate_sites()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_sites.md)
+  : Run pointblank validation on a Sites table
 - [`col_vals_in_set_verbose()`](https://NIVANorge.github.io/eDataDRF/reference/col_vals_in_set_verbose.md)
   : Wrapper for col_vals_in_set with enhanced error reporting
