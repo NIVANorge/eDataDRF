@@ -17,6 +17,7 @@ glossary:
 
 articles:
 - title: "Data tables"
+  navbar:
   desc: "Format and variables for each table in the eData DRF"
   contents:
   - campaign_data
@@ -29,11 +30,13 @@ articles:
   - methods_data
   - measurements_data
 - title: "CREED quality assessment"
+  navbar:
   desc: "Format and scoring for data quality assessment"
   contents:
   - CREED_data
   - CREED_scores_data
 - title: "Other"
+  navbar:
   contents:
   - validation
   - rationale
@@ -62,12 +65,14 @@ reference:
 - contents:
   - ends_with("_limits")
 - title: Generate IDs
-  desc: Generate ID strings based on abbreviated titles
+  desc: Generate ID strings based on abbreviated titles, plus regex to check
 - contents:
   - abbreviate_string
   - generate_reference_id
   - generate_protocol_id
   - generate_sample_id_with_components
+  - sample_id_regex
+  - protocol_id_regex
 - title: Export
   desc: Export tables as zipped CSV files
 - contents:
