@@ -35,7 +35,8 @@ Other example_tibble:
 
 Other sample: 
 \code{\link{generate_sample_id_with_components}()},
-\code{\link{initialise_samples_tibble}()}
+\code{\link{initialise_samples_tibble}()},
+\code{\link{sample_id_regex}()}
 }
 \concept{example_tibble}
 \concept{sample}

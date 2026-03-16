@@ -56,7 +56,8 @@ Other initialise_tibble:
 
 Other sample: 
 \code{\link{example_samples_tibble}()},
-\code{\link{generate_sample_id_with_components}()}
+\code{\link{generate_sample_id_with_components}()},
+\code{\link{sample_id_regex}()}
 }
 \concept{initialise_tibble}
 \concept{sample}

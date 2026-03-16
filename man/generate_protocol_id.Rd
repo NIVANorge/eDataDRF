@@ -70,7 +70,9 @@ generate_protocol_id(types, names, sequences, "Study2024")
 Other generate_id: 
 \code{\link{abbreviate_string}()},
 \code{\link{generate_reference_id}()},
-\code{\link{generate_sample_id_with_components}()}
+\code{\link{generate_sample_id_with_components}()},
+\code{\link{protocol_id_regex}()},
+\code{\link{sample_id_regex}()}
 
 Other method: 
 \code{\link{analytical_protocols_vocabulary}()},
@@ -79,6 +81,7 @@ Other method:
 \code{\link{fractionation_protocols_vocabulary}()},
 \code{\link{initialise_methods_tibble}()},
 \code{\link{protocol_categories_vocabulary}()},
+\code{\link{protocol_id_regex}()},
 \code{\link{protocol_options_vocabulary}()},
 \code{\link{sampling_protocols_vocabulary}()}
 }

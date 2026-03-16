@@ -20,9 +20,10 @@ If agent = FALSE, the input data with validation failures removed.
 }
 \description{
 Applies pointblank validation rules to check data quality and schema
-compliance for an eData CREED Scores table. Checks that reference IDs are
-non-null and not the placeholder value, and that reliability and relevance
-classification fields contain valid values.
+compliance for an eData CREED Scores table. Checks that reference IDs match
+the format produced by \code{\link[=generate_reference_id]{generate_reference_id()}}, are non-null, are not the
+placeholder value, and that reliability and relevance classification fields
+contain valid values.
 }
 \seealso{
 \code{\link[=pb_validate_edata_table]{pb_validate_edata_table()}} for the underlying validation framework,

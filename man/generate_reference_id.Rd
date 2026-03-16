@@ -38,7 +38,9 @@ generate_reference_id(
 Other generate_id: 
 \code{\link{abbreviate_string}()},
 \code{\link{generate_protocol_id}()},
-\code{\link{generate_sample_id_with_components}()}
+\code{\link{generate_sample_id_with_components}()},
+\code{\link{protocol_id_regex}()},
+\code{\link{sample_id_regex}()}
 
 Other reference: 
 \code{\link{example_references_tibble}()},

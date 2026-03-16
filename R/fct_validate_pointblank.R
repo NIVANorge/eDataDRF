@@ -461,8 +461,9 @@ pb_validate_sites <- function(
 #'
 #' Applies pointblank validation rules to check data quality and schema
 #' compliance for an eData Samples table. Checks that core identifier fields
-#' are non-null and that environmental compartment fields contain values within
-#' their controlled vocabularies.
+#' are non-null, that environmental compartment fields contain values within
+#' their controlled vocabularies, and that each ENVIRON_COMPARTMENT_SUB value
+#' is consistent with its corresponding ENVIRON_COMPARTMENT parent.
 #'
 #' @param data Data frame containing Samples table data to validate
 #' @param actions Action levels for pointblank agent (only used when agent = TRUE)
@@ -473,7 +474,9 @@ pb_validate_sites <- function(
 #'   If agent = FALSE, the input data with validation failures removed.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
-#'   [pb_validate_all_edata_tables()] to validate all tables at once.
+#'   [pb_validate_all_edata_tables()] to validate all tables at once,
+#'   [environ_compartments_sub_vocabulary()] for the compartment hierarchy used in
+#'   the consistency check.
 #'
 #' @importFrom pointblank col_vals_not_null col_vals_in_set action_levels
 #' @importFrom purrr flatten
@@ -483,6 +486,19 @@ pb_validate_samples <- function(
   actions = action_levels(),
   agent = TRUE
 ) {
+  # Build valid (compartment, sub-compartment) pairs from the vocabulary hierarchy
+  compartment_sub_vocab <- environ_compartments_sub_vocabulary()
+  valid_pairs <- do.call(
+    rbind,
+    lapply(names(compartment_sub_vocab), function(comp) {
+      data.frame(
+        ENVIRON_COMPARTMENT = comp,
+        ENVIRON_COMPARTMENT_SUB = unname(compartment_sub_vocab[[comp]]),
+        stringsAsFactors = FALSE
+      )
+    })
+  )
+
   apply_validations <- function(x) {
     x |>
       # Core identifiers
@@ -490,8 +506,7 @@ pb_validate_samples <- function(
       col_vals_not_null(columns = SITE_CODE, actions = actions) |>
       col_vals_not_null(columns = PARAMETER_NAME, actions = actions) |>
 
-      # Environmental compartments
-      # Todo: Check consistency between both
+      # Environmental compartments — individual vocabulary checks
       col_vals_in_set(
         columns = ENVIRON_COMPARTMENT,
         set = environ_compartments_vocabulary(),
@@ -499,7 +514,25 @@ pb_validate_samples <- function(
       ) |>
       col_vals_in_set(
         columns = ENVIRON_COMPARTMENT_SUB,
-        set = environ_compartments_sub_vocabulary() |> flatten(),
+        set = flatten(compartment_sub_vocab),
+        actions = actions
+      ) |>
+
+      # Check ENVIRON_COMPARTMENT_SUB is consistent with ENVIRON_COMPARTMENT
+      # using the hierarchy defined in environ_compartments_sub_vocabulary()
+      col_vals_in_set(
+        label = "Check ENVIRON_COMPARTMENT_SUB belongs to its ENVIRON_COMPARTMENT parent",
+        columns = ENVIRON_COMPARTMENT_SUB,
+        set = valid_pairs$ENVIRON_COMPARTMENT_SUB,
+        preconditions = \(x) {
+          x |>
+            dplyr::inner_join(valid_pairs, by = "ENVIRON_COMPARTMENT") |>
+            dplyr::filter(
+              ENVIRON_COMPARTMENT_SUB.x != ENVIRON_COMPARTMENT_SUB.y
+            ) |>
+            dplyr::select(-ENVIRON_COMPARTMENT_SUB.y) |>
+            dplyr::rename(ENVIRON_COMPARTMENT_SUB = ENVIRON_COMPARTMENT_SUB.x)
+        },
         actions = actions
       )
   }
@@ -611,7 +644,9 @@ pb_validate_biota <- function(
 #' compliance for an eData Measurements table. Checks that core identifier
 #' fields are non-null, sampling dates are within valid ranges, environmental
 #' compartments are valid, measurement flags and values are consistent, LOD/LOQ
-#' values are non-negative, and reference and sample IDs are present.
+#' values and units are present and valid when provided, protocol IDs match the
+#' expected format, MEASURED_TYPE is in its controlled vocabulary, and reference
+#' and sample IDs are present and correctly formatted.
 #'
 #' @param data Data frame containing Measurements table data to validate
 #' @param actions Action levels for pointblank agent (only used when agent = TRUE)
@@ -622,9 +657,14 @@ pb_validate_biota <- function(
 #'   If agent = FALSE, the input data with validation failures removed.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
-#'   [pb_validate_all_edata_tables()] to validate all tables at once.
+#'   [pb_validate_all_edata_tables()] to validate all tables at once,
+#'   [protocol_id_regex()] for the protocol ID format validated here,
+#'   [sample_id_regex()] for the sample ID format validated here,
+#'   [measured_types_vocabulary()] for valid MEASURED_TYPE values,
+#'   [parameter_unit_vocabulary()] for valid unit values,
+#'   [protocol_options_vocabulary()] for valid protocol names.
 #'
-#' @importFrom pointblank col_vals_not_null col_vals_equal col_vals_gte col_vals_lte col_vals_in_set col_vals_not_equal action_levels
+#' @importFrom pointblank col_vals_not_null col_vals_equal col_vals_gte col_vals_lte col_vals_in_set col_vals_not_equal col_vals_regex action_levels
 #' @importFrom purrr flatten
 #' @importFrom dplyr pull
 #' @export
@@ -656,7 +696,6 @@ pb_validate_measurements <- function(
         actions = actions
       ) |>
 
-      # TODO: Subset by measured flag so we can properly check LOD, LOQ, etc.
       # Environmental compartments
       col_vals_in_set(
         columns = ENVIRON_COMPARTMENT,
@@ -705,9 +744,44 @@ pb_validate_measurements <- function(
         actions = actions
       ) |>
 
-      # TODO: Validate MEASURED_TYPE
-      # TODO: Validate Extraction, Analytical, Fractionation, Sampling protocol match regex
-      # TODO: Conditionally check LOD units
+      # # Check MEASURED_TYPE is in measured_types_vocabulary()
+      col_vals_in_set(
+        label = "Check MEASURED_TYPE is in measured_types_vocabulary()",
+        columns = MEASURED_TYPE,
+        set = measured_types_vocabulary(),
+        actions = actions
+      ) |>
+
+      # # Check protocol IDs match the format produced by generate_protocol_id()
+      # # See protocol_id_regex() for the pattern definition
+      col_vals_regex(
+        label = "Check SAMPLING_PROTOCOL matches protocol_id_regex()",
+        preconditions = \(x) x |> dplyr::filter(!is.na(SAMPLING_PROTOCOL)),
+        columns = SAMPLING_PROTOCOL,
+        regex = protocol_id_regex(),
+        actions = actions
+      ) |>
+      col_vals_regex(
+        label = "Check EXTRACTION_PROTOCOL matches protocol_id_regex()",
+        preconditions = \(x) x |> dplyr::filter(!is.na(EXTRACTION_PROTOCOL)),
+        columns = EXTRACTION_PROTOCOL,
+        regex = protocol_id_regex(),
+        actions = actions
+      ) |>
+      col_vals_regex(
+        label = "Check FRACTIONATION_PROTOCOL matches protocol_id_regex()",
+        preconditions = \(x) x |> dplyr::filter(!is.na(FRACTIONATION_PROTOCOL)),
+        columns = FRACTIONATION_PROTOCOL,
+        regex = protocol_id_regex(),
+        actions = actions
+      ) |>
+      col_vals_regex(
+        label = "Check ANALYTICAL_PROTOCOL matches protocol_id_regex()",
+        preconditions = \(x) x |> dplyr::filter(!is.na(ANALYTICAL_PROTOCOL)),
+        columns = ANALYTICAL_PROTOCOL,
+        regex = protocol_id_regex(),
+        actions = actions
+      ) |>
 
       # # LOQ/LOD values
       col_vals_gte(
@@ -721,14 +795,48 @@ pb_validate_measurements <- function(
         actions = actions
       ) |>
 
-      # TODO: Check REFERENCE_ID matches regex and isn't Unknown
+      # # When LOQ_VALUE is present, check LOQ_UNIT is in parameter_unit_vocabulary()
+      # # See parameter_unit_vocabulary() for valid unit values
+      col_vals_in_set(
+        label = "When LOQ_VALUE is present, check LOQ_UNIT is in parameter_unit_vocabulary()",
+        preconditions = \(x) x |> dplyr::filter(!is.na(LOQ_VALUE)),
+        columns = LOQ_UNIT,
+        set = parameter_unit_vocabulary() |> pull(MEASURED_UNIT),
+        actions = actions
+      ) |>
+      # # When LOD_VALUE is present, check LOD_UNIT is in parameter_unit_vocabulary()
+      # # See parameter_unit_vocabulary() for valid unit values
+      col_vals_in_set(
+        label = "When LOD_VALUE is present, check LOD_UNIT is in parameter_unit_vocabulary()",
+        preconditions = \(x) x |> dplyr::filter(!is.na(LOD_VALUE)),
+        columns = LOD_UNIT,
+        set = parameter_unit_vocabulary() |> pull(MEASURED_UNIT),
+        actions = actions
+      ) |>
+
+      # # Check REFERENCE_ID matches the format produced by generate_reference_id()
+      # # and isn't a placeholder value
+      col_vals_regex(
+        label = "Check REFERENCE_ID is in the format YearLastnameFirstThreeWords",
+        columns = REFERENCE_ID,
+        regex = "^\\d{4}[A-Za-z0-9]{1,10}([A-Z][a-z]*){1,3}$",
+        actions = actions
+      ) |>
       col_vals_not_null(columns = REFERENCE_ID, actions = actions) |>
       col_vals_not_equal(
         columns = REFERENCE_ID,
         value = "Unknown Reference",
         actions = actions
       ) |>
-      # TODO: Check SAMPLE_ID matches regex
+
+      # # Check SAMPLE_ID matches the format produced by generate_sample_id_with_components()
+      # # See sample_id_regex() for the pattern definition
+      col_vals_regex(
+        label = "Check SAMPLE_ID matches sample_id_regex()",
+        columns = SAMPLE_ID,
+        regex = sample_id_regex(),
+        actions = actions
+      ) |>
       col_vals_not_null(columns = SAMPLE_ID, actions = actions)
   }
 
@@ -746,7 +854,8 @@ pb_validate_measurements <- function(
 #' Run pointblank validation on a Methods table
 #'
 #' Applies pointblank validation rules to check data quality and schema
-#' compliance for an eData Methods table. Checks that protocol ID and campaign
+#' compliance for an eData Methods table. Checks that protocol IDs match the
+#' format produced by [generate_protocol_id()], that protocol ID and campaign
 #' name fields are non-null, and that protocol category and name values are
 #' within their controlled vocabularies.
 #'
@@ -759,9 +868,12 @@ pb_validate_measurements <- function(
 #'   If agent = FALSE, the input data with validation failures removed.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
-#'   [pb_validate_all_edata_tables()] to validate all tables at once.
+#'   [pb_validate_all_edata_tables()] to validate all tables at once,
+#'   [protocol_id_regex()] for the protocol ID format validated here,
+#'   [protocol_categories_vocabulary()] for valid protocol category values,
+#'   [protocol_options_vocabulary()] for valid protocol name values.
 #'
-#' @importFrom pointblank col_vals_not_null col_vals_in_set action_levels
+#' @importFrom pointblank col_vals_not_null col_vals_in_set col_vals_regex action_levels
 #' @importFrom dplyr pull
 #' @export
 pb_validate_methods <- function(
@@ -771,7 +883,14 @@ pb_validate_methods <- function(
 ) {
   apply_validations <- function(x) {
     x |>
-      # TODO: Check protocol ID against regex
+      # # Check PROTOCOL_ID matches the format produced by generate_protocol_id()
+      # # See protocol_id_regex() for the pattern definition
+      col_vals_regex(
+        label = "Check PROTOCOL_ID matches protocol_id_regex()",
+        columns = PROTOCOL_ID,
+        regex = protocol_id_regex(),
+        actions = actions
+      ) |>
       col_vals_not_null(
         columns = c(PROTOCOL_ID, CAMPAIGN_NAME),
         actions = actions
@@ -802,9 +921,10 @@ pb_validate_methods <- function(
 #' Run pointblank validation on a CREED Scores table
 #'
 #' Applies pointblank validation rules to check data quality and schema
-#' compliance for an eData CREED Scores table. Checks that reference IDs are
-#' non-null and not the placeholder value, and that reliability and relevance
-#' classification fields contain valid values.
+#' compliance for an eData CREED Scores table. Checks that reference IDs match
+#' the format produced by [generate_reference_id()], are non-null, are not the
+#' placeholder value, and that reliability and relevance classification fields
+#' contain valid values.
 #'
 #' @param data Data frame containing CREED Scores table data to validate
 #' @param actions Action levels for pointblank agent (only used when agent = TRUE)
@@ -817,7 +937,7 @@ pb_validate_methods <- function(
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once.
 #'
-#' @importFrom pointblank col_vals_not_null col_vals_not_equal col_vals_in_set action_levels
+#' @importFrom pointblank col_vals_not_null col_vals_not_equal col_vals_in_set col_vals_regex action_levels
 #' @export
 pb_validate_creed_scores <- function(
   data,
@@ -837,9 +957,13 @@ pb_validate_creed_scores <- function(
 
   apply_validations <- function(x) {
     x |>
-      # Core identifiers
-      # TODO: Check REFERENCE_ID against regex
-
+      # # Check REFERENCE_ID matches the format produced by generate_reference_id()
+      col_vals_regex(
+        label = "Check REFERENCE_ID is in the format YearLastnameFirstThreeWords",
+        columns = REFERENCE_ID,
+        regex = "^\\d{4}[A-Za-z0-9]{1,10}([A-Z][a-z]*){1,3}$",
+        actions = actions
+      ) |>
       col_vals_not_null(columns = REFERENCE_ID, actions = actions) |>
       col_vals_not_equal(
         columns = REFERENCE_ID,

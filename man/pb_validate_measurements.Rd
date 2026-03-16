@@ -23,9 +23,16 @@ Applies pointblank validation rules to check data quality and schema
 compliance for an eData Measurements table. Checks that core identifier
 fields are non-null, sampling dates are within valid ranges, environmental
 compartments are valid, measurement flags and values are consistent, LOD/LOQ
-values are non-negative, and reference and sample IDs are present.
+values and units are present and valid when provided, protocol IDs match the
+expected format, MEASURED_TYPE is in its controlled vocabulary, and reference
+and sample IDs are present and correctly formatted.
 }
 \seealso{
 \code{\link[=pb_validate_edata_table]{pb_validate_edata_table()}} for the underlying validation framework,
-\code{\link[=pb_validate_all_edata_tables]{pb_validate_all_edata_tables()}} to validate all tables at once.
+\code{\link[=pb_validate_all_edata_tables]{pb_validate_all_edata_tables()}} to validate all tables at once,
+\code{\link[=protocol_id_regex]{protocol_id_regex()}} for the protocol ID format validated here,
+\code{\link[=sample_id_regex]{sample_id_regex()}} for the sample ID format validated here,
+\code{\link[=measured_types_vocabulary]{measured_types_vocabulary()}} for valid MEASURED_TYPE values,
+\code{\link[=parameter_unit_vocabulary]{parameter_unit_vocabulary()}} for valid unit values,
+\code{\link[=protocol_options_vocabulary]{protocol_options_vocabulary()}} for valid protocol names.
 }

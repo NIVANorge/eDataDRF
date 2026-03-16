@@ -43,6 +43,8 @@ abbreviate_string("Water Quality Index", n_words = 3L, "camel")
 Other generate_id: 
 \code{\link{generate_protocol_id}()},
 \code{\link{generate_reference_id}()},
-\code{\link{generate_sample_id_with_components}()}
+\code{\link{generate_sample_id_with_components}()},
+\code{\link{protocol_id_regex}()},
+\code{\link{sample_id_regex}()}
 }
 \concept{generate_id}

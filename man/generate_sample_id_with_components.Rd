@@ -69,11 +69,14 @@ generate_sample_id_with_components(
 Other generate_id: 
 \code{\link{abbreviate_string}()},
 \code{\link{generate_protocol_id}()},
-\code{\link{generate_reference_id}()}
+\code{\link{generate_reference_id}()},
+\code{\link{protocol_id_regex}()},
+\code{\link{sample_id_regex}()}
 
 Other sample: 
 \code{\link{example_samples_tibble}()},
-\code{\link{initialise_samples_tibble}()}
+\code{\link{initialise_samples_tibble}()},
+\code{\link{sample_id_regex}()}
 }
 \concept{generate_id}
 \concept{sample}

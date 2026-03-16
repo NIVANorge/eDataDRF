@@ -32,6 +32,7 @@ Other method:
 \code{\link{fractionation_protocols_vocabulary}()},
 \code{\link{generate_protocol_id}()},
 \code{\link{initialise_methods_tibble}()},
+\code{\link{protocol_id_regex}()},
 \code{\link{protocol_options_vocabulary}()},
 \code{\link{sampling_protocols_vocabulary}()}
 }

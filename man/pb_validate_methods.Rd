@@ -20,11 +20,15 @@ If agent = FALSE, the input data with validation failures removed.
 }
 \description{
 Applies pointblank validation rules to check data quality and schema
-compliance for an eData Methods table. Checks that protocol ID and campaign
+compliance for an eData Methods table. Checks that protocol IDs match the
+format produced by \code{\link[=generate_protocol_id]{generate_protocol_id()}}, that protocol ID and campaign
 name fields are non-null, and that protocol category and name values are
 within their controlled vocabularies.
 }
 \seealso{
 \code{\link[=pb_validate_edata_table]{pb_validate_edata_table()}} for the underlying validation framework,
-\code{\link[=pb_validate_all_edata_tables]{pb_validate_all_edata_tables()}} to validate all tables at once.
+\code{\link[=pb_validate_all_edata_tables]{pb_validate_all_edata_tables()}} to validate all tables at once,
+\code{\link[=protocol_id_regex]{protocol_id_regex()}} for the protocol ID format validated here,
+\code{\link[=protocol_categories_vocabulary]{protocol_categories_vocabulary()}} for valid protocol category values,
+\code{\link[=protocol_options_vocabulary]{protocol_options_vocabulary()}} for valid protocol name values.
 }

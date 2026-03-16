@@ -35,6 +35,7 @@ Other method:
 \code{\link{generate_protocol_id}()},
 \code{\link{initialise_methods_tibble}()},
 \code{\link{protocol_categories_vocabulary}()},
+\code{\link{protocol_id_regex}()},
 \code{\link{sampling_protocols_vocabulary}()}
 }
 \concept{method}
