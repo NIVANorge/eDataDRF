@@ -35,8 +35,11 @@ operations across multiple data objects, each campaign must have a
 unique identifier; this is checked as part of the validation below.
 
 ``` r
-example_campaign_tibble() |>
-  pb_validate_campaign()
+dude <- example_campaign_tibble() |>
+  pb_validate_campaign() |> 
+  interrogate()
+  
+get_agent_report(dude, display_table = TRUE)
 ```
 
 [TABLE]
@@ -53,8 +56,12 @@ example_references_tibble() |>
 ## Sites data validation
 
 ``` r
-example_sites_tibble() |>
-  pb_validate_sites()
+
+dude2 <- example_sites_tibble() |>
+  pb_validate_sites() |> 
+  interrogate()
+  
+get_agent_report(dude2, display_table = TRUE)
 ```
 
 [TABLE]
