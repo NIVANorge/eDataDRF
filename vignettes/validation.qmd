@@ -9,6 +9,7 @@ knitr:
   opts_chunk:
     collapse: true
     comment: '#>'
+html-table-processing: none
 ---
 
 ```{r setup}
@@ -35,8 +36,11 @@ Typically when campaign data are generated/extracted for a data object the resul
 
 ```{r}
 #| label: campaign-validation
-example_campaign_tibble() |>
-  pb_validate_campaign()
+dude <- example_campaign_tibble() |>
+  pb_validate_campaign() |> 
+  interrogate()
+  
+get_agent_report(dude, display_table = TRUE)
 ```
 
 # References data validation
@@ -52,8 +56,13 @@ example_references_tibble() |>
   
 ```{r}
 #| label: sites-validation
-example_sites_tibble() |>
-  pb_validate_sites()
+
+
+dude2 <- example_sites_tibble() |>
+  pb_validate_sites() |> 
+  interrogate()
+  
+get_agent_report(dude2, display_table = TRUE)
 ```
 
 # Parameters data validation

@@ -13,6 +13,7 @@ Imports:
     crsuggest,
     dplyr,
     glue,
+    gt,
     ISOcodes,
     pointblank,
     purrr,

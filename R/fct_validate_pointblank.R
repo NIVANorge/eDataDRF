@@ -46,8 +46,7 @@ pb_validate_edata_table <- function(
         label = glue("eData {table_name} Validation"),
         actions = actions
       ) |>
-      validation_steps() |>
-      interrogate()
+      validation_steps()
   } else {
     # Pipeline mode: apply validation steps directly to data ----
     data |>
