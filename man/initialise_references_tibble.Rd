@@ -69,6 +69,8 @@ Other initialise_tibble:
 \code{\link{initialise_sites_tibble}()}
 
 Other reference: 
+\code{\link{example_references_tibble}()},
+\code{\link{generate_reference_id}()},
 \code{\link{reference_character_limits}()}
 }
 \concept{initialise_tibble}

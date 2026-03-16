@@ -87,6 +87,7 @@ Other initialise_tibble:
 \code{\link{initialise_sites_tibble}()}
 
 Other measurement: 
+\code{\link{example_measurements_tibble}()},
 \code{\link{measured_categories_vocabulary}()},
 \code{\link{measured_flag_vocabulary}()},
 \code{\link{measured_types_vocabulary}()},

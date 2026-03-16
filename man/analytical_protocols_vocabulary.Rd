@@ -25,8 +25,10 @@ Available protocols include: Not relevant, Not reported, GC-MS, LC-MS, LC-MS/MS,
 }
 \seealso{
 Other method: 
+\code{\link{example_methods_tibble}()},
 \code{\link{extraction_protocols_vocabulary}()},
 \code{\link{fractionation_protocols_vocabulary}()},
+\code{\link{generate_protocol_id}()},
 \code{\link{initialise_methods_tibble}()},
 \code{\link{protocol_categories_vocabulary}()},
 \code{\link{protocol_options_vocabulary}()},

@@ -44,12 +44,14 @@ Other
 }
 \seealso{
 Other parameter: 
+\code{\link{example_parameters_tibble}()},
 \code{\link{initialise_parameters_tibble}()},
 \code{\link{parameter_types_sub_vocabulary}()},
 \code{\link{parameter_types_vocabulary}()},
 \code{\link{parameters_vocabulary}()}
 
 Other measurement: 
+\code{\link{example_measurements_tibble}()},
 \code{\link{initialise_measurements_tibble}()},
 \code{\link{measured_categories_vocabulary}()},
 \code{\link{measured_flag_vocabulary}()},

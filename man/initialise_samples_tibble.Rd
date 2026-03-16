@@ -53,6 +53,10 @@ Other initialise_tibble:
 \code{\link{initialise_parameters_tibble}()},
 \code{\link{initialise_references_tibble}()},
 \code{\link{initialise_sites_tibble}()}
+
+Other sample: 
+\code{\link{example_samples_tibble}()},
+\code{\link{generate_sample_id_with_components}()}
 }
 \concept{initialise_tibble}
 \concept{sample}

@@ -12,5 +12,33 @@ A tibble with 19 rows of dummy CREED reliability data
 \description{
 Creates a 19-row CREED reliability tibble (RB1-RB19) with
 realistic test data including scores, extracted data, and limitations.
-Inherits column structure from initialise_CREED_data_tibble().
+Inherits column structure from \code{\link[=initialise_CREED_data_tibble]{initialise_CREED_data_tibble()}}.
 }
+\examples{
+example_CREED_reliability_tibble()
+
+}
+\seealso{
+Other example_tibble: 
+\code{\link{example_CREED_relevance_tibble}()},
+\code{\link{example_CREED_scores_tibble}()},
+\code{\link{example_biota_tibble}()},
+\code{\link{example_campaign_tibble}()},
+\code{\link{example_compartments_tibble}()},
+\code{\link{example_measurements_tibble}()},
+\code{\link{example_methods_tibble}()},
+\code{\link{example_parameters_tibble}()},
+\code{\link{example_references_tibble}()},
+\code{\link{example_samples_tibble}()},
+\code{\link{example_sites_tibble}()}
+
+Other CREED: 
+\code{\link{CREED_choices_vocabulary}()},
+\code{\link{creed_tibble_to_mock_input}()},
+\code{\link{example_CREED_relevance_tibble}()},
+\code{\link{example_CREED_scores_tibble}()},
+\code{\link{initialise_CREED_data_tibble}()},
+\code{\link{initialise_CREED_scores_tibble}()}
+}
+\concept{CREED}
+\concept{example_tibble}

@@ -43,8 +43,10 @@ Other initialise_tibble:
 
 Other method: 
 \code{\link{analytical_protocols_vocabulary}()},
+\code{\link{example_methods_tibble}()},
 \code{\link{extraction_protocols_vocabulary}()},
 \code{\link{fractionation_protocols_vocabulary}()},
+\code{\link{generate_protocol_id}()},
 \code{\link{protocol_categories_vocabulary}()},
 \code{\link{protocol_options_vocabulary}()},
 \code{\link{sampling_protocols_vocabulary}()}

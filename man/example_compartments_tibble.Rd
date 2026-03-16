@@ -11,5 +11,31 @@ A tibble with 2 rows of dummy compartment data
 }
 \description{
 Creates a 2-row compartments tibble with test data.
-Inherits column structure from initialise_compartments_tibble().
+Inherits column structure from \code{\link[=initialise_compartments_tibble]{initialise_compartments_tibble()}}.
 }
+\examples{
+example_compartments_tibble()
+
+}
+\seealso{
+Other example_tibble: 
+\code{\link{example_CREED_relevance_tibble}()},
+\code{\link{example_CREED_reliability_tibble}()},
+\code{\link{example_CREED_scores_tibble}()},
+\code{\link{example_biota_tibble}()},
+\code{\link{example_campaign_tibble}()},
+\code{\link{example_measurements_tibble}()},
+\code{\link{example_methods_tibble}()},
+\code{\link{example_parameters_tibble}()},
+\code{\link{example_references_tibble}()},
+\code{\link{example_samples_tibble}()},
+\code{\link{example_sites_tibble}()}
+
+Other compartment: 
+\code{\link{environ_compartments_sub_vocabulary}()},
+\code{\link{environ_compartments_vocabulary}()},
+\code{\link{initialise_compartments_tibble}()},
+\code{\link{measured_categories_vocabulary}()}
+}
+\concept{compartment}
+\concept{example_tibble}

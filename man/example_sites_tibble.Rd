@@ -11,5 +11,35 @@ A tibble with 2 rows of dummy site data
 }
 \description{
 Creates a 2-row sites tibble with test data.
-Inherits column structure from initialise_sites_tibble().
+Inherits column structure from \code{\link[=initialise_sites_tibble]{initialise_sites_tibble()}}.
 }
+\examples{
+example_sites_tibble()
+
+}
+\seealso{
+Other example_tibble: 
+\code{\link{example_CREED_relevance_tibble}()},
+\code{\link{example_CREED_reliability_tibble}()},
+\code{\link{example_CREED_scores_tibble}()},
+\code{\link{example_biota_tibble}()},
+\code{\link{example_campaign_tibble}()},
+\code{\link{example_compartments_tibble}()},
+\code{\link{example_measurements_tibble}()},
+\code{\link{example_methods_tibble}()},
+\code{\link{example_parameters_tibble}()},
+\code{\link{example_references_tibble}()},
+\code{\link{example_samples_tibble}()}
+
+Other site: 
+\code{\link{altitude_units_vocabulary}()},
+\code{\link{areas_vocabulary}()},
+\code{\link{coordinate_systems_vocabulary}()},
+\code{\link{countries_vocabulary}()},
+\code{\link{geographic_features_sub_vocabulary}()},
+\code{\link{geographic_features_vocabulary}()},
+\code{\link{initialise_sites_tibble}()},
+\code{\link{ocean_vocabulary}()}
+}
+\concept{example_tibble}
+\concept{site}

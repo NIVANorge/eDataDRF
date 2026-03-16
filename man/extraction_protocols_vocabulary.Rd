@@ -26,7 +26,9 @@ Available protocols include: Not relevant, Not reported, None, Methanol, Dichlor
 \seealso{
 Other method: 
 \code{\link{analytical_protocols_vocabulary}()},
+\code{\link{example_methods_tibble}()},
 \code{\link{fractionation_protocols_vocabulary}()},
+\code{\link{generate_protocol_id}()},
 \code{\link{initialise_methods_tibble}()},
 \code{\link{protocol_categories_vocabulary}()},
 \code{\link{protocol_options_vocabulary}()},

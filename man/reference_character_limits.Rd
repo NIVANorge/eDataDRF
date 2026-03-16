@@ -36,6 +36,8 @@ URL: 200 characters
 }
 \seealso{
 Other reference: 
+\code{\link{example_references_tibble}()},
+\code{\link{generate_reference_id}()},
 \code{\link{initialise_references_tibble}()}
 }
 \concept{limits}

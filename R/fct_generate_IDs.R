@@ -6,17 +6,15 @@
 #' @param string Character. The input string to abbreviate.
 #' @param n_words Integer. Number of words to include in the abbreviation.
 #' @param case Character. Case style for the output. One of:
-#'   \itemize{
-#'     \item "lower" - all lowercase, no separator (e.g., "dogsandcats")
-#'     \item "upper" - all uppercase, no separator (e.g., "DOGSANDCATS")
-#'     \item "sentence" - sentence case, no separator (e.g., "Dogsandcats")
-#'     \item "snake" - lowercase with underscores (e.g., "dogs_and_cats")
-#'     \item "title" - title case, no separator (e.g., "DogsAndCats")
-#'     \item "screamingsnake" - uppercase with underscores (e.g., "DOGS_AND_CATS")
-#'     \item "camel" - camel case (e.g., "dogsAndCats")
-#'   }
+#'   - `"lower"` — all lowercase, no separator (e.g., `"dogsandcats"`)
+#'   - `"upper"` — all uppercase, no separator (e.g., `"DOGSANDCATS"`)
+#'   - `"sentence"` — sentence case, no separator (e.g., `"Dogsandcats"`)
+#'   - `"snake"` — lowercase with underscores (e.g., `"dogs_and_cats"`)
+#'   - `"title"` — title case, no separator (e.g., `"DogsAndCats"`)
+#'   - `"screamingsnake"` — uppercase with underscores (e.g., `"DOGS_AND_CATS"`)
+#'   - `"camel"` — camel case (e.g., `"dogsAndCats"`)
 #'
-#' @return Character. The abbreviated and formatted string.
+#' @returns Character. The abbreviated and formatted string.
 #'
 #' @importFrom stringr str_to_title str_split str_to_sentence str_to_snake str_to_camel
 #' @importFrom utils head
@@ -26,6 +24,7 @@
 #' abbreviate_string("dogs and cats", n_words = 3L, "title")
 #' abbreviate_string("Water Quality Index", n_words = 3L, "camel")
 #'
+#' @family generate_id
 #' @export
 abbreviate_string <- function(
   string,
@@ -92,7 +91,7 @@ abbreviate_string <- function(
 #' @param campaign_name Character vector. Name of the campaign/study.
 #'   Will be abbreviated to first 10 alphanumeric characters. Defaults to "".
 #'
-#' @return Character vector of protocol IDs with format:
+#' @returns Character vector of protocol IDs with format:
 #'   `TypeCodeSequenceNumber_AbbreviatedName_CampaignAbbrev`
 #'
 #'   Where:
@@ -121,6 +120,8 @@ abbreviate_string <- function(
 #' generate_protocol_id(types, names, sequences, "Study2024")
 #' # Returns: c("S01_WaterSample_Study2024", "A02_LCMSAnalysis_Study2024")
 #'
+#' @family generate_id
+#' @family method
 #' @family protocol_functions
 #' @importFrom stringr str_trim str_split str_to_upper str_to_lower str_sub
 #'   str_remove_all str_c
@@ -218,7 +219,7 @@ generate_protocol_id <- function(
 #' @param title Character. Publication title. The first three words are
 #'   extracted and converted to PascalCase.
 #'
-#' @return Character string with format `YearLastnameTitleWords`,
+#' @returns Character string with format `YearLastnameTitleWords`,
 #'   e.g. `"2018Last1AStudyOf"`.
 #'
 #' @examples
@@ -229,6 +230,8 @@ generate_protocol_id <- function(
 #' )
 #' # Returns: "2018Last1AStudyOf"
 #'
+#' @family generate_id
+#' @family reference
 #' @importFrom stringr str_to_title
 #' @export
 generate_reference_id <- function(date, author, title) {
@@ -253,16 +256,56 @@ generate_reference_id <- function(date, author, title) {
   return(reference_id)
 }
 
-#' Generate Sample ID with Components ----
-#' @param site_code Site code (vectorised)
-#' @param parameter_name Parameter name (vectorised)
-#' @param environ_compartment Environmental compartment (vectorised)
-#' @param environ_compartment_sub Environmental sub-compartment (vectorised)
-#' @param date Sampling date (vectorised)
-#' @param subsample subsample
+#' Generate Sample ID with Components
+#'
+#' @description
+#' Generates a standardised sample identifier by combining the site code,
+#' abbreviated parameter name, abbreviated environmental sub-compartment,
+#' sampling date, and subsample label. The function is fully vectorised and
+#' can handle multiple samples simultaneously.
+#'
+#' @param site_code Character vector. The site code (e.g. `"SITE-001"`).
+#' @param parameter_name Character vector. The parameter name. Will be
+#'   abbreviated to the first 8 alphanumeric characters.
+#' @param environ_compartment Character vector. The environmental compartment
+#'   (e.g. `"Aquatic"`). Not used in the ID directly but retained as a
+#'   parameter for future use and documentation purposes.
+#' @param environ_compartment_sub Character vector. The environmental
+#'   sub-compartment (e.g. `"Aquatic Sediment"`). Will be abbreviated to
+#'   the first 12 alphanumeric characters.
+#' @param date Character or Date vector. The sampling date (e.g.
+#'   `"2023-03-15"`). Used as-is in the ID.
+#' @param subsample Character or numeric vector. The subsample label.
+#'   Will be abbreviated to the first 3 words in title case. Defaults to `1`.
+#'
+#' @returns Character vector of sample IDs with format:
+#'   `SiteCode-ParamAbbrev-CompartmentAbbrev-Date-R-SubsampleAbbrev`
+#'
+#' @examples
+#' # Single sample
+#' generate_sample_id_with_components(
+#'   site_code = "SITE-001",
+#'   parameter_name = "Copper",
+#'   environ_compartment = "Aquatic",
+#'   environ_compartment_sub = "Aquatic Sediment",
+#'   date = "2023-03-15",
+#'   subsample = "1"
+#' )
+#'
+#' # Vectorised use
+#' generate_sample_id_with_components(
+#'   site_code = c("SITE-001", "SITE-002"),
+#'   parameter_name = c("Copper", "Lead"),
+#'   environ_compartment = c("Aquatic", "Aquatic"),
+#'   environ_compartment_sub = c("Aquatic Sediment", "Aquatic Sediment"),
+#'   date = c("2023-03-15", "2023-04-20"),
+#'   subsample = "1"
+#' )
+#'
+#' @family generate_id
+#' @family sample
 #' @importFrom glue glue
 #' @importFrom stringr str_to_title str_remove_all
-#' @import eDataDRF
 #' @export
 generate_sample_id_with_components <- function(
   site_code,
@@ -279,7 +322,7 @@ generate_sample_id_with_components <- function(
     1,
     12
   )
-  date_abbrev <- gsub("-", "-", date)
+  date_abbrev <- as.character(date)
 
   base_id <- glue("{site_code}-{param_abbrev}-{comp_abbrev}-{date_abbrev}")
 

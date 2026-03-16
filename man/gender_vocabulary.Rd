@@ -31,6 +31,7 @@ Other
 }
 \seealso{
 Other biota: 
+\code{\link{example_biota_tibble}()},
 \code{\link{initialise_biota_tibble}()},
 \code{\link{lifestage_vocabulary}()},
 \code{\link{species_groups_vocabulary}()},
