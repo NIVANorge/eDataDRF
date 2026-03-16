@@ -11,3 +11,4 @@ scratchpad/*
 ^doc$
 ^Meta$
 ^README_files$
+^.claude/$
