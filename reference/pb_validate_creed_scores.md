@@ -2,7 +2,9 @@
 
 Applies pointblank validation rules to check data quality and schema
 compliance for an eData CREED Scores table. Checks that reference IDs
-are non-null and not the placeholder value, and that reliability and
+match the format produced by
+[`generate_reference_id()`](https://NIVANorge.github.io/eDataDRF/reference/generate_reference_id.md),
+are non-null, are not the placeholder value, and that reliability and
 relevance classification fields contain valid values.
 
 ## Usage

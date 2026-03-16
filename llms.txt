@@ -307,7 +307,7 @@ Character limits for some inputs
 
 ## Generate IDs
 
-Generate ID strings based on abbreviated titles
+Generate ID strings based on abbreviated titles, plus regex to check
 
 - [`abbreviate_string()`](https://NIVANorge.github.io/eDataDRF/reference/abbreviate_string.md)
   : Abbreviate string to first n words with case formatting
@@ -318,6 +318,10 @@ Generate ID strings based on abbreviated titles
   name, the campaign name, and a sequence number
 - [`generate_sample_id_with_components()`](https://NIVANorge.github.io/eDataDRF/reference/generate_sample_id_with_components.md)
   : Generate Sample ID with Components
+- [`sample_id_regex()`](https://NIVANorge.github.io/eDataDRF/reference/sample_id_regex.md)
+  : Regular expression for sample IDs
+- [`protocol_id_regex()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_id_regex.md)
+  : Regular expression for protocol IDs
 
 ## Export
 

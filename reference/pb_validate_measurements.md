@@ -4,8 +4,10 @@ Applies pointblank validation rules to check data quality and schema
 compliance for an eData Measurements table. Checks that core identifier
 fields are non-null, sampling dates are within valid ranges,
 environmental compartments are valid, measurement flags and values are
-consistent, LOD/LOQ values are non-negative, and reference and sample
-IDs are present.
+consistent, LOD/LOQ values and units are present and valid when
+provided, protocol IDs match the expected format, MEASURED_TYPE is in
+its controlled vocabulary, and reference and sample IDs are present and
+correctly formatted.
 
 ## Usage
 
@@ -39,4 +41,14 @@ removed.
 [`pb_validate_edata_table()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_edata_table.md)
 for the underlying validation framework,
 [`pb_validate_all_edata_tables()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_all_edata_tables.md)
-to validate all tables at once.
+to validate all tables at once,
+[`protocol_id_regex()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_id_regex.md)
+for the protocol ID format validated here,
+[`sample_id_regex()`](https://NIVANorge.github.io/eDataDRF/reference/sample_id_regex.md)
+for the sample ID format validated here,
+[`measured_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/measured_types_vocabulary.md)
+for valid MEASURED_TYPE values,
+[`parameter_unit_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_unit_vocabulary.md)
+for valid unit values,
+[`protocol_options_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_options_vocabulary.md)
+for valid protocol names.

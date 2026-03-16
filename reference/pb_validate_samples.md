@@ -2,8 +2,10 @@
 
 Applies pointblank validation rules to check data quality and schema
 compliance for an eData Samples table. Checks that core identifier
-fields are non-null and that environmental compartment fields contain
-values within their controlled vocabularies.
+fields are non-null, that environmental compartment fields contain
+values within their controlled vocabularies, and that each
+ENVIRON_COMPARTMENT_SUB value is consistent with its corresponding
+ENVIRON_COMPARTMENT parent.
 
 ## Usage
 
@@ -37,4 +39,6 @@ removed.
 [`pb_validate_edata_table()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_edata_table.md)
 for the underlying validation framework,
 [`pb_validate_all_edata_tables()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_all_edata_tables.md)
-to validate all tables at once.
+to validate all tables at once,
+[`environ_compartments_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/environ_compartments_sub_vocabulary.md)
+for the compartment hierarchy used in the consistency check.
