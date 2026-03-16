@@ -20,35 +20,47 @@ pb_validate_all_edata_tables(
 )
 }
 \arguments{
-\item{campaign}{Campaign table}
+\item{campaign}{Data frame containing Campaign table data to validate}
 
-\item{reference}{Reference table}
+\item{reference}{Data frame containing Reference table data to validate}
 
-\item{parameters}{Parameters table}
+\item{parameters}{Data frame containing Parameters table data to validate}
 
-\item{sites}{Sites table}
+\item{sites}{Data frame containing Sites table data to validate}
 
-\item{samples}{Samples table (optional)}
+\item{samples}{Data frame containing Samples table data to validate (optional)}
 
-\item{biota}{Biota table (optional)}
+\item{biota}{Data frame containing Biota table data to validate (optional)}
 
-\item{measurements}{Measurements table}
+\item{measurements}{Data frame containing Measurements table data to validate}
 
-\item{methods}{Methods table (optional)}
+\item{methods}{Data frame containing Methods table data to validate (optional)}
 
-\item{creed_scores}{CREED Scores table (optional)}
+\item{creed_scores}{Data frame containing CREED Scores table data to validate (optional)}
 
 \item{actions}{Action levels for pointblank agents (only used when agent = TRUE)}
 
 \item{agent}{Logical. If TRUE (default), returns a list of pointblank agent objects.
 If FALSE, returns a list of validated data frames with failures removed.}
 
-\item{northern_hemisphere}{Logical. If TRUE, check that site coordinates are in northern hemisphere.}
+\item{northern_hemisphere}{Logical. If TRUE, check that site coordinates are in
+the northern hemisphere. Passed to \code{\link[=pb_validate_sites]{pb_validate_sites()}}.}
 }
 \value{
-If agent = TRUE, a named list of pointblank agent objects.
-If agent = FALSE, a named list of validated data frames.
+A named list. If agent = TRUE, each element is a pointblank agent object.
+If agent = FALSE, each element is a validated data frame with failing rows removed.
+The list always contains elements named \code{campaign}, \code{reference}, \code{parameters},
+\code{sites}, and \code{measurements}. Optional elements (\code{samples}, \code{biota}, \code{methods},
+\code{creed_scores}) are included only when the corresponding arguments are not \code{NULL}.
 }
 \description{
-Validate all eData tables at once
+Applies pointblank validation rules to all supplied eData tables by calling
+the individual table validation functions. Required tables are always
+validated; optional tables are validated only when provided.
+}
+\seealso{
+\code{\link[=pb_validate_campaign]{pb_validate_campaign()}}, \code{\link[=pb_validate_reference]{pb_validate_reference()}},
+\code{\link[=pb_validate_parameters]{pb_validate_parameters()}}, \code{\link[=pb_validate_sites]{pb_validate_sites()}}, \code{\link[=pb_validate_samples]{pb_validate_samples()}},
+\code{\link[=pb_validate_biota]{pb_validate_biota()}}, \code{\link[=pb_validate_measurements]{pb_validate_measurements()}}, \code{\link[=pb_validate_methods]{pb_validate_methods()}},
+\code{\link[=pb_validate_creed_scores]{pb_validate_creed_scores()}}
 }

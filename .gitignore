@@ -66,3 +66,6 @@ doc/
 
 # Readme stuff
 README_files/*
+
+# Quarto extensions
+_extensions/*

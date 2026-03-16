@@ -57,6 +57,24 @@ pb_validate_edata_table <- function(
 
 # ## Campaign validation ----
 
+#' Run pointblank validation on a Campaign table
+#'
+#' Applies pointblank validation rules to check data quality and schema
+#' compliance for an eData Campaign table. Checks that campaign name fields
+#' are non-null and unique, that campaign start dates fall within a valid
+#' range, and that entry metadata fields are present and not in the future.
+#'
+#' @param data Data frame containing Campaign table data to validate
+#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
+#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
+#'   If FALSE, returns the validated data with validation failures removed.
+#'
+#' @return If agent = TRUE, a pointblank agent object containing validation results.
+#'   If agent = FALSE, the input data with validation failures removed.
+#'
+#' @seealso [pb_validate_edata_table()] for the underlying validation framework,
+#'   [pb_validate_all_edata_tables()] to validate all tables at once.
+#'
 #' @importFrom pointblank col_vals_not_null col_vals_between rows_distinct action_levels col_vals_lte
 #' @export
 pb_validate_campaign <- function(
@@ -127,6 +145,25 @@ pb_validate_campaign <- function(
 
 # ## Reference validation ----
 
+#' Run pointblank validation on a Reference table
+#'
+#' Applies pointblank validation rules to check data quality and schema
+#' compliance for an eData Reference table. Checks that reference IDs match
+#' the expected format, controlled vocabulary fields are valid, required fields
+#' are non-null, publication year and access date fall within valid ranges, and
+#' conditionally mandatory fields are present based on reference type.
+#'
+#' @param data Data frame containing Reference table data to validate
+#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
+#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
+#'   If FALSE, returns the validated data with validation failures removed.
+#'
+#' @return If agent = TRUE, a pointblank agent object containing validation results.
+#'   If agent = FALSE, the input data with validation failures removed.
+#'
+#' @seealso [pb_validate_edata_table()] for the underlying validation framework,
+#'   [pb_validate_all_edata_tables()] to validate all tables at once.
+#'
 #' @importFrom pointblank col_vals_not_null col_vals_regex col_vals_not_equal col_vals_gte col_vals_lte action_levels
 #' @export
 pb_validate_reference <- function(
@@ -224,6 +261,24 @@ pb_validate_reference <- function(
 
 # ## Parameters validation ----
 
+#' Run pointblank validation on a Parameters table
+#'
+#' Applies pointblank validation rules to check data quality and schema
+#' compliance for an eData Parameters table. Checks that core identifier
+#' fields are non-null, parameter names are within the expected controlled
+#' vocabulary, and entry metadata is present.
+#'
+#' @param data Data frame containing Parameters table data to validate
+#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
+#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
+#'   If FALSE, returns the validated data with validation failures removed.
+#'
+#' @return If agent = TRUE, a pointblank agent object containing validation results.
+#'   If agent = FALSE, the input data with validation failures removed.
+#'
+#' @seealso [pb_validate_edata_table()] for the underlying validation framework,
+#'   [pb_validate_all_edata_tables()] to validate all tables at once.
+#'
 #' @importFrom pointblank col_vals_not_null col_vals_equal action_levels
 #' @export
 pb_validate_parameters <- function(
@@ -259,8 +314,27 @@ pb_validate_parameters <- function(
 }
 # ## Sites validation ----
 
+#' Run pointblank validation on a Sites table
+#'
+#' Applies pointblank validation rules to check data quality and schema
+#' compliance for an eData Sites table. Checks that site codes and names are
+#' non-null and unique, geographic feature and country fields are within their
+#' controlled vocabularies, coordinates are within valid ranges, and required
+#' metadata fields are present.
+#'
+#' @param data Data frame containing Sites table data to validate
+#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
+#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
+#'   If FALSE, returns the validated data with validation failures removed.
 #' @param northern_hemisphere Logical. If TRUE, constrains latitude validation
 #'   to northern hemisphere (0-90). Default is FALSE (allows -90 to 90).
+#'
+#' @return If agent = TRUE, a pointblank agent object containing validation results.
+#'   If agent = FALSE, the input data with validation failures removed.
+#'
+#' @seealso [pb_validate_edata_table()] for the underlying validation framework,
+#'   [pb_validate_all_edata_tables()] to validate all tables at once.
+#'
 #' @importFrom pointblank col_vals_not_null col_vals_in_set col_vals_between rows_distinct action_levels
 #' @export
 pb_validate_sites <- function(
@@ -383,6 +457,24 @@ pb_validate_sites <- function(
 
 # ## Samples validation ----
 
+#' Run pointblank validation on a Samples table
+#'
+#' Applies pointblank validation rules to check data quality and schema
+#' compliance for an eData Samples table. Checks that core identifier fields
+#' are non-null and that environmental compartment fields contain values within
+#' their controlled vocabularies.
+#'
+#' @param data Data frame containing Samples table data to validate
+#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
+#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
+#'   If FALSE, returns the validated data with validation failures removed.
+#'
+#' @return If agent = TRUE, a pointblank agent object containing validation results.
+#'   If agent = FALSE, the input data with validation failures removed.
+#'
+#' @seealso [pb_validate_edata_table()] for the underlying validation framework,
+#'   [pb_validate_all_edata_tables()] to validate all tables at once.
+#'
 #' @importFrom pointblank col_vals_not_null col_vals_in_set action_levels
 #' @importFrom purrr flatten
 #' @export
@@ -423,6 +515,25 @@ pb_validate_samples <- function(
 
 # ## Biota validation ----
 
+#' Run pointblank validation on a Biota table
+#'
+#' Applies pointblank validation rules to check data quality and schema
+#' compliance for an eData Biota table. Checks that core identifier and
+#' biota-specific fields are non-null, environmental compartments indicate
+#' biota, and that species group, tissue, lifestage, and gender values are
+#' within their controlled vocabularies.
+#'
+#' @param data Data frame containing Biota table data to validate
+#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
+#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
+#'   If FALSE, returns the validated data with validation failures removed.
+#'
+#' @return If agent = TRUE, a pointblank agent object containing validation results.
+#'   If agent = FALSE, the input data with validation failures removed.
+#'
+#' @seealso [pb_validate_edata_table()] for the underlying validation framework,
+#'   [pb_validate_all_edata_tables()] to validate all tables at once.
+#'
 #' @importFrom pointblank col_vals_not_null col_vals_equal col_vals_in_set action_levels
 #' @export
 pb_validate_biota <- function(
@@ -494,6 +605,25 @@ pb_validate_biota <- function(
 
 # ## Measurements validation ----
 
+#' Run pointblank validation on a Measurements table
+#'
+#' Applies pointblank validation rules to check data quality and schema
+#' compliance for an eData Measurements table. Checks that core identifier
+#' fields are non-null, sampling dates are within valid ranges, environmental
+#' compartments are valid, measurement flags and values are consistent, LOD/LOQ
+#' values are non-negative, and reference and sample IDs are present.
+#'
+#' @param data Data frame containing Measurements table data to validate
+#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
+#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
+#'   If FALSE, returns the validated data with validation failures removed.
+#'
+#' @return If agent = TRUE, a pointblank agent object containing validation results.
+#'   If agent = FALSE, the input data with validation failures removed.
+#'
+#' @seealso [pb_validate_edata_table()] for the underlying validation framework,
+#'   [pb_validate_all_edata_tables()] to validate all tables at once.
+#'
 #' @importFrom pointblank col_vals_not_null col_vals_equal col_vals_gte col_vals_lte col_vals_in_set col_vals_not_equal action_levels
 #' @importFrom purrr flatten
 #' @importFrom dplyr pull
@@ -613,6 +743,24 @@ pb_validate_measurements <- function(
 
 # ## Methods validation ----
 
+#' Run pointblank validation on a Methods table
+#'
+#' Applies pointblank validation rules to check data quality and schema
+#' compliance for an eData Methods table. Checks that protocol ID and campaign
+#' name fields are non-null, and that protocol category and name values are
+#' within their controlled vocabularies.
+#'
+#' @param data Data frame containing Methods table data to validate
+#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
+#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
+#'   If FALSE, returns the validated data with validation failures removed.
+#'
+#' @return If agent = TRUE, a pointblank agent object containing validation results.
+#'   If agent = FALSE, the input data with validation failures removed.
+#'
+#' @seealso [pb_validate_edata_table()] for the underlying validation framework,
+#'   [pb_validate_all_edata_tables()] to validate all tables at once.
+#'
 #' @importFrom pointblank col_vals_not_null col_vals_in_set action_levels
 #' @importFrom dplyr pull
 #' @export
@@ -651,6 +799,24 @@ pb_validate_methods <- function(
 
 # ## CREED Scores validation ----
 
+#' Run pointblank validation on a CREED Scores table
+#'
+#' Applies pointblank validation rules to check data quality and schema
+#' compliance for an eData CREED Scores table. Checks that reference IDs are
+#' non-null and not the placeholder value, and that reliability and relevance
+#' classification fields contain valid values.
+#'
+#' @param data Data frame containing CREED Scores table data to validate
+#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
+#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
+#'   If FALSE, returns the validated data with validation failures removed.
+#'
+#' @return If agent = TRUE, a pointblank agent object containing validation results.
+#'   If agent = FALSE, the input data with validation failures removed.
+#'
+#' @seealso [pb_validate_edata_table()] for the underlying validation framework,
+#'   [pb_validate_all_edata_tables()] to validate all tables at once.
+#'
 #' @importFrom pointblank col_vals_not_null col_vals_not_equal col_vals_in_set action_levels
 #' @export
 pb_validate_creed_scores <- function(
@@ -706,22 +872,36 @@ pb_validate_creed_scores <- function(
 # ## Validate all tables ----
 #' Validate all eData tables at once
 #'
-#' @param campaign Campaign table
-#' @param reference Reference table
-#' @param parameters Parameters table
-#' @param sites Sites table
-#' @param samples Samples table (optional)
-#' @param biota Biota table (optional)
-#' @param measurements Measurements table
-#' @param methods Methods table (optional)
-#' @param creed_scores CREED Scores table (optional)
+#' Applies pointblank validation rules to all supplied eData tables by calling
+#' the individual table validation functions. Required tables are always
+#' validated; optional tables are validated only when provided.
+#'
+#' @param campaign Data frame containing Campaign table data to validate
+#' @param reference Data frame containing Reference table data to validate
+#' @param parameters Data frame containing Parameters table data to validate
+#' @param sites Data frame containing Sites table data to validate
+#' @param samples Data frame containing Samples table data to validate (optional)
+#' @param biota Data frame containing Biota table data to validate (optional)
+#' @param measurements Data frame containing Measurements table data to validate
+#' @param methods Data frame containing Methods table data to validate (optional)
+#' @param creed_scores Data frame containing CREED Scores table data to validate (optional)
 #' @param actions Action levels for pointblank agents (only used when agent = TRUE)
 #' @param agent Logical. If TRUE (default), returns a list of pointblank agent objects.
 #'   If FALSE, returns a list of validated data frames with failures removed.
-#' @param northern_hemisphere Logical. If TRUE, check that site coordinates are in northern hemisphere.
+#' @param northern_hemisphere Logical. If TRUE, check that site coordinates are in
+#'   the northern hemisphere. Passed to [pb_validate_sites()].
 #'
-#' @return If agent = TRUE, a named list of pointblank agent objects.
-#'   If agent = FALSE, a named list of validated data frames.
+#' @return A named list. If agent = TRUE, each element is a pointblank agent object.
+#'   If agent = FALSE, each element is a validated data frame with failing rows removed.
+#'   The list always contains elements named `campaign`, `reference`, `parameters`,
+#'   `sites`, and `measurements`. Optional elements (`samples`, `biota`, `methods`,
+#'   `creed_scores`) are included only when the corresponding arguments are not `NULL`.
+#'
+#' @seealso [pb_validate_campaign()], [pb_validate_reference()],
+#'   [pb_validate_parameters()], [pb_validate_sites()], [pb_validate_samples()],
+#'   [pb_validate_biota()], [pb_validate_measurements()], [pb_validate_methods()],
+#'   [pb_validate_creed_scores()]
+#'
 #' @export
 pb_validate_all_edata_tables <- function(
   campaign,
@@ -772,13 +952,23 @@ pb_validate_all_edata_tables <- function(
 
 #' Wrapper for col_vals_in_set with enhanced error reporting
 #'
-#' @param x A data table
-#' @param columns Column(s) to validate
-#' @param set Valid set of values
-#' @param actions Action levels for pointblank
-#' @param value_name Optional name to describe what the values represent (e.g., "Reference IDs")
+#' Validates that column values belong to an allowed set, and additionally
+#' emits a warning listing any values not found in the set. Useful for
+#' diagnosing failures during interactive validation workflows.
 #'
-#' @return The validated data table
+#' @param x A data frame or pointblank agent to validate
+#' @param columns Column(s) to validate, supplied using tidy-select syntax
+#' @param set Character vector of valid values
+#' @param actions Action levels for pointblank
+#' @param value_name Optional descriptive name for the values being validated,
+#'   used in the warning message (e.g., `"Reference IDs"`). Defaults to the
+#'   column name if not supplied.
+#'
+#' @return The input `x` with the validation step applied. Any values not in
+#'   `set` are reported via a warning before validation runs.
+#'
+#' @seealso [pointblank::col_vals_in_set()]
+#'
 #' @importFrom pointblank col_vals_in_set action_levels
 #' @importFrom dplyr filter pull
 #' @importFrom rlang as_name enquo

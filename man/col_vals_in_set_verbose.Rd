@@ -7,19 +7,27 @@
 col_vals_in_set_verbose(x, columns, set, actions, value_name = NULL)
 }
 \arguments{
-\item{x}{A data table}
+\item{x}{A data frame or pointblank agent to validate}
 
-\item{columns}{Column(s) to validate}
+\item{columns}{Column(s) to validate, supplied using tidy-select syntax}
 
-\item{set}{Valid set of values}
+\item{set}{Character vector of valid values}
 
 \item{actions}{Action levels for pointblank}
 
-\item{value_name}{Optional name to describe what the values represent (e.g., "Reference IDs")}
+\item{value_name}{Optional descriptive name for the values being validated,
+used in the warning message (e.g., \code{"Reference IDs"}). Defaults to the
+column name if not supplied.}
 }
 \value{
-The validated data table
+The input \code{x} with the validation step applied. Any values not in
+\code{set} are reported via a warning before validation runs.
 }
 \description{
-Wrapper for col_vals_in_set with enhanced error reporting
+Validates that column values belong to an allowed set, and additionally
+emits a warning listing any values not found in the set. Useful for
+diagnosing failures during interactive validation workflows.
+}
+\seealso{
+\code{\link[pointblank:col_vals_in_set]{pointblank::col_vals_in_set()}}
 }
