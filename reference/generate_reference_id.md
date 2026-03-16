@@ -32,6 +32,18 @@ generate_reference_id(date, author, title)
 Character string with format `YearLastnameTitleWords`, e.g.
 `"2018Last1AStudyOf"`.
 
+## See also
+
+Other generate_id:
+[`abbreviate_string()`](https://NIVANorge.github.io/eDataDRF/reference/abbreviate_string.md),
+[`generate_protocol_id()`](https://NIVANorge.github.io/eDataDRF/reference/generate_protocol_id.md),
+[`generate_sample_id_with_components()`](https://NIVANorge.github.io/eDataDRF/reference/generate_sample_id_with_components.md)
+
+Other reference:
+[`example_references_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_references_tibble.md),
+[`initialise_references_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_references_tibble.md),
+[`reference_character_limits()`](https://NIVANorge.github.io/eDataDRF/reference/reference_character_limits.md)
+
 ## Examples
 
 ``` r

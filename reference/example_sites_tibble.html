@@ -44,7 +44,7 @@ Inherits column structure from initialise_sites_tibble()."></head><body>
 
     <div class="ref-description section level2">
     <p>Creates a 2-row sites tibble with test data.
-Inherits column structure from initialise_sites_tibble().</p>
+Inherits column structure from <code><a href="initialise_sites_tibble.html">initialise_sites_tibble()</a></code>.</p>
     </div>
 
     <div class="section level2">
@@ -56,7 +56,46 @@ Inherits column structure from initialise_sites_tibble().</p>
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A tibble with 2 rows of dummy site data</p>
     </div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other example_tibble:
+<code><a href="example_CREED_relevance_tibble.html">example_CREED_relevance_tibble()</a></code>,
+<code><a href="example_CREED_reliability_tibble.html">example_CREED_reliability_tibble()</a></code>,
+<code><a href="example_CREED_scores_tibble.html">example_CREED_scores_tibble()</a></code>,
+<code><a href="example_biota_tibble.html">example_biota_tibble()</a></code>,
+<code><a href="example_campaign_tibble.html">example_campaign_tibble()</a></code>,
+<code><a href="example_compartments_tibble.html">example_compartments_tibble()</a></code>,
+<code><a href="example_measurements_tibble.html">example_measurements_tibble()</a></code>,
+<code><a href="example_methods_tibble.html">example_methods_tibble()</a></code>,
+<code><a href="example_parameters_tibble.html">example_parameters_tibble()</a></code>,
+<code><a href="example_references_tibble.html">example_references_tibble()</a></code>,
+<code><a href="example_samples_tibble.html">example_samples_tibble()</a></code></p>
+<p>Other site:
+<code><a href="altitude_units_vocabulary.html">altitude_units_vocabulary()</a></code>,
+<code><a href="areas_vocabulary.html">areas_vocabulary()</a></code>,
+<code><a href="coordinate_systems_vocabulary.html">coordinate_systems_vocabulary()</a></code>,
+<code><a href="countries_vocabulary.html">countries_vocabulary()</a></code>,
+<code><a href="geographic_features_sub_vocabulary.html">geographic_features_sub_vocabulary()</a></code>,
+<code><a href="geographic_features_vocabulary.html">geographic_features_vocabulary()</a></code>,
+<code><a href="initialise_sites_tibble.html">initialise_sites_tibble()</a></code>,
+<code><a href="ocean_vocabulary.html">ocean_vocabulary()</a></code></p></div>
+    </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">example_sites_tibble</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2 × 14</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   SITE_CODE SITE_NAME  SITE_GEOGRAPHIC_FEAT…¹ SITE_GEOGRAPHIC_FEAT…² COUNTRY_ISO</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> SITE-001  Oslofjord… Coastal, fjord         Water column, pelagic… Norway     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> SITE-002  Bergen Ha… Coastal, fjord         Water benthos          Norway     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ abbreviated names: ¹​SITE_GEOGRAPHIC_FEATURE, ²​SITE_GEOGRAPHIC_FEATURE_SUB</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 9 more variables: OCEAN_IHO &lt;chr&gt;, LATITUDE &lt;dbl&gt;, LONGITUDE &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   SITE_COORDINATE_SYSTEM &lt;chr&gt;, ALTITUDE_VALUE &lt;dbl&gt;, ALTITUDE_UNIT &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ENTERED_BY &lt;chr&gt;, ENTERED_DATE &lt;chr&gt;, SITE_COMMENT &lt;chr&gt;</span></span>
+<span class="r-in"><span></span></span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

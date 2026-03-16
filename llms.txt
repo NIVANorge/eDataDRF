@@ -316,6 +316,8 @@ Generate ID strings based on abbreviated titles
 - [`generate_protocol_id()`](https://NIVANorge.github.io/eDataDRF/reference/generate_protocol_id.md)
   : Generate a semi-unique string ID for a protocol based on its type,
   name, the campaign name, and a sequence number
+- [`generate_sample_id_with_components()`](https://NIVANorge.github.io/eDataDRF/reference/generate_sample_id_with_components.md)
+  : Generate Sample ID with Components
 
 ## Export
 

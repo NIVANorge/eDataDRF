@@ -47,7 +47,7 @@ Inherits column structure from initialise_CREED_data_tibble()."></head><body>
     <div class="ref-description section level2">
     <p>Creates a 19-row CREED reliability tibble (RB1-RB19) with
 realistic test data including scores, extracted data, and limitations.
-Inherits column structure from initialise_CREED_data_tibble().</p>
+Inherits column structure from <code><a href="initialise_CREED_data_tibble.html">initialise_CREED_data_tibble()</a></code>.</p>
     </div>
 
     <div class="section level2">
@@ -59,7 +59,58 @@ Inherits column structure from initialise_CREED_data_tibble().</p>
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A tibble with 19 rows of dummy CREED reliability data</p>
     </div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other example_tibble:
+<code><a href="example_CREED_relevance_tibble.html">example_CREED_relevance_tibble()</a></code>,
+<code><a href="example_CREED_scores_tibble.html">example_CREED_scores_tibble()</a></code>,
+<code><a href="example_biota_tibble.html">example_biota_tibble()</a></code>,
+<code><a href="example_campaign_tibble.html">example_campaign_tibble()</a></code>,
+<code><a href="example_compartments_tibble.html">example_compartments_tibble()</a></code>,
+<code><a href="example_measurements_tibble.html">example_measurements_tibble()</a></code>,
+<code><a href="example_methods_tibble.html">example_methods_tibble()</a></code>,
+<code><a href="example_parameters_tibble.html">example_parameters_tibble()</a></code>,
+<code><a href="example_references_tibble.html">example_references_tibble()</a></code>,
+<code><a href="example_samples_tibble.html">example_samples_tibble()</a></code>,
+<code><a href="example_sites_tibble.html">example_sites_tibble()</a></code></p>
+<p>Other CREED:
+<code><a href="CREED_choices_vocabulary.html">CREED_choices_vocabulary()</a></code>,
+<code><a href="creed_tibble_to_mock_input.html">creed_tibble_to_mock_input()</a></code>,
+<code><a href="example_CREED_relevance_tibble.html">example_CREED_relevance_tibble()</a></code>,
+<code><a href="example_CREED_scores_tibble.html">example_CREED_scores_tibble()</a></code>,
+<code><a href="initialise_CREED_data_tibble.html">initialise_CREED_data_tibble()</a></code>,
+<code><a href="initialise_CREED_scores_tibble.html">initialise_CREED_scores_tibble()</a></code></p></div>
+    </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">example_CREED_reliability_tibble</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 19 × 6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    criterion_id criterion_title         required_recommended relevant_data score</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> RB1          Sample Medium/Matrix    Required             <span style="color: #949494;">"</span>1 compartme…     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> RB2          Collection Method/Samp… Recommended          <span style="color: #949494;">"</span>1 protocol:…     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> RB3          Sample Handling         Recommended          <span style="color: #949494;">"</span>Samples sto…     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> RB4          Site Location           Required             <span style="color: #949494;">"</span>2 sites. Co…     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> RB5          Date and Time           Required             <span style="color: #949494;">"</span>2023-03-15 …     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> RB6          Analyte(s) Measured     Required             <span style="color: #949494;">"</span>1 protocol:…     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> RB7          Limit of Detection and… Required             <span style="color: #949494;">"</span>LOD: 0.1-0.…     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> RB8          Accreditation/Quality … Required             <span style="color: #949494;">"</span>Relevant da…     4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> RB9          Method                  Required             <span style="color: #949494;">"</span>4 protocols…     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> RB10         Lab Blank Contamination Recommended          <span style="color: #949494;">"</span>Method blan…     2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> RB11         Recovery/Accuracy       Recommended          <span style="color: #949494;">"</span>CRM MESS-3 …     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> RB12         Reproducibility/Precis… Recommended          <span style="color: #949494;">"</span>Triplicate …     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> RB13         Field QC                Recommended          <span style="color: #949494;">"</span>1 protocol:…     4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> RB14         Calculations            Recommended          <span style="color: #949494;">"</span>Uncertainty…     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> RB15         Significant Figures     Recommended          <span style="color: #949494;">"</span>Measured pa…     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> RB16         Outliers                Recommended          <span style="color: #949494;">"</span>Relevant da…     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span> RB17         Censored Data           Required             <span style="color: #949494;">"</span>Relevant da…     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span> RB18         Summary Statistics Pro… Recommended          <span style="color: #949494;">"</span>Uncertainty…     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">19</span> RB19         Supporting Data Quality Recommended          <span style="color: #949494;">"</span>Relevant da…     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 1 more variable: limitations &lt;chr&gt;</span></span>
+<span class="r-in"><span></span></span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

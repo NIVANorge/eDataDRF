@@ -27,24 +27,31 @@ abbreviate_string(
 
   Character. Case style for the output. One of:
 
-  - "lower" - all lowercase, no separator (e.g., "dogsandcats")
+  - `"lower"` — all lowercase, no separator (e.g., `"dogsandcats"`)
 
-  - "upper" - all uppercase, no separator (e.g., "DOGSANDCATS")
+  - `"upper"` — all uppercase, no separator (e.g., `"DOGSANDCATS"`)
 
-  - "sentence" - sentence case, no separator (e.g., "Dogsandcats")
+  - `"sentence"` — sentence case, no separator (e.g., `"Dogsandcats"`)
 
-  - "snake" - lowercase with underscores (e.g., "dogs_and_cats")
+  - `"snake"` — lowercase with underscores (e.g., `"dogs_and_cats"`)
 
-  - "title" - title case, no separator (e.g., "DogsAndCats")
+  - `"title"` — title case, no separator (e.g., `"DogsAndCats"`)
 
-  - "screamingsnake" - uppercase with underscores (e.g.,
-    "DOGS_AND_CATS")
+  - `"screamingsnake"` — uppercase with underscores (e.g.,
+    `"DOGS_AND_CATS"`)
 
-  - "camel" - camel case (e.g., "dogsAndCats")
+  - `"camel"` — camel case (e.g., `"dogsAndCats"`)
 
 ## Value
 
 Character. The abbreviated and formatted string.
+
+## See also
+
+Other generate_id:
+[`generate_protocol_id()`](https://NIVANorge.github.io/eDataDRF/reference/generate_protocol_id.md),
+[`generate_reference_id()`](https://NIVANorge.github.io/eDataDRF/reference/generate_reference_id.md),
+[`generate_sample_id_with_components()`](https://NIVANorge.github.io/eDataDRF/reference/generate_sample_id_with_components.md)
 
 ## Examples
 

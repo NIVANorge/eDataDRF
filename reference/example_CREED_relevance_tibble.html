@@ -47,7 +47,7 @@ Inherits column structure from initialise_CREED_data_tibble()."></head><body>
     <div class="ref-description section level2">
     <p>Creates an 11-row CREED relevance tibble (RV1-RV11) with
 realistic test data including scores, extracted data, and limitations.
-Inherits column structure from initialise_CREED_data_tibble().</p>
+Inherits column structure from <code><a href="initialise_CREED_data_tibble.html">initialise_CREED_data_tibble()</a></code>.</p>
     </div>
 
     <div class="section level2">
@@ -59,7 +59,50 @@ Inherits column structure from initialise_CREED_data_tibble().</p>
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A tibble with 11 rows of dummy CREED relevance data</p>
     </div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other example_tibble:
+<code><a href="example_CREED_reliability_tibble.html">example_CREED_reliability_tibble()</a></code>,
+<code><a href="example_CREED_scores_tibble.html">example_CREED_scores_tibble()</a></code>,
+<code><a href="example_biota_tibble.html">example_biota_tibble()</a></code>,
+<code><a href="example_campaign_tibble.html">example_campaign_tibble()</a></code>,
+<code><a href="example_compartments_tibble.html">example_compartments_tibble()</a></code>,
+<code><a href="example_measurements_tibble.html">example_measurements_tibble()</a></code>,
+<code><a href="example_methods_tibble.html">example_methods_tibble()</a></code>,
+<code><a href="example_parameters_tibble.html">example_parameters_tibble()</a></code>,
+<code><a href="example_references_tibble.html">example_references_tibble()</a></code>,
+<code><a href="example_samples_tibble.html">example_samples_tibble()</a></code>,
+<code><a href="example_sites_tibble.html">example_sites_tibble()</a></code></p>
+<p>Other CREED:
+<code><a href="CREED_choices_vocabulary.html">CREED_choices_vocabulary()</a></code>,
+<code><a href="creed_tibble_to_mock_input.html">creed_tibble_to_mock_input()</a></code>,
+<code><a href="example_CREED_reliability_tibble.html">example_CREED_reliability_tibble()</a></code>,
+<code><a href="example_CREED_scores_tibble.html">example_CREED_scores_tibble()</a></code>,
+<code><a href="initialise_CREED_data_tibble.html">initialise_CREED_data_tibble()</a></code>,
+<code><a href="initialise_CREED_scores_tibble.html">initialise_CREED_scores_tibble()</a></code></p></div>
+    </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">example_CREED_relevance_tibble</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 11 × 6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    criterion_id criterion_title         required_recommended relevant_data score</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> RV1          Sample Medium/Matrix    Required             <span style="color: #949494;">"</span>1 compartme…     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> RV2          Collection Method/Samp… Recommended          <span style="color: #949494;">"</span>1 protocol:…     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> RV3          Study Area              Required             <span style="color: #949494;">"</span>2 sites. Co…     2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> RV4          Site Type               Recommended          <span style="color: #949494;">"</span>2 sites. Di…     2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> RV5          Sampling Timespan       Required             <span style="color: #949494;">"</span>2023-03-15 …     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> RV6          Sampling Frequency      Required             <span style="color: #949494;">"</span>2023-03-15 …     2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> RV7          Temporal Conditions     Recommended          <span style="color: #949494;">"</span>Relevant da…     4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> RV8          Analyte                 Required             <span style="color: #949494;">"</span>1 protocol:…     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> RV9          Sensitivity/LOD/LOQ     Required             <span style="color: #949494;">"</span>1 protocol:…     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> RV10         Summary Statistics Type Recommended          <span style="color: #949494;">"</span>Uncertainty…     2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> RV11         Supporting Parameters   Recommended          <span style="color: #949494;">"</span>1 protocol:…     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 1 more variable: limitations &lt;chr&gt;</span></span>
+<span class="r-in"><span></span></span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 
