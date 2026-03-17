@@ -80,8 +80,8 @@ example_parameters_tibble() |>
 
 ```{r}
 #| label: compartments-validation
-example_compartments_tibble() |> 
-  pb_validate_compartments()
+# example_compartments_tibble() |> 
+#   pb_validate_compartments()
 ```
 
 # Samples data validation

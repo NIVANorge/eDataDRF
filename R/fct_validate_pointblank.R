@@ -454,87 +454,6 @@ pb_validate_sites <- function(
   )
 }
 
-# ## Compartments validation ----
-
-#' Run pointblank validation on environmental compartment columns
-#'
-#' Applies pointblank validation rules to check that `ENVIRON_COMPARTMENT` and
-#' `ENVIRON_COMPARTMENT_SUB` columns contain valid values and that each
-#' sub-compartment is consistent with its parent compartment. Intended to be
-#' reused across table-level validators (e.g. Samples, Measurements).
-#'
-#' @param data Data frame to validate
-#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
-#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
-#'   If FALSE, returns the validated data with validation failures removed.
-#'
-#' @return If agent = TRUE, a pointblank agent object containing validation results.
-#'   If agent = FALSE, the input data with validation failures removed.
-#'
-#' @seealso [pb_validate_edata_table()] for the underlying validation framework,
-#'   [environ_compartments_sub_vocabulary()] for the compartment hierarchy used in
-#'   the consistency check.
-#'
-#' @importFrom pointblank col_vals_in_set action_levels
-#' @importFrom purrr flatten
-#' @export
-pb_validate_compartments <- function(
-  data,
-  actions = action_levels(),
-  agent = TRUE
-) {
-  compartment_sub_vocab <- environ_compartments_sub_vocabulary()
-  valid_pairs <- do.call(
-    rbind,
-    lapply(names(compartment_sub_vocab), function(comp) {
-      data.frame(
-        ENVIRON_COMPARTMENT = comp,
-        ENVIRON_COMPARTMENT_SUB = unname(compartment_sub_vocab[[comp]]),
-        stringsAsFactors = FALSE
-      )
-    })
-  )
-
-  apply_validations <- function(x) {
-    x |>
-      col_vals_in_set(
-        label = "Check ENVIRON_COMPARTMENT is in environ_compartments_vocabulary()",
-        columns = ENVIRON_COMPARTMENT,
-        set = environ_compartments_vocabulary(),
-        actions = actions
-      ) |>
-      col_vals_in_set(
-        label = "Check ENVIRON_COMPARTMENT_SUB is in environ_compartments_sub_vocabulary()",
-        columns = ENVIRON_COMPARTMENT_SUB,
-        set = flatten(compartment_sub_vocab),
-        actions = actions
-      ) |>
-      col_vals_in_set(
-        label = "Check ENVIRON_COMPARTMENT_SUB belongs to its ENVIRON_COMPARTMENT parent",
-        columns = ENVIRON_COMPARTMENT_SUB,
-        set = valid_pairs$ENVIRON_COMPARTMENT_SUB,
-        preconditions = \(x) {
-          x |>
-            dplyr::inner_join(valid_pairs, by = "ENVIRON_COMPARTMENT") |>
-            dplyr::filter(
-              ENVIRON_COMPARTMENT_SUB.x != ENVIRON_COMPARTMENT_SUB.y
-            ) |>
-            dplyr::select(-ENVIRON_COMPARTMENT_SUB.y) |>
-            dplyr::rename(ENVIRON_COMPARTMENT_SUB = ENVIRON_COMPARTMENT_SUB.x)
-        },
-        actions = actions
-      )
-  }
-
-  pb_validate_edata_table(
-    data = data,
-    table_name = "Compartments",
-    validation_steps = apply_validations,
-    agent = agent,
-    actions = actions
-  )
-}
-
 # ## Samples validation ----
 
 #' Run pointblank validation on a Samples table
@@ -587,7 +506,34 @@ pb_validate_samples <- function(
       col_vals_not_null(columns = PARAMETER_NAME, actions = actions) |>
 
       # Environmental compartments — individual vocabulary checks
-      pb_validate_compartments(actions = actions, agent = agent)
+      col_vals_in_set(
+        columns = ENVIRON_COMPARTMENT,
+        set = environ_compartments_vocabulary(),
+        actions = actions
+      ) |>
+      col_vals_in_set(
+        columns = ENVIRON_COMPARTMENT_SUB,
+        set = flatten(compartment_sub_vocab),
+        actions = actions
+      ) |>
+
+      # Check ENVIRON_COMPARTMENT_SUB is consistent with ENVIRON_COMPARTMENT
+      # using the hierarchy defined in environ_compartments_sub_vocabulary()
+      col_vals_in_set(
+        label = "Check ENVIRON_COMPARTMENT_SUB belongs to its ENVIRON_COMPARTMENT parent",
+        columns = ENVIRON_COMPARTMENT_SUB,
+        set = valid_pairs$ENVIRON_COMPARTMENT_SUB,
+        preconditions = \(x) {
+          x |>
+            dplyr::inner_join(valid_pairs, by = "ENVIRON_COMPARTMENT") |>
+            dplyr::filter(
+              ENVIRON_COMPARTMENT_SUB.x != ENVIRON_COMPARTMENT_SUB.y
+            ) |>
+            dplyr::select(-ENVIRON_COMPARTMENT_SUB.y) |>
+            dplyr::rename(ENVIRON_COMPARTMENT_SUB = ENVIRON_COMPARTMENT_SUB.x)
+        },
+        actions = actions
+      )
   }
 
   pb_validate_edata_table(
@@ -750,7 +696,16 @@ pb_validate_measurements <- function(
       ) |>
 
       # Environmental compartments
-      pb_validate_compartments(actions = actions, agent = agent) |>
+      col_vals_in_set(
+        columns = ENVIRON_COMPARTMENT,
+        set = environ_compartments_vocabulary(),
+        actions = actions
+      ) |>
+      col_vals_in_set(
+        columns = ENVIRON_COMPARTMENT_SUB,
+        set = environ_compartments_sub_vocabulary() |> flatten(),
+        actions = actions
+      ) |>
 
       # # Measurement values
       col_vals_in_set(
