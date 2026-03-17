@@ -35,11 +35,10 @@ operations across multiple data objects, each campaign must have a
 unique identifier; this is checked as part of the validation below.
 
 ``` r
-dude <- example_campaign_tibble() |>
+example_campaign_tibble() |>
   pb_validate_campaign() |> 
-  interrogate()
-  
-get_agent_report(dude, display_table = TRUE)
+  interrogate() |> 
+  get_agent_report()
 ```
 
 [TABLE]
@@ -48,7 +47,9 @@ get_agent_report(dude, display_table = TRUE)
 
 ``` r
 example_references_tibble() |>
-  pb_validate_reference()
+  pb_validate_reference() |> 
+    interrogate() |> 
+  get_agent_report()
 ```
 
 [TABLE]
@@ -56,12 +57,10 @@ example_references_tibble() |>
 ## Sites data validation
 
 ``` r
-
-dude2 <- example_sites_tibble() |>
+example_sites_tibble() |>
   pb_validate_sites() |> 
-  interrogate()
-  
-get_agent_report(dude2, display_table = TRUE)
+    interrogate() |> 
+  get_agent_report()
 ```
 
 [TABLE]
@@ -70,7 +69,9 @@ get_agent_report(dude2, display_table = TRUE)
 
 ``` r
 example_parameters_tibble() |>
-  pb_validate_parameters()
+  pb_validate_parameters() |> 
+      interrogate() |> 
+  get_agent_report()
 ```
 
 [TABLE]
@@ -80,7 +81,7 @@ example_parameters_tibble() |>
 ## TODO: Might as well add this one
 
 ``` r
-# example_compartments_tibble() |>
+# example_compartments_tibble() |> 
 #   pb_validate_compartments()
 ```
 
@@ -88,7 +89,9 @@ example_parameters_tibble() |>
 
 ``` r
 example_samples_tibble() |>
-  pb_validate_samples()
+  pb_validate_samples() |> 
+      interrogate() |> 
+  get_agent_report()
 ```
 
 [TABLE]
@@ -97,7 +100,9 @@ example_samples_tibble() |>
 
 ``` r
 example_biota_tibble() |>
-  pb_validate_biota()
+  pb_validate_biota() |> 
+      interrogate() |> 
+  get_agent_report()
 ```
 
 [TABLE]
@@ -106,7 +111,9 @@ example_biota_tibble() |>
 
 ``` r
 example_methods_tibble() |>
-  pb_validate_methods()
+  pb_validate_methods() |> 
+      interrogate() |> 
+  get_agent_report()
 ```
 
 [TABLE]
@@ -115,7 +122,9 @@ example_methods_tibble() |>
 
 ``` r
 example_measurements_tibble() |>
-  pb_validate_measurements()
+  pb_validate_measurements() |>
+  interrogate() |>
+  get_agent_report()
 ```
 
 [TABLE]
