@@ -127,3 +127,90 @@ test_that("pb_validate_measurements() fails when MEASURED_UNIT is NULL", {
       pb_validate_measurements(agent = FALSE, actions = action_levels)
   )
 })
+
+# # CREED Data ----
+test_that("pb_validate_CREED_data_reliability() passes valid data", {
+  expect_no_error(
+    example_CREED_reliability_tibble() |>
+      pb_validate_CREED_data_reliability(agent = FALSE, actions = action_levels)
+  )
+})
+
+test_that("pb_validate_CREED_data_reliability() fails when criterion_id is invalid", {
+  expect_error(
+    example_CREED_reliability_tibble() |>
+      dplyr::mutate(
+        criterion_id = dplyr::if_else(
+          criterion_id == "RB1",
+          "RV1",
+          criterion_id
+        )
+      ) |>
+      pb_validate_CREED_data_reliability(agent = FALSE, actions = action_levels)
+  )
+})
+
+test_that("pb_validate_CREED_data_reliability() fails when score is out of range", {
+  expect_error(
+    example_CREED_reliability_tibble() |>
+      dplyr::mutate(score = dplyr::if_else(criterion_id == "RB1", 5L, score)) |>
+      pb_validate_CREED_data_reliability(agent = FALSE, actions = action_levels)
+  )
+})
+
+test_that("pb_validate_CREED_data_reliability() fails when required_recommended is invalid", {
+  expect_error(
+    example_CREED_reliability_tibble() |>
+      dplyr::mutate(
+        required_recommended = dplyr::if_else(
+          criterion_id == "RB1",
+          "Optional",
+          required_recommended
+        )
+      ) |>
+      pb_validate_CREED_data_reliability(agent = FALSE, actions = action_levels)
+  )
+})
+
+test_that("pb_validate_CREED_data_relevance() passes valid data", {
+  expect_no_error(
+    example_CREED_relevance_tibble() |>
+      pb_validate_CREED_data_relevance(agent = FALSE, actions = action_levels)
+  )
+})
+
+test_that("pb_validate_CREED_data_relevance() fails when criterion_id is invalid", {
+  expect_error(
+    example_CREED_relevance_tibble() |>
+      dplyr::mutate(
+        criterion_id = dplyr::if_else(
+          criterion_id == "RV1",
+          "RB1",
+          criterion_id
+        )
+      ) |>
+      pb_validate_CREED_data_relevance(agent = FALSE, actions = action_levels)
+  )
+})
+
+test_that("pb_validate_CREED_data_relevance() fails when score is out of range", {
+  expect_error(
+    example_CREED_relevance_tibble() |>
+      dplyr::mutate(score = dplyr::if_else(criterion_id == "RV1", 5L, score)) |>
+      pb_validate_CREED_data_relevance(agent = FALSE, actions = action_levels)
+  )
+})
+
+test_that("pb_validate_CREED_data_relevance() fails when required_recommended is invalid", {
+  expect_error(
+    example_CREED_relevance_tibble() |>
+      dplyr::mutate(
+        required_recommended = dplyr::if_else(
+          criterion_id == "RV1",
+          "Optional",
+          required_recommended
+        )
+      ) |>
+      pb_validate_CREED_data_relevance(agent = FALSE, actions = action_levels)
+  )
+})

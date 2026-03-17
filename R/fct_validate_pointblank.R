@@ -915,6 +915,208 @@ pb_validate_methods <- function(
   )
 }
 
+# ## CREED Data validation ----
+
+#' Run pointblank validation on a CREED Reliability data table
+#'
+#' Applies pointblank validation rules to check data quality and schema
+#' compliance for a CREED reliability data table in the format produced by
+#' [example_CREED_reliability_tibble()]. Checks that criterion IDs and titles
+#' are within the expected sets, scores are integers between 0 and 4, and
+#' required/recommended classification is valid.
+#'
+#' @param data Data frame containing CREED reliability data to validate
+#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
+#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
+#'   If FALSE, returns the validated data with validation failures removed.
+#'
+#' @return If agent = TRUE, a pointblank agent object containing validation results.
+#'   If agent = FALSE, the input data with validation failures removed.
+#'
+#' @seealso [pb_validate_edata_table()] for the underlying validation framework,
+#'   [pb_validate_CREED_data_relevance()] for the relevance equivalent.
+#'
+#' @importFrom pointblank col_vals_in_set col_vals_between action_levels
+#' @export
+pb_validate_CREED_data_reliability <- function(
+  data,
+  actions = action_levels(),
+  agent = TRUE
+) {
+  valid_criterion_ids <- c(
+    "RB1",
+    "RB2",
+    "RB3",
+    "RB4",
+    "RB5",
+    "RB6",
+    "RB7",
+    "RB8",
+    "RB9",
+    "RB10",
+    "RB11",
+    "RB12",
+    "RB13",
+    "RB14",
+    "RB15",
+    "RB16",
+    "RB17",
+    "RB18",
+    "RB19"
+  )
+
+  valid_criterion_titles <- c(
+    "Sample Medium/Matrix",
+    "Collection Method/Sample Type",
+    "Sample Handling",
+    "Site Location",
+    "Date and Time",
+    "Analyte(s) Measured",
+    "Limit of Detection and/or Limit of Quantification",
+    "Accreditation/Quality Management System",
+    "Method",
+    "Lab Blank Contamination",
+    "Recovery/Accuracy",
+    "Reproducibility/Precision",
+    "Field QC",
+    "Calculations",
+    "Significant Figures",
+    "Outliers",
+    "Censored Data",
+    "Summary Statistics Procedures",
+    "Supporting Data Quality"
+  )
+
+  apply_validations <- function(x) {
+    x |>
+      col_vals_in_set(
+        label = "Check criterion_id is in the expected reliability set (RB1-RB19)",
+        columns = criterion_id,
+        set = valid_criterion_ids,
+        actions = actions
+      ) |>
+      col_vals_in_set(
+        label = "Check criterion_title is in the expected reliability set",
+        columns = criterion_title,
+        set = valid_criterion_titles,
+        actions = actions
+      ) |>
+      col_vals_between(
+        label = "Check score is an integer between 0 and 4",
+        columns = score,
+        left = 0L,
+        right = 4L,
+        actions = actions
+      ) |>
+      col_vals_in_set(
+        label = "Check required_recommended is 'Required' or 'Recommended'",
+        columns = required_recommended,
+        set = c("Required", "Recommended"),
+        actions = actions
+      )
+  }
+
+  pb_validate_edata_table(
+    data = data,
+    table_name = "CREED Reliability Data",
+    validation_steps = apply_validations,
+    agent = agent,
+    actions = actions
+  )
+}
+
+#' Run pointblank validation on a CREED Relevance data table
+#'
+#' Applies pointblank validation rules to check data quality and schema
+#' compliance for a CREED relevance data table in the format produced by
+#' [example_CREED_relevance_tibble()]. Checks that criterion IDs and titles
+#' are within the expected sets, scores are integers between 0 and 4, and
+#' required/recommended classification is valid.
+#'
+#' @param data Data frame containing CREED relevance data to validate
+#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
+#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
+#'   If FALSE, returns the validated data with validation failures removed.
+#'
+#' @return If agent = TRUE, a pointblank agent object containing validation results.
+#'   If agent = FALSE, the input data with validation failures removed.
+#'
+#' @seealso [pb_validate_edata_table()] for the underlying validation framework,
+#'   [pb_validate_CREED_data_reliability()] for the reliability equivalent.
+#'
+#' @importFrom pointblank col_vals_in_set col_vals_between action_levels
+#' @export
+pb_validate_CREED_data_relevance <- function(
+  data,
+  actions = action_levels(),
+  agent = TRUE
+) {
+  valid_criterion_ids <- c(
+    "RV1",
+    "RV2",
+    "RV3",
+    "RV4",
+    "RV5",
+    "RV6",
+    "RV7",
+    "RV8",
+    "RV9",
+    "RV10",
+    "RV11"
+  )
+
+  valid_criterion_titles <- c(
+    "Sample Medium/Matrix",
+    "Collection Method/Sample Type",
+    "Study Area",
+    "Site Type",
+    "Sampling Timespan",
+    "Sampling Frequency",
+    "Temporal Conditions",
+    "Analyte",
+    "Sensitivity/LOD/LOQ",
+    "Summary Statistics Type",
+    "Supporting Parameters"
+  )
+
+  apply_validations <- function(x) {
+    x |>
+      col_vals_in_set(
+        label = "Check criterion_id is in the expected relevance set (RV1-RV11)",
+        columns = criterion_id,
+        set = valid_criterion_ids,
+        actions = actions
+      ) |>
+      col_vals_in_set(
+        label = "Check criterion_title is in the expected relevance set",
+        columns = criterion_title,
+        set = valid_criterion_titles,
+        actions = actions
+      ) |>
+      col_vals_between(
+        label = "Check score is an integer between 0 and 4",
+        columns = score,
+        left = 0L,
+        right = 4L,
+        actions = actions
+      ) |>
+      col_vals_in_set(
+        label = "Check required_recommended is 'Required' or 'Recommended'",
+        columns = required_recommended,
+        set = c("Required", "Recommended"),
+        actions = actions
+      )
+  }
+
+  pb_validate_edata_table(
+    data = data,
+    table_name = "CREED Relevance Data",
+    validation_steps = apply_validations,
+    agent = agent,
+    actions = actions
+  )
+}
+
 # ## CREED Scores validation ----
 
 #' Run pointblank validation on a CREED Scores table
