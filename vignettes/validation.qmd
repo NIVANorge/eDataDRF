@@ -36,11 +36,10 @@ Typically when campaign data are generated/extracted for a data object the resul
 
 ```{r}
 #| label: campaign-validation
-dude <- example_campaign_tibble() |>
+example_campaign_tibble() |>
   pb_validate_campaign() |> 
-  interrogate()
-  
-get_agent_report(dude, display_table = TRUE)
+  interrogate() |> 
+  get_agent_report()
 ```
 
 # References data validation
@@ -48,7 +47,9 @@ get_agent_report(dude, display_table = TRUE)
 ```{r}
 #| label: references-validation
 example_references_tibble() |>
-  pb_validate_reference()
+  pb_validate_reference() |> 
+    interrogate() |> 
+  get_agent_report()
 
 ```
 
@@ -57,12 +58,10 @@ example_references_tibble() |>
 ```{r}
 #| label: sites-validation
 
-
-dude2 <- example_sites_tibble() |>
+example_sites_tibble() |>
   pb_validate_sites() |> 
-  interrogate()
-  
-get_agent_report(dude2, display_table = TRUE)
+    interrogate() |> 
+  get_agent_report()
 ```
 
 # Parameters data validation
@@ -70,7 +69,9 @@ get_agent_report(dude2, display_table = TRUE)
 ```{r}
 #| label: parameters-validation
 example_parameters_tibble() |>
-  pb_validate_parameters()
+  pb_validate_parameters() |> 
+      interrogate() |> 
+  get_agent_report()
 ```
 
 # Compartments data validation
@@ -79,8 +80,8 @@ example_parameters_tibble() |>
 
 ```{r}
 #| label: compartments-validation
-# example_compartments_tibble() |>
-#   pb_validate_compartments()
+example_compartments_tibble() |> 
+  pb_validate_compartments()
 ```
 
 # Samples data validation
@@ -88,7 +89,9 @@ example_parameters_tibble() |>
 ```{r}
 #| label: samples-validation
 example_samples_tibble() |>
-  pb_validate_samples()
+  pb_validate_samples() |> 
+      interrogate() |> 
+  get_agent_report()
 ```
 
 # Biota data validation
@@ -96,7 +99,9 @@ example_samples_tibble() |>
 ```{r}
 #| label: biota-validation
 example_biota_tibble() |>
-  pb_validate_biota()
+  pb_validate_biota() |> 
+      interrogate() |> 
+  get_agent_report()
 ```
 
 # Methods data validation
@@ -104,7 +109,9 @@ example_biota_tibble() |>
 ```{r}
 #| label: methods-validation
 example_methods_tibble() |>
-  pb_validate_methods()
+  pb_validate_methods() |> 
+      interrogate() |> 
+  get_agent_report()
 ```
 
 # Measurements data validation
@@ -112,7 +119,9 @@ example_methods_tibble() |>
 ```{r}
 #| label: measurements-validation
 example_measurements_tibble() |>
-  pb_validate_measurements()
+  pb_validate_measurements() |>
+  interrogate() |>
+  get_agent_report()
 ```
 
 # CREED data validation
