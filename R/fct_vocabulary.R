@@ -129,7 +129,7 @@ countries_vocabulary <- function() {
 #'
 #' @details
 #' Provides ocean and sea names from the International Hydrographic Organisation (IHO)
-#' regions dataset, regions dataset (marineregions.org, World Seas IHO v3).
+#' regions dataset, regions dataset (\url{https://www.marineregions.org/downloads.php}, World Seas IHO v3).
 #'
 #' @return A character vector of ocean name options
 #' @family site
@@ -325,7 +325,7 @@ altitude_units_vocabulary <- function() {
 #' @details
 #' Combines quality parameters with chemical parameters from the
 #' \href{http://classyfire.wishartlab.com}{ClassyFire} chemical taxonomy
-#' (Djoumbou Feunang et al. 2016).
+#' (Djoumbou Feunang et al. 2016, \doi{10.1186/s13321-016-0174-y}, reused non-commercially).
 #' Quality parameters are read from quality_parameters.parquet and chemical
 #' parameters from ClassyFire_Taxonomy_2025_02.parquet. The resulting dataset includes
 #' columns for parameter classification, chemical identifiers (InChIKey, PubChem CID,
@@ -427,14 +427,15 @@ parameter_types_sub_vocabulary <- function() {
   parameters <- parameters_vocabulary()
 
   # Rather messy way to include non-data values at the start of the vector
-  parameters |>
+  parameters_sorted <- parameters |>
     select(PARAMETER_TYPE_SUB) |>
     distinct() |>
     pull(PARAMETER_TYPE_SUB) |>
     setdiff("Other") |>
     append(c("Mixture")) |>
-    sort() |>
-    prepend(c("Not relevant", "Not reported", "Other"))
+    sort()
+
+  return(c("Not relevant", "Not reported", "Other", parameters_sorted))
 }
 
 #' Measured types controlled vocabulary
@@ -517,13 +518,18 @@ environ_compartments_sub_vocabulary <- function() {
       "Biota, Aquatic" = "Biota, Aquatic",
       "Biota, Atmospheric" = "Biota, Atmospheric",
       "Biota, Other" = "Biota, Other"
-    )
+    ),
+    "Not relevant" = c(),
+    "Not reported" = c(),
+    "Other" = c()
   )
 }
 
 #' Environmental compartments controlled vocabulary
 #'
 #' Returns controlled vocabulary options for broad environmental compartments.
+#' Calls \code{names(environ_compartments_sub_vocabulary())} to return the first
+#' level of the list.
 #'
 #' @return A character vector of environmental compartment options
 #' @family compartment
@@ -531,15 +537,7 @@ environ_compartments_sub_vocabulary <- function() {
 #' environ_compartments_vocabulary()
 #' @export
 environ_compartments_vocabulary <- function() {
-  c(
-    "Aquatic",
-    "Atmospheric",
-    "Terrestrial",
-    "Biota",
-    "Not relevant",
-    "Not reported",
-    "Other"
-  )
+  names(environ_compartments_sub_vocabulary())
 }
 
 #' Measured categories controlled vocabulary
@@ -572,7 +570,8 @@ measured_categories_vocabulary <- function() {
 #' Provides comprehensive species data including common names, scientific names, kingdom,
 #' and species group classifications. Data is read from ecotox_2025_06_12_species.parquet
 #' and species group classifications. Data is read from ecotox_2025_06_12_species.parquet.
-#' Additional entries for "Other" and "Ecosystem" are included.
+#' Additional entries for "Other" and "Ecosystem" are included. Data retrieved from
+#' \url{https://cfpub.epa.gov/ecotox/}, 2025.06.12.
 #'
 #' Data source: extdata/ecotox_2025_06_12_species.parquet
 #'

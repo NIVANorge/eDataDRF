@@ -25,9 +25,30 @@ are non-null, that environmental compartment fields contain values within
 their controlled vocabularies, and that each ENVIRON_COMPARTMENT_SUB value
 is consistent with its corresponding ENVIRON_COMPARTMENT parent.
 }
+\examples{
+\dontrun{
+pb_validate_samples(example_samples_tibble())
+}
+}
 \seealso{
 \code{\link[=pb_validate_edata_table]{pb_validate_edata_table()}} for the underlying validation framework,
 \code{\link[=pb_validate_all_edata_tables]{pb_validate_all_edata_tables()}} to validate all tables at once,
 \code{\link[=environ_compartments_sub_vocabulary]{environ_compartments_sub_vocabulary()}} for the compartment hierarchy used in
-the consistency check.
+the consistency check,
+\code{\link[=example_samples_tibble]{example_samples_tibble()}} for an example Samples table.
+
+Other validation: 
+\code{\link{pb_validate_CREED_data_relevance}()},
+\code{\link{pb_validate_CREED_data_reliability}()},
+\code{\link{pb_validate_CREED_scores}()},
+\code{\link{pb_validate_all_edata_tables}()},
+\code{\link{pb_validate_biota}()},
+\code{\link{pb_validate_campaign}()},
+\code{\link{pb_validate_edata_table}()},
+\code{\link{pb_validate_measurements}()},
+\code{\link{pb_validate_methods}()},
+\code{\link{pb_validate_parameters}()},
+\code{\link{pb_validate_reference}()},
+\code{\link{pb_validate_sites}()}
 }
+\concept{validation}

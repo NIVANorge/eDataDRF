@@ -348,18 +348,6 @@ test_that("protocol_options_vocabulary combines all protocols", {
   ))
 })
 
-# Test Character Limits Function ----
-
-test_that("reference_character_limits returns named list", {
-  result <- reference_character_limits()
-
-  expect_type(result, "list")
-  expect_true(!is.null(names(result)))
-  expect_true(all(sapply(result, is.numeric)))
-  expect_true("DOI" %in% names(result))
-  expect_equal(result$DOI, 200)
-})
-
 # Test Functions Requiring Data Files ----
 # These may need to be skipped if data files aren't available
 

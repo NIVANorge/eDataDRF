@@ -29,7 +29,28 @@ compliance for a CREED reliability data table in the format produced by
 are within the expected sets, scores are integers between 0 and 4, and
 required/recommended classification is valid.
 }
+\examples{
+\dontrun{
+pb_validate_CREED_data_reliability(example_CREED_reliability_tibble())
+}
+}
 \seealso{
 \code{\link[=pb_validate_edata_table]{pb_validate_edata_table()}} for the underlying validation framework,
-\code{\link[=pb_validate_CREED_data_relevance]{pb_validate_CREED_data_relevance()}} for the relevance equivalent.
+\code{\link[=pb_validate_CREED_data_relevance]{pb_validate_CREED_data_relevance()}} for the relevance equivalent,
+\code{\link[=example_CREED_reliability_tibble]{example_CREED_reliability_tibble()}} for an example CREED reliability table.
+
+Other validation: 
+\code{\link{pb_validate_CREED_data_relevance}()},
+\code{\link{pb_validate_CREED_scores}()},
+\code{\link{pb_validate_all_edata_tables}()},
+\code{\link{pb_validate_biota}()},
+\code{\link{pb_validate_campaign}()},
+\code{\link{pb_validate_edata_table}()},
+\code{\link{pb_validate_measurements}()},
+\code{\link{pb_validate_methods}()},
+\code{\link{pb_validate_parameters}()},
+\code{\link{pb_validate_reference}()},
+\code{\link{pb_validate_samples}()},
+\code{\link{pb_validate_sites}()}
 }
+\concept{validation}

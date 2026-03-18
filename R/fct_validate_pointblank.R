@@ -29,9 +29,23 @@
 #'
 #' In pipeline mode, failed rows are automatically removed from the data.
 #'
+#' @family validation
+#'
 #' @importFrom pointblank create_agent interrogate action_levels get_agent_report
 #' @importFrom glue glue
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' my_steps <- function(x) {
+#'   x |> col_vals_not_null(columns = id)
+#' }
+#' pb_validate_edata_table(
+#'   data       = my_data,
+#'   table_name = "MyTable",
+#'   validation_steps = my_steps
+#' )
+#' }
 pb_validate_edata_table <- function(
   data,
   table_name,
@@ -72,10 +86,18 @@ pb_validate_edata_table <- function(
 #'   If agent = FALSE, the input data with validation failures removed.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
-#'   [pb_validate_all_edata_tables()] to validate all tables at once.
+#'   [pb_validate_all_edata_tables()] to validate all tables at once,
+#'   [example_campaign_tibble()] for an example Campaign table.
+#'
+#' @family validation
 #'
 #' @importFrom pointblank col_vals_not_null col_vals_between rows_distinct action_levels col_vals_lte
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' pb_validate_campaign(example_campaign_tibble())
+#' }
 pb_validate_campaign <- function(
   data,
   actions = action_levels(),
@@ -97,8 +119,8 @@ pb_validate_campaign <- function(
       #   columns = CAMPAIGN_NAME_SHORT,
       #   value = vars(expected_year),
       #   preconditions = ~ . |>
-      #     dplyr::filter(!str_detect(CAMPAIGN_NAME_SHORT, "Vm")) |>
-      #     dplyr::mutate(expected_year = str_extract(source_file, "\\d{4}")),
+      #     filter(!str_detect(CAMPAIGN_NAME_SHORT, "Vm")) |>
+      #     mutate(expected_year = str_extract(source_file, "\\d{4}")),
       #   actions = actions
       # ) |>
 
@@ -161,10 +183,19 @@ pb_validate_campaign <- function(
 #'   If agent = FALSE, the input data with validation failures removed.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
-#'   [pb_validate_all_edata_tables()] to validate all tables at once.
+#'   [pb_validate_all_edata_tables()] to validate all tables at once,
+#'   [example_references_tibble()] for an example Reference table.
 #'
-#' @importFrom pointblank col_vals_not_null col_vals_regex col_vals_not_equal col_vals_gte col_vals_lte action_levels
+#' @family validation
+#'
+#' @importFrom pointblank col_vals_not_null col_vals_regex col_vals_not_equal col_vals_gte col_vals_lte col_vals_in_set col_vals_between action_levels
+#' @importFrom dplyr filter
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' pb_validate_reference(example_references_tibble())
+#' }
 pb_validate_reference <- function(
   data,
   actions = action_levels(),
@@ -224,7 +255,7 @@ pb_validate_reference <- function(
         label = "Check PERIODICAL_JOURNAL isn't blank when REFERENCE_TYPE is 'Journal Article'",
         preconditions = \(x) {
           x |>
-            dplyr::filter(REFERENCE_TYPE == "Journal Article")
+            filter(REFERENCE_TYPE == "Journal Article")
         },
         columns = PERIODICAL_JOURNAL,
         actions = actions
@@ -233,7 +264,7 @@ pb_validate_reference <- function(
         label = "Check PUBLISHER isn't blank when REFERENCE_TYPE is 'Book' or 'Report'",
         preconditions = \(x) {
           x |>
-            dplyr::filter(REFERENCE_TYPE %in% c("Book", "Report"))
+            filter(REFERENCE_TYPE %in% c("Book", "Report"))
         },
         columns = PUBLISHER,
         actions = actions
@@ -242,7 +273,7 @@ pb_validate_reference <- function(
         label = "Check INSTITUTION isn't blank when REFERENCE_TYPE is 'Report'",
         preconditions = \(x) {
           x |>
-            dplyr::filter(REFERENCE_TYPE %in% c("Report"))
+            filter(REFERENCE_TYPE %in% c("Report"))
         },
         columns = INSTITUTION,
         actions = actions
@@ -276,10 +307,19 @@ pb_validate_reference <- function(
 #'   If agent = FALSE, the input data with validation failures removed.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
-#'   [pb_validate_all_edata_tables()] to validate all tables at once.
+#'   [pb_validate_all_edata_tables()] to validate all tables at once,
+#'   [example_parameters_tibble()] for an example Parameters table.
 #'
-#' @importFrom pointblank col_vals_not_null col_vals_equal action_levels
+#' @family validation
+#'
+#' @importFrom pointblank col_vals_not_null col_vals_in_set col_vals_equal action_levels
+#' @importFrom dplyr pull
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' pb_validate_parameters(example_parameters_tibble())
+#' }
 pb_validate_parameters <- function(
   data,
   actions = action_levels(),
@@ -332,10 +372,21 @@ pb_validate_parameters <- function(
 #'   If agent = FALSE, the input data with validation failures removed.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
-#'   [pb_validate_all_edata_tables()] to validate all tables at once.
+#'   [pb_validate_all_edata_tables()] to validate all tables at once,
+#'   [example_sites_tibble()] for an example Sites table.
+#'
+#' @family validation
 #'
 #' @importFrom pointblank col_vals_not_null col_vals_in_set col_vals_between rows_distinct action_levels
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' pb_validate_sites(example_sites_tibble())
+#'
+#' # Constrain latitude to the northern hemisphere
+#' pb_validate_sites(example_sites_tibble(), northern_hemisphere = TRUE)
+#' }
 pb_validate_sites <- function(
   data,
   actions = action_levels(),
@@ -453,9 +504,6 @@ pb_validate_sites <- function(
     actions = actions
   )
 }
-
-# ## Samples validation ----
-
 #' Run pointblank validation on a Samples table
 #'
 #' Applies pointblank validation rules to check data quality and schema
@@ -475,37 +523,36 @@ pb_validate_sites <- function(
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
 #'   [environ_compartments_sub_vocabulary()] for the compartment hierarchy used in
-#'   the consistency check.
+#'   the consistency check,
+#'   [example_samples_tibble()] for an example Samples table.
+#'
+#' @family validation
 #'
 #' @importFrom pointblank col_vals_not_null col_vals_in_set action_levels
 #' @importFrom purrr flatten
+#' @importFrom dplyr filter
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' pb_validate_samples(example_samples_tibble())
+#' }
 pb_validate_samples <- function(
   data,
   actions = action_levels(),
   agent = TRUE
 ) {
-  # Build valid (compartment, sub-compartment) pairs from the vocabulary hierarchy
   compartment_sub_vocab <- environ_compartments_sub_vocabulary()
-  valid_pairs <- do.call(
-    rbind,
-    lapply(names(compartment_sub_vocab), function(comp) {
-      data.frame(
-        ENVIRON_COMPARTMENT = comp,
-        ENVIRON_COMPARTMENT_SUB = unname(compartment_sub_vocab[[comp]]),
-        stringsAsFactors = FALSE
-      )
-    })
-  )
+
+  # Only compartments that actually have sub-values defined
+  non_null_compartments <- Filter(Negate(is.null), compartment_sub_vocab)
 
   apply_validations <- function(x) {
-    x |>
-      # Core identifiers
+    # Start with core identifier and flat vocabulary checks
+    agent_or_data <- x |>
       col_vals_not_null(columns = SAMPLE_ID, actions = actions) |>
       col_vals_not_null(columns = SITE_CODE, actions = actions) |>
       col_vals_not_null(columns = PARAMETER_NAME, actions = actions) |>
-
-      # Environmental compartments — individual vocabulary checks
       col_vals_in_set(
         columns = ENVIRON_COMPARTMENT,
         set = environ_compartments_vocabulary(),
@@ -515,25 +562,24 @@ pb_validate_samples <- function(
         columns = ENVIRON_COMPARTMENT_SUB,
         set = flatten(compartment_sub_vocab),
         actions = actions
-      ) |>
-
-      # Check ENVIRON_COMPARTMENT_SUB is consistent with ENVIRON_COMPARTMENT
-      # using the hierarchy defined in environ_compartments_sub_vocabulary()
-      col_vals_in_set(
-        label = "Check ENVIRON_COMPARTMENT_SUB belongs to its ENVIRON_COMPARTMENT parent",
-        columns = ENVIRON_COMPARTMENT_SUB,
-        set = valid_pairs$ENVIRON_COMPARTMENT_SUB,
-        preconditions = \(x) {
-          x |>
-            dplyr::inner_join(valid_pairs, by = "ENVIRON_COMPARTMENT") |>
-            dplyr::filter(
-              ENVIRON_COMPARTMENT_SUB.x != ENVIRON_COMPARTMENT_SUB.y
-            ) |>
-            dplyr::select(-ENVIRON_COMPARTMENT_SUB.y) |>
-            dplyr::rename(ENVIRON_COMPARTMENT_SUB = ENVIRON_COMPARTMENT_SUB.x)
-        },
-        actions = actions
       )
+
+    # Add one parent-child consistency check per non-NULL compartment
+    for (comp in names(non_null_compartments)) {
+      valid_subs <- non_null_compartments[[comp]]
+      agent_or_data <- agent_or_data |>
+        col_vals_in_set(
+          label = paste("Check ENVIRON_COMPARTMENT_SUB is valid for", comp),
+          columns = ENVIRON_COMPARTMENT_SUB,
+          preconditions = (function(comp) {
+            \(x) x |> filter(ENVIRON_COMPARTMENT == comp)
+          })(comp),
+          set = valid_subs,
+          actions = actions
+        )
+    }
+
+    agent_or_data
   }
 
   pb_validate_edata_table(
@@ -564,10 +610,19 @@ pb_validate_samples <- function(
 #'   If agent = FALSE, the input data with validation failures removed.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
-#'   [pb_validate_all_edata_tables()] to validate all tables at once.
+#'   [pb_validate_all_edata_tables()] to validate all tables at once,
+#'   [example_biota_tibble()] for an example Biota table.
+#'
+#' @family validation
 #'
 #' @importFrom pointblank col_vals_not_null col_vals_equal col_vals_in_set action_levels
+#' @importFrom dplyr pull
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' pb_validate_biota(example_biota_tibble())
+#' }
 pb_validate_biota <- function(
   data,
   actions = action_levels(),
@@ -661,12 +716,20 @@ pb_validate_biota <- function(
 #'   [sample_id_regex()] for the sample ID format validated here,
 #'   [measured_types_vocabulary()] for valid MEASURED_TYPE values,
 #'   [parameter_unit_vocabulary()] for valid unit values,
-#'   [protocol_options_vocabulary()] for valid protocol names.
+#'   [protocol_options_vocabulary()] for valid protocol names,
+#'   [example_measurements_tibble()] for an example Measurements table.
+#'
+#' @family validation
 #'
 #' @importFrom pointblank col_vals_not_null col_vals_equal col_vals_gte col_vals_lte col_vals_in_set col_vals_not_equal col_vals_regex action_levels
 #' @importFrom purrr flatten
-#' @importFrom dplyr pull
+#' @importFrom dplyr pull filter
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' pb_validate_measurements(example_measurements_tibble())
+#' }
 pb_validate_measurements <- function(
   data,
   actions = action_levels(),
@@ -717,13 +780,13 @@ pb_validate_measurements <- function(
       # # When MEASURED_FLAG is blank, check we have a MEASURED_VALUE and valid MEASURED_UNIT
       col_vals_not_null(
         label = "When MEASURED_FLAG is blank, check MEASURED_VALUE isn't null",
-        preconditions = \(x) x |> dplyr::filter(MEASURED_FLAG == ""),
+        preconditions = \(x) x |> filter(MEASURED_FLAG == ""),
         columns = MEASURED_VALUE,
         actions = actions
       ) |>
       col_vals_in_set(
         label = "When MEASURED_FLAG is blank, check MEASURED_UNIT is in parameter_unit_vocabulary()",
-        preconditions = \(x) x |> dplyr::filter(MEASURED_FLAG == ""),
+        preconditions = \(x) x |> filter(MEASURED_FLAG == ""),
         columns = MEASURED_UNIT,
         set = parameter_unit_vocabulary() |> pull(MEASURED_UNIT),
         actions = actions
@@ -755,28 +818,28 @@ pb_validate_measurements <- function(
       # # See protocol_id_regex() for the pattern definition
       col_vals_regex(
         label = "Check SAMPLING_PROTOCOL matches protocol_id_regex()",
-        preconditions = \(x) x |> dplyr::filter(!is.na(SAMPLING_PROTOCOL)),
+        preconditions = \(x) x |> filter(!is.na(SAMPLING_PROTOCOL)),
         columns = SAMPLING_PROTOCOL,
         regex = protocol_id_regex(),
         actions = actions
       ) |>
       col_vals_regex(
         label = "Check EXTRACTION_PROTOCOL matches protocol_id_regex()",
-        preconditions = \(x) x |> dplyr::filter(!is.na(EXTRACTION_PROTOCOL)),
+        preconditions = \(x) x |> filter(!is.na(EXTRACTION_PROTOCOL)),
         columns = EXTRACTION_PROTOCOL,
         regex = protocol_id_regex(),
         actions = actions
       ) |>
       col_vals_regex(
         label = "Check FRACTIONATION_PROTOCOL matches protocol_id_regex()",
-        preconditions = \(x) x |> dplyr::filter(!is.na(FRACTIONATION_PROTOCOL)),
+        preconditions = \(x) x |> filter(!is.na(FRACTIONATION_PROTOCOL)),
         columns = FRACTIONATION_PROTOCOL,
         regex = protocol_id_regex(),
         actions = actions
       ) |>
       col_vals_regex(
         label = "Check ANALYTICAL_PROTOCOL matches protocol_id_regex()",
-        preconditions = \(x) x |> dplyr::filter(!is.na(ANALYTICAL_PROTOCOL)),
+        preconditions = \(x) x |> filter(!is.na(ANALYTICAL_PROTOCOL)),
         columns = ANALYTICAL_PROTOCOL,
         regex = protocol_id_regex(),
         actions = actions
@@ -798,7 +861,7 @@ pb_validate_measurements <- function(
       # # See parameter_unit_vocabulary() for valid unit values
       col_vals_in_set(
         label = "When LOQ_VALUE is present, check LOQ_UNIT is in parameter_unit_vocabulary()",
-        preconditions = \(x) x |> dplyr::filter(!is.na(LOQ_VALUE)),
+        preconditions = \(x) x |> filter(!is.na(LOQ_VALUE)),
         columns = LOQ_UNIT,
         set = parameter_unit_vocabulary() |> pull(MEASURED_UNIT),
         actions = actions
@@ -807,7 +870,7 @@ pb_validate_measurements <- function(
       # # See parameter_unit_vocabulary() for valid unit values
       col_vals_in_set(
         label = "When LOD_VALUE is present, check LOD_UNIT is in parameter_unit_vocabulary()",
-        preconditions = \(x) x |> dplyr::filter(!is.na(LOD_VALUE)),
+        preconditions = \(x) x |> filter(!is.na(LOD_VALUE)),
         columns = LOD_UNIT,
         set = parameter_unit_vocabulary() |> pull(MEASURED_UNIT),
         actions = actions
@@ -870,11 +933,19 @@ pb_validate_measurements <- function(
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
 #'   [protocol_id_regex()] for the protocol ID format validated here,
 #'   [protocol_categories_vocabulary()] for valid protocol category values,
-#'   [protocol_options_vocabulary()] for valid protocol name values.
+#'   [protocol_options_vocabulary()] for valid protocol name values,
+#'   [example_methods_tibble()] for an example Methods table.
+#'
+#' @family validation
 #'
 #' @importFrom pointblank col_vals_not_null col_vals_in_set col_vals_regex action_levels
 #' @importFrom dplyr pull
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' pb_validate_methods(example_methods_tibble())
+#' }
 pb_validate_methods <- function(
   data,
   actions = action_levels(),
@@ -934,10 +1005,18 @@ pb_validate_methods <- function(
 #'   If agent = FALSE, the input data with validation failures removed.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
-#'   [pb_validate_CREED_data_relevance()] for the relevance equivalent.
+#'   [pb_validate_CREED_data_relevance()] for the relevance equivalent,
+#'   [example_CREED_reliability_tibble()] for an example CREED reliability table.
+#'
+#' @family validation
 #'
 #' @importFrom pointblank col_vals_in_set col_vals_between action_levels
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' pb_validate_CREED_data_reliability(example_CREED_reliability_tibble())
+#' }
 pb_validate_CREED_data_reliability <- function(
   data,
   actions = action_levels(),
@@ -1042,10 +1121,18 @@ pb_validate_CREED_data_reliability <- function(
 #'   If agent = FALSE, the input data with validation failures removed.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
-#'   [pb_validate_CREED_data_reliability()] for the reliability equivalent.
+#'   [pb_validate_CREED_data_reliability()] for the reliability equivalent,
+#'   [example_CREED_relevance_tibble()] for an example CREED relevance table.
+#'
+#' @family validation
 #'
 #' @importFrom pointblank col_vals_in_set col_vals_between action_levels
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' pb_validate_CREED_data_relevance(example_CREED_relevance_tibble())
+#' }
 pb_validate_CREED_data_relevance <- function(
   data,
   actions = action_levels(),
@@ -1136,11 +1223,19 @@ pb_validate_CREED_data_relevance <- function(
 #'   If agent = FALSE, the input data with validation failures removed.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
-#'   [pb_validate_all_edata_tables()] to validate all tables at once.
+#'   [pb_validate_all_edata_tables()] to validate all tables at once,
+#'   [example_CREED_scores_tibble()] for an example CREED Scores table.
+#'
+#' @family validation
 #'
 #' @importFrom pointblank col_vals_not_null col_vals_not_equal col_vals_in_set col_vals_regex action_levels
 #' @export
-pb_validate_creed_scores <- function(
+#'
+#' @examples
+#' \dontrun{
+#' pb_validate_CREED_scores(example_CREED_scores_tibble())
+#' }
+pb_validate_CREED_scores <- function(
   data,
   actions = action_levels(),
   agent = TRUE
@@ -1225,9 +1320,38 @@ pb_validate_creed_scores <- function(
 #' @seealso [pb_validate_campaign()], [pb_validate_reference()],
 #'   [pb_validate_parameters()], [pb_validate_sites()], [pb_validate_samples()],
 #'   [pb_validate_biota()], [pb_validate_measurements()], [pb_validate_methods()],
-#'   [pb_validate_creed_scores()]
+#'   [pb_validate_CREED_scores()],
+#'   [example_campaign_tibble()], [example_references_tibble()],
+#'   [example_parameters_tibble()], [example_sites_tibble()],
+#'   [example_measurements_tibble()]
+#'
+#' @family validation
 #'
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' agents <- pb_validate_all_edata_tables(
+#'   campaign     = example_campaign_tibble(),
+#'   reference    = example_references_tibble(),
+#'   parameters   = example_parameters_tibble(),
+#'   sites        = example_sites_tibble(),
+#'   measurements = example_measurements_tibble()
+#' )
+#'
+#' # Include optional tables
+#' agents <- pb_validate_all_edata_tables(
+#'   campaign     = example_campaign_tibble(),
+#'   reference    = example_references_tibble(),
+#'   parameters   = example_parameters_tibble(),
+#'   sites        = example_sites_tibble(),
+#'   measurements = example_measurements_tibble(),
+#'   samples      = example_samples_tibble(),
+#'   biota        = example_biota_tibble(),
+#'   methods      = example_methods_tibble(),
+#'   creed_scores = example_CREED_scores_tibble()
+#' )
+#' }
 pb_validate_all_edata_tables <- function(
   campaign,
   reference,
@@ -1264,7 +1388,7 @@ pb_validate_all_edata_tables <- function(
   }
 
   if (!is.null(creed_scores)) {
-    results$creed_scores <- pb_validate_creed_scores(
+    results$creed_scores <- pb_validate_CREED_scores(
       creed_scores,
       actions,
       agent
@@ -1272,69 +1396,4 @@ pb_validate_all_edata_tables <- function(
   }
 
   return(results)
-}
-
-
-#' Wrapper for col_vals_in_set with enhanced error reporting
-#'
-#' Validates that column values belong to an allowed set, and additionally
-#' emits a warning listing any values not found in the set. Useful for
-#' diagnosing failures during interactive validation workflows.
-#'
-#' @param x A data frame or pointblank agent to validate
-#' @param columns Column(s) to validate, supplied using tidy-select syntax
-#' @param set Character vector of valid values
-#' @param actions Action levels for pointblank
-#' @param value_name Optional descriptive name for the values being validated,
-#'   used in the warning message (e.g., `"Reference IDs"`). Defaults to the
-#'   column name if not supplied.
-#'
-#' @return The input `x` with the validation step applied. Any values not in
-#'   `set` are reported via a warning before validation runs.
-#'
-#' @seealso [pointblank::col_vals_in_set()]
-#'
-#' @importFrom pointblank col_vals_in_set action_levels
-#' @importFrom dplyr filter pull
-#' @importFrom rlang as_name enquo
-#' @export
-col_vals_in_set_verbose <- function(
-  x,
-  columns,
-  set,
-  actions,
-  value_name = NULL
-) {
-  `%notin%` <- Negate(`%in%`)
-  # Capture the column name for reporting
-  col_name <- rlang::as_name(rlang::enquo(columns))
-
-  # Find missing values before validation
-  missing_vals <- x |>
-    filter({{ columns }} %notin% set) |>
-    pull({{ columns }}) |>
-    unique()
-
-  # Run the validation
-  result <- col_vals_in_set(
-    x,
-    columns = {{ columns }},
-    set = set,
-    actions = actions
-  )
-
-  # If there are missing values, issue a detailed warning
-  if (length(missing_vals) > 0) {
-    value_desc <- if (!is.null(value_name)) value_name else col_name
-    warning(
-      sprintf(
-        "%s not found in reference set: %s",
-        value_desc,
-        paste(missing_vals, collapse = ", ")
-      ),
-      call. = FALSE
-    )
-  }
-
-  result
 }

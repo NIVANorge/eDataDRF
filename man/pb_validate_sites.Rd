@@ -33,7 +33,31 @@ non-null and unique, geographic feature and country fields are within their
 controlled vocabularies, coordinates are within valid ranges, and required
 metadata fields are present.
 }
+\examples{
+\dontrun{
+pb_validate_sites(example_sites_tibble())
+
+# Constrain latitude to the northern hemisphere
+pb_validate_sites(example_sites_tibble(), northern_hemisphere = TRUE)
+}
+}
 \seealso{
 \code{\link[=pb_validate_edata_table]{pb_validate_edata_table()}} for the underlying validation framework,
-\code{\link[=pb_validate_all_edata_tables]{pb_validate_all_edata_tables()}} to validate all tables at once.
+\code{\link[=pb_validate_all_edata_tables]{pb_validate_all_edata_tables()}} to validate all tables at once,
+\code{\link[=example_sites_tibble]{example_sites_tibble()}} for an example Sites table.
+
+Other validation: 
+\code{\link{pb_validate_CREED_data_relevance}()},
+\code{\link{pb_validate_CREED_data_reliability}()},
+\code{\link{pb_validate_CREED_scores}()},
+\code{\link{pb_validate_all_edata_tables}()},
+\code{\link{pb_validate_biota}()},
+\code{\link{pb_validate_campaign}()},
+\code{\link{pb_validate_edata_table}()},
+\code{\link{pb_validate_measurements}()},
+\code{\link{pb_validate_methods}()},
+\code{\link{pb_validate_parameters}()},
+\code{\link{pb_validate_reference}()},
+\code{\link{pb_validate_samples}()}
 }
+\concept{validation}

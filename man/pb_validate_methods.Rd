@@ -25,10 +25,31 @@ format produced by \code{\link[=generate_protocol_id]{generate_protocol_id()}}, 
 name fields are non-null, and that protocol category and name values are
 within their controlled vocabularies.
 }
+\examples{
+\dontrun{
+pb_validate_methods(example_methods_tibble())
+}
+}
 \seealso{
 \code{\link[=pb_validate_edata_table]{pb_validate_edata_table()}} for the underlying validation framework,
 \code{\link[=pb_validate_all_edata_tables]{pb_validate_all_edata_tables()}} to validate all tables at once,
 \code{\link[=protocol_id_regex]{protocol_id_regex()}} for the protocol ID format validated here,
 \code{\link[=protocol_categories_vocabulary]{protocol_categories_vocabulary()}} for valid protocol category values,
-\code{\link[=protocol_options_vocabulary]{protocol_options_vocabulary()}} for valid protocol name values.
+\code{\link[=protocol_options_vocabulary]{protocol_options_vocabulary()}} for valid protocol name values,
+\code{\link[=example_methods_tibble]{example_methods_tibble()}} for an example Methods table.
+
+Other validation: 
+\code{\link{pb_validate_CREED_data_relevance}()},
+\code{\link{pb_validate_CREED_data_reliability}()},
+\code{\link{pb_validate_CREED_scores}()},
+\code{\link{pb_validate_all_edata_tables}()},
+\code{\link{pb_validate_biota}()},
+\code{\link{pb_validate_campaign}()},
+\code{\link{pb_validate_edata_table}()},
+\code{\link{pb_validate_measurements}()},
+\code{\link{pb_validate_parameters}()},
+\code{\link{pb_validate_reference}()},
+\code{\link{pb_validate_samples}()},
+\code{\link{pb_validate_sites}()}
 }
+\concept{validation}

@@ -48,3 +48,31 @@ In agent mode, the agent object can be used to:
 
 In pipeline mode, failed rows are automatically removed from the data.
 }
+\examples{
+\dontrun{
+my_steps <- function(x) {
+  x |> col_vals_not_null(columns = id)
+}
+pb_validate_edata_table(
+  data       = my_data,
+  table_name = "MyTable",
+  validation_steps = my_steps
+)
+}
+}
+\seealso{
+Other validation: 
+\code{\link{pb_validate_CREED_data_relevance}()},
+\code{\link{pb_validate_CREED_data_reliability}()},
+\code{\link{pb_validate_CREED_scores}()},
+\code{\link{pb_validate_all_edata_tables}()},
+\code{\link{pb_validate_biota}()},
+\code{\link{pb_validate_campaign}()},
+\code{\link{pb_validate_measurements}()},
+\code{\link{pb_validate_methods}()},
+\code{\link{pb_validate_parameters}()},
+\code{\link{pb_validate_reference}()},
+\code{\link{pb_validate_samples}()},
+\code{\link{pb_validate_sites}()}
+}
+\concept{validation}

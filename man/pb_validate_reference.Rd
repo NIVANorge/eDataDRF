@@ -25,7 +25,28 @@ the expected format, controlled vocabulary fields are valid, required fields
 are non-null, publication year and access date fall within valid ranges, and
 conditionally mandatory fields are present based on reference type.
 }
+\examples{
+\dontrun{
+pb_validate_reference(example_references_tibble())
+}
+}
 \seealso{
 \code{\link[=pb_validate_edata_table]{pb_validate_edata_table()}} for the underlying validation framework,
-\code{\link[=pb_validate_all_edata_tables]{pb_validate_all_edata_tables()}} to validate all tables at once.
+\code{\link[=pb_validate_all_edata_tables]{pb_validate_all_edata_tables()}} to validate all tables at once,
+\code{\link[=example_references_tibble]{example_references_tibble()}} for an example Reference table.
+
+Other validation: 
+\code{\link{pb_validate_CREED_data_relevance}()},
+\code{\link{pb_validate_CREED_data_reliability}()},
+\code{\link{pb_validate_CREED_scores}()},
+\code{\link{pb_validate_all_edata_tables}()},
+\code{\link{pb_validate_biota}()},
+\code{\link{pb_validate_campaign}()},
+\code{\link{pb_validate_edata_table}()},
+\code{\link{pb_validate_measurements}()},
+\code{\link{pb_validate_methods}()},
+\code{\link{pb_validate_parameters}()},
+\code{\link{pb_validate_samples}()},
+\code{\link{pb_validate_sites}()}
 }
+\concept{validation}

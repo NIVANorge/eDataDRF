@@ -11,6 +11,8 @@ A character vector of environmental compartment options
 }
 \description{
 Returns controlled vocabulary options for broad environmental compartments.
+Calls \code{names(environ_compartments_sub_vocabulary())} to return the first
+level of the list.
 }
 \examples{
 environ_compartments_vocabulary()

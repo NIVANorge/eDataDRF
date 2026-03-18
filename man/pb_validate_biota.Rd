@@ -25,7 +25,28 @@ biota-specific fields are non-null, environmental compartments indicate
 biota, and that species group, tissue, lifestage, and gender values are
 within their controlled vocabularies.
 }
+\examples{
+\dontrun{
+pb_validate_biota(example_biota_tibble())
+}
+}
 \seealso{
 \code{\link[=pb_validate_edata_table]{pb_validate_edata_table()}} for the underlying validation framework,
-\code{\link[=pb_validate_all_edata_tables]{pb_validate_all_edata_tables()}} to validate all tables at once.
+\code{\link[=pb_validate_all_edata_tables]{pb_validate_all_edata_tables()}} to validate all tables at once,
+\code{\link[=example_biota_tibble]{example_biota_tibble()}} for an example Biota table.
+
+Other validation: 
+\code{\link{pb_validate_CREED_data_relevance}()},
+\code{\link{pb_validate_CREED_data_reliability}()},
+\code{\link{pb_validate_CREED_scores}()},
+\code{\link{pb_validate_all_edata_tables}()},
+\code{\link{pb_validate_campaign}()},
+\code{\link{pb_validate_edata_table}()},
+\code{\link{pb_validate_measurements}()},
+\code{\link{pb_validate_methods}()},
+\code{\link{pb_validate_parameters}()},
+\code{\link{pb_validate_reference}()},
+\code{\link{pb_validate_samples}()},
+\code{\link{pb_validate_sites}()}
 }
+\concept{validation}

@@ -14,7 +14,7 @@ Returns controlled vocabulary options for IHO ocean regions.
 }
 \details{
 Provides ocean and sea names from the International Hydrographic Organisation (IHO)
-regions dataset, regions dataset (marineregions.org, World Seas IHO v3).
+regions dataset, regions dataset (\url{https://www.marineregions.org/downloads.php}, World Seas IHO v3).
 }
 \examples{
 head(ocean_vocabulary(), 5)

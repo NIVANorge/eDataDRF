@@ -15,7 +15,7 @@ Returns comprehensive parameter data combining quality and chemical parameters.
 \details{
 Combines quality parameters with chemical parameters from the
 \href{http://classyfire.wishartlab.com}{ClassyFire} chemical taxonomy
-(Djoumbou Feunang et al. 2016).
+(Djoumbou Feunang et al. 2016, \doi{10.1186/s13321-016-0174-y}, reused non-commercially).
 Quality parameters are read from quality_parameters.parquet and chemical
 parameters from ClassyFire_Taxonomy_2025_02.parquet. The resulting dataset includes
 columns for parameter classification, chemical identifiers (InChIKey, PubChem CID,

@@ -27,6 +27,11 @@ values and units are present and valid when provided, protocol IDs match the
 expected format, MEASURED_TYPE is in its controlled vocabulary, and reference
 and sample IDs are present and correctly formatted.
 }
+\examples{
+\dontrun{
+pb_validate_measurements(example_measurements_tibble())
+}
+}
 \seealso{
 \code{\link[=pb_validate_edata_table]{pb_validate_edata_table()}} for the underlying validation framework,
 \code{\link[=pb_validate_all_edata_tables]{pb_validate_all_edata_tables()}} to validate all tables at once,
@@ -34,5 +39,21 @@ and sample IDs are present and correctly formatted.
 \code{\link[=sample_id_regex]{sample_id_regex()}} for the sample ID format validated here,
 \code{\link[=measured_types_vocabulary]{measured_types_vocabulary()}} for valid MEASURED_TYPE values,
 \code{\link[=parameter_unit_vocabulary]{parameter_unit_vocabulary()}} for valid unit values,
-\code{\link[=protocol_options_vocabulary]{protocol_options_vocabulary()}} for valid protocol names.
+\code{\link[=protocol_options_vocabulary]{protocol_options_vocabulary()}} for valid protocol names,
+\code{\link[=example_measurements_tibble]{example_measurements_tibble()}} for an example Measurements table.
+
+Other validation: 
+\code{\link{pb_validate_CREED_data_relevance}()},
+\code{\link{pb_validate_CREED_data_reliability}()},
+\code{\link{pb_validate_CREED_scores}()},
+\code{\link{pb_validate_all_edata_tables}()},
+\code{\link{pb_validate_biota}()},
+\code{\link{pb_validate_campaign}()},
+\code{\link{pb_validate_edata_table}()},
+\code{\link{pb_validate_methods}()},
+\code{\link{pb_validate_parameters}()},
+\code{\link{pb_validate_reference}()},
+\code{\link{pb_validate_samples}()},
+\code{\link{pb_validate_sites}()}
 }
+\concept{validation}

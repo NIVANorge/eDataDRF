@@ -58,9 +58,51 @@ Applies pointblank validation rules to all supplied eData tables by calling
 the individual table validation functions. Required tables are always
 validated; optional tables are validated only when provided.
 }
+\examples{
+\dontrun{
+agents <- pb_validate_all_edata_tables(
+  campaign     = example_campaign_tibble(),
+  reference    = example_references_tibble(),
+  parameters   = example_parameters_tibble(),
+  sites        = example_sites_tibble(),
+  measurements = example_measurements_tibble()
+)
+
+# Include optional tables
+agents <- pb_validate_all_edata_tables(
+  campaign     = example_campaign_tibble(),
+  reference    = example_references_tibble(),
+  parameters   = example_parameters_tibble(),
+  sites        = example_sites_tibble(),
+  measurements = example_measurements_tibble(),
+  samples      = example_samples_tibble(),
+  biota        = example_biota_tibble(),
+  methods      = example_methods_tibble(),
+  creed_scores = example_CREED_scores_tibble()
+)
+}
+}
 \seealso{
 \code{\link[=pb_validate_campaign]{pb_validate_campaign()}}, \code{\link[=pb_validate_reference]{pb_validate_reference()}},
 \code{\link[=pb_validate_parameters]{pb_validate_parameters()}}, \code{\link[=pb_validate_sites]{pb_validate_sites()}}, \code{\link[=pb_validate_samples]{pb_validate_samples()}},
 \code{\link[=pb_validate_biota]{pb_validate_biota()}}, \code{\link[=pb_validate_measurements]{pb_validate_measurements()}}, \code{\link[=pb_validate_methods]{pb_validate_methods()}},
-\code{\link[=pb_validate_creed_scores]{pb_validate_creed_scores()}}
+\code{\link[=pb_validate_CREED_scores]{pb_validate_CREED_scores()}},
+\code{\link[=example_campaign_tibble]{example_campaign_tibble()}}, \code{\link[=example_references_tibble]{example_references_tibble()}},
+\code{\link[=example_parameters_tibble]{example_parameters_tibble()}}, \code{\link[=example_sites_tibble]{example_sites_tibble()}},
+\code{\link[=example_measurements_tibble]{example_measurements_tibble()}}
+
+Other validation: 
+\code{\link{pb_validate_CREED_data_relevance}()},
+\code{\link{pb_validate_CREED_data_reliability}()},
+\code{\link{pb_validate_CREED_scores}()},
+\code{\link{pb_validate_biota}()},
+\code{\link{pb_validate_campaign}()},
+\code{\link{pb_validate_edata_table}()},
+\code{\link{pb_validate_measurements}()},
+\code{\link{pb_validate_methods}()},
+\code{\link{pb_validate_parameters}()},
+\code{\link{pb_validate_reference}()},
+\code{\link{pb_validate_samples}()},
+\code{\link{pb_validate_sites}()}
 }
+\concept{validation}
