@@ -87,4 +87,3 @@ reference:
   desc: Functions using {pointblank} to validate data
 - contents:
   - contains("validate")
-  - col_vals_in_set_verbose
