@@ -56,8 +56,8 @@ Tables are listed below:
 | [Biota](https://NIVANorge.github.io/eDataDRF/articles/biota_data.html) | Where relevant, records biota species, tissue, life stage, and gender | Optional |
 | [Methods](https://NIVANorge.github.io/eDataDRF/articles/methods_data.html) | Records type and descriptions of methods used for sampling, extraction, fractionation and analysis |  |
 | [Measurements](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.html) | Records measured values, units, uncertainty, sample size, and methods associated with a given sample |  |
-| [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html) | Records CREED assessment criteria, relevant data, criteria scores, and limitations |  |
-| [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | Records CREED usability scores calculated from CREED data above |  |
+| [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html) | Records CREED assessment criteria, relevant data, criteria scores, and limitations | Optional  |
+| [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | Records CREED usability scores calculated from CREED data above | Optional |
 
 ## Vocabulary
 
