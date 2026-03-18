@@ -22,6 +22,9 @@ limits. Options include:
 
 < LOD (below limit of detection)
 }
+\examples{
+measured_flag_vocabulary()
+}
 \seealso{
 Other measurement: 
 \code{\link{example_measurements_tibble}()},

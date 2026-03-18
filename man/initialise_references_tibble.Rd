@@ -55,6 +55,9 @@ REF_COMMENT: Additional notes about the reference
 
 See \code{vignette("references_data")} for more information.
 }
+\examples{
+initialise_references_tibble()
+}
 \seealso{
 Other initialise_tibble: 
 \code{\link{initialise_CREED_data_tibble}()},
@@ -70,8 +73,7 @@ Other initialise_tibble:
 
 Other reference: 
 \code{\link{example_references_tibble}()},
-\code{\link{generate_reference_id}()},
-\code{\link{reference_character_limits}()}
+\code{\link{generate_reference_id}()}
 }
 \concept{initialise_tibble}
 \concept{reference}

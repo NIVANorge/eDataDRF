@@ -12,7 +12,7 @@ knitr:
 ---
 
 
-```{r}
+```{r, include=FALSE}
 library(eDataDRF)
 ```
 
@@ -34,3 +34,4 @@ Although an R package is not a conventional form for a data structure, as our ex
 
 # Who supported this work?
 
+This work is supported by the Research Council of Norway (RCN-315969 EXPECT), EU-HEU-101057014 Project “PARC”, and NIVA’s Computational Toxicology Program (NCTP, RCN-160016).

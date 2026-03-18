@@ -23,6 +23,9 @@ Long_Name: Full descriptive name (e.g., "Gas chromatography mass spectrometry", 
 
 Available protocols include: Not relevant, Not reported, GC-MS, LC-MS, LC-MS/MS, GC-MS/MS, UPLC, ICP-MS, ICP-OES, AAS, XRF, Ion chromatography, Spectrophotometry, Fluorescence, Other
 }
+\examples{
+head(analytical_protocols_vocabulary(), 5)
+}
 \seealso{
 Other method: 
 \code{\link{example_methods_tibble}()},

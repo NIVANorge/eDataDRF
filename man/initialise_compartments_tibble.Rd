@@ -26,6 +26,9 @@ MEASURED_CATEGORY: Measurement context (External Media, Internal to Organism, Su
 
 See \code{vignette("compartments_data")} for more information.
 }
+\examples{
+initialise_compartments_tibble()
+}
 \seealso{
 Other initialise_tibble: 
 \code{\link{initialise_CREED_data_tibble}()},

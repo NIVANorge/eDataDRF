@@ -26,6 +26,9 @@ This function aggregates results from sampling_protocols_vocabulary(),
 fractionation_protocols_vocabulary(), extraction_protocols_vocabulary(), and
 analytical_protocols_vocabulary().
 }
+\examples{
+head(protocol_options_vocabulary(), 5)
+}
 \seealso{
 Other method: 
 \code{\link{analytical_protocols_vocabulary}()},

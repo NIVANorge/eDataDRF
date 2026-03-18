@@ -30,6 +30,10 @@ UNIT_COMMENTS: Additional notes about unit usage or conversion
 
 Data source: extdata/unit_conversion_factors.csv
 }
+\examples{
+head(parameter_unit_vocabulary(), 5)
+parameter_unit_vocabulary(select_column = "MEASURED_UNIT") |> head(5)
+}
 \seealso{
 Other measurement: 
 \code{\link{example_measurements_tibble}()},

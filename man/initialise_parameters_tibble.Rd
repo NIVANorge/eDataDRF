@@ -39,6 +39,9 @@ PARAMETER_COMMENT: Additional notes about the parameter
 
 See \code{vignette("parameters_data")} for more information.
 }
+\examples{
+initialise_parameters_tibble()
+}
 \seealso{
 Other initialise_tibble: 
 \code{\link{initialise_CREED_data_tibble}()},

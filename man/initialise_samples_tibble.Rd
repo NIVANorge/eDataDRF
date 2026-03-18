@@ -41,6 +41,9 @@ SAMPLE_ID: Unique identifier for the sample (Key)
 
 See \code{vignette("samples_data")} for more information.
 }
+\examples{
+initialise_samples_tibble()
+}
 \seealso{
 Other initialise_tibble: 
 \code{\link{initialise_CREED_data_tibble}()},

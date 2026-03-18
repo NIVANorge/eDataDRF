@@ -34,8 +34,7 @@ Other example_tibble:
 
 Other reference: 
 \code{\link{generate_reference_id}()},
-\code{\link{initialise_references_tibble}()},
-\code{\link{reference_character_limits}()}
+\code{\link{initialise_references_tibble}()}
 }
 \concept{example_tibble}
 \concept{reference}

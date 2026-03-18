@@ -23,6 +23,9 @@ Long_Name: Full descriptive name (e.g., "Point sampling", "Composite sampling", 
 
 Available protocols include: Not relevant, Not reported, Point, Composite, Trawl, Grab, Core, Seine net, Electrofishing, Plankton net, Bailer, Peristaltic pump, Active air, Passive air, SPMD, SPE, LVSPE, DGT, Caged organisms, Blood sample, Biopsy, Other
 }
+\examples{
+head(sampling_protocols_vocabulary(), 5)
+}
 \seealso{
 Other method: 
 \code{\link{analytical_protocols_vocabulary}()},

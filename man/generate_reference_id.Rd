@@ -44,8 +44,7 @@ Other generate_id:
 
 Other reference: 
 \code{\link{example_references_tibble}()},
-\code{\link{initialise_references_tibble}()},
-\code{\link{reference_character_limits}()}
+\code{\link{initialise_references_tibble}()}
 }
 \concept{generate_id}
 \concept{reference}

@@ -23,6 +23,9 @@ Long_Name: Full descriptive name (e.g., "Total fraction", "Dissolved fraction", 
 
 Available protocols include: Not relevant, Not reported, Total, Particles, Colloidal, LMM, Aqueous, Filtered 0.45um, Filtered 0.2um, Dissolved, Filtered, Acid extractable, Reducible, Oxidisable, Residual, Bioavailable, Free ion, Size fractionated, Other
 }
+\examples{
+head(fractionation_protocols_vocabulary(), 5)
+}
 \seealso{
 Other method: 
 \code{\link{analytical_protocols_vocabulary}()},

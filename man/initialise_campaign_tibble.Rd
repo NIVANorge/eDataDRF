@@ -35,6 +35,9 @@ CAMPAIGN_COMMENT: Additional notes or comments about the campaign (optional)
 
 See \code{vignette("campaign_data")} for more information.
 }
+\examples{
+initialise_campaign_tibble()
+}
 \seealso{
 Other initialise_tibble: 
 \code{\link{initialise_CREED_data_tibble}()},

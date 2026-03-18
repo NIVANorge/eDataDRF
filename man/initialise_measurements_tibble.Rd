@@ -73,6 +73,9 @@ MEASUREMENT_COMMENT: Additional notes about the measurement
 
 See \code{vignette("measurements_data")} for more information.
 }
+\examples{
+initialise_measurements_tibble()
+}
 \seealso{
 Other initialise_tibble: 
 \code{\link{initialise_CREED_data_tibble}()},

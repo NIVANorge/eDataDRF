@@ -29,6 +29,9 @@ GOLD_RELEVANCE: Relevance score at gold standard level
 
 See \code{vignette("CREED_scores_data")} for more information.
 }
+\examples{
+initialise_CREED_scores_tibble()
+}
 \seealso{
 Other initialise_tibble: 
 \code{\link{initialise_CREED_data_tibble}()},

@@ -26,6 +26,9 @@ Not Reported: Score value 3
 
 Not Relevant: Score value 1
 }
+\examples{
+CREED_choices_vocabulary()
+}
 \seealso{
 Other CREED: 
 \code{\link{creed_tibble_to_mock_input}()},

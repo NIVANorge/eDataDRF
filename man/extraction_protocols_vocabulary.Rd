@@ -23,6 +23,9 @@ Long_Name: Full descriptive name (e.g., "Methanol extraction", "Solid phase extr
 
 Available protocols include: Not relevant, Not reported, None, Methanol, Dichloromethane, SPE Isolute Env+, Membrane filtration 0.45um, Membrane filtration 0.2um, Membrane filtration, Filtration, Microwave-assisted acid digestion, Acid digestion, Pressurised liquid, Ultrasonic, Soxhlet, QuEChERS, Accelerated solvent, Sequential extraction, Other
 }
+\examples{
+head(extraction_protocols_vocabulary(), 5)
+}
 \seealso{
 Other method: 
 \code{\link{analytical_protocols_vocabulary}()},

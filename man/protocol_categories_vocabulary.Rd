@@ -24,6 +24,9 @@ Extraction Protocol
 
 Analytical Protocol
 }
+\examples{
+protocol_categories_vocabulary()
+}
 \seealso{
 Other method: 
 \code{\link{analytical_protocols_vocabulary}()},

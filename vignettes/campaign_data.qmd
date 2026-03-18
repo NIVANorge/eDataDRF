@@ -31,14 +31,12 @@ initialise_campaign_tibble()
 ## Campaign Name Short
 `CAMPAIGN_NAME_SHORT` - *string, free (>= 40 characters), mandatory*
 
-A short, terse identifier for the campaign. This is used as a primary key for Campaign data and a foreign key in [Measurements data](measurements_data.html) and [Methods data](methods_data.html). No format is enforced beyond the character limit, but it is rcommended to use PascalCase to maximise character efficiency and readability.
+A short, terse identifier for the campaign. This is used as a primary key for Campaign data and a foreign key in [Measurements data](measurements_data.html) and [Methods data](methods_data.html). No format is enforced beyond the character limit, but it is recommended to use PascalCase to maximise character efficiency and readability.
 
 ## Campaign Name
 `CAMPAIGN_NAME` - *string, free, mandatory*
 
-Hey, this actually has a character limit. Who knew!
-
-<!-- Full descriptive name of the campaign. -->
+A full descriptive name for the campaign.
 
 ## Campaign Start Date
 `CAMPAIGN_START_DATE` - *date (ISO), free, mandatory*

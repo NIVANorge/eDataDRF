@@ -28,6 +28,9 @@ PROTOCOL_COMMENT: Additional notes or details about the protocol
 
 See \code{vignette("methods_data")} for more information.
 }
+\examples{
+initialise_methods_tibble()
+}
 \seealso{
 Other initialise_tibble: 
 \code{\link{initialise_CREED_data_tibble}()},

@@ -47,6 +47,9 @@ SITE_COMMENT: Additional notes about the site
 
 See \code{vignette("sites_data")} for more information.
 }
+\examples{
+initialise_sites_tibble()
+}
 \seealso{
 Other initialise_tibble: 
 \code{\link{initialise_CREED_data_tibble}()},

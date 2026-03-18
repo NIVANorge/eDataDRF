@@ -29,12 +29,14 @@ articles:
   - biota_data
   - methods_data
   - measurements_data
+
 - title: "CREED quality assessment"
   navbar:
   desc: "Format and scoring for data quality assessment"
   contents:
   - CREED_data
   - CREED_scores_data
+
 - title: "Other"
   navbar:
   contents:
@@ -60,8 +62,6 @@ reference:
   desc: Vectors (and sometimes tibbles) of controlled vocabulary
 - contents:
   - ends_with("_vocabulary")
-- title: Character limits
-  desc: Character limits for some inputs
 - contents:
   - ends_with("_limits")
 - title: Generate IDs

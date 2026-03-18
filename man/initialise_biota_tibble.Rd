@@ -47,6 +47,9 @@ BIOTA_COMMENT: Additional notes or comments about the biological sample (optiona
 
 See \code{vignette("biota_data")} for more information.
 }
+\examples{
+initialise_biota_tibble()
+}
 \seealso{
 Other initialise_tibble: 
 \code{\link{initialise_CREED_data_tibble}()},
