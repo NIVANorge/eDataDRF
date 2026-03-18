@@ -3,6 +3,8 @@
 
 # eData Data Reporting Format
 
+![eData Data Reporting Format Logo](.\vignettes/eData_DRF_logo.svg)
+
 The eData Data Reporting Format is a format for the reporting of
 chemical occurence/exposure data in the natural environment. It provides
 tables, vocabulary, and validation functions for structuring chemical
@@ -32,7 +34,20 @@ site](https://NIVANorge.github.io/eDataDRF/articles).
 library(eDataDRF)
 
 campaign_table <- initialise_campaign_tibble()
+campaign_table
+#> # A tibble: 0 × 8
+#> # ℹ 8 variables: CAMPAIGN_NAME_SHORT <chr>, CAMPAIGN_NAME <chr>,
+#> #   CAMPAIGN_START_DATE <date>, CAMPAIGN_END_DATE <date>, ORGANISATION <chr>,
+#> #   ENTERED_BY <chr>, ENTERED_DATE <date>, CAMPAIGN_COMMENT <chr>
 biota_table <- initialise_biota_tibble()
+biota_table
+#> # A tibble: 0 × 14
+#> # ℹ 14 variables: SAMPLE_ID <chr>, SITE_CODE <chr>, PARAMETER_NAME <chr>,
+#> #   ENVIRON_COMPARTMENT <chr>, ENVIRON_COMPARTMENT_SUB <chr>,
+#> #   MEASURED_CATEGORY <chr>, SAMPLING_DATE <chr>, SUBSAMPLE <chr>,
+#> #   SPECIES_GROUP <chr>, SAMPLE_SPECIES <chr>, SAMPLE_TISSUE <chr>,
+#> #   SAMPLE_SPECIES_LIFESTAGE <chr>, SAMPLE_SPECIES_GENDER <chr>,
+#> #   BIOTA_COMMENT <chr>
 ```
 
 ## Tables
@@ -56,128 +71,21 @@ Tables are listed below:
 | [Biota](https://NIVANorge.github.io/eDataDRF/articles/biota_data.html) | Where relevant, records biota species, tissue, life stage, and gender | Optional |
 | [Methods](https://NIVANorge.github.io/eDataDRF/articles/methods_data.html) | Records type and descriptions of methods used for sampling, extraction, fractionation and analysis |  |
 | [Measurements](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.html) | Records measured values, units, uncertainty, sample size, and methods associated with a given sample |  |
-| [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html) | Records CREED assessment criteria, relevant data, criteria scores, and limitations | Optional  |
-| [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | Records CREED usability scores calculated from CREED data above | Optional |
-
-## Vocabulary
-
-Likewise, controlled vocabulary is available as functions that return
-vectors, lists, or tables. In some cases, helper functions are available
-that wrap multiple invididual functions.
-
-Where external data sources are used to generate a vocabulary, functions
-may wrap (processed) data from other R packages or load raw data from
-external sources.
-
-``` r
-measured_categories_vocabulary() # returns a named vector
-#>               External               Internal                Surface 
-#>       "External Media" "Internal to Organism"  "Surface of Organism"
-
-environ_compartments_sub_vocabulary() # returns a nested list
-#> $Aquatic
-#>                    Freshwater             Marine/Salt Water 
-#>                  "Freshwater"           "Marine/Salt Water" 
-#>   Brackish/Transitional Water                   Groundwater 
-#> "Brackish/Transitional Water"                 "Groundwater" 
-#>                    Wastewater          Liquid Growth Medium 
-#>                  "Wastewater"        "Liquid Growth Medium" 
-#>                     Rainwater                    Stormwater 
-#>                   "Rainwater"                  "Stormwater" 
-#>                      Leachate              Aquatic Sediment 
-#>                    "Leachate"            "Aquatic Sediment" 
-#>                     Porewater                        Sludge 
-#>                   "Porewater"                      "Sludge" 
-#>                      Snow/Ice 
-#>                    "Snow/Ice" 
-#> 
-#> $Atmospheric
-#>    Indoor Air   Outdoor Air 
-#>  "Indoor Air" "Outdoor Air" 
-#> 
-#> $Terrestrial
-#>     Terrestrial Biological Residue              Soil H Horizon (Peat) 
-#>   "Terrestrial Biological Residue"            "Soil H Horizon (Peat)" 
-#>           Soil O Horizon (Organic)           Soil A Horizon (Topsoil) 
-#>         "Soil O Horizon (Organic)"         "Soil A Horizon (Topsoil)" 
-#>           Soil E Horizon (Mineral)           Soil S Horizon (Mineral) 
-#>         "Soil E Horizon (Mineral)"         "Soil S Horizon (Mineral)" 
-#>   Soil C Horizon (Parent Material)           Soil R Horizon (Bedrock) 
-#> "Soil C Horizon (Parent Material)"         "Soil R Horizon (Bedrock)" 
-#> 
-#> $Biota
-#>   Biota, Terrestrial       Biota, Aquatic   Biota, Atmospheric 
-#> "Biota, Terrestrial"     "Biota, Aquatic" "Biota, Atmospheric" 
-#>         Biota, Other 
-#>       "Biota, Other"
-
-extraction_protocols_vocabulary() # returns a tibble
-#> # A tibble: 19 × 3
-#>    Protocol_Type       Short_Name                        Long_Name              
-#>    <chr>               <chr>                             <chr>                  
-#>  1 Extraction Protocol Not relevant                      Not relevant           
-#>  2 Extraction Protocol Not reported                      Not reported           
-#>  3 Extraction Protocol None                              No extraction          
-#>  4 Extraction Protocol Methanol                          Methanol extraction    
-#>  5 Extraction Protocol Dichloromethane                   Dichloromethane extrac…
-#>  6 Extraction Protocol SPE Isolute Env+                  Solid phase extraction…
-#>  7 Extraction Protocol Membrane filtration 0.45um        Membrane filtration th…
-#>  8 Extraction Protocol Membrane filtration 0.2um         Membrane filtration th…
-#>  9 Extraction Protocol Membrane filtration               Membrane filtration    
-#> 10 Extraction Protocol Filtration                        Filtration             
-#> 11 Extraction Protocol Microwave-assisted acid digestion Microwave-assisted aci…
-#> 12 Extraction Protocol Acid digestion                    Acid digestion         
-#> 13 Extraction Protocol Pressurised liquid                Pressurised liquid ext…
-#> 14 Extraction Protocol Ultrasonic                        Ultrasonic extraction  
-#> 15 Extraction Protocol Soxhlet                           Soxhlet extraction     
-#> 16 Extraction Protocol QuEChERS                          Quick easy cheap effec…
-#> 17 Extraction Protocol Accelerated solvent               Accelerated solvent ex…
-#> 18 Extraction Protocol Sequential extraction             Sequential extraction …
-#> 19 Extraction Protocol Other                             Other
-
-protocol_options_vocabulary() # calls bind_rows() on four *_protocol_vocabulary() functions to return a tibble
-#> # A tibble: 75 × 3
-#>    Protocol_Type     Short_Name     Long_Name            
-#>    <chr>             <chr>          <chr>                
-#>  1 Sampling Protocol Not relevant   Not relevant         
-#>  2 Sampling Protocol Not reported   Not reported         
-#>  3 Sampling Protocol Point          Point sampling       
-#>  4 Sampling Protocol Composite      Composite sampling   
-#>  5 Sampling Protocol Trawl          Trawl sampling       
-#>  6 Sampling Protocol Grab           Grab sampling        
-#>  7 Sampling Protocol Core           Core sampling        
-#>  8 Sampling Protocol Seine net      Seine net sampling   
-#>  9 Sampling Protocol Electrofishing Electrofishing       
-#> 10 Sampling Protocol Plankton net   Plankton net sampling
-#> # ℹ 65 more rows
-
-coordinate_systems_vocabulary(common_only = TRUE) # calls crsuggest::crs_sf, returns 4 rows (or more when common_only = FALSE)
-#> [1] "Not relevant"          "Not reported"          "WGS 84"               
-#> [4] "ETRS89"                "WGS 84 / UTM zone 32N" "WGS 84 / UTM zone 33N"
-#> [7] "WGS 84 / UTM zone 34N" "WGS 84 / UTM zone 35N" "Other"
-
-ocean_vocabulary()[1:20] # loads an RDS of IHO ocean definitions from /extdata/, returns a vector
-#>  [1] "Not relevant"       "Not reported"       "Other"             
-#>  [4] "Torres Strait"      "Tasman Sea"         "Solomon Sea"       
-#>  [7] "Ross Sea"           "Coral Sea"          "Bismarck Sea"      
-#> [10] "Bellingshausen Sea" "Bass Strait"        "Amundsen Sea"      
-#> [13] "Timor Sea"          "Sunda Strait"       "Sumba Strait"      
-#> [16] "Sulu Sea"           "Sulawesi Sea"       "South China Sea"   
-#> [19] "Singapore Strait"   "Seram Sea"
-```
+| [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html) | Records CREED assessment criteria, relevant data, criteria scores, and limitations |  |
+| [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | Records CREED usability scores calculated from CREED data above |  |
 
 ``` mermaid
 erDiagram
-    Campaign ||--o{ Measurements : "Belongs"
-    Campaign ||--o{ References : "Belongs"
-    Campaign ||--o{ Sites : "Belongs"
-    Campaign ||--o{ Methods : "Belongs"
-    Campaign ||--o{ CREED : "Assesses"
+    Campaign ||--o{ Measurements : 'Belongs'
+    Campaign ||--o{ References : 'Belongs'
+    Campaign ||--o{ Sites : 'Belongs'
+    Campaign ||--o{ Methods : 'Belongs'
+    Campaign ||--o{ CREED : 'Assesses'
     
-    References ||--o{ Measurements : "Cites"
-    Sites ||--o{ Measurements : "Locates"
-    Parameters ||--o{ Measurements : "Quantifies"
-    Methods ||--o{ Measurements : "Means"
+    References ||--o{ Measurements : 'Cites'
+    Sites ||--o{ Measurements : 'Locates'
+    Parameters ||--o{ Measurements : 'Quantifies'
+    Methods ||--o{ Measurements : 'Means'
     
     Measurements {
     }
@@ -200,3 +108,86 @@ erDiagram
     CREED {
     }
 ```
+
+## Vocabulary
+
+Likewise, controlled vocabulary is available as functions that return
+vectors, lists, or tables. In some cases, helper functions are available
+that wrap multiple invididual functions.
+
+Where external data sources are used to generate a vocabulary, functions
+may wrap (processed) data from other R packages or load raw data from
+external sources. Vocabulary functions are documented in the [Reference
+section](reference/index.html#controlled-vocabulary) and linked to in
+the relevant table files in
+
+``` r
+# returns a named vector
+measured_categories_vocabulary() 
+#>               External               Internal                Surface 
+#>       "External Media" "Internal to Organism"  "Surface of Organism"
+
+# returns a nested list
+environ_compartments_sub_vocabulary()[1] 
+#> $Aquatic
+#>                    Freshwater             Marine/Salt Water 
+#>                  "Freshwater"           "Marine/Salt Water" 
+#>   Brackish/Transitional Water                   Groundwater 
+#> "Brackish/Transitional Water"                 "Groundwater" 
+#>                    Wastewater          Liquid Growth Medium 
+#>                  "Wastewater"        "Liquid Growth Medium" 
+#>                     Rainwater                    Stormwater 
+#>                   "Rainwater"                  "Stormwater" 
+#>                      Leachate              Aquatic Sediment 
+#>                    "Leachate"            "Aquatic Sediment" 
+#>                     Porewater                        Sludge 
+#>                   "Porewater"                      "Sludge" 
+#>                      Snow/Ice 
+#>                    "Snow/Ice"
+
+# returns a tibble
+extraction_protocols_vocabulary()[1:5, 3] 
+#> # A tibble: 5 × 1
+#>   Long_Name                 
+#>   <chr>                     
+#> 1 Not relevant              
+#> 2 Not reported              
+#> 3 No extraction             
+#> 4 Methanol extraction       
+#> 5 Dichloromethane extraction
+
+# calls bind_rows() on four *_protocol_vocabulary() functions to return a tibble
+protocol_options_vocabulary()[1:5, 3] 
+#> # A tibble: 5 × 1
+#>   Long_Name         
+#>   <chr>             
+#> 1 Not relevant      
+#> 2 Not reported      
+#> 3 Point sampling    
+#> 4 Composite sampling
+#> 5 Trawl sampling
+
+# calls crsuggest::crs_sf, returns 4 rows (or more when common_only = FALSE)
+coordinate_systems_vocabulary(common_only = TRUE) 
+#> [1] "Not relevant"          "Not reported"          "Other"                
+#> [4] "WGS 84"                "ETRS89"                "WGS 84 / UTM zone 32N"
+#> [7] "WGS 84 / UTM zone 33N" "WGS 84 / UTM zone 34N" "WGS 84 / UTM zone 35N"
+
+# loads an RDS of IHO ocean definitions from /extdata/, returns a vector
+ocean_vocabulary()[1:20] 
+#>  [1] "Not relevant"       "Not reported"       "Other"             
+#>  [4] "Torres Strait"      "Tasman Sea"         "Solomon Sea"       
+#>  [7] "Ross Sea"           "Coral Sea"          "Bismarck Sea"      
+#> [10] "Bellingshausen Sea" "Bass Strait"        "Amundsen Sea"      
+#> [13] "Timor Sea"          "Sunda Strait"       "Sumba Strait"      
+#> [16] "Sulu Sea"           "Sulawesi Sea"       "South China Sea"   
+#> [19] "Singapore Strait"   "Seram Sea"
+```
+
+# Is something missing?
+
+We intend to update this format regularly as new resources become
+available and to address emerging needs. If you have a suggestion or
+comments, please get in touch via the Issues tab or, if you’re more
+technically minding, making a Pull Request with proposed changes for
+review.

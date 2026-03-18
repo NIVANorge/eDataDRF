@@ -5,6 +5,11 @@ knitr:
     collapse: true
     comment: '#>'
 format: gfm
+fig-format: png
+execute:
+  freeze: false
+mermaid:
+  theme: default
 ---
 
 # eData Data Reporting Format
@@ -18,8 +23,8 @@ The eData Data Reporting Format is a format for the reporting of chemical occure
 To install this package, you will need the `{devtools}` package:
 
 ```{r}
+#| eval: false
   devtools::install_github("NIVANorge/eDataDRF")
-
 ```
 
 ## Usage
@@ -30,7 +35,9 @@ The format is structured as a series of tables that collect different types of d
 library(eDataDRF)
 
 campaign_table <- initialise_campaign_tibble()
+campaign_table
 biota_table <- initialise_biota_tibble()
+biota_table
 ```
 
 ## Tables
@@ -53,19 +60,18 @@ Tables are listed below:
 | [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html) | Records CREED assessment criteria, relevant data, criteria scores, and limitations | |
 | [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | Records CREED usability scores calculated from CREED data above | |
 
-```{r echo = FALSE}
-text <- "
+```{mermaid}
 erDiagram
-    Campaign ||--o{ Measurements : "Belongs"
-    Campaign ||--o{ References : "Belongs"
-    Campaign ||--o{ Sites : "Belongs"
-    Campaign ||--o{ Methods : "Belongs"
-    Campaign ||--o{ CREED : "Assesses"
+    Campaign ||--o{ Measurements : 'Belongs'
+    Campaign ||--o{ References : 'Belongs'
+    Campaign ||--o{ Sites : 'Belongs'
+    Campaign ||--o{ Methods : 'Belongs'
+    Campaign ||--o{ CREED : 'Assesses'
     
-    References ||--o{ Measurements : "Cites"
-    Sites ||--o{ Measurements : "Locates"
-    Parameters ||--o{ Measurements : "Quantifies"
-    Methods ||--o{ Measurements : "Means"
+    References ||--o{ Measurements : 'Cites'
+    Sites ||--o{ Measurements : 'Locates'
+    Parameters ||--o{ Measurements : 'Quantifies'
+    Methods ||--o{ Measurements : 'Means'
     
     Measurements {
     }
@@ -87,8 +93,6 @@ erDiagram
     
     CREED {
     }
-"
-DiagrammeR::mermaid(text)
 ```
 
 ## Vocabulary

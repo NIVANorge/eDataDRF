@@ -98,7 +98,7 @@ coordinate_systems_vocabulary <- function(common_only = TRUE) {
       pull(crs_name)
   }
 
-  c("Not relevant", "Not reported", "Other", "WGS 84", crs_names, )
+  c("Not relevant", "Not reported", "Other", "WGS 84", crs_names)
 }
 
 #' Countries controlled vocabulary
