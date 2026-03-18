@@ -96,4 +96,50 @@ included only when the corresponding arguments are not `NULL`.
 [`pb_validate_biota()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_biota.md),
 [`pb_validate_measurements()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_measurements.md),
 [`pb_validate_methods()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_methods.md),
-[`pb_validate_creed_scores()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_creed_scores.md)
+[`pb_validate_CREED_scores()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_creed_scores.md),
+[`example_campaign_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_campaign_tibble.md),
+[`example_references_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_references_tibble.md),
+[`example_parameters_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_parameters_tibble.md),
+[`example_sites_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_sites_tibble.md),
+[`example_measurements_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_measurements_tibble.md)
+
+Other validation:
+[`pb_validate_CREED_data_relevance()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_CREED_data_relevance.md),
+[`pb_validate_CREED_data_reliability()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_CREED_data_reliability.md),
+[`pb_validate_CREED_scores()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_creed_scores.md),
+[`pb_validate_biota()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_biota.md),
+[`pb_validate_campaign()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_campaign.md),
+[`pb_validate_edata_table()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_edata_table.md),
+[`pb_validate_measurements()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_measurements.md),
+[`pb_validate_methods()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_methods.md),
+[`pb_validate_parameters()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_parameters.md),
+[`pb_validate_reference()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_reference.md),
+[`pb_validate_samples()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_samples.md),
+[`pb_validate_sites()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_sites.md)
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+agents <- pb_validate_all_edata_tables(
+  campaign     = example_campaign_tibble(),
+  reference    = example_references_tibble(),
+  parameters   = example_parameters_tibble(),
+  sites        = example_sites_tibble(),
+  measurements = example_measurements_tibble()
+)
+
+# Include optional tables
+agents <- pb_validate_all_edata_tables(
+  campaign     = example_campaign_tibble(),
+  reference    = example_references_tibble(),
+  parameters   = example_parameters_tibble(),
+  sites        = example_sites_tibble(),
+  measurements = example_measurements_tibble(),
+  samples      = example_samples_tibble(),
+  biota        = example_biota_tibble(),
+  methods      = example_methods_tibble(),
+  creed_scores = example_CREED_scores_tibble()
+)
+} # }
+```

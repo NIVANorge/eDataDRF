@@ -82,10 +82,6 @@ relevant subtype.
 
 ``` r
 parameter_types_sub_vocabulary()
-#> Warning: `prepend()` was deprecated in purrr 1.0.0.
-#> ℹ Please use append(after = 0) instead.
-#> ℹ The deprecated feature was likely used in the eDataDRF package.
-#>   Please report the issue to the authors.
 #>  [1] "Not relevant"                             
 #>  [2] "Not reported"                             
 #>  [3] "Other"                                    

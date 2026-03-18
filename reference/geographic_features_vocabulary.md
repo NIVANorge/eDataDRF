@@ -12,51 +12,6 @@ geographic_features_vocabulary()
 
 A character vector of geographic feature options
 
-## Details
-
-Provides standardised categories for classifying sampling site locations
-by their primary geographic feature type. Options include:
-
-Not relevant
-
-Not reported
-
-River, stream, canal
-
-Lake, pond, pool, reservoir
-
-Ocean, sea, territorial waters
-
-Coastal, fjord
-
-Estuary
-
-Drainage, sewer, artificial water
-
-Swamp, wetland
-
-Groundwater, aquifer
-
-WWTP
-
-Artificial Land/Urban Areas
-
-Landfills
-
-Cropland
-
-Woodland, forest
-
-Shrubland
-
-Grassland
-
-Bare land and lichen/moss
-
-Glacier
-
-Other
-
 ## See also
 
 Other site:
@@ -68,3 +23,12 @@ Other site:
 [`geographic_features_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/geographic_features_sub_vocabulary.md),
 [`initialise_sites_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_sites_tibble.md),
 [`ocean_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/ocean_vocabulary.md)
+
+## Examples
+
+``` r
+head(geographic_features_vocabulary(), 5)
+#> [1] "Not relevant"                   "Not reported"                  
+#> [3] "River, stream, canal"           "Lake, pond, pool, reservoir"   
+#> [5] "Ocean, sea, territorial waters"
+```

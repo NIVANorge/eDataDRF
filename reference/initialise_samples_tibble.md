@@ -65,3 +65,14 @@ Other sample:
 [`example_samples_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_samples_tibble.md),
 [`generate_sample_id_with_components()`](https://NIVANorge.github.io/eDataDRF/reference/generate_sample_id_with_components.md),
 [`sample_id_regex()`](https://NIVANorge.github.io/eDataDRF/reference/sample_id_regex.md)
+
+## Examples
+
+``` r
+initialise_samples_tibble()
+#> # A tibble: 0 × 11
+#> # ℹ 11 variables: SITE_CODE <chr>, SITE_NAME <chr>, PARAMETER_NAME <chr>,
+#> #   PARAMETER_TYPE <chr>, ENVIRON_COMPARTMENT <chr>,
+#> #   ENVIRON_COMPARTMENT_SUB <chr>, MEASURED_CATEGORY <chr>,
+#> #   SAMPLING_DATE <chr>, SUBSAMPLE <chr>, SUBSAMPLE_ID <chr>, SAMPLE_ID <chr>
+```

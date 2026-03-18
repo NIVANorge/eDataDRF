@@ -15,21 +15,8 @@ A character vector of ocean name options
 ## Details
 
 Provides ocean and sea names from the International Hydrographic
-Organisation (IHO) regions dataset, downloaded from
-https://www.marineregions.org/download_file.php?name=World_Seas_IHO_v3.zip.
-The complete list is read from an internal data file (IHO_oceans.rds)
-and includes options such as:
-
-Not relevant
-
-Not reported
-
-Other
-
-All IHO ocean region names (e.g., Arctic Ocean, Atlantic Ocean, Baltic
-Sea, Mediterranean Sea, ...)
-
-Data source: extdata/IHO_oceans.rds
+Organisation (IHO) regions dataset, regions dataset
+(<https://www.marineregions.org/downloads.php>, World Seas IHO v3).
 
 ## See also
 
@@ -42,3 +29,11 @@ Other site:
 [`geographic_features_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/geographic_features_sub_vocabulary.md),
 [`geographic_features_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/geographic_features_vocabulary.md),
 [`initialise_sites_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_sites_tibble.md)
+
+## Examples
+
+``` r
+head(ocean_vocabulary(), 5)
+#> [1] "Not relevant"  "Not reported"  "Other"         "Torres Strait"
+#> [5] "Tasman Sea"   
+```

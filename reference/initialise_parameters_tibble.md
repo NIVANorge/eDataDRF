@@ -67,3 +67,14 @@ Other parameter:
 [`parameter_types_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_types_sub_vocabulary.md),
 [`parameter_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_types_vocabulary.md),
 [`parameters_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameters_vocabulary.md)
+
+## Examples
+
+``` r
+initialise_parameters_tibble()
+#> # A tibble: 0 × 10
+#> # ℹ 10 variables: PARAMETER_TYPE <chr>, PARAMETER_TYPE_SUB <chr>,
+#> #   MEASURED_TYPE <chr>, PARAMETER_NAME <chr>, PARAMETER_NAME_SUB <chr>,
+#> #   INCHIKEY_SD <chr>, PUBCHEM_CID <int>, CAS_RN <chr>, ENTERED_BY <chr>,
+#> #   PARAMETER_COMMENT <chr>
+```

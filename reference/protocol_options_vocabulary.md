@@ -41,3 +41,17 @@ Other method:
 [`protocol_categories_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_categories_vocabulary.md),
 [`protocol_id_regex()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_id_regex.md),
 [`sampling_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/sampling_protocols_vocabulary.md)
+
+## Examples
+
+``` r
+head(protocol_options_vocabulary(), 5)
+#> # A tibble: 5 × 3
+#>   Protocol_Type     Short_Name   Long_Name         
+#>   <chr>             <chr>        <chr>             
+#> 1 Sampling Protocol Not relevant Not relevant      
+#> 2 Sampling Protocol Not reported Not reported      
+#> 3 Sampling Protocol Point        Point sampling    
+#> 4 Sampling Protocol Composite    Composite sampling
+#> 5 Sampling Protocol Trawl        Trawl sampling    
+```

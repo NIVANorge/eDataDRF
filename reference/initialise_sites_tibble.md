@@ -75,3 +75,15 @@ Other site:
 [`geographic_features_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/geographic_features_sub_vocabulary.md),
 [`geographic_features_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/geographic_features_vocabulary.md),
 [`ocean_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/ocean_vocabulary.md)
+
+## Examples
+
+``` r
+initialise_sites_tibble()
+#> # A tibble: 0 × 14
+#> # ℹ 14 variables: SITE_CODE <chr>, SITE_NAME <chr>,
+#> #   SITE_GEOGRAPHIC_FEATURE <chr>, SITE_GEOGRAPHIC_FEATURE_SUB <chr>,
+#> #   COUNTRY_ISO <chr>, OCEAN_IHO <chr>, LATITUDE <dbl>, LONGITUDE <dbl>,
+#> #   SITE_COORDINATE_SYSTEM <chr>, ALTITUDE_VALUE <dbl>, ALTITUDE_UNIT <chr>,
+#> #   ENTERED_BY <chr>, ENTERED_DATE <chr>, SITE_COMMENT <chr>
+```

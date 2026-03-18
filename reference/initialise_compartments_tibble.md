@@ -51,3 +51,12 @@ Other compartment:
 [`environ_compartments_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/environ_compartments_vocabulary.md),
 [`example_compartments_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_compartments_tibble.md),
 [`measured_categories_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/measured_categories_vocabulary.md)
+
+## Examples
+
+``` r
+initialise_compartments_tibble()
+#> # A tibble: 0 × 3
+#> # ℹ 3 variables: ENVIRON_COMPARTMENT <chr>, ENVIRON_COMPARTMENT_SUB <chr>,
+#> #   MEASURED_CATEGORY <chr>
+```

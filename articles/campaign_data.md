@@ -32,14 +32,14 @@ key for Campaign data and a foreign key in [Measurements
 data](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.md)
 and [Methods
 data](https://NIVANorge.github.io/eDataDRF/articles/methods_data.md). No
-format is enforced beyond the character limit, but it is rcommended to
+format is enforced beyond the character limit, but it is recommended to
 use PascalCase to maximise character efficiency and readability.
 
 ### Campaign Name
 
 `CAMPAIGN_NAME` - *string, free, mandatory*
 
-Hey, this actually has a character limit. Who knew!
+A full descriptive name for the campaign.
 
 ### Campaign Start Date
 

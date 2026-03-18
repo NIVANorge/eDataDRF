@@ -56,3 +56,13 @@ Other initialise_tibble:
 
 Other campaign:
 [`example_campaign_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_campaign_tibble.md)
+
+## Examples
+
+``` r
+initialise_campaign_tibble()
+#> # A tibble: 0 × 8
+#> # ℹ 8 variables: CAMPAIGN_NAME_SHORT <chr>, CAMPAIGN_NAME <chr>,
+#> #   CAMPAIGN_START_DATE <date>, CAMPAIGN_END_DATE <date>, ORGANISATION <chr>,
+#> #   ENTERED_BY <chr>, ENTERED_DATE <date>, CAMPAIGN_COMMENT <chr>
+```

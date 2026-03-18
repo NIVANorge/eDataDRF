@@ -94,13 +94,6 @@ Vectors (and sometimes tibbles) of controlled vocabulary
 - [`uncertainty_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/uncertainty_types_vocabulary.md)
   : Uncertainty types controlled vocabulary
 
-## Character limits
-
-Character limits for some inputs
-
-- [`reference_character_limits()`](https://NIVANorge.github.io/eDataDRF/reference/reference_character_limits.md)
-  : Reference field character limits
-
 ## Generate IDs
 
 Generate ID strings based on abbreviated titles, plus regex to check
@@ -163,13 +156,17 @@ Functions to generate example data
 
 Functions using {pointblank} to validate data
 
+- [`pb_validate_CREED_data_relevance()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_CREED_data_relevance.md)
+  : Run pointblank validation on a CREED Relevance data table
+- [`pb_validate_CREED_data_reliability()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_CREED_data_reliability.md)
+  : Run pointblank validation on a CREED Reliability data table
 - [`pb_validate_all_edata_tables()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_all_edata_tables.md)
   : Validate all eData tables at once
 - [`pb_validate_biota()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_biota.md)
   : Run pointblank validation on a Biota table
 - [`pb_validate_campaign()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_campaign.md)
   : Run pointblank validation on a Campaign table
-- [`pb_validate_creed_scores()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_creed_scores.md)
+- [`pb_validate_CREED_scores()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_creed_scores.md)
   : Run pointblank validation on a CREED Scores table
 - [`pb_validate_edata_table()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_edata_table.md)
   : Run pointblank validation on an eData table
@@ -185,5 +182,3 @@ Functions using {pointblank} to validate data
   : Run pointblank validation on a Samples table
 - [`pb_validate_sites()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_sites.md)
   : Run pointblank validation on a Sites table
-- [`col_vals_in_set_verbose()`](https://NIVANorge.github.io/eDataDRF/reference/col_vals_in_set_verbose.md)
-  : Wrapper for col_vals_in_set with enhanced error reporting

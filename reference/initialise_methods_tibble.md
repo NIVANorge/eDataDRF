@@ -58,3 +58,12 @@ Other method:
 [`protocol_id_regex()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_id_regex.md),
 [`protocol_options_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_options_vocabulary.md),
 [`sampling_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/sampling_protocols_vocabulary.md)
+
+## Examples
+
+``` r
+initialise_methods_tibble()
+#> # A tibble: 0 × 5
+#> # ℹ 5 variables: PROTOCOL_ID <chr>, CAMPAIGN_NAME <chr>,
+#> #   PROTOCOL_CATEGORY <chr>, PROTOCOL_NAME <chr>, PROTOCOL_COMMENT <chr>
+```

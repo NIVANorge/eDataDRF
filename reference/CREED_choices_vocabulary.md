@@ -37,3 +37,11 @@ Other CREED:
 [`example_CREED_scores_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_CREED_scores_tibble.md),
 [`initialise_CREED_data_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_CREED_data_tibble.md),
 [`initialise_CREED_scores_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_CREED_scores_tibble.md)
+
+## Examples
+
+``` r
+CREED_choices_vocabulary()
+#>      Not Met    Fully Met   Partly Met Not Reported Not Relevant 
+#>            4            1            2            3            1 
+```

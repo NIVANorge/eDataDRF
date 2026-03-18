@@ -18,12 +18,6 @@ A character vector of measured category options
 Provides standardised categories indicating where measurements were
 taken relative to organisms. Options include:
 
-External: External Media
-
-Internal: Internal to Organism
-
-Surface: Surface of Organism
-
 ## See also
 
 Other compartment:
@@ -39,3 +33,11 @@ Other measurement:
 [`measured_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/measured_types_vocabulary.md),
 [`parameter_unit_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_unit_vocabulary.md),
 [`uncertainty_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/uncertainty_types_vocabulary.md)
+
+## Examples
+
+``` r
+measured_categories_vocabulary()
+#>               External               Internal                Surface 
+#>       "External Media" "Internal to Organism"  "Surface of Organism" 
+```

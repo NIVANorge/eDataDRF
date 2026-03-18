@@ -14,16 +14,9 @@ A character vector of parameter type subcategory options
 
 ## Details
 
-Provides more specific classifications derived from the parameters
-dataset. The list is dynamically generated from unique
-PARAMETER_TYPE_SUB values and includes options such as:
-
-Mixture
-
-Not reported
-
-All unique sub-types from parameters_vocabulary() (e.g., Carbon,
-Inorganic compounds, Organic compounds, etc.)
+Dynamically generated from unique PARAMETER_TYPE_SUB values in
+[`parameters_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameters_vocabulary.md),
+with "Mixture" appended and standard data quality flags prepended.
 
 ## See also
 
@@ -33,3 +26,12 @@ Other parameter:
 [`measured_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/measured_types_vocabulary.md),
 [`parameter_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_types_vocabulary.md),
 [`parameters_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameters_vocabulary.md)
+
+## Examples
+
+``` r
+head(parameter_types_sub_vocabulary(), 5)
+#> [1] "Not relevant"              "Not reported"             
+#> [3] "Other"                     "Acetylides"               
+#> [5] "Alkaloids and derivatives"
+```

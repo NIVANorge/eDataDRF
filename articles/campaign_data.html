@@ -6,6 +6,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Campaign data • eDataDRF</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" sizes="any" href="../favicon.ico">
+<link rel="manifest" href="../site.webmanifest">
 <script src="../lightswitch.js"></script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
@@ -14,6 +19,7 @@
 <link href="campaign_data_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <!-- pkgdown --><script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
 <meta property="og:title" content="Campaign data">
+<meta property="og:image" content="https://NIVANorge.github.io/eDataDRF/logo.svg">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -74,8 +80,7 @@
 </nav><div class="container template-quarto">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-
-      <h1>Campaign data</h1>
+      <img src="../logo.svg" class="logo" alt=""><h1>Campaign data</h1>
       <p class="subtitle">Records data about sampling campaign and organisation collecting data</p>
 
 
@@ -109,12 +114,11 @@
 <section class="level2"><h3 id="campaign-name-short">Campaign Name Short<a class="anchor" aria-label="anchor" href="#campaign-name-short"></a>
 </h3>
 <p><code>CAMPAIGN_NAME_SHORT</code> - <em>string, free (&gt;= 40 characters), mandatory</em></p>
-<p>A short, terse identifier for the campaign. This is used as a primary key for Campaign data and a foreign key in <a href="measurements_data.html">Measurements data</a> and <a href="methods_data.html">Methods data</a>. No format is enforced beyond the character limit, but it is rcommended to use PascalCase to maximise character efficiency and readability.</p>
+<p>A short, terse identifier for the campaign. This is used as a primary key for Campaign data and a foreign key in <a href="measurements_data.html">Measurements data</a> and <a href="methods_data.html">Methods data</a>. No format is enforced beyond the character limit, but it is recommended to use PascalCase to maximise character efficiency and readability.</p>
 </section><section class="level2"><h3 id="campaign-name">Campaign Name<a class="anchor" aria-label="anchor" href="#campaign-name"></a>
 </h3>
 <p><code>CAMPAIGN_NAME</code> - <em>string, free, mandatory</em></p>
-<p>Hey, this actually has a character limit. Who knew!</p>
-<!-- Full descriptive name of the campaign. -->
+<p>A full descriptive name for the campaign.</p>
 </section><section class="level2"><h3 id="campaign-start-date">Campaign Start Date<a class="anchor" aria-label="anchor" href="#campaign-start-date"></a>
 </h3>
 <p><code>CAMPAIGN_START_DATE</code> - <em>date (ISO), free, mandatory</em></p>

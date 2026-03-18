@@ -37,3 +37,11 @@ Other method:
 [`protocol_id_regex()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_id_regex.md),
 [`protocol_options_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_options_vocabulary.md),
 [`sampling_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/sampling_protocols_vocabulary.md)
+
+## Examples
+
+``` r
+protocol_categories_vocabulary()
+#> [1] "Sampling Protocol"      "Fractionation Protocol" "Extraction Protocol"   
+#> [4] "Analytical Protocol"   
+```

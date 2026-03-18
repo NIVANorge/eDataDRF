@@ -77,5 +77,16 @@ Other initialise_tibble:
 
 Other reference:
 [`example_references_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_references_tibble.md),
-[`generate_reference_id()`](https://NIVANorge.github.io/eDataDRF/reference/generate_reference_id.md),
-[`reference_character_limits()`](https://NIVANorge.github.io/eDataDRF/reference/reference_character_limits.md)
+[`generate_reference_id()`](https://NIVANorge.github.io/eDataDRF/reference/generate_reference_id.md)
+
+## Examples
+
+``` r
+initialise_references_tibble()
+#> # A tibble: 0 × 18
+#> # ℹ 18 variables: REFERENCE_ID <chr>, REFERENCE_TYPE <chr>, DATA_SOURCE <chr>,
+#> #   AUTHOR <chr>, TITLE <chr>, YEAR <int>, ACCESS_DATE <date>,
+#> #   PERIODICAL_JOURNAL <chr>, VOLUME <int>, ISSUE <int>, PUBLISHER <chr>,
+#> #   INSTITUTION <chr>, DOI <chr>, URL <chr>, ISBN_ISSN <chr>, EDITION <chr>,
+#> #   DOCUMENT_NUMBER <chr>, REF_COMMENT <chr>
+```

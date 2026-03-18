@@ -12,25 +12,6 @@ gender_vocabulary()
 
 A character vector of gender options
 
-## Details
-
-Provides standardised categories for biological sex of sampled
-organisms. Options include:
-
-Not reported
-
-Not relevant
-
-Male
-
-Female
-
-Mixed
-
-Hermaphrodite
-
-Other
-
 ## See also
 
 Other biota:
@@ -40,3 +21,11 @@ Other biota:
 [`species_groups_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/species_groups_vocabulary.md),
 [`species_names_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/species_names_vocabulary.md),
 [`tissue_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/tissue_types_vocabulary.md)
+
+## Examples
+
+``` r
+gender_vocabulary()
+#> [1] "Not reported"  "Not relevant"  "Male"          "Female"       
+#> [5] "Mixed"         "Hermaphrodite" "Other"        
+```

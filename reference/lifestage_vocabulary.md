@@ -12,35 +12,6 @@ lifestage_vocabulary()
 
 A character vector of life stage options
 
-## Details
-
-Provides standardised categories for developmental stages of sampled
-organisms. Options include:
-
-Not reported
-
-Not relevant
-
-Adult
-
-Juvenile
-
-Larva
-
-Embryo
-
-Egg
-
-Seedling
-
-Mature
-
-Young
-
-Mixed
-
-Other
-
 ## See also
 
 Other biota:
@@ -50,3 +21,10 @@ Other biota:
 [`species_groups_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/species_groups_vocabulary.md),
 [`species_names_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/species_names_vocabulary.md),
 [`tissue_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/tissue_types_vocabulary.md)
+
+## Examples
+
+``` r
+head(lifestage_vocabulary(), 5)
+#> [1] "Not reported" "Not relevant" "Adult"        "Juvenile"     "Larva"       
+```

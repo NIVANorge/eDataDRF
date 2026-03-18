@@ -42,3 +42,17 @@ Other method:
 [`protocol_id_regex()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_id_regex.md),
 [`protocol_options_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_options_vocabulary.md),
 [`sampling_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/sampling_protocols_vocabulary.md)
+
+## Examples
+
+``` r
+head(analytical_protocols_vocabulary(), 5)
+#> # A tibble: 5 × 3
+#>   Protocol_Type       Short_Name   Long_Name                                    
+#>   <chr>               <chr>        <chr>                                        
+#> 1 Analytical Protocol Not relevant Not relevant                                 
+#> 2 Analytical Protocol Not reported Not reported                                 
+#> 3 Analytical Protocol GC-MS        Gas chromatography mass spectrometry         
+#> 4 Analytical Protocol LC-MS        Liquid chromatography mass spectrometry      
+#> 5 Analytical Protocol LC-MS/MS     Liquid chromatography tandem mass spectromet…
+```

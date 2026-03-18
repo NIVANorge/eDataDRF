@@ -33,8 +33,7 @@ Other example_tibble:
 
 Other reference:
 [`generate_reference_id()`](https://NIVANorge.github.io/eDataDRF/reference/generate_reference_id.md),
-[`initialise_references_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_references_tibble.md),
-[`reference_character_limits()`](https://NIVANorge.github.io/eDataDRF/reference/reference_character_limits.md)
+[`initialise_references_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_references_tibble.md)
 
 ## Examples
 
@@ -43,7 +42,7 @@ example_references_tibble()
 #> # A tibble: 1 × 18
 #>   REFERENCE_ID         REFERENCE_TYPE DATA_SOURCE AUTHOR TITLE  YEAR ACCESS_DATE
 #>   <chr>                <chr>          <chr>       <chr>  <chr> <int> <date>     
-#> 1 2023SmithHeavyMetal… Journal Artic… Primary     Smith… Heav…  2023 2026-03-17 
+#> 1 2023SmithHeavyMetal… Journal Artic… Primary     Smith… Heav…  2023 2026-03-18 
 #> # ℹ 11 more variables: PERIODICAL_JOURNAL <chr>, VOLUME <int>, ISSUE <int>,
 #> #   PUBLISHER <chr>, INSTITUTION <chr>, DOI <chr>, URL <chr>, ISBN_ISSN <chr>,
 #> #   EDITION <chr>, DOCUMENT_NUMBER <chr>, REF_COMMENT <chr>

@@ -24,7 +24,6 @@
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/altitude_units_vocabulary.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/analytical_protocols_vocabulary.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/areas_vocabulary.html</loc></url>
-<url><loc>https://NIVANorge.github.io/eDataDRF/reference/col_vals_in_set_verbose.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/coordinate_systems_vocabulary.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/countries_vocabulary.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/creed_tibble_to_mock_input.html</loc></url>
@@ -74,6 +73,8 @@
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/parameter_types_vocabulary.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/parameter_unit_vocabulary.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/parameters_vocabulary.html</loc></url>
+<url><loc>https://NIVANorge.github.io/eDataDRF/reference/pb_validate_CREED_data_relevance.html</loc></url>
+<url><loc>https://NIVANorge.github.io/eDataDRF/reference/pb_validate_CREED_data_reliability.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/pb_validate_all_edata_tables.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/pb_validate_biota.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/pb_validate_campaign.html</loc></url>
@@ -88,7 +89,6 @@
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/protocol_categories_vocabulary.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/protocol_id_regex.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/protocol_options_vocabulary.html</loc></url>
-<url><loc>https://NIVANorge.github.io/eDataDRF/reference/reference_character_limits.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/reference_type_vocabulary.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/sample_id_regex.html</loc></url>
 <url><loc>https://NIVANorge.github.io/eDataDRF/reference/sampling_protocols_vocabulary.html</loc></url>

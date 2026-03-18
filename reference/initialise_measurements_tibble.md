@@ -99,3 +99,17 @@ Other measurement:
 [`measured_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/measured_types_vocabulary.md),
 [`parameter_unit_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_unit_vocabulary.md),
 [`uncertainty_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/uncertainty_types_vocabulary.md)
+
+## Examples
+
+``` r
+initialise_measurements_tibble()
+#> # A tibble: 0 × 27
+#> # ℹ 27 variables: SITE_CODE <chr>, PARAMETER_NAME <chr>, SAMPLING_DATE <chr>,
+#> #   ENVIRON_COMPARTMENT_SUB <chr>, SUBSAMPLE <chr>, MEASURED_FLAG <chr>,
+#> #   MEASURED_VALUE <dbl>, UNCERTAINTY_TYPE <chr>, UNCERTAINTY_UPPER <dbl>,
+#> #   UNCERTAINTY_LOWER <dbl>, MEASURED_UNIT <chr>, MEASURED_N <dbl>,
+#> #   LOQ_VALUE <dbl>, LOQ_UNIT <chr>, LOD_VALUE <dbl>, LOD_UNIT <chr>,
+#> #   SAMPLING_PROTOCOL <chr>, EXTRACTION_PROTOCOL <chr>,
+#> #   FRACTIONATION_PROTOCOL <chr>, ANALYTICAL_PROTOCOL <chr>, …
+```

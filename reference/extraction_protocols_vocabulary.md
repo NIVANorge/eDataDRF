@@ -44,3 +44,17 @@ Other method:
 [`protocol_id_regex()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_id_regex.md),
 [`protocol_options_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_options_vocabulary.md),
 [`sampling_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/sampling_protocols_vocabulary.md)
+
+## Examples
+
+``` r
+head(extraction_protocols_vocabulary(), 5)
+#> # A tibble: 5 × 3
+#>   Protocol_Type       Short_Name      Long_Name                 
+#>   <chr>               <chr>           <chr>                     
+#> 1 Extraction Protocol Not relevant    Not relevant              
+#> 2 Extraction Protocol Not reported    Not reported              
+#> 3 Extraction Protocol None            No extraction             
+#> 4 Extraction Protocol Methanol        Methanol extraction       
+#> 5 Extraction Protocol Dichloromethane Dichloromethane extraction
+```

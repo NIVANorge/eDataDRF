@@ -17,13 +17,7 @@ A character vector of country options
 
 Provides country names from the
 [ISO_3166_1](https://rdrr.io/pkg/ISOcodes/man/ISO_3166.html) standard,
-with additional options for data quality flags. Complete list includes:
-
-Not relevant
-
-Not reported
-
-All ISO 3166-1 country names (e.g., Afghanistan, Albania, Algeria, ...)
+with additional options for data quality flags.
 
 ## See also
 
@@ -36,3 +30,10 @@ Other site:
 [`geographic_features_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/geographic_features_vocabulary.md),
 [`initialise_sites_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_sites_tibble.md),
 [`ocean_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/ocean_vocabulary.md)
+
+## Examples
+
+``` r
+head(countries_vocabulary(), 5)
+#> [1] "Not relevant" "Not reported" "Aruba"        "Afghanistan"  "Angola"      
+```

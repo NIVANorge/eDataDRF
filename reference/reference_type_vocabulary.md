@@ -12,3 +12,10 @@ reference_type_vocabulary()
 ## Value
 
 A character vector of permitted reference types.
+
+## Examples
+
+``` r
+reference_type_vocabulary()
+#> [1] "Journal Article"  "Book"             "Report"           "Dataset/Database"
+```

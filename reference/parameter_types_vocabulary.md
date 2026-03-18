@@ -13,25 +13,6 @@ parameter_types_vocabulary()
 
 A character vector of parameter type options
 
-## Details
-
-Provides high-level categories for classifying measured parameters.
-Options include:
-
-Not relevant
-
-Stressor
-
-Quality parameter
-
-Normalisation
-
-Background
-
-Ecological Indicator
-
-Other
-
 ## See also
 
 Other parameter:
@@ -40,3 +21,12 @@ Other parameter:
 [`measured_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/measured_types_vocabulary.md),
 [`parameter_types_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_types_sub_vocabulary.md),
 [`parameters_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameters_vocabulary.md)
+
+## Examples
+
+``` r
+parameter_types_vocabulary()
+#> [1] "Not relevant"         "Stressor"             "Quality parameter"   
+#> [4] "Normalisation"        "Background"           "Ecological Indicator"
+#> [7] "Other"               
+```

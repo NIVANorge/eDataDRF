@@ -101,7 +101,16 @@ environ_compartments_sub_vocabulary()
 #>   Biota, Terrestrial       Biota, Aquatic   Biota, Atmospheric 
 #> "Biota, Terrestrial"     "Biota, Aquatic" "Biota, Atmospheric" 
 #>         Biota, Other 
-#>       "Biota, Other"
+#>       "Biota, Other" 
+#> 
+#> $`Not relevant`
+#> NULL
+#> 
+#> $`Not reported`
+#> NULL
+#> 
+#> $Other
+#> NULL
 ```
 
 ### Measured Category

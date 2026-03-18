@@ -15,33 +15,27 @@ validation. This programmatic validation layer can be re-used wherever
 needed; this is particularly valuable when data may need to be
 transformed as part of the analysis pathway.
 
-Below we demonstrate the use of the validation functions for each table
-type. Note: The Styling of included tables is currently rather broken,
-making them difficult to interpret. I will fix this when possible, but
-as it’s not a functional issue I haven’t prioritised it.
-
-Todo:
-
-- Add and harmonise example data
-- Test example data runs without error
-- Test validation functions against example data
-- One-line explanation of agent vs pipeline mode
-
 ## Campaign data validation
 
-Typically when campaign data are generated/extracted for a data object
-the resulting table will only have one row. However, in downstream
-operations across multiple data objects, each campaign must have a
-unique identifier; this is checked as part of the validation below.
-
 ``` r
+# generate example data
 example_campaign_tibble() |>
+  # assign validation rules to each column
   pb_validate_campaign() |> 
+  # run validation rules and generate a summary table
   interrogate() |> 
+  # display the table in a report or live session
   get_agent_report()
 ```
 
 [TABLE]
+
+For information on how to interpret this output, please see the image
+below:
+
+![](how_to_read_pointblank.png)
+
+Annotated pointblank table.
 
 ## References data validation
 
@@ -75,15 +69,6 @@ example_parameters_tibble() |>
 ```
 
 [TABLE]
-
-## Compartments data validation
-
-## TODO: Might as well add this one
-
-``` r
-# example_compartments_tibble() |> 
-#   pb_validate_compartments()
-```
 
 ## Samples data validation
 
@@ -131,16 +116,27 @@ example_measurements_tibble() |>
 
 ## CREED data validation
 
-## TODO: Again, might as well
+CREED data is validated separately as Relevance and Reliability.
 
 ``` r
-# example_CREED_data_tibble() |>
-#   pb_validate_CREED_data()
+example_CREED_relevance_tibble() |>
+  pb_validate_CREED_data_relevance()
 ```
+
+[TABLE]
+
+``` r
+example_CREED_reliability_tibble() |>
+  pb_validate_CREED_data_reliability()
+```
+
+[TABLE]
 
 ## CREED scores data validation
 
 ``` r
-# example_CREED_scores_tibble() |>
-#   pb_validate_CREED_scores()
+example_CREED_scores_tibble() |>
+  pb_validate_CREED_scores()
 ```
+
+[TABLE]

@@ -13,23 +13,6 @@ geographic_features_sub_vocabulary()
 
 A character vector of geographic feature subcategory options
 
-## Details
-
-Provides additional detail for geographic features, particularly for
-aquatic environments. Options include:
-
-Not relevant
-
-Not reported
-
-Water surface
-
-Water column, pelagic zone
-
-Water benthos
-
-Other
-
 ## See also
 
 Other site:
@@ -41,3 +24,12 @@ Other site:
 [`geographic_features_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/geographic_features_vocabulary.md),
 [`initialise_sites_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_sites_tibble.md),
 [`ocean_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/ocean_vocabulary.md)
+
+## Examples
+
+``` r
+geographic_features_sub_vocabulary()
+#> [1] "Not relevant"               "Not reported"              
+#> [3] "Water surface"              "Water column, pelagic zone"
+#> [5] "Water benthos"              "Other"                     
+```

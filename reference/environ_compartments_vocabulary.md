@@ -1,7 +1,8 @@
 # Environmental compartments controlled vocabulary
 
 Returns controlled vocabulary options for broad environmental
-compartments.
+compartments. Calls `names(environ_compartments_sub_vocabulary())` to
+return the first level of the list.
 
 ## Usage
 
@@ -13,25 +14,6 @@ environ_compartments_vocabulary()
 
 A character vector of environmental compartment options
 
-## Details
-
-Provides top-level categories for environmental matrices. Options
-include:
-
-Aquatic
-
-Atmospheric
-
-Terrestrial
-
-Biota
-
-Not relevant
-
-Not reported
-
-Other
-
 ## See also
 
 Other compartment:
@@ -39,3 +21,11 @@ Other compartment:
 [`example_compartments_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_compartments_tibble.md),
 [`initialise_compartments_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_compartments_tibble.md),
 [`measured_categories_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/measured_categories_vocabulary.md)
+
+## Examples
+
+``` r
+environ_compartments_vocabulary()
+#> [1] "Aquatic"      "Atmospheric"  "Terrestrial"  "Biota"        "Not relevant"
+#> [6] "Not reported" "Other"       
+```

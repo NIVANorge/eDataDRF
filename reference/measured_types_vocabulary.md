@@ -12,37 +12,6 @@ measured_types_vocabulary()
 
 A character vector of measured type options
 
-## Details
-
-Provides standardised categories for the nature of measurements being
-recorded. Options include:
-
-Concentration
-
-Dose rate
-
-Dose
-
-Physical parameter
-
-Amount
-
-Volume
-
-Fraction of total
-
-Percent
-
-Irradiance
-
-Response
-
-Ecological Indicator
-
-Not relevant
-
-Other
-
 ## See also
 
 Other parameter:
@@ -59,3 +28,11 @@ Other measurement:
 [`measured_flag_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/measured_flag_vocabulary.md),
 [`parameter_unit_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_unit_vocabulary.md),
 [`uncertainty_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/uncertainty_types_vocabulary.md)
+
+## Examples
+
+``` r
+head(measured_types_vocabulary(), 5)
+#> [1] "Concentration"      "Dose rate"          "Dose"              
+#> [4] "Physical parameter" "Amount"            
+```

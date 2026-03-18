@@ -1,9 +1,5 @@
 # Rationale
 
-``` r
-library(eDataDRF)
-```
-
 The eData Data Reporting Format is a format for the standardisation of
 data on pollutant occurence in the environment. By converting this data
 to a single, consistent format, it makes it easier to validate, compare,
@@ -46,3 +42,7 @@ existing package dependencies and versioning to keep them updated as the
 format changes. In future, we plan to extend the format to other forms.
 
 ## Who supported this work?
+
+This work is supported by the Research Council of Norway (RCN-315969
+EXPECT), EU-HEU-101057014 Project “PARC”, and NIVA’s Computational
+Toxicology Program (NCTP, RCN-160016).

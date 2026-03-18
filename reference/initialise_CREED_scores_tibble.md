@@ -54,3 +54,12 @@ Other CREED:
 [`example_CREED_reliability_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_CREED_reliability_tibble.md),
 [`example_CREED_scores_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_CREED_scores_tibble.md),
 [`initialise_CREED_data_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_CREED_data_tibble.md)
+
+## Examples
+
+``` r
+initialise_CREED_scores_tibble()
+#> # A tibble: 0 × 5
+#> # ℹ 5 variables: REFERENCE_ID <chr>, SILVER_RELIABILITY <chr>,
+#> #   SILVER_RELEVANCE <chr>, GOLD_RELIABILITY <chr>, GOLD_RELEVANCE <chr>
+```

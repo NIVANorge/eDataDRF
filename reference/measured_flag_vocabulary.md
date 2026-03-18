@@ -32,3 +32,10 @@ Other measurement:
 [`measured_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/measured_types_vocabulary.md),
 [`parameter_unit_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_unit_vocabulary.md),
 [`uncertainty_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/uncertainty_types_vocabulary.md)
+
+## Examples
+
+``` r
+measured_flag_vocabulary()
+#> [1] ""      "< LOQ" "< LOD"
+```
