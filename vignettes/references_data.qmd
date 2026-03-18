@@ -24,8 +24,6 @@ library(eDataDRF)
 #| label: initialise
 
 initialise_references_tibble()
-
-reference_character_limits()
 ```
 
 # Variables
