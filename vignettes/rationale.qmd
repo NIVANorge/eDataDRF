@@ -2,7 +2,7 @@
 title: "FAQ"
 subtitle: "Rationale behind and additional background on the format"
 vignette: >
-  %\VignetteIndexEntry{references_data}
+  %\VignetteIndexEntry{rationale}
   %\VignetteEngine{quarto::html}
   %\VignetteEncoding{UTF-8}
 knitr:

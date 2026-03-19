@@ -57,47 +57,6 @@ Tables are listed below:
 | [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html) | Records CREED assessment criteria, relevant data, criteria scores, and limitations | Optional |
 | [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | Records CREED usability scores calculated from CREED data above | Optional |
 
-And displayed as an entity-relation diagram.
-
-```{r echo = FALSE}
-
-diagram <- "
-erDiagram
-    Campaign ||--o{ Measurements : 'Belongs'
-    Campaign ||--o{ References : 'Belongs'
-    Campaign ||--o{ Sites : 'Belongs'
-    Campaign ||--o{ Methods : 'Belongs'
-    Campaign ||--o{ CREED : 'Assesses'
-    
-    References ||--o{ Measurements : 'Cites'
-    Sites ||--o{ Measurements : 'Locates'
-    Parameters ||--o{ Measurements : 'Quantifies'
-    Methods ||--o{ Measurements : 'Means'
-    
-    Measurements {
-    }
-    
-    Campaign {
-    }
-    
-    References {
-    }
-    
-    Sites {
-    }
-    
-    Parameters {
-    }
-    
-    Methods {
-    }
-    
-    CREED {
-    }"
-
-DiagrammeR::mermaid(diagram)
-```
-
 ## Vocabulary
 
 Likewise, controlled vocabulary is available as functions that return vectors, lists, or tables. In some cases, helper functions are available that wrap multiple invididual functions.

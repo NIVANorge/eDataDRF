@@ -2,7 +2,7 @@
 title: "eData validation"
 subtitle: "Validation functions for eData"
 vignette: >
-  %\VignetteIndexEntry{references_data}
+  %\VignetteIndexEntry{validation}
   %\VignetteEngine{quarto::html}
   %\VignetteEncoding{UTF-8}
 knitr:
