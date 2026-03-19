@@ -3,7 +3,8 @@
 \name{generate_protocol_id}
 \alias{generate_protocol_id}
 \title{Generate a semi-unique string ID for a protocol based on its type,
-name, the campaign name, and a sequence number}
+name, the campaign name, and a sequence number; used a a key between Methods
+and Measurements table.}
 \usage{
 generate_protocol_id(
   protocol_type,

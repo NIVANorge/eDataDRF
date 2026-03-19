@@ -25,6 +25,11 @@ the format produced by \code{\link[=generate_reference_id]{generate_reference_id
 placeholder value, and that reliability and relevance classification fields
 contain valid values.
 }
+\details{
+Validation thresholds are configured using \code{\link[pointblank:action_levels]{pointblank::action_levels()}}.
+See \code{vignette("validation", package = "pointblank")} for an overview of
+the pointblank validation workflow.
+}
 \examples{
 \dontrun{
 pb_validate_CREED_scores(example_CREED_scores_tibble())

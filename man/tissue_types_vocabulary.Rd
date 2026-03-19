@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{tissue_types_vocabulary}
 \alias{tissue_types_vocabulary}
-\title{Tissue types controlled vocabulary}
+\title{Controlled vocabulary for the SAMPLE_TISSUE column, Biota table}
 \usage{
 tissue_types_vocabulary()
 }

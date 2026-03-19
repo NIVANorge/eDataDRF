@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{measured_types_vocabulary}
 \alias{measured_types_vocabulary}
-\title{Measured types controlled vocabulary}
+\title{Controlled vocabulary for the MEASURED_TYPE column, Parameters table}
 \usage{
 measured_types_vocabulary()
 }

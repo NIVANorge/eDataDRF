@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_campaign_tibble}
 \alias{initialise_campaign_tibble}
-\title{Initialise campaign tibble}
+\title{Initialise an 8x0 tibble for storing organisational and date metadata}
 \usage{
 initialise_campaign_tibble()
 }

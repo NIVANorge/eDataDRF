@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_generate_IDs.R
 \name{protocol_id_regex}
 \alias{protocol_id_regex}
-\title{Regular expression for protocol IDs}
+\title{Regular expression to check \code{\link[=generate_protocol_id]{generate_protocol_id()}} protocol IDs for Methods table}
 \usage{
 protocol_id_regex()
 }
@@ -23,7 +23,7 @@ as produced by \code{\link[=generate_protocol_id]{generate_protocol_id()}}, wher
 \item \verb{_CampaignAbbrev}: optional underscore + up to 10 alphanumeric characters
 }
 
-Examples of valid IDs: \code{S01_WaterSample_MyStudy}, \code{A02_LCMS_Study2024}, \code{X99}
+Examples of valid IDs: \code{S01_WaterSample_MyStudy}, \code{A02_LCMS_Study2024}
 }
 \seealso{
 \code{\link[=generate_protocol_id]{generate_protocol_id()}}

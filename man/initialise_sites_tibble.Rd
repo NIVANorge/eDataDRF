@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_sites_tibble}
 \alias{initialise_sites_tibble}
-\title{Initialise sites tibble}
+\title{Initialise an 13x0 tibble for storing geographical metadata}
 \usage{
 initialise_sites_tibble()
 }

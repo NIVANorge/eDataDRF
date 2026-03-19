@@ -27,6 +27,11 @@ values and units are present and valid when provided, protocol IDs match the
 expected format, MEASURED_TYPE is in its controlled vocabulary, and reference
 and sample IDs are present and correctly formatted.
 }
+\details{
+Validation thresholds are configured using \code{\link[pointblank:action_levels]{pointblank::action_levels()}}.
+See \code{vignette("validation", package = "pointblank")} for an overview of
+the pointblank validation workflow.
+}
 \examples{
 \dontrun{
 pb_validate_measurements(example_measurements_tibble())

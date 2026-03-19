@@ -58,6 +58,12 @@ Applies pointblank validation rules to all supplied eData tables by calling
 the individual table validation functions. Required tables are always
 validated; optional tables are validated only when provided.
 }
+\details{
+Calls each individual table validation function in turn. Validation is
+performed using \code{\link[pointblank:create_agent]{pointblank::create_agent()}} and related functions.
+See \code{vignette("validation", package = "pointblank")} for an overview of
+the pointblank validation workflow.
+}
 \examples{
 \dontrun{
 agents <- pb_validate_all_edata_tables(

@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{coordinate_systems_vocabulary}
 \alias{coordinate_systems_vocabulary}
-\title{Coordinate systems controlled vocabulary}
+\title{Controlled vocabulary for the SITE_COORDINATE_SYSTEM column, Sites table}
 \usage{
 coordinate_systems_vocabulary(common_only = TRUE)
 }

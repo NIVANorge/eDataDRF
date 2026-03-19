@@ -25,6 +25,11 @@ format produced by \code{\link[=generate_protocol_id]{generate_protocol_id()}}, 
 name fields are non-null, and that protocol category and name values are
 within their controlled vocabularies.
 }
+\details{
+Validation thresholds are configured using \code{\link[pointblank:action_levels]{pointblank::action_levels()}}.
+See \code{vignette("validation", package = "pointblank")} for an overview of
+the pointblank validation workflow.
+}
 \examples{
 \dontrun{
 pb_validate_methods(example_methods_tibble())

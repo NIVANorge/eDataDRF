@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{data_source_vocabulary}
 \alias{data_source_vocabulary}
-\title{Controlled vocabulary for data sources}
+\title{Controlled vocabulary for the DATA_SOURCE column, References table}
 \usage{
 data_source_vocabulary()
 }
@@ -12,6 +12,13 @@ A character vector of permitted data source types.
 \description{
 Returns the set of valid values for the \code{DATA_SOURCE} field in the
 Reference table.
+}
+\details{
+Primary: Data object reports first-party data
+
+Secondary/Review: Data object reports third-party data
+
+Other: Data sourcing otherwise not relevant
 }
 \examples{
 data_source_vocabulary()

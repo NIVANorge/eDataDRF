@@ -25,6 +25,11 @@ are non-null, that environmental compartment fields contain values within
 their controlled vocabularies, and that each ENVIRON_COMPARTMENT_SUB value
 is consistent with its corresponding ENVIRON_COMPARTMENT parent.
 }
+\details{
+Validation thresholds are configured using \code{\link[pointblank:action_levels]{pointblank::action_levels()}}.
+See \code{vignette("validation", package = "pointblank")} for an overview of
+the pointblank validation workflow.
+}
 \examples{
 \dontrun{
 pb_validate_samples(example_samples_tibble())

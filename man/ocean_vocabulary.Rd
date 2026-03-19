@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{ocean_vocabulary}
 \alias{ocean_vocabulary}
-\title{Ocean controlled vocabulary}
+\title{Controlled vocabulary for the OCEAN_IHO column, Sites table}
 \usage{
 ocean_vocabulary()
 }

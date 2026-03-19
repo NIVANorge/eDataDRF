@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{species_groups_vocabulary}
 \alias{species_groups_vocabulary}
-\title{Species groups controlled vocabulary}
+\title{Controlled vocabulary for the SPECIES_GROUP column, Biota table}
 \usage{
 species_groups_vocabulary()
 }

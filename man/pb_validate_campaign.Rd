@@ -24,6 +24,11 @@ compliance for an eData Campaign table. Checks that campaign name fields
 are non-null and unique, that campaign start dates fall within a valid
 range, and that entry metadata fields are present and not in the future.
 }
+\details{
+Validation thresholds are configured using \code{\link[pointblank:action_levels]{pointblank::action_levels()}}.
+See \code{vignette("validation", package = "pointblank")} for an overview of
+the pointblank validation workflow.
+}
 \examples{
 \dontrun{
 pb_validate_campaign(example_campaign_tibble())

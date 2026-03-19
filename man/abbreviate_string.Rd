@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_generate_IDs.R
 \name{abbreviate_string}
 \alias{abbreviate_string}
-\title{Abbreviate string to first n words with case formatting}
+\title{Generic function to abbreviate string to first n words with case formatting}
 \usage{
 abbreviate_string(
   string,

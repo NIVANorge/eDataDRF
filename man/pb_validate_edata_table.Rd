@@ -39,6 +39,11 @@ compliance for eData format tables. Can operate in two modes:
 }
 }
 \details{
+Uses \code{\link[pointblank:create_agent]{pointblank::create_agent()}} to build a validation agent in agent mode,
+or applies steps directly to the data in pipeline mode.
+See also \code{vignette("validation", package = "pointblank")} for an overview of
+the pointblank validation workflow.
+
 In agent mode, the agent object can be used to:
 \itemize{
 \item Extract validation results with \code{get_sundered_data()}

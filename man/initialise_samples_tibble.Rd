@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_samples_tibble}
 \alias{initialise_samples_tibble}
-\title{Initialise samples tibble}
+\title{Initialise an 11x0 tibble for storing combinations of sites, dates, parameters, and compartments sampled}
 \usage{
 initialise_samples_tibble()
 }

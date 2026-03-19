@@ -33,6 +33,11 @@ non-null and unique, geographic feature and country fields are within their
 controlled vocabularies, coordinates are within valid ranges, and required
 metadata fields are present.
 }
+\details{
+Validation thresholds are configured using \code{\link[pointblank:action_levels]{pointblank::action_levels()}}.
+See \code{vignette("validation", package = "pointblank")} for an overview of
+the pointblank validation workflow.
+}
 \examples{
 \dontrun{
 pb_validate_sites(example_sites_tibble())

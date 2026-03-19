@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{parameters_vocabulary}
 \alias{parameters_vocabulary}
-\title{Sampled parameters controlled vocabulary}
+\title{Data for PARAMETER_NAME, PARAMETER_TYPE, etc. in the Parameters table}
 \usage{
 parameters_vocabulary()
 }

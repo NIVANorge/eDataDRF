@@ -25,6 +25,11 @@ compliance for a CREED relevance data table in the format produced by
 are within the expected sets, scores are integers between 0 and 4, and
 required/recommended classification is valid.
 }
+\details{
+Validation thresholds are configured using \code{\link[pointblank:action_levels]{pointblank::action_levels()}}.
+See \code{vignette("validation", package = "pointblank")} for an overview of
+the pointblank validation workflow.
+}
 \examples{
 \dontrun{
 pb_validate_CREED_data_relevance(example_CREED_relevance_tibble())

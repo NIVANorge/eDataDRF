@@ -23,7 +23,7 @@ library(eDataDRF)
 ```{r}
 #| label: initialise
 
-initialise_references_tibble()
+initialise_references_tibble(
 ```
 
 # Variables

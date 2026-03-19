@@ -1,4 +1,4 @@
-#' Geographic features controlled vocabulary
+#' Controlled vocabulary for the SITE_GEOGRAPHIC_FEATURE column, Sites table
 #'
 #' Returns controlled vocabulary options for site geographic features.
 #'
@@ -32,12 +32,11 @@ geographic_features_vocabulary <- function() {
   )
 }
 
-#' Geographic feature sub-categories controlled vocabulary
+#' Controlled vocabulary for the SITE_GEOGRAPHIC_FEATURE_SUB column, Sites table
 #'
 #' Returns controlled vocabulary options for geographic feature subcategories.
 #'
 #' @return A character vector of geographic feature subcategory options
-
 #' @family site
 #' @examples
 #' geographic_features_sub_vocabulary()
@@ -53,7 +52,7 @@ geographic_features_sub_vocabulary <- function() {
   )
 }
 
-#' Coordinate systems controlled vocabulary
+#' Controlled vocabulary for the SITE_COORDINATE_SYSTEM column, Sites table
 #'
 #' Returns controlled vocabulary options for spatial coordinate reference systems.
 #'
@@ -101,7 +100,7 @@ coordinate_systems_vocabulary <- function(common_only = TRUE) {
   c("Not relevant", "Not reported", "Other", "WGS 84", crs_names)
 }
 
-#' Countries controlled vocabulary
+#' Controlled vocabulary for the COUNTRY_ISO column, Sites table
 #'
 #' Returns controlled vocabulary options for country names based on ISO 3166-1 standard.
 #'
@@ -123,7 +122,7 @@ countries_vocabulary <- function() {
   )
 }
 
-#' Ocean controlled vocabulary
+#' Controlled vocabulary for the OCEAN_IHO column, Sites table
 #'
 #' Returns controlled vocabulary options for IHO ocean regions.
 #'
@@ -305,7 +304,7 @@ areas_vocabulary <- function() {
   ocean_vocabulary()
 }
 
-#' Altitude units controlled vocabulary
+#' Controlled vocabulary for the ALTITUDE_UNIT column, Sites table
 #'
 #' Returns controlled vocabulary options for altitude measurement units.
 #'
@@ -318,7 +317,7 @@ altitude_units_vocabulary <- function() {
   c("km", "m", "cm", "mm")
 }
 
-#' Sampled parameters controlled vocabulary
+#' Data for PARAMETER_NAME, PARAMETER_TYPE, etc. in the Parameters table
 #'
 #' Returns comprehensive parameter data combining quality and chemical parameters.
 #'
@@ -386,7 +385,7 @@ parameters_vocabulary <- function() {
   bind_rows(quality_params, chemical_parameters)
 }
 
-#' Parameter types controlled vocabulary
+#' Controlled vocabulary for the PARAMETER_TYPES column, Parameters table
 #'
 #' Returns controlled vocabulary options for broad parameter classifications.
 #'
@@ -407,7 +406,7 @@ parameter_types_vocabulary <- function() {
   )
 }
 
-#' Parameter type sub-categories controlled vocabulary
+#' Controlled vocabulary for the PARAMETER_TYPES_SUB column, Parameters table
 #'
 #' Returns controlled vocabulary options for parameter type subcategories.
 #'
@@ -438,7 +437,7 @@ parameter_types_sub_vocabulary <- function() {
   return(c("Not relevant", "Not reported", "Other", parameters_sorted))
 }
 
-#' Measured types controlled vocabulary
+#' Controlled vocabulary for the MEASURED_TYPE column, Parameters table
 #'
 #' Returns controlled vocabulary options for types of measurements.
 #'
@@ -466,7 +465,7 @@ measured_types_vocabulary <- function() {
   )
 }
 
-#' Environmental compartment sub-categories controlled vocabulary
+#' Controlled vocabulary for the ENVIRON_COMPARTMENT and ENVIRON_COMPARTMENT_SUB columns, Compartments table
 #'
 #' Returns controlled vocabulary mapping for environmental sub-compartments organized by main compartment.
 #'
@@ -525,7 +524,7 @@ environ_compartments_sub_vocabulary <- function() {
   )
 }
 
-#' Environmental compartments controlled vocabulary
+#' Controlled vocabulary for the ENVIRON_COMPARTMENT column, Compartments table
 #'
 #' Returns controlled vocabulary options for broad environmental compartments.
 #' Calls \code{names(environ_compartments_sub_vocabulary())} to return the first
@@ -540,7 +539,7 @@ environ_compartments_vocabulary <- function() {
   names(environ_compartments_sub_vocabulary())
 }
 
-#' Measured categories controlled vocabulary
+#' Controlled vocabulary for the MEASURED_CATEGORY column, Compartments table
 #'
 #' Returns controlled vocabulary options for measurement context categories.
 #'
@@ -562,7 +561,7 @@ measured_categories_vocabulary <- function() {
   )
 }
 
-#' Species names controlled vocabulary
+#' Controlled vocabulary for the SPECIES_NAME column, Biota table
 #'
 #' Returns species information from EPA ECOTOX database.
 #'
@@ -607,8 +606,7 @@ species_names_vocabulary <- function() {
     ))
 }
 
-
-#' Tissue types controlled vocabulary
+#' Controlled vocabulary for the SAMPLE_TISSUE column, Biota table
 #'
 #' Returns controlled vocabulary options for biological tissue types.
 #'
@@ -641,8 +639,8 @@ tissue_types_vocabulary <- function() {
     "Gonad",
     "Shell",
     "Carapace",
-    "Digestive Gland", # TODO: New
-    "Mantle", # TODO: New
+    "Digestive Gland",
+    "Mantle",
     "Blood",
     "Egg",
     "Larva",
@@ -663,7 +661,7 @@ tissue_types_vocabulary <- function() {
   )
 }
 
-#' Life stages controlled vocabulary
+#' Controlled vocabulary for the SAMPLE_SPECIES_LIFESTAGE column, Biota table
 #'
 #' Returns controlled vocabulary options for organism life stages.
 #'
@@ -689,7 +687,7 @@ lifestage_vocabulary <- function() {
   )
 }
 
-#' Gender controlled vocabulary
+#' Controlled vocabulary for the SAMPLE_SPECIES_GENDER column, Biota table
 #'
 #' Returns controlled vocabulary options for organism sex or gender.
 #'
@@ -710,7 +708,7 @@ gender_vocabulary <- function() {
   )
 }
 
-#' Species groups controlled vocabulary
+#' Controlled vocabulary for the SPECIES_GROUP column, Biota table
 #'
 #' Returns controlled vocabulary options for broad taxonomic groups from the EPA ECOTOX database.
 #'
@@ -742,7 +740,7 @@ species_groups_vocabulary <- function() {
   )
 }
 
-#' Uncertainty types controlled vocabulary
+#' Controlled vocabulary for the UNCERTAINTY_TYPE column, Measurements table
 #'
 #' Returns controlled vocabulary options for statistical uncertainty and variability measures.
 #'
@@ -781,7 +779,7 @@ uncertainty_types_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for reference types
+#' Controlled vocabulary for the REFERENCE_TYPE column, References table
 #'
 #' Returns the set of valid values for the `REFERENCE_TYPE` field in the
 #' Reference table.
@@ -794,10 +792,16 @@ reference_type_vocabulary <- function() {
   c("Journal Article", "Book", "Report", "Dataset/Database")
 }
 
-#' Controlled vocabulary for data sources
+#' Controlled vocabulary for the DATA_SOURCE column, References table
 #'
 #' Returns the set of valid values for the `DATA_SOURCE` field in the
 #' Reference table.
+#'
+#' Primary: Data object reports first-party data
+#'
+#' Secondary/Review: Data object reports third-party data
+#'
+#' Other: Data sourcing otherwise not relevant
 #'
 #' @return A character vector of permitted data source types.
 #' @examples
@@ -805,4 +809,368 @@ reference_type_vocabulary <- function() {
 #' @export
 data_source_vocabulary <- function() {
   c("Primary", "Secondary/Review", "Other")
+}
+
+
+# Protocol Vocabulary Functions ----
+# Each protocol type creates its own tribble, then combined with bind_rows
+
+#' Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (sampling), Methods table
+#'
+#' Returns sampling protocol options with short and long names.
+#'
+#' @details
+#' Provides standardised sampling method classifications as a tibble with three columns:
+#'
+#' Protocol_Type: Always "Sampling Protocol"
+#'
+#' Short_Name: Abbreviated protocol name (e.g., "Point", "Composite", "Trawl")
+#'
+#' Long_Name: Full descriptive name (e.g., "Point sampling", "Composite sampling", "Trawl sampling")
+#'
+#' Available protocols include: Not relevant, Not reported, Point, Composite, Trawl, Grab, Core, Seine net, Electrofishing, Plankton net, Bailer, Peristaltic pump, Active air, Passive air, SPMD, SPE, LVSPE, DGT, Caged organisms, Blood sample, Biopsy, Other
+#'
+#' @return A tibble with Protocol_Type, Short_Name, and Long_Name columns
+
+#' @family method
+#' @importFrom tibble tribble
+#' @examples
+#' head(sampling_protocols_vocabulary(), 5)
+#' @export
+sampling_protocols_vocabulary <- function() {
+  tribble(
+    ~Protocol_Type      , ~Short_Name        , ~Long_Name                            ,
+    "Sampling Protocol" , "Not relevant"     , "Not relevant"                        ,
+    "Sampling Protocol" , "Not reported"     , "Not reported"                        ,
+    "Sampling Protocol" , "Point"            , "Point sampling"                      ,
+    "Sampling Protocol" , "Composite"        , "Composite sampling"                  ,
+    "Sampling Protocol" , "Trawl"            , "Trawl sampling"                      ,
+    "Sampling Protocol" , "Grab"             , "Grab sampling"                       ,
+    "Sampling Protocol" , "Core"             , "Core sampling"                       ,
+    "Sampling Protocol" , "Seine net"        , "Seine net sampling"                  ,
+    "Sampling Protocol" , "Electrofishing"   , "Electrofishing"                      ,
+    "Sampling Protocol" , "Plankton net"     , "Plankton net sampling"               ,
+    "Sampling Protocol" , "Bailer"           , "Bailer sampling"                     ,
+    "Sampling Protocol" , "Peristaltic pump" , "Peristaltic pump sampling"           ,
+    "Sampling Protocol" , "Active air"       , "Active air sampling"                 ,
+    "Sampling Protocol" , "Passive air"      , "Passive air sampling"                ,
+    "Sampling Protocol" , "SPMD"             , "Semipermeable membrane device"       ,
+    "Sampling Protocol" , "SPE"              , "Solid phase extraction device"       ,
+    "Sampling Protocol" , "LVSPE"            , "Large volume solid phase extraction" ,
+    "Sampling Protocol" , "DGT"              , "Diffusive gradients in thin films"   ,
+    "Sampling Protocol" , "Caged organisms"  , "Caged organism deployment"           ,
+    "Sampling Protocol" , "Blood sample"     , "Blood sample"                        ,
+    "Sampling Protocol" , "Biopsy"           , "Biopsy"                              ,
+    "Sampling Protocol" , "Other"            , "Other"
+  )
+}
+
+#' Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (fractionation), Methods table
+#'
+#' Returns fractionation protocol options with short and long names.
+#'
+#' @details
+#' Provides standardised fractionation method classifications as a tibble with three columns:
+#'
+#' Protocol_Type: Always "Fractionation Protocol"
+#'
+#' Short_Name: Abbreviated protocol name (e.g., "Total", "Dissolved", "Filtered")
+#'
+#' Long_Name: Full descriptive name (e.g., "Total fraction", "Dissolved fraction", "Filtered fraction")
+#'
+#' Available protocols include: Not relevant, Not reported, Total, Particles, Colloidal, LMM, Aqueous, Filtered 0.45um, Filtered 0.2um, Dissolved, Filtered, Acid extractable, Reducible, Oxidisable, Residual, Bioavailable, Free ion, Size fractionated, Other
+#'
+#' @return A tibble with Protocol_Type, Short_Name, and Long_Name columns
+
+#' @family method
+#' @importFrom tibble tribble
+#' @examples
+#' head(fractionation_protocols_vocabulary(), 5)
+#' @export
+fractionation_protocols_vocabulary <- function() {
+  tribble(
+    ~Protocol_Type           , ~Short_Name         , ~Long_Name                                  ,
+    "Fractionation Protocol" , "Not relevant"      , "Not relevant"                              ,
+    "Fractionation Protocol" , "Not reported"      , "Not reported"                              ,
+    "Fractionation Protocol" , "Total"             , "Total fraction"                            ,
+    "Fractionation Protocol" , "Particles"         , "Particulate fraction"                      ,
+    "Fractionation Protocol" , "Colloidal"         , "Colloidal fraction"                        ,
+    "Fractionation Protocol" , "LMM"               , "Low molecular mass fraction"               ,
+    "Fractionation Protocol" , "Aqueous"           , "Aqueous fraction"                          ,
+    "Fractionation Protocol" , "Filtered 0.45um"   , "Filtered through 0.45 micrometer membrane" ,
+    "Fractionation Protocol" , "Filtered 0.2um"    , "Filtered through 0.2 micrometer membrane"  ,
+    "Fractionation Protocol" , "Dissolved"         , "Dissolved fraction"                        ,
+    "Fractionation Protocol" , "Filtered"          , "Filtered fraction"                         ,
+    "Fractionation Protocol" , "Acid extractable"  , "Acid extractable fraction"                 ,
+    "Fractionation Protocol" , "Reducible"         , "Reducible fraction"                        ,
+    "Fractionation Protocol" , "Oxidisable"        , "Oxidisable fraction"                       ,
+    "Fractionation Protocol" , "Residual"          , "Residual fraction"                         ,
+    "Fractionation Protocol" , "Bioavailable"      , "Bioavailable fraction"                     ,
+    "Fractionation Protocol" , "Free ion"          , "Free ion activity"                         ,
+    "Fractionation Protocol" , "Size fractionated" , "Size fractionated"                         ,
+    "Fractionation Protocol" , "Other"             , "Other"
+  )
+}
+
+#' Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (extraction), Methods table
+#'
+#' Returns extraction protocol options with short and long names.
+#'
+#' @details
+#' Provides standardised extraction method classifications as a tibble with three columns:
+#'
+#' Protocol_Type: Always "Extraction Protocol"
+#'
+#' Short_Name: Abbreviated protocol name (e.g., "Methanol", "SPE Isolute Env+", "QuEChERS")
+#'
+#' Long_Name: Full descriptive name (e.g., "Methanol extraction", "Solid phase extraction with Isolute Env+ cartridge", "Quick easy cheap effective rugged safe extraction")
+#'
+#' Available protocols include: Not relevant, Not reported, None, Methanol, Dichloromethane, SPE Isolute Env+, Membrane filtration 0.45um, Membrane filtration 0.2um, Membrane filtration, Filtration, Microwave-assisted acid digestion, Acid digestion, Pressurised liquid, Ultrasonic, Soxhlet, QuEChERS, Accelerated solvent, Sequential extraction, Other
+#'
+#' @return A tibble with Protocol_Type, Short_Name, and Long_Name columns
+
+#' @family method
+#' @importFrom tibble tribble
+#' @examples
+#' head(extraction_protocols_vocabulary(), 5)
+#' @export
+extraction_protocols_vocabulary <- function() {
+  tribble(
+    ~Protocol_Type        , ~Short_Name                         , ~Long_Name                                           ,
+    "Extraction Protocol" , "Not relevant"                      , "Not relevant"                                       ,
+    "Extraction Protocol" , "Not reported"                      , "Not reported"                                       ,
+    "Extraction Protocol" , "None"                              , "No extraction"                                      ,
+    "Extraction Protocol" , "Methanol"                          , "Methanol extraction"                                ,
+    "Extraction Protocol" , "Dichloromethane"                   , "Dichloromethane extraction"                         ,
+    "Extraction Protocol" , "SPE Isolute Env+"                  , "Solid phase extraction with Isolute Env+ cartridge" ,
+    "Extraction Protocol" , "Membrane filtration 0.45um"        , "Membrane filtration through 0.45 micrometer"        ,
+    "Extraction Protocol" , "Membrane filtration 0.2um"         , "Membrane filtration through 0.2 micrometer"         ,
+    "Extraction Protocol" , "Membrane filtration"               , "Membrane filtration"                                ,
+    "Extraction Protocol" , "Filtration"                        , "Filtration"                                         ,
+    "Extraction Protocol" , "Microwave-assisted acid digestion" , "Microwave-assisted acid digestion"                  ,
+    "Extraction Protocol" , "Acid digestion"                    , "Acid digestion"                                     ,
+    "Extraction Protocol" , "Pressurised liquid"                , "Pressurised liquid extraction"                      ,
+    "Extraction Protocol" , "Ultrasonic"                        , "Ultrasonic extraction"                              ,
+    "Extraction Protocol" , "Soxhlet"                           , "Soxhlet extraction"                                 ,
+    "Extraction Protocol" , "QuEChERS"                          , "Quick easy cheap effective rugged safe extraction"  ,
+    "Extraction Protocol" , "Accelerated solvent"               , "Accelerated solvent extraction"                     ,
+    "Extraction Protocol" , "Sequential extraction"             , "Sequential extraction protocol"                     ,
+    "Extraction Protocol" , "Other"                             , "Other"
+  )
+}
+
+#' Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (analytical), Methods table
+#'
+#' Returns analytical protocol options with short and long names.
+#'
+#' @details
+#' Provides standardised analytical method classifications as a tibble with three columns:
+#'
+#' Protocol_Type: Always "Analytical Protocol"
+#'
+#' Short_Name: Abbreviated protocol name (e.g., "GC-MS", "LC-MS/MS", "ICP-MS")
+#'
+#' Long_Name: Full descriptive name (e.g., "Gas chromatography mass spectrometry", "Liquid chromatography tandem mass spectrometry", "Inductively coupled plasma mass spectrometry")
+#'
+#' Available protocols include: Not relevant, Not reported, GC-MS, LC-MS, LC-MS/MS, GC-MS/MS, UPLC, ICP-MS, ICP-OES, AAS, XRF, Ion chromatography, Spectrophotometry, Fluorescence, Other
+#'
+#' @return A tibble with Protocol_Type, Short_Name, and Long_Name columns
+
+#' @family method
+#' @importFrom tibble tribble
+#' @examples
+#' head(analytical_protocols_vocabulary(), 5)
+#' @export
+analytical_protocols_vocabulary <- function() {
+  tribble(
+    ~Protocol_Type        , ~Short_Name          , ~Long_Name                                                 ,
+    "Analytical Protocol" , "Not relevant"       , "Not relevant"                                             ,
+    "Analytical Protocol" , "Not reported"       , "Not reported"                                             ,
+    "Analytical Protocol" , "GC-MS"              , "Gas chromatography mass spectrometry"                     ,
+    "Analytical Protocol" , "LC-MS"              , "Liquid chromatography mass spectrometry"                  ,
+    "Analytical Protocol" , "LC-MS/MS"           , "Liquid chromatography tandem mass spectrometry"           ,
+    "Analytical Protocol" , "GC-MS/MS"           , "Gas chromatography tandem mass spectrometry"              ,
+    "Analytical Protocol" , "UPLC"               , "Ultra performance liquid chromatography"                  ,
+    "Analytical Protocol" , "ICP-MS"             , "Inductively coupled plasma mass spectrometry"             ,
+    "Analytical Protocol" , "ICP-OES"            , "Inductively coupled plasma optical emission spectroscopy" ,
+    "Analytical Protocol" , "AAS"                , "Atomic absorption spectroscopy"                           ,
+    "Analytical Protocol" , "XRF"                , "X-ray fluorescence spectroscopy"                          ,
+    "Analytical Protocol" , "Ion chromatography" , "Ion chromatography"                                       ,
+    "Analytical Protocol" , "Spectrophotometry"  , "Spectrophotometry"                                        ,
+    "Analytical Protocol" , "Fluorescence"       , "Fluorescence spectroscopy"                                ,
+    "Analytical Protocol" , "Other"              , "Other"
+  )
+}
+
+#' Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (all), Methods table
+#'
+#' Returns combined protocol options from all protocol categories.
+#'
+#' @details
+#' Combines all protocol vocabularies (sampling, fractionation, extraction, and analytical)
+#' into a single comprehensive tibble. Contains columns:
+#'
+#' Protocol_Type: Category of protocol (Sampling, Fractionation, Extraction, or Analytical Protocol)
+#'
+#' Short_Name: Abbreviated protocol name
+#'
+#' Long_Name: Full descriptive protocol name
+#'
+#' This function aggregates results from sampling_protocols_vocabulary(),
+#' fractionation_protocols_vocabulary(), extraction_protocols_vocabulary(), and
+#' analytical_protocols_vocabulary().
+#'
+#' @return A tibble with Protocol_Type, Short_Name, and Long_Name columns for all protocols
+
+#' @family method
+#' @importFrom dplyr bind_rows
+#' @examples
+#' head(protocol_options_vocabulary(), 5)
+#' @export
+protocol_options_vocabulary <- function() {
+  bind_rows(
+    sampling_protocols_vocabulary(),
+    fractionation_protocols_vocabulary(),
+    extraction_protocols_vocabulary(),
+    analytical_protocols_vocabulary()
+  )
+}
+
+#' Controlled vocabulary for PROTOCOL_CATEGORY column, Methods table
+#'
+#' Returns controlled vocabulary options for protocol type classifications.
+#'
+#' @details
+#' Provides the four main protocol category classifications used in the methods table.
+#' Options include:
+#'
+#' Sampling Protocol
+#'
+#' Fractionation Protocol
+#'
+#' Extraction Protocol
+#'
+#' Analytical Protocol
+#'
+#' @return A character vector of protocol category options
+
+#' @family method
+#' @examples
+#' protocol_categories_vocabulary()
+#' @export
+protocol_categories_vocabulary <- function() {
+  c(
+    "Sampling Protocol",
+    "Fractionation Protocol",
+    "Extraction Protocol",
+    "Analytical Protocol"
+  )
+}
+
+
+#' Controlled vocabulary for MEASURED_UNIT, LOQ_UNIT, and LOD_UNIT, with conversion factors and base units
+#'
+#' Returns unit definitions and SI conversion factors for environmental measurements.
+#'
+#' @param select_column Optional column name to extract: "MEASURED_UNIT", "BASE_SI_UNIT", "CONVERSION_FACTOR", or "UNIT_COMMENTS"
+#'
+#' @details
+#' Reads unit conversion data from unit_conversion_factors.csv containing standardised
+#' units for ecotoxicological and environmental measurements. The complete dataset includes
+#' columns:
+#'
+#' MEASURED_UNIT: Unit as recorded in measurements
+#'
+#' BASE_SI_UNIT: Corresponding SI base unit
+#'
+#' CONVERSION_FACTOR: Numeric factor to convert to SI units
+#'
+#' UNIT_COMMENTS: Additional notes about unit usage or conversion
+#'
+#' Data source: extdata/unit_conversion_factors.csv
+#'
+#' @return A dataframe (if select_column is NULL) or a character vector (if column specified)
+
+#' @family measurement
+#' @importFrom readr read_csv
+#' @examples
+#' head(parameter_unit_vocabulary(), 5)
+#' parameter_unit_vocabulary(select_column = "MEASURED_UNIT") |> head(5)
+#' @export
+parameter_unit_vocabulary <- function(select_column = NULL) {
+  units <- read_csv(
+    file = system.file(
+      "extdata",
+      "unit_conversion_factors.csv",
+      package = "eDataDRF",
+      mustWork = TRUE
+    ),
+    col_names = TRUE,
+    show_col_types = FALSE
+  )
+  if (is.null(select_column)) {
+    return(units)
+  }
+  stopifnot(select_column %in% names(units))
+  return(units[[select_column]])
+}
+
+
+#' Controlled vocabulary for MEASURED_FLAG, Measurements table
+#'
+#' Returns controlled vocabulary options for measurement quality flags.
+#'
+#' @details
+#' Provides standardised flags for indicating measurements below detection or quantification
+#' limits. Options include:
+#'
+#' "" (empty string for measurements above limits)
+#'
+#' < LOQ (below limit of quantification)
+#'
+#' < LOD (below limit of detection)
+#'
+#' @return A character vector of measurement flag options
+
+#' @family measurement
+#' @examples
+#' measured_flag_vocabulary()
+#' @export
+measured_flag_vocabulary <- function() {
+  c("", "< LOQ", "< LOD")
+}
+
+
+#' Controlled vocabulary for CREED scores, CREED table
+#'
+#' Returns standardised scoring options for CREED data quality assessment.
+#'
+#' @details
+#' Provides the four-level scoring system used in CREED (Criteria for Reporting and
+#' Evaluating Ecotoxicity Data) assessments. Options include:
+#'
+#' Not Met: Score value 4
+#'
+#' Fully Met: Score value 1
+#'
+#' Partly Met: Score value 2
+#'
+#' Not Reported: Score value 3
+#'
+#' Not Relevant: Score value 1
+#'
+#' @return Named character vector with CREED scoring choices and their numeric values
+
+#' @family CREED
+#' @examples
+#' CREED_choices_vocabulary()
+#' @export
+CREED_choices_vocabulary <- function() {
+  c(
+    "Not Met" = 4,
+    "Fully Met" = 1,
+    "Partly Met" = 2,
+    "Not Reported" = 3,
+    "Not Relevant" = 1
+  )
 }

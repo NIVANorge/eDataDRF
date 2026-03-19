@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_biota_tibble}
 \alias{initialise_biota_tibble}
-\title{Initialise biota tibble}
+\title{Initialise an 14x0 tibble for storing biota metadata}
 \usage{
 initialise_biota_tibble()
 }
@@ -10,7 +10,7 @@ initialise_biota_tibble()
 A tibble with 0 rows and standardised biota columns
 }
 \description{
-Creates an empty tibble with the standardised column structure for biota data.
+Initialise an 14x0 tibble for storing biota metadata
 }
 \details{
 Biota data extends sample information with species-specific details including

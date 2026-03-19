@@ -13,6 +13,7 @@ html-table-processing: none
 format: 
   html:
     page-layout: full
+    lightbox: true
 ---
 
 ```{r setup}
@@ -22,8 +23,7 @@ library(gt)
 
 ```
 
-The `{pointblank}` package for R provides robust, efficient validation features for data, allowing us to quickly check that our data conforms to the expected format. Although used of controlled vocabulary and the eData app allow us to constrain user-entered data, it is more practical to add an additional level of validation. This programmatic validation layer can be re-used wherever needed; this is particularly valuable when data may need to be transformed as part of the analysis pathway.
-
+The `{pointblank}` package for R provides robust, efficient validation features for data, allowing us to quickly check that our data conforms to the expected format. Although used of controlled vocabulary and the eData app allow us to constrain user-entered data, it is more practical to add an additional level of validation. This programmatic validation layer can be re-used wherever needed; this is particularly valuable when data may need to be transformed as part of the analysis pathway. For a thorough overview of pointblank functionality, please consult the package itself.
 
 # Campaign data validation
 
@@ -123,13 +123,17 @@ CREED data is validated separately as Relevance and Reliability.
 ```{r}
 #| label: creed-validation-rv
 example_CREED_relevance_tibble() |>
-  pb_validate_CREED_data_relevance()
+  pb_validate_CREED_data_relevance() |> 
+    interrogate() |> 
+  get_agent_report()
 ```
 
 ```{r}
 #| label: creed-validation-rb
 example_CREED_reliability_tibble() |>
-  pb_validate_CREED_data_reliability()
+  pb_validate_CREED_data_reliability() |> 
+    interrogate() |> 
+  get_agent_report()
 ```
 
 # CREED scores data validation
@@ -137,5 +141,7 @@ example_CREED_reliability_tibble() |>
 ```{r}
 #| label: creed-scores-validation
 example_CREED_scores_tibble() |>
-  pb_validate_CREED_scores()
+  pb_validate_CREED_scores() |> 
+    interrogate() |> 
+  get_agent_report()
 ```

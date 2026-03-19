@@ -25,6 +25,11 @@ biota-specific fields are non-null, environmental compartments indicate
 biota, and that species group, tissue, lifestage, and gender values are
 within their controlled vocabularies.
 }
+\details{
+Validation thresholds are configured using \code{\link[pointblank:action_levels]{pointblank::action_levels()}}.
+See \code{vignette("validation", package = "pointblank")} for an overview of
+the pointblank validation workflow.
+}
 \examples{
 \dontrun{
 pb_validate_biota(example_biota_tibble())

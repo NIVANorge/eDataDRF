@@ -14,8 +14,6 @@ mermaid:
 
 # eData Data Reporting Format
 
-![eData Data Reporting Format Logo](/vignettes/eData_DRF_logo.svg)
-
 The eData Data Reporting Format is a format for the reporting of chemical occurence/exposure data in the natural environment. It provides tables, vocabulary, and validation functions for structuring chemical occurence data, as well as spatial, social, biological, geographical, and other metadata.
 
 # Installation

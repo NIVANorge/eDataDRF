@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{reference_type_vocabulary}
 \alias{reference_type_vocabulary}
-\title{Controlled vocabulary for reference types}
+\title{Controlled vocabulary for the REFERENCE_TYPE column, References table}
 \usage{
 reference_type_vocabulary()
 }

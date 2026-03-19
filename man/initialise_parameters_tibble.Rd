@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_parameters_tibble}
 \alias{initialise_parameters_tibble}
-\title{Initialise parameters tibble}
+\title{Initialise an 10x0 tibble for storing metadata on sampled parameters: stressors, quality, etc.}
 \usage{
 initialise_parameters_tibble()
 }

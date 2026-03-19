@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_generate_IDs.R
 \name{sample_id_regex}
 \alias{sample_id_regex}
-\title{Regular expression for sample IDs}
+\title{Regular expression to check \code{\link[=generate_sample_id_with_components]{generate_sample_id_with_components()}} protocol IDs for Samples table}
 \usage{
 sample_id_regex()
 }

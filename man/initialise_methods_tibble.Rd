@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_methods_tibble}
 \alias{initialise_methods_tibble}
-\title{Initialise methods tibble}
+\title{Initialise an 5x0 tibble for storing metadata on scientific/sampling methods and protocols}
 \usage{
 initialise_methods_tibble()
 }
@@ -10,7 +10,7 @@ initialise_methods_tibble()
 A tibble with 0 rows and standardised methods columns
 }
 \description{
-Creates an empty tibble with the standardised column structure for analytical methods data.
+Creates an empty tibble with the standardised column structure for methods.
 }
 \details{
 Methods describe the protocols used for sampling, extraction, fractionation, and

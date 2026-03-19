@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{geographic_features_vocabulary}
 \alias{geographic_features_vocabulary}
-\title{Geographic features controlled vocabulary}
+\title{Controlled vocabulary for the SITE_GEOGRAPHIC_FEATURE column, Sites table}
 \usage{
 geographic_features_vocabulary()
 }

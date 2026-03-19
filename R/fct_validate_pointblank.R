@@ -22,6 +22,11 @@
 #'   If agent = FALSE, the input data with validation failures removed.
 #'
 #' @details
+#' Uses [pointblank::create_agent()] to build a validation agent in agent mode,
+#' or applies steps directly to the data in pipeline mode.
+#' See also `vignette("validation", package = "pointblank")` for an overview of
+#' the pointblank validation workflow.
+#'
 #' In agent mode, the agent object can be used to:
 #' - Extract validation results with `get_sundered_data()`
 #' - Generate reports with `get_agent_report()`
@@ -84,6 +89,11 @@ pb_validate_edata_table <- function(
 #'
 #' @return If agent = TRUE, a pointblank agent object containing validation results.
 #'   If agent = FALSE, the input data with validation failures removed.
+#'
+#' @details
+#' Validation thresholds are configured using [pointblank::action_levels()].
+#' See `vignette("validation", package = "pointblank")` for an overview of
+#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
@@ -181,6 +191,11 @@ pb_validate_campaign <- function(
 #'
 #' @return If agent = TRUE, a pointblank agent object containing validation results.
 #'   If agent = FALSE, the input data with validation failures removed.
+#'
+#' @details
+#' Validation thresholds are configured using [pointblank::action_levels()].
+#' See `vignette("validation", package = "pointblank")` for an overview of
+#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
@@ -306,6 +321,11 @@ pb_validate_reference <- function(
 #' @return If agent = TRUE, a pointblank agent object containing validation results.
 #'   If agent = FALSE, the input data with validation failures removed.
 #'
+#' @details
+#' Validation thresholds are configured using [pointblank::action_levels()].
+#' See `vignette("validation", package = "pointblank")` for an overview of
+#' the pointblank validation workflow.
+#'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
 #'   [example_parameters_tibble()] for an example Parameters table.
@@ -370,6 +390,11 @@ pb_validate_parameters <- function(
 #'
 #' @return If agent = TRUE, a pointblank agent object containing validation results.
 #'   If agent = FALSE, the input data with validation failures removed.
+#'
+#' @details
+#' Validation thresholds are configured using [pointblank::action_levels()].
+#' See `vignette("validation", package = "pointblank")` for an overview of
+#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
@@ -520,6 +545,11 @@ pb_validate_sites <- function(
 #' @return If agent = TRUE, a pointblank agent object containing validation results.
 #'   If agent = FALSE, the input data with validation failures removed.
 #'
+#' @details
+#' Validation thresholds are configured using [pointblank::action_levels()].
+#' See `vignette("validation", package = "pointblank")` for an overview of
+#' the pointblank validation workflow.
+#'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
 #'   [environ_compartments_sub_vocabulary()] for the compartment hierarchy used in
@@ -608,6 +638,11 @@ pb_validate_samples <- function(
 #'
 #' @return If agent = TRUE, a pointblank agent object containing validation results.
 #'   If agent = FALSE, the input data with validation failures removed.
+#'
+#' @details
+#' Validation thresholds are configured using [pointblank::action_levels()].
+#' See `vignette("validation", package = "pointblank")` for an overview of
+#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
@@ -709,6 +744,11 @@ pb_validate_biota <- function(
 #'
 #' @return If agent = TRUE, a pointblank agent object containing validation results.
 #'   If agent = FALSE, the input data with validation failures removed.
+#'
+#' @details
+#' Validation thresholds are configured using [pointblank::action_levels()].
+#' See `vignette("validation", package = "pointblank")` for an overview of
+#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
@@ -929,6 +969,11 @@ pb_validate_measurements <- function(
 #' @return If agent = TRUE, a pointblank agent object containing validation results.
 #'   If agent = FALSE, the input data with validation failures removed.
 #'
+#' @details
+#' Validation thresholds are configured using [pointblank::action_levels()].
+#' See `vignette("validation", package = "pointblank")` for an overview of
+#' the pointblank validation workflow.
+#'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
 #'   [protocol_id_regex()] for the protocol ID format validated here,
@@ -1003,6 +1048,11 @@ pb_validate_methods <- function(
 #'
 #' @return If agent = TRUE, a pointblank agent object containing validation results.
 #'   If agent = FALSE, the input data with validation failures removed.
+#'
+#' @details
+#' Validation thresholds are configured using [pointblank::action_levels()].
+#' See `vignette("validation", package = "pointblank")` for an overview of
+#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_CREED_data_relevance()] for the relevance equivalent,
@@ -1120,6 +1170,11 @@ pb_validate_CREED_data_reliability <- function(
 #' @return If agent = TRUE, a pointblank agent object containing validation results.
 #'   If agent = FALSE, the input data with validation failures removed.
 #'
+#' @details
+#' Validation thresholds are configured using [pointblank::action_levels()].
+#' See `vignette("validation", package = "pointblank")` for an overview of
+#' the pointblank validation workflow.
+#'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_CREED_data_reliability()] for the reliability equivalent,
 #'   [example_CREED_relevance_tibble()] for an example CREED relevance table.
@@ -1222,6 +1277,11 @@ pb_validate_CREED_data_relevance <- function(
 #' @return If agent = TRUE, a pointblank agent object containing validation results.
 #'   If agent = FALSE, the input data with validation failures removed.
 #'
+#' @details
+#' Validation thresholds are configured using [pointblank::action_levels()].
+#' See `vignette("validation", package = "pointblank")` for an overview of
+#' the pointblank validation workflow.
+#'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
 #'   [example_CREED_scores_tibble()] for an example CREED Scores table.
@@ -1316,6 +1376,12 @@ pb_validate_CREED_scores <- function(
 #'   The list always contains elements named `campaign`, `reference`, `parameters`,
 #'   `sites`, and `measurements`. Optional elements (`samples`, `biota`, `methods`,
 #'   `creed_scores`) are included only when the corresponding arguments are not `NULL`.
+#'
+#' @details
+#' Calls each individual table validation function in turn. Validation is
+#' performed using [pointblank::create_agent()] and related functions.
+#' See `vignette("validation", package = "pointblank")` for an overview of
+#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_campaign()], [pb_validate_reference()],
 #'   [pb_validate_parameters()], [pb_validate_sites()], [pb_validate_samples()],

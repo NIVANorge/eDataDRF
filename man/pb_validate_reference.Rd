@@ -25,6 +25,11 @@ the expected format, controlled vocabulary fields are valid, required fields
 are non-null, publication year and access date fall within valid ranges, and
 conditionally mandatory fields are present based on reference type.
 }
+\details{
+Validation thresholds are configured using \code{\link[pointblank:action_levels]{pointblank::action_levels()}}.
+See \code{vignette("validation", package = "pointblank")} for an overview of
+the pointblank validation workflow.
+}
 \examples{
 \dontrun{
 pb_validate_reference(example_references_tibble())

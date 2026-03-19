@@ -24,6 +24,11 @@ compliance for an eData Parameters table. Checks that core identifier
 fields are non-null, parameter names are within the expected controlled
 vocabulary, and entry metadata is present.
 }
+\details{
+Validation thresholds are configured using \code{\link[pointblank:action_levels]{pointblank::action_levels()}}.
+See \code{vignette("validation", package = "pointblank")} for an overview of
+the pointblank validation workflow.
+}
 \examples{
 \dontrun{
 pb_validate_parameters(example_parameters_tibble())

@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_measurements_tibble}
 \alias{initialise_measurements_tibble}
-\title{Initialise measurements tibble}
+\title{Initialise an 26x0 tibble for storing mmeasurement data}
 \usage{
 initialise_measurements_tibble()
 }

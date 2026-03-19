@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_references_tibble}
 \alias{initialise_references_tibble}
-\title{Initialise references tibble}
+\title{Initialise an 18x0 tibble for storing metadata on scientific literature}
 \usage{
 initialise_references_tibble()
 }

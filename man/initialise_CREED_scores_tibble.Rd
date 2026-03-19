@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_formats.R
 \name{initialise_CREED_scores_tibble}
 \alias{initialise_CREED_scores_tibble}
-\title{Initialise CREED scores tibble}
+\title{Initialise an 5x0 tibble for storing a data source's overall CREED score}
 \usage{
 initialise_CREED_scores_tibble()
 }
