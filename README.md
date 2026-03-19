@@ -1,9 +1,17 @@
 # Readme
 
 
-# eData Data Reporting Format
+<link href="README_files/libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
+<script src="README_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="README_files/libs/d3-3.3.8/d3.min.js"></script>
+<script src="README_files/libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="README_files/libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="README_files/libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="README_files/libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="README_files/libs/chromatography-0.1/chromatography.js"></script>
+<script src="README_files/libs/DiagrammeR-binding-1.0.11/DiagrammeR.js"></script>
 
-![eData Data Reporting Format Logo](.\vignettes/eData_DRF_logo.svg)
+# eData Data Reporting Format
 
 The eData Data Reporting Format is a format for the reporting of
 chemical occurence/exposure data in the natural environment. It provides
@@ -71,43 +79,13 @@ Tables are listed below:
 | [Biota](https://NIVANorge.github.io/eDataDRF/articles/biota_data.html) | Where relevant, records biota species, tissue, life stage, and gender | Optional |
 | [Methods](https://NIVANorge.github.io/eDataDRF/articles/methods_data.html) | Records type and descriptions of methods used for sampling, extraction, fractionation and analysis |  |
 | [Measurements](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.html) | Records measured values, units, uncertainty, sample size, and methods associated with a given sample |  |
-| [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html) | Records CREED assessment criteria, relevant data, criteria scores, and limitations |  |
-| [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | Records CREED usability scores calculated from CREED data above |  |
+| [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html) | Records CREED assessment criteria, relevant data, criteria scores, and limitations | Optional |
+| [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | Records CREED usability scores calculated from CREED data above | Optional |
 
-``` mermaid
-erDiagram
-    Campaign ||--o{ Measurements : 'Belongs'
-    Campaign ||--o{ References : 'Belongs'
-    Campaign ||--o{ Sites : 'Belongs'
-    Campaign ||--o{ Methods : 'Belongs'
-    Campaign ||--o{ CREED : 'Assesses'
-    
-    References ||--o{ Measurements : 'Cites'
-    Sites ||--o{ Measurements : 'Locates'
-    Parameters ||--o{ Measurements : 'Quantifies'
-    Methods ||--o{ Measurements : 'Means'
-    
-    Measurements {
-    }
-    
-    Campaign {
-    }
-    
-    References {
-    }
-    
-    Sites {
-    }
-    
-    Parameters {
-    }
-    
-    Methods {
-    }
-    
-    CREED {
-    }
-```
+And displayed as an entity-relation diagram.
+
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-e3efe65af1f2e6beeb85" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-e3efe65af1f2e6beeb85">{"x":{"diagram":"\nerDiagram\n    Campaign ||--o{ Measurements : 'Belongs'\n    Campaign ||--o{ References : 'Belongs'\n    Campaign ||--o{ Sites : 'Belongs'\n    Campaign ||--o{ Methods : 'Belongs'\n    Campaign ||--o{ CREED : 'Assesses'\n    \n    References ||--o{ Measurements : 'Cites'\n    Sites ||--o{ Measurements : 'Locates'\n    Parameters ||--o{ Measurements : 'Quantifies'\n    Methods ||--o{ Measurements : 'Means'\n    \n    Measurements {\n    }\n    \n    Campaign {\n    }\n    \n    References {\n    }\n    \n    Sites {\n    }\n    \n    Parameters {\n    }\n    \n    Methods {\n    }\n    \n    CREED {\n    }"},"evals":[],"jsHooks":[]}</script>
 
 ## Vocabulary
 
