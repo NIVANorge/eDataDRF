@@ -94,7 +94,7 @@ The primary instition responsible for a referenced object. Conditionally mandato
 
 ## DOI
 `DOI` - *String, free, optional*
-If available, the Digital Object Identifier associated with a reference object. Optional, but the preferred identifier when avaiable. 
+If available, the Digital Object Identifier associated with a reference object. Optional, but the preferred identifier when available.
 
 See the website of the [doi Foundation](https://www.doi.org/) for more information.
 

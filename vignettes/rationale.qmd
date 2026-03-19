@@ -16,7 +16,7 @@ knitr:
 library(eDataDRF)
 ```
 
-The eData Data Reporting Format is a format for the standardisation of data on pollutant occurence in the environment. By converting this data to a single, consistent format, it makes it easier to validate, compare, analyse, and reuse, in line with the [FAIR principles](https://www.go-fair.org/fair-principles/).
+The eData Data Reporting Format is a format for the standardisation of data on pollutant occurrence in the environment. By converting this data to a single, consistent format, it makes it easier to validate, compare, analyse, and reuse, in line with the [FAIR principles](https://www.go-fair.org/fair-principles/).
 
 # Why standardise?
 

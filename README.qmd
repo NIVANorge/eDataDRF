@@ -13,7 +13,7 @@ prefer-html: true
 
 # eData Data Reporting Format
 
-The eData Data Reporting Format is a format for the reporting of chemical occurence/exposure data in the natural environment. It provides tables, vocabulary, and validation functions for structuring chemical occurence data, as well as spatial, social, biological, geographical, and other metadata.
+The eData Data Reporting Format is a format for the reporting of chemical occurrence/exposure data in the natural environment. It provides tables, vocabulary, and validation functions for structuring chemical occurrence data, as well as spatial, social, biological, geographical, and other metadata.
 
 # Installation
 
@@ -59,7 +59,7 @@ Tables are listed below:
 
 ## Vocabulary
 
-Likewise, controlled vocabulary is available as functions that return vectors, lists, or tables. In some cases, helper functions are available that wrap multiple invididual functions.
+Likewise, controlled vocabulary is available as functions that return vectors, lists, or tables. In some cases, helper functions are available that wrap multiple individual functions.
 
 Where external data sources are used to generate a vocabulary, functions may wrap (processed) data from other R packages or load raw data from external sources. Vocabulary functions are documented in the [Reference section](reference/index.html#controlled-vocabulary) and linked to in the relevant table files in 
 

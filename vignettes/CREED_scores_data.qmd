@@ -48,7 +48,7 @@ initialise_CREED_scores_tibble()
 Identifier for data source, foreign key referencing [reference id](references_data.html#reference-id).
 
 ## Silver Reliability
-`SILVER_RELIABILITY` - *numeric, free, mandatory*
+`SILVER_RELIABILITY` - *string, free, mandatory*
 
 Silver reliability score. See [Usability Scores](#usability-scores) for valid levels.
 

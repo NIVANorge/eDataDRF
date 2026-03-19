@@ -435,7 +435,7 @@ initialise_sites_tibble <- function() {
   )
 }
 
-#' Initialise an 26x0 tibble for storing mmeasurement data
+#' Initialise an 26x0 tibble for storing measurement data
 #'
 #' Creates an empty tibble with the standardised column structure for measurements data.
 #'
