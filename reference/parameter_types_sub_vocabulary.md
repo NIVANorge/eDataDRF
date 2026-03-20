@@ -1,4 +1,4 @@
-# Parameter type sub-categories controlled vocabulary
+# Controlled vocabulary for the PARAMETER_TYPES_SUB column, Parameters table
 
 Returns controlled vocabulary options for parameter type subcategories.
 

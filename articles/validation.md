@@ -13,7 +13,8 @@ used of controlled vocabulary and the eData app allow us to constrain
 user-entered data, it is more practical to add an additional level of
 validation. This programmatic validation layer can be re-used wherever
 needed; this is particularly valuable when data may need to be
-transformed as part of the analysis pathway.
+transformed as part of the analysis pathway. For a thorough overview of
+pointblank functionality, please consult the package itself.
 
 ## Campaign data validation
 
@@ -33,7 +34,8 @@ example_campaign_tibble() |>
 For information on how to interpret this output, please see the image
 below:
 
-![](how_to_read_pointblank.png)
+[![Annotated pointblank
+table.](how_to_read_pointblank.png)](https://NIVANorge.github.io/eDataDRF/articles/how_to_read_pointblank.png "Annotated pointblank table.")
 
 Annotated pointblank table.
 
@@ -120,14 +122,18 @@ CREED data is validated separately as Relevance and Reliability.
 
 ``` r
 example_CREED_relevance_tibble() |>
-  pb_validate_CREED_data_relevance()
+  pb_validate_CREED_data_relevance() |> 
+    interrogate() |> 
+  get_agent_report()
 ```
 
 [TABLE]
 
 ``` r
 example_CREED_reliability_tibble() |>
-  pb_validate_CREED_data_reliability()
+  pb_validate_CREED_data_reliability() |> 
+    interrogate() |> 
+  get_agent_report()
 ```
 
 [TABLE]
@@ -136,7 +142,9 @@ example_CREED_reliability_tibble() |>
 
 ``` r
 example_CREED_scores_tibble() |>
-  pb_validate_CREED_scores()
+  pb_validate_CREED_scores() |> 
+    interrogate() |> 
+  get_agent_report()
 ```
 
 [TABLE]

@@ -1,4 +1,4 @@
-# Species names controlled vocabulary
+# Controlled vocabulary for the SPECIES_NAME column, Biota table
 
 Returns species information from EPA ECOTOX database.
 

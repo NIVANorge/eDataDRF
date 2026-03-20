@@ -1,4 +1,4 @@
-# Environmental compartment sub-categories controlled vocabulary
+# Controlled vocabulary for the ENVIRON_COMPARTMENT and ENVIRON_COMPARTMENT_SUB columns, Compartments table
 
 Returns controlled vocabulary mapping for environmental sub-compartments
 organized by main compartment.

@@ -1,4 +1,4 @@
-# Tissue types controlled vocabulary
+# Controlled vocabulary for the SAMPLE_TISSUE column, Biota table
 
 Returns controlled vocabulary options for biological tissue types.
 

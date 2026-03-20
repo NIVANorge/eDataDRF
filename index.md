@@ -2,15 +2,11 @@
 
 # eData Data Reporting Format
 
-![eData Data Reporting Format Logo](.%5Cvignettes/eData_DRF_logo.svg)
-
-eData Data Reporting Format Logo
-
 The eData Data Reporting Format is a format for the reporting of
-chemical occurence/exposure data in the natural environment. It provides
-tables, vocabulary, and validation functions for structuring chemical
-occurence data, as well as spatial, social, biological, geographical,
-and other metadata.
+chemical occurrence/exposure data in the natural environment. It
+provides tables, vocabulary, and validation functions for structuring
+chemical occurrence data, as well as spatial, social, biological,
+geographical, and other metadata.
 
 # Installation
 
@@ -74,49 +70,14 @@ Tables are listed below:
 | [Biota](https://NIVANorge.github.io/eDataDRF/articles/biota_data.html)               | Where relevant, records biota species, tissue, life stage, and gender                                | Optional                                                                                    |
 | [Methods](https://NIVANorge.github.io/eDataDRF/articles/methods_data.html)           | Records type and descriptions of methods used for sampling, extraction, fractionation and analysis   |                                                                                             |
 | [Measurements](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.html) | Records measured values, units, uncertainty, sample size, and methods associated with a given sample |                                                                                             |
-| [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html)     | Records CREED assessment criteria, relevant data, criteria scores, and limitations                   |                                                                                             |
-| [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | Records CREED usability scores calculated from CREED data above                                      |                                                                                             |
-
-``` mermaid
-erDiagram
-    Campaign ||--o{ Measurements : 'Belongs'
-    Campaign ||--o{ References : 'Belongs'
-    Campaign ||--o{ Sites : 'Belongs'
-    Campaign ||--o{ Methods : 'Belongs'
-    Campaign ||--o{ CREED : 'Assesses'
-
-    References ||--o{ Measurements : 'Cites'
-    Sites ||--o{ Measurements : 'Locates'
-    Parameters ||--o{ Measurements : 'Quantifies'
-    Methods ||--o{ Measurements : 'Means'
-
-    Measurements {
-    }
-
-    Campaign {
-    }
-
-    References {
-    }
-
-    Sites {
-    }
-
-    Parameters {
-    }
-
-    Methods {
-    }
-
-    CREED {
-    }
-```
+| [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html)     | Records CREED assessment criteria, relevant data, criteria scores, and limitations                   | Optional                                                                                    |
+| [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | Records CREED usability scores calculated from CREED data above                                      | Optional                                                                                    |
 
 ## Vocabulary
 
 Likewise, controlled vocabulary is available as functions that return
 vectors, lists, or tables. In some cases, helper functions are available
-that wrap multiple invididual functions.
+that wrap multiple individual functions.
 
 Where external data sources are used to generate a vocabulary, functions
 may wrap (processed) data from other R packages or load raw data from

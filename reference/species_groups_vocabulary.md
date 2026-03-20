@@ -1,4 +1,4 @@
-# Species groups controlled vocabulary
+# Controlled vocabulary for the SPECIES_GROUP column, Biota table
 
 Returns controlled vocabulary options for broad taxonomic groups from
 the EPA ECOTOX database.

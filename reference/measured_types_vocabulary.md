@@ -1,4 +1,4 @@
-# Measured types controlled vocabulary
+# Controlled vocabulary for the MEASURED_TYPE column, Parameters table
 
 Returns controlled vocabulary options for types of measurements.
 

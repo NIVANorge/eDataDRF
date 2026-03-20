@@ -1,4 +1,4 @@
-# Fractionation protocols controlled vocabulary
+# Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (fractionation), Methods table
 
 Returns fractionation protocol options with short and long names.
 

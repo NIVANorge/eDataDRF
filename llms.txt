@@ -2,15 +2,11 @@
 
 # eData Data Reporting Format
 
-![eData Data Reporting Format Logo](.%5Cvignettes/eData_DRF_logo.svg)
-
-eData Data Reporting Format Logo
-
 The eData Data Reporting Format is a format for the reporting of
-chemical occurence/exposure data in the natural environment. It provides
-tables, vocabulary, and validation functions for structuring chemical
-occurence data, as well as spatial, social, biological, geographical,
-and other metadata.
+chemical occurrence/exposure data in the natural environment. It
+provides tables, vocabulary, and validation functions for structuring
+chemical occurrence data, as well as spatial, social, biological,
+geographical, and other metadata.
 
 # Installation
 
@@ -74,49 +70,14 @@ Tables are listed below:
 | [Biota](https://NIVANorge.github.io/eDataDRF/articles/biota_data.html)               | Where relevant, records biota species, tissue, life stage, and gender                                | Optional                                                                                    |
 | [Methods](https://NIVANorge.github.io/eDataDRF/articles/methods_data.html)           | Records type and descriptions of methods used for sampling, extraction, fractionation and analysis   |                                                                                             |
 | [Measurements](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.html) | Records measured values, units, uncertainty, sample size, and methods associated with a given sample |                                                                                             |
-| [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html)     | Records CREED assessment criteria, relevant data, criteria scores, and limitations                   |                                                                                             |
-| [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | Records CREED usability scores calculated from CREED data above                                      |                                                                                             |
-
-``` mermaid
-erDiagram
-    Campaign ||--o{ Measurements : 'Belongs'
-    Campaign ||--o{ References : 'Belongs'
-    Campaign ||--o{ Sites : 'Belongs'
-    Campaign ||--o{ Methods : 'Belongs'
-    Campaign ||--o{ CREED : 'Assesses'
-
-    References ||--o{ Measurements : 'Cites'
-    Sites ||--o{ Measurements : 'Locates'
-    Parameters ||--o{ Measurements : 'Quantifies'
-    Methods ||--o{ Measurements : 'Means'
-
-    Measurements {
-    }
-
-    Campaign {
-    }
-
-    References {
-    }
-
-    Sites {
-    }
-
-    Parameters {
-    }
-
-    Methods {
-    }
-
-    CREED {
-    }
-```
+| [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html)     | Records CREED assessment criteria, relevant data, criteria scores, and limitations                   | Optional                                                                                    |
+| [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | Records CREED usability scores calculated from CREED data above                                      | Optional                                                                                    |
 
 ## Vocabulary
 
 Likewise, controlled vocabulary is available as functions that return
 vectors, lists, or tables. In some cases, helper functions are available
-that wrap multiple invididual functions.
+that wrap multiple individual functions.
 
 Where external data sources are used to generate a vocabulary, functions
 may wrap (processed) data from other R packages or load raw data from
@@ -202,112 +163,158 @@ review.
 Create empty versions of the format’s tables as R tibble objects
 
 - [`initialise_campaign_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_campaign_tibble.md)
-  : Initialise campaign tibble
+  : Initialise an 8x0 tibble for storing organisational and date
+  metadata
 - [`initialise_references_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_references_tibble.md)
-  : Initialise references tibble
+  : Initialise an 18x0 tibble for storing metadata on scientific
+  literature
 - [`initialise_sites_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_sites_tibble.md)
-  : Initialise sites tibble
+  : Initialise an 13x0 tibble for storing geographical metadata
 - [`initialise_parameters_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_parameters_tibble.md)
-  : Initialise parameters tibble
+  : Initialise an 10x0 tibble for storing metadata on sampled
+  parameters: stressors, quality, etc.
 - [`initialise_compartments_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_compartments_tibble.md)
-  : Initialise compartments tibble
+  : Initialise an 3x0 tibble for storing metadata on sampled
+  environmental compartment
 - [`initialise_methods_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_methods_tibble.md)
-  : Initialise methods tibble
+  : Initialise an 5x0 tibble for storing metadata on scientific/sampling
+  methods and protocols
 - [`initialise_samples_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_samples_tibble.md)
-  : Initialise samples tibble
+  : Initialise an 11x0 tibble for storing combinations of sites, dates,
+  parameters, and compartments sampled
 - [`initialise_biota_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_biota_tibble.md)
-  : Initialise biota tibble
+  : Initialise an 14x0 tibble for storing biota metadata
 - [`initialise_measurements_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_measurements_tibble.md)
-  : Initialise measurements tibble
+  : Initialise an 26x0 tibble for storing measurement data
 - [`initialise_CREED_data_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_CREED_data_tibble.md)
-  : Initialise CREED criteria data tibble
+  : Initialise an 6x0 tibble for storing CREED assessment data
 - [`initialise_CREED_scores_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/initialise_CREED_scores_tibble.md)
-  : Initialise CREED scores tibble
+  : Initialise an 5x0 tibble for storing a data source's overall CREED
+  score
 
 ## Controlled vocabulary
 
 Vectors (and sometimes tibbles) of controlled vocabulary
 
 - [`CREED_choices_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/CREED_choices_vocabulary.md)
-  : CREED assessment scores controlled vocabulary
+  : Controlled vocabulary for CREED scores, CREED table
 - [`altitude_units_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/altitude_units_vocabulary.md)
-  : Altitude units controlled vocabulary
+  : Controlled vocabulary for the ALTITUDE_UNIT column, Sites table
 - [`analytical_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/analytical_protocols_vocabulary.md)
-  : Analytical protocols controlled vocabulary
+  : Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns
+  (analytical), Methods table
 - [`areas_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/areas_vocabulary.md)
   : Ocean controlled vocabulary (wrapper for ocean_vocabulary())
 - [`coordinate_systems_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/coordinate_systems_vocabulary.md)
-  : Coordinate systems controlled vocabulary
+  : Controlled vocabulary for the SITE_COORDINATE_SYSTEM column, Sites
+  table
 - [`countries_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/countries_vocabulary.md)
-  : Countries controlled vocabulary
+  : Controlled vocabulary for the COUNTRY_ISO column, Sites table
 - [`data_source_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/data_source_vocabulary.md)
-  : Controlled vocabulary for data sources
+  : Controlled vocabulary for the DATA_SOURCE column, References table
 - [`environ_compartments_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/environ_compartments_sub_vocabulary.md)
-  : Environmental compartment sub-categories controlled vocabulary
+  : Controlled vocabulary for the ENVIRON_COMPARTMENT and
+  ENVIRON_COMPARTMENT_SUB columns, Compartments table
 - [`environ_compartments_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/environ_compartments_vocabulary.md)
-  : Environmental compartments controlled vocabulary
+  : Controlled vocabulary for the ENVIRON_COMPARTMENT column,
+  Compartments table
 - [`extraction_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/extraction_protocols_vocabulary.md)
-  : Extraction protocols controlled vocabulary
+  : Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns
+  (extraction), Methods table
 - [`fractionation_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/fractionation_protocols_vocabulary.md)
-  : Fractionation protocols controlled vocabulary
+  : Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns
+  (fractionation), Methods table
 - [`gender_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/gender_vocabulary.md)
-  : Gender controlled vocabulary
+  : Controlled vocabulary for the SAMPLE_SPECIES_GENDER column, Biota
+  table
 - [`geographic_features_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/geographic_features_sub_vocabulary.md)
-  : Geographic feature sub-categories controlled vocabulary
+  : Controlled vocabulary for the SITE_GEOGRAPHIC_FEATURE_SUB column,
+  Sites table
 - [`geographic_features_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/geographic_features_vocabulary.md)
-  : Geographic features controlled vocabulary
+  : Controlled vocabulary for the SITE_GEOGRAPHIC_FEATURE column, Sites
+  table
 - [`lifestage_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/lifestage_vocabulary.md)
-  : Life stages controlled vocabulary
+  : Controlled vocabulary for the SAMPLE_SPECIES_LIFESTAGE column, Biota
+  table
 - [`measured_categories_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/measured_categories_vocabulary.md)
-  : Measured categories controlled vocabulary
+  : Controlled vocabulary for the MEASURED_CATEGORY column, Compartments
+  table
 - [`measured_flag_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/measured_flag_vocabulary.md)
-  : Measurement flags controlled vocabulary
+  : Controlled vocabulary for MEASURED_FLAG, Measurements table
 - [`measured_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/measured_types_vocabulary.md)
-  : Measured types controlled vocabulary
+  : Controlled vocabulary for the MEASURED_TYPE column, Parameters table
 - [`ocean_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/ocean_vocabulary.md)
-  : Ocean controlled vocabulary
+  : Controlled vocabulary for the OCEAN_IHO column, Sites table
 - [`parameter_types_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_types_sub_vocabulary.md)
-  : Parameter type sub-categories controlled vocabulary
+  : Controlled vocabulary for the PARAMETER_TYPES_SUB column, Parameters
+  table
 - [`parameter_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_types_vocabulary.md)
-  : Parameter types controlled vocabulary
+  : Controlled vocabulary for the PARAMETER_TYPES column, Parameters
+  table
 - [`parameter_unit_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_unit_vocabulary.md)
-  : Parameter units and conversion factors vocabulary
+  : Controlled vocabulary for MEASURED_UNIT, LOQ_UNIT, and LOD_UNIT,
+  with conversion factors and base units
 - [`parameters_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameters_vocabulary.md)
-  : Sampled parameters controlled vocabulary
+  : Data for PARAMETER_NAME, PARAMETER_TYPE, etc. in the Parameters
+  table
 - [`protocol_categories_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_categories_vocabulary.md)
-  : Protocol categories controlled vocabulary
+  : Controlled vocabulary for PROTOCOL_CATEGORY column, Methods table
 - [`protocol_options_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_options_vocabulary.md)
-  : All protocols controlled vocabulary
+  : Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns
+  (all), Methods table
 - [`reference_type_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/reference_type_vocabulary.md)
-  : Controlled vocabulary for reference types
+  : Controlled vocabulary for the REFERENCE_TYPE column, References
+  table
 - [`sampling_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/sampling_protocols_vocabulary.md)
-  : Sampling protocols controlled vocabulary
+  : Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns
+  (sampling), Methods table
 - [`species_groups_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/species_groups_vocabulary.md)
-  : Species groups controlled vocabulary
+  : Controlled vocabulary for the SPECIES_GROUP column, Biota table
 - [`species_names_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/species_names_vocabulary.md)
-  : Species names controlled vocabulary
+  : Controlled vocabulary for the SPECIES_NAME column, Biota table
 - [`tissue_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/tissue_types_vocabulary.md)
-  : Tissue types controlled vocabulary
+  : Controlled vocabulary for the SAMPLE_TISSUE column, Biota table
 - [`uncertainty_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/uncertainty_types_vocabulary.md)
-  : Uncertainty types controlled vocabulary
+  : Controlled vocabulary for the UNCERTAINTY_TYPE column, Measurements
+  table
 
 ## Generate IDs
 
 Generate ID strings based on abbreviated titles, plus regex to check
 
 - [`abbreviate_string()`](https://NIVANorge.github.io/eDataDRF/reference/abbreviate_string.md)
-  : Abbreviate string to first n words with case formatting
+  : Generic function to abbreviate string to first n words with case
+  formatting
+
 - [`generate_reference_id()`](https://NIVANorge.github.io/eDataDRF/reference/generate_reference_id.md)
-  : Generate Reference ID
+  : Generate compact reference ID (YYYYLNameFirstThreeWords) for
+  REFERENCE_ID in References table
+
 - [`generate_protocol_id()`](https://NIVANorge.github.io/eDataDRF/reference/generate_protocol_id.md)
   : Generate a semi-unique string ID for a protocol based on its type,
-  name, the campaign name, and a sequence number
+  name, the campaign name, and a sequence number; used as a key between
+  Methods and Measurements table.
+
 - [`generate_sample_id_with_components()`](https://NIVANorge.github.io/eDataDRF/reference/generate_sample_id_with_components.md)
-  : Generate Sample ID with Components
+  :
+
+  Generate compact Sample ID
+  (`SiteCode-ParamAbbrev-CompartmentAbbrev-Date-R-SubsampleAbbrev`) for
+  SAMPLE_ID in Samples table
+
 - [`sample_id_regex()`](https://NIVANorge.github.io/eDataDRF/reference/sample_id_regex.md)
-  : Regular expression for sample IDs
+  :
+
+  Regular expression to check
+  [`generate_sample_id_with_components()`](https://NIVANorge.github.io/eDataDRF/reference/generate_sample_id_with_components.md)
+  protocol IDs for Samples table
+
 - [`protocol_id_regex()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_id_regex.md)
-  : Regular expression for protocol IDs
+  :
+
+  Regular expression to check
+  [`generate_protocol_id()`](https://NIVANorge.github.io/eDataDRF/reference/generate_protocol_id.md)
+  protocol IDs for Methods table
 
 ## Export
 
@@ -418,4 +425,4 @@ Format and scoring for data quality assessment
 
 - [eData
   validation](https://NIVANorge.github.io/eDataDRF/articles/validation.md):
-- [Rationale](https://NIVANorge.github.io/eDataDRF/articles/rationale.md):
+- [FAQ](https://NIVANorge.github.io/eDataDRF/articles/rationale.md):

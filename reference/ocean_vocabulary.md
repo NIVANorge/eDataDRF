@@ -1,4 +1,4 @@
-# Ocean controlled vocabulary
+# Controlled vocabulary for the OCEAN_IHO column, Sites table
 
 Returns controlled vocabulary options for IHO ocean regions.
 

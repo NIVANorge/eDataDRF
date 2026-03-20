@@ -1,4 +1,4 @@
-# Measurement flags controlled vocabulary
+# Controlled vocabulary for MEASURED_FLAG, Measurements table
 
 Returns controlled vocabulary options for measurement quality flags.
 

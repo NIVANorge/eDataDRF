@@ -5,7 +5,7 @@
 Where biota are sampled, it becomes important to capture considerable
 additional information. Species, tissue type, gender, lifestage, and
 other factors can considerably affect exposure to pollutants, and thus
-this information is important to put their occurence in its full
+this information is important to put their occurrence in its full
 context.
 
 The Biota table is an intermediate table that extends the [Samples data

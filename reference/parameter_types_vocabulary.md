@@ -1,4 +1,4 @@
-# Parameter types controlled vocabulary
+# Controlled vocabulary for the PARAMETER_TYPES column, Parameters table
 
 Returns controlled vocabulary options for broad parameter
 classifications.

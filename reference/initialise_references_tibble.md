@@ -1,4 +1,4 @@
-# Initialise references tibble
+# Initialise an 18x0 tibble for storing metadata on scientific literature
 
 Creates an empty tibble with the standardised column structure for
 reference data.

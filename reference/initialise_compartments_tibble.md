@@ -1,4 +1,4 @@
-# Initialise compartments tibble
+# Initialise an 3x0 tibble for storing metadata on sampled environmental compartment
 
 Creates an empty tibble with the standardised column structure for
 environmental compartment data.

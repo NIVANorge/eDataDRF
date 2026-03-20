@@ -1,7 +1,7 @@
-# Rationale
+# FAQ
 
 The eData Data Reporting Format is a format for the standardisation of
-data on pollutant occurence in the environment. By converting this data
+data on pollutant occurrence in the environment. By converting this data
 to a single, consistent format, it makes it easier to validate, compare,
 analyse, and reuse, in line with the [FAIR
 principles](https://www.go-fair.org/fair-principles/).
@@ -43,6 +43,42 @@ format changes. In future, we plan to extend the format to other forms.
 
 ## Who supported this work?
 
+We gratefully acknowledge the assistance and input of Kim Leirvik, Li
+Xi, Camden Karon Klefbom, Pierre Blévin, Anna Maria Hatland, Sophie
+Mentzel, Viviane Giradin, and the members of the PARC Project P7.2.2
+team in the creation of this format.
+
 This work is supported by the Research Council of Norway (RCN-315969
 EXPECT), EU-HEU-101057014 Project “PARC”, and NIVA’s Computational
 Toxicology Program (NCTP, RCN-160016).
+
+``` r
+grateful::cite_packages(
+  text.start = "We gratefully thank the developers and contributors to the following software used in this work:",
+  pkgs = c(
+    "arrow", "cpp11", "crsuggest", "dplyr", "glue", "grateful", "gt", # automatic detection via DESCRIPTION causes issues with pkgdown
+    "ISOcodes", "pointblank", "purrr", "readr", "rlang", "stringr",
+    "tibble", "tidyselect", "zip",
+    "knitr", "quarto", "rmarkdown", "testthat"
+  ),
+  output = "paragraph",
+  out.dir = tempdir(), # prevent .bib file from appearing in working directory
+  cite.tidyverse = TRUE,
+  omit = "eDataDRF",
+  dependencies = FALSE
+) |>
+  gsub(pattern = " \\[@[^]]+\\]", replacement = "", x = _) |>
+  knitr::asis_output()
+```
+
+We gratefully thank the developers and contributors to the following
+software used in this work: the following R packages: arrow v. 23.0.1.1,
+cpp11 v. 0.5.3, crsuggest v. 0.4, glue v. 1.8.0, grateful v. 0.3.0, gt
+v. 1.3.0, ISOcodes v. 2025.5.18, knitr v. 1.51, pointblank v. 0.12.3,
+quarto v. 1.5.1, rmarkdown v. 2.30, testthat v. 3.3.2, tidyselect v.
+1.2.1, tidyverse v. 2.0.0, zip v. 2.3.3.
+
+## Declaration of Generative AI Use
+
+The Claude family of Large Language Models was used in the creation of
+the package for the generation of boiletplate and some R code.

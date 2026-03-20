@@ -122,7 +122,7 @@ Type](#reference-type---string-controlled-mandatory) is `Report`.
 
 `DOI` - *String, free, optional* If available, the Digital Object
 Identifier associated with a reference object. Optional, but the
-preferred identifier when avaiable.
+preferred identifier when available.
 
 See the website of the [doi Foundation](https://www.doi.org/) for more
 information.

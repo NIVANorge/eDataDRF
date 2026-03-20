@@ -1,4 +1,4 @@
-# Measured categories controlled vocabulary
+# Controlled vocabulary for the MEASURED_CATEGORY column, Compartments table
 
 Returns controlled vocabulary options for measurement context
 categories.

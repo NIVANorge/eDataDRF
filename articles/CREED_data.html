@@ -29,7 +29,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">eDataDRF</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9003</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9004</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +54,7 @@
     <li><a class="dropdown-item" href="../articles/CREED_data.html">CREED data</a></li>
     <li><a class="dropdown-item" href="../articles/CREED_scores_data.html">CREED usability scores</a></li>
     <li><a class="dropdown-item" href="../articles/validation.html">eData validation</a></li>
-    <li><a class="dropdown-item" href="../articles/rationale.html">Rationale</a></li>
+    <li><a class="dropdown-item" href="../articles/rationale.html">FAQ</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
@@ -97,7 +97,7 @@
     <section class="section level2"><h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <p><a href="https://www.setac.org/resource/creed-for-use-in-environmental-assessments-a-timely-development-update.html" class="external-link">Criteria for Reporting and Evaluating Exposure Datasets (CREED)</a> is a framework for evaluating the relevance and reliability of a reference object for a given exposure assessment question across a series of questions. Users set criteria for it to be relevant to their question, and use a pre-defined set of reliability criteria.</p>
-<p>The object is evaluated based on its data availability, precision, choice of methods, and a final score is calculated for both its relevance and reliability based on its useability at “Gold” and “Silver” levels of quality. This table collects the relevant data from non-CREED tables selected by the user or an automated data population process, the user-appraised scores, and any limitations the user chooses to comments on. In the data export process, the below functions are used to create two .CSV files: one for reliability and one for relevance. Scores are used to calculate a <a href="CREED_scores_data.htmll">CREED score</a>.</p>
+<p>The object is evaluated based on its data availability, precision, choice of methods, and a final score is calculated for both its relevance and reliability based on its useability at “Gold” and “Silver” levels of quality. This table collects the relevant data from non-CREED tables selected by the user or an automated data population process, the user-appraised scores, and any limitations the user chooses to comments on. In the data export process, the below functions are used to create two .CSV files: one for reliability and one for relevance. Scores are used to calculate a <a href="CREED_scores_data.html">CREED score</a>.</p>
 <p>This table is not intended to be used as a final data product, but is included in the format because it provides traceability on how the CREED score was calculated. Because a large part of the evaluation logic is included in the <a href="https://github.com/NIVANorge/STOPeData" class="external-link">eData app</a>, this table is currently just a container with little relevant information. It is planned to migrate this logic to the eDataDRF in future.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="downlit sourceCode r">

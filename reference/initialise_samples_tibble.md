@@ -1,4 +1,4 @@
-# Initialise samples tibble
+# Initialise an 11x0 tibble for storing combinations of sites, dates, parameters, and compartments sampled
 
 Creates an empty tibble with the standardised column structure for
 sample data.

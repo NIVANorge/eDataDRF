@@ -1,4 +1,4 @@
-# Extraction protocols controlled vocabulary
+# Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (extraction), Methods table
 
 Returns extraction protocol options with short and long names.
 

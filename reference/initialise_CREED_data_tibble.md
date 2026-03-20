@@ -1,4 +1,4 @@
-# Initialise CREED criteria data tibble
+# Initialise an 6x0 tibble for storing CREED assessment data
 
 Creates an empty tibble with the standardised column structure for
 detailed CREED criterion assessment data.

@@ -1,4 +1,4 @@
-# All protocols controlled vocabulary
+# Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (all), Methods table
 
 Returns combined protocol options from all protocol categories.
 

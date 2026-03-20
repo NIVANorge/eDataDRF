@@ -1,4 +1,4 @@
-# Initialise sites tibble
+# Initialise an 13x0 tibble for storing geographical metadata
 
 Creates an empty tibble with the standardised column structure for site
 data.

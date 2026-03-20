@@ -1,4 +1,4 @@
-# Sampled parameters controlled vocabulary
+# Data for PARAMETER_NAME, PARAMETER_TYPE, etc. in the Parameters table
 
 Returns comprehensive parameter data combining quality and chemical
 parameters.

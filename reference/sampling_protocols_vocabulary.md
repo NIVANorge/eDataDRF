@@ -1,4 +1,4 @@
-# Sampling protocols controlled vocabulary
+# Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (sampling), Methods table
 
 Returns sampling protocol options with short and long names.
 

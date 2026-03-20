@@ -1,7 +1,7 @@
-# Initialise methods tibble
+# Initialise an 5x0 tibble for storing metadata on scientific/sampling methods and protocols
 
 Creates an empty tibble with the standardised column structure for
-analytical methods data.
+methods.
 
 ## Usage
 

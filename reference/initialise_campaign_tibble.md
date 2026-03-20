@@ -1,4 +1,4 @@
-# Initialise campaign tibble
+# Initialise an 8x0 tibble for storing organisational and date metadata
 
 Creates an empty tibble with the standardised column structure for
 campaign data.

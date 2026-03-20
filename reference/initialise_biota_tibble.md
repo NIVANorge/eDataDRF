@@ -1,7 +1,6 @@
-# Initialise biota tibble
+# Initialise an 14x0 tibble for storing biota metadata
 
-Creates an empty tibble with the standardised column structure for biota
-data.
+Initialise an 14x0 tibble for storing biota metadata
 
 ## Usage
 

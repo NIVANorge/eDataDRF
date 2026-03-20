@@ -29,7 +29,7 @@
 
     <a class="navbar-brand me-2" href="index.html">eDataDRF</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9003</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9004</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +54,7 @@
     <li><a class="dropdown-item" href="articles/CREED_data.html">CREED data</a></li>
     <li><a class="dropdown-item" href="articles/CREED_scores_data.html">CREED usability scores</a></li>
     <li><a class="dropdown-item" href="articles/validation.html">eData validation</a></li>
-    <li><a class="dropdown-item" href="articles/rationale.html">Rationale</a></li>
+    <li><a class="dropdown-item" href="articles/rationale.html">FAQ</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
@@ -88,10 +88,7 @@
 <div class="section level1">
 <h1 id="edata-data-reporting-format">eData Data Reporting Format<a class="anchor" aria-label="anchor" href="#edata-data-reporting-format"></a>
 </h1>
-<div class="float">
-<img src=".%5Cvignettes/eData_DRF_logo.svg" alt="eData Data Reporting Format Logo"><div class="figcaption">eData Data Reporting Format Logo</div>
-</div>
-<p>The eData Data Reporting Format is a format for the reporting of chemical occurence/exposure data in the natural environment. It provides tables, vocabulary, and validation functions for structuring chemical occurence data, as well as spatial, social, biological, geographical, and other metadata.</p>
+<p>The eData Data Reporting Format is a format for the reporting of chemical occurrence/exposure data in the natural environment. It provides tables, vocabulary, and validation functions for structuring chemical occurrence data, as well as spatial, social, biological, geographical, and other metadata.</p>
 </div>
 <div class="section level1">
 <h1 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -187,54 +184,22 @@
 <tr class="even">
 <td><a href="https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html">CREED (quality)</a></td>
 <td>Records CREED assessment criteria, relevant data, criteria scores, and limitations</td>
-<td></td>
+<td>Optional</td>
 </tr>
 <tr class="odd">
 <td><a href="https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html">CREED Scores</a></td>
 <td>Records CREED usability scores calculated from CREED data above</td>
-<td></td>
+<td>Optional</td>
 </tr>
 </tbody>
 </table>
-<pre class="mermaid"><code>erDiagram
-    Campaign ||--o{ Measurements : 'Belongs'
-    Campaign ||--o{ References : 'Belongs'
-    Campaign ||--o{ Sites : 'Belongs'
-    Campaign ||--o{ Methods : 'Belongs'
-    Campaign ||--o{ CREED : 'Assesses'
-
-    References ||--o{ Measurements : 'Cites'
-    Sites ||--o{ Measurements : 'Locates'
-    Parameters ||--o{ Measurements : 'Quantifies'
-    Methods ||--o{ Measurements : 'Means'
-
-    Measurements {
-    }
-
-    Campaign {
-    }
-
-    References {
-    }
-
-    Sites {
-    }
-
-    Parameters {
-    }
-
-    Methods {
-    }
-
-    CREED {
-    }</code></pre>
 </div>
 <div class="section level2">
 <h2 id="vocabulary">Vocabulary<a class="anchor" aria-label="anchor" href="#vocabulary"></a>
 </h2>
-<p>Likewise, controlled vocabulary is available as functions that return vectors, lists, or tables. In some cases, helper functions are available that wrap multiple invididual functions.</p>
+<p>Likewise, controlled vocabulary is available as functions that return vectors, lists, or tables. In some cases, helper functions are available that wrap multiple individual functions.</p>
 <p>Where external data sources are used to generate a vocabulary, functions may wrap (processed) data from other R packages or load raw data from external sources. Vocabulary functions are documented in the <a href="reference/index.html#controlled-vocabulary">Reference section</a> and linked to in the relevant table files in</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># returns a named vector</span></span>
 <span><span class="fu"><a href="reference/measured_categories_vocabulary.html">measured_categories_vocabulary</a></span><span class="op">(</span><span class="op">)</span> </span>
 <span><span class="co">#&gt;               External               Internal                Surface </span></span>
@@ -329,7 +294,8 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Sam A. Welch <br><small class="roles"> Author, maintainer </small>   </li>
+<li>Sam A. Welch <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-4743-4562" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
+<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
 

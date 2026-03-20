@@ -86,6 +86,15 @@ failing rows removed. The list always contains elements named
 Optional elements (`samples`, `biota`, `methods`, `creed_scores`) are
 included only when the corresponding arguments are not `NULL`.
 
+## Details
+
+Calls each individual table validation function in turn. Validation is
+performed using
+[`pointblank::create_agent()`](https://rstudio.github.io/pointblank/reference/create_agent.html)
+and related functions. See
+`vignette("validation", package = "pointblank")` for an overview of the
+pointblank validation workflow.
+
 ## See also
 
 [`pb_validate_campaign()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_campaign.md),

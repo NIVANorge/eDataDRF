@@ -51,7 +51,7 @@ their code and name.
 [Parameter
 name](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.html#parameter-name)
 is a foreign key that references the [Parameter data
-table](https://NIVANorge.github.io/eDataDRF/articles/parameter_data.md).
+table](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.md).
 During Samples table creation the user selects relevant parameters using
 their name and type.
 
@@ -189,8 +189,8 @@ Limit of Quantification of the method, if reported.
 
 If no [Measured value](#measured-value) is reported, at least one of an
 LOQ and an LOD should be reported with value and unit; implicitly the
-stressor occurence was below the method’s ability to quantify. If a
-Measured value, LOQ and/or LOQ are reported, please include as many as
+stressor occurrence was below the method’s ability to quantify. If a
+Measured value, LOQ and/or LOD are reported, please include as many as
 possible in the extracted data.
 
 ### LOQ Unit
@@ -212,8 +212,8 @@ Limit of Detection of the method, if reported.
 
 If no [Measured value](#measured-value) is reported, at least one of an
 LOQ and an LOD should be reported with value and unit; implicitly the
-stressor occurence was below the method’s ability to detect. If a
-Measured value, LOQ and/or LOQ are reported, please include as many as
+stressor occurrence was below the method’s ability to detect. If a
+Measured value, LOQ and/or LOD are reported, please include as many as
 possible in the extracted data.
 
 ### LOD Unit

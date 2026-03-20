@@ -1,4 +1,4 @@
-# Altitude units controlled vocabulary
+# Controlled vocabulary for the ALTITUDE_UNIT column, Sites table
 
 Returns controlled vocabulary options for altitude measurement units.
 

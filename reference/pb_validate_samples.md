@@ -34,6 +34,13 @@ If agent = TRUE, a pointblank agent object containing validation
 results. If agent = FALSE, the input data with validation failures
 removed.
 
+## Details
+
+Validation thresholds are configured using
+[`pointblank::action_levels()`](https://rstudio.github.io/pointblank/reference/action_levels.html).
+See `vignette("validation", package = "pointblank")` for an overview of
+the pointblank validation workflow.
+
 ## See also
 
 [`pb_validate_edata_table()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_edata_table.md)

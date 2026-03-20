@@ -1,4 +1,4 @@
-# Parameter units and conversion factors vocabulary
+# Controlled vocabulary for MEASURED_UNIT, LOQ_UNIT, and LOD_UNIT, with conversion factors and base units
 
 Returns unit definitions and SI conversion factors for environmental
 measurements.

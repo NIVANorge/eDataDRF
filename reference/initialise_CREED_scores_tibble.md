@@ -1,4 +1,4 @@
-# Initialise CREED scores tibble
+# Initialise an 5x0 tibble for storing a data source's overall CREED score
 
 Creates an empty tibble with the standardised column structure for CREED
 final scores.

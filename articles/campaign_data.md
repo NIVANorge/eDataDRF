@@ -54,7 +54,7 @@ Comments](#campaign-comment).
 
 `CAMPAIGN_END_DATE` - *date (ISO), free, optional*
 
-If avaiable, the last sampling date of the campaign.
+If available, the last sampling date of the campaign.
 
 ### Organisation
 

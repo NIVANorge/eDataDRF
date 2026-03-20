@@ -67,7 +67,7 @@ Samples table. However, it is not used as a foreign key.
 [Parameter
 name](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.html#parameter-name)
 is a foreign key that references the [Parameter data
-table](https://NIVANorge.github.io/eDataDRF/articles/parameter_data.md).
+table](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.md).
 During Samples table creation the user selects relevant parameters using
 their name and type.
 
@@ -128,9 +128,11 @@ table](https://NIVANorge.github.io/eDataDRF/articles/compartments_data.md).
 
 The date a sample was taken. This should be reported to the highest
 degree of date precision possible (time is not needed). However, if day
-or month is not avaiable, it can be reported as the first day of a
+or month is not available, it can be reported as the first day of a
 reported month or year. In this case, please note this in the
-[Measurement comment](#todo:%20add%20link) section.
+[Measurement
+comment](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.html#measurement-comment)
+section.
 
 ### Subsample
 
@@ -151,12 +153,8 @@ different subsamples, but a short, descriptive value is preferred.
 A Subsample ID is generated for each subsample based on its identifying
 characteristics.
 
-Actually, no it isn’t. Not used.
-
 ### Sample ID
 
 `SAMPLE_ID` - *string, free, mandatory*
 
-Actually this includes subsample;
-
-\#TODO e.g.:`DummyCampaign1997_SITE_001-Tim-Notreported-2023-02-12-R-1`
+e.g.:`DummyCampaign1997_SITE_001-Tim-Notreported-2023-02-12-R-1`

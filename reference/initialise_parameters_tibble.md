@@ -1,4 +1,4 @@
-# Initialise parameters tibble
+# Initialise an 10x0 tibble for storing metadata on sampled parameters: stressors, quality, etc.
 
 Creates an empty tibble with the standardised column structure for
 parameter data.

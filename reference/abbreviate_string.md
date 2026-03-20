@@ -1,4 +1,4 @@
-# Abbreviate string to first n words with case formatting
+# Generic function to abbreviate string to first n words with case formatting
 
 Takes a string, extracts the first n words (removing special
 characters), and formats them according to the specified case style.

@@ -1,4 +1,4 @@
-# Analytical protocols controlled vocabulary
+# Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (analytical), Methods table
 
 Returns analytical protocol options with short and long names.
 

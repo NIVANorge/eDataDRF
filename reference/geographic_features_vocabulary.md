@@ -1,4 +1,4 @@
-# Geographic features controlled vocabulary
+# Controlled vocabulary for the SITE_GEOGRAPHIC_FEATURE column, Sites table
 
 Returns controlled vocabulary options for site geographic features.
 

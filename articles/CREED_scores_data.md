@@ -48,7 +48,7 @@ id](https://NIVANorge.github.io/eDataDRF/articles/references_data.html#reference
 
 ### Silver Reliability
 
-`SILVER_RELIABILITY` - *numeric, free, mandatory*
+`SILVER_RELIABILITY` - *string, free, mandatory*
 
 Silver reliability score. See [Usability Scores](#usability-scores) for
 valid levels.

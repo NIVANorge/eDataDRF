@@ -20,8 +20,8 @@ initialise_parameters_tibble()
 ```
 
 It is expected that most relevant studies will be collecting data on
-chemical pollutants in the environment. Non-chemicals are accomodated by
-the format, but they cannot necessarily be as well-characterised as
+chemical pollutants in the environment. Non-chemicals are accommodated
+by the format, but they cannot necessarily be as well-characterised as
 chemicals, where we are able to take advantage of the high-quality
 infrastructure developed by chemists.
 

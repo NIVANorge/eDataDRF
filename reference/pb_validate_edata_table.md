@@ -54,6 +54,13 @@ removed.
 
 ## Details
 
+Uses
+[`pointblank::create_agent()`](https://rstudio.github.io/pointblank/reference/create_agent.html)
+to build a validation agent in agent mode, or applies steps directly to
+the data in pipeline mode. See also
+`vignette("validation", package = "pointblank")` for an overview of the
+pointblank validation workflow.
+
 In agent mode, the agent object can be used to:
 
 - Extract validation results with `get_sundered_data()`

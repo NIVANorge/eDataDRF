@@ -11,7 +11,7 @@ validated; optional tables are validated only when provided."><meta property="og
 
     <a class="navbar-brand me-2" href="../index.html">eDataDRF</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9003</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9004</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@ validated; optional tables are validated only when provided."><meta property="og
     <li><a class="dropdown-item" href="../articles/CREED_data.html">CREED data</a></li>
     <li><a class="dropdown-item" href="../articles/CREED_scores_data.html">CREED usability scores</a></li>
     <li><a class="dropdown-item" href="../articles/validation.html">eData validation</a></li>
-    <li><a class="dropdown-item" href="../articles/rationale.html">Rationale</a></li>
+    <li><a class="dropdown-item" href="../articles/rationale.html">FAQ</a></li>
   </ul></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
@@ -143,6 +143,13 @@ If agent = FALSE, each element is a validated data frame with failing rows remov
 The list always contains elements named <code>campaign</code>, <code>reference</code>, <code>parameters</code>,
 <code>sites</code>, and <code>measurements</code>. Optional elements (<code>samples</code>, <code>biota</code>, <code>methods</code>,
 <code>creed_scores</code>) are included only when the corresponding arguments are not <code>NULL</code>.</p>
+    </div>
+    <div class="section level2">
+    <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
+    <p>Calls each individual table validation function in turn. Validation is
+performed using <code><a href="https://rstudio.github.io/pointblank/reference/create_agent.html" class="external-link">pointblank::create_agent()</a></code> and related functions.
+See <code>vignette("validation", package = "pointblank")</code> for an overview of
+the pointblank validation workflow.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

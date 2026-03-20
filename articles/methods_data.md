@@ -32,7 +32,7 @@ table](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.md).
 Because it is assumed that each measurement will typically have a
 sampling, extraction, fractionation, and analytical protocol associated
 with it, the measurements table has a foreign key for each type of
-methdology that references the relevant [Protocol ID](#protocol-id).
+methodology that references the relevant [Protocol ID](#protocol-id).
 
 ``` r
 library(eDataDRF)
@@ -60,10 +60,10 @@ data](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.md).
 Protocol IDs are automatically generated based on the protocol type,
 short name, campaign name, and, in cases where more than one of a type
 of technique is used per campaign, sequence number. This is
-theoretically vulnerable to colisions, and a hashed or serial key would
+theoretically vulnerable to collisions, and a hashed or serial key would
 be safer, but this is not anticipated to be a problem at the current
 scale of use at the format. Additionally, it is far easier to read and
-intepret for humans.
+interpret for humans.
 
 ``` r
 generate_protocol_id(

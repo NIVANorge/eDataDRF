@@ -29,7 +29,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">eDataDRF</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9003</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9004</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +54,7 @@
     <li><a class="dropdown-item" href="../articles/CREED_data.html">CREED data</a></li>
     <li><a class="dropdown-item" href="../articles/CREED_scores_data.html">CREED usability scores</a></li>
     <li><a class="dropdown-item" href="../articles/validation.html">eData validation</a></li>
-    <li><a class="dropdown-item" href="../articles/rationale.html">Rationale</a></li>
+    <li><a class="dropdown-item" href="../articles/rationale.html">FAQ</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
@@ -124,7 +124,7 @@
 </section><section class="level2"><h3 id="parameter-name">Parameter Name<a class="anchor" aria-label="anchor" href="#parameter-name"></a>
 </h3>
 <p><code>PARAMETER_NAME</code> - <em>string, controlled, mandatory</em></p>
-<p><a href="parameters_data.html#parameter-name">Parameter name</a> is a foreign key that references the <a href="parameter_data.html">Parameter data table</a>. During Samples table creation the user selects relevant parameters using their name and type.</p>
+<p><a href="parameters_data.html#parameter-name">Parameter name</a> is a foreign key that references the <a href="parameters_data.html">Parameter data table</a>. During Samples table creation the user selects relevant parameters using their name and type.</p>
 </section><section class="level2"><h3 id="parameter-type">Parameter Type<a class="anchor" aria-label="anchor" href="#parameter-type"></a>
 </h3>
 <p><code>PARAMETER_TYPE</code> - <em>string, controlled, mandatory</em></p>
@@ -144,7 +144,7 @@
 </section><section class="level2"><h3 id="sampling-date">Sampling Date<a class="anchor" aria-label="anchor" href="#sampling-date"></a>
 </h3>
 <p><code>SAMPLING_DATE</code> - <em>date (ISO), free, mandatory</em></p>
-<p>The date a sample was taken. This should be reported to the highest degree of date precision possible (time is not needed). However, if day or month is not avaiable, it can be reported as the first day of a reported month or year. In this case, please note this in the <a href="#todo:%20add%20link">Measurement comment</a> section.</p>
+<p>The date a sample was taken. This should be reported to the highest degree of date precision possible (time is not needed). However, if day or month is not available, it can be reported as the first day of a reported month or year. In this case, please note this in the <a href="measurements_data.html#measurement-comment">Measurement comment</a> section.</p>
 </section><section class="level2"><h3 id="subsample">Subsample<a class="anchor" aria-label="anchor" href="#subsample"></a>
 </h3>
 <p><code>SUBSAMPLE</code> - <em>string, free, mandatory</em></p>
@@ -153,12 +153,10 @@
 </h3>
 <p><code>SUBSAMPLE_ID</code> - <em>string, free, mandatory</em></p>
 <p>A Subsample ID is generated for each subsample based on its identifying characteristics.</p>
-<p>Actually, no it isn’t. Not used.</p>
 </section><section class="level2"><h3 id="sample-id">Sample ID<a class="anchor" aria-label="anchor" href="#sample-id"></a>
 </h3>
 <p><code>SAMPLE_ID</code> - <em>string, free, mandatory</em></p>
-<p>Actually this includes subsample;</p>
-<p>#TODO e.g.:<code>DummyCampaign1997_SITE_001-Tim-Notreported-2023-02-12-R-1</code></p>
+<p>e.g.:<code>DummyCampaign1997_SITE_001-Tim-Notreported-2023-02-12-R-1</code></p>
 </section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);

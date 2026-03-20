@@ -1,4 +1,4 @@
-# CREED assessment scores controlled vocabulary
+# Controlled vocabulary for CREED scores, CREED table
 
 Returns standardised scoring options for CREED data quality assessment.
 

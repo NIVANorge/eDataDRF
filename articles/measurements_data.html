@@ -29,7 +29,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">eDataDRF</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9003</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9004</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +54,7 @@
     <li><a class="dropdown-item" href="../articles/CREED_data.html">CREED data</a></li>
     <li><a class="dropdown-item" href="../articles/CREED_scores_data.html">CREED usability scores</a></li>
     <li><a class="dropdown-item" href="../articles/validation.html">eData validation</a></li>
-    <li><a class="dropdown-item" href="../articles/rationale.html">Rationale</a></li>
+    <li><a class="dropdown-item" href="../articles/rationale.html">FAQ</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
@@ -123,7 +123,7 @@
 </section><section class="level2"><h3 id="parameter-name">Parameter Name<a class="anchor" aria-label="anchor" href="#parameter-name"></a>
 </h3>
 <p><code>PARAMETER_NAME</code> - <em>string, free, mandatory</em></p>
-<p><a href="parameters_data.html#parameter-name">Parameter name</a> is a foreign key that references the <a href="parameter_data.html">Parameter data table</a>. During Samples table creation the user selects relevant parameters using their name and type.</p>
+<p><a href="parameters_data.html#parameter-name">Parameter name</a> is a foreign key that references the <a href="parameters_data.html">Parameter data table</a>. During Samples table creation the user selects relevant parameters using their name and type.</p>
 </section><section class="level2"><h3 id="sampling-date">Sampling Date<a class="anchor" aria-label="anchor" href="#sampling-date"></a>
 </h3>
 <p><code>SAMPLING_DATE</code> - <em>string, free, mandatory</em></p>
@@ -215,7 +215,7 @@
 </h3>
 <p><code>LOQ_VALUE</code> - <em>numeric, free, conditionally mandatory</em></p>
 <p>Limit of Quantification of the method, if reported.</p>
-<p>If no <a href="#measured-value">Measured value</a> is reported, at least one of an LOQ and an LOD should be reported with value and unit; implicitly the stressor occurence was below the method’s ability to quantify. If a Measured value, LOQ and/or LOQ are reported, please include as many as possible in the extracted data.</p>
+<p>If no <a href="#measured-value">Measured value</a> is reported, at least one of an LOQ and an LOD should be reported with value and unit; implicitly the stressor occurrence was below the method’s ability to quantify. If a Measured value, LOQ and/or LOD are reported, please include as many as possible in the extracted data.</p>
 </section><section class="level2"><h3 id="loq-unit">LOQ Unit<a class="anchor" aria-label="anchor" href="#loq-unit"></a>
 </h3>
 <p><code>LOQ_UNIT</code> - <em>string, controlled, conditionally mandatory</em></p>
@@ -226,7 +226,7 @@
 </h3>
 <p><code>LOD_VALUE</code> - <em>numeric, free, conditionally mandatory</em></p>
 <p>Limit of Detection of the method, if reported.</p>
-<p>If no <a href="#measured-value">Measured value</a> is reported, at least one of an LOQ and an LOD should be reported with value and unit; implicitly the stressor occurence was below the method’s ability to detect. If a Measured value, LOQ and/or LOQ are reported, please include as many as possible in the extracted data.</p>
+<p>If no <a href="#measured-value">Measured value</a> is reported, at least one of an LOQ and an LOD should be reported with value and unit; implicitly the stressor occurrence was below the method’s ability to detect. If a Measured value, LOQ and/or LOD are reported, please include as many as possible in the extracted data.</p>
 </section><section class="level2"><h3 id="lod-unit">LOD Unit<a class="anchor" aria-label="anchor" href="#lod-unit"></a>
 </h3>
 <p><code>LOD_UNIT</code> - <em>string, controlled, conditionally mandatory</em></p>

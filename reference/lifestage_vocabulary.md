@@ -1,4 +1,4 @@
-# Life stages controlled vocabulary
+# Controlled vocabulary for the SAMPLE_SPECIES_LIFESTAGE column, Biota table
 
 Returns controlled vocabulary options for organism life stages.
 
