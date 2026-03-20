@@ -13,7 +13,7 @@ knitr:
 
 # Introduction
 
-The **Measurements data table** represents the core data table of the eData format. This table records actual measured parameter values (including uncertainty), and references most other tables using foreign keys.
+**Measurements data** represents the core data table of the eData format. This table records actual measured parameter values (including uncertainty), and references most other tables using foreign keys.
 
 This table is built from the [Samples data table](samples_data.html) and optionally the [Biota data table](biota_data.html) if present. Both tables are bound together (that is, the rows of one are added below the other) and then extended with additional columns. The inclusion of columns in this table and their order is somewhat a  
 

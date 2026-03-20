@@ -13,7 +13,7 @@ knitr:
 
 # Introduction
 
-Sites data captures information about the coordinates, land use, and administrative/geographical boundaries of sampling sites. In this format, we make the distinction between the sampled site - a fixed, physical point in space - and the [compartment](compartments_data.html) - the type of medium sampled.
+**Sites data** captures information about the coordinates, land use, and administrative/geographical boundaries of sampling sites. In this format, we make the distinction between the sampled site - a fixed, physical point in space - and the [compartment](compartments_data.html) - the type of medium sampled.
 
 Sampling sites are often reported in a variety of more-or-less FAIR formats, despite the availability of free, mature, well-characterised systems for defining position in space. Extraction of such data from reference objects may require conversion from minute-degrees to decimal degrees, reprojection in a different Coordinate Reference System, merging of multiple sampling sites, reporting a large, vague sampling region as a single point, and estimating coordinates off maps. However, for the time being, the format is kept intentionally simple. All sites are reported as discrete points; and cases where any of the above operations are performed should be reported in the [comments field](#site-comment---string-free-optional).
 

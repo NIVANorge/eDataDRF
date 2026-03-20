@@ -337,6 +337,7 @@ pb_validate_parameters <- function(
   apply_validations <- function(x) {
     x |>
       # Core identifiers
+      # TODO: Check against vocab
       col_vals_not_null(columns = PARAMETER_TYPE, actions = actions) |>
       col_vals_not_null(columns = MEASURED_TYPE, actions = actions) |>
       col_vals_not_null(columns = PARAMETER_NAME, actions = actions) |>
@@ -564,6 +565,7 @@ pb_validate_samples <- function(
 
   apply_validations <- function(x) {
     # Start with core identifier and flat vocabulary checks
+    # TODO: Missing labels
     agent_or_data <- x |>
       col_vals_not_null(columns = SAMPLE_ID, actions = actions) |>
       col_vals_not_null(columns = SITE_CODE, actions = actions) |>
@@ -649,6 +651,7 @@ pb_validate_biota <- function(
   apply_validations <- function(x) {
     x |>
       # Core identifiers
+      # TODO: Missing labels and regex
       col_vals_not_null(columns = SAMPLE_ID, actions = actions) |>
       col_vals_not_null(columns = SITE_CODE, actions = actions) |>
       col_vals_not_null(columns = PARAMETER_NAME, actions = actions) |>
@@ -759,6 +762,7 @@ pb_validate_measurements <- function(
   apply_validations <- function(x) {
     x |>
       # Core identifiers
+      # TODO: Missing labels
       col_vals_not_null(columns = SITE_CODE, actions = actions) |>
       col_vals_not_null(columns = PARAMETER_NAME, actions = actions) |>
       # FIXME: This will obviously fail on new parameters. Will need a more intelligent approach in time.
