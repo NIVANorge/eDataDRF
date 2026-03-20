@@ -4,8 +4,8 @@ Applies pointblank validation rules to check data quality and schema
 compliance for an eData Samples table. Checks that core identifier
 fields are non-null, that environmental compartment fields contain
 values within their controlled vocabularies, and that each
-ENVIRON_COMPARTMENT_SUB value is consistent with its corresponding
-ENVIRON_COMPARTMENT parent.
+`ENVIRON_COMPARTMENT_SUB` value is consistent with its corresponding
+`ENVIRON_COMPARTMENT` parent.
 
 ## Usage
 
@@ -21,25 +21,23 @@ pb_validate_samples(data, actions = action_levels(), agent = TRUE)
 
 - actions:
 
-  Action levels for pointblank agent (only used when agent = TRUE)
+  Action levels for pointblank agent (only used when `agent = TRUE`)
 
 - agent:
 
-  Logical. If TRUE (default), returns a pointblank agent object. If
-  FALSE, returns the validated data with validation failures removed.
+  Logical. If `TRUE` (default), returns a pointblank agent object. If
+  `FALSE`, returns the validated data with validation failures removed.
 
 ## Value
 
-If agent = TRUE, a pointblank agent object containing validation
-results. If agent = FALSE, the input data with validation failures
+If `agent = TRUE`, a pointblank agent object containing validation
+results. If `agent = FALSE`, the input data with validation failures
 removed.
 
 ## Details
 
 Validation thresholds are configured using
 [`pointblank::action_levels()`](https://rstudio.github.io/pointblank/reference/action_levels.html).
-See `vignette("validation", package = "pointblank")` for an overview of
-the pointblank validation workflow.
 
 ## See also
 

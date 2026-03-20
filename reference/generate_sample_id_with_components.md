@@ -1,4 +1,4 @@
-# Generate compact Sample ID (`SiteCode-ParamAbbrev-CompartmentAbbrev-Date-R-SubsampleAbbrev`) for SAMPLE_ID in Samples table
+# Generate compact Sample ID (`SiteCode-ParamAbbrev-CompartmentAbbrev-Date-R-SubsampleAbbrev`) for `SAMPLE_ID` in Samples table
 
 Generates a standardised sample identifier by combining the site code,
 abbreviated parameter name, abbreviated environmental sub-compartment,

@@ -1,4 +1,4 @@
-# Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (fractionation), Methods table
+# Controlled vocabulary for `PROTOCOL_TYPE` and `PROTOCOL_NAME` columns (fractionation), Methods table
 
 Returns fractionation protocol options with short and long names.
 
@@ -10,19 +10,19 @@ fractionation_protocols_vocabulary()
 
 ## Value
 
-A tibble with Protocol_Type, Short_Name, and Long_Name columns
+A tibble with `Protocol_Type`, `Short_Name`, and `Long_Name` columns
 
 ## Details
 
 Provides standardised fractionation method classifications as a tibble
 with three columns:
 
-Protocol_Type: Always "Fractionation Protocol"
+`Protocol_Type`: Always "Fractionation Protocol"
 
-Short_Name: Abbreviated protocol name (e.g., "Total", "Dissolved",
+`Short_Name`: Abbreviated protocol name (e.g., "Total", "Dissolved",
 "Filtered")
 
-Long_Name: Full descriptive name (e.g., "Total fraction", "Dissolved
+`Long_Name`: Full descriptive name (e.g., "Total fraction", "Dissolved
 fraction", "Filtered fraction")
 
 Available protocols include: Not relevant, Not reported, Total,

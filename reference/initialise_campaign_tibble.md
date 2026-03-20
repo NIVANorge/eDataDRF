@@ -19,21 +19,22 @@ Campaigns represent sampling projects or studies with metadata about
 timing, organisation, data quality evaluation, and confidentiality. The
 tibble includes the following columns:
 
-CAMPAIGN_NAME_SHORT: Short identifier for the campaign (mandatory)
+`CAMPAIGN_NAME_SHORT`: Short identifier for the campaign (mandatory)
 
-CAMPAIGN_NAME: Full descriptive name of the campaign (mandatory)
+`CAMPAIGN_NAME`: Full descriptive name of the campaign (mandatory)
 
-CAMPAIGN_START_DATE: Date when campaign sampling began (mandatory)
+`CAMPAIGN_START_DATE`: Date when campaign sampling began (mandatory)
 
-CAMPAIGN_END_DATE: Date when campaign sampling ended (optional)
+`CAMPAIGN_END_DATE`: Date when campaign sampling ended (optional)
 
-ORGANISATION: Organisation responsible for the campaign (mandatory)
+`ORGANISATION`: Organisation responsible for the campaign (mandatory)
 
-ENTERED_BY: Person or entity who entered the data (mandatory)
+`ENTERED_BY`: Person or entity who entered the data (mandatory)
 
-ENTERED_DATE: Date when the data was entered into the system (mandatory)
+`ENTERED_DATE`: Date when the data was entered into the system
+(mandatory)
 
-CAMPAIGN_COMMENT: Additional notes or comments about the campaign
+`CAMPAIGN_COMMENT`: Additional notes or comments about the campaign
 (optional)
 
 See

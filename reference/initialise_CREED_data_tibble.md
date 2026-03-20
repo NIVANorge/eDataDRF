@@ -21,17 +21,17 @@ structure is used internally by assessment modules and is not part of
 the externally-available table structure. The tibble includes the
 following columns:
 
-criterion_id: Unique identifier for the CREED criterion
+`criterion_id`: Unique identifier for the CREED criterion
 
-criterion_title: Descriptive title of the criterion
+`criterion_title`: Descriptive title of the criterion
 
-required_recommended: Whether the criterion is required or recommended
+`required_recommended`: Whether the criterion is required or recommended
 
-relevant_data: Data or information relevant to assessing the criterion
+`relevant_data`: Data or information relevant to assessing the criterion
 
-score: Assessment score for the criterion
+`score`: Assessment score for the criterion
 
-limitations: Identified limitations or concerns for the criterion
+`limitations`: Identified limitations or concerns for the criterion
 
 See
 [`vignette("CREED_data")`](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.md)
@@ -53,7 +53,7 @@ Other initialise_tibble:
 
 Other CREED:
 [`CREED_choices_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/CREED_choices_vocabulary.md),
-[`creed_tibble_to_mock_input()`](https://NIVANorge.github.io/eDataDRF/reference/creed_tibble_to_mock_input.md),
+[`CREED_tibble_to_mock_input()`](https://NIVANorge.github.io/eDataDRF/reference/creed_tibble_to_mock_input.md),
 [`example_CREED_relevance_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_CREED_relevance_tibble.md),
 [`example_CREED_reliability_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_CREED_reliability_tibble.md),
 [`example_CREED_scores_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_CREED_scores_tibble.md),

@@ -30,7 +30,7 @@ timesaver for anyone in such a position.
 ## Why aquatic toxicology?
 
 Starting with a field we know well allows us to test the effectiveness
-of the underlying philosophy and technology.
+of the underlying design philosophy and technology.
 
 ## Why an R package?
 
@@ -52,31 +52,12 @@ This work is supported by the Research Council of Norway (RCN-315969
 EXPECT), EU-HEU-101057014 Project “PARC”, and NIVA’s Computational
 Toxicology Program (NCTP, RCN-160016).
 
-``` r
-grateful::cite_packages(
-  text.start = "We gratefully thank the developers and contributors to the following software used in this work:",
-  pkgs = c(
-    "arrow", "cpp11", "crsuggest", "dplyr", "glue", "grateful", "gt", # automatic detection via DESCRIPTION causes issues with pkgdown
-    "ISOcodes", "pointblank", "purrr", "readr", "rlang", "stringr",
-    "tibble", "tidyselect", "zip",
-    "knitr", "quarto", "rmarkdown", "testthat"
-  ),
-  output = "paragraph",
-  out.dir = tempdir(), # prevent .bib file from appearing in working directory
-  cite.tidyverse = TRUE,
-  omit = "eDataDRF",
-  dependencies = FALSE
-) |>
-  gsub(pattern = " \\[@[^]]+\\]", replacement = "", x = _) |>
-  knitr::asis_output()
-```
-
 We gratefully thank the developers and contributors to the following
-software used in this work: the following R packages: arrow v. 23.0.1.1,
-cpp11 v. 0.5.3, crsuggest v. 0.4, glue v. 1.8.0, grateful v. 0.3.0, gt
-v. 1.3.0, ISOcodes v. 2025.5.18, knitr v. 1.51, pointblank v. 0.12.3,
-quarto v. 1.5.1, rmarkdown v. 2.30, testthat v. 3.3.2, tidyselect v.
-1.2.1, tidyverse v. 2.0.0, zip v. 2.3.3.
+software used in this work: R v. 4.5.3 and the following R packages:
+arrow v. 23.0.1.1, cpp11 v. 0.5.3, crsuggest v. 0.4, glue v. 1.8.0,
+grateful v. 0.3.0, gt v. 1.3.0, ISOcodes v. 2025.5.18, knitr v. 1.51,
+pointblank v. 0.12.3, quarto v. 1.5.1, rmarkdown v. 2.30, testthat v.
+3.3.2, tidyselect v. 1.2.1, tidyverse v. 2.0.0, zip v. 2.3.3.
 
 ## Declaration of Generative AI Use
 

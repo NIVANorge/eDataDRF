@@ -1,4 +1,4 @@
-# Controlled vocabulary for PROTOCOL_CATEGORY column, Methods table
+# Controlled vocabulary for `PROTOCOL_CATEGORY` column, Methods table
 
 Returns controlled vocabulary options for protocol type classifications.
 

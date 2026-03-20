@@ -1,4 +1,4 @@
-# Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (all), Methods table
+# Controlled vocabulary for `PROTOCOL_TYPE` and `PROTOCOL_NAME` columns (all), Methods table
 
 Returns combined protocol options from all protocol categories.
 
@@ -10,20 +10,20 @@ protocol_options_vocabulary()
 
 ## Value
 
-A tibble with Protocol_Type, Short_Name, and Long_Name columns for all
-protocols
+A tibble with `Protocol_Type`, `Short_Name`, and `Long_Name` columns for
+all protocols
 
 ## Details
 
 Combines all protocol vocabularies (sampling, fractionation, extraction,
 and analytical) into a single comprehensive tibble. Contains columns:
 
-Protocol_Type: Category of protocol (Sampling, Fractionation,
+`Protocol_Type`: Category of protocol (Sampling, Fractionation,
 Extraction, or Analytical Protocol)
 
-Short_Name: Abbreviated protocol name
+`Short_Name`: Abbreviated protocol name
 
-Long_Name: Full descriptive protocol name
+`Long_Name`: Full descriptive protocol name
 
 This function aggregates results from sampling_protocols_vocabulary(),
 fractionation_protocols_vocabulary(), extraction_protocols_vocabulary(),

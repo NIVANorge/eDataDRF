@@ -1,6 +1,7 @@
-# Controlled vocabulary for the MEASURED_TYPE column, Parameters table
+# Controlled vocabulary for the `MEASURED_TYPE` column, Parameters table
 
-Returns controlled vocabulary options for types of measurements.
+Returns controlled vocabulary options for the metric of pollution,
+quality, etc. measured.
 
 ## Usage
 
@@ -32,7 +33,10 @@ Other measurement:
 ## Examples
 
 ``` r
-head(measured_types_vocabulary(), 5)
-#> [1] "Concentration"      "Dose rate"          "Dose"              
-#> [4] "Physical parameter" "Amount"            
+measured_types_vocabulary()
+#>  [1] "Concentration"        "Dose rate"            "Dose"                
+#>  [4] "Physical parameter"   "Amount"               "Volume"              
+#>  [7] "Fraction of total"    "Percent"              "Irradiance"          
+#> [10] "Response"             "Ecological Indicator" "Not relevant"        
+#> [13] "Other"               
 ```

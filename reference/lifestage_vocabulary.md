@@ -1,4 +1,4 @@
-# Controlled vocabulary for the SAMPLE_SPECIES_LIFESTAGE column, Biota table
+# Controlled vocabulary for the `SAMPLE_SPECIES_LIFESTAGE` column, Biota table
 
 Returns controlled vocabulary options for organism life stages.
 
@@ -25,6 +25,8 @@ Other biota:
 ## Examples
 
 ``` r
-head(lifestage_vocabulary(), 5)
-#> [1] "Not reported" "Not relevant" "Adult"        "Juvenile"     "Larva"       
+lifestage_vocabulary()
+#>  [1] "Not reported" "Not relevant" "Adult"        "Juvenile"     "Larva"       
+#>  [6] "Embryo"       "Egg"          "Seedling"     "Mature"       "Young"       
+#> [11] "Mixed"        "Other"       
 ```

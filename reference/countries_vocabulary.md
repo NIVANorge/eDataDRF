@@ -1,4 +1,4 @@
-# Controlled vocabulary for the COUNTRY_ISO column, Sites table
+# Controlled vocabulary for the `COUNTRY_ISO` column, Sites table
 
 Returns controlled vocabulary options for country names based on ISO
 3166-1 standard.

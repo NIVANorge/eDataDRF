@@ -19,16 +19,16 @@ Methods describe the protocols used for sampling, extraction,
 fractionation, and analysis procedures. The tibble includes the
 following columns:
 
-PROTOCOL_ID: Unique identifier for the protocol (Primary Key)
+`PROTOCOL_ID`: Unique identifier for the protocol (Primary Key)
 
-CAMPAIGN_NAME: Name of the campaign this protocol was used in
+`CAMPAIGN_NAME`: Name of the campaign this protocol was used in
 
-PROTOCOL_CATEGORY: Type of protocol (Sampling, Extraction,
+`PROTOCOL_CATEGORY`: Type of protocol (Sampling, Extraction,
 Fractionation, Analytical)
 
-PROTOCOL_NAME: Standardised name of the protocol
+`PROTOCOL_NAME`: Standardised name of the protocol
 
-PROTOCOL_COMMENT: Additional notes or details about the protocol
+`PROTOCOL_COMMENT`: Additional notes or details about the protocol
 
 See
 [`vignette("methods_data")`](https://NIVANorge.github.io/eDataDRF/articles/methods_data.md)

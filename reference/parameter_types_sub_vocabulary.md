@@ -1,4 +1,4 @@
-# Controlled vocabulary for the PARAMETER_TYPES_SUB column, Parameters table
+# Controlled vocabulary for the `PARAMETER_TYPES_SUB` column, Parameters table
 
 Returns controlled vocabulary options for parameter type subcategories.
 
@@ -14,9 +14,11 @@ A character vector of parameter type subcategory options
 
 ## Details
 
-Dynamically generated from unique PARAMETER_TYPE_SUB values in
+Dynamically built from unique `PARAMETER_TYPE_SUB` values in
 [`parameters_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameters_vocabulary.md),
 with "Mixture" appended and standard data quality flags prepended.
+Chemical subtypes are taken from the
+[ChemOnt](http://classyfire.wishartlab.com) chemical taxonomy
 
 ## See also
 
@@ -30,8 +32,13 @@ Other parameter:
 ## Examples
 
 ``` r
-head(parameter_types_sub_vocabulary(), 5)
-#> [1] "Not relevant"              "Not reported"             
-#> [3] "Other"                     "Acetylides"               
-#> [5] "Alkaloids and derivatives"
+head(parameter_types_sub_vocabulary(), 15)
+#>  [1] "Not relevant"                    "Not reported"                   
+#>  [3] "Other"                           "Acetylides"                     
+#>  [5] "Alkaloids and derivatives"       "Allenes"                        
+#>  [7] "Benzenoids"                      "Carbon"                         
+#>  [9] "Conductivity"                    "Dissolved oxygen"               
+#> [11] "Homogeneous metal compounds"     "Homogeneous non-metal compounds"
+#> [13] "Hydrocarbon derivatives"         "Hydrocarbons"                   
+#> [15] "Inorganic salts"                
 ```

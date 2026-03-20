@@ -63,24 +63,24 @@ pb_validate_all_edata_tables(
 
 - actions:
 
-  Action levels for pointblank agents (only used when agent = TRUE)
+  Action levels for pointblank agents (only used when `agent = TRUE`)
 
 - agent:
 
-  Logical. If TRUE (default), returns a list of pointblank agent
-  objects. If FALSE, returns a list of validated data frames with
+  Logical. If `TRUE` (default), returns a list of pointblank agent
+  objects. If `FALSE`, returns a list of validated data frames with
   failures removed.
 
 - northern_hemisphere:
 
-  Logical. If TRUE, check that site coordinates are in the northern
+  Logical. If `TRUE`, check that site coordinates are in the northern
   hemisphere. Passed to
   [`pb_validate_sites()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_sites.md).
 
 ## Value
 
-A named list. If agent = TRUE, each element is a pointblank agent
-object. If agent = FALSE, each element is a validated data frame with
+A named list. If `agent = TRUE`, each element is a pointblank agent
+object. If `agent = FALSE`, each element is a validated data frame with
 failing rows removed. The list always contains elements named
 `campaign`, `reference`, `parameters`, `sites`, and `measurements`.
 Optional elements (`samples`, `biota`, `methods`, `creed_scores`) are
@@ -91,9 +91,7 @@ included only when the corresponding arguments are not `NULL`.
 Calls each individual table validation function in turn. Validation is
 performed using
 [`pointblank::create_agent()`](https://rstudio.github.io/pointblank/reference/create_agent.html)
-and related functions. See
-`vignette("validation", package = "pointblank")` for an overview of the
-pointblank validation workflow.
+and related functions.
 
 ## See also
 

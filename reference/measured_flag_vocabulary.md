@@ -1,4 +1,4 @@
-# Controlled vocabulary for MEASURED_FLAG, Measurements table
+# Controlled vocabulary for `MEASURED_FLAG`, Measurements table
 
 Returns controlled vocabulary options for measurement quality flags.
 
@@ -17,11 +17,11 @@ A character vector of measurement flag options
 Provides standardised flags for indicating measurements below detection
 or quantification limits. Options include:
 
-"" (empty string for measurements above limits)
+`""` (empty string for measurements above limits)
 
-\< LOQ (below limit of quantification)
+`< LOQ` (below limit of quantification)
 
-\< LOD (below limit of detection)
+`< LOD` (below limit of detection)
 
 ## See also
 

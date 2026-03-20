@@ -49,7 +49,7 @@
 </nav><div class="container template-reference-topic">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.svg" class="logo" alt=""><h1>Controlled vocabulary for the SAMPLE_SPECIES_LIFESTAGE column, Biota table</h1>
+      <img src="../logo.svg" class="logo" alt=""><h1>Controlled vocabulary for the <code>SAMPLE_SPECIES_LIFESTAGE</code> column, Biota table</h1>
       <small class="dont-index">Source: <a href="https://github.com/NIVANorge/eDataDRF/blob/main/R/fct_vocabulary.R" class="external-link"><code>R/fct_vocabulary.R</code></a></small>
       <div class="d-none name"><code>lifestage_vocabulary.Rd</code></div>
     </div>
@@ -80,8 +80,10 @@
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">lifestage_vocabulary</span><span class="op">(</span><span class="op">)</span>, <span class="fl">5</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Not reported" "Not relevant" "Adult"        "Juvenile"     "Larva"       </span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">lifestage_vocabulary</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "Not reported" "Not relevant" "Adult"        "Juvenile"     "Larva"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6] "Embryo"       "Egg"          "Seedling"     "Mature"       "Young"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [11] "Mixed"        "Other"       </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

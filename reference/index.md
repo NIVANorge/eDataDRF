@@ -40,84 +40,170 @@ Vectors (and sometimes tibbles) of controlled vocabulary
 
 - [`CREED_choices_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/CREED_choices_vocabulary.md)
   : Controlled vocabulary for CREED scores, CREED table
+
 - [`altitude_units_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/altitude_units_vocabulary.md)
-  : Controlled vocabulary for the ALTITUDE_UNIT column, Sites table
+  :
+
+  Controlled vocabulary for the `ALTITUDE_UNIT` column, Sites table
+
 - [`analytical_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/analytical_protocols_vocabulary.md)
-  : Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns
+  :
+
+  Controlled vocabulary for `PROTOCOL_TYPE` and `PROTOCOL_NAME` columns
   (analytical), Methods table
+
 - [`areas_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/areas_vocabulary.md)
   : Ocean controlled vocabulary (wrapper for ocean_vocabulary())
+
 - [`coordinate_systems_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/coordinate_systems_vocabulary.md)
-  : Controlled vocabulary for the SITE_COORDINATE_SYSTEM column, Sites
+  :
+
+  Controlled vocabulary for the `SITE_COORDINATE_SYSTEM` column, Sites
   table
+
 - [`countries_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/countries_vocabulary.md)
-  : Controlled vocabulary for the COUNTRY_ISO column, Sites table
+  :
+
+  Controlled vocabulary for the `COUNTRY_ISO` column, Sites table
+
 - [`data_source_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/data_source_vocabulary.md)
   : Controlled vocabulary for the DATA_SOURCE column, References table
+
 - [`environ_compartments_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/environ_compartments_sub_vocabulary.md)
-  : Controlled vocabulary for the ENVIRON_COMPARTMENT and
-  ENVIRON_COMPARTMENT_SUB columns, Compartments table
+  :
+
+  Controlled vocabulary for the `ENVIRON_COMPARTMENT` and
+  `ENVIRON_COMPARTMENT_SUB` columns, Compartments table
+
 - [`environ_compartments_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/environ_compartments_vocabulary.md)
-  : Controlled vocabulary for the ENVIRON_COMPARTMENT column,
+  :
+
+  Controlled vocabulary for the `ENVIRON_COMPARTMENT` column,
   Compartments table
+
 - [`extraction_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/extraction_protocols_vocabulary.md)
-  : Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns
+  :
+
+  Controlled vocabulary for `PROTOCOL_TYPE` and `PROTOCOL_NAME` columns
   (extraction), Methods table
+
 - [`fractionation_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/fractionation_protocols_vocabulary.md)
-  : Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns
+  :
+
+  Controlled vocabulary for `PROTOCOL_TYPE` and `PROTOCOL_NAME` columns
   (fractionation), Methods table
+
 - [`gender_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/gender_vocabulary.md)
-  : Controlled vocabulary for the SAMPLE_SPECIES_GENDER column, Biota
+  :
+
+  Controlled vocabulary for the `SAMPLE_SPECIES_GENDER` column, Biota
   table
+
 - [`geographic_features_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/geographic_features_sub_vocabulary.md)
-  : Controlled vocabulary for the SITE_GEOGRAPHIC_FEATURE_SUB column,
+  :
+
+  Controlled vocabulary for the `SITE_GEOGRAPHIC_FEATURE_SUB` column,
   Sites table
+
 - [`geographic_features_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/geographic_features_vocabulary.md)
-  : Controlled vocabulary for the SITE_GEOGRAPHIC_FEATURE column, Sites
+  :
+
+  Controlled vocabulary for the `SITE_GEOGRAPHIC_FEATURE` column, Sites
   table
+
 - [`lifestage_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/lifestage_vocabulary.md)
-  : Controlled vocabulary for the SAMPLE_SPECIES_LIFESTAGE column, Biota
+  :
+
+  Controlled vocabulary for the `SAMPLE_SPECIES_LIFESTAGE` column, Biota
   table
+
 - [`measured_categories_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/measured_categories_vocabulary.md)
-  : Controlled vocabulary for the MEASURED_CATEGORY column, Compartments
+  :
+
+  Controlled vocabulary for the `MEASURED_CATEGORY` column, Compartments
   table
+
 - [`measured_flag_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/measured_flag_vocabulary.md)
-  : Controlled vocabulary for MEASURED_FLAG, Measurements table
+  :
+
+  Controlled vocabulary for `MEASURED_FLAG`, Measurements table
+
 - [`measured_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/measured_types_vocabulary.md)
-  : Controlled vocabulary for the MEASURED_TYPE column, Parameters table
+  :
+
+  Controlled vocabulary for the `MEASURED_TYPE` column, Parameters table
+
 - [`ocean_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/ocean_vocabulary.md)
-  : Controlled vocabulary for the OCEAN_IHO column, Sites table
+  :
+
+  Controlled vocabulary for the `OCEAN_IHO` column, Sites table
+
 - [`parameter_types_sub_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_types_sub_vocabulary.md)
-  : Controlled vocabulary for the PARAMETER_TYPES_SUB column, Parameters
+  :
+
+  Controlled vocabulary for the `PARAMETER_TYPES_SUB` column, Parameters
   table
+
 - [`parameter_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_types_vocabulary.md)
-  : Controlled vocabulary for the PARAMETER_TYPES column, Parameters
+  :
+
+  Controlled vocabulary for the `PARAMETER_TYPES` column, Parameters
   table
+
 - [`parameter_unit_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameter_unit_vocabulary.md)
-  : Controlled vocabulary for MEASURED_UNIT, LOQ_UNIT, and LOD_UNIT,
+  :
+
+  Controlled vocabulary for `MEASURED_UNIT`, `LOQ_UNIT`, and `LOD_UNIT`,
   with conversion factors and base units
+
 - [`parameters_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameters_vocabulary.md)
-  : Data for PARAMETER_NAME, PARAMETER_TYPE, etc. in the Parameters
+  :
+
+  Data for `PARAMETER_NAME`, `PARAMETER_TYPE`, etc. in the Parameters
   table
+
 - [`protocol_categories_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_categories_vocabulary.md)
-  : Controlled vocabulary for PROTOCOL_CATEGORY column, Methods table
+  :
+
+  Controlled vocabulary for `PROTOCOL_CATEGORY` column, Methods table
+
 - [`protocol_options_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/protocol_options_vocabulary.md)
-  : Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns
+  :
+
+  Controlled vocabulary for `PROTOCOL_TYPE` and `PROTOCOL_NAME` columns
   (all), Methods table
+
 - [`reference_type_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/reference_type_vocabulary.md)
-  : Controlled vocabulary for the REFERENCE_TYPE column, References
+  :
+
+  Controlled vocabulary for the `REFERENCE_TYPE` column, References
   table
+
 - [`sampling_protocols_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/sampling_protocols_vocabulary.md)
-  : Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns
+  :
+
+  Controlled vocabulary for `PROTOCOL_TYPE` and `PROTOCOL_NAME` columns
   (sampling), Methods table
+
 - [`species_groups_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/species_groups_vocabulary.md)
-  : Controlled vocabulary for the SPECIES_GROUP column, Biota table
+  :
+
+  Controlled vocabulary for the `SPECIES_GROUP` column, Biota table
+
 - [`species_names_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/species_names_vocabulary.md)
-  : Controlled vocabulary for the SPECIES_NAME column, Biota table
+  :
+
+  Controlled vocabulary for the `SPECIES_NAME` column, Biota table
+
 - [`tissue_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/tissue_types_vocabulary.md)
-  : Controlled vocabulary for the SAMPLE_TISSUE column, Biota table
+  :
+
+  Controlled vocabulary for the `SAMPLE_TISSUE` column, Biota table
+
 - [`uncertainty_types_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/uncertainty_types_vocabulary.md)
-  : Controlled vocabulary for the UNCERTAINTY_TYPE column, Measurements
+  :
+
+  Controlled vocabulary for the `UNCERTAINTY_TYPE` column, Measurements
   table
 
 ## Generate IDs
@@ -129,20 +215,24 @@ Generate ID strings based on abbreviated titles, plus regex to check
   formatting
 
 - [`generate_reference_id()`](https://NIVANorge.github.io/eDataDRF/reference/generate_reference_id.md)
-  : Generate compact reference ID (YYYYLNameFirstThreeWords) for
-  REFERENCE_ID in References table
+  :
+
+  Generate compact reference ID (YYYYLNameFirstThreeWords) for
+  `REFERENCE_ID` in References table
 
 - [`generate_protocol_id()`](https://NIVANorge.github.io/eDataDRF/reference/generate_protocol_id.md)
-  : Generate a semi-unique string ID for a protocol based on its type,
-  name, the campaign name, and a sequence number; used as a key between
-  Methods and Measurements table.
+  :
+
+  Generate a semi-unique string ID for a protocol (`PROTOCOL_ID`) based
+  on its type, name, the campaign name, and a sequence number; used as a
+  key between Methods and Measurements table.
 
 - [`generate_sample_id_with_components()`](https://NIVANorge.github.io/eDataDRF/reference/generate_sample_id_with_components.md)
   :
 
   Generate compact Sample ID
   (`SiteCode-ParamAbbrev-CompartmentAbbrev-Date-R-SubsampleAbbrev`) for
-  SAMPLE_ID in Samples table
+  `SAMPLE_ID` in Samples table
 
 - [`sample_id_regex()`](https://NIVANorge.github.io/eDataDRF/reference/sample_id_regex.md)
   :
@@ -195,7 +285,7 @@ Functions to generate example data
   : Create Example Samples Tibble
 - [`example_sites_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_sites_tibble.md)
   : Create Example Sites Tibble
-- [`creed_tibble_to_mock_input()`](https://NIVANorge.github.io/eDataDRF/reference/creed_tibble_to_mock_input.md)
+- [`CREED_tibble_to_mock_input()`](https://NIVANorge.github.io/eDataDRF/reference/creed_tibble_to_mock_input.md)
   : Convert CREED Tibble to Mock Input List
 
 ## Validation
@@ -215,7 +305,7 @@ Functions using {pointblank} to validate data
 - [`pb_validate_CREED_scores()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_creed_scores.md)
   : Run pointblank validation on a CREED Scores table
 - [`pb_validate_edata_table()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_edata_table.md)
-  : Run pointblank validation on an eData table
+  : Generic pointblank validation helper for eData tables
 - [`pb_validate_measurements()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_measurements.md)
   : Run pointblank validation on a Measurements table
 - [`pb_validate_methods()`](https://NIVANorge.github.io/eDataDRF/reference/pb_validate_methods.md)

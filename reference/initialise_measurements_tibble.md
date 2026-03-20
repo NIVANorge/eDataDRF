@@ -19,60 +19,61 @@ Measurements represent quantitative observations combining sample,
 compartment, and biota information with analytical results and quality
 metrics. The tibble includes the following columns:
 
-SITE_CODE: Code identifying the sampling location
+`SITE_CODE`: Code identifying the sampling location
 
-PARAMETER_NAME: Name of the measured parameter (Foreign key)
+`PARAMETER_NAME`: Name of the measured parameter (Foreign key)
 
-SAMPLING_DATE: Date of sample collection
+`SAMPLING_DATE`: Date of sample collection
 
-ENVIRON_COMPARTMENT_SUB: Specific environmental sub-compartment
+`ENVIRON_COMPARTMENT_SUB`: Specific environmental sub-compartment
 
-SUBSAMPLE: Subsample identifier
+`SUBSAMPLE`: Subsample identifier
 
-MEASURED_FLAG: Quality flag for the measurement (e.g., \< LOQ, \< LOD)
+`MEASURED_FLAG`: Quality flag for the measurement (e.g., `< LOQ`,
+`< LOD`)
 
-MEASURED_VALUE: Numeric value of the measurement
+`MEASURED_VALUE`: Numeric value of the measurement
 
-UNCERTAINTY_TYPE: Type of uncertainty or variability metric
+`UNCERTAINTY_TYPE`: Type of uncertainty or variability metric
 
-UNCERTAINTY_UPPER: Upper bound of uncertainty
+`UNCERTAINTY_UPPER`: Upper bound of uncertainty
 
-UNCERTAINTY_LOWER: Lower bound of uncertainty
+`UNCERTAINTY_LOWER`: Lower bound of uncertainty
 
-MEASURED_UNIT: Unit of measurement
+`MEASURED_UNIT`: Unit of measurement
 
-MEASURED_N: Number of replicates or observations
+`MEASURED_N`: Number of replicates or observations
 
-LOQ_VALUE: Limit of quantification value
+`LOQ_VALUE`: Limit of quantification value
 
-LOQ_UNIT: Unit for limit of quantification
+`LOQ_UNIT`: Unit for limit of quantification
 
-LOD_VALUE: Limit of detection value
+`LOD_VALUE`: Limit of detection value
 
-LOD_UNIT: Unit for limit of detection
+`LOD_UNIT`: Unit for limit of detection
 
-SAMPLING_PROTOCOL: Protocol used for sample collection (Foreign key)
+`SAMPLING_PROTOCOL`: Protocol used for sample collection (Foreign key)
 
-EXTRACTION_PROTOCOL: Protocol used for sample extraction (Foreign key)
+`EXTRACTION_PROTOCOL`: Protocol used for sample extraction (Foreign key)
 
-FRACTIONATION_PROTOCOL: Protocol used for sample fractionation (Foreign
-key)
+`FRACTIONATION_PROTOCOL`: Protocol used for sample fractionation
+(Foreign key)
 
-ANALYTICAL_PROTOCOL: Protocol used for analysis (Foreign key)
+`ANALYTICAL_PROTOCOL`: Protocol used for analysis (Foreign key)
 
-REFERENCE_ID: Reference identifier for data source (Foreign key)
+`REFERENCE_ID`: Reference identifier for data source (Foreign key)
 
-SAMPLE_ID: Unique sample identifier
+`SAMPLE_ID`: Unique sample identifier
 
-CAMPAIGN_NAME_SHORT: Short name of the associated campaign
+`CAMPAIGN_NAME_SHORT`: Short name of the associated campaign
 
-ENVIRON_COMPARTMENT: Broad environmental compartment
+`ENVIRON_COMPARTMENT`: Broad environmental compartment
 
-PARAMETER_TYPE: Classification of the parameter
+`PARAMETER_TYPE`: Classification of the parameter
 
-MEASURED_TYPE: Type of measurement
+`MEASURED_TYPE`: Type of measurement
 
-MEASUREMENT_COMMENT: Additional notes about the measurement
+`MEASUREMENT_COMMENT`: Additional notes about the measurement
 
 See
 [`vignette("measurements_data")`](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.md)

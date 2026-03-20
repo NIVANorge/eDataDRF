@@ -1,4 +1,4 @@
-# Generate compact reference ID (YYYYLNameFirstThreeWords) for REFERENCE_ID in References table
+# Generate compact reference ID (YYYYLNameFirstThreeWords) for `REFERENCE_ID` in References table
 
 Creates a compact reference identifier by combining the publication
 year, first author's last name, and the first three words of the title

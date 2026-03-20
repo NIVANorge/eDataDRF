@@ -1,4 +1,4 @@
-# Controlled vocabulary for the ENVIRON_COMPARTMENT and ENVIRON_COMPARTMENT_SUB columns, Compartments table
+# Controlled vocabulary for the `ENVIRON_COMPARTMENT` and `ENVIRON_COMPARTMENT_SUB` columns, Compartments table
 
 Returns controlled vocabulary mapping for environmental sub-compartments
 organized by main compartment.
@@ -15,9 +15,6 @@ A named list of character vectors with sub-compartment options for each
 main compartment
 
 ## Details
-
-Provides a hierarchical structure of environmental sub-compartments
-grouped by their main compartment type. The list includes:
 
 Provides a hierarchical structure of environmental sub-compartments
 grouped by their main compartment type (Aquatic, Atmospheric,

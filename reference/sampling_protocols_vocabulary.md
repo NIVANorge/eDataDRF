@@ -1,4 +1,4 @@
-# Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (sampling), Methods table
+# Controlled vocabulary for `PROTOCOL_TYPE` and `PROTOCOL_NAME` columns (sampling), Methods table
 
 Returns sampling protocol options with short and long names.
 
@@ -10,7 +10,7 @@ sampling_protocols_vocabulary()
 
 ## Value
 
-A tibble with Protocol_Type, Short_Name, and Long_Name columns
+A tibble with `Protocol_Type`, `Short_Name`, and `Long_Name` columns
 
 ## Details
 

@@ -1,4 +1,4 @@
-# Controlled vocabulary for the SITE_COORDINATE_SYSTEM column, Sites table
+# Controlled vocabulary for the `SITE_COORDINATE_SYSTEM` column, Sites table
 
 Returns controlled vocabulary options for spatial coordinate reference
 systems.

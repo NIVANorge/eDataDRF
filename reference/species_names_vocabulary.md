@@ -1,4 +1,4 @@
-# Controlled vocabulary for the SPECIES_NAME column, Biota table
+# Controlled vocabulary for the `SPECIES_NAME` column, Biota table
 
 Returns species information from EPA ECOTOX database.
 
@@ -21,7 +21,7 @@ Data is read from ecotox_2025_06_12_species.parquet. Additional entries
 for "Other" and "Ecosystem" are included. Data retrieved from
 <https://cfpub.epa.gov/ecotox/>, 2025.06.12.
 
-Data source: extdata/ecotox_2025_06_12_species.parquet
+Data source: `extdata/ecotox_2025_06_12_species.parquet`
 
 ## See also
 

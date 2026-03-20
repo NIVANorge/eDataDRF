@@ -1,4 +1,4 @@
-# Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (extraction), Methods table
+# Controlled vocabulary for `PROTOCOL_TYPE` and `PROTOCOL_NAME` columns (extraction), Methods table
 
 Returns extraction protocol options with short and long names.
 
@@ -10,19 +10,19 @@ extraction_protocols_vocabulary()
 
 ## Value
 
-A tibble with Protocol_Type, Short_Name, and Long_Name columns
+A tibble with `Protocol_Type`, `Short_Name`, and `Long_Name` columns
 
 ## Details
 
 Provides standardised extraction method classifications as a tibble with
 three columns:
 
-Protocol_Type: Always "Extraction Protocol"
+`Protocol_Type`: Always "Extraction Protocol"
 
-Short_Name: Abbreviated protocol name (e.g., "Methanol", "SPE Isolute
+`Short_Name`: Abbreviated protocol name (e.g., "Methanol", "SPE Isolute
 Env+", "QuEChERS")
 
-Long_Name: Full descriptive name (e.g., "Methanol extraction", "Solid
+`Long_Name`: Full descriptive name (e.g., "Methanol extraction", "Solid
 phase extraction with Isolute Env+ cartridge", "Quick easy cheap
 effective rugged safe extraction")
 

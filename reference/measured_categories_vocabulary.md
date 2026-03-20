@@ -1,4 +1,4 @@
-# Controlled vocabulary for the MEASURED_CATEGORY column, Compartments table
+# Controlled vocabulary for the `MEASURED_CATEGORY` column, Compartments table
 
 Returns controlled vocabulary options for measurement context
 categories.
@@ -11,12 +11,13 @@ measured_categories_vocabulary()
 
 ## Value
 
-A character vector of measured category options
+A named character vector of measured category options
 
 ## Details
 
 Provides standardised categories indicating where measurements were
-taken relative to organisms. Options include:
+taken relative to organisms (inside an organism, from its surface, or
+external to the organism (default))
 
 ## See also
 

@@ -49,7 +49,7 @@
 </nav><div class="container template-reference-topic">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.svg" class="logo" alt=""><h1>Data for PARAMETER_NAME, PARAMETER_TYPE, etc. in the Parameters table</h1>
+      <img src="../logo.svg" class="logo" alt=""><h1>Data for <code>PARAMETER_NAME</code>, <code>PARAMETER_TYPE</code>, etc. in the Parameters table</h1>
       <small class="dont-index">Source: <a href="https://github.com/NIVANorge/eDataDRF/blob/main/R/fct_vocabulary.R" class="external-link"><code>R/fct_vocabulary.R</code></a></small>
       <div class="d-none name"><code>parameters_vocabulary.Rd</code></div>
     </div>
@@ -70,9 +70,9 @@
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Combines quality parameters with chemical parameters from the
-<a href="http://classyfire.wishartlab.com" class="external-link">ClassyFire</a> chemical taxonomy
+<a href="http://classyfire.wishartlab.com" class="external-link">ChemOnt</a> chemical taxonomy
 (Djoumbou Feunang et al. 2016, <a href="https://doi.org/10.1186/s13321-016-0174-y" class="external-link">doi:10.1186/s13321-016-0174-y</a>
-, reused non-commercially).
+).
 Quality parameters are read from quality_parameters.parquet and chemical
 parameters from ClassyFire_Taxonomy_2025_02.parquet. The resulting dataset includes
 columns for parameter classification, chemical identifiers (InChIKey, PubChem CID,
@@ -95,15 +95,20 @@ aware of any taxonomy to validate them against.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">parameters_vocabulary</span><span class="op">(</span><span class="op">)</span>, <span class="fl">5</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   PARAMETER_TYPE    PARAMETER_NAME   PARAMETER_TYPE_SUB MEASURED_TYPE     CAS_RN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Quality parameter pH               pH                 Physical paramet… <span style="color: #BB0000;">NA</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Quality parameter Dissolved oxygen Dissolved oxygen   Concentration     7782-…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> Quality parameter Temperature      Temperature        Physical paramet… <span style="color: #BB0000;">NA</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Quality parameter Conductivity     Conductivity       Physical paramet… <span style="color: #BB0000;">NA</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> Quality parameter Salinity         Salinity           Physical paramet… <span style="color: #BB0000;">NA</span>    </span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">parameters_vocabulary</span><span class="op">(</span><span class="op">)</span>, <span class="fl">10</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    PARAMETER_TYPE    PARAMETER_NAME      PARAMETER_TYPE_SUB MEASURED_TYPE CAS_RN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Quality parameter pH                  pH                 Physical par… <span style="color: #BB0000;">NA</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Quality parameter Dissolved oxygen    Dissolved oxygen   Concentration 7782-…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Quality parameter Temperature         Temperature        Physical par… <span style="color: #BB0000;">NA</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Quality parameter Conductivity        Conductivity       Physical par… <span style="color: #BB0000;">NA</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Quality parameter Salinity            Salinity           Physical par… <span style="color: #BB0000;">NA</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Quality parameter Turbidity           Turbidity          Physical par… <span style="color: #BB0000;">NA</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Quality parameter Total organic carb… Total organic car… Concentration <span style="color: #BB0000;">NA</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Quality parameter Alkalinity          Other              Concentration <span style="color: #BB0000;">NA</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Quality parameter Hardness            Other              Concentration <span style="color: #BB0000;">NA</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Quality parameter Chlorophyll a       Other              Concentration 479-6…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: PUBCHEM_CID &lt;int&gt;, INCHIKEY_SD &lt;chr&gt;, ENTERED_BY &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   PARAMETER_NAME_SUB &lt;chr&gt;</span></span>
 </code></pre></div>

@@ -49,7 +49,7 @@
 </nav><div class="container template-reference-topic">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.svg" class="logo" alt=""><h1>Controlled vocabulary for the PARAMETER_TYPES_SUB column, Parameters table</h1>
+      <img src="../logo.svg" class="logo" alt=""><h1>Controlled vocabulary for the <code>PARAMETER_TYPES_SUB</code> column, Parameters table</h1>
       <small class="dont-index">Source: <a href="https://github.com/NIVANorge/eDataDRF/blob/main/R/fct_vocabulary.R" class="external-link"><code>R/fct_vocabulary.R</code></a></small>
       <div class="d-none name"><code>parameter_types_sub_vocabulary.Rd</code></div>
     </div>
@@ -69,9 +69,10 @@
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>Dynamically generated from unique PARAMETER_TYPE_SUB values in
+    <p>Dynamically built from unique <code>PARAMETER_TYPE_SUB</code> values in
 <code><a href="parameters_vocabulary.html">parameters_vocabulary()</a></code>, with "Mixture" appended and standard data quality
-flags prepended.</p>
+flags prepended. Chemical subtypes are taken from the
+<a href="http://classyfire.wishartlab.com" class="external-link">ChemOnt</a> chemical taxonomy</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -85,10 +86,15 @@ flags prepended.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">parameter_types_sub_vocabulary</span><span class="op">(</span><span class="op">)</span>, <span class="fl">5</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Not relevant"              "Not reported"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "Other"                     "Acetylides"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "Alkaloids and derivatives"</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">parameter_types_sub_vocabulary</span><span class="op">(</span><span class="op">)</span>, <span class="fl">15</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "Not relevant"                    "Not reported"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "Other"                           "Acetylides"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "Alkaloids and derivatives"       "Allenes"                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "Benzenoids"                      "Carbon"                         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "Conductivity"                    "Dissolved oxygen"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [11] "Homogeneous metal compounds"     "Homogeneous non-metal compounds"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "Hydrocarbon derivatives"         "Hydrocarbons"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [15] "Inorganic salts"                </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

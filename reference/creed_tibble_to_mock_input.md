@@ -10,7 +10,7 @@ into a mock Shiny input list object suitable for testing
 ## Usage
 
 ``` r
-creed_tibble_to_mock_input(creed_tibble)
+CREED_tibble_to_mock_input(creed_tibble)
 ```
 
 ## Arguments
@@ -51,7 +51,7 @@ Other CREED:
 ## Examples
 
 ``` r
-creed_tibble_to_mock_input(example_CREED_reliability_tibble())
+CREED_tibble_to_mock_input(example_CREED_reliability_tibble())
 #> $RB1_score
 #>           1 
 #> "Fully Met" 

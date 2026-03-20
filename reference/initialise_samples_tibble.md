@@ -19,29 +19,29 @@ Samples represent individual collections from sites with temporal,
 spatial, and methodological information linking sites, parameters, and
 compartments. The tibble includes the following columns:
 
-SITE_CODE: Code identifying the sampling location
+`SITE_CODE`: Code identifying the sampling location
 
-SITE_NAME: Descriptive name of the sampling site
+`SITE_NAME`: Descriptive name of the sampling site
 
-PARAMETER_NAME: Name of the measured parameter
+`PARAMETER_NAME`: Name of the measured parameter
 
-PARAMETER_TYPE: Classification of the parameter
+`PARAMETER_TYPE`: Classification of the parameter
 
-ENVIRON_COMPARTMENT: Environmental compartment defined as one of the
+`ENVIRON_COMPARTMENT`: Environmental compartment defined as one of the
 earth's spheres (aquatic, atmospheric, etc.)
 
-ENVIRON_COMPARTMENT_SUB: Sub-divisions of environmental compartments
+`ENVIRON_COMPARTMENT_SUB`: Sub-divisions of environmental compartments
 into water body types, soil profile, etc.
 
-MEASURED_CATEGORY: Measurement context category
+`MEASURED_CATEGORY`: Measurement context category
 
-SAMPLING_DATE: Date of sample collection
+`SAMPLING_DATE`: Date of sample collection
 
-SUBSAMPLE: Subsample or replicate identifier
+`SUBSAMPLE`: Subsample or replicate identifier
 
-SUBSAMPLE_ID: Unique identifier for the subsample
+`SUBSAMPLE_ID`: Unique identifier for the subsample
 
-SAMPLE_ID: Unique identifier for the sample (Key)
+`SAMPLE_ID`: Unique identifier for the sample (Key)
 
 See
 [`vignette("samples_data")`](https://NIVANorge.github.io/eDataDRF/articles/samples_data.md)

@@ -1,4 +1,4 @@
-# Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (analytical), Methods table
+# Controlled vocabulary for `PROTOCOL_TYPE` and `PROTOCOL_NAME` columns (analytical), Methods table
 
 Returns analytical protocol options with short and long names.
 
@@ -10,19 +10,19 @@ analytical_protocols_vocabulary()
 
 ## Value
 
-A tibble with Protocol_Type, Short_Name, and Long_Name columns
+A tibble with `Protocol_Type`, `Short_Name`, and `Long_Name` columns
 
 ## Details
 
 Provides standardised analytical method classifications as a tibble with
 three columns:
 
-Protocol_Type: Always "Analytical Protocol"
+`Protocol_Type`: Always "Analytical Protocol"
 
-Short_Name: Abbreviated protocol name (e.g., "GC-MS", "LC-MS/MS",
+`Short_Name`: Abbreviated protocol name (e.g., "GC-MS", "LC-MS/MS",
 "ICP-MS")
 
-Long_Name: Full descriptive name (e.g., "Gas chromatography mass
+`Long_Name`: Full descriptive name (e.g., "Gas chromatography mass
 spectrometry", "Liquid chromatography tandem mass spectrometry",
 "Inductively coupled plasma mass spectrometry")
 

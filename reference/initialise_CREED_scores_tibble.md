@@ -19,15 +19,15 @@ CREED scores provide data quality assessment results for references,
 evaluating both reliability and relevance at silver and gold standard
 levels. The tibble includes the following columns:
 
-REFERENCE_ID: Unique identifier linking to the references table
+`REFERENCE_ID`: Unique identifier linking to the references table
 
-SILVER_RELIABILITY: Reliability score at silver standard level
+`SILVER_RELIABILITY`: Reliability score at silver standard level
 
-SILVER_RELEVANCE: Relevance score at silver standard level
+`SILVER_RELEVANCE`: Relevance score at silver standard level
 
-GOLD_RELIABILITY: Reliability score at gold standard level
+`GOLD_RELIABILITY`: Reliability score at gold standard level
 
-GOLD_RELEVANCE: Relevance score at gold standard level
+`GOLD_RELEVANCE`: Relevance score at gold standard level
 
 See
 [`vignette("CREED_scores_data")`](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.md)
@@ -49,7 +49,7 @@ Other initialise_tibble:
 
 Other CREED:
 [`CREED_choices_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/CREED_choices_vocabulary.md),
-[`creed_tibble_to_mock_input()`](https://NIVANorge.github.io/eDataDRF/reference/creed_tibble_to_mock_input.md),
+[`CREED_tibble_to_mock_input()`](https://NIVANorge.github.io/eDataDRF/reference/creed_tibble_to_mock_input.md),
 [`example_CREED_relevance_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_CREED_relevance_tibble.md),
 [`example_CREED_reliability_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_CREED_reliability_tibble.md),
 [`example_CREED_scores_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_CREED_scores_tibble.md),

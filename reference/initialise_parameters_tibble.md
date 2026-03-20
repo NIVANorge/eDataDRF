@@ -19,29 +19,29 @@ Parameters define chemical substances, physical properties, or
 biological markers being measured, including classification and chemical
 identifiers. The tibble includes the following columns:
 
-PARAMETER_TYPE: Broad classification (Stressor, Quality parameter,
+`PARAMETER_TYPE`: Broad classification (Stressor, Quality parameter,
 Normalisation, etc.)
 
-PARAMETER_TYPE_SUB: Sub-classification providing more specific
+`PARAMETER_TYPE_SUB`: Sub-classification providing more specific
 categorisation
 
-MEASURED_TYPE: Type of measurement (Concentration, Dose, Physical
+`MEASURED_TYPE`: Type of measurement (Concentration, Dose, Physical
 parameter, etc.)
 
-PARAMETER_NAME: Standardised name of the parameter (Primary Key)
+`PARAMETER_NAME`: Standardised name of the parameter (Primary Key)
 
-PARAMETER_NAME_SUB: Additional specification or variant of the parameter
-name
+`PARAMETER_NAME_SUB`: Additional specification or variant of the
+parameter name
 
-INCHIKEY_SD: InChIKey identifier for chemical substances
+`INCHIKEY_SD`: InChIKey identifier for chemical substances
 
-PUBCHEM_CID: PubChem Compound Identifier
+`PUBCHEM_CID`: PubChem Compound Identifier
 
-CAS_RN: Chemical Abstracts Service Registry Number
+`CAS_RN`: Chemical Abstracts Service Registry Number
 
-ENTERED_BY: Person or entity who entered the parameter
+`ENTERED_BY`: Person or entity who entered the parameter
 
-PARAMETER_COMMENT: Additional notes about the parameter
+`PARAMETER_COMMENT`: Additional notes about the parameter
 
 See
 [`vignette("parameters_data")`](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.md)

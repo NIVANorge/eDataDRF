@@ -14,7 +14,7 @@ user-entered data, it is more practical to add an additional level of
 validation. This programmatic validation layer can be re-used wherever
 needed; this is particularly valuable when data may need to be
 transformed as part of the analysis pathway. For a thorough overview of
-pointblank functionality, please consult the package itself.
+pointblank functionality, please consult the package’s documentation.
 
 ## Campaign data validation
 

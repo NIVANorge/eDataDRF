@@ -1,4 +1,4 @@
-# Controlled vocabulary for the ENVIRON_COMPARTMENT column, Compartments table
+# Controlled vocabulary for the `ENVIRON_COMPARTMENT` column, Compartments table
 
 Returns controlled vocabulary options for broad environmental
 compartments. Calls `names(environ_compartments_sub_vocabulary())` to

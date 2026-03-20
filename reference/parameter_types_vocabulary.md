@@ -1,7 +1,7 @@
-# Controlled vocabulary for the PARAMETER_TYPES column, Parameters table
+# Controlled vocabulary for the `PARAMETER_TYPES` column, Parameters table
 
 Returns controlled vocabulary options for broad parameter
-classifications.
+classifications: stressors, background levels, quality parameters, etc.
 
 ## Usage
 

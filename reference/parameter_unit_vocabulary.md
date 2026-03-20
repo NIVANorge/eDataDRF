@@ -1,4 +1,4 @@
-# Controlled vocabulary for MEASURED_UNIT, LOQ_UNIT, and LOD_UNIT, with conversion factors and base units
+# Controlled vocabulary for `MEASURED_UNIT`, `LOQ_UNIT`, and `LOD_UNIT`, with conversion factors and base units
 
 Returns unit definitions and SI conversion factors for environmental
 measurements.
@@ -27,15 +27,15 @@ Reads unit conversion data from unit_conversion_factors.csv containing
 standardised units for ecotoxicological and environmental measurements.
 The complete dataset includes columns:
 
-MEASURED_UNIT: Unit as recorded in measurements
+`MEASURED_UNIT`: Unit as recorded in measurements
 
-BASE_SI_UNIT: Corresponding SI base unit
+`BASE_SI_UNIT`: Corresponding SI base unit
 
-CONVERSION_FACTOR: Numeric factor to convert to SI units
+`CONVERSION_FACTOR`: Numeric factor to convert to SI units
 
-UNIT_COMMENTS: Additional notes about unit usage or conversion
+`UNIT_COMMENTS`: Additional notes about unit usage or conversion
 
-Data source: extdata/unit_conversion_factors.csv
+Data source: `extdata/unit_conversion_factors.csv`
 
 ## See also
 

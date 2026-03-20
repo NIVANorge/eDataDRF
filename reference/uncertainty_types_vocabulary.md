@@ -1,4 +1,4 @@
-# Controlled vocabulary for the UNCERTAINTY_TYPE column, Measurements table
+# Controlled vocabulary for the `UNCERTAINTY_TYPE` column, Measurements table
 
 Returns controlled vocabulary options for statistical uncertainty and
 variability measures.

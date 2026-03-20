@@ -18,20 +18,20 @@ values
 Provides the four-level scoring system used in CREED (Criteria for
 Reporting and Evaluating Ecotoxicity Data) assessments. Options include:
 
-Not Met: Score value 4
+`Not Met`: Score value `4`
 
-Fully Met: Score value 1
+`"Fully Met"`: Score value `1`
 
-Partly Met: Score value 2
+`"Partly Met"`: Score value `2`
 
-Not Reported: Score value 3
+`"Not Reported"`: Score value `3`
 
-Not Relevant: Score value 1
+`"Not Relevant"`: Score value `1`
 
 ## See also
 
 Other CREED:
-[`creed_tibble_to_mock_input()`](https://NIVANorge.github.io/eDataDRF/reference/creed_tibble_to_mock_input.md),
+[`CREED_tibble_to_mock_input()`](https://NIVANorge.github.io/eDataDRF/reference/creed_tibble_to_mock_input.md),
 [`example_CREED_relevance_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_CREED_relevance_tibble.md),
 [`example_CREED_reliability_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_CREED_reliability_tibble.md),
 [`example_CREED_scores_tibble()`](https://NIVANorge.github.io/eDataDRF/reference/example_CREED_scores_tibble.md),

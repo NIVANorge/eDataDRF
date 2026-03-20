@@ -1,4 +1,4 @@
-# Generate a semi-unique string ID for a protocol based on its type, name, the campaign name, and a sequence number; used as a key between Methods and Measurements table.
+# Generate a semi-unique string ID for a protocol (`PROTOCOL_ID`) based on its type, name, the campaign name, and a sequence number; used as a key between Methods and Measurements table.
 
 Generates a standardised protocol identifier based on protocol type,
 name, sequence number, and campaign. The function is fully vectorised
@@ -56,7 +56,7 @@ Where:
 
 ## Details
 
-The function handles edge cases gracefully:
+Edge cases:
 
 - NULL or empty values result in appropriate defaults
 

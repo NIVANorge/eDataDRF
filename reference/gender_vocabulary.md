@@ -1,4 +1,4 @@
-# Controlled vocabulary for the SAMPLE_SPECIES_GENDER column, Biota table
+# Controlled vocabulary for the `SAMPLE_SPECIES_GENDER` column, Biota table
 
 Returns controlled vocabulary options for organism sex or gender.
 

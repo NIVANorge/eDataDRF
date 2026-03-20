@@ -1,13 +1,13 @@
-# Run pointblank validation on an eData table
+# Generic pointblank validation helper for eData tables
 
 Applies pointblank validation rules to check data quality and schema
 compliance for eData format tables. Can operate in two modes:
 
-- Agent mode (agent = TRUE): Creates an agent for reporting and
+- Agent mode (`agent = TRUE`): Creates an agent for reporting and
   interrogation
 
-- Pipeline mode (agent = FALSE): Returns validated data directly for use
-  in pipelines
+- Pipeline mode (`agent = FALSE`): Returns validated data directly for
+  use in pipelines
 
 ## Usage
 
@@ -39,17 +39,17 @@ pb_validate_edata_table(
 
 - agent:
 
-  Logical. If TRUE (default), returns a pointblank agent object. If
-  FALSE, returns the validated data with validation failures removed.
+  Logical. If `TRUE` (default), returns a pointblank agent object. If
+  `FALSE`, returns the validated data with validation failures removed.
 
 - actions:
 
-  Action levels for pointblank agent (only used when agent = TRUE)
+  Action levels for pointblank agent (only used when `agent = TRUE`)
 
 ## Value
 
-If agent = TRUE, a pointblank agent object containing validation
-results. If agent = FALSE, the input data with validation failures
+If `agent = TRUE`, a pointblank agent object containing validation
+results. If `agent = FALSE`, the input data with validation failures
 removed.
 
 ## Details
@@ -57,9 +57,8 @@ removed.
 Uses
 [`pointblank::create_agent()`](https://rstudio.github.io/pointblank/reference/create_agent.html)
 to build a validation agent in agent mode, or applies steps directly to
-the data in pipeline mode. See also
-`vignette("validation", package = "pointblank")` for an overview of the
-pointblank validation workflow.
+the data in pipeline mode. Called by `pb_validate_*()` functions to
+apply specific table validation steps
 
 In agent mode, the agent object can be used to:
 

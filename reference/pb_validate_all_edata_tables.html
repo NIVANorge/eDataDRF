@@ -123,23 +123,23 @@ validated; optional tables are validated only when provided.</p>
 
 
 <dt id="arg-actions">actions<a class="anchor" aria-label="anchor" href="#arg-actions"></a></dt>
-<dd><p>Action levels for pointblank agents (only used when agent = TRUE)</p></dd>
+<dd><p>Action levels for pointblank agents (only used when <code>agent = TRUE</code>)</p></dd>
 
 
 <dt id="arg-agent">agent<a class="anchor" aria-label="anchor" href="#arg-agent"></a></dt>
-<dd><p>Logical. If TRUE (default), returns a list of pointblank agent objects.
-If FALSE, returns a list of validated data frames with failures removed.</p></dd>
+<dd><p>Logical. If <code>TRUE</code> (default), returns a list of pointblank agent objects.
+If <code>FALSE</code>, returns a list of validated data frames with failures removed.</p></dd>
 
 
 <dt id="arg-northern-hemisphere">northern_hemisphere<a class="anchor" aria-label="anchor" href="#arg-northern-hemisphere"></a></dt>
-<dd><p>Logical. If TRUE, check that site coordinates are in
+<dd><p>Logical. If <code>TRUE</code>, check that site coordinates are in
 the northern hemisphere. Passed to <code><a href="pb_validate_sites.html">pb_validate_sites()</a></code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A named list. If agent = TRUE, each element is a pointblank agent object.
-If agent = FALSE, each element is a validated data frame with failing rows removed.
+    <p>A named list. If <code>agent = TRUE</code>, each element is a pointblank agent object.
+If <code>agent = FALSE</code>, each element is a validated data frame with failing rows removed.
 The list always contains elements named <code>campaign</code>, <code>reference</code>, <code>parameters</code>,
 <code>sites</code>, and <code>measurements</code>. Optional elements (<code>samples</code>, <code>biota</code>, <code>methods</code>,
 <code>creed_scores</code>) are included only when the corresponding arguments are not <code>NULL</code>.</p>
@@ -147,9 +147,7 @@ The list always contains elements named <code>campaign</code>, <code>reference</
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Calls each individual table validation function in turn. Validation is
-performed using <code><a href="https://rstudio.github.io/pointblank/reference/create_agent.html" class="external-link">pointblank::create_agent()</a></code> and related functions.
-See <code>vignette("validation", package = "pointblank")</code> for an overview of
-the pointblank validation workflow.</p>
+performed using <code><a href="https://rstudio.github.io/pointblank/reference/create_agent.html" class="external-link">pointblank::create_agent()</a></code> and related functions.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

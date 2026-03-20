@@ -1,4 +1,4 @@
-# Controlled vocabulary for the SITE_GEOGRAPHIC_FEATURE column, Sites table
+# Controlled vocabulary for the `SITE_GEOGRAPHIC_FEATURE` column, Sites table
 
 Returns controlled vocabulary options for site geographic features.
 
@@ -27,8 +27,15 @@ Other site:
 ## Examples
 
 ``` r
-head(geographic_features_vocabulary(), 5)
-#> [1] "Not relevant"                   "Not reported"                  
-#> [3] "River, stream, canal"           "Lake, pond, pool, reservoir"   
-#> [5] "Ocean, sea, territorial waters"
+geographic_features_vocabulary()
+#>  [1] "Not relevant"                      "Not reported"                     
+#>  [3] "River, stream, canal"              "Lake, pond, pool, reservoir"      
+#>  [5] "Ocean, sea, territorial waters"    "Coastal, fjord"                   
+#>  [7] "Estuary"                           "Drainage, sewer, artificial water"
+#>  [9] "Swamp, wetland"                    "Groundwater, aquifer"             
+#> [11] "WWTP"                              "Artificial Land/Urban Areas"      
+#> [13] "Landfills"                         "Cropland"                         
+#> [15] "Woodland, forest"                  "Shrubland"                        
+#> [17] "Grassland"                         "Bare land and lichen/moss"        
+#> [19] "Glacier"                           "Other"                            
 ```

@@ -19,43 +19,43 @@ References provide bibliographic information for data sources including
 journals, reports, datasets, and other published materials. The tibble
 includes the following columns:
 
-REFERENCE_ID: Unique identifier for the reference (Primary Key)
+`REFERENCE_ID`: Unique identifier for the reference (Primary Key)
 
-REFERENCE_TYPE: Type of publication (Journal Article, Report, Dataset,
+`REFERENCE_TYPE`: Type of publication (Journal Article, Report, Dataset,
 etc.)
 
-DATA_SOURCE: Whether reference is source of data (Primary,
+`DATA_SOURCE`: Whether reference is source of data (Primary,
 Secondary/Review, Other)
 
-AUTHOR: Author(s) of the reference
+`AUTHOR`: Author(s) of the reference
 
-TITLE: Title of the publication or document
+`TITLE`: Title of the publication or document
 
-YEAR: Publication year
+`YEAR`: Publication year
 
-ACCESS_DATE: Date when the reference was accessed or retrieved
+`ACCESS_DATE`: Date when the reference was accessed or retrieved
 
-PERIODICAL_JOURNAL: Name of the journal or periodical
+`PERIODICAL_JOURNAL`: Name of the journal or periodical
 
-VOLUME: Volume number of the journal
+`VOLUME`: Volume number of the journal
 
-ISSUE: Issue number of the journal
+`ISSUE`: Issue number of the journal
 
-PUBLISHER: Publisher of the document
+`PUBLISHER`: Publisher of the document
 
-INSTITUTION: Institution associated with the publication
+`INSTITUTION`: Institution associated with the publication
 
-DOI: Digital Object Identifier
+`DOI`: Digital Object Identifier
 
-URL: Web address for online access
+`URL`: Web address for online access
 
-ISBN_ISSN: ISBN or ISSN identifier
+`ISBN_ISSN`: ISBN or ISSN identifier
 
-EDITION: Edition of the publication
+`EDITION`: Edition of the publication
 
-DOCUMENT_NUMBER: Document or report number
+`DOCUMENT_NUMBER`: Document or report number
 
-REF_COMMENT: Additional notes about the reference
+`REF_COMMENT`: Additional notes about the reference
 
 See
 [`vignette("references_data")`](https://NIVANorge.github.io/eDataDRF/articles/references_data.md)
