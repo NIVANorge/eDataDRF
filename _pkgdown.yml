@@ -82,7 +82,7 @@ reference:
   desc: Functions to generate example data
 - contents:
   - contains("example_")
-  - creed_tibble_to_mock_input
+  - CREED_tibble_to_mock_input
 - title: Validation
   desc: Functions using {pointblank} to validate data
 - contents:
