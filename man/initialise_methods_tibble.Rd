@@ -16,15 +16,15 @@ Creates an empty tibble with the standardised column structure for methods.
 Methods describe the protocols used for sampling, extraction, fractionation, and
 analysis procedures. The tibble includes the following columns:
 
-PROTOCOL_ID: Unique identifier for the protocol (Primary Key)
+\code{PROTOCOL_ID}: Unique identifier for the protocol (Primary Key)
 
-CAMPAIGN_NAME: Name of the campaign this protocol was used in
+\code{CAMPAIGN_NAME}: Name of the campaign this protocol was used in
 
-PROTOCOL_CATEGORY: Type of protocol (Sampling, Extraction, Fractionation, Analytical)
+\code{PROTOCOL_CATEGORY}: Type of protocol (Sampling, Extraction, Fractionation, Analytical)
 
-PROTOCOL_NAME: Standardised name of the protocol
+\code{PROTOCOL_NAME}: Standardised name of the protocol
 
-PROTOCOL_COMMENT: Additional notes or details about the protocol
+\code{PROTOCOL_COMMENT}: Additional notes or details about the protocol
 
 See \code{vignette("methods_data")} for more information.
 }

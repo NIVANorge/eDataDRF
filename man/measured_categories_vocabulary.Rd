@@ -2,19 +2,19 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{measured_categories_vocabulary}
 \alias{measured_categories_vocabulary}
-\title{Controlled vocabulary for the MEASURED_CATEGORY column, Compartments table}
+\title{Controlled vocabulary for the \code{MEASURED_CATEGORY} column, Compartments table}
 \usage{
 measured_categories_vocabulary()
 }
 \value{
-A character vector of measured category options
+A named character vector of measured category options
 }
 \description{
 Returns controlled vocabulary options for measurement context categories.
 }
 \details{
 Provides standardised categories indicating where measurements were taken relative
-to organisms. Options include:
+to organisms (inside an organism, from its surface, or external to the organism (default))
 }
 \examples{
 measured_categories_vocabulary()

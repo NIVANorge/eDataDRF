@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{environ_compartments_sub_vocabulary}
 \alias{environ_compartments_sub_vocabulary}
-\title{Controlled vocabulary for the ENVIRON_COMPARTMENT and ENVIRON_COMPARTMENT_SUB columns, Compartments table}
+\title{Controlled vocabulary for the \code{ENVIRON_COMPARTMENT} and \code{ENVIRON_COMPARTMENT_SUB} columns, Compartments table}
 \usage{
 environ_compartments_sub_vocabulary()
 }
@@ -13,9 +13,6 @@ A named list of character vectors with sub-compartment options for each main com
 Returns controlled vocabulary mapping for environmental sub-compartments organized by main compartment.
 }
 \details{
-Provides a hierarchical structure of environmental sub-compartments grouped by their
-main compartment type. The list includes:
-
 Provides a hierarchical structure of environmental sub-compartments grouped by their
 main compartment type (Aquatic, Atmospheric, Terrestrial, Biota).
 }

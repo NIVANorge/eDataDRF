@@ -2,12 +2,12 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{fractionation_protocols_vocabulary}
 \alias{fractionation_protocols_vocabulary}
-\title{Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (fractionation), Methods table}
+\title{Controlled vocabulary for \code{PROTOCOL_TYPE} and \code{PROTOCOL_NAME} columns (fractionation), Methods table}
 \usage{
 fractionation_protocols_vocabulary()
 }
 \value{
-A tibble with Protocol_Type, Short_Name, and Long_Name columns
+A tibble with \code{Protocol_Type}, \code{Short_Name}, and \code{Long_Name} columns
 }
 \description{
 Returns fractionation protocol options with short and long names.
@@ -15,11 +15,11 @@ Returns fractionation protocol options with short and long names.
 \details{
 Provides standardised fractionation method classifications as a tibble with three columns:
 
-Protocol_Type: Always "Fractionation Protocol"
+\code{Protocol_Type}: Always "Fractionation Protocol"
 
-Short_Name: Abbreviated protocol name (e.g., "Total", "Dissolved", "Filtered")
+\code{Short_Name}: Abbreviated protocol name (e.g., "Total", "Dissolved", "Filtered")
 
-Long_Name: Full descriptive name (e.g., "Total fraction", "Dissolved fraction", "Filtered fraction")
+\code{Long_Name}: Full descriptive name (e.g., "Total fraction", "Dissolved fraction", "Filtered fraction")
 
 Available protocols include: Not relevant, Not reported, Total, Particles, Colloidal, LMM, Aqueous, Filtered 0.45um, Filtered 0.2um, Dissolved, Filtered, Acid extractable, Reducible, Oxidisable, Residual, Bioavailable, Free ion, Size fractionated, Other
 }

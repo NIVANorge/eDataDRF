@@ -3,7 +3,7 @@
 \name{generate_sample_id_with_components}
 \alias{generate_sample_id_with_components}
 \title{Generate compact Sample ID (\code{SiteCode-ParamAbbrev-CompartmentAbbrev-Date-R-SubsampleAbbrev})
-for SAMPLE_ID in Samples table}
+for \code{SAMPLE_ID} in Samples table}
 \usage{
 generate_sample_id_with_components(
   site_code,

@@ -2,12 +2,12 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{sampling_protocols_vocabulary}
 \alias{sampling_protocols_vocabulary}
-\title{Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (sampling), Methods table}
+\title{Controlled vocabulary for \code{PROTOCOL_TYPE} and \code{PROTOCOL_NAME} columns (sampling), Methods table}
 \usage{
 sampling_protocols_vocabulary()
 }
 \value{
-A tibble with Protocol_Type, Short_Name, and Long_Name columns
+A tibble with \code{Protocol_Type}, \code{Short_Name}, and \code{Long_Name} columns
 }
 \description{
 Returns sampling protocol options with short and long names.

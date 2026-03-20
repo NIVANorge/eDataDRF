@@ -1,31 +1,26 @@
-# TODO: Round this stuff out so we cover everything important enough.
-
-# Pointblank validation functions ----
-
-#' Run pointblank validation on an eData table
+#' Generic pointblank validation helper for eData tables
 #'
 #' Applies pointblank validation rules to check data quality and schema
 #' compliance for eData format tables. Can operate in two modes:
-#' - Agent mode (agent = TRUE): Creates an agent for reporting and interrogation
-#' - Pipeline mode (agent = FALSE): Returns validated data directly for use in pipelines
+#' - Agent mode (`agent = TRUE`): Creates an agent for reporting and interrogation
+#' - Pipeline mode (`agent = FALSE`): Returns validated data directly for use in pipelines
 #'
 #' @param data Data frame to validate
 #' @param table_name Name of the table being validated (for reporting)
 #' @param validation_steps Function that takes a data frame or agent and returns
 #'   it with validation steps added. Should be a function like:
 #'   `function(x) { x |> col_vals_not_null(...) |> ... }`
-#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
-#'   If FALSE, returns the validated data with validation failures removed.
-#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
+#' @param agent Logical. If `TRUE` (default), returns a pointblank agent object.
+#'   If `FALSE`, returns the validated data with validation failures removed.
+#' @param actions Action levels for pointblank agent (only used when `agent = TRUE`)
 #'
-#' @return If agent = TRUE, a pointblank agent object containing validation results.
-#'   If agent = FALSE, the input data with validation failures removed.
+#' @return If `agent = TRUE`, a pointblank agent object containing validation results.
+#'   If `agent = FALSE`, the input data with validation failures removed.
 #'
 #' @details
 #' Uses [pointblank::create_agent()] to build a validation agent in agent mode,
 #' or applies steps directly to the data in pipeline mode.
-#' See also `vignette("validation", package = "pointblank")` for an overview of
-#' the pointblank validation workflow.
+#' Called by `pb_validate_*()` functions to apply specific table validation steps
 #'
 #' In agent mode, the agent object can be used to:
 #' - Extract validation results with `get_sundered_data()`
@@ -83,17 +78,15 @@ pb_validate_edata_table <- function(
 #' range, and that entry metadata fields are present and not in the future.
 #'
 #' @param data Data frame containing Campaign table data to validate
-#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
-#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
-#'   If FALSE, returns the validated data with validation failures removed.
+#' @param actions Action levels for pointblank agent (only used when `agent = TRUE`)
+#' @param agent Logical. If `TRUE` (default), returns a pointblank agent object.
+#'   If `FALSE`, returns the validated data with validation failures removed.
 #'
-#' @return If agent = TRUE, a pointblank agent object containing validation results.
-#'   If agent = FALSE, the input data with validation failures removed.
+#' @return If `agent = TRUE`, a pointblank agent object containing validation results.
+#'   If `agent = FALSE`, the input data with validation failures removed.
 #'
 #' @details
 #' Validation thresholds are configured using [pointblank::action_levels()].
-#' See `vignette("validation", package = "pointblank")` for an overview of
-#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
@@ -185,17 +178,15 @@ pb_validate_campaign <- function(
 #' conditionally mandatory fields are present based on reference type.
 #'
 #' @param data Data frame containing Reference table data to validate
-#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
-#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
-#'   If FALSE, returns the validated data with validation failures removed.
+#' @param actions Action levels for pointblank agent (only used when `agent = TRUE`)
+#' @param agent Logical. If `TRUE` (default), returns a pointblank agent object.
+#'   If `FALSE`, returns the validated data with validation failures removed.
 #'
-#' @return If agent = TRUE, a pointblank agent object containing validation results.
-#'   If agent = FALSE, the input data with validation failures removed.
+#' @return If `agent = TRUE`, a pointblank agent object containing validation results.
+#'   If `agent = FALSE`, the input data with validation failures removed.
 #'
 #' @details
 #' Validation thresholds are configured using [pointblank::action_levels()].
-#' See `vignette("validation", package = "pointblank")` for an overview of
-#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
@@ -314,17 +305,15 @@ pb_validate_reference <- function(
 #' vocabulary, and entry metadata is present.
 #'
 #' @param data Data frame containing Parameters table data to validate
-#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
-#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
-#'   If FALSE, returns the validated data with validation failures removed.
+#' @param actions Action levels for pointblank agent (only used when `agent = TRUE`)
+#' @param agent Logical. If `TRUE` (default), returns a pointblank agent object.
+#'   If `FALSE`, returns the validated data with validation failures removed.
 #'
-#' @return If agent = TRUE, a pointblank agent object containing validation results.
-#'   If agent = FALSE, the input data with validation failures removed.
+#' @return If `agent = TRUE`, a pointblank agent object containing validation results.
+#'   If `agent = FALSE`, the input data with validation failures removed.
 #'
 #' @details
 #' Validation thresholds are configured using [pointblank::action_levels()].
-#' See `vignette("validation", package = "pointblank")` for an overview of
-#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
@@ -382,19 +371,17 @@ pb_validate_parameters <- function(
 #' metadata fields are present.
 #'
 #' @param data Data frame containing Sites table data to validate
-#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
-#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
-#'   If FALSE, returns the validated data with validation failures removed.
-#' @param northern_hemisphere Logical. If TRUE, constrains latitude validation
-#'   to northern hemisphere (0-90). Default is FALSE (allows -90 to 90).
+#' @param actions Action levels for pointblank agent (only used when `agent = TRUE`)
+#' @param agent Logical. If `TRUE` (default), returns a pointblank agent object.
+#'   If `FALSE`, returns the validated data with validation failures removed.
+#' @param northern_hemisphere Logical. If `TRUE`, constrains latitude validation
+#'   to northern hemisphere (0-90). Default is `FALSE` (allows -90 to 90).
 #'
-#' @return If agent = TRUE, a pointblank agent object containing validation results.
-#'   If agent = FALSE, the input data with validation failures removed.
+#' @return If `agent = TRUE`, a pointblank agent object containing validation results.
+#'   If `agent = FALSE`, the input data with validation failures removed.
 #'
 #' @details
 #' Validation thresholds are configured using [pointblank::action_levels()].
-#' See `vignette("validation", package = "pointblank")` for an overview of
-#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
@@ -534,21 +521,19 @@ pb_validate_sites <- function(
 #' Applies pointblank validation rules to check data quality and schema
 #' compliance for an eData Samples table. Checks that core identifier fields
 #' are non-null, that environmental compartment fields contain values within
-#' their controlled vocabularies, and that each ENVIRON_COMPARTMENT_SUB value
-#' is consistent with its corresponding ENVIRON_COMPARTMENT parent.
+#' their controlled vocabularies, and that each `ENVIRON_COMPARTMENT_SUB` value
+#' is consistent with its corresponding `ENVIRON_COMPARTMENT` parent.
 #'
 #' @param data Data frame containing Samples table data to validate
-#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
-#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
-#'   If FALSE, returns the validated data with validation failures removed.
+#' @param actions Action levels for pointblank agent (only used when `agent = TRUE`)
+#' @param agent Logical. If `TRUE` (default), returns a pointblank agent object.
+#'   If `FALSE`, returns the validated data with validation failures removed.
 #'
-#' @return If agent = TRUE, a pointblank agent object containing validation results.
-#'   If agent = FALSE, the input data with validation failures removed.
+#' @return If `agent = TRUE`, a pointblank agent object containing validation results.
+#'   If `agent = FALSE`, the input data with validation failures removed.
 #'
 #' @details
 #' Validation thresholds are configured using [pointblank::action_levels()].
-#' See `vignette("validation", package = "pointblank")` for an overview of
-#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
@@ -632,17 +617,15 @@ pb_validate_samples <- function(
 #' within their controlled vocabularies.
 #'
 #' @param data Data frame containing Biota table data to validate
-#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
-#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
-#'   If FALSE, returns the validated data with validation failures removed.
+#' @param actions Action levels for pointblank agent (only used when `agent = TRUE`)
+#' @param agent Logical. If `TRUE` (default), returns a pointblank agent object.
+#'   If `FALSE`, returns the validated data with validation failures removed.
 #'
-#' @return If agent = TRUE, a pointblank agent object containing validation results.
-#'   If agent = FALSE, the input data with validation failures removed.
+#' @return If `agent = TRUE`, a pointblank agent object containing validation results.
+#'   If `agent = FALSE`, the input data with validation failures removed.
 #'
 #' @details
 #' Validation thresholds are configured using [pointblank::action_levels()].
-#' See `vignette("validation", package = "pointblank")` for an overview of
-#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
@@ -734,21 +717,19 @@ pb_validate_biota <- function(
 #' fields are non-null, sampling dates are within valid ranges, environmental
 #' compartments are valid, measurement flags and values are consistent, LOD/LOQ
 #' values and units are present and valid when provided, protocol IDs match the
-#' expected format, MEASURED_TYPE is in its controlled vocabulary, and reference
+#' expected format, `MEASURED_TYPE` is in its controlled vocabulary, and reference
 #' and sample IDs are present and correctly formatted.
 #'
 #' @param data Data frame containing Measurements table data to validate
-#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
-#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
-#'   If FALSE, returns the validated data with validation failures removed.
+#' @param actions Action levels for pointblank agent (only used when `agent = TRUE`)
+#' @param agent Logical. If `TRUE` (default), returns a pointblank agent object.
+#'   If `FALSE`, returns the validated data with validation failures removed.
 #'
-#' @return If agent = TRUE, a pointblank agent object containing validation results.
-#'   If agent = FALSE, the input data with validation failures removed.
+#' @return If `agent = TRUE`, a pointblank agent object containing validation results.
+#'   If `agent = FALSE`, the input data with validation failures removed.
 #'
 #' @details
 #' Validation thresholds are configured using [pointblank::action_levels()].
-#' See `vignette("validation", package = "pointblank")` for an overview of
-#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
@@ -962,17 +943,15 @@ pb_validate_measurements <- function(
 #' within their controlled vocabularies.
 #'
 #' @param data Data frame containing Methods table data to validate
-#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
-#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
-#'   If FALSE, returns the validated data with validation failures removed.
+#' @param actions Action levels for pointblank agent (only used when `agent = TRUE`)
+#' @param agent Logical. If `TRUE` (default), returns a pointblank agent object.
+#'   If `FALSE`, returns the validated data with validation failures removed.
 #'
-#' @return If agent = TRUE, a pointblank agent object containing validation results.
-#'   If agent = FALSE, the input data with validation failures removed.
+#' @return If `agent = TRUE`, a pointblank agent object containing validation results.
+#'   If `agent = FALSE`, the input data with validation failures removed.
 #'
 #' @details
 #' Validation thresholds are configured using [pointblank::action_levels()].
-#' See `vignette("validation", package = "pointblank")` for an overview of
-#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
@@ -1042,17 +1021,15 @@ pb_validate_methods <- function(
 #' required/recommended classification is valid.
 #'
 #' @param data Data frame containing CREED reliability data to validate
-#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
-#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
-#'   If FALSE, returns the validated data with validation failures removed.
+#' @param actions Action levels for pointblank agent (only used when `agent = TRUE`)
+#' @param agent Logical. If `TRUE` (default), returns a pointblank agent object.
+#'   If `FALSE`, returns the validated data with validation failures removed.
 #'
-#' @return If agent = TRUE, a pointblank agent object containing validation results.
-#'   If agent = FALSE, the input data with validation failures removed.
+#' @return If `agent = TRUE`, a pointblank agent object containing validation results.
+#'   If `agent = FALSE`, the input data with validation failures removed.
 #'
 #' @details
 #' Validation thresholds are configured using [pointblank::action_levels()].
-#' See `vignette("validation", package = "pointblank")` for an overview of
-#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_CREED_data_relevance()] for the relevance equivalent,
@@ -1163,17 +1140,15 @@ pb_validate_CREED_data_reliability <- function(
 #' required/recommended classification is valid.
 #'
 #' @param data Data frame containing CREED relevance data to validate
-#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
-#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
-#'   If FALSE, returns the validated data with validation failures removed.
+#' @param actions Action levels for pointblank agent (only used when `agent = TRUE`)
+#' @param agent Logical. If `TRUE` (default), returns a pointblank agent object.
+#'   If `FALSE`, returns the validated data with validation failures removed.
 #'
-#' @return If agent = TRUE, a pointblank agent object containing validation results.
-#'   If agent = FALSE, the input data with validation failures removed.
+#' @return If `agent = TRUE`, a pointblank agent object containing validation results.
+#'   If `agent = FALSE`, the input data with validation failures removed.
 #'
 #' @details
 #' Validation thresholds are configured using [pointblank::action_levels()].
-#' See `vignette("validation", package = "pointblank")` for an overview of
-#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_CREED_data_reliability()] for the reliability equivalent,
@@ -1270,17 +1245,15 @@ pb_validate_CREED_data_relevance <- function(
 #' contain valid values.
 #'
 #' @param data Data frame containing CREED Scores table data to validate
-#' @param actions Action levels for pointblank agent (only used when agent = TRUE)
-#' @param agent Logical. If TRUE (default), returns a pointblank agent object.
-#'   If FALSE, returns the validated data with validation failures removed.
+#' @param actions Action levels for pointblank agent (only used when `agent = TRUE`)
+#' @param agent Logical. If `TRUE` (default), returns a pointblank agent object.
+#'   If `FALSE`, returns the validated data with validation failures removed.
 #'
-#' @return If agent = TRUE, a pointblank agent object containing validation results.
-#'   If agent = FALSE, the input data with validation failures removed.
+#' @return If `agent = TRUE`, a pointblank agent object containing validation results.
+#'   If `agent = FALSE`, the input data with validation failures removed.
 #'
 #' @details
 #' Validation thresholds are configured using [pointblank::action_levels()].
-#' See `vignette("validation", package = "pointblank")` for an overview of
-#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_edata_table()] for the underlying validation framework,
 #'   [pb_validate_all_edata_tables()] to validate all tables at once,
@@ -1365,14 +1338,14 @@ pb_validate_CREED_scores <- function(
 #' @param measurements Data frame containing Measurements table data to validate
 #' @param methods Data frame containing Methods table data to validate (optional)
 #' @param creed_scores Data frame containing CREED Scores table data to validate (optional)
-#' @param actions Action levels for pointblank agents (only used when agent = TRUE)
-#' @param agent Logical. If TRUE (default), returns a list of pointblank agent objects.
-#'   If FALSE, returns a list of validated data frames with failures removed.
-#' @param northern_hemisphere Logical. If TRUE, check that site coordinates are in
+#' @param actions Action levels for pointblank agents (only used when `agent = TRUE`)
+#' @param agent Logical. If `TRUE` (default), returns a list of pointblank agent objects.
+#'   If `FALSE`, returns a list of validated data frames with failures removed.
+#' @param northern_hemisphere Logical. If `TRUE`, check that site coordinates are in
 #'   the northern hemisphere. Passed to [pb_validate_sites()].
 #'
-#' @return A named list. If agent = TRUE, each element is a pointblank agent object.
-#'   If agent = FALSE, each element is a validated data frame with failing rows removed.
+#' @return A named list. If `agent = TRUE`, each element is a pointblank agent object.
+#'   If `agent = FALSE`, each element is a validated data frame with failing rows removed.
 #'   The list always contains elements named `campaign`, `reference`, `parameters`,
 #'   `sites`, and `measurements`. Optional elements (`samples`, `biota`, `methods`,
 #'   `creed_scores`) are included only when the corresponding arguments are not `NULL`.
@@ -1380,8 +1353,6 @@ pb_validate_CREED_scores <- function(
 #' @details
 #' Calls each individual table validation function in turn. Validation is
 #' performed using [pointblank::create_agent()] and related functions.
-#' See `vignette("validation", package = "pointblank")` for an overview of
-#' the pointblank validation workflow.
 #'
 #' @seealso [pb_validate_campaign()], [pb_validate_reference()],
 #'   [pb_validate_parameters()], [pb_validate_sites()], [pb_validate_samples()],

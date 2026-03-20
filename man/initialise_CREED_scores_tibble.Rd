@@ -17,15 +17,15 @@ CREED scores provide data quality assessment results for references, evaluating 
 reliability and relevance at silver and gold standard levels. The tibble includes
 the following columns:
 
-REFERENCE_ID: Unique identifier linking to the references table
+\code{REFERENCE_ID}: Unique identifier linking to the references table
 
-SILVER_RELIABILITY: Reliability score at silver standard level
+\code{SILVER_RELIABILITY}: Reliability score at silver standard level
 
-SILVER_RELEVANCE: Relevance score at silver standard level
+\code{SILVER_RELEVANCE}: Relevance score at silver standard level
 
-GOLD_RELIABILITY: Reliability score at gold standard level
+\code{GOLD_RELIABILITY}: Reliability score at gold standard level
 
-GOLD_RELEVANCE: Relevance score at gold standard level
+\code{GOLD_RELEVANCE}: Relevance score at gold standard level
 
 See \code{vignette("CREED_scores_data")} for more information.
 }
@@ -47,7 +47,7 @@ Other initialise_tibble:
 
 Other CREED: 
 \code{\link{CREED_choices_vocabulary}()},
-\code{\link{creed_tibble_to_mock_input}()},
+\code{\link{CREED_tibble_to_mock_input}()},
 \code{\link{example_CREED_relevance_tibble}()},
 \code{\link{example_CREED_reliability_tibble}()},
 \code{\link{example_CREED_scores_tibble}()},

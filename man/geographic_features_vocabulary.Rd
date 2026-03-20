@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{geographic_features_vocabulary}
 \alias{geographic_features_vocabulary}
-\title{Controlled vocabulary for the SITE_GEOGRAPHIC_FEATURE column, Sites table}
+\title{Controlled vocabulary for the \code{SITE_GEOGRAPHIC_FEATURE} column, Sites table}
 \usage{
 geographic_features_vocabulary()
 }
@@ -13,7 +13,7 @@ A character vector of geographic feature options
 Returns controlled vocabulary options for site geographic features.
 }
 \examples{
-head(geographic_features_vocabulary(), 5)
+geographic_features_vocabulary()
 }
 \seealso{
 Other site: 

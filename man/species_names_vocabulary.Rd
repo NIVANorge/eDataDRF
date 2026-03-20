@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{species_names_vocabulary}
 \alias{species_names_vocabulary}
-\title{Controlled vocabulary for the SPECIES_NAME column, Biota table}
+\title{Controlled vocabulary for the \code{SPECIES_NAME} column, Biota table}
 \usage{
 species_names_vocabulary()
 }
@@ -19,7 +19,7 @@ and species group classifications. Data is read from ecotox_2025_06_12_species.p
 Additional entries for "Other" and "Ecosystem" are included. Data retrieved from
 \url{https://cfpub.epa.gov/ecotox/}, 2025.06.12.
 
-Data source: extdata/ecotox_2025_06_12_species.parquet
+Data source: \code{extdata/ecotox_2025_06_12_species.parquet}
 }
 \examples{
 head(species_names_vocabulary(), 5)

@@ -61,7 +61,7 @@ Tables are listed below:
 
 Likewise, controlled vocabulary is available as functions that return vectors, lists, or tables. In some cases, helper functions are available that wrap multiple individual functions.
 
-Where external data sources are used to generate a vocabulary, functions may wrap (processed) data from other R packages or load raw data from external sources. Vocabulary functions are documented in the [Reference section](reference/index.html#controlled-vocabulary) and linked to in the relevant table files in 
+Where external data sources are used to generate a vocabulary, functions may wrap (processed) data from other R packages or load raw data from external sources. Vocabulary functions are documented in the [Reference section](reference/index.html#controlled-vocabulary) and linked to in their relevant tables.
 
 ```{r}
 # returns a named vector
@@ -76,10 +76,10 @@ extraction_protocols_vocabulary()[1:5, 3]
 # calls bind_rows() on four *_protocol_vocabulary() functions to return a tibble
 protocol_options_vocabulary()[1:5, 3] 
 
-# calls crsuggest::crs_sf, returns 4 rows (or more when common_only = FALSE)
+# calls crsuggest::crs_sf, filters to most common/relevant to Norway
 coordinate_systems_vocabulary(common_only = TRUE) 
 
-# loads an RDS of IHO ocean definitions from /extdata/, returns a vector
+# returns a vector
 ocean_vocabulary()[1:20] 
 
 ```

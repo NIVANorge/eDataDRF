@@ -26,7 +26,7 @@ This is not, in itself a problem. However, as environmental risk assessment beco
 
 # Why aquatic toxicology?
 
-Starting with a field we know well allows us to test the effectiveness of the underlying philosophy and technology.
+Starting with a field we know well allows us to test the effectiveness of the underlying design philosophy and technology.
 
 # Why an R package?
 
@@ -40,10 +40,11 @@ This work is supported by the Research Council of Norway (RCN-315969 EXPECT), EU
 
 ```{r}
 #| label: citations
+#| echo: false
 
 grateful::cite_packages(
   text.start = "We gratefully thank the developers and contributors to the following software used in this work:",
-  pkgs = c(
+  pkgs = c("base",
     "arrow", "cpp11", "crsuggest", "dplyr", "glue", "grateful", "gt", # automatic detection via DESCRIPTION causes issues with pkgdown
     "ISOcodes", "pointblank", "purrr", "readr", "rlang", "stringr",
     "tibble", "tidyselect", "zip",

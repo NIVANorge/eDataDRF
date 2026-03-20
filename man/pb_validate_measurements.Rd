@@ -9,14 +9,14 @@ pb_validate_measurements(data, actions = action_levels(), agent = TRUE)
 \arguments{
 \item{data}{Data frame containing Measurements table data to validate}
 
-\item{actions}{Action levels for pointblank agent (only used when agent = TRUE)}
+\item{actions}{Action levels for pointblank agent (only used when \code{agent = TRUE})}
 
-\item{agent}{Logical. If TRUE (default), returns a pointblank agent object.
-If FALSE, returns the validated data with validation failures removed.}
+\item{agent}{Logical. If \code{TRUE} (default), returns a pointblank agent object.
+If \code{FALSE}, returns the validated data with validation failures removed.}
 }
 \value{
-If agent = TRUE, a pointblank agent object containing validation results.
-If agent = FALSE, the input data with validation failures removed.
+If \code{agent = TRUE}, a pointblank agent object containing validation results.
+If \code{agent = FALSE}, the input data with validation failures removed.
 }
 \description{
 Applies pointblank validation rules to check data quality and schema
@@ -24,13 +24,11 @@ compliance for an eData Measurements table. Checks that core identifier
 fields are non-null, sampling dates are within valid ranges, environmental
 compartments are valid, measurement flags and values are consistent, LOD/LOQ
 values and units are present and valid when provided, protocol IDs match the
-expected format, MEASURED_TYPE is in its controlled vocabulary, and reference
+expected format, \code{MEASURED_TYPE} is in its controlled vocabulary, and reference
 and sample IDs are present and correctly formatted.
 }
 \details{
 Validation thresholds are configured using \code{\link[pointblank:action_levels]{pointblank::action_levels()}}.
-See \code{vignette("validation", package = "pointblank")} for an overview of
-the pointblank validation workflow.
 }
 \examples{
 \dontrun{

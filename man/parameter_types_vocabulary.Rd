@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{parameter_types_vocabulary}
 \alias{parameter_types_vocabulary}
-\title{Controlled vocabulary for the PARAMETER_TYPES column, Parameters table}
+\title{Controlled vocabulary for the \code{PARAMETER_TYPES} column, Parameters table}
 \usage{
 parameter_types_vocabulary()
 }
@@ -10,7 +10,8 @@ parameter_types_vocabulary()
 A character vector of parameter type options
 }
 \description{
-Returns controlled vocabulary options for broad parameter classifications.
+Returns controlled vocabulary options for broad parameter classifications:
+stressors, background levels, quality parameters, etc.
 }
 \examples{
 parameter_types_vocabulary()

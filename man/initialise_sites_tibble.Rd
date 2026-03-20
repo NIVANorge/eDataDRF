@@ -17,33 +17,33 @@ Sites represent sampling locations with geographic coordinates, administrative
 boundaries, and descriptive metadata about the sampling location. The tibble
 includes the following columns:
 
-SITE_CODE: Unique code identifying the site (Primary Key)
+\code{SITE_CODE}: Unique code identifying the site (Primary Key)
 
-SITE_NAME: Descriptive name of the sampling site
+\code{SITE_NAME}: Descriptive name of the sampling site
 
-SITE_GEOGRAPHIC_FEATURE: Broad geographic feature type
+\code{SITE_GEOGRAPHIC_FEATURE}: Broad geographic feature type
 
-SITE_GEOGRAPHIC_FEATURE_SUB: Specific sub-category of the geographic feature
+\code{SITE_GEOGRAPHIC_FEATURE_SUB}: Specific sub-category of the geographic feature
 
-COUNTRY_ISO: ISO country code where the site is located
+\code{COUNTRY_ISO}: ISO country code where the site is located
 
-OCEAN_IHO: International Hydrographic Organisation ocean region
+\code{OCEAN_IHO}: International Hydrographic Organisation ocean region
 
-LATITUDE: Latitude coordinate in decimal degrees
+\code{LATITUDE}: Latitude coordinate in decimal degrees
 
-LONGITUDE: Longitude coordinate in decimal degrees
+\code{LONGITUDE}: Longitude coordinate in decimal degrees
 
-SITE_COORDINATE_SYSTEM: Coordinate reference system used
+\code{SITE_COORDINATE_SYSTEM}: Coordinate reference system used
 
-ALTITUDE_VALUE: Elevation or depth value
+\code{ALTITUDE_VALUE}: Elevation or depth value
 
-ALTITUDE_UNIT: Unit of measurement for altitude
+\code{ALTITUDE_UNIT}: Unit of measurement for altitude
 
-ENTERED_BY: Person or entity who entered the site data
+\code{ENTERED_BY}: Person or entity who entered the site data
 
-ENTERED_DATE: Date when the site data was entered
+\code{ENTERED_DATE}: Date when the site data was entered
 
-SITE_COMMENT: Additional notes about the site
+\code{SITE_COMMENT}: Additional notes about the site
 
 See \code{vignette("sites_data")} for more information.
 }

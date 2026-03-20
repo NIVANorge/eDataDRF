@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_generate_IDs.R
 \name{generate_protocol_id}
 \alias{generate_protocol_id}
-\title{Generate a semi-unique string ID for a protocol based on its type,
+\title{Generate a semi-unique string ID for a protocol (\code{PROTOCOL_ID}) based on its type,
 name, the campaign name, and a sequence number; used as a key between Methods
 and Measurements table.}
 \usage{
@@ -46,7 +46,7 @@ sequence number, and campaign. The function is fully vectorised and can
 handle multiple protocols simultaneously.
 }
 \details{
-The function handles edge cases gracefully:
+Edge cases:
 \itemize{
 \item NULL or empty values result in appropriate defaults
 \item Invalid protocol types default to "X"

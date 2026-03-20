@@ -38,17 +38,17 @@ pb_validate_all_edata_tables(
 
 \item{creed_scores}{Data frame containing CREED Scores table data to validate (optional)}
 
-\item{actions}{Action levels for pointblank agents (only used when agent = TRUE)}
+\item{actions}{Action levels for pointblank agents (only used when \code{agent = TRUE})}
 
-\item{agent}{Logical. If TRUE (default), returns a list of pointblank agent objects.
-If FALSE, returns a list of validated data frames with failures removed.}
+\item{agent}{Logical. If \code{TRUE} (default), returns a list of pointblank agent objects.
+If \code{FALSE}, returns a list of validated data frames with failures removed.}
 
-\item{northern_hemisphere}{Logical. If TRUE, check that site coordinates are in
+\item{northern_hemisphere}{Logical. If \code{TRUE}, check that site coordinates are in
 the northern hemisphere. Passed to \code{\link[=pb_validate_sites]{pb_validate_sites()}}.}
 }
 \value{
-A named list. If agent = TRUE, each element is a pointblank agent object.
-If agent = FALSE, each element is a validated data frame with failing rows removed.
+A named list. If \code{agent = TRUE}, each element is a pointblank agent object.
+If \code{agent = FALSE}, each element is a validated data frame with failing rows removed.
 The list always contains elements named \code{campaign}, \code{reference}, \code{parameters},
 \code{sites}, and \code{measurements}. Optional elements (\code{samples}, \code{biota}, \code{methods},
 \code{creed_scores}) are included only when the corresponding arguments are not \code{NULL}.
@@ -61,8 +61,6 @@ validated; optional tables are validated only when provided.
 \details{
 Calls each individual table validation function in turn. Validation is
 performed using \code{\link[pointblank:create_agent]{pointblank::create_agent()}} and related functions.
-See \code{vignette("validation", package = "pointblank")} for an overview of
-the pointblank validation workflow.
 }
 \examples{
 \dontrun{

@@ -17,59 +17,59 @@ Measurements represent quantitative observations combining sample, compartment, 
 biota information with analytical results and quality metrics. The tibble includes
 the following columns:
 
-SITE_CODE: Code identifying the sampling location
+\code{SITE_CODE}: Code identifying the sampling location
 
-PARAMETER_NAME: Name of the measured parameter (Foreign key)
+\code{PARAMETER_NAME}: Name of the measured parameter (Foreign key)
 
-SAMPLING_DATE: Date of sample collection
+\code{SAMPLING_DATE}: Date of sample collection
 
-ENVIRON_COMPARTMENT_SUB: Specific environmental sub-compartment
+\code{ENVIRON_COMPARTMENT_SUB}: Specific environmental sub-compartment
 
-SUBSAMPLE: Subsample identifier
+\code{SUBSAMPLE}: Subsample identifier
 
-MEASURED_FLAG: Quality flag for the measurement (e.g., < LOQ, < LOD)
+\code{MEASURED_FLAG}: Quality flag for the measurement (e.g., \verb{< LOQ}, \verb{< LOD})
 
-MEASURED_VALUE: Numeric value of the measurement
+\code{MEASURED_VALUE}: Numeric value of the measurement
 
-UNCERTAINTY_TYPE: Type of uncertainty or variability metric
+\code{UNCERTAINTY_TYPE}: Type of uncertainty or variability metric
 
-UNCERTAINTY_UPPER: Upper bound of uncertainty
+\code{UNCERTAINTY_UPPER}: Upper bound of uncertainty
 
-UNCERTAINTY_LOWER: Lower bound of uncertainty
+\code{UNCERTAINTY_LOWER}: Lower bound of uncertainty
 
-MEASURED_UNIT: Unit of measurement
+\code{MEASURED_UNIT}: Unit of measurement
 
-MEASURED_N: Number of replicates or observations
+\code{MEASURED_N}: Number of replicates or observations
 
-LOQ_VALUE: Limit of quantification value
+\code{LOQ_VALUE}: Limit of quantification value
 
-LOQ_UNIT: Unit for limit of quantification
+\code{LOQ_UNIT}: Unit for limit of quantification
 
-LOD_VALUE: Limit of detection value
+\code{LOD_VALUE}: Limit of detection value
 
-LOD_UNIT: Unit for limit of detection
+\code{LOD_UNIT}: Unit for limit of detection
 
-SAMPLING_PROTOCOL: Protocol used for sample collection (Foreign key)
+\code{SAMPLING_PROTOCOL}: Protocol used for sample collection (Foreign key)
 
-EXTRACTION_PROTOCOL: Protocol used for sample extraction (Foreign key)
+\code{EXTRACTION_PROTOCOL}: Protocol used for sample extraction (Foreign key)
 
-FRACTIONATION_PROTOCOL: Protocol used for sample fractionation (Foreign key)
+\code{FRACTIONATION_PROTOCOL}: Protocol used for sample fractionation (Foreign key)
 
-ANALYTICAL_PROTOCOL: Protocol used for analysis (Foreign key)
+\code{ANALYTICAL_PROTOCOL}: Protocol used for analysis (Foreign key)
 
-REFERENCE_ID: Reference identifier for data source (Foreign key)
+\code{REFERENCE_ID}: Reference identifier for data source (Foreign key)
 
-SAMPLE_ID: Unique sample identifier
+\code{SAMPLE_ID}: Unique sample identifier
 
-CAMPAIGN_NAME_SHORT: Short name of the associated campaign
+\code{CAMPAIGN_NAME_SHORT}: Short name of the associated campaign
 
-ENVIRON_COMPARTMENT: Broad environmental compartment
+\code{ENVIRON_COMPARTMENT}: Broad environmental compartment
 
-PARAMETER_TYPE: Classification of the parameter
+\code{PARAMETER_TYPE}: Classification of the parameter
 
-MEASURED_TYPE: Type of measurement
+\code{MEASURED_TYPE}: Type of measurement
 
-MEASUREMENT_COMMENT: Additional notes about the measurement
+\code{MEASUREMENT_COMMENT}: Additional notes about the measurement
 
 See \code{vignette("measurements_data")} for more information.
 }

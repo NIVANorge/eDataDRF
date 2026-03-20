@@ -2,12 +2,12 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{ocean_vocabulary}
 \alias{ocean_vocabulary}
-\title{Controlled vocabulary for the OCEAN_IHO column, Sites table}
+\title{Controlled vocabulary for the \code{OCEAN_IHO} column, Sites table}
 \usage{
 ocean_vocabulary()
 }
 \value{
-A character vector of ocean name options
+A character vector of sea and ocean name options
 }
 \description{
 Returns controlled vocabulary options for IHO ocean regions.
@@ -17,7 +17,7 @@ Provides ocean and sea names from the International Hydrographic Organisation (I
 regions dataset, regions dataset (\url{https://www.marineregions.org/downloads.php}, World Seas IHO v3).
 }
 \examples{
-head(ocean_vocabulary(), 5)
+head(ocean_vocabulary(), 15)
 }
 \seealso{
 Other site: 

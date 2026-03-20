@@ -73,7 +73,7 @@ abbreviate_string <- function(
   return(result)
 }
 
-#' Generate a semi-unique string ID for a protocol based on its type,
+#' Generate a semi-unique string ID for a protocol (`PROTOCOL_ID`) based on its type,
 #' name, the campaign name, and a sequence number; used as a key between Methods
 #' and Measurements table.
 #'
@@ -103,7 +103,7 @@ abbreviate_string <- function(
 #'   - CampaignAbbrev: Up to 10 alphanumeric characters (optional)
 #'
 #' @details
-#' The function handles edge cases gracefully:
+#' Edge cases:
 #' - NULL or empty values result in appropriate defaults
 #' - Invalid protocol types default to "X"
 #' - Names are cleaned of special characters and spaces
@@ -207,7 +207,7 @@ generate_protocol_id <- function(
   return(protocol_id)
 }
 
-#' Generate compact reference ID (YYYYLNameFirstThreeWords) for REFERENCE_ID in References table
+#' Generate compact reference ID (YYYYLNameFirstThreeWords) for `REFERENCE_ID` in References table
 #'
 #' Creates a compact reference identifier by combining the publication year,
 #' first author's last name, and the first three words of the title in
@@ -285,7 +285,7 @@ protocol_id_regex <- function() {
 }
 
 #' Generate compact Sample ID (`SiteCode-ParamAbbrev-CompartmentAbbrev-Date-R-SubsampleAbbrev`)
-#' for SAMPLE_ID in Samples table
+#' for `SAMPLE_ID` in Samples table
 #'
 #' @description
 #' Generates a standardised sample identifier by combining the site code,

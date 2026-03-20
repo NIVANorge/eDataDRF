@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{measured_types_vocabulary}
 \alias{measured_types_vocabulary}
-\title{Controlled vocabulary for the MEASURED_TYPE column, Parameters table}
+\title{Controlled vocabulary for the \code{MEASURED_TYPE} column, Parameters table}
 \usage{
 measured_types_vocabulary()
 }
@@ -10,10 +10,10 @@ measured_types_vocabulary()
 A character vector of measured type options
 }
 \description{
-Returns controlled vocabulary options for types of measurements.
+Returns controlled vocabulary options for the metric of pollution, quality, etc. measured.
 }
 \examples{
-head(measured_types_vocabulary(), 5)
+measured_types_vocabulary()
 }
 \seealso{
 Other parameter: 

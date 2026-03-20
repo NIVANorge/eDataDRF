@@ -17,33 +17,33 @@ Biota data extends sample information with species-specific details including
 taxonomic classification, tissue type, life stage, and gender information. The
 tibble includes the following columns:
 
-SAMPLE_ID: Unique identifier linking to the samples table (mandatory, foreign key for measurements)
+\code{SAMPLE_ID}: Unique identifier linking to the samples table (mandatory, foreign key for measurements)
 
-SITE_CODE: Code identifying the sampling location (mandatory, foreign key for sites)
+\code{SITE_CODE}: Code identifying the sampling location (mandatory, foreign key for sites)
 
-PARAMETER_NAME: Name of the measured parameter or stressor (mandatory, foreign key for parameters)
+\code{PARAMETER_NAME}: Name of the measured parameter or stressor (mandatory, foreign key for parameters)
 
-ENVIRON_COMPARTMENT: Broad environmental compartment category (mandatory, inherited from samples)
+\code{ENVIRON_COMPARTMENT}: Broad environmental compartment category (mandatory, inherited from samples)
 
-ENVIRON_COMPARTMENT_SUB: Specific sub-category of the environmental compartment (mandatory, inherited from samples)
+\code{ENVIRON_COMPARTMENT_SUB}: Specific sub-category of the environmental compartment (mandatory, inherited from samples)
 
-MEASURED_CATEGORY: Category indicating measurement context (mandatory, inherited from samples)
+\code{MEASURED_CATEGORY}: Category indicating measurement context (mandatory, inherited from samples)
 
-SAMPLING_DATE: Date when the biological sample was collected (mandatory, inherited from samples)
+\code{SAMPLING_DATE}: Date when the biological sample was collected (mandatory, inherited from samples)
 
-SUBSAMPLE: Identifier for subsample or replicate (mandatory, inherited from samples)
+\code{SUBSAMPLE}: Identifier for subsample or replicate (mandatory, inherited from samples)
 
-SPECIES_GROUP: Taxonomic group classification, e.g., Fish, Molluscs, Plants (mandatory)
+\code{SPECIES_GROUP}: Taxonomic group classification, e.g., Fish, Molluscs, Plants (mandatory)
 
-SAMPLE_SPECIES: Scientific binomial name of the sampled species (mandatory)
+\code{SAMPLE_SPECIES}: Scientific binomial name of the sampled species (mandatory)
 
-SAMPLE_TISSUE: Type of biological tissue sampled (mandatory)
+\code{SAMPLE_TISSUE}: Type of biological tissue sampled (mandatory)
 
-SAMPLE_SPECIES_LIFESTAGE: Life stage of the organism at sampling (mandatory)
+\code{SAMPLE_SPECIES_LIFESTAGE}: Life stage of the organism at sampling (mandatory)
 
-SAMPLE_SPECIES_GENDER: Gender or sex of the sampled organism (mandatory)
+\code{SAMPLE_SPECIES_GENDER}: Gender or sex of the sampled organism (mandatory)
 
-BIOTA_COMMENT: Additional notes or comments about the biological sample (optional)
+\code{BIOTA_COMMENT}: Additional notes or comments about the biological sample (optional)
 
 See \code{vignette("biota_data")} for more information.
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{measured_flag_vocabulary}
 \alias{measured_flag_vocabulary}
-\title{Controlled vocabulary for MEASURED_FLAG, Measurements table}
+\title{Controlled vocabulary for \code{MEASURED_FLAG}, Measurements table}
 \usage{
 measured_flag_vocabulary()
 }
@@ -16,11 +16,11 @@ Returns controlled vocabulary options for measurement quality flags.
 Provides standardised flags for indicating measurements below detection or quantification
 limits. Options include:
 
-"" (empty string for measurements above limits)
+\code{""} (empty string for measurements above limits)
 
-< LOQ (below limit of quantification)
+\verb{< LOQ} (below limit of quantification)
 
-< LOD (below limit of detection)
+\verb{< LOD} (below limit of detection)
 }
 \examples{
 measured_flag_vocabulary()

@@ -1,7 +1,3 @@
-# -----------------------
-# ---- TABLE FORMATS ----
-# -----------------------
-
 #' Initialise an 8x0 tibble for storing organisational and date metadata
 #'
 #' Creates an empty tibble with the standardised column structure for campaign data.
@@ -11,21 +7,21 @@
 #' organisation, data quality evaluation, and confidentiality. The tibble includes
 #' the following columns:
 #'
-#' CAMPAIGN_NAME_SHORT: Short identifier for the campaign (mandatory)
+#' `CAMPAIGN_NAME_SHORT`: Short identifier for the campaign (mandatory)
 #'
-#' CAMPAIGN_NAME: Full descriptive name of the campaign (mandatory)
+#' `CAMPAIGN_NAME`: Full descriptive name of the campaign (mandatory)
 #'
-#' CAMPAIGN_START_DATE: Date when campaign sampling began (mandatory)
+#' `CAMPAIGN_START_DATE`: Date when campaign sampling began (mandatory)
 #'
-#' CAMPAIGN_END_DATE: Date when campaign sampling ended (optional)
+#' `CAMPAIGN_END_DATE`: Date when campaign sampling ended (optional)
 #'
-#' ORGANISATION: Organisation responsible for the campaign (mandatory)
+#' `ORGANISATION`: Organisation responsible for the campaign (mandatory)
 #'
-#' ENTERED_BY: Person or entity who entered the data (mandatory)
+#' `ENTERED_BY`: Person or entity who entered the data (mandatory)
 #'
-#' ENTERED_DATE: Date when the data was entered into the system (mandatory)
+#' `ENTERED_DATE`: Date when the data was entered into the system (mandatory)
 #'
-#' CAMPAIGN_COMMENT: Additional notes or comments about the campaign (optional)
+#' `CAMPAIGN_COMMENT`: Additional notes or comments about the campaign (optional)
 #'
 #' See `vignette("campaign_data")` for more information.
 #'
@@ -56,33 +52,33 @@ initialise_campaign_tibble <- function() {
 #' taxonomic classification, tissue type, life stage, and gender information. The
 #' tibble includes the following columns:
 #'
-#' SAMPLE_ID: Unique identifier linking to the samples table (mandatory, foreign key for measurements)
+#' `SAMPLE_ID`: Unique identifier linking to the samples table (mandatory, foreign key for measurements)
 #'
-#' SITE_CODE: Code identifying the sampling location (mandatory, foreign key for sites)
+#' `SITE_CODE`: Code identifying the sampling location (mandatory, foreign key for sites)
 #'
-#' PARAMETER_NAME: Name of the measured parameter or stressor (mandatory, foreign key for parameters)
+#' `PARAMETER_NAME`: Name of the measured parameter or stressor (mandatory, foreign key for parameters)
 #'
-#' ENVIRON_COMPARTMENT: Broad environmental compartment category (mandatory, inherited from samples)
+#' `ENVIRON_COMPARTMENT`: Broad environmental compartment category (mandatory, inherited from samples)
 #'
-#' ENVIRON_COMPARTMENT_SUB: Specific sub-category of the environmental compartment (mandatory, inherited from samples)
+#' `ENVIRON_COMPARTMENT_SUB`: Specific sub-category of the environmental compartment (mandatory, inherited from samples)
 #'
-#' MEASURED_CATEGORY: Category indicating measurement context (mandatory, inherited from samples)
+#' `MEASURED_CATEGORY`: Category indicating measurement context (mandatory, inherited from samples)
 #'
-#' SAMPLING_DATE: Date when the biological sample was collected (mandatory, inherited from samples)
+#' `SAMPLING_DATE`: Date when the biological sample was collected (mandatory, inherited from samples)
 #'
-#' SUBSAMPLE: Identifier for subsample or replicate (mandatory, inherited from samples)
+#' `SUBSAMPLE`: Identifier for subsample or replicate (mandatory, inherited from samples)
 #'
-#' SPECIES_GROUP: Taxonomic group classification, e.g., Fish, Molluscs, Plants (mandatory)
+#' `SPECIES_GROUP`: Taxonomic group classification, e.g., Fish, Molluscs, Plants (mandatory)
 #'
-#' SAMPLE_SPECIES: Scientific binomial name of the sampled species (mandatory)
+#' `SAMPLE_SPECIES`: Scientific binomial name of the sampled species (mandatory)
 #'
-#' SAMPLE_TISSUE: Type of biological tissue sampled (mandatory)
+#' `SAMPLE_TISSUE`: Type of biological tissue sampled (mandatory)
 #'
-#' SAMPLE_SPECIES_LIFESTAGE: Life stage of the organism at sampling (mandatory)
+#' `SAMPLE_SPECIES_LIFESTAGE`: Life stage of the organism at sampling (mandatory)
 #'
-#' SAMPLE_SPECIES_GENDER: Gender or sex of the sampled organism (mandatory)
+#' `SAMPLE_SPECIES_GENDER`: Gender or sex of the sampled organism (mandatory)
 #'
-#' BIOTA_COMMENT: Additional notes or comments about the biological sample (optional)
+#' `BIOTA_COMMENT`: Additional notes or comments about the biological sample (optional)
 #'
 #' See `vignette("biota_data")` for more information.
 #'
@@ -154,15 +150,15 @@ initialise_compartments_tibble <- function() {
 #' Methods describe the protocols used for sampling, extraction, fractionation, and
 #' analysis procedures. The tibble includes the following columns:
 #'
-#' PROTOCOL_ID: Unique identifier for the protocol (Primary Key)
+#' `PROTOCOL_ID`: Unique identifier for the protocol (Primary Key)
 #'
-#' CAMPAIGN_NAME: Name of the campaign this protocol was used in
+#' `CAMPAIGN_NAME`: Name of the campaign this protocol was used in
 #'
-#' PROTOCOL_CATEGORY: Type of protocol (Sampling, Extraction, Fractionation, Analytical)
+#' `PROTOCOL_CATEGORY`: Type of protocol (Sampling, Extraction, Fractionation, Analytical)
 #'
-#' PROTOCOL_NAME: Standardised name of the protocol
+#' `PROTOCOL_NAME`: Standardised name of the protocol
 #'
-#' PROTOCOL_COMMENT: Additional notes or details about the protocol
+#' `PROTOCOL_COMMENT`: Additional notes or details about the protocol
 #'
 #' See `vignette("methods_data")` for more information.
 #'
@@ -192,25 +188,25 @@ initialise_methods_tibble <- function() {
 #' being measured, including classification and chemical identifiers. The tibble
 #' includes the following columns:
 #'
-#' PARAMETER_TYPE: Broad classification (Stressor, Quality parameter, Normalisation, etc.)
+#' `PARAMETER_TYPE`: Broad classification (Stressor, Quality parameter, Normalisation, etc.)
 #'
-#' PARAMETER_TYPE_SUB: Sub-classification providing more specific categorisation
+#' `PARAMETER_TYPE_SUB`: Sub-classification providing more specific categorisation
 #'
-#' MEASURED_TYPE: Type of measurement (Concentration, Dose, Physical parameter, etc.)
+#' `MEASURED_TYPE`: Type of measurement (Concentration, Dose, Physical parameter, etc.)
 #'
-#' PARAMETER_NAME: Standardised name of the parameter (Primary Key)
+#' `PARAMETER_NAME`: Standardised name of the parameter (Primary Key)
 #'
-#' PARAMETER_NAME_SUB: Additional specification or variant of the parameter name
+#' `PARAMETER_NAME_SUB`: Additional specification or variant of the parameter name
 #'
-#' INCHIKEY_SD: InChIKey identifier for chemical substances
+#' `INCHIKEY_SD`: InChIKey identifier for chemical substances
 #'
-#' PUBCHEM_CID: PubChem Compound Identifier
+#' `PUBCHEM_CID`: PubChem Compound Identifier
 #'
-#' CAS_RN: Chemical Abstracts Service Registry Number
+#' `CAS_RN`: Chemical Abstracts Service Registry Number
 #'
-#' ENTERED_BY: Person or entity who entered the parameter
+#' `ENTERED_BY`: Person or entity who entered the parameter
 #'
-#' PARAMETER_COMMENT: Additional notes about the parameter
+#' `PARAMETER_COMMENT`: Additional notes about the parameter
 #'
 #' See `vignette("parameters_data")` for more information.
 #'
@@ -245,41 +241,41 @@ initialise_parameters_tibble <- function() {
 #' reports, datasets, and other published materials. The tibble includes the following
 #' columns:
 #'
-#' REFERENCE_ID: Unique identifier for the reference (Primary Key)
+#' `REFERENCE_ID`: Unique identifier for the reference (Primary Key)
 #'
-#' REFERENCE_TYPE: Type of publication (Journal Article, Report, Dataset, etc.)
+#' `REFERENCE_TYPE`: Type of publication (Journal Article, Report, Dataset, etc.)
 #'
-#' DATA_SOURCE: Whether reference is source of data (Primary, Secondary/Review, Other)
+#' `DATA_SOURCE`: Whether reference is source of data (Primary, Secondary/Review, Other)
 #'
-#' AUTHOR: Author(s) of the reference
+#' `AUTHOR`: Author(s) of the reference
 #'
-#' TITLE: Title of the publication or document
+#' `TITLE`: Title of the publication or document
 #'
-#' YEAR: Publication year
+#' `YEAR`: Publication year
 #'
-#' ACCESS_DATE: Date when the reference was accessed or retrieved
+#' `ACCESS_DATE`: Date when the reference was accessed or retrieved
 #'
-#' PERIODICAL_JOURNAL: Name of the journal or periodical
+#' `PERIODICAL_JOURNAL`: Name of the journal or periodical
 #'
-#' VOLUME: Volume number of the journal
+#' `VOLUME`: Volume number of the journal
 #'
-#' ISSUE: Issue number of the journal
+#' `ISSUE`: Issue number of the journal
 #'
-#' PUBLISHER: Publisher of the document
+#' `PUBLISHER`: Publisher of the document
 #'
-#' INSTITUTION: Institution associated with the publication
+#' `INSTITUTION`: Institution associated with the publication
 #'
-#' DOI: Digital Object Identifier
+#' `DOI`: Digital Object Identifier
 #'
-#' URL: Web address for online access
+#' `URL`: Web address for online access
 #'
-#' ISBN_ISSN: ISBN or ISSN identifier
+#' `ISBN_ISSN`: ISBN or ISSN identifier
 #'
-#' EDITION: Edition of the publication
+#' `EDITION`: Edition of the publication
 #'
-#' DOCUMENT_NUMBER: Document or report number
+#' `DOCUMENT_NUMBER`: Document or report number
 #'
-#' REF_COMMENT: Additional notes about the reference
+#' `REF_COMMENT`: Additional notes about the reference
 #'
 #' See `vignette("references_data")` for more information.
 #'
@@ -322,27 +318,27 @@ initialise_references_tibble <- function() {
 #' methodological information linking sites, parameters, and compartments. The tibble
 #' includes the following columns:
 #'
-#' SITE_CODE: Code identifying the sampling location
+#' `SITE_CODE`: Code identifying the sampling location
 #'
-#' SITE_NAME: Descriptive name of the sampling site
+#' `SITE_NAME`: Descriptive name of the sampling site
 #'
-#' PARAMETER_NAME: Name of the measured parameter
+#' `PARAMETER_NAME`: Name of the measured parameter
 #'
-#' PARAMETER_TYPE: Classification of the parameter
+#' `PARAMETER_TYPE`: Classification of the parameter
 #'
-#' ENVIRON_COMPARTMENT: Environmental compartment defined as one of the earth's spheres (aquatic, atmospheric, etc.)
+#' `ENVIRON_COMPARTMENT`: Environmental compartment defined as one of the earth's spheres (aquatic, atmospheric, etc.)
 #'
-#' ENVIRON_COMPARTMENT_SUB: Sub-divisions of environmental compartments into water body types, soil profile, etc.
+#' `ENVIRON_COMPARTMENT_SUB`: Sub-divisions of environmental compartments into water body types, soil profile, etc.
 #'
-#' MEASURED_CATEGORY: Measurement context category
+#' `MEASURED_CATEGORY`: Measurement context category
 #'
-#' SAMPLING_DATE: Date of sample collection
+#' `SAMPLING_DATE`: Date of sample collection
 #'
-#' SUBSAMPLE: Subsample or replicate identifier
+#' `SUBSAMPLE`: Subsample or replicate identifier
 #'
-#' SUBSAMPLE_ID: Unique identifier for the subsample
+#' `SUBSAMPLE_ID`: Unique identifier for the subsample
 #'
-#' SAMPLE_ID: Unique identifier for the sample (Key)
+#' `SAMPLE_ID`: Unique identifier for the sample (Key)
 #'
 #' See `vignette("samples_data")` for more information.
 #'
@@ -378,33 +374,33 @@ initialise_samples_tibble <- function() {
 #' boundaries, and descriptive metadata about the sampling location. The tibble
 #' includes the following columns:
 #'
-#' SITE_CODE: Unique code identifying the site (Primary Key)
+#' `SITE_CODE`: Unique code identifying the site (Primary Key)
 #'
-#' SITE_NAME: Descriptive name of the sampling site
+#' `SITE_NAME`: Descriptive name of the sampling site
 #'
-#' SITE_GEOGRAPHIC_FEATURE: Broad geographic feature type
+#' `SITE_GEOGRAPHIC_FEATURE`: Broad geographic feature type
 #'
-#' SITE_GEOGRAPHIC_FEATURE_SUB: Specific sub-category of the geographic feature
+#' `SITE_GEOGRAPHIC_FEATURE_SUB`: Specific sub-category of the geographic feature
 #'
-#' COUNTRY_ISO: ISO country code where the site is located
+#' `COUNTRY_ISO`: ISO country code where the site is located
 #'
-#' OCEAN_IHO: International Hydrographic Organisation ocean region
+#' `OCEAN_IHO`: International Hydrographic Organisation ocean region
 #'
-#' LATITUDE: Latitude coordinate in decimal degrees
+#' `LATITUDE`: Latitude coordinate in decimal degrees
 #'
-#' LONGITUDE: Longitude coordinate in decimal degrees
+#' `LONGITUDE`: Longitude coordinate in decimal degrees
 #'
-#' SITE_COORDINATE_SYSTEM: Coordinate reference system used
+#' `SITE_COORDINATE_SYSTEM`: Coordinate reference system used
 #'
-#' ALTITUDE_VALUE: Elevation or depth value
+#' `ALTITUDE_VALUE`: Elevation or depth value
 #'
-#' ALTITUDE_UNIT: Unit of measurement for altitude
+#' `ALTITUDE_UNIT`: Unit of measurement for altitude
 #'
-#' ENTERED_BY: Person or entity who entered the site data
+#' `ENTERED_BY`: Person or entity who entered the site data
 #'
-#' ENTERED_DATE: Date when the site data was entered
+#' `ENTERED_DATE`: Date when the site data was entered
 #'
-#' SITE_COMMENT: Additional notes about the site
+#' `SITE_COMMENT`: Additional notes about the site
 #'
 #' See `vignette("sites_data")` for more information.
 #'
@@ -444,59 +440,59 @@ initialise_sites_tibble <- function() {
 #' biota information with analytical results and quality metrics. The tibble includes
 #' the following columns:
 #'
-#' SITE_CODE: Code identifying the sampling location
+#' `SITE_CODE`: Code identifying the sampling location
 #'
-#' PARAMETER_NAME: Name of the measured parameter (Foreign key)
+#' `PARAMETER_NAME`: Name of the measured parameter (Foreign key)
 #'
-#' SAMPLING_DATE: Date of sample collection
+#' `SAMPLING_DATE`: Date of sample collection
 #'
-#' ENVIRON_COMPARTMENT_SUB: Specific environmental sub-compartment
+#' `ENVIRON_COMPARTMENT_SUB`: Specific environmental sub-compartment
 #'
-#' SUBSAMPLE: Subsample identifier
+#' `SUBSAMPLE`: Subsample identifier
 #'
-#' MEASURED_FLAG: Quality flag for the measurement (e.g., < LOQ, < LOD)
+#' `MEASURED_FLAG`: Quality flag for the measurement (e.g., `< LOQ`, `< LOD`)
 #'
-#' MEASURED_VALUE: Numeric value of the measurement
+#' `MEASURED_VALUE`: Numeric value of the measurement
 #'
-#' UNCERTAINTY_TYPE: Type of uncertainty or variability metric
+#' `UNCERTAINTY_TYPE`: Type of uncertainty or variability metric
 #'
-#' UNCERTAINTY_UPPER: Upper bound of uncertainty
+#' `UNCERTAINTY_UPPER`: Upper bound of uncertainty
 #'
-#' UNCERTAINTY_LOWER: Lower bound of uncertainty
+#' `UNCERTAINTY_LOWER`: Lower bound of uncertainty
 #'
-#' MEASURED_UNIT: Unit of measurement
+#' `MEASURED_UNIT`: Unit of measurement
 #'
-#' MEASURED_N: Number of replicates or observations
+#' `MEASURED_N`: Number of replicates or observations
 #'
-#' LOQ_VALUE: Limit of quantification value
+#' `LOQ_VALUE`: Limit of quantification value
 #'
-#' LOQ_UNIT: Unit for limit of quantification
+#' `LOQ_UNIT`: Unit for limit of quantification
 #'
-#' LOD_VALUE: Limit of detection value
+#' `LOD_VALUE`: Limit of detection value
 #'
-#' LOD_UNIT: Unit for limit of detection
+#' `LOD_UNIT`: Unit for limit of detection
 #'
-#' SAMPLING_PROTOCOL: Protocol used for sample collection (Foreign key)
+#' `SAMPLING_PROTOCOL`: Protocol used for sample collection (Foreign key)
 #'
-#' EXTRACTION_PROTOCOL: Protocol used for sample extraction (Foreign key)
+#' `EXTRACTION_PROTOCOL`: Protocol used for sample extraction (Foreign key)
 #'
-#' FRACTIONATION_PROTOCOL: Protocol used for sample fractionation (Foreign key)
+#' `FRACTIONATION_PROTOCOL`: Protocol used for sample fractionation (Foreign key)
 #'
-#' ANALYTICAL_PROTOCOL: Protocol used for analysis (Foreign key)
+#' `ANALYTICAL_PROTOCOL`: Protocol used for analysis (Foreign key)
 #'
-#' REFERENCE_ID: Reference identifier for data source (Foreign key)
+#' `REFERENCE_ID`: Reference identifier for data source (Foreign key)
 #'
-#' SAMPLE_ID: Unique sample identifier
+#' `SAMPLE_ID`: Unique sample identifier
 #'
-#' CAMPAIGN_NAME_SHORT: Short name of the associated campaign
+#' `CAMPAIGN_NAME_SHORT`: Short name of the associated campaign
 #'
-#' ENVIRON_COMPARTMENT: Broad environmental compartment
+#' `ENVIRON_COMPARTMENT`: Broad environmental compartment
 #'
-#' PARAMETER_TYPE: Classification of the parameter
+#' `PARAMETER_TYPE`: Classification of the parameter
 #'
-#' MEASURED_TYPE: Type of measurement
+#' `MEASURED_TYPE`: Type of measurement
 #'
-#' MEASUREMENT_COMMENT: Additional notes about the measurement
+#' `MEASUREMENT_COMMENT`: Additional notes about the measurement
 #'
 #' See `vignette("measurements_data")` for more information.
 #'
@@ -509,8 +505,8 @@ initialise_sites_tibble <- function() {
 #' @export
 ## Initialise measurement combinations data frame ----
 initialise_measurements_tibble <- function() {
-  # Used to construct MEASUREMENTS table
-  # Merges SAMPLES, COMPARTMENTS, BIOTA
+  # Used to construct Measurements table
+  # Merges Samples, Compartments, Biota
   tibble(
     SITE_CODE = character(),
     PARAMETER_NAME = character(), # Foreign key
@@ -552,15 +548,15 @@ initialise_measurements_tibble <- function() {
 #' reliability and relevance at silver and gold standard levels. The tibble includes
 #' the following columns:
 #'
-#' REFERENCE_ID: Unique identifier linking to the references table
+#' `REFERENCE_ID`: Unique identifier linking to the references table
 #'
-#' SILVER_RELIABILITY: Reliability score at silver standard level
+#' `SILVER_RELIABILITY`: Reliability score at silver standard level
 #'
-#' SILVER_RELEVANCE: Relevance score at silver standard level
+#' `SILVER_RELEVANCE`: Relevance score at silver standard level
 #'
-#' GOLD_RELIABILITY: Reliability score at gold standard level
+#' `GOLD_RELIABILITY`: Reliability score at gold standard level
 #'
-#' GOLD_RELEVANCE: Relevance score at gold standard level
+#' `GOLD_RELEVANCE`: Relevance score at gold standard level
 #'
 #' See `vignette("CREED_scores_data")` for more information.
 #'
@@ -593,17 +589,17 @@ initialise_CREED_scores_tibble <- function() {
 #' by assessment modules and is not part of the externally-available table structure.
 #' The tibble includes the following columns:
 #'
-#' criterion_id: Unique identifier for the CREED criterion
+#' `criterion_id`: Unique identifier for the CREED criterion
 #'
-#' criterion_title: Descriptive title of the criterion
+#' `criterion_title`: Descriptive title of the criterion
 #'
-#' required_recommended: Whether the criterion is required or recommended
+#' `required_recommended`: Whether the criterion is required or recommended
 #'
-#' relevant_data: Data or information relevant to assessing the criterion
+#' `relevant_data`: Data or information relevant to assessing the criterion
 #'
-#' score: Assessment score for the criterion
+#' `score`: Assessment score for the criterion
 #'
-#' limitations: Identified limitations or concerns for the criterion
+#' `limitations`: Identified limitations or concerns for the criterion
 #'
 #' See `vignette("CREED_data")` for more information.
 #'

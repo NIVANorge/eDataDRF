@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{parameters_vocabulary}
 \alias{parameters_vocabulary}
-\title{Data for PARAMETER_NAME, PARAMETER_TYPE, etc. in the Parameters table}
+\title{Data for \code{PARAMETER_NAME}, \code{PARAMETER_TYPE}, etc. in the Parameters table}
 \usage{
 parameters_vocabulary()
 }
@@ -14,8 +14,8 @@ Returns comprehensive parameter data combining quality and chemical parameters.
 }
 \details{
 Combines quality parameters with chemical parameters from the
-\href{http://classyfire.wishartlab.com}{ClassyFire} chemical taxonomy
-(Djoumbou Feunang et al. 2016, \doi{10.1186/s13321-016-0174-y}, reused non-commercially).
+\href{http://classyfire.wishartlab.com}{ChemOnt} chemical taxonomy
+(Djoumbou Feunang et al. 2016, \doi{10.1186/s13321-016-0174-y}).
 Quality parameters are read from quality_parameters.parquet and chemical
 parameters from ClassyFire_Taxonomy_2025_02.parquet. The resulting dataset includes
 columns for parameter classification, chemical identifiers (InChIKey, PubChem CID,
@@ -31,7 +31,7 @@ extdata/quality_parameters.parquet
 extdata/ClassyFire_Taxonomy_2025_02.parquet
 }
 \examples{
-head(parameters_vocabulary(), 5)
+head(parameters_vocabulary(), 10)
 }
 \seealso{
 Other parameter: 

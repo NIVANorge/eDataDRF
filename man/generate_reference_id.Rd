@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_generate_IDs.R
 \name{generate_reference_id}
 \alias{generate_reference_id}
-\title{Generate compact reference ID (YYYYLNameFirstThreeWords) for REFERENCE_ID in References table}
+\title{Generate compact reference ID (YYYYLNameFirstThreeWords) for \code{REFERENCE_ID} in References table}
 \usage{
 generate_reference_id(date, author, title)
 }

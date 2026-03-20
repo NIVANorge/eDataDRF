@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{lifestage_vocabulary}
 \alias{lifestage_vocabulary}
-\title{Controlled vocabulary for the SAMPLE_SPECIES_LIFESTAGE column, Biota table}
+\title{Controlled vocabulary for the \code{SAMPLE_SPECIES_LIFESTAGE} column, Biota table}
 \usage{
 lifestage_vocabulary()
 }
@@ -13,7 +13,7 @@ A character vector of life stage options
 Returns controlled vocabulary options for organism life stages.
 }
 \examples{
-head(lifestage_vocabulary(), 5)
+lifestage_vocabulary()
 }
 \seealso{
 Other biota: 

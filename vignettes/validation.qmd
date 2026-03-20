@@ -14,6 +14,8 @@ format:
   html:
     page-layout: full
     lightbox: true
+    grid:
+      body-width: 1000px
 ---
 
 ```{r setup}
@@ -23,7 +25,7 @@ library(gt)
 
 ```
 
-The `{pointblank}` package for R provides robust, efficient validation features for data, allowing us to quickly check that our data conforms to the expected format. Although used of controlled vocabulary and the eData app allow us to constrain user-entered data, it is more practical to add an additional level of validation. This programmatic validation layer can be re-used wherever needed; this is particularly valuable when data may need to be transformed as part of the analysis pathway. For a thorough overview of pointblank functionality, please consult the package itself.
+The `{pointblank}` package for R provides robust, efficient validation features for data, allowing us to quickly check that our data conforms to the expected format. Although used of controlled vocabulary and the eData app allow us to constrain user-entered data, it is more practical to add an additional level of validation. This programmatic validation layer can be re-used wherever needed; this is particularly valuable when data may need to be transformed as part of the analysis pathway. For a thorough overview of pointblank functionality, please consult the package's documentation.
 
 # Campaign data validation
 

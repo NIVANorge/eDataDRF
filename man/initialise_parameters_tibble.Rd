@@ -17,25 +17,25 @@ Parameters define chemical substances, physical properties, or biological marker
 being measured, including classification and chemical identifiers. The tibble
 includes the following columns:
 
-PARAMETER_TYPE: Broad classification (Stressor, Quality parameter, Normalisation, etc.)
+\code{PARAMETER_TYPE}: Broad classification (Stressor, Quality parameter, Normalisation, etc.)
 
-PARAMETER_TYPE_SUB: Sub-classification providing more specific categorisation
+\code{PARAMETER_TYPE_SUB}: Sub-classification providing more specific categorisation
 
-MEASURED_TYPE: Type of measurement (Concentration, Dose, Physical parameter, etc.)
+\code{MEASURED_TYPE}: Type of measurement (Concentration, Dose, Physical parameter, etc.)
 
-PARAMETER_NAME: Standardised name of the parameter (Primary Key)
+\code{PARAMETER_NAME}: Standardised name of the parameter (Primary Key)
 
-PARAMETER_NAME_SUB: Additional specification or variant of the parameter name
+\code{PARAMETER_NAME_SUB}: Additional specification or variant of the parameter name
 
-INCHIKEY_SD: InChIKey identifier for chemical substances
+\code{INCHIKEY_SD}: InChIKey identifier for chemical substances
 
-PUBCHEM_CID: PubChem Compound Identifier
+\code{PUBCHEM_CID}: PubChem Compound Identifier
 
-CAS_RN: Chemical Abstracts Service Registry Number
+\code{CAS_RN}: Chemical Abstracts Service Registry Number
 
-ENTERED_BY: Person or entity who entered the parameter
+\code{ENTERED_BY}: Person or entity who entered the parameter
 
-PARAMETER_COMMENT: Additional notes about the parameter
+\code{PARAMETER_COMMENT}: Additional notes about the parameter
 
 See \code{vignette("parameters_data")} for more information.
 }

@@ -2,12 +2,12 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{extraction_protocols_vocabulary}
 \alias{extraction_protocols_vocabulary}
-\title{Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (extraction), Methods table}
+\title{Controlled vocabulary for \code{PROTOCOL_TYPE} and \code{PROTOCOL_NAME} columns (extraction), Methods table}
 \usage{
 extraction_protocols_vocabulary()
 }
 \value{
-A tibble with Protocol_Type, Short_Name, and Long_Name columns
+A tibble with \code{Protocol_Type}, \code{Short_Name}, and \code{Long_Name} columns
 }
 \description{
 Returns extraction protocol options with short and long names.
@@ -15,11 +15,11 @@ Returns extraction protocol options with short and long names.
 \details{
 Provides standardised extraction method classifications as a tibble with three columns:
 
-Protocol_Type: Always "Extraction Protocol"
+\code{Protocol_Type}: Always "Extraction Protocol"
 
-Short_Name: Abbreviated protocol name (e.g., "Methanol", "SPE Isolute Env+", "QuEChERS")
+\code{Short_Name}: Abbreviated protocol name (e.g., "Methanol", "SPE Isolute Env+", "QuEChERS")
 
-Long_Name: Full descriptive name (e.g., "Methanol extraction", "Solid phase extraction with Isolute Env+ cartridge", "Quick easy cheap effective rugged safe extraction")
+\code{Long_Name}: Full descriptive name (e.g., "Methanol extraction", "Solid phase extraction with Isolute Env+ cartridge", "Quick easy cheap effective rugged safe extraction")
 
 Available protocols include: Not relevant, Not reported, None, Methanol, Dichloromethane, SPE Isolute Env+, Membrane filtration 0.45um, Membrane filtration 0.2um, Membrane filtration, Filtration, Microwave-assisted acid digestion, Acid digestion, Pressurised liquid, Ultrasonic, Soxhlet, QuEChERS, Accelerated solvent, Sequential extraction, Other
 }

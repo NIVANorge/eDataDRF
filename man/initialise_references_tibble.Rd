@@ -17,41 +17,41 @@ References provide bibliographic information for data sources including journals
 reports, datasets, and other published materials. The tibble includes the following
 columns:
 
-REFERENCE_ID: Unique identifier for the reference (Primary Key)
+\code{REFERENCE_ID}: Unique identifier for the reference (Primary Key)
 
-REFERENCE_TYPE: Type of publication (Journal Article, Report, Dataset, etc.)
+\code{REFERENCE_TYPE}: Type of publication (Journal Article, Report, Dataset, etc.)
 
-DATA_SOURCE: Whether reference is source of data (Primary, Secondary/Review, Other)
+\code{DATA_SOURCE}: Whether reference is source of data (Primary, Secondary/Review, Other)
 
-AUTHOR: Author(s) of the reference
+\code{AUTHOR}: Author(s) of the reference
 
-TITLE: Title of the publication or document
+\code{TITLE}: Title of the publication or document
 
-YEAR: Publication year
+\code{YEAR}: Publication year
 
-ACCESS_DATE: Date when the reference was accessed or retrieved
+\code{ACCESS_DATE}: Date when the reference was accessed or retrieved
 
-PERIODICAL_JOURNAL: Name of the journal or periodical
+\code{PERIODICAL_JOURNAL}: Name of the journal or periodical
 
-VOLUME: Volume number of the journal
+\code{VOLUME}: Volume number of the journal
 
-ISSUE: Issue number of the journal
+\code{ISSUE}: Issue number of the journal
 
-PUBLISHER: Publisher of the document
+\code{PUBLISHER}: Publisher of the document
 
-INSTITUTION: Institution associated with the publication
+\code{INSTITUTION}: Institution associated with the publication
 
-DOI: Digital Object Identifier
+\code{DOI}: Digital Object Identifier
 
-URL: Web address for online access
+\code{URL}: Web address for online access
 
-ISBN_ISSN: ISBN or ISSN identifier
+\code{ISBN_ISSN}: ISBN or ISSN identifier
 
-EDITION: Edition of the publication
+\code{EDITION}: Edition of the publication
 
-DOCUMENT_NUMBER: Document or report number
+\code{DOCUMENT_NUMBER}: Document or report number
 
-REF_COMMENT: Additional notes about the reference
+\code{REF_COMMENT}: Additional notes about the reference
 
 See \code{vignette("references_data")} for more information.
 }

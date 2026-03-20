@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{parameter_unit_vocabulary}
 \alias{parameter_unit_vocabulary}
-\title{Controlled vocabulary for MEASURED_UNIT, LOQ_UNIT, and LOD_UNIT, with conversion factors and base units}
+\title{Controlled vocabulary for \code{MEASURED_UNIT}, \code{LOQ_UNIT}, and \code{LOD_UNIT}, with conversion factors and base units}
 \usage{
 parameter_unit_vocabulary(select_column = NULL)
 }
@@ -20,15 +20,15 @@ Reads unit conversion data from unit_conversion_factors.csv containing standardi
 units for ecotoxicological and environmental measurements. The complete dataset includes
 columns:
 
-MEASURED_UNIT: Unit as recorded in measurements
+\code{MEASURED_UNIT}: Unit as recorded in measurements
 
-BASE_SI_UNIT: Corresponding SI base unit
+\code{BASE_SI_UNIT}: Corresponding SI base unit
 
-CONVERSION_FACTOR: Numeric factor to convert to SI units
+\code{CONVERSION_FACTOR}: Numeric factor to convert to SI units
 
-UNIT_COMMENTS: Additional notes about unit usage or conversion
+\code{UNIT_COMMENTS}: Additional notes about unit usage or conversion
 
-Data source: extdata/unit_conversion_factors.csv
+Data source: \code{extdata/unit_conversion_factors.csv}
 }
 \examples{
 head(parameter_unit_vocabulary(), 5)

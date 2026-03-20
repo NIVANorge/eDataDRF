@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{gender_vocabulary}
 \alias{gender_vocabulary}
-\title{Controlled vocabulary for the SAMPLE_SPECIES_GENDER column, Biota table}
+\title{Controlled vocabulary for the \code{SAMPLE_SPECIES_GENDER} column, Biota table}
 \usage{
 gender_vocabulary()
 }

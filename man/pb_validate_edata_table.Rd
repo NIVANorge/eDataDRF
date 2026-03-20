@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_validate_pointblank.R
 \name{pb_validate_edata_table}
 \alias{pb_validate_edata_table}
-\title{Run pointblank validation on an eData table}
+\title{Generic pointblank validation helper for eData tables}
 \usage{
 pb_validate_edata_table(
   data,
@@ -21,28 +21,27 @@ pb_validate_edata_table(
 it with validation steps added. Should be a function like:
 \verb{function(x) \{ x |> col_vals_not_null(...) |> ... \}}}
 
-\item{agent}{Logical. If TRUE (default), returns a pointblank agent object.
-If FALSE, returns the validated data with validation failures removed.}
+\item{agent}{Logical. If \code{TRUE} (default), returns a pointblank agent object.
+If \code{FALSE}, returns the validated data with validation failures removed.}
 
-\item{actions}{Action levels for pointblank agent (only used when agent = TRUE)}
+\item{actions}{Action levels for pointblank agent (only used when \code{agent = TRUE})}
 }
 \value{
-If agent = TRUE, a pointblank agent object containing validation results.
-If agent = FALSE, the input data with validation failures removed.
+If \code{agent = TRUE}, a pointblank agent object containing validation results.
+If \code{agent = FALSE}, the input data with validation failures removed.
 }
 \description{
 Applies pointblank validation rules to check data quality and schema
 compliance for eData format tables. Can operate in two modes:
 \itemize{
-\item Agent mode (agent = TRUE): Creates an agent for reporting and interrogation
-\item Pipeline mode (agent = FALSE): Returns validated data directly for use in pipelines
+\item Agent mode (\code{agent = TRUE}): Creates an agent for reporting and interrogation
+\item Pipeline mode (\code{agent = FALSE}): Returns validated data directly for use in pipelines
 }
 }
 \details{
 Uses \code{\link[pointblank:create_agent]{pointblank::create_agent()}} to build a validation agent in agent mode,
 or applies steps directly to the data in pipeline mode.
-See also \code{vignette("validation", package = "pointblank")} for an overview of
-the pointblank validation workflow.
+Called by \verb{pb_validate_*()} functions to apply specific table validation steps
 
 In agent mode, the agent object can be used to:
 \itemize{

@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{parameter_types_sub_vocabulary}
 \alias{parameter_types_sub_vocabulary}
-\title{Controlled vocabulary for the PARAMETER_TYPES_SUB column, Parameters table}
+\title{Controlled vocabulary for the \code{PARAMETER_TYPES_SUB} column, Parameters table}
 \usage{
 parameter_types_sub_vocabulary()
 }
@@ -13,12 +13,13 @@ A character vector of parameter type subcategory options
 Returns controlled vocabulary options for parameter type subcategories.
 }
 \details{
-Dynamically generated from unique PARAMETER_TYPE_SUB values in
+Dynamically built from unique \code{PARAMETER_TYPE_SUB} values in
 \code{parameters_vocabulary()}, with "Mixture" appended and standard data quality
-flags prepended.
+flags prepended. Chemical subtypes are taken from the
+\href{http://classyfire.wishartlab.com}{ChemOnt} chemical taxonomy
 }
 \examples{
-head(parameter_types_sub_vocabulary(), 5)
+head(parameter_types_sub_vocabulary(), 15)
 }
 \seealso{
 Other parameter: 

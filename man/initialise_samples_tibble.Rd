@@ -17,27 +17,27 @@ Samples represent individual collections from sites with temporal, spatial, and
 methodological information linking sites, parameters, and compartments. The tibble
 includes the following columns:
 
-SITE_CODE: Code identifying the sampling location
+\code{SITE_CODE}: Code identifying the sampling location
 
-SITE_NAME: Descriptive name of the sampling site
+\code{SITE_NAME}: Descriptive name of the sampling site
 
-PARAMETER_NAME: Name of the measured parameter
+\code{PARAMETER_NAME}: Name of the measured parameter
 
-PARAMETER_TYPE: Classification of the parameter
+\code{PARAMETER_TYPE}: Classification of the parameter
 
-ENVIRON_COMPARTMENT: Environmental compartment defined as one of the earth's spheres (aquatic, atmospheric, etc.)
+\code{ENVIRON_COMPARTMENT}: Environmental compartment defined as one of the earth's spheres (aquatic, atmospheric, etc.)
 
-ENVIRON_COMPARTMENT_SUB: Sub-divisions of environmental compartments into water body types, soil profile, etc.
+\code{ENVIRON_COMPARTMENT_SUB}: Sub-divisions of environmental compartments into water body types, soil profile, etc.
 
-MEASURED_CATEGORY: Measurement context category
+\code{MEASURED_CATEGORY}: Measurement context category
 
-SAMPLING_DATE: Date of sample collection
+\code{SAMPLING_DATE}: Date of sample collection
 
-SUBSAMPLE: Subsample or replicate identifier
+\code{SUBSAMPLE}: Subsample or replicate identifier
 
-SUBSAMPLE_ID: Unique identifier for the subsample
+\code{SUBSAMPLE_ID}: Unique identifier for the subsample
 
-SAMPLE_ID: Unique identifier for the sample (Key)
+\code{SAMPLE_ID}: Unique identifier for the sample (Key)
 
 See \code{vignette("samples_data")} for more information.
 }

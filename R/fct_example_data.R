@@ -1,5 +1,3 @@
-# TODO: Copied from STOPeData, probably needs to be removed there.
-
 # Example Data Creation Functions ----
 # Functions for creating test/demonstration data
 # These functions depend on their initialise_* parents in fct_formats.R
@@ -964,11 +962,11 @@ example_CREED_scores_tibble <- function() {
 #' - 4 = "Not Met"
 #'
 #' @examples
-#' creed_tibble_to_mock_input(example_CREED_reliability_tibble())
+#' CREED_tibble_to_mock_input(example_CREED_reliability_tibble())
 #'
 #' @family CREED
 #' @export
-creed_tibble_to_mock_input <- function(creed_tibble) {
+CREED_tibble_to_mock_input <- function(creed_tibble) {
   # Score numeric -> text lookup (inverse of CREED_choices_vocabulary) ----
   score_labels <- c(
     "1" = "Fully Met",

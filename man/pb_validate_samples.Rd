@@ -9,26 +9,24 @@ pb_validate_samples(data, actions = action_levels(), agent = TRUE)
 \arguments{
 \item{data}{Data frame containing Samples table data to validate}
 
-\item{actions}{Action levels for pointblank agent (only used when agent = TRUE)}
+\item{actions}{Action levels for pointblank agent (only used when \code{agent = TRUE})}
 
-\item{agent}{Logical. If TRUE (default), returns a pointblank agent object.
-If FALSE, returns the validated data with validation failures removed.}
+\item{agent}{Logical. If \code{TRUE} (default), returns a pointblank agent object.
+If \code{FALSE}, returns the validated data with validation failures removed.}
 }
 \value{
-If agent = TRUE, a pointblank agent object containing validation results.
-If agent = FALSE, the input data with validation failures removed.
+If \code{agent = TRUE}, a pointblank agent object containing validation results.
+If \code{agent = FALSE}, the input data with validation failures removed.
 }
 \description{
 Applies pointblank validation rules to check data quality and schema
 compliance for an eData Samples table. Checks that core identifier fields
 are non-null, that environmental compartment fields contain values within
-their controlled vocabularies, and that each ENVIRON_COMPARTMENT_SUB value
-is consistent with its corresponding ENVIRON_COMPARTMENT parent.
+their controlled vocabularies, and that each \code{ENVIRON_COMPARTMENT_SUB} value
+is consistent with its corresponding \code{ENVIRON_COMPARTMENT} parent.
 }
 \details{
 Validation thresholds are configured using \code{\link[pointblank:action_levels]{pointblank::action_levels()}}.
-See \code{vignette("validation", package = "pointblank")} for an overview of
-the pointblank validation workflow.
 }
 \examples{
 \dontrun{

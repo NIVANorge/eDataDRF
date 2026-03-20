@@ -16,22 +16,22 @@ Returns standardised scoring options for CREED data quality assessment.
 Provides the four-level scoring system used in CREED (Criteria for Reporting and
 Evaluating Ecotoxicity Data) assessments. Options include:
 
-Not Met: Score value 4
+\verb{Not Met}: Score value \code{4}
 
-Fully Met: Score value 1
+\code{"Fully Met"}: Score value \code{1}
 
-Partly Met: Score value 2
+\code{"Partly Met"}: Score value \code{2}
 
-Not Reported: Score value 3
+\code{"Not Reported"}: Score value \code{3}
 
-Not Relevant: Score value 1
+\code{"Not Relevant"}: Score value \code{1}
 }
 \examples{
 CREED_choices_vocabulary()
 }
 \seealso{
 Other CREED: 
-\code{\link{creed_tibble_to_mock_input}()},
+\code{\link{CREED_tibble_to_mock_input}()},
 \code{\link{example_CREED_relevance_tibble}()},
 \code{\link{example_CREED_reliability_tibble}()},
 \code{\link{example_CREED_scores_tibble}()},

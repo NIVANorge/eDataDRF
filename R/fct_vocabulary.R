@@ -1,11 +1,11 @@
-#' Controlled vocabulary for the SITE_GEOGRAPHIC_FEATURE column, Sites table
+#' Controlled vocabulary for the `SITE_GEOGRAPHIC_FEATURE` column, Sites table
 #'
 #' Returns controlled vocabulary options for site geographic features.
 #'
 #' @return A character vector of geographic feature options
 #' @family site
 #' @examples
-#' head(geographic_features_vocabulary(), 5)
+#' geographic_features_vocabulary()
 #' @export
 geographic_features_vocabulary <- function() {
   c(
@@ -32,7 +32,7 @@ geographic_features_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for the SITE_GEOGRAPHIC_FEATURE_SUB column, Sites table
+#' Controlled vocabulary for the `SITE_GEOGRAPHIC_FEATURE_SUB` column, Sites table
 #'
 #' Returns controlled vocabulary options for geographic feature subcategories.
 #'
@@ -52,7 +52,7 @@ geographic_features_sub_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for the SITE_COORDINATE_SYSTEM column, Sites table
+#' Controlled vocabulary for the `SITE_COORDINATE_SYSTEM` column, Sites table
 #'
 #' Returns controlled vocabulary options for spatial coordinate reference systems.
 #'
@@ -100,7 +100,7 @@ coordinate_systems_vocabulary <- function(common_only = TRUE) {
   c("Not relevant", "Not reported", "Other", "WGS 84", crs_names)
 }
 
-#' Controlled vocabulary for the COUNTRY_ISO column, Sites table
+#' Controlled vocabulary for the `COUNTRY_ISO` column, Sites table
 #'
 #' Returns controlled vocabulary options for country names based on ISO 3166-1 standard.
 #'
@@ -122,7 +122,7 @@ countries_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for the OCEAN_IHO column, Sites table
+#' Controlled vocabulary for the `OCEAN_IHO` column, Sites table
 #'
 #' Returns controlled vocabulary options for IHO ocean regions.
 #'
@@ -130,11 +130,11 @@ countries_vocabulary <- function() {
 #' Provides ocean and sea names from the International Hydrographic Organisation (IHO)
 #' regions dataset, regions dataset (\url{https://www.marineregions.org/downloads.php}, World Seas IHO v3).
 #'
-#' @return A character vector of ocean name options
+#' @return A character vector of sea and ocean name options
 #' @family site
 #' @importFrom dplyr pull
 #' @examples
-#' head(ocean_vocabulary(), 5)
+#' head(ocean_vocabulary(), 15)
 #' @export
 ocean_vocabulary <- function() {
   IHO_oceans <- c(
@@ -304,7 +304,7 @@ areas_vocabulary <- function() {
   ocean_vocabulary()
 }
 
-#' Controlled vocabulary for the ALTITUDE_UNIT column, Sites table
+#' Controlled vocabulary for the `ALTITUDE_UNIT` column, Sites table
 #'
 #' Returns controlled vocabulary options for altitude measurement units.
 #'
@@ -317,14 +317,14 @@ altitude_units_vocabulary <- function() {
   c("km", "m", "cm", "mm")
 }
 
-#' Data for PARAMETER_NAME, PARAMETER_TYPE, etc. in the Parameters table
+#' Data for `PARAMETER_NAME`, `PARAMETER_TYPE`, etc. in the Parameters table
 #'
 #' Returns comprehensive parameter data combining quality and chemical parameters.
 #'
 #' @details
 #' Combines quality parameters with chemical parameters from the
-#' \href{http://classyfire.wishartlab.com}{ClassyFire} chemical taxonomy
-#' (Djoumbou Feunang et al. 2016, \doi{10.1186/s13321-016-0174-y}, reused non-commercially).
+#' \href{http://classyfire.wishartlab.com}{ChemOnt} chemical taxonomy
+#' (Djoumbou Feunang et al. 2016, \doi{10.1186/s13321-016-0174-y}).
 #' Quality parameters are read from quality_parameters.parquet and chemical
 #' parameters from ClassyFire_Taxonomy_2025_02.parquet. The resulting dataset includes
 #' columns for parameter classification, chemical identifiers (InChIKey, PubChem CID,
@@ -344,7 +344,7 @@ altitude_units_vocabulary <- function() {
 #' @importFrom dplyr mutate arrange bind_rows case_when
 #' @importFrom arrow read_parquet
 #' @examples
-#' head(parameters_vocabulary(), 5)
+#' head(parameters_vocabulary(), 10)
 #' @export
 parameters_vocabulary <- function() {
   # Read quality_parameters.parquet
@@ -385,9 +385,10 @@ parameters_vocabulary <- function() {
   bind_rows(quality_params, chemical_parameters)
 }
 
-#' Controlled vocabulary for the PARAMETER_TYPES column, Parameters table
+#' Controlled vocabulary for the `PARAMETER_TYPES` column, Parameters table
 #'
-#' Returns controlled vocabulary options for broad parameter classifications.
+#' Returns controlled vocabulary options for broad parameter classifications:
+#' stressors, background levels, quality parameters, etc.
 #'
 #' @return A character vector of parameter type options
 #' @family parameter
@@ -406,21 +407,22 @@ parameter_types_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for the PARAMETER_TYPES_SUB column, Parameters table
+#' Controlled vocabulary for the `PARAMETER_TYPES_SUB` column, Parameters table
 #'
 #' Returns controlled vocabulary options for parameter type subcategories.
 #'
 #' @details
-#' Dynamically generated from unique PARAMETER_TYPE_SUB values in
+#' Dynamically built from unique `PARAMETER_TYPE_SUB` values in
 #' \code{parameters_vocabulary()}, with "Mixture" appended and standard data quality
-#' flags prepended.
+#' flags prepended. Chemical subtypes are taken from the
+#' \href{http://classyfire.wishartlab.com}{ChemOnt} chemical taxonomy
 #'
 #' @return A character vector of parameter type subcategory options
 #' @family parameter
 #' @importFrom dplyr select distinct arrange pull
 #' @importFrom purrr prepend
 #' @examples
-#' head(parameter_types_sub_vocabulary(), 5)
+#' head(parameter_types_sub_vocabulary(), 15)
 #' @export
 parameter_types_sub_vocabulary <- function() {
   parameters <- parameters_vocabulary()
@@ -437,15 +439,15 @@ parameter_types_sub_vocabulary <- function() {
   return(c("Not relevant", "Not reported", "Other", parameters_sorted))
 }
 
-#' Controlled vocabulary for the MEASURED_TYPE column, Parameters table
+#' Controlled vocabulary for the `MEASURED_TYPE` column, Parameters table
 #'
-#' Returns controlled vocabulary options for types of measurements.
+#' Returns controlled vocabulary options for the metric of pollution, quality, etc. measured.
 #'
 #' @return A character vector of measured type options
 #' @family parameter
 #' @family measurement
 #' @examples
-#' head(measured_types_vocabulary(), 5)
+#' measured_types_vocabulary()
 #' @export
 measured_types_vocabulary <- function() {
   c(
@@ -465,14 +467,11 @@ measured_types_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for the ENVIRON_COMPARTMENT and ENVIRON_COMPARTMENT_SUB columns, Compartments table
+#' Controlled vocabulary for the `ENVIRON_COMPARTMENT` and `ENVIRON_COMPARTMENT_SUB` columns, Compartments table
 #'
 #' Returns controlled vocabulary mapping for environmental sub-compartments organized by main compartment.
 #'
 #' @details
-#' Provides a hierarchical structure of environmental sub-compartments grouped by their
-#' main compartment type. The list includes:
-#'
 #' Provides a hierarchical structure of environmental sub-compartments grouped by their
 #' main compartment type (Aquatic, Atmospheric, Terrestrial, Biota).
 #'
@@ -524,7 +523,7 @@ environ_compartments_sub_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for the ENVIRON_COMPARTMENT column, Compartments table
+#' Controlled vocabulary for the `ENVIRON_COMPARTMENT` column, Compartments table
 #'
 #' Returns controlled vocabulary options for broad environmental compartments.
 #' Calls \code{names(environ_compartments_sub_vocabulary())} to return the first
@@ -539,15 +538,15 @@ environ_compartments_vocabulary <- function() {
   names(environ_compartments_sub_vocabulary())
 }
 
-#' Controlled vocabulary for the MEASURED_CATEGORY column, Compartments table
+#' Controlled vocabulary for the `MEASURED_CATEGORY` column, Compartments table
 #'
 #' Returns controlled vocabulary options for measurement context categories.
 #'
 #' @details
 #' Provides standardised categories indicating where measurements were taken relative
-#' to organisms. Options include:
+#' to organisms (inside an organism, from its surface, or external to the organism (default))
 #'
-#' @return A character vector of measured category options
+#' @return A named character vector of measured category options
 #' @family compartment
 #' @family measurement
 #' @examples
@@ -561,7 +560,7 @@ measured_categories_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for the SPECIES_NAME column, Biota table
+#' Controlled vocabulary for the `SPECIES_NAME` column, Biota table
 #'
 #' Returns species information from EPA ECOTOX database.
 #'
@@ -572,7 +571,7 @@ measured_categories_vocabulary <- function() {
 #' Additional entries for "Other" and "Ecosystem" are included. Data retrieved from
 #' \url{https://cfpub.epa.gov/ecotox/}, 2025.06.12.
 #'
-#' Data source: extdata/ecotox_2025_06_12_species.parquet
+#' Data source: `extdata/ecotox_2025_06_12_species.parquet`
 #'
 #' @return A data frame of species information
 #' @family biota
@@ -606,7 +605,7 @@ species_names_vocabulary <- function() {
     ))
 }
 
-#' Controlled vocabulary for the SAMPLE_TISSUE column, Biota table
+#' Controlled vocabulary for the `SAMPLE_TISSUE` column, Biota table
 #'
 #' Returns controlled vocabulary options for biological tissue types.
 #'
@@ -616,7 +615,7 @@ species_names_vocabulary <- function() {
 #' @return A character vector of tissue type options
 #' @family biota
 #' @examples
-#' head(tissue_types_vocabulary(), 5)
+#' tissue_types_vocabulary()
 #' @export
 tissue_types_vocabulary <- function() {
   c(
@@ -661,14 +660,14 @@ tissue_types_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for the SAMPLE_SPECIES_LIFESTAGE column, Biota table
+#' Controlled vocabulary for the `SAMPLE_SPECIES_LIFESTAGE` column, Biota table
 #'
 #' Returns controlled vocabulary options for organism life stages.
 #'
 #' @return A character vector of life stage options
 #' @family biota
 #' @examples
-#' head(lifestage_vocabulary(), 5)
+#' lifestage_vocabulary()
 #' @export
 lifestage_vocabulary <- function() {
   c(
@@ -687,7 +686,7 @@ lifestage_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for the SAMPLE_SPECIES_GENDER column, Biota table
+#' Controlled vocabulary for the `SAMPLE_SPECIES_GENDER` column, Biota table
 #'
 #' Returns controlled vocabulary options for organism sex or gender.
 #'
@@ -708,7 +707,7 @@ gender_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for the SPECIES_GROUP column, Biota table
+#' Controlled vocabulary for the `SPECIES_GROUP` column, Biota table
 #'
 #' Returns controlled vocabulary options for broad taxonomic groups from the EPA ECOTOX database.
 #'
@@ -740,7 +739,7 @@ species_groups_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for the UNCERTAINTY_TYPE column, Measurements table
+#' Controlled vocabulary for the `UNCERTAINTY_TYPE` column, Measurements table
 #'
 #' Returns controlled vocabulary options for statistical uncertainty and variability measures.
 #'
@@ -779,7 +778,7 @@ uncertainty_types_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for the REFERENCE_TYPE column, References table
+#' Controlled vocabulary for the `REFERENCE_TYPE` column, References table
 #'
 #' Returns the set of valid values for the `REFERENCE_TYPE` field in the
 #' Reference table.
@@ -815,7 +814,7 @@ data_source_vocabulary <- function() {
 # Protocol Vocabulary Functions ----
 # Each protocol type creates its own tribble, then combined with bind_rows
 
-#' Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (sampling), Methods table
+#' Controlled vocabulary for `PROTOCOL_TYPE` and `PROTOCOL_NAME` columns (sampling), Methods table
 #'
 #' Returns sampling protocol options with short and long names.
 #'
@@ -830,7 +829,7 @@ data_source_vocabulary <- function() {
 #'
 #' Available protocols include: Not relevant, Not reported, Point, Composite, Trawl, Grab, Core, Seine net, Electrofishing, Plankton net, Bailer, Peristaltic pump, Active air, Passive air, SPMD, SPE, LVSPE, DGT, Caged organisms, Blood sample, Biopsy, Other
 #'
-#' @return A tibble with Protocol_Type, Short_Name, and Long_Name columns
+#' @return A tibble with `Protocol_Type`, `Short_Name`, and `Long_Name` columns
 
 #' @family method
 #' @importFrom tibble tribble
@@ -865,22 +864,22 @@ sampling_protocols_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (fractionation), Methods table
+#' Controlled vocabulary for `PROTOCOL_TYPE` and `PROTOCOL_NAME` columns (fractionation), Methods table
 #'
 #' Returns fractionation protocol options with short and long names.
 #'
 #' @details
 #' Provides standardised fractionation method classifications as a tibble with three columns:
 #'
-#' Protocol_Type: Always "Fractionation Protocol"
+#' `Protocol_Type`: Always "Fractionation Protocol"
 #'
-#' Short_Name: Abbreviated protocol name (e.g., "Total", "Dissolved", "Filtered")
+#' `Short_Name`: Abbreviated protocol name (e.g., "Total", "Dissolved", "Filtered")
 #'
-#' Long_Name: Full descriptive name (e.g., "Total fraction", "Dissolved fraction", "Filtered fraction")
+#' `Long_Name`: Full descriptive name (e.g., "Total fraction", "Dissolved fraction", "Filtered fraction")
 #'
 #' Available protocols include: Not relevant, Not reported, Total, Particles, Colloidal, LMM, Aqueous, Filtered 0.45um, Filtered 0.2um, Dissolved, Filtered, Acid extractable, Reducible, Oxidisable, Residual, Bioavailable, Free ion, Size fractionated, Other
 #'
-#' @return A tibble with Protocol_Type, Short_Name, and Long_Name columns
+#' @return A tibble with `Protocol_Type`, `Short_Name`, and `Long_Name` columns
 
 #' @family method
 #' @importFrom tibble tribble
@@ -912,22 +911,22 @@ fractionation_protocols_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (extraction), Methods table
+#' Controlled vocabulary for `PROTOCOL_TYPE` and `PROTOCOL_NAME` columns (extraction), Methods table
 #'
 #' Returns extraction protocol options with short and long names.
 #'
 #' @details
 #' Provides standardised extraction method classifications as a tibble with three columns:
 #'
-#' Protocol_Type: Always "Extraction Protocol"
+#' `Protocol_Type`: Always "Extraction Protocol"
 #'
-#' Short_Name: Abbreviated protocol name (e.g., "Methanol", "SPE Isolute Env+", "QuEChERS")
+#' `Short_Name`: Abbreviated protocol name (e.g., "Methanol", "SPE Isolute Env+", "QuEChERS")
 #'
-#' Long_Name: Full descriptive name (e.g., "Methanol extraction", "Solid phase extraction with Isolute Env+ cartridge", "Quick easy cheap effective rugged safe extraction")
+#' `Long_Name`: Full descriptive name (e.g., "Methanol extraction", "Solid phase extraction with Isolute Env+ cartridge", "Quick easy cheap effective rugged safe extraction")
 #'
 #' Available protocols include: Not relevant, Not reported, None, Methanol, Dichloromethane, SPE Isolute Env+, Membrane filtration 0.45um, Membrane filtration 0.2um, Membrane filtration, Filtration, Microwave-assisted acid digestion, Acid digestion, Pressurised liquid, Ultrasonic, Soxhlet, QuEChERS, Accelerated solvent, Sequential extraction, Other
 #'
-#' @return A tibble with Protocol_Type, Short_Name, and Long_Name columns
+#' @return A tibble with `Protocol_Type`, `Short_Name`, and `Long_Name` columns
 
 #' @family method
 #' @importFrom tibble tribble
@@ -959,22 +958,22 @@ extraction_protocols_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (analytical), Methods table
+#' Controlled vocabulary for `PROTOCOL_TYPE` and `PROTOCOL_NAME` columns (analytical), Methods table
 #'
 #' Returns analytical protocol options with short and long names.
 #'
 #' @details
 #' Provides standardised analytical method classifications as a tibble with three columns:
 #'
-#' Protocol_Type: Always "Analytical Protocol"
+#' `Protocol_Type`: Always "Analytical Protocol"
 #'
-#' Short_Name: Abbreviated protocol name (e.g., "GC-MS", "LC-MS/MS", "ICP-MS")
+#' `Short_Name`: Abbreviated protocol name (e.g., "GC-MS", "LC-MS/MS", "ICP-MS")
 #'
-#' Long_Name: Full descriptive name (e.g., "Gas chromatography mass spectrometry", "Liquid chromatography tandem mass spectrometry", "Inductively coupled plasma mass spectrometry")
+#' `Long_Name`: Full descriptive name (e.g., "Gas chromatography mass spectrometry", "Liquid chromatography tandem mass spectrometry", "Inductively coupled plasma mass spectrometry")
 #'
 #' Available protocols include: Not relevant, Not reported, GC-MS, LC-MS, LC-MS/MS, GC-MS/MS, UPLC, ICP-MS, ICP-OES, AAS, XRF, Ion chromatography, Spectrophotometry, Fluorescence, Other
 #'
-#' @return A tibble with Protocol_Type, Short_Name, and Long_Name columns
+#' @return A tibble with `Protocol_Type`, `Short_Name`, and `Long_Name` columns
 
 #' @family method
 #' @importFrom tibble tribble
@@ -1002,7 +1001,7 @@ analytical_protocols_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (all), Methods table
+#' Controlled vocabulary for `PROTOCOL_TYPE` and `PROTOCOL_NAME` columns (all), Methods table
 #'
 #' Returns combined protocol options from all protocol categories.
 #'
@@ -1010,17 +1009,17 @@ analytical_protocols_vocabulary <- function() {
 #' Combines all protocol vocabularies (sampling, fractionation, extraction, and analytical)
 #' into a single comprehensive tibble. Contains columns:
 #'
-#' Protocol_Type: Category of protocol (Sampling, Fractionation, Extraction, or Analytical Protocol)
+#' `Protocol_Type`: Category of protocol (Sampling, Fractionation, Extraction, or Analytical Protocol)
 #'
-#' Short_Name: Abbreviated protocol name
+#' `Short_Name`: Abbreviated protocol name
 #'
-#' Long_Name: Full descriptive protocol name
+#' `Long_Name`: Full descriptive protocol name
 #'
 #' This function aggregates results from sampling_protocols_vocabulary(),
 #' fractionation_protocols_vocabulary(), extraction_protocols_vocabulary(), and
 #' analytical_protocols_vocabulary().
 #'
-#' @return A tibble with Protocol_Type, Short_Name, and Long_Name columns for all protocols
+#' @return A tibble with `Protocol_Type`, `Short_Name`, and `Long_Name` columns for all protocols
 
 #' @family method
 #' @importFrom dplyr bind_rows
@@ -1036,7 +1035,7 @@ protocol_options_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for PROTOCOL_CATEGORY column, Methods table
+#' Controlled vocabulary for `PROTOCOL_CATEGORY` column, Methods table
 #'
 #' Returns controlled vocabulary options for protocol type classifications.
 #'
@@ -1068,7 +1067,7 @@ protocol_categories_vocabulary <- function() {
 }
 
 
-#' Controlled vocabulary for MEASURED_UNIT, LOQ_UNIT, and LOD_UNIT, with conversion factors and base units
+#' Controlled vocabulary for `MEASURED_UNIT`, `LOQ_UNIT`, and `LOD_UNIT`, with conversion factors and base units
 #'
 #' Returns unit definitions and SI conversion factors for environmental measurements.
 #'
@@ -1079,15 +1078,15 @@ protocol_categories_vocabulary <- function() {
 #' units for ecotoxicological and environmental measurements. The complete dataset includes
 #' columns:
 #'
-#' MEASURED_UNIT: Unit as recorded in measurements
+#' `MEASURED_UNIT`: Unit as recorded in measurements
 #'
-#' BASE_SI_UNIT: Corresponding SI base unit
+#' `BASE_SI_UNIT`: Corresponding SI base unit
 #'
-#' CONVERSION_FACTOR: Numeric factor to convert to SI units
+#' `CONVERSION_FACTOR`: Numeric factor to convert to SI units
 #'
-#' UNIT_COMMENTS: Additional notes about unit usage or conversion
+#' `UNIT_COMMENTS`: Additional notes about unit usage or conversion
 #'
-#' Data source: extdata/unit_conversion_factors.csv
+#' Data source: `extdata/unit_conversion_factors.csv`
 #'
 #' @return A dataframe (if select_column is NULL) or a character vector (if column specified)
 
@@ -1116,7 +1115,7 @@ parameter_unit_vocabulary <- function(select_column = NULL) {
 }
 
 
-#' Controlled vocabulary for MEASURED_FLAG, Measurements table
+#' Controlled vocabulary for `MEASURED_FLAG`, Measurements table
 #'
 #' Returns controlled vocabulary options for measurement quality flags.
 #'
@@ -1124,11 +1123,11 @@ parameter_unit_vocabulary <- function(select_column = NULL) {
 #' Provides standardised flags for indicating measurements below detection or quantification
 #' limits. Options include:
 #'
-#' "" (empty string for measurements above limits)
+#' `""` (empty string for measurements above limits)
 #'
-#' < LOQ (below limit of quantification)
+#' `< LOQ` (below limit of quantification)
 #'
-#' < LOD (below limit of detection)
+#' `< LOD` (below limit of detection)
 #'
 #' @return A character vector of measurement flag options
 
@@ -1149,15 +1148,15 @@ measured_flag_vocabulary <- function() {
 #' Provides the four-level scoring system used in CREED (Criteria for Reporting and
 #' Evaluating Ecotoxicity Data) assessments. Options include:
 #'
-#' Not Met: Score value 4
+#' `Not Met`: Score value `4`
 #'
-#' Fully Met: Score value 1
+#' `"Fully Met"`: Score value `1`
 #'
-#' Partly Met: Score value 2
+#' `"Partly Met"`: Score value `2`
 #'
-#' Not Reported: Score value 3
+#' `"Not Reported"`: Score value `3`
 #'
-#' Not Relevant: Score value 1
+#' `"Not Relevant"`: Score value `1`
 #'
 #' @return Named character vector with CREED scoring choices and their numeric values
 

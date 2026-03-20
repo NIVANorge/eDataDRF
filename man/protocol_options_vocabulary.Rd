@@ -2,12 +2,12 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{protocol_options_vocabulary}
 \alias{protocol_options_vocabulary}
-\title{Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (all), Methods table}
+\title{Controlled vocabulary for \code{PROTOCOL_TYPE} and \code{PROTOCOL_NAME} columns (all), Methods table}
 \usage{
 protocol_options_vocabulary()
 }
 \value{
-A tibble with Protocol_Type, Short_Name, and Long_Name columns for all protocols
+A tibble with \code{Protocol_Type}, \code{Short_Name}, and \code{Long_Name} columns for all protocols
 }
 \description{
 Returns combined protocol options from all protocol categories.
@@ -16,11 +16,11 @@ Returns combined protocol options from all protocol categories.
 Combines all protocol vocabularies (sampling, fractionation, extraction, and analytical)
 into a single comprehensive tibble. Contains columns:
 
-Protocol_Type: Category of protocol (Sampling, Fractionation, Extraction, or Analytical Protocol)
+\code{Protocol_Type}: Category of protocol (Sampling, Fractionation, Extraction, or Analytical Protocol)
 
-Short_Name: Abbreviated protocol name
+\code{Short_Name}: Abbreviated protocol name
 
-Long_Name: Full descriptive protocol name
+\code{Long_Name}: Full descriptive protocol name
 
 This function aggregates results from sampling_protocols_vocabulary(),
 fractionation_protocols_vocabulary(), extraction_protocols_vocabulary(), and

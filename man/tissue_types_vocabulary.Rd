@@ -2,7 +2,7 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{tissue_types_vocabulary}
 \alias{tissue_types_vocabulary}
-\title{Controlled vocabulary for the SAMPLE_TISSUE column, Biota table}
+\title{Controlled vocabulary for the \code{SAMPLE_TISSUE} column, Biota table}
 \usage{
 tissue_types_vocabulary()
 }
@@ -16,7 +16,7 @@ Returns controlled vocabulary options for biological tissue types.
 In future, this will be standardised with the BRENDA and/or Uberon tissue ontologies.
 }
 \examples{
-head(tissue_types_vocabulary(), 5)
+tissue_types_vocabulary()
 }
 \seealso{
 Other biota: 

@@ -2,12 +2,12 @@
 % Please edit documentation in R/fct_vocabulary.R
 \name{analytical_protocols_vocabulary}
 \alias{analytical_protocols_vocabulary}
-\title{Controlled vocabulary for PROTOCOL_TYPE and PROTOCOL_NAME columns (analytical), Methods table}
+\title{Controlled vocabulary for \code{PROTOCOL_TYPE} and \code{PROTOCOL_NAME} columns (analytical), Methods table}
 \usage{
 analytical_protocols_vocabulary()
 }
 \value{
-A tibble with Protocol_Type, Short_Name, and Long_Name columns
+A tibble with \code{Protocol_Type}, \code{Short_Name}, and \code{Long_Name} columns
 }
 \description{
 Returns analytical protocol options with short and long names.
@@ -15,11 +15,11 @@ Returns analytical protocol options with short and long names.
 \details{
 Provides standardised analytical method classifications as a tibble with three columns:
 
-Protocol_Type: Always "Analytical Protocol"
+\code{Protocol_Type}: Always "Analytical Protocol"
 
-Short_Name: Abbreviated protocol name (e.g., "GC-MS", "LC-MS/MS", "ICP-MS")
+\code{Short_Name}: Abbreviated protocol name (e.g., "GC-MS", "LC-MS/MS", "ICP-MS")
 
-Long_Name: Full descriptive name (e.g., "Gas chromatography mass spectrometry", "Liquid chromatography tandem mass spectrometry", "Inductively coupled plasma mass spectrometry")
+\code{Long_Name}: Full descriptive name (e.g., "Gas chromatography mass spectrometry", "Liquid chromatography tandem mass spectrometry", "Inductively coupled plasma mass spectrometry")
 
 Available protocols include: Not relevant, Not reported, GC-MS, LC-MS, LC-MS/MS, GC-MS/MS, UPLC, ICP-MS, ICP-OES, AAS, XRF, Ion chromatography, Spectrophotometry, Fluorescence, Other
 }
