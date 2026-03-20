@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Sites data captures information about the coordinates, land use, and
+**Sites data** captures information about the coordinates, land use, and
 administrative/geographical boundaries of sampling sites. In this
 format, we make the distinction between the sampled site - a fixed,
 physical point in space - and the

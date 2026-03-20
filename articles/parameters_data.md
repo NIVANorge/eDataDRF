@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The parameters table collects information on stressors, quality
+**Parameters data** collects information on stressors, quality
 parameters, and any other scalar properties measured in the context of
 adverse environmental effect.
 

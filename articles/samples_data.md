@@ -2,8 +2,8 @@
 
 ## Introduction
 
-*Samples data* records relevant combinations of sampling variables. Most
-sampling campaigns are asymmetric - that is, not every possible
+**Samples data** records relevant combinations of sampling variables.
+Most sampling campaigns are asymmetric - that is, not every possible
 combination of sites, date, parameter, and compartment will be sampled.
 When resources are limited, it makes sense to look for things in places
 where they are most likely to be found; a campaign will probably not

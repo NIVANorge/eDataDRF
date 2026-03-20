@@ -2,10 +2,9 @@
 
 ## Introduction
 
-The **Measurements data table** represents the core data table of the
-eData format. This table records actual measured parameter values
-(including uncertainty), and references most other tables using foreign
-keys.
+**Measurements data** represents the core data table of the eData
+format. This table records actual measured parameter values (including
+uncertainty), and references most other tables using foreign keys.
 
 This table is built from the [Samples data
 table](https://NIVANorge.github.io/eDataDRF/articles/samples_data.md)
