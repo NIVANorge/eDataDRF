@@ -1,12 +1,16 @@
 Package: eDataDRF
 Title: Data reporting format for STOP's exposure data format
 Version: 0.0.0.9004
-Authors@R: c(person(given = "Sam A.", family = "Welch", email = "sam.welch@niva.no", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-4743-4562")), person(given = "Knut Erik", family = "Tollefsen", email = "ket@niva.no", role = "ctb", comment = c(ORCID = "0000-0002-7534-0937")))
+Authors@R: c(
+    person("Sam A.", "Welch", , "sam.welch@niva.no", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-4743-4562")),
+    person("Knut Erik", "Tollefsen", , "ket@niva.no", role = "ctb",
+           comment = c(ORCID = "0000-0002-7534-0937"))
+  )
 Description: Functions for data for STOP's eData format.
 License: MIT + file LICENSE
-Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
+URL: https://NIVANorge.github.io/eDataDRF/,
+    https://github.com/NIVANorge/eDataDRF
 Imports: 
     arrow,
     cpp11,
@@ -29,7 +33,11 @@ Suggests:
     quarto,
     rmarkdown,
     testthat (>= 3.0.0)
+VignetteBuilder: 
+    knitr,
+    quarto
 Config/testthat/edition: 3
 Config/testthat/parallel: true
-URL: https://NIVANorge.github.io/eDataDRF/, https://github.com/NIVANorge/eDataDRF
-VignetteBuilder: quarto, knitr
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
