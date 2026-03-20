@@ -1,10 +1,7 @@
 Package: eDataDRF
 Title: Data reporting format for STOP's exposure data format
 Version: 0.0.0.9004
-Authors@R: c(
-    person(given = "Sam A.", family =  "Welch", , "sam.welch@niva.no", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-4743-4562")),
-    person(given = "Knut Erik", family =  "Tollefsen", "ket@niva.no", role = "ctb", comment = c(ORCID = "0000-0002-7534-0937")
-  ))
+Authors@R: c(person(given = "Sam A.", family = "Welch", email = "sam.welch@niva.no", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-4743-4562")), person(given = "Knut Erik", family = "Tollefsen", email = "ket@niva.no", role = "ctb", comment = c(ORCID = "0000-0002-7534-0937")))
 Description: Functions for data for STOP's eData format.
 License: MIT + file LICENSE
 Encoding: UTF-8
