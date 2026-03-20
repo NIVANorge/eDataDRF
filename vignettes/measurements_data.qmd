@@ -38,7 +38,7 @@ initialise_measurements_tibble()
 ## Parameter Name
 `PARAMETER_NAME` - *string, free, mandatory*
 
-[Parameter name](parameters_data.html#parameter-name) is a foreign key that references the [Parameter data table](parameter_data.html). During Samples table creation the user selects relevant parameters using their name and type.
+[Parameter name](parameters_data.html#parameter-name) is a foreign key that references the [Parameter data table](parameters_data.html). During Samples table creation the user selects relevant parameters using their name and type.
 
 ## Sampling Date
 `SAMPLING_DATE` - *string, free, mandatory*
@@ -121,7 +121,7 @@ The sample size of a biota population and/or number of replicates the [Measured 
 
 Limit of Quantification of the method, if reported. 
 
-If no [Measured value](#measured-value) is reported, at least one of an LOQ and an LOD should be reported with value and unit; implicitly the stressor occurence was below the method's ability to quantify. If a Measured value, LOQ and/or LOQ are reported, please include as many as possible in the extracted data.
+If no [Measured value](#measured-value) is reported, at least one of an LOQ and an LOD should be reported with value and unit; implicitly the stressor occurrence was below the method's ability to quantify. If a Measured value, LOQ and/or LOD are reported, please include as many as possible in the extracted data.
 
 ## LOQ Unit
 `LOQ_UNIT` - *string, controlled, conditionally mandatory*
@@ -137,7 +137,7 @@ Uses the [Measured Unit](#measured-unit) vocabulary.
 
 Limit of Detection of the method, if reported. 
 
-If no [Measured value](#measured-value) is reported, at least one of an LOQ and an LOD should be reported with value and unit; implicitly the stressor occurence was below the method's ability to detect. If a Measured value, LOQ and/or LOQ are reported, please include as many as possible in the extracted data.
+If no [Measured value](#measured-value) is reported, at least one of an LOQ and an LOD should be reported with value and unit; implicitly the stressor occurrence was below the method's ability to detect. If a Measured value, LOQ and/or LOD are reported, please include as many as possible in the extracted data.
 
 ## LOD Unit
 `LOD_UNIT` - *string, controlled, conditionally mandatory*

@@ -1,4 +1,4 @@
-# tests/testthat/test-initialise_functions.R ----
+# tests/testthat/test-fct_formats.R ----
 
 # Test Tibble Initialisation Functions ----
 

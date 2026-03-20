@@ -43,7 +43,7 @@ initialise_samples_tibble()
 ## Parameter Name
 `PARAMETER_NAME` - *string, controlled, mandatory*
 
-[Parameter name](parameters_data.html#parameter-name) is a foreign key that references the [Parameter data table](parameter_data.html). During Samples table creation the user selects relevant parameters using their name and type.
+[Parameter name](parameters_data.html#parameter-name) is a foreign key that references the [Parameter data table](parameters_data.html). During Samples table creation the user selects relevant parameters using their name and type.
 
 ## Parameter Type
 `PARAMETER_TYPE` - *string, controlled, mandatory*
@@ -68,7 +68,7 @@ Combinations of [Environmental Compartment](compartments_data.html#environmental
 ## Sampling Date
 `SAMPLING_DATE` - *date (ISO), free, mandatory*
 
-The date a sample was taken. This should be reported to the highest degree of date precision possible (time is not needed). However, if day or month is not avaiable, it can be reported as the first day of a reported month or year. In this case, please note this in the [Measurement comment](#todo: add link) section.
+The date a sample was taken. This should be reported to the highest degree of date precision possible (time is not needed). However, if day or month is not available, it can be reported as the first day of a reported month or year. In this case, please note this in the [Measurement comment](measurements_data.html#measurement-comment) section.
 
 ## Subsample
 `SUBSAMPLE` - *string, free, mandatory*
@@ -80,16 +80,7 @@ Where a single sampling event is subsampled, use this variable to note it. In th
 
 A Subsample ID is generated for each subsample based on its identifying characteristics.
 
-Actually, no it isn't. Not used.
-
-```{r}
-
-```
-
 ## Sample ID
 `SAMPLE_ID` - *string, free, mandatory*
 
-Actually this includes subsample;
-
-#TODO
 e.g.:`DummyCampaign1997_SITE_001-Tim-Notreported-2023-02-12-R-1`

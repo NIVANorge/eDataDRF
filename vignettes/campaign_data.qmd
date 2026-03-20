@@ -46,7 +46,7 @@ The date when a sampling campaign began; the first reported sampling date. In ra
 ## Campaign End Date
 `CAMPAIGN_END_DATE` - *date (ISO), free, optional*
 
-If avaiable, the last sampling date of the campaign.
+If available, the last sampling date of the campaign.
 
 ## Organisation
 `ORGANISATION` - *string, free, mandatory*

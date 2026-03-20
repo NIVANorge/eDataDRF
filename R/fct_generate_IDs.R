@@ -74,7 +74,7 @@ abbreviate_string <- function(
 }
 
 #' Generate a semi-unique string ID for a protocol based on its type,
-#' name, the campaign name, and a sequence number; used a a key between Methods
+#' name, the campaign name, and a sequence number; used as a key between Methods
 #' and Measurements table.
 #'
 #' @description
