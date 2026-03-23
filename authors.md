@@ -11,7 +11,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/NIVANorge/eDataDRF/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/NIVANorge/eDataDRF/blob/v0.0.0.9005/DESCRIPTION)
 
 Welch S (2026). *eDataDRF: A (meta)data format and controlled vocabulary
 for measurements chemical concentrations in the environment*. R package
