@@ -50,7 +50,7 @@ Categorisation of site type allows for broad comparisons to be made. Site Geogra
 - [LUCAS Land Use Cover Hierachy](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=LUCAS_-_Land_use_and_land_cover_survey) (EU)
 - [CORINE Land Cover inventory](https://land.copernicus.eu/en/products/corine-land-cover) (EU)
 - Water Framework Directive water body types
-- Marine Something Framework Directive water types
+- Marine Strategic Framework Directive water types
 
 These are summarised in the table below
 
@@ -139,7 +139,7 @@ Site longitude (east-west position, also known as easting, between -180.0° and 
 ## Coordinate Reference System - String, controlled, mandatory
 `SITE_COORDINATE_SYSTEM`
 
-A site's latitude and longitude are calculated using a reference system "placed" at a given point on the globe and parameterised within a given region. This Coordinate Reference System is a necessary component of any geographical coordinate data. In most global datasets, the World Geodetic System, 1984 version (WGS 84) is used. However, national or other local datasets may use a variety of CRS, such as the Universal Transverse Mercator (UTM), which projects the Earth into a series of square or rectangular zones; in this case, it is necessary to know the CRS and the grid number. 
+A site's latitude and longitude are calculated using a reference system "placed" at a given point on the globe and parameterised within a given region. This Coordinate Reference System (CRS) is a necessary component of any geographical coordinate data. In most global datasets, the World Geodetic System, 1984 version (WGS 84) is used. However, national or other local datasets may use a variety of CRS, such as the Universal Transverse Mercator (UTM), which projects the Earth into a series of square or rectangular zones; in this case, it is necessary to know the CRS and the grid number. 
 
 This controlled vocabulary uses the package `{crsuggest}`, which in turn uses the EPSG Dataset v10.019, (product of the International Association of Oil & Gas Producers, [terms of use](https://epsg.org/terms-of-use.html)). However, because the full 6000+ CRS included would be impractically large for the associated UI, we filter this down to a small set of systems relevant to the test cases used with the format so far. In future, CRS metadata will be used to automatically filter available CRS based on the desired geographical scope.
 
