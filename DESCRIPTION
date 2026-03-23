@@ -1,13 +1,14 @@
 Package: eDataDRF
-Title: Data reporting format for STOP's exposure data format
-Version: 0.0.0.9004
+Title: A (meta)data format and controlled vocabulary for measurements chemical concentrations in the environment
+Version: 0.0.0.9005
 Authors@R: c(
     person("Sam A.", "Welch", , "sam.welch@niva.no", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-4743-4562")),
     person("Knut Erik", "Tollefsen", , "ket@niva.no", role = "ctb",
            comment = c(ORCID = "0000-0002-7534-0937"))
   )
-Description: Functions for data for STOP's eData format.
+Description: The eData Data Reporting Format is a format for the reporting of chemical occurrence/exposure data in the natural environment. It provides tables, vocabulary,  
+    and validation functions for structuring chemical occurrence data, as well as spatial, social, biological, geographical, and other metadata.
 License: MIT + file LICENSE
 URL: https://NIVANorge.github.io/eDataDRF/,
     https://github.com/NIVANorge/eDataDRF

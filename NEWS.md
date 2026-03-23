@@ -14,3 +14,7 @@
 * Added validation, rationale vignettes
 * More information on CREED
 * Tests now check that example data passes validation as part of package build process
+
+# eDataDRF 0.0.0.9005
+
+* Minor changes to vignettes and documentation
