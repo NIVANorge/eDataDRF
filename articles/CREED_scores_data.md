@@ -80,3 +80,30 @@ valid levels.
 
 Gold relevance score. See [Usability Scores](#usability-scores) for
 valid levels.
+
+## CREED Bibliography
+
+Adam Peters, Michael Beking, Leonard Oste, Mick Hamer, Jeanne Vuaille,
+Andrew J. Harford, Thomas Backhaus, Stephen Lofts, Claus Svendsen,
+Charles Peck, Assessing the relevance of environmental exposure data
+sets, *Integrated Environmental Assessment and Management*, Volume 20,
+Issue 4, 1 July 2024, Pages 1004–1018, https://doi.org/10.1002/ieam.4881
+
+Graham Merrington, Lisa H. Nowell, Charles Peck, An introduction to
+Criteria for Reporting and Evaluating Exposure Datasets (CREED) for use
+in environmental assessments, *Integrated Environmental Assessment and
+Management*, Volume 20, Issue 4, 1 July 2024, Pages 975–980,
+https://doi.org/10.1002/ieam.4899
+
+Carolina Di Paolo, Irene Bramke, Jenny Stauber, Caroline Whalley, Ryan
+Otter, Yves Verhaegen, Lisa H. Nowell, Adam C. Ryan, Implementation of
+the CREED approach for environmental assessments, *Integrated
+Environmental Assessment and Management*, Volume 20, Issue 4, 1 July
+2024, Pages 1019–1034, https://doi.org/10.1002/ieam.4909
+
+Michelle L. Hladik, Arjen Markus, Dennis Helsel, Lisa H. Nowell, Stefano
+Polesello, Heinz Rüdel, Drew Szabo, Iain Wilson, Evaluating the
+reliability of environmental concentration data to characterize exposure
+in environmental risk assessments, *Integrated Environmental Assessment
+and Management*, Volume 20, Issue 4, 1 July 2024, Pages 981–1003,
+https://doi.org/10.1002/ieam.4893
