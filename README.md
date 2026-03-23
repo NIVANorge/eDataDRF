@@ -64,8 +64,8 @@ Tables are listed below:
 | [Reference](https://NIVANorge.github.io/eDataDRF/articles/references_data.html) | Records conventional publication metadata, where available |  |
 | [Sites](https://NIVANorge.github.io/eDataDRF/articles/sites_data.html) | Records site coordinates, land use, country/ocean |  |
 | [Parameters](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.html) | Records data on stressors (chemical, radiation, etc.), quality measurements |  |
-| [Compartments](https://NIVANorge.github.io/eDataDRF/articles/compartments_data.html) | Records information on the compartment/matrix sampled |  |
-| [Samples](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html) | Records which combinations of dates, sites, parameters and compartments were sampled | Not used in final analysis, but exists as an intermediate table used to create measurements |
+| [Compartments](https://NIVANorge.github.io/eDataDRF/articles/compartments_data.html) | Records information on the compartment/matrix sampled | Not used in final output, but exists as an intermediate table used to create samples  |
+| [Samples](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html) | Records which combinations of dates, sites, parameters and compartments were sampled | Not used in final output, but exists as an intermediate table used to create measurements |
 | [Biota](https://NIVANorge.github.io/eDataDRF/articles/biota_data.html) | Where relevant, records biota species, tissue, life stage, and gender | Optional |
 | [Methods](https://NIVANorge.github.io/eDataDRF/articles/methods_data.html) | Records type and descriptions of methods used for sampling, extraction, fractionation and analysis |  |
 | [Measurements](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.html) | Records measured values, units, uncertainty, sample size, and methods associated with a given sample |  |
