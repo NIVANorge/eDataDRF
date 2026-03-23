@@ -115,18 +115,6 @@ pb_validate_campaign <- function(
         actions = actions
       ) |>
 
-      # does core id match file name?
-      # currently we just match the date, because the formats are different
-      # FIXME: Doesn't work!
-      # col_vals_equal(
-      #   columns = CAMPAIGN_NAME_SHORT,
-      #   value = vars(expected_year),
-      #   preconditions = ~ . |>
-      #     filter(!str_detect(CAMPAIGN_NAME_SHORT, "Vm")) |>
-      #     mutate(expected_year = str_extract(source_file, "\\d{4}")),
-      #   actions = actions
-      # ) |>
-
       # # Check no repeated campaigns
       rows_distinct(
         label = "Check each CAMPAIGN_NAME_SHORT and CAMPAIGN_NAME is unique",
@@ -337,20 +325,32 @@ pb_validate_parameters <- function(
   apply_validations <- function(x) {
     x |>
       # Core identifiers
-      # TODO: Check against vocab
-      col_vals_not_null(columns = PARAMETER_TYPE, actions = actions) |>
-      col_vals_not_null(columns = MEASURED_TYPE, actions = actions) |>
-      col_vals_not_null(columns = PARAMETER_NAME, actions = actions) |>
+      col_vals_in_set(
+        label = "Check PARAMETER_TYPE is in parameter_types_vocabulary()",
+        columns = PARAMETER_TYPE,
+        set = parameter_types_vocabulary(),
+        actions = actions
+      ) |>
+      col_vals_in_set(
+        label = "Check MEASURED_TYPE is in measured_types_vocabulary()",
+        columns = MEASURED_TYPE,
+        set = measured_types_vocabulary(),
+        actions = actions
+      ) |>
       # FIXME: This will obviously fail on new parameters. Will need a more intelligent approach in time.
       col_vals_in_set(
-        label = "Check PARAMETER_NAME in parameters_vocabulary()$PARAMETER_NAME",
+        label = "Check PARAMETER_NAME is in parameters_vocabulary()$PARAMETER_NAME",
         columns = PARAMETER_NAME,
         set = parameters_vocabulary() |> pull(PARAMETER_NAME),
         actions = actions
       ) |>
 
       # Metadata
-      col_vals_not_null(columns = ENTERED_BY, actions = actions)
+      col_vals_not_null(
+        label = "Check ENTERED_BY is not blank",
+        columns = ENTERED_BY,
+        actions = actions
+      )
   }
 
   pb_validate_edata_table(
@@ -567,17 +567,37 @@ pb_validate_samples <- function(
     # Start with core identifier and flat vocabulary checks
     # TODO: Missing labels
     agent_or_data <- x |>
-      col_vals_not_null(columns = SAMPLE_ID, actions = actions) |>
-      col_vals_not_null(columns = SITE_CODE, actions = actions) |>
-      col_vals_not_null(columns = PARAMETER_NAME, actions = actions) |>
+      # Check SAMPLE_ID matches the format produced by generate_sample_id_with_components()
+      # See sample_id_regex() for the pattern definition
+      col_vals_regex(
+        label = "Check SAMPLE_ID matches sample_id_regex()",
+        columns = SAMPLE_ID,
+        regex = sample_id_regex(),
+        actions = actions
+      ) |>
+      col_vals_not_null(
+        label = "Check SITE_CODE is not blank",
+        columns = SITE_CODE,
+        actions = actions
+      ) |>
+      # FIXME: This will obviously fail on new parameters. Will need a more intelligent approach in time.
       col_vals_in_set(
+        label = "Check PARAMETER_NAME is in parameters_vocabulary()$PARAMETER_NAME",
+        columns = PARAMETER_NAME,
+        set = parameters_vocabulary() |> pull(PARAMETER_NAME),
+        actions = actions
+      ) |>
+      # Environmental compartments
+      col_vals_in_set(
+        label = "Check ENVIRON_COMPARTMENT is in environ_compartments_vocabulary()",
         columns = ENVIRON_COMPARTMENT,
         set = environ_compartments_vocabulary(),
         actions = actions
       ) |>
       col_vals_in_set(
+        label = "Check ENVIRON_COMPARTMENT_SUB is in environ_compartments_sub_vocabulary()",
         columns = ENVIRON_COMPARTMENT_SUB,
-        set = flatten(compartment_sub_vocab),
+        set = environ_compartments_sub_vocabulary() |> flatten(),
         actions = actions
       )
 
@@ -651,51 +671,67 @@ pb_validate_biota <- function(
   apply_validations <- function(x) {
     x |>
       # Core identifiers
-      # TODO: Missing labels and regex
-      col_vals_not_null(columns = SAMPLE_ID, actions = actions) |>
-      col_vals_not_null(columns = SITE_CODE, actions = actions) |>
-      col_vals_not_null(columns = PARAMETER_NAME, actions = actions) |>
+      col_vals_regex(
+        label = "Check SAMPLE_ID matches sample_id_regex()",
+        columns = SAMPLE_ID,
+        regex = sample_id_regex(),
+        actions = actions
+      ) |>
+      col_vals_not_null(
+        label = "Check SITE_CODE is not blank",
+        columns = SITE_CODE,
+        actions = actions
+      ) |>
       # FIXME: This will obviously fail on new parameters. Will need a more intelligent approach in time.
       col_vals_in_set(
+        label = "Check PARAMETER_NAME is in parameters_vocabulary()$PARAMETER_NAME",
         columns = PARAMETER_NAME,
         set = parameters_vocabulary() |> pull(PARAMETER_NAME),
         actions = actions
       ) |>
 
       # Biota-specific fields
-      col_vals_not_null(columns = SPECIES_GROUP, actions = actions) |>
-      col_vals_not_null(columns = SAMPLE_SPECIES, actions = actions) |>
-      col_vals_not_null(columns = SAMPLE_TISSUE, actions = actions) |>
+      col_vals_not_null(
+        label = "Check SAMPLE_SPECIES is not blank",
+        columns = SAMPLE_SPECIES,
+        actions = actions
+      ) |>
 
-      # # Check environmental compartments are both some type of biota
+      # Check environmental compartments are both some type of biota
       col_vals_equal(
+        label = "Check ENVIRON_COMPARTMENT is 'Biota'",
         columns = ENVIRON_COMPARTMENT,
-        "Biota",
+        value = "Biota",
         actions = actions
       ) |>
       col_vals_in_set(
+        label = "Check ENVIRON_COMPARTMENT_SUB is in environ_compartments_sub_vocabulary()$Biota",
         columns = ENVIRON_COMPARTMENT_SUB,
         set = environ_compartments_sub_vocabulary()$Biota,
         actions = actions
       ) |>
 
-      # # Check group, tissue, species, gender are in the expected vocab
+      # Check group, tissue, species, gender are in the expected vocab
       col_vals_in_set(
+        label = "Check SPECIES_GROUP is in species_groups_vocabulary()",
         columns = SPECIES_GROUP,
         set = species_groups_vocabulary(),
         actions = actions
       ) |>
       col_vals_in_set(
+        label = "Check SAMPLE_TISSUE is in tissue_types_vocabulary()",
         columns = SAMPLE_TISSUE,
         set = tissue_types_vocabulary(),
         actions = actions
       ) |>
       col_vals_in_set(
+        label = "Check SAMPLE_SPECIES_LIFESTAGE is in lifestage_vocabulary()",
         columns = SAMPLE_SPECIES_LIFESTAGE,
         set = lifestage_vocabulary(),
         actions = actions
       ) |>
       col_vals_in_set(
+        label = "Check SAMPLE_SPECIES_GENDER is in gender_vocabulary()",
         columns = SAMPLE_SPECIES_GENDER,
         set = gender_vocabulary(),
         actions = actions
@@ -762,49 +798,50 @@ pb_validate_measurements <- function(
   apply_validations <- function(x) {
     x |>
       # Core identifiers
-      # TODO: Missing labels
-      col_vals_not_null(columns = SITE_CODE, actions = actions) |>
-      col_vals_not_null(columns = PARAMETER_NAME, actions = actions) |>
+      col_vals_not_null(
+        label = "Check that SITE_CODE is not NULL",
+        columns = SITE_CODE,
+        actions = actions
+      ) |>
       # FIXME: This will obviously fail on new parameters. Will need a more intelligent approach in time.
       col_vals_in_set(
+        label = "Check that PARAMETER_NAME belongs to the set of PARAMETER_NAME values in parameters_vocabulary()",
         columns = PARAMETER_NAME,
         set = parameters_vocabulary() |> pull(PARAMETER_NAME),
         actions = actions
       ) |>
-      col_vals_not_null(columns = SAMPLING_DATE, actions = actions) |>
-      col_vals_gte(
+      col_vals_between(
+        label = "Check that SAMPLING_DATE is between 1900-01-01 and the current system date",
         columns = SAMPLING_DATE,
-        value = as.Date("1900-01-01"),
-        actions = actions
-      ) |>
-      col_vals_lte(
-        columns = SAMPLING_DATE,
-        value = Sys.Date(),
+        left = as.Date("1900-01-01"),
+        right = Sys.Date(),
         actions = actions
       ) |>
 
       # Environmental compartments
       col_vals_in_set(
+        label = "Check ENVIRON_COMPARTMENT is in environ_compartments_vocabulary()",
         columns = ENVIRON_COMPARTMENT,
         set = environ_compartments_vocabulary(),
         actions = actions
       ) |>
       col_vals_in_set(
+        label = "Check ENVIRON_COMPARTMENT_SUB is in environ_compartments_sub_vocabulary()",
         columns = ENVIRON_COMPARTMENT_SUB,
         set = environ_compartments_sub_vocabulary() |> flatten(),
         actions = actions
       ) |>
 
-      # # Measurement values
+      # Measurement values
       col_vals_in_set(
         label = "Check MEASURED_FLAG is blank, '< LOQ' or '< LOD'",
         columns = MEASURED_FLAG,
         set = measured_flag_vocabulary(),
         actions = actions
       ) |>
-      # # When MEASURED_FLAG is blank, check we have a MEASURED_VALUE and valid MEASURED_UNIT
+      # When MEASURED_FLAG is blank, check we have a MEASURED_VALUE and valid MEASURED_UNIT
       col_vals_not_null(
-        label = "When MEASURED_FLAG is blank, check MEASURED_VALUE isn't null",
+        label = "When MEASURED_FLAG is blank, check MEASURED_VALUE is not null",
         preconditions = \(x) x |> filter(MEASURED_FLAG == ""),
         columns = MEASURED_VALUE,
         actions = actions
@@ -816,14 +853,14 @@ pb_validate_measurements <- function(
         set = parameter_unit_vocabulary() |> pull(MEASURED_UNIT),
         actions = actions
       ) |>
-      # # Check MEASURED_N >= 1
+      # Check MEASURED_N >= 1
       col_vals_gte(
         label = "Check MEASURED_N >= 1",
         columns = MEASURED_N,
         value = 1,
         actions = actions
       ) |>
-      # # Check that UNCERTAINTY_TYPE is in uncertainty_types_vocabulary()
+      # Check that UNCERTAINTY_TYPE is in uncertainty_types_vocabulary()
       col_vals_in_set(
         label = "Check that UNCERTAINTY_TYPE is in uncertainty_types_vocabulary()",
         columns = UNCERTAINTY_TYPE,
@@ -831,7 +868,7 @@ pb_validate_measurements <- function(
         actions = actions
       ) |>
 
-      # # Check MEASURED_TYPE is in measured_types_vocabulary()
+      # Check MEASURED_TYPE is in measured_types_vocabulary()
       col_vals_in_set(
         label = "Check MEASURED_TYPE is in measured_types_vocabulary()",
         columns = MEASURED_TYPE,
@@ -839,8 +876,8 @@ pb_validate_measurements <- function(
         actions = actions
       ) |>
 
-      # # Check protocol IDs match the format produced by generate_protocol_id()
-      # # See protocol_id_regex() for the pattern definition
+      # Check protocol IDs match the format produced by generate_protocol_id()
+      # See protocol_id_regex() for the pattern definition
       col_vals_regex(
         label = "Check SAMPLING_PROTOCOL matches protocol_id_regex()",
         preconditions = \(x) x |> filter(!is.na(SAMPLING_PROTOCOL)),
@@ -870,20 +907,21 @@ pb_validate_measurements <- function(
         actions = actions
       ) |>
 
-      # # LOQ/LOD values
+      # LOQ/LOD values
       col_vals_gte(
+        label = "Check LOQ_VALUE >= 0",
         columns = LOQ_VALUE,
         value = 0,
         actions = actions
       ) |>
       col_vals_gte(
+        label = "Check LOD_VALUE >= 0",
         columns = LOD_VALUE,
         value = 0,
         actions = actions
       ) |>
 
-      # # When LOQ_VALUE is present, check LOQ_UNIT is in parameter_unit_vocabulary()
-      # # See parameter_unit_vocabulary() for valid unit values
+      # When LOQ_VALUE is present, check LOQ_UNIT is in parameter_unit_vocabulary()
       col_vals_in_set(
         label = "When LOQ_VALUE is present, check LOQ_UNIT is in parameter_unit_vocabulary()",
         preconditions = \(x) x |> filter(!is.na(LOQ_VALUE)),
@@ -891,8 +929,7 @@ pb_validate_measurements <- function(
         set = parameter_unit_vocabulary() |> pull(MEASURED_UNIT),
         actions = actions
       ) |>
-      # # When LOD_VALUE is present, check LOD_UNIT is in parameter_unit_vocabulary()
-      # # See parameter_unit_vocabulary() for valid unit values
+      # When LOD_VALUE is present, check LOD_UNIT is in parameter_unit_vocabulary()
       col_vals_in_set(
         label = "When LOD_VALUE is present, check LOD_UNIT is in parameter_unit_vocabulary()",
         preconditions = \(x) x |> filter(!is.na(LOD_VALUE)),
@@ -901,30 +938,22 @@ pb_validate_measurements <- function(
         actions = actions
       ) |>
 
-      # # Check REFERENCE_ID matches the format produced by generate_reference_id()
-      # # and isn't a placeholder value
+      # Check REFERENCE_ID matches the format produced by generate_reference_id()
       col_vals_regex(
         label = "Check REFERENCE_ID is in the format YearLastnameFirstThreeWords",
         columns = REFERENCE_ID,
         regex = "^\\d{4}[A-Za-z0-9]{1,10}([A-Z][a-z]*){1,3}$",
         actions = actions
       ) |>
-      col_vals_not_null(columns = REFERENCE_ID, actions = actions) |>
-      col_vals_not_equal(
-        columns = REFERENCE_ID,
-        value = "Unknown Reference",
-        actions = actions
-      ) |>
 
-      # # Check SAMPLE_ID matches the format produced by generate_sample_id_with_components()
-      # # See sample_id_regex() for the pattern definition
+      # Check SAMPLE_ID matches the format produced by generate_sample_id_with_components()
+      # See sample_id_regex() for the pattern definition
       col_vals_regex(
         label = "Check SAMPLE_ID matches sample_id_regex()",
         columns = SAMPLE_ID,
         regex = sample_id_regex(),
         actions = actions
-      ) |>
-      col_vals_not_null(columns = SAMPLE_ID, actions = actions)
+      )
   }
 
   pb_validate_edata_table(
@@ -990,15 +1019,18 @@ pb_validate_methods <- function(
         actions = actions
       ) |>
       col_vals_not_null(
-        columns = c(PROTOCOL_ID, CAMPAIGN_NAME),
+        label = "Check CAMPAIGN_NAME isn't null",
+        columns = CAMPAIGN_NAME,
         actions = actions
       ) |>
       col_vals_in_set(
+        label = "Check that PROTOCOL_CATEGORY is one of Sampling Protocol, Fractionation Protocol, Extraction Protocol or Analytical Protocol",
         columns = PROTOCOL_CATEGORY,
         set = protocol_categories_vocabulary(),
         actions = actions
       ) |>
       col_vals_in_set(
+        label = "Check that PROTOCOL_NAME matches the Long_Name column from protocol_options_vocabulary()",
         columns = PROTOCOL_NAME,
         set = protocol_options_vocabulary() |> pull(Long_Name),
         actions = actions
@@ -1297,20 +1329,15 @@ pb_validate_CREED_scores <- function(
         regex = "^\\d{4}[A-Za-z0-9]{1,10}([A-Z][a-z]*){1,3}$",
         actions = actions
       ) |>
-      col_vals_not_null(columns = REFERENCE_ID, actions = actions) |>
-      col_vals_not_equal(
-        columns = REFERENCE_ID,
-        value = "Unknown Reference",
-        actions = actions
-      ) |>
-
       # CREED fields
       col_vals_in_set(
+        label = "Check SILVER_RELIABILITY & GOLD_RELIABILITY are Not usable, Reliable with restrictions, or Reliable without restrictions",
         columns = c(SILVER_RELIABILITY, GOLD_RELIABILITY),
         set = CREED_classifications_rb,
         actions = actions
       ) |>
       col_vals_in_set(
+        label = "Check SILVER_RELEVANCE & GOLD_RELEVANCE are Not usable, Relevant with restrictions, or Relevant without restrictions",
         columns = c(SILVER_RELEVANCE, GOLD_RELEVANCE),
         set = CREED_classifications_rv,
         actions = actions
