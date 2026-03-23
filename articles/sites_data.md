@@ -77,7 +77,7 @@ taxonomy to facilitate conversion and comparison:
   inventory](https://land.copernicus.eu/en/products/corine-land-cover)
   (EU)
 - Water Framework Directive water body types
-- Marine Something Framework Directive water types
+- Marine Strategic Framework Directive water types
 
 These are summarised in the table below
 
@@ -533,8 +533,8 @@ System](#coordinate-reference-system).
 
 A site’s latitude and longitude are calculated using a reference system
 “placed” at a given point on the globe and parameterised within a given
-region. This Coordinate Reference System is a necessary component of any
-geographical coordinate data. In most global datasets, the World
+region. This Coordinate Reference System (CRS) is a necessary component
+of any geographical coordinate data. In most global datasets, the World
 Geodetic System, 1984 version (WGS 84) is used. However, national or
 other local datasets may use a variety of CRS, such as the Universal
 Transverse Mercator (UTM), which projects the Earth into a series of

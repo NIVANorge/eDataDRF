@@ -11,8 +11,9 @@ table](https://NIVANorge.github.io/eDataDRF/articles/samples_data.md)
 and optionally the [Biota data
 table](https://NIVANorge.github.io/eDataDRF/articles/biota_data.md) if
 present. Both tables are bound together (that is, the rows of one are
-added below the other) and then extended with additional columns. The
-inclusion of columns in this table and their order is somewhat a
+added below the other) and then extended with additional columns. Column
+order is rearranged so that when entering data, the most relevant fields
+are on the left of the table.
 
 ``` r
 library(eDataDRF)

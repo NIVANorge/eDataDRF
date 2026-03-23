@@ -97,7 +97,7 @@
     <section class="section level2"><h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <p><strong>Measurements data</strong> represents the core data table of the eData format. This table records actual measured parameter values (including uncertainty), and references most other tables using foreign keys.</p>
-<p>This table is built from the <a href="samples_data.html">Samples data table</a> and optionally the <a href="biota_data.html">Biota data table</a> if present. Both tables are bound together (that is, the rows of one are added below the other) and then extended with additional columns. The inclusion of columns in this table and their order is somewhat a</p>
+<p>This table is built from the <a href="samples_data.html">Samples data table</a> and optionally the <a href="biota_data.html">Biota data table</a> if present. Both tables are bound together (that is, the rows of one are added below the other) and then extended with additional columns. Column order is rearranged so that when entering data, the most relevant fields are on the left of the table.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://NIVANorge.github.io/eDataDRF/">eDataDRF</a></span><span class="op">)</span></span></code></pre></div>

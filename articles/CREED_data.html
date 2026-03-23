@@ -97,7 +97,8 @@
     <section class="section level2"><h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <p><a href="https://www.setac.org/resource/creed-for-use-in-environmental-assessments-a-timely-development-update.html" class="external-link">Criteria for Reporting and Evaluating Exposure Datasets (CREED)</a> is a framework for evaluating the relevance and reliability of a reference object for a given exposure assessment question across a series of questions. Users set criteria for it to be relevant to their question, and use a pre-defined set of reliability criteria.</p>
-<p>The object is evaluated based on its data availability, precision, choice of methods, and a final score is calculated for both its relevance and reliability based on its useability at “Gold” and “Silver” levels of quality. This table collects the relevant data from non-CREED tables selected by the user or an automated data population process, the user-appraised scores, and any limitations the user chooses to comments on. In the data export process, the below functions are used to create two .CSV files: one for reliability and one for relevance. Scores are used to calculate a <a href="CREED_scores_data.html">CREED score</a>.</p>
+<p>The object is evaluated based on its data availability, precision, choice of methods, and a final score is calculated for both its relevance and reliability based on its useability at “Gold” and “Silver” levels of quality. This table collects the relevant data from non-CREED tables selected by the user or an automated data population process, the user-appraised scores, and any limitations the user chooses to comments on. In the data export process, the below functions are used to create two .CSV files: one for reliability and one for relevance. Scores are used to calculate a <a href="CREED_scores_data.html">CREED score</a>; the highest value for each Gold and Silver Reliability and Relevance score (0-4) is used to generate the overall score per category.</p>
+<p>For example, if a data source scored <code>1</code>, <code>2</code>, <code>2</code> for Silver/Required Reliability and <code>4</code>, <code>2</code> and <code>1</code> for Gold/Recommended Reliability, the final score would be 2 for Silver/Required Reliability and 4 for Gold/Recommended Reliability, which would translate into Silver Reliability “Reliable with Restrictions” and Gold Reliability “Not usable”.</p>
 <p>This table is not intended to be used as a final data product, but is included in the format because it provides traceability on how the CREED score was calculated. Because a large part of the evaluation logic is included in the <a href="https://github.com/NIVANorge/STOPeData" class="external-link">eData app</a>, this table is currently just a container with little relevant information. It is planned to migrate this logic to the eDataDRF in future.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="downlit sourceCode r">
@@ -138,7 +139,7 @@ Fractionation Protocol - Not reported</code></pre>
 </section><section class="level2"><h3 id="score">Score<a class="anchor" aria-label="anchor" href="#score"></a>
 </h3>
 <p><code>score</code> - <em>string, free, mandatory</em></p>
-<p>An assessment score based on the extent to which the data object fulfills each criterion. Criterion scores are stored as a named vector of numbers. A lower score (1) is better, a higher score (4) is worse.</p>
+<p>An assessment score based on the extent to which the data object fulfills each criterion. Criterion scores are stored as a named vector of numbers. A lower score (1) is better, a higher score (4) is worse. Note that there are five possible responses but only four numerical scores - both Not Applicable and Fully Met are considered a full pass (1).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/CREED_choices_vocabulary.html">CREED_choices_vocabulary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -149,6 +150,1211 @@ Fractionation Protocol - Not reported</code></pre>
 </h3>
 <p><code>limitations</code> - <em>string, free, mandatory</em></p>
 <p>Any limitations, caveats, or other relevant comments identified by the user conducting the assessment.</p>
+</section></section><section class="section level2"><h2 id="example-creed-assessments">Example CREED Assessments<a class="anchor" aria-label="anchor" href="#example-creed-assessments"></a>
+</h2>
+<p>Example CREED relevance and reliability assessments of example data are provided below, for reference.</p>
+<section class="level2"><h3 id="creed-relevance">CREED Relevance<a class="anchor" aria-label="anchor" href="#creed-relevance"></a>
+</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/example_CREED_relevance_tibble.html">example_CREED_relevance_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>relevant_data <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_replace.html" class="external-link">str_replace_all</a></span><span class="op">(</span><span class="va">relevant_data</span>, <span class="st">"\n"</span>, <span class="st">"&lt;br&gt;"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html" class="external-link">gt</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/fmt_markdown.html" class="external-link">fmt_markdown</a></span><span class="op">(</span>columns <span class="op">=</span> <span class="va">relevant_data</span><span class="op">)</span></span></code></pre></div>
+<div class="cell-output-display">
+<div id="eftcugornm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eftcugornm table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#eftcugornm thead, #eftcugornm tbody, #eftcugornm tfoot, #eftcugornm tr, #eftcugornm td, #eftcugornm th {
+  border-style: none;
+}
+
+#eftcugornm p {
+  margin: 0;
+  padding: 0;
+}
+
+#eftcugornm .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#eftcugornm .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#eftcugornm .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#eftcugornm .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#eftcugornm .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#eftcugornm .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eftcugornm .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#eftcugornm .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#eftcugornm .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#eftcugornm .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#eftcugornm .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#eftcugornm .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#eftcugornm .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#eftcugornm .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#eftcugornm .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#eftcugornm .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#eftcugornm .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#eftcugornm .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#eftcugornm .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eftcugornm .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#eftcugornm .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#eftcugornm .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#eftcugornm .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eftcugornm .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#eftcugornm .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#eftcugornm .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eftcugornm .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eftcugornm .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#eftcugornm .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eftcugornm .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#eftcugornm .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eftcugornm .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#eftcugornm .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eftcugornm .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#eftcugornm .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eftcugornm .gt_left {
+  text-align: left;
+}
+
+#eftcugornm .gt_center {
+  text-align: center;
+}
+
+#eftcugornm .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#eftcugornm .gt_font_normal {
+  font-weight: normal;
+}
+
+#eftcugornm .gt_font_bold {
+  font-weight: bold;
+}
+
+#eftcugornm .gt_font_italic {
+  font-style: italic;
+}
+
+#eftcugornm .gt_super {
+  font-size: 65%;
+}
+
+#eftcugornm .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#eftcugornm .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#eftcugornm .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#eftcugornm .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#eftcugornm .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#eftcugornm .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#eftcugornm .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#eftcugornm .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#eftcugornm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="table gt_table caption-top" style="width:100%;" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead><tr class="gt_col_headings header">
+<th id="criterion_id" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">criterion_id</th>
+<th id="criterion_title" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">criterion_title</th>
+<th id="required_recommended" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">required_recommended</th>
+<th id="relevant_data" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">relevant_data</th>
+<th id="score" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">score</th>
+<th id="limitations" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">limitations</th>
+</tr></thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="criterion_id">RV1</td>
+<td class="gt_row gt_left" headers="criterion_title">Sample Medium/Matrix</td>
+<td class="gt_row gt_left" headers="required_recommended">Required</td>
+<td class="gt_row gt_left" headers="relevant_data">1 compartment: Aquatic Sediment</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="criterion_id">RV2</td>
+<td class="gt_row gt_left" headers="criterion_title">Collection Method/Sample Type</td>
+<td class="gt_row gt_left" headers="required_recommended">Recommended</td>
+<td class="gt_row gt_left" headers="relevant_data">1 protocol:<br>Sampling Protocol - Grab: (Surface sediments collected using Van Veen grab sampler)</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations">Sampling reported to adequate level of detail.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="criterion_id">RV3</td>
+<td class="gt_row gt_left" headers="criterion_title">Study Area</td>
+<td class="gt_row gt_left" headers="required_recommended">Required</td>
+<td class="gt_row gt_left" headers="relevant_data">2 sites. Countries (1): Norway. Areas (1): Oslofjord. Lowest coordinate precision: 4</td>
+<td class="gt_row gt_right" headers="score">2</td>
+<td class="gt_row gt_left" headers="limitations">Limited to two sites within single fjord system.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="criterion_id">RV4</td>
+<td class="gt_row gt_left" headers="criterion_title">Site Type</td>
+<td class="gt_row gt_left" headers="required_recommended">Recommended</td>
+<td class="gt_row gt_left" headers="relevant_data">2 sites. Distinct features: Types: Coastal, fjord, Subtypes: Sediment</td>
+<td class="gt_row gt_right" headers="score">2</td>
+<td class="gt_row gt_left" headers="limitations">Rationale for specific site selection not provided.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="criterion_id">RV5</td>
+<td class="gt_row gt_left" headers="criterion_title">Sampling Timespan</td>
+<td class="gt_row gt_left" headers="required_recommended">Required</td>
+<td class="gt_row gt_left" headers="relevant_data">2023-03-15 to 2023-04-20 (n=2)</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="criterion_id">RV6</td>
+<td class="gt_row gt_left" headers="criterion_title">Sampling Frequency</td>
+<td class="gt_row gt_left" headers="required_recommended">Required</td>
+<td class="gt_row gt_left" headers="relevant_data">2023-03-15 to 2023-04-20 (n=2)</td>
+<td class="gt_row gt_right" headers="score">2</td>
+<td class="gt_row gt_left" headers="limitations">Single sampling event per site.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="criterion_id">RV7</td>
+<td class="gt_row gt_left" headers="criterion_title">Temporal Conditions</td>
+<td class="gt_row gt_left" headers="required_recommended">Recommended</td>
+<td class="gt_row gt_left" headers="relevant_data">Relevant data not collected by app. Please complete manually.</td>
+<td class="gt_row gt_right" headers="score">4</td>
+<td class="gt_row gt_left" headers="limitations">Season, weather conditions not reported.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="criterion_id">RV8</td>
+<td class="gt_row gt_left" headers="criterion_title">Analyte</td>
+<td class="gt_row gt_left" headers="required_recommended">Required</td>
+<td class="gt_row gt_left" headers="relevant_data">1 protocol:<br>Fractionation Protocol - Total</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations">Total metal concentration appropriate for purpose.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="criterion_id">RV9</td>
+<td class="gt_row gt_left" headers="criterion_title">Sensitivity/LOD/LOQ</td>
+<td class="gt_row gt_left" headers="required_recommended">Required</td>
+<td class="gt_row gt_left" headers="relevant_data">1 protocol:<br>Analytical Protocol - ICP-MS: (Inductively coupled plasma mass spectrometry)</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations">ICP-MS provides adequate sensitivity for environmental assessment.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="criterion_id">RV10</td>
+<td class="gt_row gt_left" headers="criterion_title">Summary Statistics Type</td>
+<td class="gt_row gt_left" headers="required_recommended">Recommended</td>
+<td class="gt_row gt_left" headers="relevant_data">Uncertainty types: Standard Deviation</td>
+<td class="gt_row gt_right" headers="score">2</td>
+<td class="gt_row gt_left" headers="limitations">Mean +/- SD reported.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="criterion_id">RV11</td>
+<td class="gt_row gt_left" headers="criterion_title">Supporting Parameters</td>
+<td class="gt_row gt_left" headers="required_recommended">Recommended</td>
+<td class="gt_row gt_left" headers="relevant_data">1 protocol:<br>Fractionation Protocol - Total</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations">Total metals appropriate; no additional supporting parameters required.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section><section class="level2"><h3 id="creed-reliability">CREED Reliability<a class="anchor" aria-label="anchor" href="#creed-reliability"></a>
+</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/example_CREED_reliability_tibble.html">example_CREED_reliability_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>relevant_data <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_replace.html" class="external-link">str_replace_all</a></span><span class="op">(</span><span class="va">relevant_data</span>, <span class="st">"\n"</span>, <span class="st">"&lt;br&gt;"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html" class="external-link">gt</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/fmt_markdown.html" class="external-link">fmt_markdown</a></span><span class="op">(</span>columns <span class="op">=</span> <span class="va">relevant_data</span><span class="op">)</span></span></code></pre></div>
+<div class="cell-output-display">
+<div id="zlkiotrnab" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zlkiotrnab table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#zlkiotrnab thead, #zlkiotrnab tbody, #zlkiotrnab tfoot, #zlkiotrnab tr, #zlkiotrnab td, #zlkiotrnab th {
+  border-style: none;
+}
+
+#zlkiotrnab p {
+  margin: 0;
+  padding: 0;
+}
+
+#zlkiotrnab .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#zlkiotrnab .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#zlkiotrnab .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#zlkiotrnab .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#zlkiotrnab .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zlkiotrnab .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zlkiotrnab .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zlkiotrnab .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#zlkiotrnab .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#zlkiotrnab .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#zlkiotrnab .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#zlkiotrnab .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#zlkiotrnab .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#zlkiotrnab .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#zlkiotrnab .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#zlkiotrnab .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#zlkiotrnab .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#zlkiotrnab .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#zlkiotrnab .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zlkiotrnab .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#zlkiotrnab .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#zlkiotrnab .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#zlkiotrnab .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zlkiotrnab .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#zlkiotrnab .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#zlkiotrnab .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zlkiotrnab .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zlkiotrnab .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#zlkiotrnab .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zlkiotrnab .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#zlkiotrnab .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zlkiotrnab .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zlkiotrnab .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zlkiotrnab .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zlkiotrnab .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zlkiotrnab .gt_left {
+  text-align: left;
+}
+
+#zlkiotrnab .gt_center {
+  text-align: center;
+}
+
+#zlkiotrnab .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#zlkiotrnab .gt_font_normal {
+  font-weight: normal;
+}
+
+#zlkiotrnab .gt_font_bold {
+  font-weight: bold;
+}
+
+#zlkiotrnab .gt_font_italic {
+  font-style: italic;
+}
+
+#zlkiotrnab .gt_super {
+  font-size: 65%;
+}
+
+#zlkiotrnab .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#zlkiotrnab .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#zlkiotrnab .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#zlkiotrnab .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#zlkiotrnab .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#zlkiotrnab .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#zlkiotrnab .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#zlkiotrnab .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#zlkiotrnab div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="table gt_table caption-top" style="width:100%;" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead><tr class="gt_col_headings header">
+<th id="criterion_id" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">criterion_id</th>
+<th id="criterion_title" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">criterion_title</th>
+<th id="required_recommended" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">required_recommended</th>
+<th id="relevant_data" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">relevant_data</th>
+<th id="score" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">score</th>
+<th id="limitations" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">limitations</th>
+</tr></thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="criterion_id">RB1</td>
+<td class="gt_row gt_left" headers="criterion_title">Sample Medium/Matrix</td>
+<td class="gt_row gt_left" headers="required_recommended">Required</td>
+<td class="gt_row gt_left" headers="relevant_data">1 compartment: Aquatic Sediment<br>2 samples. Grain size: &lt;63um sieved fraction.</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="criterion_id">RB2</td>
+<td class="gt_row gt_left" headers="criterion_title">Collection Method/Sample Type</td>
+<td class="gt_row gt_left" headers="required_recommended">Recommended</td>
+<td class="gt_row gt_left" headers="relevant_data">1 protocol:<br>Sampling Protocol - Grab: (Surface sediments collected using Van Veen grab sampler)</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="criterion_id">RB3</td>
+<td class="gt_row gt_left" headers="criterion_title">Sample Handling</td>
+<td class="gt_row gt_left" headers="required_recommended">Recommended</td>
+<td class="gt_row gt_left" headers="relevant_data">Samples stored frozen at -20 degrees C until analysis. Dried at 60 degrees C before digestion.</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="criterion_id">RB4</td>
+<td class="gt_row gt_left" headers="criterion_title">Site Location</td>
+<td class="gt_row gt_left" headers="required_recommended">Required</td>
+<td class="gt_row gt_left" headers="relevant_data">2 sites. Countries (1): Norway. Areas (1): Oslofjord. Lowest coordinate precision: 4</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="criterion_id">RB5</td>
+<td class="gt_row gt_left" headers="criterion_title">Date and Time</td>
+<td class="gt_row gt_left" headers="required_recommended">Required</td>
+<td class="gt_row gt_left" headers="relevant_data">2023-03-15 to 2023-04-20 (n=2)</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="criterion_id">RB6</td>
+<td class="gt_row gt_left" headers="criterion_title">Analyte(s) Measured</td>
+<td class="gt_row gt_left" headers="required_recommended">Required</td>
+<td class="gt_row gt_left" headers="relevant_data">1 protocol:<br>Analytical Protocol - ICP-MS: (Inductively coupled plasma mass spectrometry)</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="criterion_id">RB7</td>
+<td class="gt_row gt_left" headers="criterion_title">Limit of Detection and/or Limit of Quantification</td>
+<td class="gt_row gt_left" headers="required_recommended">Required</td>
+<td class="gt_row gt_left" headers="relevant_data">LOD: 0.1-0.3 mg/kg; LOQ: 0.5-1.0 mg/kg</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="criterion_id">RB8</td>
+<td class="gt_row gt_left" headers="criterion_title">Accreditation/Quality Management System</td>
+<td class="gt_row gt_left" headers="required_recommended">Required</td>
+<td class="gt_row gt_left" headers="relevant_data">Relevant data not collected by app. Please complete manually.</td>
+<td class="gt_row gt_right" headers="score">4</td>
+<td class="gt_row gt_left" headers="limitations">Justification: Laboratory accreditation status not reported in source.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="criterion_id">RB9</td>
+<td class="gt_row gt_left" headers="criterion_title">Method</td>
+<td class="gt_row gt_left" headers="required_recommended">Required</td>
+<td class="gt_row gt_left" headers="relevant_data">4 protocols:<br>Sampling Protocol - Grab<br>Extraction Protocol - Acid digestion: (HNO3/HCl microwave-assisted)<br>Fractionation Protocol - Total<br>Analytical Protocol - ICP-MS</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="criterion_id">RB10</td>
+<td class="gt_row gt_left" headers="criterion_title">Lab Blank Contamination</td>
+<td class="gt_row gt_left" headers="required_recommended">Recommended</td>
+<td class="gt_row gt_left" headers="relevant_data">Method blanks analysed with each batch.</td>
+<td class="gt_row gt_right" headers="score">2</td>
+<td class="gt_row gt_left" headers="limitations">Blank values not explicitly reported.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="criterion_id">RB11</td>
+<td class="gt_row gt_left" headers="criterion_title">Recovery/Accuracy</td>
+<td class="gt_row gt_left" headers="required_recommended">Recommended</td>
+<td class="gt_row gt_left" headers="relevant_data">CRM MESS-3 analysed. Recovery: 95-102%.</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="criterion_id">RB12</td>
+<td class="gt_row gt_left" headers="criterion_title">Reproducibility/Precision</td>
+<td class="gt_row gt_left" headers="required_recommended">Recommended</td>
+<td class="gt_row gt_left" headers="relevant_data">Triplicate analyses performed. RSD &lt;10%.</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="criterion_id">RB13</td>
+<td class="gt_row gt_left" headers="criterion_title">Field QC</td>
+<td class="gt_row gt_left" headers="required_recommended">Recommended</td>
+<td class="gt_row gt_left" headers="relevant_data">1 protocol:<br>Sampling Protocol - Grab</td>
+<td class="gt_row gt_right" headers="score">4</td>
+<td class="gt_row gt_left" headers="limitations">No evidence of field blanks or duplicates.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="criterion_id">RB14</td>
+<td class="gt_row gt_left" headers="criterion_title">Calculations</td>
+<td class="gt_row gt_left" headers="required_recommended">Recommended</td>
+<td class="gt_row gt_left" headers="relevant_data">Uncertainty types: Standard Deviation</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations">Not relevant - no normalisation applied.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="criterion_id">RB15</td>
+<td class="gt_row gt_left" headers="criterion_title">Significant Figures</td>
+<td class="gt_row gt_left" headers="required_recommended">Recommended</td>
+<td class="gt_row gt_left" headers="relevant_data">Measured parameter values reported to 3 significant figures</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="criterion_id">RB16</td>
+<td class="gt_row gt_left" headers="criterion_title">Outliers</td>
+<td class="gt_row gt_left" headers="required_recommended">Recommended</td>
+<td class="gt_row gt_left" headers="relevant_data">Relevant data not collected by app. Please complete manually.</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations">No outliers reported or removed.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="criterion_id">RB17</td>
+<td class="gt_row gt_left" headers="criterion_title">Censored Data</td>
+<td class="gt_row gt_left" headers="required_recommended">Required</td>
+<td class="gt_row gt_left" headers="relevant_data">Relevant data not collected by app. Please complete manually.</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations">One value reported as &lt;LOQ with LOQ provided.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="criterion_id">RB18</td>
+<td class="gt_row gt_left" headers="criterion_title">Summary Statistics Procedures</td>
+<td class="gt_row gt_left" headers="required_recommended">Recommended</td>
+<td class="gt_row gt_left" headers="relevant_data">Uncertainty types: Standard Deviation</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="criterion_id">RB19</td>
+<td class="gt_row gt_left" headers="criterion_title">Supporting Data Quality</td>
+<td class="gt_row gt_left" headers="required_recommended">Recommended</td>
+<td class="gt_row gt_left" headers="relevant_data">Relevant data not collected by app. Please complete manually.</td>
+<td class="gt_row gt_right" headers="score">1</td>
+<td class="gt_row gt_left" headers="limitations">No supporting parameters required.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 </section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);

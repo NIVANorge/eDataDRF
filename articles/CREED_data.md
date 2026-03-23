@@ -18,7 +18,16 @@ user-appraised scores, and any limitations the user chooses to comments
 on. In the data export process, the below functions are used to create
 two .CSV files: one for reliability and one for relevance. Scores are
 used to calculate a [CREED
-score](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.md).
+score](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.md);
+the highest value for each Gold and Silver Reliability and Relevance
+score (0-4) is used to generate the overall score per category.
+
+For example, if a data source scored `1`, `2`, `2` for Silver/Required
+Reliability and `4`, `2` and `1` for Gold/Recommended Reliability, the
+final score would be 2 for Silver/Required Reliability and 4 for
+Gold/Recommended Reliability, which would translate into Silver
+Reliability “Reliable with Restrictions” and Gold Reliability “Not
+usable”.
 
 This table is not intended to be used as a final data product, but is
 included in the format because it provides traceability on how the CREED
@@ -84,6 +93,9 @@ For example:
 An assessment score based on the extent to which the data object
 fulfills each criterion. Criterion scores are stored as a named vector
 of numbers. A lower score (1) is better, a higher score (4) is worse.
+Note that there are five possible responses but only four numerical
+scores - both Not Applicable and Fully Met are considered a full pass
+(1).
 
 ``` r
 CREED_choices_vocabulary()
@@ -97,3 +109,30 @@ CREED_choices_vocabulary()
 
 Any limitations, caveats, or other relevant comments identified by the
 user conducting the assessment.
+
+## Example CREED Assessments
+
+Example CREED relevance and reliability assessments of example data are
+provided below, for reference.
+
+### CREED Relevance
+
+``` r
+example_CREED_relevance_tibble() |>
+  dplyr::mutate(relevant_data = stringr::str_replace_all(relevant_data, "\n", "<br>")) |>
+  gt::gt() |>
+  gt::fmt_markdown(columns = relevant_data)
+```
+
+[TABLE]
+
+### CREED Reliability
+
+``` r
+example_CREED_reliability_tibble() |>
+  dplyr::mutate(relevant_data = stringr::str_replace_all(relevant_data, "\n", "<br>")) |>
+  gt::gt() |>
+  gt::fmt_markdown(columns = relevant_data)
+```
+
+[TABLE]

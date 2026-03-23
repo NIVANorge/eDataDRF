@@ -2,10 +2,17 @@
 
 ## Introduction
 
+[Criteria for Reporting and Evaluating Exposure Datasets
+(CREED)](https://www.setac.org/resource/creed-for-use-in-environmental-assessments-a-timely-development-update.html)
+is a framework for evaluating the relevance and reliability of a
+reference object for a given exposure assessment question across a
+series of questions. Users set criteria for it to be relevant to their
+question, and use a pre-defined set of reliability criteria.
+
 The criterion scores assigned for each criterion during the [CREED
 assessment](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.md)
-are used to calculate an overall useability score for both relevant and
-reliability at the gold and silver level. Silver scores are calculated
+are used to calculate an overall useability score for both Relevance and
+Reliability at the gold and silver level. Silver scores are calculated
 based on the highest (worst) score for all required questions, and gold
 for all recommended questions. Data source usability scores are, from
 high to low:
