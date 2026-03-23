@@ -44,7 +44,7 @@ example_samples_tibble()
 #>   SITE_CODE SITE_NAME       PARAMETER_NAME PARAMETER_TYPE ENVIRON_COMPARTMENT
 #>   <chr>     <chr>           <chr>          <chr>          <chr>              
 #> 1 SITE-001  Oslofjord Inner Copper         Stressor       Aquatic            
-#> 2 SITE-002  Bergen Harbour  Lead           Stressor       Aquatic            
+#> 2 SITE-002  Bergen Harbour  Lead           Stressor       Biota              
 #> # ℹ 6 more variables: ENVIRON_COMPARTMENT_SUB <chr>, MEASURED_CATEGORY <chr>,
 #> #   SAMPLING_DATE <chr>, SUBSAMPLE <chr>, SUBSAMPLE_ID <chr>, SAMPLE_ID <glue>
 ```

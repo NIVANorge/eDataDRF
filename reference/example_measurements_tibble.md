@@ -51,7 +51,7 @@ example_measurements_tibble()
 #>   SITE_CODE PARAMETER_NAME SAMPLING_DATE ENVIRON_COMPARTMENT_SUB SUBSAMPLE
 #>   <chr>     <chr>          <chr>         <chr>                   <chr>    
 #> 1 SITE-001  Copper         2023-03-15    Aquatic Sediment        1        
-#> 2 SITE-002  Lead           2023-04-20    Aquatic Sediment        1        
+#> 2 SITE-002  Lead           2023-04-20    Biota, Aquatic          1        
 #> 3 SITE-001  Copper         2023-05-10    Biota, Aquatic          1        
 #> # ℹ 22 more variables: MEASURED_FLAG <chr>, MEASURED_VALUE <dbl>,
 #> #   UNCERTAINTY_TYPE <chr>, UNCERTAINTY_UPPER <dbl>, UNCERTAINTY_LOWER <dbl>,

@@ -46,7 +46,7 @@ example_biota_tibble()
 #> # A tibble: 1 × 14
 #>   SAMPLE_ID  SITE_CODE PARAMETER_NAME ENVIRON_COMPARTMENT ENVIRON_COMPARTMENT_…¹
 #>   <glue>     <chr>     <chr>          <chr>               <chr>                 
-#> 1 SITE-001-… SITE-001  Copper         Biota               Biota, Aquatic        
+#> 1 SITE-002-… SITE-002  Lead           Biota               Biota, Aquatic        
 #> # ℹ abbreviated name: ¹​ENVIRON_COMPARTMENT_SUB
 #> # ℹ 9 more variables: MEASURED_CATEGORY <chr>, SAMPLING_DATE <chr>,
 #> #   SUBSAMPLE <chr>, SPECIES_GROUP <chr>, SAMPLE_SPECIES <chr>,
