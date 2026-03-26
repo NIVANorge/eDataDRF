@@ -45,8 +45,8 @@ format changes. In future, we plan to extend the format to other forms.
 
 We gratefully acknowledge the assistance and input of Kim Leirvik, Li
 Xi, Camden Karon Klefbom, Pierre Blévin, Anna Maria Hatland, Sophie
-Mentzel, Viviane Giradin, and the members of the PARC Project P7.2.2
-team in the creation of this format.
+Mentzel, Viviane Giradin, Walter Zobyl, and the members of the PARC
+Project P7.2.2 team in the creation of this format.
 
 This work is supported by the Research Council of Norway (RCN-315969
 EXPECT), EU-HEU-101057014 Project “PARC”, and NIVA’s Computational
