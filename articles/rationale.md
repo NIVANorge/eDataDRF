@@ -62,4 +62,4 @@ pointblank v. 0.12.3, quarto v. 1.5.1, rmarkdown v. 2.30, testthat v.
 ## Declaration of Generative AI Use
 
 The Claude family of Large Language Models was used in the creation of
-the package for the generation of boiletplate and some R code.
+the package for the generation of boilerplate and some R code.
