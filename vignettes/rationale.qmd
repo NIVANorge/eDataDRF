@@ -62,4 +62,4 @@ grateful::cite_packages(
 
 # Declaration of Generative AI Use
 
-The Claude family of Large Language Models was used in the creation of the package for the generation of boiletplate and some R code. 
+The Claude family of Large Language Models was used in the creation of the package for the generation of boilerplate and some R code. 
