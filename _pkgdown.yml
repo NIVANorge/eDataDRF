@@ -87,3 +87,6 @@ reference:
   desc: Functions using {pointblank} to validate data
 - contents:
   - contains("validate")
+
+deploy:
+  install_metadata: true # linking to STOPeData, hopefully

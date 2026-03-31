@@ -10,8 +10,7 @@ Authors@R: c(
 Description: The eData Data Reporting Format is a format for the reporting of chemical occurrence/exposure data in the natural environment. It provides tables, vocabulary,  
     and validation functions for structuring chemical occurrence data, as well as spatial, social, biological, geographical, and other metadata.
 License: MIT + file LICENSE
-URL: https://NIVANorge.github.io/eDataDRF/,
-    https://github.com/NIVANorge/eDataDRF
+URL: https://NIVANorge.github.io/eDataDRF/, https://github.com/NIVANorge/eDataDRF
 Imports: 
     arrow,
     cpp11,
