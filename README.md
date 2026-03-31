@@ -136,7 +136,7 @@ coordinate_systems_vocabulary(common_only = TRUE)
 #> [4] "WGS 84"                "ETRS89"                "WGS 84 / UTM zone 32N"
 #> [7] "WGS 84 / UTM zone 33N" "WGS 84 / UTM zone 34N" "WGS 84 / UTM zone 35N"
 
-# loads an RDS of IHO ocean definitions from /extdata/, returns a vector
+# returns a vector
 ocean_vocabulary()[1:20] 
 #>  [1] "Not relevant"       "Not reported"       "Other"             
 #>  [4] "Torres Strait"      "Tasman Sea"         "Solomon Sea"       
