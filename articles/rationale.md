@@ -55,7 +55,7 @@ Toxicology Program (NCTP, RCN-160016).
 We gratefully thank the developers and contributors to the following
 software used in this work: R v. 4.5.3 and the following R packages:
 arrow v. 23.0.1.2, cpp11 v. 0.5.3, crsuggest v. 0.4, glue v. 1.8.0,
-grateful v. 0.3.0, gt v. 1.3.0, ISOcodes v. 2025.5.18, knitr v. 1.51,
+grateful v. 0.3.0, gt v. 1.3.0, ISOcodes v. 2026.3.28, knitr v. 1.51,
 pointblank v. 0.12.3, quarto v. 1.5.1, rmarkdown v. 2.31, testthat v.
 3.3.2, tidyselect v. 1.2.1, tidyverse v. 2.0.0, zip v. 2.3.3.
 
