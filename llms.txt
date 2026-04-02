@@ -8,6 +8,9 @@ provides tables, vocabulary, and validation functions for structuring
 chemical occurrence data, as well as spatial, social, biological,
 geographical, and other metadata.
 
+For the eData application, please see its [dedicated
+repository](https://github.com/NIVANorge/STOPeData).
+
 # Installation
 
 To install this package, you will need the
@@ -59,19 +62,19 @@ and the extensive Tidyverse family of functions.
 
 Tables are listed below:
 
-| Table Name                                                                           | Purpose                                                                                              | Comments                                                                                  |
-|--------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
-| [Campaign](https://NIVANorge.github.io/eDataDRF/articles/campaign_data.html)         | Records data about sampling campaign and organisation collecting data.                               |                                                                                           |
-| [Reference](https://NIVANorge.github.io/eDataDRF/articles/references_data.html)      | Records conventional publication metadata, where available                                           |                                                                                           |
-| [Sites](https://NIVANorge.github.io/eDataDRF/articles/sites_data.html)               | Records site coordinates, land use, country/ocean                                                    |                                                                                           |
-| [Parameters](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.html)     | Records data on stressors (chemical, radiation, etc.), quality measurements                          |                                                                                           |
-| [Compartments](https://NIVANorge.github.io/eDataDRF/articles/compartments_data.html) | Records information on the compartment/matrix sampled                                                | Not used in final output, but exists as an intermediate table used to create samples      |
-| [Samples](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html)           | Records which combinations of dates, sites, parameters and compartments were sampled                 | Not used in final output, but exists as an intermediate table used to create measurements |
-| [Biota](https://NIVANorge.github.io/eDataDRF/articles/biota_data.html)               | Where relevant, records biota species, tissue, life stage, and gender                                | Optional                                                                                  |
-| [Methods](https://NIVANorge.github.io/eDataDRF/articles/methods_data.html)           | Records type and descriptions of methods used for sampling, extraction, fractionation and analysis   |                                                                                           |
-| [Measurements](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.html) | Records measured values, units, uncertainty, sample size, and methods associated with a given sample |                                                                                           |
-| [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html)     | Records CREED assessment criteria, relevant data, criteria scores, and limitations                   | Optional                                                                                  |
-| [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | Records CREED usability scores calculated from CREED data above                                      | Optional                                                                                  |
+| Table Name                                                                           | Purpose                                                                                              | Comments                                                                                    |
+|--------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| [Campaign](https://NIVANorge.github.io/eDataDRF/articles/campaign_data.html)         | Records data about sampling campaign and organisation collecting data.                               |                                                                                             |
+| [Reference](https://NIVANorge.github.io/eDataDRF/articles/references_data.html)      | Records conventional publication metadata, where available                                           |                                                                                             |
+| [Sites](https://NIVANorge.github.io/eDataDRF/articles/sites_data.html)               | Records site coordinates, land use, country/ocean                                                    |                                                                                             |
+| [Parameters](https://NIVANorge.github.io/eDataDRF/articles/parameters_data.html)     | Records data on stressors (chemical, radiation, etc.), quality measurements                          |                                                                                             |
+| [Compartments](https://NIVANorge.github.io/eDataDRF/articles/compartments_data.html) | Records information on the compartment/matrix sampled                                                |                                                                                             |
+| [Samples](https://NIVANorge.github.io/eDataDRF/articles/samples_data.html)           | Records which combinations of dates, sites, parameters and compartments were sampled                 | Not used in final analysis, but exists as an intermediate table used to create measurements |
+| [Biota](https://NIVANorge.github.io/eDataDRF/articles/biota_data.html)               | Where relevant, records biota species, tissue, life stage, and gender                                | Optional                                                                                    |
+| [Methods](https://NIVANorge.github.io/eDataDRF/articles/methods_data.html)           | Records type and descriptions of methods used for sampling, extraction, fractionation and analysis   |                                                                                             |
+| [Measurements](https://NIVANorge.github.io/eDataDRF/articles/measurements_data.html) | Records measured values, units, uncertainty, sample size, and methods associated with a given sample |                                                                                             |
+| [CREED (quality)](https://NIVANorge.github.io/eDataDRF/articles/CREED_data.html)     | Records CREED assessment criteria, relevant data, criteria scores, and limitations                   | Optional                                                                                    |
+| [CREED Scores](https://NIVANorge.github.io/eDataDRF/articles/CREED_scores_data.html) | Records CREED usability scores calculated from CREED data above                                      | Optional                                                                                    |
 
 ## Vocabulary
 
@@ -83,7 +86,7 @@ Where external data sources are used to generate a vocabulary, functions
 may wrap (processed) data from other R packages or load raw data from
 external sources. Vocabulary functions are documented in the [Reference
 section](https://NIVANorge.github.io/eDataDRF/reference/index.html#controlled-vocabulary)
-and linked to in the relevant table files in
+and linked to in their relevant tables.
 
 ``` r
 # returns a named vector
@@ -131,7 +134,7 @@ protocol_options_vocabulary()[1:5, 3]
 #> 4 Composite sampling
 #> 5 Trawl sampling
 
-# calls crsuggest::crs_sf, returns 4 rows (or more when common_only = FALSE)
+# calls crsuggest::crs_sf, filters to most common/relevant to Norway
 coordinate_systems_vocabulary(common_only = TRUE) 
 #> [1] "Not relevant"          "Not reported"          "Other"                
 #> [4] "WGS 84"                "ETRS89"                "WGS 84 / UTM zone 32N"

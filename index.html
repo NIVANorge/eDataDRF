@@ -89,6 +89,7 @@
 <h1 id="edata-data-reporting-format">eData Data Reporting Format<a class="anchor" aria-label="anchor" href="#edata-data-reporting-format"></a>
 </h1>
 <p>The eData Data Reporting Format is a format for the reporting of chemical occurrence/exposure data in the natural environment. It provides tables, vocabulary, and validation functions for structuring chemical occurrence data, as well as spatial, social, biological, geographical, and other metadata.</p>
+<p>For the eData application, please see its <a href="https://github.com/NIVANorge/STOPeData" class="external-link">dedicated repository</a>.</p>
 </div>
 <div class="section level1">
 <h1 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -159,12 +160,12 @@
 <tr class="odd">
 <td><a href="https://NIVANorge.github.io/eDataDRF/articles/compartments_data.html">Compartments</a></td>
 <td>Records information on the compartment/matrix sampled</td>
-<td>Not used in final output, but exists as an intermediate table used to create samples</td>
+<td></td>
 </tr>
 <tr class="even">
 <td><a href="https://NIVANorge.github.io/eDataDRF/articles/samples_data.html">Samples</a></td>
 <td>Records which combinations of dates, sites, parameters and compartments were sampled</td>
-<td>Not used in final output, but exists as an intermediate table used to create measurements</td>
+<td>Not used in final analysis, but exists as an intermediate table used to create measurements</td>
 </tr>
 <tr class="odd">
 <td><a href="https://NIVANorge.github.io/eDataDRF/articles/biota_data.html">Biota</a></td>
@@ -198,7 +199,7 @@
 <h2 id="vocabulary">Vocabulary<a class="anchor" aria-label="anchor" href="#vocabulary"></a>
 </h2>
 <p>Likewise, controlled vocabulary is available as functions that return vectors, lists, or tables. In some cases, helper functions are available that wrap multiple individual functions.</p>
-<p>Where external data sources are used to generate a vocabulary, functions may wrap (processed) data from other R packages or load raw data from external sources. Vocabulary functions are documented in the <a href="reference/index.html#controlled-vocabulary">Reference section</a> and linked to in the relevant table files in</p>
+<p>Where external data sources are used to generate a vocabulary, functions may wrap (processed) data from other R packages or load raw data from external sources. Vocabulary functions are documented in the <a href="reference/index.html#controlled-vocabulary">Reference section</a> and linked to in their relevant tables.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># returns a named vector</span></span>
 <span><span class="fu"><a href="reference/measured_categories_vocabulary.html">measured_categories_vocabulary</a></span><span class="op">(</span><span class="op">)</span> </span>
@@ -245,7 +246,7 @@
 <span><span class="co">#&gt; 4 Composite sampling</span></span>
 <span><span class="co">#&gt; 5 Trawl sampling</span></span>
 <span></span>
-<span><span class="co"># calls crsuggest::crs_sf, returns 4 rows (or more when common_only = FALSE)</span></span>
+<span><span class="co"># calls crsuggest::crs_sf, filters to most common/relevant to Norway</span></span>
 <span><span class="fu"><a href="reference/coordinate_systems_vocabulary.html">coordinate_systems_vocabulary</a></span><span class="op">(</span>common_only <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> </span>
 <span><span class="co">#&gt; [1] "Not relevant"          "Not reported"          "Other"                </span></span>
 <span><span class="co">#&gt; [4] "WGS 84"                "ETRS89"                "WGS 84 / UTM zone 32N"</span></span>
