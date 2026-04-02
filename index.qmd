@@ -1,10 +1,10 @@
 ---
-title: "Readme"
+title: "Index"
 knitr:
   opts_chunk:
     collapse: true
     comment: '#>'
-format: gfm
+format: html
 fig-format: png
 execute:
   freeze: false
