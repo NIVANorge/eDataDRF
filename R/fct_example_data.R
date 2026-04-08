@@ -25,7 +25,7 @@ example_campaign_tibble <- function() {
       CAMPAIGN_NAME = "Test Campaign 2023: Heavy Metals in Coastal Sediments",
       CAMPAIGN_START_DATE = as.Date("2023-01-15"),
       CAMPAIGN_END_DATE = as.Date("2023-06-30"),
-      ORGANISATION = "NIVA",
+      ORGANISATION = "Dummy Organisation",
       ENTERED_BY = "test_user",
       ENTERED_DATE = as.Date("2023-07-01"),
       CAMPAIGN_COMMENT = "Example campaign for testing purposes"

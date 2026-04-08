@@ -356,7 +356,7 @@ parameters_vocabulary <- function() {
       mustWork = TRUE
     )
   ) |>
-    mutate(ENTERED_BY = "saw@niva.no")
+    mutate(ENTERED_BY = "Anonymous Author")
 
   # Read and prepare chemical_parameters
   chemical_parameters <- read_parquet(
@@ -369,7 +369,7 @@ parameters_vocabulary <- function() {
   ) |>
     mutate(
       MEASURED_TYPE = "Concentration",
-      ENTERED_BY = "saw@niva.no"
+      ENTERED_BY = "Anonymous Author"
     ) |>
     arrange(PARAMETER_NAME) |>
     mutate(

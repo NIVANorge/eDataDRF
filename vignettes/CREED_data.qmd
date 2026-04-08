@@ -19,7 +19,7 @@ The object is evaluated based on its data availability, precision, choice of met
 
 For example, if a data source scored `1`, `2`, `2` for Silver/Required Reliability and `4`, `2` and `1` for Gold/Recommended Reliability, the final score would be 2 for Silver/Required Reliability and 4 for Gold/Recommended Reliability, which would translate into Silver Reliability "Reliable with Restrictions" and Gold Reliability "Not usable". 
 
-This table is not intended to be used as a final data product, but is included in the format because it provides traceability on how the CREED score was calculated. Because a large part of the evaluation logic is included in the [eData app](https://github.com/NIVANorge/STOPeData), this table is currently just a container with little relevant information. It is planned to migrate this logic to the eDataDRF in future.
+This table is not intended to be used as a final data product, but is included in the format because it provides traceability on how the CREED score was calculated. Because a large part of the evaluation logic is included in the eData app, this table is currently just a container with little relevant information. It is planned to migrate this logic to the eDataDRF in future.
 
 
 ```{r}
