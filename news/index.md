@@ -1,14 +1,8 @@
 # Changelog
 
-## eDataDRF (development version)
+## eDataDRF 0.0.0.9005
 
-## eDataDRF 0.0.0.9000
-
-- Initial release
-- Table initialisation functions for campaign, sites, parameters, etc.
-- Controlled vocabulary for environmental compartments, species,
-  protocols
-- Utility functions for ID generation and data export
+- Minor changes to vignettes and documentation
 
 ## eDataDRF 0.0.0.9004
 
@@ -20,6 +14,10 @@
 - Tests now check that example data passes validation as part of package
   build process
 
-## eDataDRF 0.0.0.9005
+## eDataDRF 0.0.0.9000
 
-- Minor changes to vignettes and documentation
+- Initial release
+- Table initialisation functions for campaign, sites, parameters, etc.
+- Controlled vocabulary for environmental compartments, species,
+  protocols
+- Utility functions for ID generation and data export

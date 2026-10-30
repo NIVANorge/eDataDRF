@@ -26,10 +26,12 @@ repeated (replicates), or a single sample may be split for analysis
 (sediment cores, biota tissue, etc.).
 
 ``` r
+
 library(eDataDRF)
 ```
 
 ``` r
+
 initialise_samples_tibble()
 #> # A tibble: 0 × 11
 #> # ℹ 11 variables: SITE_CODE <chr>, SITE_NAME <chr>, PARAMETER_NAME <chr>,

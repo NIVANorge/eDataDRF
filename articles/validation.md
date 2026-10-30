@@ -1,6 +1,7 @@
 # eData validation
 
 ``` r
+
 library(eDataDRF)
 library(pointblank)
 library(gt)
@@ -19,6 +20,7 @@ pointblank functionality, please consult the package’s documentation.
 ## Campaign data validation
 
 ``` r
+
 # generate example data
 example_campaign_tibble() |>
   # assign validation rules to each column
@@ -42,6 +44,7 @@ Annotated pointblank table.
 ## References data validation
 
 ``` r
+
 example_references_tibble() |>
   pb_validate_reference() |> 
     interrogate() |> 
@@ -53,6 +56,7 @@ example_references_tibble() |>
 ## Sites data validation
 
 ``` r
+
 example_sites_tibble() |>
   pb_validate_sites() |> 
     interrogate() |> 
@@ -64,6 +68,7 @@ example_sites_tibble() |>
 ## Parameters data validation
 
 ``` r
+
 example_parameters_tibble() |>
   pb_validate_parameters() |> 
       interrogate() |> 
@@ -75,6 +80,7 @@ example_parameters_tibble() |>
 ## Samples data validation
 
 ``` r
+
 example_samples_tibble() |>
   pb_validate_samples() |> 
       interrogate() |> 
@@ -86,6 +92,7 @@ example_samples_tibble() |>
 ## Biota data validation
 
 ``` r
+
 example_biota_tibble() |>
   pb_validate_biota() |> 
       interrogate() |> 
@@ -97,6 +104,7 @@ example_biota_tibble() |>
 ## Methods data validation
 
 ``` r
+
 example_methods_tibble() |>
   pb_validate_methods() |> 
       interrogate() |> 
@@ -108,6 +116,7 @@ example_methods_tibble() |>
 ## Measurements data validation
 
 ``` r
+
 example_measurements_tibble() |>
   pb_validate_measurements() |>
   interrogate() |>
@@ -121,6 +130,7 @@ example_measurements_tibble() |>
 CREED data is validated separately as Relevance and Reliability.
 
 ``` r
+
 example_CREED_relevance_tibble() |>
   pb_validate_CREED_data_relevance() |> 
     interrogate() |> 
@@ -130,6 +140,7 @@ example_CREED_relevance_tibble() |>
 [TABLE]
 
 ``` r
+
 example_CREED_reliability_tibble() |>
   pb_validate_CREED_data_reliability() |> 
     interrogate() |> 
@@ -141,6 +152,7 @@ example_CREED_reliability_tibble() |>
 ## CREED scores data validation
 
 ``` r
+
 example_CREED_scores_tibble() |>
   pb_validate_CREED_scores() |> 
     interrogate() |> 

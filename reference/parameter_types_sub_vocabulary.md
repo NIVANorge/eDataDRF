@@ -17,8 +17,10 @@ A character vector of parameter type subcategory options
 Dynamically built from unique `PARAMETER_TYPE_SUB` values in
 [`parameters_vocabulary()`](https://NIVANorge.github.io/eDataDRF/reference/parameters_vocabulary.md),
 with "Mixture" appended and standard data quality flags prepended.
-Chemical subtypes are taken from the
-[ChemOnt](http://classyfire.wishartlab.com) chemical taxonomy
+Chemical subtypes are the ClassyFire Superclasses from the
+[ChemOnt](http://classyfire.wishartlab.com) chemical taxonomy, as
+provided in the NICE Chemical Taxonomies dataset (see
+[`parameters_vocabulary`](https://NIVANorge.github.io/eDataDRF/reference/parameters_vocabulary.md)).
 
 ## See also
 

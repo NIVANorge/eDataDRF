@@ -15,15 +15,26 @@ A data frame combining quality and chemical parameter options
 
 ## Details
 
-Combines quality parameters with chemical parameters from the
-[ChemOnt](http://classyfire.wishartlab.com) chemical taxonomy (Djoumbou
-Feunang et al. 2016,
+Combines quality parameters with chemical parameters taken from the
+National Toxicology Program's NICE (NTP Integrated Chemical Environment)
+"Chemical Taxonomies" dataset (v1.1, ICE v4.1.1, Feb. 2025; [ICE dataset
+descriptions](https://ice.ntp.niehs.nih.gov/DATASETDESCRIPTION?section=Chemical%20Chemical%20Proper)).
+This dataset assigns every substance in DSSTox a structure-based,
+automated [ChemOnt/ClassyFire](http://classyfire.wishartlab.com)
+classification (Djoumbou Feunang et al. 2016,
 [doi:10.1186/s13321-016-0174-y](https://doi.org/10.1186/s13321-016-0174-y)
-). Quality parameters are read from quality_parameters.parquet and
-chemical parameters from ClassyFire_Taxonomy_2025_02.parquet. The
+).
+
+The full NICE dataset (\>1 million substances) is too large to
+distribute, so it was filtered by CAS RN to all substances in the EPA
+ECOTOX database plus all substances in the Vannmiljo database.
+`PARAMETER_TYPE_SUB` is the ClassyFire Superclass. The preparation
+script is `data-raw/NICE_ClassyFire_Chemical_Taxonomy_v1-1.R`.
+
+Quality parameters are read from quality_parameters.parquet and chemical
+parameters from NICE_ClassyFire_Chemical_Taxonomy_v1-1.parquet. The
 resulting dataset includes columns for parameter classification,
-chemical identifiers (InChIKey, PubChem CID, CAS RN), and measurement
-types.
+chemical identifiers (InChIKey, CAS RN), and measurement types.
 
 Note: Quality parameters have not yet been comprehensively validated as
 we are not aware of any taxonomy to validate them against.
@@ -32,7 +43,7 @@ Data sources:
 
 extdata/quality_parameters.parquet
 
-extdata/ClassyFire_Taxonomy_2025_02.parquet
+extdata/NICE_ClassyFire_Chemical_Taxonomy_v1-1.parquet
 
 ## See also
 

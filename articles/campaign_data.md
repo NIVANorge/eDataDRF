@@ -10,10 +10,12 @@ literature metadata (see
 [References](https://NIVANorge.github.io/eDataDRF/articles/references_data.md)).
 
 ``` r
+
 library(eDataDRF)
 ```
 
 ``` r
+
 initialise_campaign_tibble()
 #> # A tibble: 0 × 8
 #> # ℹ 8 variables: CAMPAIGN_NAME_SHORT <chr>, CAMPAIGN_NAME <chr>,

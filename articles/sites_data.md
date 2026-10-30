@@ -22,10 +22,12 @@ operations are performed should be reported in the [comments
 field](#site-comment---string-free-optional).
 
 ``` r
+
 library(eDataDRF)
 ```
 
 ``` r
+
 initialise_sites_tibble()
 #> # A tibble: 0 × 14
 #> # ℹ 14 variables: SITE_CODE <chr>, SITE_NAME <chr>,
@@ -81,31 +83,32 @@ taxonomy to facilitate conversion and comparison:
 
 These are summarised in the table below
 
-| Value                             | Description                                                                | LUCAS | CORINE | WFD | MSFD |
-|-----------------------------------|----------------------------------------------------------------------------|-------|--------|-----|------|
-| Not relevant                      | Use when geographic feature is not applicable                              |       |        |     |      |
-| Not reported                      | Use when information exists but was not reported                           |       |        |     |      |
-| River, stream, canal              | Flowing water bodies                                                       | G20   | 5.1.1  |     |      |
-| Lake, pond, pool, reservoir       | Standing water bodies                                                      | G10   | 5.1.2  |     |      |
-| Ocean, sea, territorial waters    | Marine waters                                                              | G40   | 5.2.3  |     |      |
-| Coastal, fjord                    | Coastal waters out to territorial water boundaries                         | G30   | 5.2.1  |     |      |
-| Estuary                           | Estuaries                                                                  |       | 5.2.2  |     |      |
-| Drainage, sewer, artificial water | Human-made water channels                                                  |       |        |     |      |
-| Swamp, wetland                    | Water-saturated land                                                       | H00   | 4      |     |      |
-| Groundwater, aquifer              | Subsurface water bodies                                                    |       |        |     |      |
-| WWTP                              | Wastewater treatment plant                                                 | U321  | 1.2.1  |     |      |
-| Artificial Land/Urban Areas       | Built environment                                                          | A00   | 1      |     |      |
-| Landfills                         | Sites officially designated or functionally used for the disposal of waste | A00   | 1      |     |      |
-| Cropland                          | Agricultural land                                                          | B00   | 2      |     |      |
-| Woodland, forest                  | Tree-covered areas                                                         | C00   | 3.1    |     |      |
-| Shrubland                         | Areas dominated by shrubs                                                  | D00   | 3.2    |     |      |
-| Grassland                         | Areas dominated by grasses                                                 | E00   |        |     |      |
-| Bare land and lichen/moss         | Sparsely vegetated areas                                                   | F00   | 3.3    |     |      |
-| Other                             | Specify details in [SITE_COMMENT](#site-comment)                           |       |        |     |      |
+| Value | Description | LUCAS | CORINE | WFD | MSFD |
+|----|----|----|----|----|----|
+| Not relevant | Use when geographic feature is not applicable |  |  |  |  |
+| Not reported | Use when information exists but was not reported |  |  |  |  |
+| River, stream, canal | Flowing water bodies | G20 | 5.1.1 |  |  |
+| Lake, pond, pool, reservoir | Standing water bodies | G10 | 5.1.2 |  |  |
+| Ocean, sea, territorial waters | Marine waters | G40 | 5.2.3 |  |  |
+| Coastal, fjord | Coastal waters out to territorial water boundaries | G30 | 5.2.1 |  |  |
+| Estuary | Estuaries |  | 5.2.2 |  |  |
+| Drainage, sewer, artificial water | Human-made water channels |  |  |  |  |
+| Swamp, wetland | Water-saturated land | H00 | 4 |  |  |
+| Groundwater, aquifer | Subsurface water bodies |  |  |  |  |
+| WWTP | Wastewater treatment plant | U321 | 1.2.1 |  |  |
+| Artificial Land/Urban Areas | Built environment | A00 | 1 |  |  |
+| Landfills | Sites officially designated or functionally used for the disposal of waste | A00 | 1 |  |  |
+| Cropland | Agricultural land | B00 | 2 |  |  |
+| Woodland, forest | Tree-covered areas | C00 | 3.1 |  |  |
+| Shrubland | Areas dominated by shrubs | D00 | 3.2 |  |  |
+| Grassland | Areas dominated by grasses | E00 |  |  |  |
+| Bare land and lichen/moss | Sparsely vegetated areas | F00 | 3.3 |  |  |
+| Other | Specify details in [SITE_COMMENT](#site-comment) |  |  |  |  |
 
 #### Controlled Vocabulary
 
 ``` r
+
 geographic_features_vocabulary()
 #>  [1] "Not relevant"                      "Not reported"                     
 #>  [3] "River, stream, canal"              "Lake, pond, pool, reservoir"      
@@ -132,6 +135,7 @@ to add additional precision.
 #### Controlled Vocabulary
 
 ``` r
+
 geographic_features_sub_vocabulary()
 #> [1] "Not relevant"               "Not reported"              
 #> [3] "Water surface"              "Water column, pelagic zone"
@@ -153,6 +157,7 @@ R package `{iso}`.
 #### Controlled Vocabulary
 
 ``` r
+
 countries_vocabulary()
 #>   [1] "Not relevant"                                
 #>   [2] "Not reported"                                
@@ -426,6 +431,7 @@ variables.
 #### Controlled Vocabulary
 
 ``` r
+
 areas_vocabulary()
 #>   [1] "Not relevant"                "Not reported"               
 #>   [3] "Other"                       "Torres Strait"              
@@ -554,6 +560,7 @@ scope.
 #### Controlled Vocabulary
 
 ``` r
+
 coordinate_systems_vocabulary(common_only = TRUE)
 #> [1] "Not relevant"          "Not reported"          "Other"                
 #> [4] "WGS 84"                "ETRS89"                "WGS 84 / UTM zone 32N"
@@ -579,6 +586,7 @@ value](#altitude-value---numeric-free-mandatory).
 #### Controlled Vocabulary
 
 ``` r
+
 altitude_units_vocabulary()
 #> [1] "km" "m"  "cm" "mm"
 ```

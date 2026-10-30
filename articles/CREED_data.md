@@ -38,10 +38,12 @@ information. It is planned to migrate this logic to the eDataDRF in
 future.
 
 ``` r
+
 library(eDataDRF)
 ```
 
 ``` r
+
 initialise_CREED_data_tibble()
 #> # A tibble: 0 × 6
 #> # ℹ 6 variables: criterion_id <chr>, criterion_title <chr>,
@@ -98,6 +100,7 @@ scores - both Not Applicable and Fully Met are considered a full pass
 (1).
 
 ``` r
+
 CREED_choices_vocabulary()
 #>      Not Met    Fully Met   Partly Met Not Reported Not Relevant 
 #>            4            1            2            3            1
@@ -118,6 +121,7 @@ provided below, for reference.
 ### CREED Relevance
 
 ``` r
+
 example_CREED_relevance_tibble() |>
   dplyr::mutate(relevant_data = stringr::str_replace_all(relevant_data, "\n", "<br>")) |>
   gt::gt() |>
@@ -129,6 +133,7 @@ example_CREED_relevance_tibble() |>
 ### CREED Reliability
 
 ``` r
+
 example_CREED_reliability_tibble() |>
   dplyr::mutate(relevant_data = stringr::str_replace_all(relevant_data, "\n", "<br>")) |>
   gt::gt() |>

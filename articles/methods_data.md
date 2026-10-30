@@ -35,10 +35,12 @@ with it, the measurements table has a foreign key for each type of
 methodology that references the relevant [Protocol ID](#protocol-id).
 
 ``` r
+
 library(eDataDRF)
 ```
 
 ``` r
+
 initialise_methods_tibble()
 #> # A tibble: 0 × 5
 #> # ℹ 5 variables: PROTOCOL_ID <chr>, CAMPAIGN_NAME <chr>,
@@ -66,6 +68,7 @@ scale of use at the format. Additionally, it is far easier to read and
 interpret for humans.
 
 ``` r
+
 generate_protocol_id(
   protocol_type = "Analytical Protocol",
   protocol_name = "ICP-MS",
@@ -92,6 +95,7 @@ The category of protocol/method (Sampling, Extraction, Fractionation,
 Analytical).
 
 ``` r
+
 protocol_categories_vocabulary()
 #> [1] "Sampling Protocol"      "Fractionation Protocol" "Extraction Protocol"   
 #> [4] "Analytical Protocol"
@@ -107,6 +111,7 @@ domain, but will be extended and harmonised with relevant ontologies and
 taxonomies as practical.
 
 ``` r
+
 sampling_protocols_vocabulary()
 #> # A tibble: 22 × 3
 #>    Protocol_Type     Short_Name     Long_Name            

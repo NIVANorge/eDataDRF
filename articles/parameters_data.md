@@ -7,10 +7,12 @@ parameters, and any other scalar properties measured in the context of
 adverse environmental effect.
 
 ``` r
+
 library(eDataDRF)
 ```
 
 ``` r
+
 initialise_parameters_tibble()
 #> # A tibble: 0 × 10
 #> # ℹ 10 variables: PARAMETER_TYPE <chr>, PARAMETER_TYPE_SUB <chr>,
@@ -41,6 +43,7 @@ identified by name/id.
 #### Controlled Vocabulary
 
 ``` r
+
 parameter_types_vocabulary()
 #> [1] "Not relevant"         "Stressor"             "Quality parameter"   
 #> [4] "Normalisation"        "Background"           "Ecological Indicator"
@@ -70,17 +73,20 @@ comments field.
 
 Parameter Sub-type is a further subdivision of [Parameter
 Type](#parameter-type). The majority of subtypes are chemical
-classifications from the
+classifications (ClassyFire Superclasses) from the
 [ChemOnt/ClassyFire](https://pmc.ncbi.nlm.nih.gov/articles/PMC5096306/)
-chemical taxonomy; other subtypes are intended for use with quality
-parameters, stressors measured as mixtures, or other cases where
-additional details are needed. Existing parameters in the format are
-already assigned a subtype, new parameters should be assigned to a
-relevant subtype.
+chemical taxonomy, as provided in the National Toxicology Program’s
+[NICE Chemical Taxonomies
+dataset](https://ice.ntp.niehs.nih.gov/DATASETDESCRIPTION?section=Chemical%20Chemical%20Proper);
+other subtypes are intended for use with quality parameters, stressors
+measured as mixtures, or other cases where additional details are
+needed. Existing parameters in the format are already assigned a
+subtype, new parameters should be assigned to a relevant subtype.
 
 #### Controlled Vocabulary
 
 ``` r
+
 parameter_types_sub_vocabulary()
 #>  [1] "Not relevant"                             
 #>  [2] "Not reported"                             
@@ -129,11 +135,17 @@ parameter_types_sub_vocabulary()
 
 Parameter name records the reported name of a measured parameter. In the
 majority of cases this will be a short-form conventional chemical name;
-these are, as above taken from
+these are, as above, taken from the National Toxicology Program’s [NICE
+Chemical Taxonomies
+dataset](https://ice.ntp.niehs.nih.gov/DATASETDESCRIPTION?section=Chemical%20Chemical%20Proper)
+(v1.1, ICE v4.1.1, Feb. 2025), which classifies substances using
 [ChemOnt/ClassyFire](https://pmc.ncbi.nlm.nih.gov/articles/PMC5096306/).
-To maximise standardisation we recommend use of the existing available
-names rather than entering new ones; this may require some manual
-validation of CAS codes, InChIKeys, etc.
+The full dataset covers over a million substances, so it has been
+filtered to all substances in the EPA ECOTOX database plus all
+substances in the Vannmiljø database. To maximise standardisation we
+recommend use of the existing available names rather than entering new
+ones; this may require some manual validation of CAS codes, InChIKeys,
+etc.
 
 Parameter name is currently used as the primary key for the Parameters
 data table and a foreign key in the Samples and Measurements tables.
@@ -141,6 +153,7 @@ data table and a foreign key in the Samples and Measurements tables.
 #### Controlled Vocabulary
 
 ``` r
+
 parameters_vocabulary() |> dplyr::slice_head(n = 20)
 #> # A tibble: 20 × 9
 #>    PARAMETER_TYPE    PARAMETER_NAME      PARAMETER_TYPE_SUB MEASURED_TYPE CAS_RN

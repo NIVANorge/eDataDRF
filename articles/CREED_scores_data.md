@@ -34,10 +34,12 @@ app](https://github.com/NIVANorge/STOPeData) during the CREED assessment
 process.
 
 ``` r
+
 library(eDataDRF)
 ```
 
 ``` r
+
 initialise_CREED_scores_tibble()
 #> # A tibble: 0 × 5
 #> # ℹ 5 variables: REFERENCE_ID <chr>, SILVER_RELIABILITY <chr>,

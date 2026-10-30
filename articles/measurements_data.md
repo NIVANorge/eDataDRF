@@ -16,10 +16,12 @@ order is rearranged so that when entering data, the most relevant fields
 are on the left of the table.
 
 ``` r
+
 library(eDataDRF)
 ```
 
 ``` r
+
 initialise_measurements_tibble()
 #> # A tibble: 0 × 27
 #> # ℹ 27 variables: SITE_CODE <chr>, PARAMETER_NAME <chr>, SAMPLING_DATE <chr>,
@@ -92,6 +94,7 @@ complete at least one of LOQ/LOD.
 #### Controlled Vocabulary
 
 ``` r
+
 measured_flag_vocabulary()
 #> [1] ""      "< LOQ" "< LOD"
 ```
@@ -118,6 +121,7 @@ should also be reported.
 #### Controlled Vocabulary
 
 ``` r
+
 uncertainty_types_vocabulary()
 #>  [1] "Not Reported"                    "Not Relevant"                   
 #>  [3] "Arithmetic Mean"                 "Geometric Mean"                 
@@ -157,6 +161,7 @@ Mandatory when a [Measured value](#measured-value) is provided.
 #### Controlled Vocabulary
 
 ``` r
+
 parameter_unit_vocabulary()
 #> # A tibble: 64 × 4
 #>    MEASURED_UNIT BASE_SI_UNIT CONVERSION_FACTOR UNIT_COMMENTS      
@@ -307,6 +312,7 @@ but other options are provided.
 #### Controlled Vocabulary
 
 ``` r
+
 measured_types_vocabulary()
 #>  [1] "Concentration"        "Dose rate"            "Dose"                
 #>  [4] "Physical parameter"   "Amount"               "Volume"              

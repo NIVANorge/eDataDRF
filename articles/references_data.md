@@ -12,10 +12,12 @@ may be more relevant; in this case, much of the references data can be
 left blank.
 
 ``` r
+
 library(eDataDRF)
 ```
 
 ``` r
+
 initialise_references_tibble()
 #> # A tibble: 0 × 18
 #> # ℹ 18 variables: REFERENCE_ID <chr>, REFERENCE_TYPE <chr>, DATA_SOURCE <chr>,
@@ -37,6 +39,7 @@ and TITLE using
 as follows:
 
 ``` r
+
 generate_reference_id(
   date = 2018, # i.e. publication date
   author = "Last1, First1; Last2, First2", # Take last name of first author

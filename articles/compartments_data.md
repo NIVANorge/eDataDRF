@@ -24,10 +24,12 @@ It is thus not part of the final data product, but should be included in
 exports in order to maximise reproducibility.
 
 ``` r
+
 library(eDataDRF)
 ```
 
 ``` r
+
 initialise_compartments_tibble()
 #> # A tibble: 0 × 3
 #> # ℹ 3 variables: ENVIRON_COMPARTMENT <chr>, ENVIRON_COMPARTMENT_SUB <chr>,
@@ -48,6 +50,7 @@ some samples may not fit well into this category.
 #### Controlled Vocabulary
 
 ``` r
+
 environ_compartments_vocabulary()
 #> [1] "Aquatic"      "Atmospheric"  "Terrestrial"  "Biota"        "Not relevant"
 #> [6] "Not reported" "Other"
@@ -66,6 +69,7 @@ Resources](https://isric.org/explore/wrb).
 #### Controlled Vocabulary
 
 ``` r
+
 environ_compartments_sub_vocabulary()
 #> $Aquatic
 #>                    Freshwater             Marine/Salt Water 
@@ -126,6 +130,7 @@ Biota table in future.
 #### Controlled Vocabulary
 
 ``` r
+
 measured_categories_vocabulary()
 #>               External               Internal                Surface 
 #>       "External Media" "Internal to Organism"  "Surface of Organism"

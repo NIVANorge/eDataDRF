@@ -16,10 +16,12 @@ are selected. Otherwise, this element of the data entry workflow is
 skipped as irrelevant.
 
 ``` r
+
 library(eDataDRF)
 ```
 
 ``` r
+
 initialise_biota_tibble()
 #> # A tibble: 0 × 14
 #> # ℹ 14 variables: SAMPLE_ID <chr>, SITE_CODE <chr>, PARAMETER_NAME <chr>,
@@ -114,6 +116,7 @@ resource.
 #### Controlled Vocabulary
 
 ``` r
+
 species_groups_vocabulary()
 #>  [1] "All"             "Algae"           "Amphibians"      "Bacteria"       
 #>  [5] "Birds"           "Crustaceans"     "Ecosystem"       "Fish"           
@@ -135,6 +138,7 @@ Where this is insufficent, a species name can be added manually.
 #### Controlled Vocabulary
 
 ``` r
+
 species_names_vocabulary()
 #> # A tibble: 29,562 × 4
 #>    SPECIES_COMMON_NAME SPECIES_NAME          SPECIES_KINGDOM SPECIES_GROUP
@@ -163,6 +167,7 @@ harmonisation with an existing tissue ontology as practical.
 #### Controlled Vocabulary
 
 ``` r
+
 tissue_types_vocabulary()
 #>  [1] "Not reported"                    "Not relevant"                   
 #>  [3] "Whole body"                      "Total soft tissues"             
@@ -196,6 +201,7 @@ practical.
 #### Controlled Vocabulary
 
 ``` r
+
 lifestage_vocabulary()
 #>  [1] "Not reported" "Not relevant" "Adult"        "Juvenile"     "Larva"       
 #>  [6] "Embryo"       "Egg"          "Seedling"     "Mature"       "Young"       
@@ -211,6 +217,7 @@ The gender or sex of a sampled organism. May be harmonised as needed.
 #### Controlled Vocabulary
 
 ``` r
+
 gender_vocabulary()
 #> [1] "Not reported"  "Not relevant"  "Male"          "Female"       
 #> [5] "Mixed"         "Hermaphrodite" "Other"

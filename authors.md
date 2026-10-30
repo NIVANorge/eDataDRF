@@ -15,12 +15,12 @@ Source:
 
 Welch S (2026). *eDataDRF: A (meta)data format and controlled vocabulary
 for measurements chemical concentrations in the environment*. R package
-version 0.0.0.9005, <https://NIVANorge.github.io/eDataDRF/>.
+version 0.0.0.9006, <https://NIVANorge.github.io/eDataDRF/>.
 
     @Manual{,
       title = {eDataDRF: A (meta)data format and controlled vocabulary for measurements chemical concentrations in the environment},
       author = {Sam A. Welch},
       year = {2026},
-      note = {R package version 0.0.0.9005},
+      note = {R package version 0.0.0.9006},
       url = {https://NIVANorge.github.io/eDataDRF/},
     }
