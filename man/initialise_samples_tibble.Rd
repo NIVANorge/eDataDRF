@@ -45,22 +45,22 @@ See \code{vignette("samples_data")} for more information.
 initialise_samples_tibble()
 }
 \seealso{
-Other initialise_tibble: 
-\code{\link{initialise_CREED_data_tibble}()},
-\code{\link{initialise_CREED_scores_tibble}()},
-\code{\link{initialise_biota_tibble}()},
-\code{\link{initialise_campaign_tibble}()},
-\code{\link{initialise_compartments_tibble}()},
-\code{\link{initialise_measurements_tibble}()},
-\code{\link{initialise_methods_tibble}()},
-\code{\link{initialise_parameters_tibble}()},
-\code{\link{initialise_references_tibble}()},
-\code{\link{initialise_sites_tibble}()}
+Other initialise_tibble:
+\code{\link[=initialise_CREED_data_tibble]{initialise_CREED_data_tibble()}},
+\code{\link[=initialise_CREED_scores_tibble]{initialise_CREED_scores_tibble()}},
+\code{\link[=initialise_biota_tibble]{initialise_biota_tibble()}},
+\code{\link[=initialise_campaign_tibble]{initialise_campaign_tibble()}},
+\code{\link[=initialise_compartments_tibble]{initialise_compartments_tibble()}},
+\code{\link[=initialise_measurements_tibble]{initialise_measurements_tibble()}},
+\code{\link[=initialise_methods_tibble]{initialise_methods_tibble()}},
+\code{\link[=initialise_parameters_tibble]{initialise_parameters_tibble()}},
+\code{\link[=initialise_references_tibble]{initialise_references_tibble()}},
+\code{\link[=initialise_sites_tibble]{initialise_sites_tibble()}}
 
-Other sample: 
-\code{\link{example_samples_tibble}()},
-\code{\link{generate_sample_id_with_components}()},
-\code{\link{sample_id_regex}()}
+Other sample:
+\code{\link[=example_samples_tibble]{example_samples_tibble()}},
+\code{\link[=generate_sample_id_with_components]{generate_sample_id_with_components()}},
+\code{\link[=sample_id_regex]{sample_id_regex()}}
 }
 \concept{initialise_tibble}
 \concept{sample}

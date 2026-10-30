@@ -20,26 +20,26 @@ example_biota_tibble()
 
 }
 \seealso{
-Other example_tibble: 
-\code{\link{example_CREED_relevance_tibble}()},
-\code{\link{example_CREED_reliability_tibble}()},
-\code{\link{example_CREED_scores_tibble}()},
-\code{\link{example_campaign_tibble}()},
-\code{\link{example_compartments_tibble}()},
-\code{\link{example_measurements_tibble}()},
-\code{\link{example_methods_tibble}()},
-\code{\link{example_parameters_tibble}()},
-\code{\link{example_references_tibble}()},
-\code{\link{example_samples_tibble}()},
-\code{\link{example_sites_tibble}()}
+Other example_tibble:
+\code{\link[=example_CREED_relevance_tibble]{example_CREED_relevance_tibble()}},
+\code{\link[=example_CREED_reliability_tibble]{example_CREED_reliability_tibble()}},
+\code{\link[=example_CREED_scores_tibble]{example_CREED_scores_tibble()}},
+\code{\link[=example_campaign_tibble]{example_campaign_tibble()}},
+\code{\link[=example_compartments_tibble]{example_compartments_tibble()}},
+\code{\link[=example_measurements_tibble]{example_measurements_tibble()}},
+\code{\link[=example_methods_tibble]{example_methods_tibble()}},
+\code{\link[=example_parameters_tibble]{example_parameters_tibble()}},
+\code{\link[=example_references_tibble]{example_references_tibble()}},
+\code{\link[=example_samples_tibble]{example_samples_tibble()}},
+\code{\link[=example_sites_tibble]{example_sites_tibble()}}
 
-Other biota: 
-\code{\link{gender_vocabulary}()},
-\code{\link{initialise_biota_tibble}()},
-\code{\link{lifestage_vocabulary}()},
-\code{\link{species_groups_vocabulary}()},
-\code{\link{species_names_vocabulary}()},
-\code{\link{tissue_types_vocabulary}()}
+Other biota:
+\code{\link[=gender_vocabulary]{gender_vocabulary()}},
+\code{\link[=initialise_biota_tibble]{initialise_biota_tibble()}},
+\code{\link[=lifestage_vocabulary]{lifestage_vocabulary()}},
+\code{\link[=species_groups_vocabulary]{species_groups_vocabulary()}},
+\code{\link[=species_names_vocabulary]{species_names_vocabulary()}},
+\code{\link[=tissue_types_vocabulary]{tissue_types_vocabulary()}}
 }
 \concept{biota}
 \concept{example_tibble}

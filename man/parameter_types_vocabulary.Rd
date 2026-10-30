@@ -17,11 +17,11 @@ stressors, background levels, quality parameters, etc.
 parameter_types_vocabulary()
 }
 \seealso{
-Other parameter: 
-\code{\link{example_parameters_tibble}()},
-\code{\link{initialise_parameters_tibble}()},
-\code{\link{measured_types_vocabulary}()},
-\code{\link{parameter_types_sub_vocabulary}()},
-\code{\link{parameters_vocabulary}()}
+Other parameter:
+\code{\link[=example_parameters_tibble]{example_parameters_tibble()}},
+\code{\link[=initialise_parameters_tibble]{initialise_parameters_tibble()}},
+\code{\link[=measured_types_vocabulary]{measured_types_vocabulary()}},
+\code{\link[=parameter_types_sub_vocabulary]{parameter_types_sub_vocabulary()}},
+\code{\link[=parameters_vocabulary]{parameters_vocabulary()}}
 }
 \concept{parameter}

@@ -15,18 +15,19 @@ Returns controlled vocabulary options for parameter type subcategories.
 \details{
 Dynamically built from unique \code{PARAMETER_TYPE_SUB} values in
 \code{parameters_vocabulary()}, with "Mixture" appended and standard data quality
-flags prepended. Chemical subtypes are taken from the
-\href{http://classyfire.wishartlab.com}{ChemOnt} chemical taxonomy
+flags prepended. Chemical subtypes are the ClassyFire Superclasses from the
+\href{http://classyfire.wishartlab.com}{ChemOnt} chemical taxonomy, as provided in the
+NICE Chemical Taxonomies dataset (see \code{\link{parameters_vocabulary}}).
 }
 \examples{
 head(parameter_types_sub_vocabulary(), 15)
 }
 \seealso{
-Other parameter: 
-\code{\link{example_parameters_tibble}()},
-\code{\link{initialise_parameters_tibble}()},
-\code{\link{measured_types_vocabulary}()},
-\code{\link{parameter_types_vocabulary}()},
-\code{\link{parameters_vocabulary}()}
+Other parameter:
+\code{\link[=example_parameters_tibble]{example_parameters_tibble()}},
+\code{\link[=initialise_parameters_tibble]{initialise_parameters_tibble()}},
+\code{\link[=measured_types_vocabulary]{measured_types_vocabulary()}},
+\code{\link[=parameter_types_vocabulary]{parameter_types_vocabulary()}},
+\code{\link[=parameters_vocabulary]{parameters_vocabulary()}}
 }
 \concept{parameter}

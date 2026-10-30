@@ -19,12 +19,12 @@ In future, this will be standardised with the BRENDA and/or Uberon tissue ontolo
 tissue_types_vocabulary()
 }
 \seealso{
-Other biota: 
-\code{\link{example_biota_tibble}()},
-\code{\link{gender_vocabulary}()},
-\code{\link{initialise_biota_tibble}()},
-\code{\link{lifestage_vocabulary}()},
-\code{\link{species_groups_vocabulary}()},
-\code{\link{species_names_vocabulary}()}
+Other biota:
+\code{\link[=example_biota_tibble]{example_biota_tibble()}},
+\code{\link[=gender_vocabulary]{gender_vocabulary()}},
+\code{\link[=initialise_biota_tibble]{initialise_biota_tibble()}},
+\code{\link[=lifestage_vocabulary]{lifestage_vocabulary()}},
+\code{\link[=species_groups_vocabulary]{species_groups_vocabulary()}},
+\code{\link[=species_names_vocabulary]{species_names_vocabulary()}}
 }
 \concept{biota}

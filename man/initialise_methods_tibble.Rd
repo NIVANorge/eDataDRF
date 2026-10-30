@@ -32,28 +32,28 @@ See \code{vignette("methods_data")} for more information.
 initialise_methods_tibble()
 }
 \seealso{
-Other initialise_tibble: 
-\code{\link{initialise_CREED_data_tibble}()},
-\code{\link{initialise_CREED_scores_tibble}()},
-\code{\link{initialise_biota_tibble}()},
-\code{\link{initialise_campaign_tibble}()},
-\code{\link{initialise_compartments_tibble}()},
-\code{\link{initialise_measurements_tibble}()},
-\code{\link{initialise_parameters_tibble}()},
-\code{\link{initialise_references_tibble}()},
-\code{\link{initialise_samples_tibble}()},
-\code{\link{initialise_sites_tibble}()}
+Other initialise_tibble:
+\code{\link[=initialise_CREED_data_tibble]{initialise_CREED_data_tibble()}},
+\code{\link[=initialise_CREED_scores_tibble]{initialise_CREED_scores_tibble()}},
+\code{\link[=initialise_biota_tibble]{initialise_biota_tibble()}},
+\code{\link[=initialise_campaign_tibble]{initialise_campaign_tibble()}},
+\code{\link[=initialise_compartments_tibble]{initialise_compartments_tibble()}},
+\code{\link[=initialise_measurements_tibble]{initialise_measurements_tibble()}},
+\code{\link[=initialise_parameters_tibble]{initialise_parameters_tibble()}},
+\code{\link[=initialise_references_tibble]{initialise_references_tibble()}},
+\code{\link[=initialise_samples_tibble]{initialise_samples_tibble()}},
+\code{\link[=initialise_sites_tibble]{initialise_sites_tibble()}}
 
-Other method: 
-\code{\link{analytical_protocols_vocabulary}()},
-\code{\link{example_methods_tibble}()},
-\code{\link{extraction_protocols_vocabulary}()},
-\code{\link{fractionation_protocols_vocabulary}()},
-\code{\link{generate_protocol_id}()},
-\code{\link{protocol_categories_vocabulary}()},
-\code{\link{protocol_id_regex}()},
-\code{\link{protocol_options_vocabulary}()},
-\code{\link{sampling_protocols_vocabulary}()}
+Other method:
+\code{\link[=analytical_protocols_vocabulary]{analytical_protocols_vocabulary()}},
+\code{\link[=example_methods_tibble]{example_methods_tibble()}},
+\code{\link[=extraction_protocols_vocabulary]{extraction_protocols_vocabulary()}},
+\code{\link[=fractionation_protocols_vocabulary]{fractionation_protocols_vocabulary()}},
+\code{\link[=generate_protocol_id]{generate_protocol_id()}},
+\code{\link[=protocol_categories_vocabulary]{protocol_categories_vocabulary()}},
+\code{\link[=protocol_id_regex]{protocol_id_regex()}},
+\code{\link[=protocol_options_vocabulary]{protocol_options_vocabulary()}},
+\code{\link[=sampling_protocols_vocabulary]{sampling_protocols_vocabulary()}}
 }
 \concept{initialise_tibble}
 \concept{method}

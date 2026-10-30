@@ -19,29 +19,29 @@ example_methods_tibble()
 
 }
 \seealso{
-Other example_tibble: 
-\code{\link{example_CREED_relevance_tibble}()},
-\code{\link{example_CREED_reliability_tibble}()},
-\code{\link{example_CREED_scores_tibble}()},
-\code{\link{example_biota_tibble}()},
-\code{\link{example_campaign_tibble}()},
-\code{\link{example_compartments_tibble}()},
-\code{\link{example_measurements_tibble}()},
-\code{\link{example_parameters_tibble}()},
-\code{\link{example_references_tibble}()},
-\code{\link{example_samples_tibble}()},
-\code{\link{example_sites_tibble}()}
+Other example_tibble:
+\code{\link[=example_CREED_relevance_tibble]{example_CREED_relevance_tibble()}},
+\code{\link[=example_CREED_reliability_tibble]{example_CREED_reliability_tibble()}},
+\code{\link[=example_CREED_scores_tibble]{example_CREED_scores_tibble()}},
+\code{\link[=example_biota_tibble]{example_biota_tibble()}},
+\code{\link[=example_campaign_tibble]{example_campaign_tibble()}},
+\code{\link[=example_compartments_tibble]{example_compartments_tibble()}},
+\code{\link[=example_measurements_tibble]{example_measurements_tibble()}},
+\code{\link[=example_parameters_tibble]{example_parameters_tibble()}},
+\code{\link[=example_references_tibble]{example_references_tibble()}},
+\code{\link[=example_samples_tibble]{example_samples_tibble()}},
+\code{\link[=example_sites_tibble]{example_sites_tibble()}}
 
-Other method: 
-\code{\link{analytical_protocols_vocabulary}()},
-\code{\link{extraction_protocols_vocabulary}()},
-\code{\link{fractionation_protocols_vocabulary}()},
-\code{\link{generate_protocol_id}()},
-\code{\link{initialise_methods_tibble}()},
-\code{\link{protocol_categories_vocabulary}()},
-\code{\link{protocol_id_regex}()},
-\code{\link{protocol_options_vocabulary}()},
-\code{\link{sampling_protocols_vocabulary}()}
+Other method:
+\code{\link[=analytical_protocols_vocabulary]{analytical_protocols_vocabulary()}},
+\code{\link[=extraction_protocols_vocabulary]{extraction_protocols_vocabulary()}},
+\code{\link[=fractionation_protocols_vocabulary]{fractionation_protocols_vocabulary()}},
+\code{\link[=generate_protocol_id]{generate_protocol_id()}},
+\code{\link[=initialise_methods_tibble]{initialise_methods_tibble()}},
+\code{\link[=protocol_categories_vocabulary]{protocol_categories_vocabulary()}},
+\code{\link[=protocol_id_regex]{protocol_id_regex()}},
+\code{\link[=protocol_options_vocabulary]{protocol_options_vocabulary()}},
+\code{\link[=sampling_protocols_vocabulary]{sampling_protocols_vocabulary()}}
 }
 \concept{example_tibble}
 \concept{method}

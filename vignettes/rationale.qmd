@@ -44,11 +44,28 @@ This work is supported by the Research Council of Norway (RCN-315969 EXPECT), EU
 
 grateful::cite_packages(
   text.start = "We gratefully thank the developers and contributors to the following software used in this work:",
-  pkgs = c("base",
-    "arrow", "cpp11", "crsuggest", "dplyr", "glue", "grateful", "gt", # automatic detection via DESCRIPTION causes issues with pkgdown
-    "ISOcodes", "pointblank", "purrr", "readr", "rlang", "stringr",
-    "tibble", "tidyselect", "zip",
-    "knitr", "quarto", "rmarkdown", "testthat"
+  pkgs = c(
+    "base",
+    "arrow",
+    "cpp11",
+    "crsuggest",
+    "dplyr",
+    "glue",
+    "grateful",
+    "gt", # automatic detection via DESCRIPTION causes issues with pkgdown
+    "ISOcodes",
+    "pointblank",
+    "purrr",
+    "readr",
+    "rlang",
+    "stringr",
+    "tibble",
+    "tidyselect",
+    "zip",
+    "knitr",
+    "quarto",
+    "rmarkdown",
+    "testthat"
   ),
   output = "paragraph",
   out.dir = tempdir(), # prevent .bib file from appearing in working directory

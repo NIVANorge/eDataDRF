@@ -16,14 +16,14 @@ Returns controlled vocabulary options for geographic feature subcategories.
 geographic_features_sub_vocabulary()
 }
 \seealso{
-Other site: 
-\code{\link{altitude_units_vocabulary}()},
-\code{\link{areas_vocabulary}()},
-\code{\link{coordinate_systems_vocabulary}()},
-\code{\link{countries_vocabulary}()},
-\code{\link{example_sites_tibble}()},
-\code{\link{geographic_features_vocabulary}()},
-\code{\link{initialise_sites_tibble}()},
-\code{\link{ocean_vocabulary}()}
+Other site:
+\code{\link[=altitude_units_vocabulary]{altitude_units_vocabulary()}},
+\code{\link[=areas_vocabulary]{areas_vocabulary()}},
+\code{\link[=coordinate_systems_vocabulary]{coordinate_systems_vocabulary()}},
+\code{\link[=countries_vocabulary]{countries_vocabulary()}},
+\code{\link[=example_sites_tibble]{example_sites_tibble()}},
+\code{\link[=geographic_features_vocabulary]{geographic_features_vocabulary()}},
+\code{\link[=initialise_sites_tibble]{initialise_sites_tibble()}},
+\code{\link[=ocean_vocabulary]{ocean_vocabulary()}}
 }
 \concept{site}

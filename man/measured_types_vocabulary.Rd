@@ -16,20 +16,20 @@ Returns controlled vocabulary options for the metric of pollution, quality, etc.
 measured_types_vocabulary()
 }
 \seealso{
-Other parameter: 
-\code{\link{example_parameters_tibble}()},
-\code{\link{initialise_parameters_tibble}()},
-\code{\link{parameter_types_sub_vocabulary}()},
-\code{\link{parameter_types_vocabulary}()},
-\code{\link{parameters_vocabulary}()}
+Other parameter:
+\code{\link[=example_parameters_tibble]{example_parameters_tibble()}},
+\code{\link[=initialise_parameters_tibble]{initialise_parameters_tibble()}},
+\code{\link[=parameter_types_sub_vocabulary]{parameter_types_sub_vocabulary()}},
+\code{\link[=parameter_types_vocabulary]{parameter_types_vocabulary()}},
+\code{\link[=parameters_vocabulary]{parameters_vocabulary()}}
 
-Other measurement: 
-\code{\link{example_measurements_tibble}()},
-\code{\link{initialise_measurements_tibble}()},
-\code{\link{measured_categories_vocabulary}()},
-\code{\link{measured_flag_vocabulary}()},
-\code{\link{parameter_unit_vocabulary}()},
-\code{\link{uncertainty_types_vocabulary}()}
+Other measurement:
+\code{\link[=example_measurements_tibble]{example_measurements_tibble()}},
+\code{\link[=initialise_measurements_tibble]{initialise_measurements_tibble()}},
+\code{\link[=measured_categories_vocabulary]{measured_categories_vocabulary()}},
+\code{\link[=measured_flag_vocabulary]{measured_flag_vocabulary()}},
+\code{\link[=parameter_unit_vocabulary]{parameter_unit_vocabulary()}},
+\code{\link[=uncertainty_types_vocabulary]{uncertainty_types_vocabulary()}}
 }
 \concept{measurement}
 \concept{parameter}

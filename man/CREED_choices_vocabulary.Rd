@@ -30,12 +30,12 @@ Evaluating Ecotoxicity Data) assessments. Options include:
 CREED_choices_vocabulary()
 }
 \seealso{
-Other CREED: 
-\code{\link{CREED_tibble_to_mock_input}()},
-\code{\link{example_CREED_relevance_tibble}()},
-\code{\link{example_CREED_reliability_tibble}()},
-\code{\link{example_CREED_scores_tibble}()},
-\code{\link{initialise_CREED_data_tibble}()},
-\code{\link{initialise_CREED_scores_tibble}()}
+Other CREED:
+\code{\link[=CREED_tibble_to_mock_input]{CREED_tibble_to_mock_input()}},
+\code{\link[=example_CREED_relevance_tibble]{example_CREED_relevance_tibble()}},
+\code{\link[=example_CREED_reliability_tibble]{example_CREED_reliability_tibble()}},
+\code{\link[=example_CREED_scores_tibble]{example_CREED_scores_tibble()}},
+\code{\link[=initialise_CREED_data_tibble]{initialise_CREED_data_tibble()}},
+\code{\link[=initialise_CREED_scores_tibble]{initialise_CREED_scores_tibble()}}
 }
 \concept{CREED}

@@ -18,25 +18,25 @@ example_parameters_tibble()
 
 }
 \seealso{
-Other example_tibble: 
-\code{\link{example_CREED_relevance_tibble}()},
-\code{\link{example_CREED_reliability_tibble}()},
-\code{\link{example_CREED_scores_tibble}()},
-\code{\link{example_biota_tibble}()},
-\code{\link{example_campaign_tibble}()},
-\code{\link{example_compartments_tibble}()},
-\code{\link{example_measurements_tibble}()},
-\code{\link{example_methods_tibble}()},
-\code{\link{example_references_tibble}()},
-\code{\link{example_samples_tibble}()},
-\code{\link{example_sites_tibble}()}
+Other example_tibble:
+\code{\link[=example_CREED_relevance_tibble]{example_CREED_relevance_tibble()}},
+\code{\link[=example_CREED_reliability_tibble]{example_CREED_reliability_tibble()}},
+\code{\link[=example_CREED_scores_tibble]{example_CREED_scores_tibble()}},
+\code{\link[=example_biota_tibble]{example_biota_tibble()}},
+\code{\link[=example_campaign_tibble]{example_campaign_tibble()}},
+\code{\link[=example_compartments_tibble]{example_compartments_tibble()}},
+\code{\link[=example_measurements_tibble]{example_measurements_tibble()}},
+\code{\link[=example_methods_tibble]{example_methods_tibble()}},
+\code{\link[=example_references_tibble]{example_references_tibble()}},
+\code{\link[=example_samples_tibble]{example_samples_tibble()}},
+\code{\link[=example_sites_tibble]{example_sites_tibble()}}
 
-Other parameter: 
-\code{\link{initialise_parameters_tibble}()},
-\code{\link{measured_types_vocabulary}()},
-\code{\link{parameter_types_sub_vocabulary}()},
-\code{\link{parameter_types_vocabulary}()},
-\code{\link{parameters_vocabulary}()}
+Other parameter:
+\code{\link[=initialise_parameters_tibble]{initialise_parameters_tibble()}},
+\code{\link[=measured_types_vocabulary]{measured_types_vocabulary()}},
+\code{\link[=parameter_types_sub_vocabulary]{parameter_types_sub_vocabulary()}},
+\code{\link[=parameter_types_vocabulary]{parameter_types_vocabulary()}},
+\code{\link[=parameters_vocabulary]{parameters_vocabulary()}}
 }
 \concept{example_tibble}
 \concept{parameter}

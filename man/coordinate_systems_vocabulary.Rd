@@ -13,7 +13,7 @@ coordinate_systems_vocabulary(common_only = TRUE)
 A character vector of coordinate system options
 }
 \description{
-Returns controlled vocabulary options for spatial coordinate reference systems.
+Returns controlled vocabulary options for spatial Coordinate Reference Systems (CRS).
 }
 \details{
 Sourced from the EPSG Dataset via the \pkg{crsuggest} package.
@@ -30,14 +30,14 @@ Oil & Gas Producers. Please view the terms of use at
 head(coordinate_systems_vocabulary(), 5)
 }
 \seealso{
-Other site: 
-\code{\link{altitude_units_vocabulary}()},
-\code{\link{areas_vocabulary}()},
-\code{\link{countries_vocabulary}()},
-\code{\link{example_sites_tibble}()},
-\code{\link{geographic_features_sub_vocabulary}()},
-\code{\link{geographic_features_vocabulary}()},
-\code{\link{initialise_sites_tibble}()},
-\code{\link{ocean_vocabulary}()}
+Other site:
+\code{\link[=altitude_units_vocabulary]{altitude_units_vocabulary()}},
+\code{\link[=areas_vocabulary]{areas_vocabulary()}},
+\code{\link[=countries_vocabulary]{countries_vocabulary()}},
+\code{\link[=example_sites_tibble]{example_sites_tibble()}},
+\code{\link[=geographic_features_sub_vocabulary]{geographic_features_sub_vocabulary()}},
+\code{\link[=geographic_features_vocabulary]{geographic_features_vocabulary()}},
+\code{\link[=initialise_sites_tibble]{initialise_sites_tibble()}},
+\code{\link[=ocean_vocabulary]{ocean_vocabulary()}}
 }
 \concept{site}

@@ -79,47 +79,59 @@ export(uncertainty_types_vocabulary)
 import(ISOcodes)
 import(crsuggest)
 importFrom(arrow,read_parquet)
-importFrom(dplyr,across)
-importFrom(dplyr,add_row)
-importFrom(dplyr,arrange)
-importFrom(dplyr,bind_rows)
-importFrom(dplyr,case_when)
-importFrom(dplyr,distinct)
-importFrom(dplyr,filter)
-importFrom(dplyr,mutate)
-importFrom(dplyr,pull)
-importFrom(dplyr,select)
+importFrom(dplyr,
+  across,
+  add_row,
+  arrange,
+  bind_rows,
+  case_when,
+  distinct,
+  filter,
+  mutate,
+  pull,
+  select
+)
 importFrom(glue,glue)
-importFrom(pointblank,action_levels)
-importFrom(pointblank,col_vals_between)
-importFrom(pointblank,col_vals_equal)
-importFrom(pointblank,col_vals_gte)
-importFrom(pointblank,col_vals_in_set)
-importFrom(pointblank,col_vals_lte)
-importFrom(pointblank,col_vals_not_equal)
-importFrom(pointblank,col_vals_not_null)
-importFrom(pointblank,col_vals_regex)
-importFrom(pointblank,create_agent)
-importFrom(pointblank,get_agent_report)
-importFrom(pointblank,interrogate)
-importFrom(pointblank,rows_distinct)
-importFrom(purrr,flatten)
-importFrom(purrr,prepend)
-importFrom(readr,read_csv)
-importFrom(readr,write_excel_csv)
-importFrom(stringr,str_c)
-importFrom(stringr,str_remove_all)
-importFrom(stringr,str_split)
-importFrom(stringr,str_sub)
-importFrom(stringr,str_to_camel)
-importFrom(stringr,str_to_lower)
-importFrom(stringr,str_to_sentence)
-importFrom(stringr,str_to_snake)
-importFrom(stringr,str_to_title)
-importFrom(stringr,str_to_upper)
-importFrom(stringr,str_trim)
-importFrom(tibble,tibble)
-importFrom(tibble,tribble)
+importFrom(pointblank,
+  action_levels,
+  col_vals_between,
+  col_vals_equal,
+  col_vals_gte,
+  col_vals_in_set,
+  col_vals_lte,
+  col_vals_not_equal,
+  col_vals_not_null,
+  col_vals_regex,
+  create_agent,
+  get_agent_report,
+  interrogate,
+  rows_distinct
+)
+importFrom(purrr,
+  flatten,
+  prepend
+)
+importFrom(readr,
+  read_csv,
+  write_excel_csv
+)
+importFrom(stringr,
+  str_c,
+  str_remove_all,
+  str_split,
+  str_sub,
+  str_to_camel,
+  str_to_lower,
+  str_to_sentence,
+  str_to_snake,
+  str_to_title,
+  str_to_upper,
+  str_trim
+)
+importFrom(tibble,
+  tibble,
+  tribble
+)
 importFrom(tidyselect,where)
 importFrom(utils,head)
 importFrom(zip,zip)

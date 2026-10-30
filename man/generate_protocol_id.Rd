@@ -68,23 +68,23 @@ generate_protocol_id(types, names, sequences, "Study2024")
 
 }
 \seealso{
-Other generate_id: 
-\code{\link{abbreviate_string}()},
-\code{\link{generate_reference_id}()},
-\code{\link{generate_sample_id_with_components}()},
-\code{\link{protocol_id_regex}()},
-\code{\link{sample_id_regex}()}
+Other generate_id:
+\code{\link[=abbreviate_string]{abbreviate_string()}},
+\code{\link[=generate_reference_id]{generate_reference_id()}},
+\code{\link[=generate_sample_id_with_components]{generate_sample_id_with_components()}},
+\code{\link[=protocol_id_regex]{protocol_id_regex()}},
+\code{\link[=sample_id_regex]{sample_id_regex()}}
 
-Other method: 
-\code{\link{analytical_protocols_vocabulary}()},
-\code{\link{example_methods_tibble}()},
-\code{\link{extraction_protocols_vocabulary}()},
-\code{\link{fractionation_protocols_vocabulary}()},
-\code{\link{initialise_methods_tibble}()},
-\code{\link{protocol_categories_vocabulary}()},
-\code{\link{protocol_id_regex}()},
-\code{\link{protocol_options_vocabulary}()},
-\code{\link{sampling_protocols_vocabulary}()}
+Other method:
+\code{\link[=analytical_protocols_vocabulary]{analytical_protocols_vocabulary()}},
+\code{\link[=example_methods_tibble]{example_methods_tibble()}},
+\code{\link[=extraction_protocols_vocabulary]{extraction_protocols_vocabulary()}},
+\code{\link[=fractionation_protocols_vocabulary]{fractionation_protocols_vocabulary()}},
+\code{\link[=initialise_methods_tibble]{initialise_methods_tibble()}},
+\code{\link[=protocol_categories_vocabulary]{protocol_categories_vocabulary()}},
+\code{\link[=protocol_id_regex]{protocol_id_regex()}},
+\code{\link[=protocol_options_vocabulary]{protocol_options_vocabulary()}},
+\code{\link[=sampling_protocols_vocabulary]{sampling_protocols_vocabulary()}}
 }
 \concept{generate_id}
 \concept{method}

@@ -51,27 +51,27 @@ See \code{vignette("sites_data")} for more information.
 initialise_sites_tibble()
 }
 \seealso{
-Other initialise_tibble: 
-\code{\link{initialise_CREED_data_tibble}()},
-\code{\link{initialise_CREED_scores_tibble}()},
-\code{\link{initialise_biota_tibble}()},
-\code{\link{initialise_campaign_tibble}()},
-\code{\link{initialise_compartments_tibble}()},
-\code{\link{initialise_measurements_tibble}()},
-\code{\link{initialise_methods_tibble}()},
-\code{\link{initialise_parameters_tibble}()},
-\code{\link{initialise_references_tibble}()},
-\code{\link{initialise_samples_tibble}()}
+Other initialise_tibble:
+\code{\link[=initialise_CREED_data_tibble]{initialise_CREED_data_tibble()}},
+\code{\link[=initialise_CREED_scores_tibble]{initialise_CREED_scores_tibble()}},
+\code{\link[=initialise_biota_tibble]{initialise_biota_tibble()}},
+\code{\link[=initialise_campaign_tibble]{initialise_campaign_tibble()}},
+\code{\link[=initialise_compartments_tibble]{initialise_compartments_tibble()}},
+\code{\link[=initialise_measurements_tibble]{initialise_measurements_tibble()}},
+\code{\link[=initialise_methods_tibble]{initialise_methods_tibble()}},
+\code{\link[=initialise_parameters_tibble]{initialise_parameters_tibble()}},
+\code{\link[=initialise_references_tibble]{initialise_references_tibble()}},
+\code{\link[=initialise_samples_tibble]{initialise_samples_tibble()}}
 
-Other site: 
-\code{\link{altitude_units_vocabulary}()},
-\code{\link{areas_vocabulary}()},
-\code{\link{coordinate_systems_vocabulary}()},
-\code{\link{countries_vocabulary}()},
-\code{\link{example_sites_tibble}()},
-\code{\link{geographic_features_sub_vocabulary}()},
-\code{\link{geographic_features_vocabulary}()},
-\code{\link{ocean_vocabulary}()}
+Other site:
+\code{\link[=altitude_units_vocabulary]{altitude_units_vocabulary()}},
+\code{\link[=areas_vocabulary]{areas_vocabulary()}},
+\code{\link[=coordinate_systems_vocabulary]{coordinate_systems_vocabulary()}},
+\code{\link[=countries_vocabulary]{countries_vocabulary()}},
+\code{\link[=example_sites_tibble]{example_sites_tibble()}},
+\code{\link[=geographic_features_sub_vocabulary]{geographic_features_sub_vocabulary()}},
+\code{\link[=geographic_features_vocabulary]{geographic_features_vocabulary()}},
+\code{\link[=ocean_vocabulary]{ocean_vocabulary()}}
 }
 \concept{initialise_tibble}
 \concept{site}

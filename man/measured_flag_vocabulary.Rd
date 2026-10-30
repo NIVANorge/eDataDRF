@@ -26,12 +26,12 @@ limits. Options include:
 measured_flag_vocabulary()
 }
 \seealso{
-Other measurement: 
-\code{\link{example_measurements_tibble}()},
-\code{\link{initialise_measurements_tibble}()},
-\code{\link{measured_categories_vocabulary}()},
-\code{\link{measured_types_vocabulary}()},
-\code{\link{parameter_unit_vocabulary}()},
-\code{\link{uncertainty_types_vocabulary}()}
+Other measurement:
+\code{\link[=example_measurements_tibble]{example_measurements_tibble()}},
+\code{\link[=initialise_measurements_tibble]{initialise_measurements_tibble()}},
+\code{\link[=measured_categories_vocabulary]{measured_categories_vocabulary()}},
+\code{\link[=measured_types_vocabulary]{measured_types_vocabulary()}},
+\code{\link[=parameter_unit_vocabulary]{parameter_unit_vocabulary()}},
+\code{\link[=uncertainty_types_vocabulary]{uncertainty_types_vocabulary()}}
 }
 \concept{measurement}

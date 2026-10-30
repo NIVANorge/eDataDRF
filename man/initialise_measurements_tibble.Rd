@@ -77,25 +77,25 @@ See \code{vignette("measurements_data")} for more information.
 initialise_measurements_tibble()
 }
 \seealso{
-Other initialise_tibble: 
-\code{\link{initialise_CREED_data_tibble}()},
-\code{\link{initialise_CREED_scores_tibble}()},
-\code{\link{initialise_biota_tibble}()},
-\code{\link{initialise_campaign_tibble}()},
-\code{\link{initialise_compartments_tibble}()},
-\code{\link{initialise_methods_tibble}()},
-\code{\link{initialise_parameters_tibble}()},
-\code{\link{initialise_references_tibble}()},
-\code{\link{initialise_samples_tibble}()},
-\code{\link{initialise_sites_tibble}()}
+Other initialise_tibble:
+\code{\link[=initialise_CREED_data_tibble]{initialise_CREED_data_tibble()}},
+\code{\link[=initialise_CREED_scores_tibble]{initialise_CREED_scores_tibble()}},
+\code{\link[=initialise_biota_tibble]{initialise_biota_tibble()}},
+\code{\link[=initialise_campaign_tibble]{initialise_campaign_tibble()}},
+\code{\link[=initialise_compartments_tibble]{initialise_compartments_tibble()}},
+\code{\link[=initialise_methods_tibble]{initialise_methods_tibble()}},
+\code{\link[=initialise_parameters_tibble]{initialise_parameters_tibble()}},
+\code{\link[=initialise_references_tibble]{initialise_references_tibble()}},
+\code{\link[=initialise_samples_tibble]{initialise_samples_tibble()}},
+\code{\link[=initialise_sites_tibble]{initialise_sites_tibble()}}
 
-Other measurement: 
-\code{\link{example_measurements_tibble}()},
-\code{\link{measured_categories_vocabulary}()},
-\code{\link{measured_flag_vocabulary}()},
-\code{\link{measured_types_vocabulary}()},
-\code{\link{parameter_unit_vocabulary}()},
-\code{\link{uncertainty_types_vocabulary}()}
+Other measurement:
+\code{\link[=example_measurements_tibble]{example_measurements_tibble()}},
+\code{\link[=measured_categories_vocabulary]{measured_categories_vocabulary()}},
+\code{\link[=measured_flag_vocabulary]{measured_flag_vocabulary()}},
+\code{\link[=measured_types_vocabulary]{measured_types_vocabulary()}},
+\code{\link[=parameter_unit_vocabulary]{parameter_unit_vocabulary()}},
+\code{\link[=uncertainty_types_vocabulary]{uncertainty_types_vocabulary()}}
 }
 \concept{initialise_tibble}
 \concept{measurement}

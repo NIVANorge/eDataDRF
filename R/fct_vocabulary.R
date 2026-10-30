@@ -322,13 +322,23 @@ altitude_units_vocabulary <- function() {
 #' Returns comprehensive parameter data combining quality and chemical parameters.
 #'
 #' @details
-#' Combines quality parameters with chemical parameters from the
-#' \href{http://classyfire.wishartlab.com}{ChemOnt} chemical taxonomy
+#' Combines quality parameters with chemical parameters taken from the
+#' National Toxicology Program's NICE (NTP Integrated Chemical Environment)
+#' "Chemical Taxonomies" dataset (v1.1, ICE v4.1.1, Feb. 2025;
+#' \href{https://ice.ntp.niehs.nih.gov/DATASETDESCRIPTION?section=Chemical%20Chemical%20Proper}{ICE dataset descriptions}).
+#' This dataset assigns every substance in DSSTox a structure-based, automated
+#' \href{http://classyfire.wishartlab.com}{ChemOnt/ClassyFire} classification
 #' (Djoumbou Feunang et al. 2016, \doi{10.1186/s13321-016-0174-y}).
+#'
+#' The full NICE dataset (>1 million substances) is too large to distribute, so it was
+#' filtered by CAS RN to all substances in the EPA ECOTOX database plus all
+#' substances in the Vannmiljo database. `PARAMETER_TYPE_SUB` is the ClassyFire
+#' Superclass. The preparation script is `data-raw/NICE_ClassyFire_Chemical_Taxonomy_v1-1.R`.
+#'
 #' Quality parameters are read from quality_parameters.parquet and chemical
-#' parameters from ClassyFire_Taxonomy_2025_02.parquet. The resulting dataset includes
-#' columns for parameter classification, chemical identifiers (InChIKey, PubChem CID,
-#' CAS RN), and measurement types.
+#' parameters from NICE_ClassyFire_Chemical_Taxonomy_v1-1.parquet. The resulting dataset includes
+#' columns for parameter classification, chemical identifiers (InChIKey, CAS RN),
+#' and measurement types.
 #'
 #' Note: Quality parameters have not yet been comprehensively validated as we are not
 #' aware of any taxonomy to validate them against.
@@ -337,7 +347,7 @@ altitude_units_vocabulary <- function() {
 #'
 #' extdata/quality_parameters.parquet
 #'
-#' extdata/ClassyFire_Taxonomy_2025_02.parquet
+#' extdata/NICE_ClassyFire_Chemical_Taxonomy_v1-1.parquet
 #'
 #' @return A data frame combining quality and chemical parameter options
 #' @family parameter
@@ -362,7 +372,7 @@ parameters_vocabulary <- function() {
   chemical_parameters <- read_parquet(
     file = system.file(
       "extdata",
-      "ClassyFire_Taxonomy_2025_02.parquet",
+      "NICE_ClassyFire_Chemical_Taxonomy_v1-1.parquet",
       package = "eDataDRF",
       mustWork = TRUE
     )
@@ -414,8 +424,9 @@ parameter_types_vocabulary <- function() {
 #' @details
 #' Dynamically built from unique `PARAMETER_TYPE_SUB` values in
 #' \code{parameters_vocabulary()}, with "Mixture" appended and standard data quality
-#' flags prepended. Chemical subtypes are taken from the
-#' \href{http://classyfire.wishartlab.com}{ChemOnt} chemical taxonomy
+#' flags prepended. Chemical subtypes are the ClassyFire Superclasses from the
+#' \href{http://classyfire.wishartlab.com}{ChemOnt} chemical taxonomy, as provided in the
+#' NICE Chemical Taxonomies dataset (see \code{\link{parameters_vocabulary}}).
 #'
 #' @return A character vector of parameter type subcategory options
 #' @family parameter
