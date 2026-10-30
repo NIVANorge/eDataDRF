@@ -43,24 +43,24 @@ See \code{vignette("parameters_data")} for more information.
 initialise_parameters_tibble()
 }
 \seealso{
-Other initialise_tibble: 
-\code{\link{initialise_CREED_data_tibble}()},
-\code{\link{initialise_CREED_scores_tibble}()},
-\code{\link{initialise_biota_tibble}()},
-\code{\link{initialise_campaign_tibble}()},
-\code{\link{initialise_compartments_tibble}()},
-\code{\link{initialise_measurements_tibble}()},
-\code{\link{initialise_methods_tibble}()},
-\code{\link{initialise_references_tibble}()},
-\code{\link{initialise_samples_tibble}()},
-\code{\link{initialise_sites_tibble}()}
+Other initialise_tibble:
+\code{\link[=initialise_CREED_data_tibble]{initialise_CREED_data_tibble()}},
+\code{\link[=initialise_CREED_scores_tibble]{initialise_CREED_scores_tibble()}},
+\code{\link[=initialise_biota_tibble]{initialise_biota_tibble()}},
+\code{\link[=initialise_campaign_tibble]{initialise_campaign_tibble()}},
+\code{\link[=initialise_compartments_tibble]{initialise_compartments_tibble()}},
+\code{\link[=initialise_measurements_tibble]{initialise_measurements_tibble()}},
+\code{\link[=initialise_methods_tibble]{initialise_methods_tibble()}},
+\code{\link[=initialise_references_tibble]{initialise_references_tibble()}},
+\code{\link[=initialise_samples_tibble]{initialise_samples_tibble()}},
+\code{\link[=initialise_sites_tibble]{initialise_sites_tibble()}}
 
-Other parameter: 
-\code{\link{example_parameters_tibble}()},
-\code{\link{measured_types_vocabulary}()},
-\code{\link{parameter_types_sub_vocabulary}()},
-\code{\link{parameter_types_vocabulary}()},
-\code{\link{parameters_vocabulary}()}
+Other parameter:
+\code{\link[=example_parameters_tibble]{example_parameters_tibble()}},
+\code{\link[=measured_types_vocabulary]{measured_types_vocabulary()}},
+\code{\link[=parameter_types_sub_vocabulary]{parameter_types_sub_vocabulary()}},
+\code{\link[=parameter_types_vocabulary]{parameter_types_vocabulary()}},
+\code{\link[=parameters_vocabulary]{parameters_vocabulary()}}
 }
 \concept{initialise_tibble}
 \concept{parameter}

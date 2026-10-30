@@ -27,15 +27,15 @@ Available protocols include: Not relevant, Not reported, None, Methanol, Dichlor
 head(extraction_protocols_vocabulary(), 5)
 }
 \seealso{
-Other method: 
-\code{\link{analytical_protocols_vocabulary}()},
-\code{\link{example_methods_tibble}()},
-\code{\link{fractionation_protocols_vocabulary}()},
-\code{\link{generate_protocol_id}()},
-\code{\link{initialise_methods_tibble}()},
-\code{\link{protocol_categories_vocabulary}()},
-\code{\link{protocol_id_regex}()},
-\code{\link{protocol_options_vocabulary}()},
-\code{\link{sampling_protocols_vocabulary}()}
+Other method:
+\code{\link[=analytical_protocols_vocabulary]{analytical_protocols_vocabulary()}},
+\code{\link[=example_methods_tibble]{example_methods_tibble()}},
+\code{\link[=fractionation_protocols_vocabulary]{fractionation_protocols_vocabulary()}},
+\code{\link[=generate_protocol_id]{generate_protocol_id()}},
+\code{\link[=initialise_methods_tibble]{initialise_methods_tibble()}},
+\code{\link[=protocol_categories_vocabulary]{protocol_categories_vocabulary()}},
+\code{\link[=protocol_id_regex]{protocol_id_regex()}},
+\code{\link[=protocol_options_vocabulary]{protocol_options_vocabulary()}},
+\code{\link[=sampling_protocols_vocabulary]{sampling_protocols_vocabulary()}}
 }
 \concept{method}

@@ -20,19 +20,19 @@ to organisms (inside an organism, from its surface, or external to the organism 
 measured_categories_vocabulary()
 }
 \seealso{
-Other compartment: 
-\code{\link{environ_compartments_sub_vocabulary}()},
-\code{\link{environ_compartments_vocabulary}()},
-\code{\link{example_compartments_tibble}()},
-\code{\link{initialise_compartments_tibble}()}
+Other compartment:
+\code{\link[=environ_compartments_sub_vocabulary]{environ_compartments_sub_vocabulary()}},
+\code{\link[=environ_compartments_vocabulary]{environ_compartments_vocabulary()}},
+\code{\link[=example_compartments_tibble]{example_compartments_tibble()}},
+\code{\link[=initialise_compartments_tibble]{initialise_compartments_tibble()}}
 
-Other measurement: 
-\code{\link{example_measurements_tibble}()},
-\code{\link{initialise_measurements_tibble}()},
-\code{\link{measured_flag_vocabulary}()},
-\code{\link{measured_types_vocabulary}()},
-\code{\link{parameter_unit_vocabulary}()},
-\code{\link{uncertainty_types_vocabulary}()}
+Other measurement:
+\code{\link[=example_measurements_tibble]{example_measurements_tibble()}},
+\code{\link[=initialise_measurements_tibble]{initialise_measurements_tibble()}},
+\code{\link[=measured_flag_vocabulary]{measured_flag_vocabulary()}},
+\code{\link[=measured_types_vocabulary]{measured_types_vocabulary()}},
+\code{\link[=parameter_unit_vocabulary]{parameter_unit_vocabulary()}},
+\code{\link[=uncertainty_types_vocabulary]{uncertainty_types_vocabulary()}}
 }
 \concept{compartment}
 \concept{measurement}

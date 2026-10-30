@@ -51,25 +51,25 @@ See \code{vignette("biota_data")} for more information.
 initialise_biota_tibble()
 }
 \seealso{
-Other initialise_tibble: 
-\code{\link{initialise_CREED_data_tibble}()},
-\code{\link{initialise_CREED_scores_tibble}()},
-\code{\link{initialise_campaign_tibble}()},
-\code{\link{initialise_compartments_tibble}()},
-\code{\link{initialise_measurements_tibble}()},
-\code{\link{initialise_methods_tibble}()},
-\code{\link{initialise_parameters_tibble}()},
-\code{\link{initialise_references_tibble}()},
-\code{\link{initialise_samples_tibble}()},
-\code{\link{initialise_sites_tibble}()}
+Other initialise_tibble:
+\code{\link[=initialise_CREED_data_tibble]{initialise_CREED_data_tibble()}},
+\code{\link[=initialise_CREED_scores_tibble]{initialise_CREED_scores_tibble()}},
+\code{\link[=initialise_campaign_tibble]{initialise_campaign_tibble()}},
+\code{\link[=initialise_compartments_tibble]{initialise_compartments_tibble()}},
+\code{\link[=initialise_measurements_tibble]{initialise_measurements_tibble()}},
+\code{\link[=initialise_methods_tibble]{initialise_methods_tibble()}},
+\code{\link[=initialise_parameters_tibble]{initialise_parameters_tibble()}},
+\code{\link[=initialise_references_tibble]{initialise_references_tibble()}},
+\code{\link[=initialise_samples_tibble]{initialise_samples_tibble()}},
+\code{\link[=initialise_sites_tibble]{initialise_sites_tibble()}}
 
-Other biota: 
-\code{\link{example_biota_tibble}()},
-\code{\link{gender_vocabulary}()},
-\code{\link{lifestage_vocabulary}()},
-\code{\link{species_groups_vocabulary}()},
-\code{\link{species_names_vocabulary}()},
-\code{\link{tissue_types_vocabulary}()}
+Other biota:
+\code{\link[=example_biota_tibble]{example_biota_tibble()}},
+\code{\link[=gender_vocabulary]{gender_vocabulary()}},
+\code{\link[=lifestage_vocabulary]{lifestage_vocabulary()}},
+\code{\link[=species_groups_vocabulary]{species_groups_vocabulary()}},
+\code{\link[=species_names_vocabulary]{species_names_vocabulary()}},
+\code{\link[=tissue_types_vocabulary]{tissue_types_vocabulary()}}
 }
 \concept{biota}
 \concept{initialise_tibble}

@@ -35,16 +35,16 @@ generate_reference_id(
 
 }
 \seealso{
-Other generate_id: 
-\code{\link{abbreviate_string}()},
-\code{\link{generate_protocol_id}()},
-\code{\link{generate_sample_id_with_components}()},
-\code{\link{protocol_id_regex}()},
-\code{\link{sample_id_regex}()}
+Other generate_id:
+\code{\link[=abbreviate_string]{abbreviate_string()}},
+\code{\link[=generate_protocol_id]{generate_protocol_id()}},
+\code{\link[=generate_sample_id_with_components]{generate_sample_id_with_components()}},
+\code{\link[=protocol_id_regex]{protocol_id_regex()}},
+\code{\link[=sample_id_regex]{sample_id_regex()}}
 
-Other reference: 
-\code{\link{example_references_tibble}()},
-\code{\link{initialise_references_tibble}()}
+Other reference:
+\code{\link[=example_references_tibble]{example_references_tibble()}},
+\code{\link[=initialise_references_tibble]{initialise_references_tibble()}}
 }
 \concept{generate_id}
 \concept{reference}

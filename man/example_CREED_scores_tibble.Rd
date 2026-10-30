@@ -18,26 +18,26 @@ example_CREED_scores_tibble()
 
 }
 \seealso{
-Other example_tibble: 
-\code{\link{example_CREED_relevance_tibble}()},
-\code{\link{example_CREED_reliability_tibble}()},
-\code{\link{example_biota_tibble}()},
-\code{\link{example_campaign_tibble}()},
-\code{\link{example_compartments_tibble}()},
-\code{\link{example_measurements_tibble}()},
-\code{\link{example_methods_tibble}()},
-\code{\link{example_parameters_tibble}()},
-\code{\link{example_references_tibble}()},
-\code{\link{example_samples_tibble}()},
-\code{\link{example_sites_tibble}()}
+Other example_tibble:
+\code{\link[=example_CREED_relevance_tibble]{example_CREED_relevance_tibble()}},
+\code{\link[=example_CREED_reliability_tibble]{example_CREED_reliability_tibble()}},
+\code{\link[=example_biota_tibble]{example_biota_tibble()}},
+\code{\link[=example_campaign_tibble]{example_campaign_tibble()}},
+\code{\link[=example_compartments_tibble]{example_compartments_tibble()}},
+\code{\link[=example_measurements_tibble]{example_measurements_tibble()}},
+\code{\link[=example_methods_tibble]{example_methods_tibble()}},
+\code{\link[=example_parameters_tibble]{example_parameters_tibble()}},
+\code{\link[=example_references_tibble]{example_references_tibble()}},
+\code{\link[=example_samples_tibble]{example_samples_tibble()}},
+\code{\link[=example_sites_tibble]{example_sites_tibble()}}
 
-Other CREED: 
-\code{\link{CREED_choices_vocabulary}()},
-\code{\link{CREED_tibble_to_mock_input}()},
-\code{\link{example_CREED_relevance_tibble}()},
-\code{\link{example_CREED_reliability_tibble}()},
-\code{\link{initialise_CREED_data_tibble}()},
-\code{\link{initialise_CREED_scores_tibble}()}
+Other CREED:
+\code{\link[=CREED_choices_vocabulary]{CREED_choices_vocabulary()}},
+\code{\link[=CREED_tibble_to_mock_input]{CREED_tibble_to_mock_input()}},
+\code{\link[=example_CREED_relevance_tibble]{example_CREED_relevance_tibble()}},
+\code{\link[=example_CREED_reliability_tibble]{example_CREED_reliability_tibble()}},
+\code{\link[=initialise_CREED_data_tibble]{initialise_CREED_data_tibble()}},
+\code{\link[=initialise_CREED_scores_tibble]{initialise_CREED_scores_tibble()}}
 }
 \concept{CREED}
 \concept{example_tibble}

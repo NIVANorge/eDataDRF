@@ -69,3 +69,6 @@ README_files/*
 
 # Quarto extensions
 _extensions/*
+
+# Raw source data for data-raw scripts (too large to track)
+data-raw/ChemicalTaxonomies_v1.1.txt

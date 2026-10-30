@@ -16,12 +16,12 @@ Returns controlled vocabulary options for statistical uncertainty and variabilit
 head(uncertainty_types_vocabulary(), 5)
 }
 \seealso{
-Other measurement: 
-\code{\link{example_measurements_tibble}()},
-\code{\link{initialise_measurements_tibble}()},
-\code{\link{measured_categories_vocabulary}()},
-\code{\link{measured_flag_vocabulary}()},
-\code{\link{measured_types_vocabulary}()},
-\code{\link{parameter_unit_vocabulary}()}
+Other measurement:
+\code{\link[=example_measurements_tibble]{example_measurements_tibble()}},
+\code{\link[=initialise_measurements_tibble]{initialise_measurements_tibble()}},
+\code{\link[=measured_categories_vocabulary]{measured_categories_vocabulary()}},
+\code{\link[=measured_flag_vocabulary]{measured_flag_vocabulary()}},
+\code{\link[=measured_types_vocabulary]{measured_types_vocabulary()}},
+\code{\link[=parameter_unit_vocabulary]{parameter_unit_vocabulary()}}
 }
 \concept{measurement}

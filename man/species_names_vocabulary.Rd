@@ -25,12 +25,12 @@ Data source: \code{extdata/ecotox_2025_06_12_species.parquet}
 head(species_names_vocabulary(), 5)
 }
 \seealso{
-Other biota: 
-\code{\link{example_biota_tibble}()},
-\code{\link{gender_vocabulary}()},
-\code{\link{initialise_biota_tibble}()},
-\code{\link{lifestage_vocabulary}()},
-\code{\link{species_groups_vocabulary}()},
-\code{\link{tissue_types_vocabulary}()}
+Other biota:
+\code{\link[=example_biota_tibble]{example_biota_tibble()}},
+\code{\link[=gender_vocabulary]{gender_vocabulary()}},
+\code{\link[=initialise_biota_tibble]{initialise_biota_tibble()}},
+\code{\link[=lifestage_vocabulary]{lifestage_vocabulary()}},
+\code{\link[=species_groups_vocabulary]{species_groups_vocabulary()}},
+\code{\link[=tissue_types_vocabulary]{tissue_types_vocabulary()}}
 }
 \concept{biota}

@@ -12,3 +12,4 @@ scratchpad/*
 ^Meta$
 ^README_files$
 ^.claude/$
+^data-raw$

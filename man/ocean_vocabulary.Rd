@@ -20,14 +20,14 @@ regions dataset, regions dataset (\url{https://www.marineregions.org/downloads.p
 head(ocean_vocabulary(), 15)
 }
 \seealso{
-Other site: 
-\code{\link{altitude_units_vocabulary}()},
-\code{\link{areas_vocabulary}()},
-\code{\link{coordinate_systems_vocabulary}()},
-\code{\link{countries_vocabulary}()},
-\code{\link{example_sites_tibble}()},
-\code{\link{geographic_features_sub_vocabulary}()},
-\code{\link{geographic_features_vocabulary}()},
-\code{\link{initialise_sites_tibble}()}
+Other site:
+\code{\link[=altitude_units_vocabulary]{altitude_units_vocabulary()}},
+\code{\link[=areas_vocabulary]{areas_vocabulary()}},
+\code{\link[=coordinate_systems_vocabulary]{coordinate_systems_vocabulary()}},
+\code{\link[=countries_vocabulary]{countries_vocabulary()}},
+\code{\link[=example_sites_tibble]{example_sites_tibble()}},
+\code{\link[=geographic_features_sub_vocabulary]{geographic_features_sub_vocabulary()}},
+\code{\link[=geographic_features_vocabulary]{geographic_features_vocabulary()}},
+\code{\link[=initialise_sites_tibble]{initialise_sites_tibble()}}
 }
 \concept{site}

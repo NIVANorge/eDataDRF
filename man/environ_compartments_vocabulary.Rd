@@ -18,10 +18,10 @@ level of the list.
 environ_compartments_vocabulary()
 }
 \seealso{
-Other compartment: 
-\code{\link{environ_compartments_sub_vocabulary}()},
-\code{\link{example_compartments_tibble}()},
-\code{\link{initialise_compartments_tibble}()},
-\code{\link{measured_categories_vocabulary}()}
+Other compartment:
+\code{\link[=environ_compartments_sub_vocabulary]{environ_compartments_sub_vocabulary()}},
+\code{\link[=example_compartments_tibble]{example_compartments_tibble()}},
+\code{\link[=initialise_compartments_tibble]{initialise_compartments_tibble()}},
+\code{\link[=measured_categories_vocabulary]{measured_categories_vocabulary()}}
 }
 \concept{compartment}

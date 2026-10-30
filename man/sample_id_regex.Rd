@@ -31,17 +31,17 @@ Example: \code{SITE-001-Copper-AquaticSedi-2023-03-15-R-1}
 \seealso{
 \code{\link[=generate_sample_id_with_components]{generate_sample_id_with_components()}}
 
-Other generate_id: 
-\code{\link{abbreviate_string}()},
-\code{\link{generate_protocol_id}()},
-\code{\link{generate_reference_id}()},
-\code{\link{generate_sample_id_with_components}()},
-\code{\link{protocol_id_regex}()}
+Other generate_id:
+\code{\link[=abbreviate_string]{abbreviate_string()}},
+\code{\link[=generate_protocol_id]{generate_protocol_id()}},
+\code{\link[=generate_reference_id]{generate_reference_id()}},
+\code{\link[=generate_sample_id_with_components]{generate_sample_id_with_components()}},
+\code{\link[=protocol_id_regex]{protocol_id_regex()}}
 
-Other sample: 
-\code{\link{example_samples_tibble}()},
-\code{\link{generate_sample_id_with_components}()},
-\code{\link{initialise_samples_tibble}()}
+Other sample:
+\code{\link[=example_samples_tibble]{example_samples_tibble()}},
+\code{\link[=generate_sample_id_with_components]{generate_sample_id_with_components()}},
+\code{\link[=initialise_samples_tibble]{initialise_samples_tibble()}}
 }
 \concept{generate_id}
 \concept{sample}

@@ -16,12 +16,12 @@ Returns controlled vocabulary options for broad taxonomic groups from the EPA EC
 head(species_groups_vocabulary(), 5)
 }
 \seealso{
-Other biota: 
-\code{\link{example_biota_tibble}()},
-\code{\link{gender_vocabulary}()},
-\code{\link{initialise_biota_tibble}()},
-\code{\link{lifestage_vocabulary}()},
-\code{\link{species_names_vocabulary}()},
-\code{\link{tissue_types_vocabulary}()}
+Other biota:
+\code{\link[=example_biota_tibble]{example_biota_tibble()}},
+\code{\link[=gender_vocabulary]{gender_vocabulary()}},
+\code{\link[=initialise_biota_tibble]{initialise_biota_tibble()}},
+\code{\link[=lifestage_vocabulary]{lifestage_vocabulary()}},
+\code{\link[=species_names_vocabulary]{species_names_vocabulary()}},
+\code{\link[=tissue_types_vocabulary]{tissue_types_vocabulary()}}
 }
 \concept{biota}
