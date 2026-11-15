@@ -395,7 +395,7 @@ parameters_vocabulary <- function() {
   bind_rows(quality_params, chemical_parameters)
 }
 
-#' Controlled vocabulary for the `PARAMETER_TYPES` column, Parameters table
+#' Controlled vocabulary for the `PARAMETER_TYPE` column, Parameters table
 #'
 #' Returns controlled vocabulary options for broad parameter classifications:
 #' stressors, background levels, quality parameters, etc.
@@ -417,7 +417,7 @@ parameter_types_vocabulary <- function() {
   )
 }
 
-#' Controlled vocabulary for the `PARAMETER_TYPES_SUB` column, Parameters table
+#' Controlled vocabulary for the `PARAMETER_TYPE_SUB` column, Parameters table
 #'
 #' Returns controlled vocabulary options for parameter type subcategories.
 #'
